@@ -50,6 +50,7 @@ export default function App() {
     await fetch(endpoint, options);
     setData([...data, { candidate_name: name, candidate_job_title: jobTitle }]);
     setName("");
+    setJobTitle("");
   }
 
   // Components
