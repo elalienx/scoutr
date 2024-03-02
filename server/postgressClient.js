@@ -1,10 +1,12 @@
 // Node modules
-import { Pool } from "pg";
+import pkg from "pg";
 
 // Project files
 import keys from "./keys.js";
 import candidates from "./schemas/candidates.js";
 
+// Properties
+const { Pool } = pkg;
 const postgressClient = new Pool({
   user: keys.pgUser,
   host: keys.pgHost,
