@@ -15,6 +15,8 @@ export default function App() {
 
   // Methods
   useEffect(() => {
+    console.log("useEffect()");
+
     fetch(`${endpoint}/all`)
       .then((response) => response.json())
       .then((result) => onSucess(result))
@@ -60,11 +62,11 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1 className="title">👨🏻 Candidates</h1>
+      <h1 className="title">👨🏻 Candidates v2</h1>
       {Items}
       <hr />
       <form className="form" onSubmit={(event) => onSubmit(event)}>
-        <label>Register new car:</label>
+        <label>Register new candidate:</label>
         <input
           type="text"
           placeholder="Eduardo Alvarez"
