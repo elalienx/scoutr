@@ -1,0 +1,20 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "The backend of Scoutr which takes care of scrapping and storing the LinkedIn profiles.",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "express": "4.16.3",
+    "pg": "8.0.3",
+    "cors": "2.8.4",
+    "nodemon": "1.18.3",
+    "body-parser": "*"
+  },
+  "scripts": {
+    "dev": "nodemon",
+    "start": "node index.js"
+  },
+  "author": "Eduardo Alvarez",
+  "license": "ISC"
+}
