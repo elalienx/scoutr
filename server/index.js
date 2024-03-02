@@ -55,12 +55,28 @@ app.get("/candidates/all", async (request, resolve) => {
 // Post data
 app.post("/candidates", async (request, resolve) => {
   // safeguard
-  if (!request.body.candidate) resolve.send({ working: false });
+  if (!request.body.candidate || typeof request.body.candidate !== "object") {
+    resolve.send({ working: false });
+    return;
+  }
 
-  postgressClient.query("INSERT INTO candidates(candidate_name) VALUES($1)", [
-    request.body.candidate,
-  ]);
+  const { candidate_name, candidate_job_title } = request.body.candidate;
 
-  resolve.send({ working: true });
+  if (!candidate_name || !candidate_job_title) {
+    resolve.send({ working: false });
+    return;
+  }
+
+  try {
+    await postgressClient.query(
+      "INSERT INTO candidates(candidate_name, candidate_job_title) VALUES($1, $2)",
+      [candidate_name, candidate_job_title]
+    );
+    resolve.send({ working: true });
+  } catch (error) {
+    console.error("PG ERROR", error);
+    resolve.send({ working: false });
+  }
 });
+
 app.listen(port, () => console.log(`Listening on port ${port}`));

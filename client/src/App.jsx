@@ -8,6 +8,7 @@ export default function App() {
   // Local state
   const [data, setData] = useState([]);
   const [name, setName] = useState("");
+  const [jobTitle, setJobTitle] = useState("");
   const [status, setStatus] = useState(0); // 0 loading, 1 ready, 2 error
 
   // Properties
@@ -37,7 +38,9 @@ export default function App() {
   async function onSubmit(event) {
     event.preventDefault();
 
-    const item = { candidate: name };
+    const item = {
+      candidate: { candidate_name: name, candidate_job_title: jobTitle },
+    };
     const options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -45,14 +48,14 @@ export default function App() {
     };
 
     await fetch(endpoint, options);
-    setData([...data, { candidate_name: name }]);
+    setData([...data, { candidate_name: name, candidate_job_title: jobTitle }]);
     setName("");
   }
 
   // Components
   const Items = data.map((item, index) => (
     <div key={index} className="item">
-      {item.candidate_name}
+      👨🏻 {item.candidate_name}, 💼 {item.candidate_job_title}
     </div>
   ));
 
@@ -73,6 +76,13 @@ export default function App() {
           value={name}
           required
           onChange={(event) => setName(event.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Senior Frontend Developer"
+          value={jobTitle}
+          required
+          onChange={(event) => setJobTitle(event.target.value)}
         />
         <button>Submit</button>
       </form>
