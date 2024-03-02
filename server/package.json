@@ -1,7 +1,7 @@
 {
-  "name": "backend",
+  "name": "server",
   "version": "1.0.0",
-  "description": "The backend of Scoutr which takes care of scrapping and storing the LinkedIn profiles.",
+  "description": "The server of Scoutr which takes care of scrapping and storing the LinkedIn profiles.",
   "main": "index.js",
   "type": "module",
   "dependencies": {
