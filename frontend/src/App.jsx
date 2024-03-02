@@ -16,8 +16,6 @@ export default function App() {
 
   // Methods
   useEffect(() => {
-    console.log("useEffect()");
-
     fetch(`${endpoint}/all`)
       .then((response) => response.json())
       .then((result) => onSucess(result))
@@ -25,13 +23,11 @@ export default function App() {
   }, []);
 
   function onSucess(result) {
-    console.log("onSucess() result", result);
     setData(result.rows);
     setStatus(1);
   }
 
   function onFailure(error) {
-    console.error("onFailure() error", error);
     setStatus(2);
   }
 
@@ -66,7 +62,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1 className="title">Candidates 10</h1>
+      <h1 className="title">Candidates 12</h1>
       {Items}
       <hr />
       <form className="form" onSubmit={(event) => onSubmit(event)}>
