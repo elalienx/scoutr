@@ -22,19 +22,20 @@ export default function App() {
   }, []);
 
   function onSucess(result) {
+    console.log("onSucess() result", result);
     setData(result.rows);
     setStatus(1);
   }
 
   function onFailure(error) {
-    console.error(error);
+    console.error("onFailure() error", error);
     setStatus(2);
   }
 
   async function onSubmit(event) {
     event.preventDefault();
 
-    const item = { value: name };
+    const item = { candidate: name };
     const options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },

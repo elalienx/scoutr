@@ -54,10 +54,10 @@ app.get("/candidates/all", async (request, resolve) => {
 // Post data
 app.post("/candidates", async (request, resolve) => {
   // safeguard
-  if (!request.body.value) resolve.send({ working: false });
+  if (!request.body.candidate) resolve.send({ working: false });
 
   postgressClient.query("INSERT INTO candidates(candidate_name) VALUES($1)", [
-    request.body.value,
+    request.body.candidate,
   ]);
 
   resolve.send({ working: true });
