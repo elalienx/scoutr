@@ -3,7 +3,7 @@ import pkg from "pg";
 
 // Project files
 import keys from "./keys.js";
-import candidates from "./schemas/candidates.js";
+import candidates from "./schema/candidates.js";
 
 // Properties
 const { Pool } = pkg;

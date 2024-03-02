@@ -66,7 +66,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1 className="title">Candidates 9</h1>
+      <h1 className="title">Candidates 10</h1>
       {Items}
       <hr />
       <form className="form" onSubmit={(event) => onSubmit(event)}>
