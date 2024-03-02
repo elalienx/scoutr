@@ -44,14 +44,14 @@ app.use(cors());
 app.use(bodyParser.json());
 app.get("/", (request, resolve) => resolve.send("Hi"));
 
-// Get values
+// Get data
 app.get("/candidates/all", async (request, resolve) => {
-  const values = await postgressClient.query("SELECT * FROM values");
+  const data = await postgressClient.query("SELECT * FROM candidates");
 
-  resolve.send(values);
+  resolve.send(data);
 });
 
-// Post values
+// Post data
 app.post("/candidates", async (request, resolve) => {
   // safeguard
   if (!request.body.value) resolve.send({ working: false });
