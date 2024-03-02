@@ -56,7 +56,7 @@ export default function App() {
   // Components
   const Items = data.map((item, index) => (
     <div key={index} className="item">
-      👨🏻 {item.candidate_name}, 💼 {item.candidate_job_title}
+      🧑 {item.candidate_name}, 💼 {item.candidate_job_title}
     </div>
   ));
 
@@ -66,7 +66,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1 className="title">👨🏻 Candidates v6</h1>
+      <h1 className="title">Candidates 9</h1>
       {Items}
       <hr />
       <form className="form" onSubmit={(event) => onSubmit(event)}>
