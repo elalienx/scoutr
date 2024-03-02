@@ -16,7 +16,7 @@ services:
       - "80:80"
   api:
     build:
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
       context: "./server"
     volumes:
       - /app/node_modules
