@@ -15,7 +15,9 @@ const postgressClient = new Pool({
   port: keys.pgPort,
 });
 
-postgressClient.on("connect", createClient(client));
+postgressClient.on("connect", () => {
+  createClient(postgressClient);
+});
 
 // Methods
 function createClient(client) {
