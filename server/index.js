@@ -2,13 +2,12 @@
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
-import pkg from "pg";
+import { Pool } from "pg";
 
 // Project files
 import keys from "./keys.js";
 
 // Properties
-const { Pool } = pkg;
 const port = 5000;
 const app = express();
 const postgressClient = new Pool({
@@ -18,7 +17,7 @@ const postgressClient = new Pool({
   password: keys.pgPassword,
   port: keys.pgPort,
 });
-const tableCandidateColumns = [
+const tableCandidate = [
   "id SERIAL PRIMARY KEY",
   "project_id INT",
   "date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
@@ -37,22 +36,20 @@ const tableCandidateColumns = [
 
 postgressClient.on("connect", (client) => {
   client
-    .query(`CREATE TABLE IF NOT EXISTS candidates (${tableCandidateColumns})`)
+    .query(`CREATE TABLE IF NOT EXISTS candidates (${tableCandidate})`)
     .catch((error) => console.log("PG ERROR", error));
 });
 
 app.use(cors());
 app.use(bodyParser.json());
-app.get("/", (request, resolve) => resolve.send("Hi"));
 
-// Get data
+// Endpoints
+app.get("/", (request, resolve) => resolve.send("Hi"));
 app.get("/candidates/all", async (request, resolve) => {
   const data = await postgressClient.query("SELECT * FROM candidates");
 
   resolve.send(data);
 });
-
-// Post data
 app.post("/candidates", async (request, resolve) => {
   // safeguard
   if (!request.body.candidate || typeof request.body.candidate !== "object") {
@@ -79,4 +76,5 @@ app.post("/candidates", async (request, resolve) => {
   }
 });
 
+// Start the server
 app.listen(port, () => console.log(`Listening on port ${port}`));
