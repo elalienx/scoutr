@@ -1,5 +1,5 @@
 const candidates = [
-  "id SERIAL PRIMARY KEY",
+  "id SERIAL",
   "project_id INT",
   "date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
   "linked_in_url VARCHAR(255)",
