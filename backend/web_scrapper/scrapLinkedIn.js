@@ -2,12 +2,19 @@
 import puppeteer from "puppeteer";
 
 export default async function scrapLinkedIn(url) {
-  console.log("scrapLinkedIn(url) v9 url", url);
+  console.log("scrapLinkedIn(url) 14-headless-new url", url);
 
-  const browser = await puppeteer.launch({ headless: "false" });
+  console.log("Launching Puppeteer...");
+  const browser = await puppeteer.launch({ headless: "new" });
+  console.log("Puppeteer launched successfully!");
+
   const page = await browser.newPage();
 
   await page.goto(url);
+
+  const htmlContent = await page.content();
+  console.log("Puppeteer htmlContent:");
+  console.log(htmlContent);
 
   // Wait for the "Sign in to view full profile" modal to know that the profile loaded
   await page.waitForSelector(".contextual-sign-in-modal__screen"); // Wait for the content to load
