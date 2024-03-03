@@ -2,8 +2,9 @@
 import puppeteer from "puppeteer";
 
 export default async function scrapLinkedIn(url) {
-  const mode = { headless: "new" };
-  const browser = await puppeteer.launch(mode);
+  console.log("scrapLinkedIn(url) v3 url", url);
+
+  const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
 
   await page.goto(url);

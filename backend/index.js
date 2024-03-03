@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 // Endpoints
 app.get("/candidates/all", (req, res) => getCandidates(res, postgressClient));
 app.post("/candidates", (req, res) => postCandidate(req, res, postgressClient));
-app.post("parse_links", (req, res) => postParseLinks(req, res));
+app.post("/parse_links", (req, res) => postParseLinks(req, res));
 
 // Start server
 app.listen(port, () => console.log(`Listening on port ${port}`));

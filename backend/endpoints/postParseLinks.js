@@ -1,6 +1,12 @@
-export default async function postCandidate(request, resolve) {
+// Project files
+import scrapLinkedIn from "../web_scrapper/scrapLinkedIn.js";
+
+export default async function postParseLinks(request, resolve) {
+  console.log("postParseLinks() request.body v6", request.body);
+
   // safeguard
-  if (!request.body.links !== "object") {
+  if (!request.body.links || !Array.isArray(request.body.links)) {
+    console.warn("postParseLinks() safeguard has been triggered");
     resolve.send({ working: false });
     return;
   }
@@ -8,10 +14,8 @@ export default async function postCandidate(request, resolve) {
   const data = request.body.links;
   const result = [];
 
-  console.log("postCandidate() links from the frontend", data);
-
   for (const url of data) {
-    const profile = await scrapper(url);
+    const profile = await scrapLinkedIn(url);
 
     result.push(profile);
   }

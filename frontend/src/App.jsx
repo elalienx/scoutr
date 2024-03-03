@@ -7,16 +7,19 @@ import "./styles/style.css";
 export default function App() {
   // Local state
   const [data, setData] = useState([]);
-  const [name, setName] = useState("");
-  const [jobTitle, setJobTitle] = useState("");
+  const [name, setName] = useState("Alexia Alvarez");
+  const [jobTitle, setJobTitle] = useState("Architect");
+  const [links, setLinks] = useState(
+    "https://www.linkedin.com/in/eduardo-alvarez-nowak/"
+  );
   const [status, setStatus] = useState(0); // 0 loading, 1 ready, 2 error
 
   // Properties
-  const endpoint = "/api/candidates"; // 🔔 IMPORTANT: We will use nginx to redirect it to the proper URL
+  const endpoint = "/api"; // 🔔 IMPORTANT: We will use nginx to redirect it to the proper URL
 
   // Methods
   useEffect(() => {
-    fetch(`${endpoint}/all`)
+    fetch(endpoint + "/candidates/all")
       .then((response) => response.json())
       .then((result) => onSucess(result))
       .catch((error) => onFailure(error));
@@ -31,7 +34,7 @@ export default function App() {
     setStatus(2);
   }
 
-  async function onSubmit(event) {
+  async function onSubmitCandidate(event) {
     event.preventDefault();
 
     const item = {
@@ -43,10 +46,29 @@ export default function App() {
       body: JSON.stringify(item),
     };
 
-    await fetch(endpoint, options);
+    console.log("onSubmitCandidate() options", options);
+    await fetch(endpoint + "/candidates", options);
     setData([...data, { candidate_name: name, candidate_job_title: jobTitle }]);
     setName("");
     setJobTitle("");
+  }
+
+  async function onSubmitLinks(event) {
+    event.preventDefault();
+
+    const textAreaToArray = links.split("\n");
+    const item = {
+      links: textAreaToArray,
+    };
+    const options = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(item),
+    };
+
+    console.log("onSubmitLinks() options", options);
+    await fetch(endpoint + "/parse_links", options);
+    setLinks("");
   }
 
   // Components
@@ -62,10 +84,12 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1 className="title">Candidates 12</h1>
+      <h1 className="title">Candidates 13</h1>
       {Items}
       <hr />
-      <form className="form" onSubmit={(event) => onSubmit(event)}>
+
+      {/* Form add candidate */}
+      <form className="form" onSubmit={(event) => onSubmitCandidate(event)}>
         <label>Register new candidate:</label>
         <input
           type="text"
@@ -81,7 +105,23 @@ export default function App() {
           required
           onChange={(event) => setJobTitle(event.target.value)}
         />
-        <button>Submit</button>
+        <button>Submit candidate</button>
+      </form>
+      <hr />
+
+      {/* Form parse links */}
+      <form className="form" onSubmit={(event) => onSubmitLinks(event)}>
+        <label>Paste LinkedIn links here:</label>
+        <br />
+        <textarea
+          cols={50}
+          rows={10}
+          value={links}
+          required
+          onChange={(event) => setLinks(event.target.value)}
+        />
+        <br />
+        <button>Submit links</button>
       </form>
     </div>
   );
