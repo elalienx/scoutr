@@ -2,8 +2,6 @@
 import scrapLinkedIn from "../web_scrapper/scrapLinkedIn.js";
 
 export default async function postParseLinks(request, resolve) {
-  console.log("postParseLinks() request.body v6", request.body);
-
   // safeguard
   if (!request.body.links || !Array.isArray(request.body.links)) {
     console.warn("postParseLinks() safeguard has been triggered");

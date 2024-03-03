@@ -2,14 +2,14 @@
 import puppeteer from "puppeteer";
 
 export default async function scrapLinkedIn(url) {
-  console.log("scrapLinkedIn(url) v3 url", url);
+  console.log("scrapLinkedIn(url) v9 url", url);
 
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({ headless: "false" });
   const page = await browser.newPage();
 
   await page.goto(url);
 
-  // Wait for the "Sign in to view full profile" modal and press the "Sing in" button
+  // Wait for the "Sign in to view full profile" modal to know that the profile loaded
   await page.waitForSelector(".contextual-sign-in-modal__screen"); // Wait for the content to load
 
   // Extract and print the text of article titles

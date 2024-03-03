@@ -46,7 +46,6 @@ export default function App() {
       body: JSON.stringify(item),
     };
 
-    console.log("onSubmitCandidate() options", options);
     await fetch(endpoint + "/candidates", options);
     setData([...data, { candidate_name: name, candidate_job_title: jobTitle }]);
     setName("");
@@ -66,7 +65,6 @@ export default function App() {
       body: JSON.stringify(item),
     };
 
-    console.log("onSubmitLinks() options", options);
     await fetch(endpoint + "/parse_links", options);
     setLinks("");
   }
