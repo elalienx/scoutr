@@ -4,7 +4,7 @@
   "description": "Your LinkedIn Headhunter Companion",
   "main": "src/index.js",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,11 @@
     "url": "https://github.com/elalienx/scoutr/issues"
   },
   "homepage": "https://github.com/elalienx/scoutr#readme",
-  "dependencies": {
-    "nodemon": "^3.1.0"
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.3"
   }
 }
