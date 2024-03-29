@@ -1,4 +1,4 @@
-const value: number = 5;
+const value: number = 3;
 
 export default function sumScoutr(value: number): string {
   // safeguard
