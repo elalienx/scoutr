@@ -1,4 +1,4 @@
-const result = sumScoutr(6);
+const value: number = 5;
 
 export default function sumScoutr(value: number): string {
   const summedValue = value + 100;
@@ -6,4 +6,4 @@ export default function sumScoutr(value: number): string {
   return `Scoutr Version ${summedValue}`;
 }
 
-console.log(result);
+console.log(sumScoutr(value));
