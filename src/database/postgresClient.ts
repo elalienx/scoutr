@@ -1,12 +1,11 @@
 // Node modules
-import pkg from "pg";
+import { Client } from "pg";
 
 // Project files
 import Credentials from "../types/DatabaseCredentials";
-import initializeTables from "./initializeTables";
+import createTables from "./createTables";
 
-export default async function postgresClient(credentials: Credentials) {
-  const { Client } = pkg;
+export default async function postgresClient(credentials: Credentials): Promise<Client> {
   const client = new Client(credentials);
   const messages = {
     success: `Posgress server started on port ${credentials.port}`,
@@ -18,7 +17,7 @@ export default async function postgresClient(credentials: Credentials) {
 
   try {
     await client.connect();
-    await initializeTables(client);
+    await createTables(client);
 
     console.info(messages.success);
   } catch (error) {

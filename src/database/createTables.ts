@@ -6,7 +6,7 @@ import { assignments } from "../schema/assignments";
 import { candidates } from "../schema/candidates";
 import { errorLogs } from "../schema/errorLogs";
 
-export default async function initializeTables(database: Client) {
+export default async function createTables(database: Client): Promise<void> {
   const message = "Postgres initialized tables";
 
   try {
