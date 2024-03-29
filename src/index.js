@@ -1,1 +1,1 @@
-console.log("Scoutr");
+console.log("Scoutr V2");

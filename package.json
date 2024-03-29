@@ -4,7 +4,7 @@
   "description": "Your LinkedIn Headhunter Companion",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/elalienx/scoutr/issues"
   },
-  "homepage": "https://github.com/elalienx/scoutr#readme"
+  "homepage": "https://github.com/elalienx/scoutr#readme",
+  "dependencies": {
+    "nodemon": "^3.1.0"
+  }
 }
