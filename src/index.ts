@@ -7,4 +7,4 @@ import { credentials } from "./database/credentials";
 // Properties
 const client = initializePool(credentials);
 
-console.log("Scoutr V2");
+console.log("Scoutr V3");
