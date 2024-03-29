@@ -5,7 +5,7 @@ import pkg from "pg";
 import Credentials from "../types/DatabaseCredentials";
 import initializeTables from "./initializeTables";
 
-export default async function initializePool(credentials: Credentials) {
+export default async function postgresClient(credentials: Credentials) {
   const { Client } = pkg;
   const client = new Client(credentials);
   const messages = {

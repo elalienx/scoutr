@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/elalienx/scoutr#readme",
   "devDependencies": {
+    "@types/express": "^4.17.21",
     "@types/node": "^20.11.30",
     "@types/pg": "^8.11.4",
     "@vitest/coverage-v8": "^1.4.0",
@@ -28,6 +29,7 @@
     "vitest": "^1.4.0"
   },
   "dependencies": {
+    "express": "^4.19.2",
     "pg": "^8.11.3"
   }
 }
