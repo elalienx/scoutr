@@ -2,7 +2,8 @@
 import { Request, Response } from "express";
 import { Client } from "pg";
 
-export default async function postCandidate(candidate, response, database) {
+export default async function postCandidate(request: Request, response: Response, database: Client) {
+  const candidate = request.body;
   const values = [
     candidate.assignment_id,
     candidate.linked_in_url,
