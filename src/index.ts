@@ -1,3 +1,7 @@
-const message: string = "Scoutr V4";
+export default function sumScoutr(value: number): string {
+  const summedValue = value + 100;
 
-console.log(message);
+  return `Scoutr Version ${summedValue}`;
+}
+
+console.log(sumScoutr(2));
