@@ -1,5 +1,5 @@
 // Node modules
-import { test, expect } from "vitest";
+import { expect, test } from "vitest";
 
 // Project files
 import sumScoutr from "./index";

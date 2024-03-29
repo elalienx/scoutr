@@ -1,5 +1,5 @@
 // Properties
-const value: number = 4;
+const value: number = 3;
 
 // Methods
 export default function sumScoutr(value: number): string {
