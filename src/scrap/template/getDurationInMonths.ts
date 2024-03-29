@@ -1,4 +1,4 @@
-export default function getDurationInMonths(durationInWords) {
+export default function getDurationInMonths(durationInWords: string): number {
   // safeguard
   if (durationInWords === "") return 0;
 

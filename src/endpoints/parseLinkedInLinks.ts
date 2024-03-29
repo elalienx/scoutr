@@ -7,7 +7,8 @@ import getPage from "../scrap/getPage";
 import templateLinkedIn from "../scrap/templateLinkedIn";
 
 export default async function parseLinkedInLinks(request: Request, response: Response, database: Client) {
-  const { links } = request.params;
+  const { links } = request.body;
+  console.log("parseLinkedInLinks() links", links);
 
   try {
     // extract
