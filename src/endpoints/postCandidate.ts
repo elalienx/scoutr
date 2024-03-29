@@ -1,3 +1,7 @@
+// Node modules
+import { Request, Response } from "express";
+import { Client } from "pg";
+
 export default async function postCandidate(candidate, response, database) {
   const values = [
     candidate.assignment_id,

@@ -5,7 +5,7 @@ import { Client } from "pg";
 import Credentials from "../types/DatabaseCredentials";
 import createTables from "./createTables";
 
-export default async function postgresClient(credentials: Credentials): Promise<Client> {
+export default async function postgresClient(credentials: Credentials) {
   const client = new Client(credentials);
   const messages = {
     success: `Posgress server started on port ${credentials.port}`,
