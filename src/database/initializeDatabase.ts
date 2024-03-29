@@ -3,6 +3,7 @@ import pkg from "pg";
 
 // Project files
 import Credentials from "../types/DatabaseCredentials";
+import initializeTables from "./initializeTables";
 
 export default async function initializePool(credentials: Credentials) {
   const { Client } = pkg;
@@ -17,6 +18,7 @@ export default async function initializePool(credentials: Credentials) {
 
   try {
     await client.connect();
+    await initializeTables(client);
 
     console.info(messages.success);
   } catch (error) {
