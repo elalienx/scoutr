@@ -1,14 +1,10 @@
+// Node modules
+import initializePool from "./database/initializeDatabase";
+
+// Project files
+import { credentials } from "./database/credentials";
+
 // Properties
-const value: number = 3;
+const client = initializePool(credentials);
 
-// Methods
-export default function sumScoutr(value: number): string {
-  // safeguard
-  if (value <= 0) return "Such a looser!";
-
-  const summedValue = value + 100;
-
-  return `Scoutr Version ${summedValue}`;
-}
-
-console.log(sumScoutr(value));
+console.log("Scoutr V2");

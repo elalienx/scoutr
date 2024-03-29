@@ -1,15 +1,12 @@
 // Node modules
-import { Pool } from "pg";
+import pkg from "pg";
 
 // Project files
 import Credentials from "../types/DatabaseCredentials";
 
-export default async function initializePool(
-  pool: Pool,
-  credentials: Credentials
-) {
-  // @ts-ignore
-  const postgress = new pool(credentials);
+export default async function initializePool(credentials: Credentials) {
+  const { Client } = pkg;
+  const client = new Client(credentials);
   const messages = {
     success: `Posgress server started on port ${credentials.port}`,
     hostError: `Error: Ensure your environment has a Postgres server. If using Docker, verify that the host called ${credentials.host} matches the Docker container name of the database`,
@@ -19,7 +16,7 @@ export default async function initializePool(
   };
 
   try {
-    await postgress.connect();
+    await client.connect();
 
     console.info(messages.success);
   } catch (error) {
@@ -31,5 +28,5 @@ export default async function initializePool(
     throw new Error(error);
   }
 
-  return postgress;
+  return client;
 }
