@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "name": "spike postgres",
+  "name": "Scoutr",
   "type": "collection",
   "ignore": [
     "node_modules",

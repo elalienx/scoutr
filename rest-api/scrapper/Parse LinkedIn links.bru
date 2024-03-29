@@ -1,0 +1,22 @@
+meta {
+  name: Parse LinkedIn links
+  type: http
+  seq: 1
+}
+
+get {
+  url: parse_linked_in_links
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "links": [
+      "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
+      "https://www.linkedin.com/in/sri-lalitha-jeevanige-35520a61/",
+      "https://www.linkedin.com/in/abgargulo/",
+      "http://www.abcdefghijklmnopqrstuvwxyz.com"
+    ]
+  }
+}
