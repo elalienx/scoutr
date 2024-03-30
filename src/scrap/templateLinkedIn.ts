@@ -2,9 +2,9 @@
 import * as cheerio from "cheerio";
 
 // Project files
-import getText from "./template/getText";
-import getImage from "./template/getImage";
-import getDurationInMonths from "./template/getDurationInMonths";
+import getText from "./template-linked-in/getText";
+import getImage from "./template-linked-in/getImage";
+import getDurationInMonths from "./template-linked-in/getDurationInMonths";
 
 export default function templateLinkedIn(page: string): object {
   const document = cheerio.load(page);
