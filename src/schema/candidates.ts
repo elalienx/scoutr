@@ -1,4 +1,4 @@
-export const candidates = `CREATE TABLE IF NOT EXISTS candidates(
+export const candidates: string = `CREATE TABLE IF NOT EXISTS candidates(
     id SERIAL PRIMARY KEY,
     assignment_id INTEGER REFERENCES assignments(id),
     date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

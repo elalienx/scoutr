@@ -1,4 +1,4 @@
-export const assignments = `CREATE TABLE IF NOT EXISTS assignments(
+export const assignments: string = `CREATE TABLE IF NOT EXISTS assignments(
     id SERIAL PRIMARY KEY, 
     date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     assignment_name VARCHAR(50),
