@@ -10,7 +10,7 @@ import getAssignments from "./endpoints/getAssignments";
 import postAssignment from "./endpoints/postAssignment";
 import postCandidate from "./endpoints/postCandidate";
 import getCandidatesByAssignmentId from "./endpoints/getCandidatesByAssignmentId";
-import parseLinkedInLinks from "./endpoints/parseLinkedInLinks";
+import parseLinks from "./endpoints/parseLinks";
 
 export default async function initializeServer(_port: number) {
   // Properties
@@ -27,7 +27,7 @@ export default async function initializeServer(_port: number) {
   app.post("/assignments", (request, response) => postAssignment(request, response, client));
   app.get("/candidates/:assignment_id", (request, response) => getCandidatesByAssignmentId(request, response, client));
   app.post("/candidates", (request, response) => postCandidate(request, response, client));
-  app.get("/parse_linked_in_links", (request, response) => parseLinkedInLinks(request, response, client));
+  app.get("/parse_links/:assignment_id", (request, response) => parseLinks(request, response, client));
 }
 
 initializeServer(8000);

@@ -5,7 +5,19 @@ meta {
 }
 
 get {
-  url: {{base_url}}/candidates/2
+  url: {{base_url}}/candidates/1
   body: none
   auth: none
+}
+
+docs {
+  # Filter by Assignment id
+  
+  ## Variables:
+  `assignmnent_id:number`: The id of the assigment to obtain the candidates.
+  
+  ## Example:
+  - Table `assigments` has 3 assigments with id's 1, 2, 3
+  - Table `candidates` has 10 candidates 5 with id 1.
+  - Then this appi with a `/1` at the end will return those 5 candidates.
 }

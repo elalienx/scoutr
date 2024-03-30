@@ -1,0 +1,31 @@
+meta {
+  name: Parse links
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/parse_links/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "links": [
+      "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
+      "https://www.linkedin.com/in/sri-lalitha-jeevanige-35520a61/",
+      "https://www.linkedin.com/in/abgargulo/"
+    ]
+  }
+}
+
+docs {
+  # Parse LinkedIn links
+  
+  ## Variables:
+  `assignmnent_id:number`: The id of the assigment to store the parsed candidates.
+  
+  ## Example:
+  - This appi with a `/1` at the end will store the candidates in the `candidates` table and then connect them to the assignment with `id` 1. 
+}
