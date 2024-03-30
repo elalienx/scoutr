@@ -20,10 +20,11 @@ export default async function parseLinkedInLinks(request: Request, response: Res
     company_duration_in_months,
     company_image_url
   ) 
-  VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`;
+  VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+  RETURNING *
+  `;
 
   async function ETL(url: string) {
-    console.log("1 url", url);
     // extract
     const page: string = await getPage(url);
 
@@ -32,13 +33,10 @@ export default async function parseLinkedInLinks(request: Request, response: Res
 
     // load (store)
     const candidateToArray = Object.keys(candidate).map((key) => candidate[key]);
-
     const data = [assignment_id, url, ...candidateToArray];
-    console.log("2 data", data);
+    const { rows } = await database.query(query, data);
 
-    const result = await database.query(query, data);
-
-    return result;
+    return rows[0];
   }
 
   try {
