@@ -8,7 +8,7 @@ test("", () => {
   const result = "";
 
   // Act
-  const test = () => "";
+  const test = "";
 
   // Assert
   expect(test).toBe(result);

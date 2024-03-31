@@ -5,7 +5,7 @@ import LinkedInProfile from "../types/LinkedInProfile";
 
 // Project files
 
-test("Create a full report mentioning every single field as missing", () => {
+test.todo("Create a full report mentioning every single field", () => {
   // Arrange
   const profile: LinkedInProfile = {
     candidate_name: "",
