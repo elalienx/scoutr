@@ -18,10 +18,10 @@ export default async function parseLinkedInLinks(request: Request, response: Res
 
     // Transform
     const profile = pageToProfile(page);
-    const candidateRow = profileToCandidate(profile, { assignment_id, url });
+    const candidate = profileToCandidate(profile, { assignment_id, url });
 
     // Load
-    const { rows } = await database.query(insertCandidate, candidateRow as unknown[]);
+    const { rows } = await database.query(insertCandidate, candidate as unknown[]);
 
     return rows[0];
   }
