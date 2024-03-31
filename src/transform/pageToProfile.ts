@@ -2,9 +2,9 @@
 import * as cheerio from "cheerio";
 
 // Project files
-import getText from "./getText";
-import getImage from "./getImage";
-import getDurationInMonths from "./getDurationInMonths";
+import getText from "./helpers/getText";
+import getImage from "./helpers/getImage";
+import getDurationInMonths from "./helpers/getDurationInMonths";
 
 export default function transformProfile(page: string): object {
   const document = cheerio.load(page);
