@@ -27,7 +27,7 @@ export default async function parseLinkedInLinks(request: Request, response: Res
   }
 
   try {
-    const rows = await links.map((item: string) => ETLProcess(item));
+    const rows = await Promise.all(links.map((link: string) => ETLProcess(link)));
 
     response.status(200).send(rows);
   } catch (error) {
