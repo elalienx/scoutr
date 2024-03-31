@@ -1,7 +1,7 @@
 // Node modules
 import { webkit } from "playwright";
 
-export default async function extractPage(url: string) {
+export default async function extractPage(url: string): Promise<string> {
   const browser = await webkit.launch();
   const page = await browser.newPage();
 

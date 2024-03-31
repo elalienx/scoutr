@@ -6,6 +6,7 @@ import { Client } from "pg";
 import extractPage from "../extract/extractPage";
 import pageToProfile from "../transform/pageToProfile";
 import { insertCandidate } from "../sql-queries/insertCandidate";
+import profileToCandidate from "../transform/profileToCandidate";
 
 export default async function parseLinkedInLinks(request: Request, response: Response, database: Client) {
   const { assignment_id } = request.params;
@@ -13,15 +14,14 @@ export default async function parseLinkedInLinks(request: Request, response: Res
 
   async function ETLProcess(url: string) {
     // Extract
-    const page: string = await extractPage(url);
+    const page = await extractPage(url);
 
     // Transform
-    const profile: object = pageToProfile(page);
+    const profile = pageToProfile(page);
+    const candidateRow = profileToCandidate(profile, { assignment_id, url });
 
     // Load
-    const candidateToArray = Object.keys(profile).map((key) => profile[key]);
-    const data = [assignment_id, url, ...candidateToArray];
-    const { rows } = await database.query(insertCandidate, data);
+    const { rows } = await database.query(insertCandidate, candidateRow as unknown[]);
 
     return rows[0];
   }

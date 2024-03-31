@@ -4,12 +4,12 @@ import LinkedInProfile from "../types/LinkedInProfile";
 
 interface missingKeys {
   url: string;
-  assignment_id: number;
+  assignment_id: string;
 }
 
 export default function profileToCandidate(profile: LinkedInProfile, missingKeys: missingKeys): CandidateRow {
   return [
-    missingKeys.assignment_id,
+    Number(missingKeys.assignment_id),
     missingKeys.url,
     profile.candidate_name,
     profile.candidate_job_title,
