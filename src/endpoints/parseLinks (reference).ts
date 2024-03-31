@@ -4,9 +4,9 @@ import { Request, Response } from "express";
 import { Client } from "pg";
 
 // Project files
-import extractPage from "../scrap/getPage";
-import transformProfile from "../scrap/templateLinkedIn";
-import { insertCandidate } from "../schema/insertCandidate";
+import extractPage from "../extract/extractPage";
+import transformProfile from "../transform/pageToProfile";
+import { insertCandidate } from "../sql-queries/insertCandidate";
 
 export default async function parseLinkedInLinks(request: Request, response: Response, database: Client) {
   const { assignment_id } = request.params;

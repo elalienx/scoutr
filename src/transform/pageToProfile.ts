@@ -2,11 +2,11 @@
 import * as cheerio from "cheerio";
 
 // Project files
-import getText from "./template-linked-in/getText";
-import getImage from "./template-linked-in/getImage";
-import getDurationInMonths from "./template-linked-in/getDurationInMonths";
+import getText from "./getText";
+import getImage from "./getImage";
+import getDurationInMonths from "./getDurationInMonths";
 
-export default function templateLinkedIn(page: string): object {
+export default function transformProfile(page: string): object {
   const document = cheerio.load(page);
   const company = ".top-card-layout__entity-info--right-column";
   const duration = getText(document, "ul.experience__list li .date-range span");

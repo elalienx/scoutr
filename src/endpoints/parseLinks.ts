@@ -3,9 +3,9 @@ import { Request, Response } from "express";
 import { Client } from "pg";
 
 // Project files
-import extractPage from "../scrap/getPage";
-import transformProfile from "../scrap/templateLinkedIn";
-import { insertCandidate } from "../schema/insertCandidate";
+import extractPage from "../extract/extractPage";
+import pageToProfile from "../transform/pageToProfile";
+import { insertCandidate } from "../sql-queries/insertCandidate";
 
 export default async function parseLinkedInLinks(request: Request, response: Response, database: Client) {
   const { assignment_id } = request.params;
@@ -16,7 +16,7 @@ export default async function parseLinkedInLinks(request: Request, response: Res
     const page: string = await extractPage(url);
 
     // Transform
-    const profile: object = transformProfile(page);
+    const profile: object = pageToProfile(page);
 
     // Load
     const candidateToArray = Object.keys(profile).map((key) => profile[key]);
