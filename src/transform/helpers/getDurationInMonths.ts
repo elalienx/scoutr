@@ -5,7 +5,6 @@ export default function getDurationInMonths(durationInWords: string): number {
   const monthsMatch: RegExpMatchArray = durationInWords.match(monthsRegex);
   let years: number = 0;
   let months: number = 0;
-  console.log(`text: @${durationInWords}@`, "years:", years, "months:", months);
 
   if (yearsMatch) years = parseInt(yearsMatch[1]);
   if (monthsMatch) months = parseInt(monthsMatch[1]);
