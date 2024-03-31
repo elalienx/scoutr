@@ -29,7 +29,7 @@ test("Returns all fields on a complete profile", () => {
   expect(test).toEqual(result);
 });
 
-test("Returns a empty string for candidate image if profile has private picture", () => {
+test("Returns an empty string for candidate image if profile has private picture", () => {
   // Arrange
   const page = profile2;
   const result = {
@@ -49,7 +49,7 @@ test("Returns a empty string for candidate image if profile has private picture"
   expect(test).toEqual(result);
 });
 
-test("Returns empty string for company image if candidate has a job on a company withouth logo", () => {
+test("Returns an empty string for company image if candidate has a job in a company without a logo", () => {
   // Arrange
   const page = profile3;
   const result: LinkedInProfile = {

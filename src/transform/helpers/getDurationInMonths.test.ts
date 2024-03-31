@@ -4,7 +4,7 @@ import { expect, test } from "vitest";
 // Project files
 import getDurationInMonths from "./getDurationInMonths";
 
-test("Returns the correct number of months from LinkedIn job duration  with years and months", () => {
+test("Returns the correct number of months from LinkedIn job duration with years and months", () => {
   // Arrange
   const text = "2 years 9 months";
   const result = 33; // 2 years are 24 months + 9 months = 33
@@ -28,7 +28,7 @@ test("Returns the correct number of months from LinkedIn job duration with only 
   expect(test).toBe(result);
 });
 
-test("Does not crash if pass an empty string", () => {
+test("Does not crash if passed an empty string", () => {
   // Arrange
   const text = "";
   const result = 0;
@@ -40,7 +40,7 @@ test("Does not crash if pass an empty string", () => {
   expect(test).toBe(result);
 });
 
-test("Does not crash if pass an invalid string", () => {
+test("Does not crash if passed an invalid string", () => {
   // Arrange
   const text = "hola";
   const result = 0;

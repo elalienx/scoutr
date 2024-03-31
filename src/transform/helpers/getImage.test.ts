@@ -7,7 +7,7 @@ import getImage from "./getImage";
 import { simpleHTML } from "../test-data/simple-html";
 import { profile2 } from "../test-data/profile2";
 
-test("Returns a valid image URL.", () => {
+test("Returns a valid image URL", () => {
   // Arrange
   const document = CheerioLoad(simpleHTML);
   const selector = ".placeholder";
@@ -20,7 +20,7 @@ test("Returns a valid image URL.", () => {
   expect(test).toBe(result);
 });
 
-test("Does not crash if do not find a image with the given selector", () => {
+test("Does not crash if unable to find an image with the given selector", () => {
   // Arrange
   const document = CheerioLoad(simpleHTML);
   const selector = ".this-selector-does-not-exist";
@@ -33,7 +33,7 @@ test("Does not crash if do not find a image with the given selector", () => {
   expect(test).toBe(result);
 });
 
-test("Does not return LinkedIn placeholders if the profile or company lacks a picture.", () => {
+test("Does not return LinkedIn placeholders if the profile or company lacks a picture", () => {
   // Arrange
   const document = CheerioLoad(profile2);
   const selector = ".top-card__profile-image";
