@@ -1,3 +1,4 @@
+// @ts-nocheck
 // Node modules
 import { Request, Response } from "express";
 import { Client } from "pg";
@@ -17,19 +18,22 @@ export default async function parseLinkedInLinks(request: Request, response: Res
 
     // Transform
     const profile: object = transformProfile(page);
+    const candidate: Candidate = profileToCandidate({ ...profile, url, assignment_id });
+    const report = reportEmptyFields(profile);
+    const simplifiedReport = simplifyReport(report);
 
     // Load
-    const candidateToArray = Object.keys(profile).map((key) => profile[key]);
-    const data = [assignment_id, url, ...candidateToArray];
-    const { rows } = await database.query(insertCandidate, data);
+    const storedCandidate = store(database, candidateQuery, candidate);
+    report && store(database, errorReportQuery, report);
 
-    return rows[0];
+    return { storedCandidate, simplifiedReport };
   }
 
   try {
-    const rows = await links.map((item: string) => ETLProcess(item));
+    const etlProcess = await links.map((item: string) => ETLProcess(item));
+    const result = packageResults(etlProcess);
 
-    response.status(200).send(rows);
+    response.status(200).send(result);
   } catch (error) {
     console.error(error);
     response.sendStatus(500);
