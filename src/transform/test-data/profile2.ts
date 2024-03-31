@@ -1,6 +1,6 @@
 // Note: Disabling Prettier in this file because formatting the HTML causes a mismatch between this and the unformatted HTML brought by the scraper
 // prettier-ignore
-export const profile2 = `<html lang="en"><head>
+export const profile2 :string = `<html lang="en"><head>
 <meta name="pageKey" content="public_profile_v3_desktop">
   
 <meta name="robots" content="max-image-preview:large, noarchive">
