@@ -5,7 +5,7 @@ import { Client } from "pg";
 
 // Project files
 import extractPage from "../extract/extractPage";
-import transformProfile from "../transform/pageToProfile";
+import pageToProfile from "../transform/pageToProfile";
 import { insertCandidate } from "../sql-queries/insertCandidate";
 
 export default async function parseLinkedInLinks(request: Request, response: Response, database: Client) {
@@ -17,7 +17,7 @@ export default async function parseLinkedInLinks(request: Request, response: Res
     const page: string = await extractPage(url);
 
     // Transform
-    const profile: object = transformProfile(page);
+    const profile: object = pageToProfile(page);
     const candidate: Candidate = profileToCandidate({ ...profile, url, assignment_id });
     const report = reportEmptyFields(profile);
     const simplifiedReport = simplifyReport(report);

@@ -8,7 +8,7 @@ export const profile1: string = `<html lang="en"><head>
 
   <meta name="linkedin:pageTag" content="openToProvider">
 <meta name="locale" content="en_US">
-<meta id="config" data-app-version="2.0.2249" data-call-tree-id="AAYTTxuhK26PipkePcVroQ==" data-multiproduct-name="public-profile-frontend" data-service-name="public-profile-frontend" data-browser-id="b8ba4d47-eced-4151-87db-e3c239934445" data-enable-page-view-heartbeat-tracking="" data-page-instance="urn:li:page:public_profile_v3;0Cn5OW0bT0y7Rrcqx0i0FQ==" data-disable-jsbeacon-pagekey-suffix="false" data-member-id="0" data-msafdf-lib="https://static.licdn.com/aero-v1/sc/h/80ndnja80f2uvg4l8sj2su82m" data-logout-url="/uas/logout" data-is-li-sugr-tracking-enabled="" data-should-use-full-url-in-pve-path="true">
+<meta id="config" data-app-version="2.0.2300" data-call-tree-id="AAYU9aHkpyp2xGFYJNDmBg==" data-multiproduct-name="public-profile-frontend" data-service-name="public-profile-frontend" data-browser-id="9305de45-8276-4f48-8e5a-ba739b5c742f" data-enable-page-view-heartbeat-tracking="" data-page-instance="urn:li:page:public_profile_v3;LtYQLrzESoWib+a7E7seQQ==" data-disable-jsbeacon-pagekey-suffix="false" data-member-id="0" data-msafdf-lib="https://static.licdn.com/aero-v1/sc/h/80ndnja80f2uvg4l8sj2su82m" data-logout-url="/uas/logout" data-is-li-sugr-tracking-enabled="" data-should-use-full-url-in-pve-path="true">
 
 <link rel="canonical" href="https://se.linkedin.com/in/eduardo-alvarez-nowak">
 <!----><!---->
@@ -37,7 +37,7 @@ export const profile1: string = `<html lang="en"><head>
 <!---->
 
 <title>Eduardo Alvarez Nowak - Tech Education Team Lead - Novare Potential | LinkedIn</title>
-<link rel="stylesheet" href="https://static.licdn.com/aero-v1/sc/h/1wykur5ipqneukqem4l5gexii">
+<link rel="stylesheet" href="https://static.licdn.com/aero-v1/sc/h/ebcxsc5tx1f21mnlx2w6risv2">
 
 
 
@@ -68,15 +68,41 @@ export const profile1: string = `<html lang="en"><head>
 
 
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+
+
   
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="litmsProfileName" content="public-profile-frontend">
 
-<meta name="ubba" content="https://static.licdn.com/aero-v1/sc/h/b5kvwlt6xpzvqqc66m85xsz6f">
+<meta name="ubba" content="https://static.licdn.com/aero-v1/sc/h/3vm1l0zmab4059n5w37p70wg1">
 
-<meta name="platform" content="https://static.licdn.com/aero-v1/sc/h/c4vwe7qihy7txcksc6giwbzh5">
+<meta name="platform" content="https://static.licdn.com/aero-v1/sc/h/9h6l55jsoldguqam46gqgz4f1">
 <meta name="platform-worker" content="https://static.licdn.com/aero-v1/sc/h/7nirg34a8ey4y2l4rw7xgwxx4">
 
 <meta name="description" content="Tech lover since young because of it's potential as an educational tool. As a professional, I tried to integrate gamification elements in every project that I lead. Favorite novel Contact by Carl Sagan.<br><br>Right now i'm the Tech Education Lead at Novare Potential where I personally teach the Frontend course, oversee the Backend course and help on IT recruitments.<br><br>One of the 20 idea Cup 2019 winners with a project about teaching people to make games, no previous experience required: https://venturecup.ideahunt.io/ideas/eed399fe-d3aa-4906-a226-9416e263ac5b | Learn more about Eduardo Alvarez Nowak’s work experience, education, connections &amp; more by visiting their profile on LinkedIn">
@@ -105,11 +131,11 @@ export const profile1: string = `<html lang="en"><head>
 
 
 <script type="application/ld+json">
-{"@context":"http://schema.org","@graph":[{"@type":"Person","address":{"@type":"PostalAddress","addressLocality":"Greater Stockholm Metropolitan Area","addressCountry":"SE"},"alumniOf":[{"@type":"Organization","name":"KTH Royal Institute of Technology","url":"https://se.linkedin.com/school/kth/","location":"Stockholm, Stockholm County, Sweden","member":{"@type":"OrganizationRole","description":"Moved from being a teaching assistant to a full time teacher in the SDA boot camp. I was in charge of the Web module that expanded from just React to full semantic HTML 5, code CSS 3 to avoid the overhead of using additional frameworks like Bootstrap, and included a basic introduction to deploy the code in the cloud using Firebase.","startDate":"2020-08","endDate":"2021-06"}},{"@type":"Organization","name":"CheVera Producción Sólida","member":{"@type":"OrganizationRole","description":"Used my learning experiences on TC Television to quickly create projects that mix traditional video production projects with social media. Created project proposal for important events and brands like Miss Ecuador and Claro Ecuador, the biggest telecom company in the country.","startDate":"2018-08","endDate":"2019-07"}},{"@type":"Organization","name":"Bu Multimedia","url":"https://ec.linkedin.com/company/bu-multimedia","location":"Guayaquil","member":{"@type":"OrganizationRole","description":"I co-founded Bu Multimedia to create video games as \"below the line\" advertising tools for local brands. We also did digital advertising services for traditional agencies, transitioning to the digital world.","startDate":"2014-01","endDate":"2017-12"}},{"@type":"Organization","name":"TC Television","url":"https://ec.linkedin.com/company/tctelevision","location":"Guayaquil","member":{"@type":"OrganizationRole","description":"I managed a 20+ team composed of community managers, backend developers, designers, content managers, and a staff dedicated to publishing advertorial content on the web and social media. All while also working as the lead frontend developer.","startDate":"2015-04","endDate":"2017-10"}},{"@type":"Organization","name":"Maruri Grey","url":"https://www.linkedin.com/company/maruriecuador","location":"Ecuador","member":{"@type":"OrganizationRole","description":"Worked here as a front-end developer and advertising video game maker, creating corporate websites, web apps, and games for big Ecuadorian brands like Tonisa S.A and governmental authorities like the Municipality of Guayaquil.","startDate":"2011-09","endDate":"2012-03"}},{"@type":"EducationalOrganization","name":"KTH Royal Institute of Technology","url":"https://se.linkedin.com/school/kth/","member":{"@type":"OrganizationRole","startDate":2019,"endDate":2021}},{"@type":"EducationalOrganization","name":"Universidad de Guayaquil","url":"https://ec.linkedin.com/school/universidad-de-guayaquil/","member":{"@type":"OrganizationRole","startDate":2008,"endDate":2012}},{"@type":"EducationalOrganization","name":"IGAD","member":{"@type":"OrganizationRole","startDate":2005,"endDate":2008}}],"awards":["Idea Cup 2019"],"image":{"@type":"ImageObject","contentUrl":"https://media.licdn.com/dms/image/C4E03AQHwKgpnjrXkZA/profile-displayphoto-shrink_200_200/0/1643017689481?e=2147483647&v=beta&t=jU2cTtlQ-Zu8KItC4RnwO_vYqbilIVQf7vZtr4ZPXvI"},"jobTitle":["Tech Education Team Lead"],"name":"Eduardo Alvarez Nowak","sameAs":"https://se.linkedin.com/in/eduardo-alvarez-nowak","url":"https://se.linkedin.com/in/eduardo-alvarez-nowak","memberOf":[],"worksFor":[{"@type":"Organization","name":"Novare Potential","url":"https://se.linkedin.com/company/novare-potential","location":"Stockholm Metropolitan Area","member":{"@type":"OrganizationRole","description":"I'm helping Novare to build an in-house tech education program. We will combine the experience of Novare in consulting and HR to bring soft skills to the candidates with the tech skills I learned during my career as a self-taught developer.\u003Cbr\u003E\u003Cbr\u003EThe current program has a Frotnend developer track and a Backend development track. You can learn about the curricula at https://novare-tech-education.web.app","startDate":"2021-07"}}],"knowsLanguage":[{"@type":"Language","name":"English"},{"@type":"Language","name":"Spanish"}],"disambiguatingDescription":"","interactionStatistic":{"@type":"InteractionCounter","interactionType":"https://schema.org/FollowAction","name":"Follows","userInteractionCount":554},"description":"Tech lover since young because of it's potential as an educational tool. As a professional, I tried to integrate gamification elements in every project that I lead. Favorite novel Contact by Carl Sagan.\u003Cbr\u003E\u003Cbr\u003ERight now i'm the Tech Education Lead at Novare Potential where I personally teach the Frontend course, oversee the Backend course and help on IT recruitments.\u003Cbr\u003E\u003Cbr\u003EOne of the 20 idea Cup 2019 winners with a project about teaching people to make games, no previous experience required: https://venturecup.ideahunt.io/ideas/eed399fe-d3aa-4906-a226-9416e263ac5b"},{"@type":"WebPage","url":"https://se.linkedin.com/in/eduardo-alvarez-nowak","reviewedBy":{"@type":"Person","name":"Eduardo Alvarez Nowak"}}]}
+{"@context":"http://schema.org","@graph":[{"@type":"Person","address":{"@type":"PostalAddress","addressLocality":"Greater Stockholm Metropolitan Area","addressCountry":"SE"},"alumniOf":[{"@type":"Organization","name":"KTH Royal Institute of Technology","url":"https://se.linkedin.com/school/kth/","location":"Stockholm, Stockholm County, Sweden","member":{"@type":"OrganizationRole","description":"Moved from being a teaching assistant to a full time teacher in the SDA boot camp. I was in charge of the Web module that expanded from just React to full semantic HTML 5, code CSS 3 to avoid the overhead of using additional frameworks like Bootstrap, and included a basic introduction to deploy the code in the cloud using Firebase.","startDate":"2020-08","endDate":"2021-06"}},{"@type":"Organization","name":"CheVera Producción Sólida","member":{"@type":"OrganizationRole","description":"Used my learning experiences on TC Television to quickly create projects that mix traditional video production projects with social media. Created project proposal for important events and brands like Miss Ecuador and Claro Ecuador, the biggest telecom company in the country.","startDate":"2018-08","endDate":"2019-07"}},{"@type":"Organization","name":"Bu Multimedia","url":"https://ec.linkedin.com/company/bu-multimedia","location":"Guayaquil","member":{"@type":"OrganizationRole","description":"I co-founded Bu Multimedia to create video games as \"below the line\" advertising tools for local brands. We also did digital advertising services for traditional agencies, transitioning to the digital world.","startDate":"2014-01","endDate":"2017-12"}},{"@type":"Organization","name":"TC Television","url":"https://ec.linkedin.com/company/tctelevision","location":"Guayaquil","member":{"@type":"OrganizationRole","description":"I managed a 20+ team composed of community managers, backend developers, designers, content managers, and a staff dedicated to publishing advertorial content on the web and social media. All while also working as the lead frontend developer.","startDate":"2015-04","endDate":"2017-10"}},{"@type":"Organization","name":"Maruri Grey","url":"https://www.linkedin.com/company/maruriecuador","location":"Ecuador","member":{"@type":"OrganizationRole","description":"Worked here as a front-end developer and advertising video game maker, creating corporate websites, web apps, and games for big Ecuadorian brands like Tonisa S.A and governmental authorities like the Municipality of Guayaquil.","startDate":"2011-09","endDate":"2012-03"}},{"@type":"EducationalOrganization","name":"KTH Royal Institute of Technology","url":"https://se.linkedin.com/school/kth/","member":{"@type":"OrganizationRole","startDate":2019,"endDate":2021}},{"@type":"EducationalOrganization","name":"Universidad de Guayaquil","url":"https://ec.linkedin.com/school/universidad-de-guayaquil/","member":{"@type":"OrganizationRole","startDate":2008,"endDate":2012}},{"@type":"EducationalOrganization","name":"IGAD","member":{"@type":"OrganizationRole","startDate":2005,"endDate":2008}}],"awards":["Idea Cup 2019"],"image":{"@type":"ImageObject","contentUrl":"https://media.licdn.com/dms/image/C4E03AQHwKgpnjrXkZA/profile-displayphoto-shrink_200_200/0/1643017689481?e=2147483647&v=beta&t=jU2cTtlQ-Zu8KItC4RnwO_vYqbilIVQf7vZtr4ZPXvI"},"jobTitle":["Tech Education Team Lead"],"name":"Eduardo Alvarez Nowak","sameAs":"https://se.linkedin.com/in/eduardo-alvarez-nowak","url":"https://se.linkedin.com/in/eduardo-alvarez-nowak","memberOf":[],"worksFor":[{"@type":"Organization","name":"Novare Potential","url":"https://se.linkedin.com/company/novare-potential","location":"Stockholm Metropolitan Area","member":{"@type":"OrganizationRole","description":"I'm helping Novare to build an in-house tech education program. We will combine the experience of Novare in consulting and HR to bring soft skills to the candidates with the tech skills I learned during my career as a self-taught developer.\u003Cbr\u003E\u003Cbr\u003EThe current program has a Frotnend developer track and a Backend development track. You can learn about the curricula at https://novare-tech-education.web.app","startDate":"2021-07"}}],"knowsLanguage":[{"@type":"Language","name":"English"},{"@type":"Language","name":"Spanish"}],"disambiguatingDescription":"","interactionStatistic":{"@type":"InteractionCounter","interactionType":"https://schema.org/FollowAction","name":"Follows","userInteractionCount":564},"description":"Tech lover since young because of it's potential as an educational tool. As a professional, I tried to integrate gamification elements in every project that I lead. Favorite novel Contact by Carl Sagan.\u003Cbr\u003E\u003Cbr\u003ERight now i'm the Tech Education Lead at Novare Potential where I personally teach the Frontend course, oversee the Backend course and help on IT recruitments.\u003Cbr\u003E\u003Cbr\u003EOne of the 20 idea Cup 2019 winners with a project about teaching people to make games, no previous experience required: https://venturecup.ideahunt.io/ideas/eed399fe-d3aa-4906-a226-9416e263ac5b"},{"@type":"WebPage","url":"https://se.linkedin.com/in/eduardo-alvarez-nowak","reviewedBy":{"@type":"Person","name":"Eduardo Alvarez Nowak"}}]}
 </script>
 
 
-<!---->      <script type="text/javascript" src="https://static.licdn.com/aero-v1/sc/h/80ndnja80f2uvg4l8sj2su82m" data-test-id="msafdf"></script><script type="text/javascript" src="https://static.licdn.com/aero-v1/sc/h/b5kvwlt6xpzvqqc66m85xsz6f"></script></head>
+<!---->      <script type="text/javascript" src="https://static.licdn.com/aero-v1/sc/h/80ndnja80f2uvg4l8sj2su82m" data-test-id="msafdf"></script><script type="text/javascript" src="https://static.licdn.com/aero-v1/sc/h/3vm1l0zmab4059n5w37p70wg1"></script></head>
 <body dir="ltr" class="overflow-hidden transition-in">
 <!----><!---->          
 
@@ -169,20 +195,22 @@ Skip to main content
 
 
 
-<nav class="nav pt-1.5 pb-2 flex items-center justify-between relative flex-nowrap mamabear:flex-wrap mamabear:gap-y-1 babybear:flex-wrap babybear:py-1.5
- nav--minified-mobile babybear:flex-wrap" aria-label="Primary">
+<nav class="nav pt-1.5 pb-2 flex items-center justify-between relative flex-nowrap babymamabear:py-1.5
+ babybear:flex-wrap 
+ nav--minified-mobile " aria-label="Primary">
 
-<a href="/?trk=public_profile_nav-header-logo" class="nav__logo-link link-no-visited-state z-1 mr-auto babybear:z-0 babybear:mr-0 babybear:flex-1 hover:no-underline focus:no-underline active:no-underline" data-tracking-control-name="public_profile_nav-header-logo" data-tracking-will-navigate="">
+<a href="/?trk=public_profile_nav-header-logo" class="nav__logo-link link-no-visited-state z-1 mr-auto min-h-[52px] flex items-center babybear:z-0 hover:no-underline focus:no-underline active:no-underline
+   babymamabear:mr-3" data-tracking-control-name="public_profile_nav-header-logo" data-tracking-will-navigate="">
   
       
 
 <span class="sr-only">LinkedIn</span>
-<icon class="nav-logo--inbug flex text-color-brand papabear:hidden mamabear:hidden lazy-loaded" data-svg-class-name="h-[34px] w-[34px] babybear:h-[27px] babybear:w-[27px]" aria-hidden="true" aria-busy="false"><svg xmlns="http://www.w3.org/2000/svg" height="27" width="27" viewBox="0 0 27 27" focusable="false" class="h-[34px] w-[34px] babybear:h-[27px] babybear:w-[27px] lazy-loaded" aria-busy="false">
+<icon class="nav-logo--inbug flex text-color-brand papabear:hidden mamabear:hidden lazy-loaded" data-svg-class-name="h-[34px] w-[34px] babybear:h-[26px] babybear:w-[26px]" aria-hidden="true" aria-busy="false"><svg xmlns="http://www.w3.org/2000/svg" height="27" width="27" viewBox="0 0 27 27" focusable="false" class="h-[34px] w-[34px] babybear:h-[26px] babybear:w-[26px] lazy-loaded" aria-busy="false">
 <g fill="currentColor">
 <path d="M1.91 0h22.363a1.91 1.91 0 011.909 1.91v22.363a1.91 1.91 0 01-1.91 1.909H1.91A1.91 1.91 0 010 24.272V1.91A1.91 1.91 0 011.91 0zm1.908 22.364h3.818V9.818H3.818zM8.182 5.727a2.455 2.455 0 10-4.91 0 2.455 2.455 0 004.91 0zm2.182 4.091v12.546h3.818v-6.077c0-2.037.75-3.332 2.553-3.332 1.3 0 1.81 1.201 1.81 3.332v6.077h3.819v-6.93c0-3.74-.895-5.78-4.667-5.78-1.967 0-3.277.921-3.788 1.946V9.818z" fill="currentColor" fill-rule="evenodd"></path>
 </g>
 </svg></icon>
-<icon class="block text-color-brand w-[84px] h-[21px] papabear:w-[135px] papabear:h-[34px] babybear:hidden lazy-loaded" data-test-id="nav-logo" aria-hidden="true" aria-busy="false"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 84 21" preserveAspectRatio="xMinYMin meet" version="1.1" focusable="false" class="lazy-loaded" aria-busy="false">
+<icon class="block text-color-brand w-[102px] h-[26px] babybear:hidden lazy-loaded" data-test-id="nav-logo" aria-hidden="true" aria-busy="false"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 84 21" preserveAspectRatio="xMinYMin meet" version="1.1" focusable="false" class="lazy-loaded" aria-busy="false">
 <g class="inbug" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 <path d="M19.479,0 L1.583,0 C0.727,0 0,0.677 0,1.511 L0,19.488 C0,20.323 0.477,21 1.333,21 L19.229,21 C20.086,21 21,20.323 21,19.488 L21,1.511 C21,0.677 20.336,0 19.479,0" class="bug-text-color" transform="translate(63.000000, 0.000000)"></path>
 <path d="M82.479,0 L64.583,0 C63.727,0 63,0.677 63,1.511 L63,19.488 C63,20.323 63.477,21 64.333,21 L82.229,21 C83.086,21 84,20.323 84,19.488 L84,1.511 C84,0.677 83.336,0 82.479,0 Z M71,8 L73.827,8 L73.827,9.441 L73.858,9.441 C74.289,8.664 75.562,7.875 77.136,7.875 C80.157,7.875 81,9.479 81,12.45 L81,18 L78,18 L78,12.997 C78,11.667 77.469,10.5 76.227,10.5 C74.719,10.5 74,11.521 74,13.197 L74,18 L71,18 L71,8 Z M66,18 L69,18 L69,8 L66,8 L66,18 Z M69.375,4.5 C69.375,5.536 68.536,6.375 67.5,6.375 C66.464,6.375 65.625,5.536 65.625,4.5 C65.625,3.464 66.464,2.625 67.5,2.625 C68.536,2.625 69.375,3.464 69.375,4.5 Z" class="background" fill="currentColor"></path>
@@ -210,12 +238,12 @@ Skip to main content
 
 <ul class="top-nav-menu flex items-center w-full justify-between pt-1 xs:justify-start xs:w-max xs:pt-0 overflow-x-auto
 xs:after:up-down-divider xs:after:!h-[37px]
- nav__menu order-last xs:order-3">
+ nav__menu order-last ml-auto xs:order-3">
 <li class="">
   
-<a href="https://www.linkedin.com/pulse/topics/home/?trk=public_profile_guest_nav_menu_articles" data-tracking-control-name="public_profile_guest_nav_menu_articles" data-tracking-will-navigate="" class="top-nav-link flex justify-center items-center h-[52px] hover:text-color-text visited:hover:text-color-text hover:no-underline
-w-[64px] xs:w-[48px] sm:w-[64px]
-flex-col xs:mx-0.25 sm:mx-1
+<a href="https://www.linkedin.com/pulse/topics/home/?trk=public_profile_guest_nav_menu_articles" data-tracking-control-name="public_profile_guest_nav_menu_articles" data-tracking-will-navigate="" class="top-nav-link flex justify-center items-center min-h-[52px] hover:text-color-text visited:hover:text-color-text hover:no-underline
+w-8 
+flex-col xs:mx-1
 text-color-text-secondary visited:text-color-text-secondary">
 <icon class="top-nav-link__icon flex h-3 w-3 flex-shrink-0 lazy-loaded" aria-hidden="true" aria-busy="false">
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 17" focusable="false" class="lazy-loaded" aria-busy="false">
@@ -230,9 +258,9 @@ Articles
 </li>
 <li class="">
   
-<a href="https://www.linkedin.com/pub/dir/+/+?trk=public_profile_guest_nav_menu_people" data-tracking-control-name="public_profile_guest_nav_menu_people" data-tracking-will-navigate="" class="top-nav-link flex justify-center items-center h-[52px] hover:text-color-text visited:hover:text-color-text hover:no-underline
-w-[64px] xs:w-[48px] sm:w-[64px]
-flex-col xs:mx-0.25 sm:mx-1
+<a href="https://www.linkedin.com/pub/dir/+/+?trk=public_profile_guest_nav_menu_people" data-tracking-control-name="public_profile_guest_nav_menu_people" data-tracking-will-navigate="" class="top-nav-link flex justify-center items-center min-h-[52px] hover:text-color-text visited:hover:text-color-text hover:no-underline
+w-8 
+flex-col xs:mx-1
 top-nav-link--selected text-color-text visited:text-color-text border-solid border-b-2 border-color-text" aria-current="page">
 <icon class="top-nav-link__icon flex h-3 w-3 flex-shrink-0 lazy-loaded" aria-hidden="true" aria-busy="false">
 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" fill="none" focusable="false" class="lazy-loaded" aria-busy="false">
@@ -247,9 +275,9 @@ People
 </li>
 <li class="">
   
-<a href="https://www.linkedin.com/learning/search?trk=public_profile_guest_nav_menu_learning" data-tracking-control-name="public_profile_guest_nav_menu_learning" data-tracking-will-navigate="" class="top-nav-link flex justify-center items-center h-[52px] hover:text-color-text visited:hover:text-color-text hover:no-underline
-w-[64px] xs:w-[48px] sm:w-[64px]
-flex-col xs:mx-0.25 sm:mx-1
+<a href="https://www.linkedin.com/learning/search?trk=public_profile_guest_nav_menu_learning" data-tracking-control-name="public_profile_guest_nav_menu_learning" data-tracking-will-navigate="" class="top-nav-link flex justify-center items-center min-h-[52px] hover:text-color-text visited:hover:text-color-text hover:no-underline
+w-8 
+flex-col xs:mx-1
 text-color-text-secondary visited:text-color-text-secondary">
 <icon class="top-nav-link__icon flex h-3 w-3 flex-shrink-0 lazy-loaded" aria-hidden="true" aria-busy="false">
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" focusable="false" class="lazy-loaded" aria-busy="false">
@@ -267,9 +295,9 @@ Learning
 </li>
 <li class="">
   
-<a href="https://www.linkedin.com/jobs?trk=public_profile_guest_nav_menu_jobs" data-tracking-control-name="public_profile_guest_nav_menu_jobs" data-tracking-will-navigate="" class="top-nav-link flex justify-center items-center h-[52px] hover:text-color-text visited:hover:text-color-text hover:no-underline
-w-[64px] xs:w-[48px] sm:w-[64px]
-flex-col xs:mx-0.25 sm:mx-1
+<a href="https://www.linkedin.com/jobs?trk=public_profile_guest_nav_menu_jobs" data-tracking-control-name="public_profile_guest_nav_menu_jobs" data-tracking-will-navigate="" class="top-nav-link flex justify-center items-center min-h-[52px] hover:text-color-text visited:hover:text-color-text hover:no-underline
+w-8 
+flex-col xs:mx-1
 text-color-text-secondary visited:text-color-text-secondary">
 <icon class="top-nav-link__icon flex h-3 w-3 flex-shrink-0 lazy-loaded" aria-hidden="true" aria-busy="false">
 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="none" focusable="false" class="lazy-loaded" aria-busy="false">
@@ -285,7 +313,8 @@ Jobs
 </ul>
 
 
-<div class="nav__cta-container order-3 flex gap-x-1 justify-end min-w-[100px] flex-nowrap flex-shrink-0 babybear:flex-wrap flex-2">
+<div class="nav__cta-container order-3 flex gap-x-1 justify-end min-w-[100px] flex-nowrap flex-shrink-0 babybear:flex-wrap flex-2
+   babymamabear:min-w-[50px] ">
 
 
 <a class="nav__button-tertiary btn-md btn-tertiary" href="https://www.linkedin.com/signup/public-profile-join?vieweeVanityName=eduardo-alvarez-nowak&amp;session_redirect=https%3A%2F%2Fse.linkedin.com%2Fin%2Feduardo-alvarez-nowak&amp;trk=public_profile_nav-header-join" data-tracking-control-name="public_profile_nav-header-join" data-test-live-nav-primary-cta="" data-tracking-will-navigate="">
@@ -502,8 +531,8 @@ Join now
 
 <code id="i18n_password_error_too_long" style="display: none"><!--"The password you provided must have at most 400 characters"--></code>
 
-<form data-id="sign-in-form" action="https://www.linkedin.com/uas/login-submit" method="post" novalidate="" class="mt-1.5 mb-2">
-<input name="loginCsrfParam" value="b8ba4d47-eced-4151-87db-e3c239934445" type="hidden">
+<!---->    <form data-id="sign-in-form" action="https://www.linkedin.com/uas/login-submit" method="post" novalidate="" class="mt-1.5 mb-2">
+<input name="loginCsrfParam" value="9305de45-8276-4f48-8e5a-ba739b5c742f" type="hidden">
 
 <div class="flex flex-col">
 
@@ -556,14 +585,14 @@ Join now
   Sign in
 </button>
 </div>
-<div class="sign-in-form__divider left-right-divider pt-2 pb-3">
-  <p class="sign-in-form__divider-text font-sans text-sm text-color-text px-2">
-    or
-  </p>
-</div>
-<input type="hidden" name="controlId" value="public_profile_v3_desktop-public_profile_top-card_title-modal_contextual-sign-in-modal_sign-in-modal_sign-in-submit-btn"><input type="hidden" name="pageInstance" value="urn:li:page:public_profile_v3_desktop_jsbeacon;GqEl/agWTzy6Hes+jvhnCQ=="></form>
+  <div class="sign-in-form__divider left-right-divider pt-2 pb-3">
+    <p class="sign-in-form__divider-text font-sans text-sm text-color-text px-2">
+      or
+    </p>
+  </div>
+<input type="hidden" name="controlId" value="public_profile_v3_desktop-public_profile_top-card_title-modal_contextual-sign-in-modal_sign-in-modal_sign-in-submit-btn"><input type="hidden" name="pageInstance" value="urn:li:page:public_profile_v3_desktop_jsbeacon;x4h9OYNVT8G2MWlcBcB2Ag=="></form>
 <div class="w-full max-w-[400px] mx-auto">
-
+  
 <div class="google-auth-button" data-tracking-control-name="public_profile_top-card_title-modal_contextual-sign-in-modal_sign-in-modal_google-auth-button" data-tracking-client-ingraph="">
 
 
@@ -572,7 +601,7 @@ Join now
 By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?trk=public_profile_top-card_title-modal_contextual-sign-in-modal_sign-in-modal_auth-button_user-agreement" target="_blank" data-tracking-control-name="public_profile_top-card_title-modal_contextual-sign-in-modal_sign-in-modal_auth-button_user-agreement" data-tracking-will-navigate="true">User Agreement</a>, <a href="/legal/privacy-policy?trk=public_profile_top-card_title-modal_contextual-sign-in-modal_sign-in-modal_auth-button_privacy-policy" target="_blank" data-tracking-control-name="public_profile_top-card_title-modal_contextual-sign-in-modal_sign-in-modal_auth-button_privacy-policy" data-tracking-will-navigate="true">Privacy Policy</a>, and <a href="/legal/cookie-policy?trk=public_profile_top-card_title-modal_contextual-sign-in-modal_sign-in-modal_auth-button_cookie-policy" target="_blank" data-tracking-control-name="public_profile_top-card_title-modal_contextual-sign-in-modal_sign-in-modal_auth-button_cookie-policy" data-tracking-will-navigate="true">Cookie Policy</a>.
 </p>
 
-<div class="google-auth-button__placeholder"><div class="S9gUrf-YoZ4jf" style="position: relative;"><div></div><div id="gsi_353084_437713-wrapper" class="L5Fo6c-sM5MNb"><iframe src="https://accounts.google.com/gsi/button?logo_alignment=center&amp;shape=pill&amp;size=large&amp;text=continue_with&amp;theme=undefined&amp;type=undefined&amp;width=398&amp;client_id=990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com&amp;iframe_id=gsi_353084_437713&amp;as=mPjulg8rcu3FpPbRCFGI1Q&amp;hl=en_US" id="gsi_353084_437713" title="Sign in with Google Button" tabindex="-1" style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 418px; border: 0px; margin: -2px -10px;"></iframe><div aria-label="Sign in with Google" id="gsi_353084_437713-overlay" class="L5Fo6c-bF1uUb" tabindex="0"></div></div></div></div>
+<div class="google-auth-button__placeholder"><div class="S9gUrf-YoZ4jf" style="position: relative;"><div></div><div id="gsi_77071_483915-wrapper" class="L5Fo6c-sM5MNb"><iframe src="https://accounts.google.com/gsi/button?logo_alignment=center&amp;shape=pill&amp;size=large&amp;text=continue_with&amp;theme=undefined&amp;type=undefined&amp;width=398&amp;client_id=990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com&amp;iframe_id=gsi_77071_483915&amp;as=ZsUjpVTF6bcNmS5rdjvtTA&amp;hl=en_US" id="gsi_77071_483915" title="Sign in with Google Button" tabindex="-1" style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 418px; border: 0px; margin: -2px -10px;"></iframe><div aria-label="Sign in with Google" id="gsi_77071_483915-overlay" class="L5Fo6c-bF1uUb" tabindex="0"></div></div></div></div>
 </div>
 
 </div>
@@ -608,7 +637,7 @@ By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?t
 By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?trk=public_profile_top-card_title-modal_auth-button_user-agreement" target="_blank" data-tracking-control-name="public_profile_top-card_title-modal_auth-button_user-agreement" data-tracking-will-navigate="true">User Agreement</a>, <a href="/legal/privacy-policy?trk=public_profile_top-card_title-modal_auth-button_privacy-policy" target="_blank" data-tracking-control-name="public_profile_top-card_title-modal_auth-button_privacy-policy" data-tracking-will-navigate="true">Privacy Policy</a>, and <a href="/legal/cookie-policy?trk=public_profile_top-card_title-modal_auth-button_cookie-policy" target="_blank" data-tracking-control-name="public_profile_top-card_title-modal_auth-button_cookie-policy" data-tracking-will-navigate="true">Cookie Policy</a>.
 </p>
 
-<div class="google-auth-button__placeholder"><div class="S9gUrf-YoZ4jf" style="position: relative;"><div></div><div id="gsi_353087_990592-wrapper" class="L5Fo6c-sM5MNb"><iframe src="https://accounts.google.com/gsi/button?logo_alignment=center&amp;shape=pill&amp;size=large&amp;text=continue_with&amp;theme=undefined&amp;type=undefined&amp;width=318&amp;client_id=990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com&amp;iframe_id=gsi_353087_990592&amp;as=mPjulg8rcu3FpPbRCFGI1Q&amp;hl=en_US" id="gsi_353087_990592" title="Sign in with Google Button" tabindex="-1" style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 338px; border: 0px; margin: -2px -10px;"></iframe><div aria-label="Sign in with Google" id="gsi_353087_990592-overlay" class="L5Fo6c-bF1uUb" tabindex="0"></div></div></div></div>
+<div class="google-auth-button__placeholder"><div class="S9gUrf-YoZ4jf" style="position: relative;"><div></div><div id="gsi_77074_247857-wrapper" class="L5Fo6c-sM5MNb"><iframe src="https://accounts.google.com/gsi/button?logo_alignment=center&amp;shape=pill&amp;size=large&amp;text=continue_with&amp;theme=undefined&amp;type=undefined&amp;width=318&amp;client_id=990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com&amp;iframe_id=gsi_77074_247857&amp;as=ZsUjpVTF6bcNmS5rdjvtTA&amp;hl=en_US" id="gsi_77074_247857" title="Sign in with Google Button" tabindex="-1" style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 338px; border: 0px; margin: -2px -10px;"></iframe><div aria-label="Sign in with Google" id="gsi_77074_247857-overlay" class="L5Fo6c-bF1uUb" tabindex="0"></div></div></div></div>
 </div>
 
           </div>
@@ -766,8 +795,8 @@ By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?t
 
 <code id="i18n_password_error_too_long" style="display: none"><!--"The password you provided must have at most 400 characters"--></code>
 
-<form data-id="sign-in-form" action="https://www.linkedin.com/uas/login-submit" method="post" novalidate="" class="mt-1.5 mb-2">
-<input name="loginCsrfParam" value="b8ba4d47-eced-4151-87db-e3c239934445" type="hidden">
+<!---->    <form data-id="sign-in-form" action="https://www.linkedin.com/uas/login-submit" method="post" novalidate="" class="mt-1.5 mb-2">
+<input name="loginCsrfParam" value="9305de45-8276-4f48-8e5a-ba739b5c742f" type="hidden">
 
 <div class="flex flex-col">
 
@@ -820,14 +849,14 @@ By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?t
   Sign in
 </button>
 </div>
-<div class="sign-in-form__divider left-right-divider pt-2 pb-3">
-  <p class="sign-in-form__divider-text font-sans text-sm text-color-text px-2">
-    or
-  </p>
-</div>
-<input type="hidden" name="controlId" value="public_profile_v3_desktop-public_profile_profile-info-subheader_contact-info_modal_contextual-sign-in-modal_sign-in-modal_sign-in-submit-btn"><input type="hidden" name="pageInstance" value="urn:li:page:public_profile_v3_desktop_jsbeacon;GqEl/agWTzy6Hes+jvhnCQ=="></form>
+  <div class="sign-in-form__divider left-right-divider pt-2 pb-3">
+    <p class="sign-in-form__divider-text font-sans text-sm text-color-text px-2">
+      or
+    </p>
+  </div>
+<input type="hidden" name="controlId" value="public_profile_v3_desktop-public_profile_profile-info-subheader_contact-info_modal_contextual-sign-in-modal_sign-in-modal_sign-in-submit-btn"><input type="hidden" name="pageInstance" value="urn:li:page:public_profile_v3_desktop_jsbeacon;x4h9OYNVT8G2MWlcBcB2Ag=="></form>
 <div class="w-full max-w-[400px] mx-auto">
-
+  
 <div class="google-auth-button" data-tracking-control-name="public_profile_profile-info-subheader_contact-info_modal_contextual-sign-in-modal_sign-in-modal_google-auth-button" data-tracking-client-ingraph="">
 <code id="isTermsAndConditionsSkipEnabledAuthButton" style="display: none"><!--true--></code>
 
@@ -836,7 +865,7 @@ By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?t
 By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?trk=public_profile_profile-info-subheader_contact-info_modal_contextual-sign-in-modal_sign-in-modal_auth-button_user-agreement" target="_blank" data-tracking-control-name="public_profile_profile-info-subheader_contact-info_modal_contextual-sign-in-modal_sign-in-modal_auth-button_user-agreement" data-tracking-will-navigate="true">User Agreement</a>, <a href="/legal/privacy-policy?trk=public_profile_profile-info-subheader_contact-info_modal_contextual-sign-in-modal_sign-in-modal_auth-button_privacy-policy" target="_blank" data-tracking-control-name="public_profile_profile-info-subheader_contact-info_modal_contextual-sign-in-modal_sign-in-modal_auth-button_privacy-policy" data-tracking-will-navigate="true">Privacy Policy</a>, and <a href="/legal/cookie-policy?trk=public_profile_profile-info-subheader_contact-info_modal_contextual-sign-in-modal_sign-in-modal_auth-button_cookie-policy" target="_blank" data-tracking-control-name="public_profile_profile-info-subheader_contact-info_modal_contextual-sign-in-modal_sign-in-modal_auth-button_cookie-policy" data-tracking-will-navigate="true">Cookie Policy</a>.
 </p>
 
-<div class="google-auth-button__placeholder"><div class="S9gUrf-YoZ4jf" style="position: relative;"><div></div><div id="gsi_353089_233756-wrapper" class="L5Fo6c-sM5MNb"><iframe src="https://accounts.google.com/gsi/button?logo_alignment=center&amp;shape=pill&amp;size=large&amp;text=continue_with&amp;theme=undefined&amp;type=undefined&amp;width=398&amp;client_id=990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com&amp;iframe_id=gsi_353089_233756&amp;as=mPjulg8rcu3FpPbRCFGI1Q&amp;hl=en_US" id="gsi_353089_233756" title="Sign in with Google Button" tabindex="-1" style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 418px; border: 0px; margin: -2px -10px;"></iframe><div aria-label="Sign in with Google" id="gsi_353089_233756-overlay" class="L5Fo6c-bF1uUb" tabindex="0"></div></div></div></div>
+<div class="google-auth-button__placeholder"><div class="S9gUrf-YoZ4jf" style="position: relative;"><div></div><div id="gsi_77074_321340-wrapper" class="L5Fo6c-sM5MNb"><iframe src="https://accounts.google.com/gsi/button?logo_alignment=center&amp;shape=pill&amp;size=large&amp;text=continue_with&amp;theme=undefined&amp;type=undefined&amp;width=398&amp;client_id=990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com&amp;iframe_id=gsi_77074_321340&amp;as=ZsUjpVTF6bcNmS5rdjvtTA&amp;hl=en_US" id="gsi_77074_321340" title="Sign in with Google Button" tabindex="-1" style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 418px; border: 0px; margin: -2px -10px;"></iframe><div aria-label="Sign in with Google" id="gsi_77074_321340-overlay" class="L5Fo6c-bF1uUb" tabindex="0"></div></div></div></div>
 </div>
 
 </div>
@@ -872,7 +901,7 @@ By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?t
 By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?trk=public_profile_profile-info-subheader_contact-info_modal_auth-button_user-agreement" target="_blank" data-tracking-control-name="public_profile_profile-info-subheader_contact-info_modal_auth-button_user-agreement" data-tracking-will-navigate="true">User Agreement</a>, <a href="/legal/privacy-policy?trk=public_profile_profile-info-subheader_contact-info_modal_auth-button_privacy-policy" target="_blank" data-tracking-control-name="public_profile_profile-info-subheader_contact-info_modal_auth-button_privacy-policy" data-tracking-will-navigate="true">Privacy Policy</a>, and <a href="/legal/cookie-policy?trk=public_profile_profile-info-subheader_contact-info_modal_auth-button_cookie-policy" target="_blank" data-tracking-control-name="public_profile_profile-info-subheader_contact-info_modal_auth-button_cookie-policy" data-tracking-will-navigate="true">Cookie Policy</a>.
 </p>
 
-<div class="google-auth-button__placeholder"><div class="S9gUrf-YoZ4jf" style="position: relative;"><div></div><div id="gsi_353090_321317-wrapper" class="L5Fo6c-sM5MNb"><iframe src="https://accounts.google.com/gsi/button?logo_alignment=center&amp;shape=pill&amp;size=large&amp;text=continue_with&amp;theme=undefined&amp;type=undefined&amp;width=318&amp;client_id=990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com&amp;iframe_id=gsi_353090_321317&amp;as=mPjulg8rcu3FpPbRCFGI1Q&amp;hl=en_US" id="gsi_353090_321317" title="Sign in with Google Button" tabindex="-1" style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 338px; border: 0px; margin: -2px -10px;"></iframe><div aria-label="Sign in with Google" id="gsi_353090_321317-overlay" class="L5Fo6c-bF1uUb" tabindex="0"></div></div></div></div>
+<div class="google-auth-button__placeholder"><div class="S9gUrf-YoZ4jf" style="position: relative;"><div></div><div id="gsi_77075_742518-wrapper" class="L5Fo6c-sM5MNb"><iframe src="https://accounts.google.com/gsi/button?logo_alignment=center&amp;shape=pill&amp;size=large&amp;text=continue_with&amp;theme=undefined&amp;type=undefined&amp;width=318&amp;client_id=990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com&amp;iframe_id=gsi_77075_742518&amp;as=ZsUjpVTF6bcNmS5rdjvtTA&amp;hl=en_US" id="gsi_77075_742518" title="Sign in with Google Button" tabindex="-1" style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 338px; border: 0px; margin: -2px -10px;"></iframe><div aria-label="Sign in with Google" id="gsi_77075_742518-overlay" class="L5Fo6c-bF1uUb" tabindex="0"></div></div></div></div>
 </div>
 
           </div>
@@ -894,7 +923,7 @@ By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?t
 
 <div class="not-first-middot">
   <span>
-    554 followers
+    564 followers
   </span>
   <span>
       500+ connections
@@ -1053,8 +1082,8 @@ By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?t
 
 <code id="i18n_password_error_too_long" style="display: none"><!--"The password you provided must have at most 400 characters"--></code>
 
-<form data-id="sign-in-form" action="https://www.linkedin.com/uas/login-submit" method="post" novalidate="" class="mt-1.5 mb-2">
-<input name="loginCsrfParam" value="b8ba4d47-eced-4151-87db-e3c239934445" type="hidden">
+<!---->    <form data-id="sign-in-form" action="https://www.linkedin.com/uas/login-submit" method="post" novalidate="" class="mt-1.5 mb-2">
+<input name="loginCsrfParam" value="9305de45-8276-4f48-8e5a-ba739b5c742f" type="hidden">
 
 <div class="flex flex-col">
 
@@ -1107,14 +1136,14 @@ By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?t
   Sign in
 </button>
 </div>
-<div class="sign-in-form__divider left-right-divider pt-2 pb-3">
-  <p class="sign-in-form__divider-text font-sans text-sm text-color-text px-2">
-    or
-  </p>
-</div>
-<input type="hidden" name="controlId" value="public_profile_v3_desktop-public_profile_mutual-connections_contextual-sign-in-modal_sign-in-modal_sign-in-submit-btn"><input type="hidden" name="pageInstance" value="urn:li:page:public_profile_v3_desktop_jsbeacon;GqEl/agWTzy6Hes+jvhnCQ=="></form>
+  <div class="sign-in-form__divider left-right-divider pt-2 pb-3">
+    <p class="sign-in-form__divider-text font-sans text-sm text-color-text px-2">
+      or
+    </p>
+  </div>
+<input type="hidden" name="controlId" value="public_profile_v3_desktop-public_profile_mutual-connections_contextual-sign-in-modal_sign-in-modal_sign-in-submit-btn"><input type="hidden" name="pageInstance" value="urn:li:page:public_profile_v3_desktop_jsbeacon;x4h9OYNVT8G2MWlcBcB2Ag=="></form>
 <div class="w-full max-w-[400px] mx-auto">
-
+  
 <div class="google-auth-button" data-tracking-control-name="public_profile_mutual-connections_contextual-sign-in-modal_sign-in-modal_google-auth-button" data-tracking-client-ingraph="">
 <code id="isTermsAndConditionsSkipEnabledAuthButton" style="display: none"><!--true--></code>
 
@@ -1123,7 +1152,7 @@ By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?t
 By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?trk=public_profile_mutual-connections_contextual-sign-in-modal_sign-in-modal_auth-button_user-agreement" target="_blank" data-tracking-control-name="public_profile_mutual-connections_contextual-sign-in-modal_sign-in-modal_auth-button_user-agreement" data-tracking-will-navigate="true">User Agreement</a>, <a href="/legal/privacy-policy?trk=public_profile_mutual-connections_contextual-sign-in-modal_sign-in-modal_auth-button_privacy-policy" target="_blank" data-tracking-control-name="public_profile_mutual-connections_contextual-sign-in-modal_sign-in-modal_auth-button_privacy-policy" data-tracking-will-navigate="true">Privacy Policy</a>, and <a href="/legal/cookie-policy?trk=public_profile_mutual-connections_contextual-sign-in-modal_sign-in-modal_auth-button_cookie-policy" target="_blank" data-tracking-control-name="public_profile_mutual-connections_contextual-sign-in-modal_sign-in-modal_auth-button_cookie-policy" data-tracking-will-navigate="true">Cookie Policy</a>.
 </p>
 
-<div class="google-auth-button__placeholder"><div class="S9gUrf-YoZ4jf" style="position: relative;"><div></div><div id="gsi_353091_682568-wrapper" class="L5Fo6c-sM5MNb"><iframe src="https://accounts.google.com/gsi/button?logo_alignment=center&amp;shape=pill&amp;size=large&amp;text=continue_with&amp;theme=undefined&amp;type=undefined&amp;width=398&amp;client_id=990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com&amp;iframe_id=gsi_353091_682568&amp;as=mPjulg8rcu3FpPbRCFGI1Q&amp;hl=en_US" id="gsi_353091_682568" title="Sign in with Google Button" tabindex="-1" style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 418px; border: 0px; margin: -2px -10px;"></iframe><div aria-label="Sign in with Google" id="gsi_353091_682568-overlay" class="L5Fo6c-bF1uUb" tabindex="0"></div></div></div></div>
+<div class="google-auth-button__placeholder"><div class="S9gUrf-YoZ4jf" style="position: relative;"><div></div><div id="gsi_77075_146982-wrapper" class="L5Fo6c-sM5MNb"><iframe src="https://accounts.google.com/gsi/button?logo_alignment=center&amp;shape=pill&amp;size=large&amp;text=continue_with&amp;theme=undefined&amp;type=undefined&amp;width=398&amp;client_id=990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com&amp;iframe_id=gsi_77075_146982&amp;as=ZsUjpVTF6bcNmS5rdjvtTA&amp;hl=en_US" id="gsi_77075_146982" title="Sign in with Google Button" tabindex="-1" style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 418px; border: 0px; margin: -2px -10px;"></iframe><div aria-label="Sign in with Google" id="gsi_77075_146982-overlay" class="L5Fo6c-bF1uUb" tabindex="0"></div></div></div></div>
 </div>
 
 </div>
@@ -1159,7 +1188,7 @@ By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?t
 By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?trk=public_profile_mutual-connections_auth-button_user-agreement" target="_blank" data-tracking-control-name="public_profile_mutual-connections_auth-button_user-agreement" data-tracking-will-navigate="true">User Agreement</a>, <a href="/legal/privacy-policy?trk=public_profile_mutual-connections_auth-button_privacy-policy" target="_blank" data-tracking-control-name="public_profile_mutual-connections_auth-button_privacy-policy" data-tracking-will-navigate="true">Privacy Policy</a>, and <a href="/legal/cookie-policy?trk=public_profile_mutual-connections_auth-button_cookie-policy" target="_blank" data-tracking-control-name="public_profile_mutual-connections_auth-button_cookie-policy" data-tracking-will-navigate="true">Cookie Policy</a>.
 </p>
 
-<div class="google-auth-button__placeholder"><div class="S9gUrf-YoZ4jf" style="position: relative;"><div></div><div id="gsi_353092_611193-wrapper" class="L5Fo6c-sM5MNb"><iframe src="https://accounts.google.com/gsi/button?logo_alignment=center&amp;shape=pill&amp;size=large&amp;text=continue_with&amp;theme=undefined&amp;type=undefined&amp;width=318&amp;client_id=990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com&amp;iframe_id=gsi_353092_611193&amp;as=mPjulg8rcu3FpPbRCFGI1Q&amp;hl=en_US" id="gsi_353092_611193" title="Sign in with Google Button" tabindex="-1" style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 338px; border: 0px; margin: -2px -10px;"></iframe><div aria-label="Sign in with Google" id="gsi_353092_611193-overlay" class="L5Fo6c-bF1uUb" tabindex="0"></div></div></div></div>
+<div class="google-auth-button__placeholder"><div class="S9gUrf-YoZ4jf" style="position: relative;"><div></div><div id="gsi_77076_473666-wrapper" class="L5Fo6c-sM5MNb"><iframe src="https://accounts.google.com/gsi/button?logo_alignment=center&amp;shape=pill&amp;size=large&amp;text=continue_with&amp;theme=undefined&amp;type=undefined&amp;width=318&amp;client_id=990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com&amp;iframe_id=gsi_77076_473666&amp;as=ZsUjpVTF6bcNmS5rdjvtTA&amp;hl=en_US" id="gsi_77076_473666" title="Sign in with Google Button" tabindex="-1" style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 338px; border: 0px; margin: -2px -10px;"></iframe><div aria-label="Sign in with Google" id="gsi_77076_473666-overlay" class="L5Fo6c-bF1uUb" tabindex="0"></div></div></div></div>
 </div>
 
           </div>
@@ -1315,8 +1344,8 @@ By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?t
 
 <code id="i18n_password_error_too_long" style="display: none"><!--"The password you provided must have at most 400 characters"--></code>
 
-<form data-id="sign-in-form" action="https://www.linkedin.com/uas/login-submit" method="post" novalidate="" class="mt-1.5 mb-2">
-<input name="loginCsrfParam" value="b8ba4d47-eced-4151-87db-e3c239934445" type="hidden">
+<!---->    <form data-id="sign-in-form" action="https://www.linkedin.com/uas/login-submit" method="post" novalidate="" class="mt-1.5 mb-2">
+<input name="loginCsrfParam" value="9305de45-8276-4f48-8e5a-ba739b5c742f" type="hidden">
 
 <div class="flex flex-col">
 
@@ -1369,14 +1398,14 @@ By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?t
   Sign in
 </button>
 </div>
-<div class="sign-in-form__divider left-right-divider pt-2 pb-3">
-  <p class="sign-in-form__divider-text font-sans text-sm text-color-text px-2">
-    or
-  </p>
-</div>
-<input type="hidden" name="controlId" value="public_profile_v3_desktop-public_profile_top-card_secondary-cta-modal_contextual-sign-in-modal_sign-in-modal_sign-in-submit-btn"><input type="hidden" name="pageInstance" value="urn:li:page:public_profile_v3_desktop_jsbeacon;GqEl/agWTzy6Hes+jvhnCQ=="></form>
+  <div class="sign-in-form__divider left-right-divider pt-2 pb-3">
+    <p class="sign-in-form__divider-text font-sans text-sm text-color-text px-2">
+      or
+    </p>
+  </div>
+<input type="hidden" name="controlId" value="public_profile_v3_desktop-public_profile_top-card_secondary-cta-modal_contextual-sign-in-modal_sign-in-modal_sign-in-submit-btn"><input type="hidden" name="pageInstance" value="urn:li:page:public_profile_v3_desktop_jsbeacon;x4h9OYNVT8G2MWlcBcB2Ag=="></form>
 <div class="w-full max-w-[400px] mx-auto">
-
+  
 <div class="google-auth-button" data-tracking-control-name="public_profile_top-card_secondary-cta-modal_contextual-sign-in-modal_sign-in-modal_google-auth-button" data-tracking-client-ingraph="">
 <code id="isTermsAndConditionsSkipEnabledAuthButton" style="display: none"><!--true--></code>
 
@@ -1385,7 +1414,7 @@ By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?t
 By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?trk=public_profile_top-card_secondary-cta-modal_contextual-sign-in-modal_sign-in-modal_auth-button_user-agreement" target="_blank" data-tracking-control-name="public_profile_top-card_secondary-cta-modal_contextual-sign-in-modal_sign-in-modal_auth-button_user-agreement" data-tracking-will-navigate="true">User Agreement</a>, <a href="/legal/privacy-policy?trk=public_profile_top-card_secondary-cta-modal_contextual-sign-in-modal_sign-in-modal_auth-button_privacy-policy" target="_blank" data-tracking-control-name="public_profile_top-card_secondary-cta-modal_contextual-sign-in-modal_sign-in-modal_auth-button_privacy-policy" data-tracking-will-navigate="true">Privacy Policy</a>, and <a href="/legal/cookie-policy?trk=public_profile_top-card_secondary-cta-modal_contextual-sign-in-modal_sign-in-modal_auth-button_cookie-policy" target="_blank" data-tracking-control-name="public_profile_top-card_secondary-cta-modal_contextual-sign-in-modal_sign-in-modal_auth-button_cookie-policy" data-tracking-will-navigate="true">Cookie Policy</a>.
 </p>
 
-<div class="google-auth-button__placeholder"><div class="S9gUrf-YoZ4jf" style="position: relative;"><div></div><div id="gsi_353093_377062-wrapper" class="L5Fo6c-sM5MNb"><iframe src="https://accounts.google.com/gsi/button?logo_alignment=center&amp;shape=pill&amp;size=large&amp;text=continue_with&amp;theme=undefined&amp;type=undefined&amp;width=398&amp;client_id=990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com&amp;iframe_id=gsi_353093_377062&amp;as=mPjulg8rcu3FpPbRCFGI1Q&amp;hl=en_US" id="gsi_353093_377062" title="Sign in with Google Button" tabindex="-1" style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 418px; border: 0px; margin: -2px -10px;"></iframe><div aria-label="Sign in with Google" id="gsi_353093_377062-overlay" class="L5Fo6c-bF1uUb" tabindex="0"></div></div></div></div>
+<div class="google-auth-button__placeholder"><div class="S9gUrf-YoZ4jf" style="position: relative;"><div></div><div id="gsi_77077_994773-wrapper" class="L5Fo6c-sM5MNb"><iframe src="https://accounts.google.com/gsi/button?logo_alignment=center&amp;shape=pill&amp;size=large&amp;text=continue_with&amp;theme=undefined&amp;type=undefined&amp;width=398&amp;client_id=990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com&amp;iframe_id=gsi_77077_994773&amp;as=ZsUjpVTF6bcNmS5rdjvtTA&amp;hl=en_US" id="gsi_77077_994773" title="Sign in with Google Button" tabindex="-1" style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 418px; border: 0px; margin: -2px -10px;"></iframe><div aria-label="Sign in with Google" id="gsi_77077_994773-overlay" class="L5Fo6c-bF1uUb" tabindex="0"></div></div></div></div>
 </div>
 
 </div>
@@ -1421,7 +1450,7 @@ By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?t
 By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?trk=public_profile_top-card_secondary-cta-modal_auth-button_user-agreement" target="_blank" data-tracking-control-name="public_profile_top-card_secondary-cta-modal_auth-button_user-agreement" data-tracking-will-navigate="true">User Agreement</a>, <a href="/legal/privacy-policy?trk=public_profile_top-card_secondary-cta-modal_auth-button_privacy-policy" target="_blank" data-tracking-control-name="public_profile_top-card_secondary-cta-modal_auth-button_privacy-policy" data-tracking-will-navigate="true">Privacy Policy</a>, and <a href="/legal/cookie-policy?trk=public_profile_top-card_secondary-cta-modal_auth-button_cookie-policy" target="_blank" data-tracking-control-name="public_profile_top-card_secondary-cta-modal_auth-button_cookie-policy" data-tracking-will-navigate="true">Cookie Policy</a>.
 </p>
 
-<div class="google-auth-button__placeholder"><div class="S9gUrf-YoZ4jf" style="position: relative;"><div></div><div id="gsi_353094_735933-wrapper" class="L5Fo6c-sM5MNb"><iframe src="https://accounts.google.com/gsi/button?logo_alignment=center&amp;shape=pill&amp;size=large&amp;text=continue_with&amp;theme=undefined&amp;type=undefined&amp;width=318&amp;client_id=990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com&amp;iframe_id=gsi_353094_735933&amp;as=mPjulg8rcu3FpPbRCFGI1Q&amp;hl=en_US" id="gsi_353094_735933" title="Sign in with Google Button" tabindex="-1" style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 338px; border: 0px; margin: -2px -10px;"></iframe><div aria-label="Sign in with Google" id="gsi_353094_735933-overlay" class="L5Fo6c-bF1uUb" tabindex="0"></div></div></div></div>
+<div class="google-auth-button__placeholder"><div class="S9gUrf-YoZ4jf" style="position: relative;"><div></div><div id="gsi_77077_79733-wrapper" class="L5Fo6c-sM5MNb"><iframe src="https://accounts.google.com/gsi/button?logo_alignment=center&amp;shape=pill&amp;size=large&amp;text=continue_with&amp;theme=undefined&amp;type=undefined&amp;width=318&amp;client_id=990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com&amp;iframe_id=gsi_77077_79733&amp;as=ZsUjpVTF6bcNmS5rdjvtTA&amp;hl=en_US" id="gsi_77077_79733" title="Sign in with Google Button" tabindex="-1" style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 338px; border: 0px; margin: -2px -10px;"></iframe><div aria-label="Sign in with Google" id="gsi_77077_79733-overlay" class="L5Fo6c-bF1uUb" tabindex="0"></div></div></div></div>
 </div>
 
           </div>
@@ -1545,7 +1574,7 @@ Other
         collapsible-dropdown__button btn-md btn-tertiary cursor-pointer
         !py-[6px] !px-1 flex items-center rounded-[50%]
         
-        " aria-expanded="false" aria-label="Open menu" data-tracking-control-name="public_profile_ellipsis-menu-trigger">
+        " aria-expanded="false" aria-label="Open menu" data-tracking-control-name="public_profile_ellipsis-menu-trigger" tabindex="0">
       <icon class="ellipsis-menu__trigger-icon m-0 p-0 centered-icon lazy-loaded" aria-hidden="true" aria-busy="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" data-supported-dps="24x24" fill="currentColor" focusable="false" class="lazy-loaded" aria-busy="false">
 <path d="M2 10h4v4H2v-4zm8 4h4v-4h-4v4zm8-4v4h4v-4h-4z"></path>
 </svg></icon>
@@ -1783,8 +1812,8 @@ Other
 
 <code id="i18n_password_error_too_long" style="display: none"><!--"The password you provided must have at most 400 characters"--></code>
 
-<form data-id="sign-in-form" action="https://www.linkedin.com/uas/login-submit" method="post" novalidate="" class="mt-1.5 mb-2">
-<input name="loginCsrfParam" value="b8ba4d47-eced-4151-87db-e3c239934445" type="hidden">
+<!---->    <form data-id="sign-in-form" action="https://www.linkedin.com/uas/login-submit" method="post" novalidate="" class="mt-1.5 mb-2">
+<input name="loginCsrfParam" value="9305de45-8276-4f48-8e5a-ba739b5c742f" type="hidden">
 
 <div class="flex flex-col">
 
@@ -1837,14 +1866,14 @@ Other
   Sign in
 </button>
 </div>
-<div class="sign-in-form__divider left-right-divider pt-2 pb-3">
-  <p class="sign-in-form__divider-text font-sans text-sm text-color-text px-2">
-    or
-  </p>
-</div>
-<input type="hidden" name="controlId" value="public_profile_v3_desktop-public_profile_follow_contextual-sign-in-modal_sign-in-modal_sign-in-submit-btn"><input type="hidden" name="pageInstance" value="urn:li:page:public_profile_v3_desktop_jsbeacon;GqEl/agWTzy6Hes+jvhnCQ=="></form>
+  <div class="sign-in-form__divider left-right-divider pt-2 pb-3">
+    <p class="sign-in-form__divider-text font-sans text-sm text-color-text px-2">
+      or
+    </p>
+  </div>
+<input type="hidden" name="controlId" value="public_profile_v3_desktop-public_profile_follow_contextual-sign-in-modal_sign-in-modal_sign-in-submit-btn"><input type="hidden" name="pageInstance" value="urn:li:page:public_profile_v3_desktop_jsbeacon;x4h9OYNVT8G2MWlcBcB2Ag=="></form>
 <div class="w-full max-w-[400px] mx-auto">
-
+  
 <div class="google-auth-button" data-tracking-control-name="public_profile_follow_contextual-sign-in-modal_sign-in-modal_google-auth-button" data-tracking-client-ingraph="">
 <code id="isTermsAndConditionsSkipEnabledAuthButton" style="display: none"><!--true--></code>
 
@@ -1853,7 +1882,7 @@ Other
 By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?trk=public_profile_follow_contextual-sign-in-modal_sign-in-modal_auth-button_user-agreement" target="_blank" data-tracking-control-name="public_profile_follow_contextual-sign-in-modal_sign-in-modal_auth-button_user-agreement" data-tracking-will-navigate="true">User Agreement</a>, <a href="/legal/privacy-policy?trk=public_profile_follow_contextual-sign-in-modal_sign-in-modal_auth-button_privacy-policy" target="_blank" data-tracking-control-name="public_profile_follow_contextual-sign-in-modal_sign-in-modal_auth-button_privacy-policy" data-tracking-will-navigate="true">Privacy Policy</a>, and <a href="/legal/cookie-policy?trk=public_profile_follow_contextual-sign-in-modal_sign-in-modal_auth-button_cookie-policy" target="_blank" data-tracking-control-name="public_profile_follow_contextual-sign-in-modal_sign-in-modal_auth-button_cookie-policy" data-tracking-will-navigate="true">Cookie Policy</a>.
 </p>
 
-<div class="google-auth-button__placeholder"><div class="S9gUrf-YoZ4jf" style="position: relative;"><div></div><div id="gsi_353095_776727-wrapper" class="L5Fo6c-sM5MNb"><iframe src="https://accounts.google.com/gsi/button?logo_alignment=center&amp;shape=pill&amp;size=large&amp;text=continue_with&amp;theme=undefined&amp;type=undefined&amp;width=398&amp;client_id=990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com&amp;iframe_id=gsi_353095_776727&amp;as=mPjulg8rcu3FpPbRCFGI1Q&amp;hl=en_US" id="gsi_353095_776727" title="Sign in with Google Button" tabindex="-1" style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 418px; border: 0px; margin: -2px -10px;"></iframe><div aria-label="Sign in with Google" id="gsi_353095_776727-overlay" class="L5Fo6c-bF1uUb" tabindex="0"></div></div></div></div>
+<div class="google-auth-button__placeholder"><div class="S9gUrf-YoZ4jf" style="position: relative;"><div></div><div id="gsi_77078_324593-wrapper" class="L5Fo6c-sM5MNb"><iframe src="https://accounts.google.com/gsi/button?logo_alignment=center&amp;shape=pill&amp;size=large&amp;text=continue_with&amp;theme=undefined&amp;type=undefined&amp;width=398&amp;client_id=990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com&amp;iframe_id=gsi_77078_324593&amp;as=ZsUjpVTF6bcNmS5rdjvtTA&amp;hl=en_US" id="gsi_77078_324593" title="Sign in with Google Button" tabindex="-1" style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 418px; border: 0px; margin: -2px -10px;"></iframe><div aria-label="Sign in with Google" id="gsi_77078_324593-overlay" class="L5Fo6c-bF1uUb" tabindex="0"></div></div></div></div>
 </div>
 
 </div>
@@ -1889,7 +1918,7 @@ By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?t
 By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?trk=public_profile_follow_auth-button_user-agreement" target="_blank" data-tracking-control-name="public_profile_follow_auth-button_user-agreement" data-tracking-will-navigate="true">User Agreement</a>, <a href="/legal/privacy-policy?trk=public_profile_follow_auth-button_privacy-policy" target="_blank" data-tracking-control-name="public_profile_follow_auth-button_privacy-policy" data-tracking-will-navigate="true">Privacy Policy</a>, and <a href="/legal/cookie-policy?trk=public_profile_follow_auth-button_cookie-policy" target="_blank" data-tracking-control-name="public_profile_follow_auth-button_cookie-policy" data-tracking-will-navigate="true">Cookie Policy</a>.
 </p>
 
-<div class="google-auth-button__placeholder"><div class="S9gUrf-YoZ4jf" style="position: relative;"><div></div><div id="gsi_353097_195704-wrapper" class="L5Fo6c-sM5MNb"><iframe src="https://accounts.google.com/gsi/button?logo_alignment=center&amp;shape=pill&amp;size=large&amp;text=continue_with&amp;theme=undefined&amp;type=undefined&amp;width=318&amp;client_id=990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com&amp;iframe_id=gsi_353097_195704&amp;as=mPjulg8rcu3FpPbRCFGI1Q&amp;hl=en_US" id="gsi_353097_195704" title="Sign in with Google Button" tabindex="-1" style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 338px; border: 0px; margin: -2px -10px;"></iframe><div aria-label="Sign in with Google" id="gsi_353097_195704-overlay" class="L5Fo6c-bF1uUb" tabindex="0"></div></div></div></div>
+<div class="google-auth-button__placeholder"><div class="S9gUrf-YoZ4jf" style="position: relative;"><div></div><div id="gsi_77078_699844-wrapper" class="L5Fo6c-sM5MNb"><iframe src="https://accounts.google.com/gsi/button?logo_alignment=center&amp;shape=pill&amp;size=large&amp;text=continue_with&amp;theme=undefined&amp;type=undefined&amp;width=318&amp;client_id=990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com&amp;iframe_id=gsi_77078_699844&amp;as=ZsUjpVTF6bcNmS5rdjvtTA&amp;hl=en_US" id="gsi_77078_699844" title="Sign in with Google Button" tabindex="-1" style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 338px; border: 0px; margin: -2px -10px;"></iframe><div aria-label="Sign in with Google" id="gsi_77078_699844-overlay" class="L5Fo6c-bF1uUb" tabindex="0"></div></div></div></div>
 </div>
 
           </div>
@@ -1927,85 +1956,16 @@ By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?t
 
 
 <div class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-main-card flex flex-wrap py-2 pr-2 babybear:pr-0
-hover:show-play-button focus:show-play-button
-base-main-card--link main-activity-card">
-
-
-<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://www.linkedin.com/posts/amalia-berglof_day-25-of-becoming-a-media-house-in-100-activity-7171049293649264641-1Hiv?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
-  
-  <span class="sr-only">
-      
-  
-  Day 25 of ”becoming a media house in 100 days” 🤠
-
-It’s time for a checkin! I’ll go through why I actually call my journey that, and also what I’ve…
-
-
-  </span>
-</a>
-
-
-  <div class="base-main-card__media relative w-[228px] block h-[134px] overflow-hidden flex-shrink-0 rounded-[2px] babybear:w-full babybear:h-auto babybear:min-h-[134px] babybear:max-h-[250px]
-      hover:show-play-button focus:show-play-button">
-    
-<img class="main-activity-card__img h-full lazy-loaded" alt="" aria-busy="false" src="https://media.licdn.com/dms/image/D5605AQEc04bmoY4JnQ/videocover-high/0/1709711380870?e=2147483647&amp;v=beta&amp;t=KbTyls8dRlF-RhEh3hug7NY62-wOxwfD2XMsBz-sqaQ">
-
-      <icon class="base-main-card__play-button w-auto overlay-center play-button" data-delayed-url="https://static.licdn.com/aero-v1/sc/h/9n9raq7fmdu241tpsxwodsmcd" data-svg-class-name="base-main-card__play-button-svg"></icon>
-  </div>
-
-<div class="base-main-card__info self-center ml-1 flex-1 relative break-words papabear:min-w-0 mamabear:min-w-0 babybear:w-full">
-  <h3 class="base-main-card__title font-sans text-[18px] font-bold text-color-text overflow-hidden
-      ">
-    
-  Day 25 of ”becoming a media house in 100 days” 🤠
-
-It’s time for a checkin! I’ll go through why I actually call my journey that, and also what I’ve…
-
-  </h3>
-  
-
-    <h4 class="base-main-card__subtitle body-text text-color-text overflow-hidden">
-      
-Liked by <a href="https://se.linkedin.com/in/eduardo-alvarez-nowak?trk=public_profile_actor-name" data-tracking-control-name="public_profile_actor-name" data-tracking-will-navigate="true" class="hidden-nested-link">Eduardo Alvarez Nowak</a>
-
-    </h4>
-
-<!---->
-<!---->        </div>
-
-<!---->      
-
-</div>
-
-
-
-
-      </li>
-      <li>
-        
-
-
-
-
-
-
-
-
-
-
-<div class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-main-card flex flex-wrap py-2 pr-2 babybear:pr-0
 
 base-main-card--link main-activity-card">
 
 
-<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://se.linkedin.com/posts/novare-interim-recruitment_7-%C3%A5r-av-framg%C3%A5ng-prestation-och-gemenskap-activity-7171870096947113984-uHFl?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
+<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://www.linkedin.com/posts/dorapalfi_worth-is-a-matter-of-opinion-and-opinion-activity-7179550983801159682-YCJF?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
   
   <span class="sr-only">
       
   
-  7 år av framgång, prestation och gemenskap. Igår fick vi fira vår 7-års dag tillsammans med alla underbara kollegor på Novare! 🎉 
-&nbsp;
-Som ett team har…
+  “Worth is a matter of opinion, and opinion is informed by culture. And if that culture is as male-biased as ours is, it can’t help but be biased…
 
 
   </span>
@@ -2015,7 +1975,7 @@ Som ett team har…
   <div class="base-main-card__media relative w-[228px] block h-[134px] overflow-hidden flex-shrink-0 rounded-[2px] babybear:w-full babybear:h-auto babybear:min-h-[134px] babybear:max-h-[250px]
       ">
     
-<img class="main-activity-card__img h-full " data-delayed-url="https://media.licdn.com/dms/image/D4D22AQE4VxmjhP_CKA/feedshare-shrink_2048_1536/0/1709907077449?e=2147483647&amp;v=beta&amp;t=_nXFjnGcF-tpDZgLP7ShjuFLEiISaSBq9LHEq_xsNaU" alt="">
+<img class="main-activity-card__img h-full lazy-loaded" alt="" aria-busy="false" src="https://media.licdn.com/dms/image/D4D22AQG54465_o-NhA/feedshare-shrink_800/0/1711738342884?e=2147483647&amp;v=beta&amp;t=KDDwlW1fFoulCXHWku_ByInzx46LIO6mT4c0SkxOMN8">
 
 <!---->          </div>
 
@@ -2023,9 +1983,7 @@ Som ett team har…
   <h3 class="base-main-card__title font-sans text-[18px] font-bold text-color-text overflow-hidden
       ">
     
-  7 år av framgång, prestation och gemenskap. Igår fick vi fira vår 7-års dag tillsammans med alla underbara kollegor på Novare! 🎉 
-&nbsp;
-Som ett team har…
+  “Worth is a matter of opinion, and opinion is informed by culture. And if that culture is as male-biased as ours is, it can’t help but be biased…
 
   </h3>
   
@@ -2064,12 +2022,16 @@ Liked by <a href="https://se.linkedin.com/in/eduardo-alvarez-nowak?trk=public_pr
 base-main-card--link main-activity-card">
 
 
-<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://www.linkedin.com/posts/jularase_activity-7171874251350781952-ywf4?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
+<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://www.linkedin.com/posts/it-started-when-i-asked-my-boss-is-it-possible-activity-7178005956977463297-ld9b?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
   
   <span class="sr-only">
       
   
-  🐝
+  It started when I asked my boss:
+"Is it possible to get a 10% raise?"
+I was at $40k just beginning my career.
+
+The year before, I'd gotten a 2% bump.…
 
 
   </span>
@@ -2087,7 +2049,73 @@ base-main-card--link main-activity-card">
   <h3 class="base-main-card__title font-sans text-[18px] font-bold text-color-text overflow-hidden
       ">
     
-  🐝
+  It started when I asked my boss:
+"Is it possible to get a 10% raise?"
+I was at $40k just beginning my career.
+
+The year before, I'd gotten a 2% bump.…
+
+  </h3>
+  
+
+    <h4 class="base-main-card__subtitle body-text text-color-text overflow-hidden">
+      
+Liked by <a href="https://se.linkedin.com/in/eduardo-alvarez-nowak?trk=public_profile_actor-name" data-tracking-control-name="public_profile_actor-name" data-tracking-will-navigate="true" class="hidden-nested-link">Eduardo Alvarez Nowak</a>
+
+    </h4>
+
+<!---->
+<!---->        </div>
+
+<!---->      
+
+</div>
+
+
+
+
+      </li>
+      <li>
+        
+
+
+
+
+
+
+
+
+
+
+<div class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-main-card flex flex-wrap py-2 pr-2 babybear:pr-0
+
+base-main-card--link main-activity-card">
+
+
+<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://se.linkedin.com/posts/sverok_nyligen-var-sverok-p%C3%A5-bes%C3%B6k-hos-mojang-spelstudion-activity-7178647040908804096-M6Yg?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
+  
+  <span class="sr-only">
+      
+  
+  Nyligen var Sverok på besök hos Mojang, spelstudion bakom Minecraft! ⛏🧱 Aya och Henrik från kansliet var på plats och pratade om vår senaste…
+
+
+  </span>
+</a>
+
+
+  <div class="base-main-card__media relative w-[228px] block h-[134px] overflow-hidden flex-shrink-0 rounded-[2px] babybear:w-full babybear:h-auto babybear:min-h-[134px] babybear:max-h-[250px]
+      ">
+    
+<img class="main-activity-card__img h-full " data-delayed-url="https://media.licdn.com/dms/image/D4D10AQF41w4dvzfiLQ/image-shrink_800/0/1711522809731?e=2147483647&amp;v=beta&amp;t=JwAnBve9z4u527_L4AEYezD5q7c98cZ_AV2u5uxUHrg" alt="">
+
+<!---->          </div>
+
+<div class="base-main-card__info self-center ml-1 flex-1 relative break-words papabear:min-w-0 mamabear:min-w-0 babybear:w-full">
+  <h3 class="base-main-card__title font-sans text-[18px] font-bold text-color-text overflow-hidden
+      ">
+    
+  Nyligen var Sverok på besök hos Mojang, spelstudion bakom Minecraft! ⛏🧱 Aya och Henrik från kansliet var på plats och pratade om vår senaste…
 
   </h3>
   
@@ -3995,12 +4023,14 @@ LinkedIn User
 base-main-card--link main-activity-card">
 
 
-<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://www.linkedin.com/posts/anjavanhatalo_iwd-diversity-eysweden-activity-7171898849651802113-i4Dq?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
+<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://www.linkedin.com/posts/peralmq_opentowork-staffengineer-principalengineer-activity-7178652769896022016-GQ-T?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
   
   <span class="sr-only">
       
   
-  I have two investments this year that I want to lift on #IWD, both inspired and highlighted to me by our #diversity champion Roxanne Aimable Mårback.…
+  Hello shiny people! ✨ Want to help me land my next job? 💼
+
+After six wonderful years of nurturing my digital baby, Elsa Science, that I co-founded…
 
 
   </span>
@@ -4018,7 +4048,9 @@ base-main-card--link main-activity-card">
   <h3 class="base-main-card__title font-sans text-[18px] font-bold text-color-text overflow-hidden
       ">
     
-  I have two investments this year that I want to lift on #IWD, both inspired and highlighted to me by our #diversity champion Roxanne Aimable Mårback.…
+  Hello shiny people! ✨ Want to help me land my next job? 💼
+
+After six wonderful years of nurturing my digital baby, Elsa Science, that I co-founded…
 
   </h3>
   
@@ -4057,12 +4089,12 @@ Liked by <a href="https://se.linkedin.com/in/eduardo-alvarez-nowak?trk=public_pr
 base-main-card--link main-activity-card">
 
 
-<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://se.linkedin.com/posts/novarehumancapital_f%C3%B6r-sjunde-%C3%A5ret-i-rad-delar-vi-med-oss-av-activity-7171804087183773696-mR6l?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
+<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://www.linkedin.com/posts/furhat-robotics_socialrobotics-conversationalai-aiforbusiness-activity-7174098208023851008-TTtN?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
   
   <span class="sr-only">
       
   
-  För sjunde året i rad delar vi med oss av Novares jämställdhetsindex. Genom detta initiativ vill vi vara transparenta och visa upp hur fördelningen…
+  ⚡️At the Social Robotics Lab at Uppsala University in Sweden, Professor Ginevra Castellano, along with Maike Paetzel-Prüsmann (PhD), has been using…
 
 
   </span>
@@ -4072,7 +4104,7 @@ base-main-card--link main-activity-card">
   <div class="base-main-card__media relative w-[228px] block h-[134px] overflow-hidden flex-shrink-0 rounded-[2px] babybear:w-full babybear:h-auto babybear:min-h-[134px] babybear:max-h-[250px]
       ">
     
-<img class="main-activity-card__img h-full " data-delayed-url="https://media.licdn.com/dms/image/D4D22AQFEFnPXdSZ57Q/feedshare-shrink_800/0/1709891339156?e=2147483647&amp;v=beta&amp;t=M93HQLMYjl3U7jYvZKxW9jOx8jk1LTfG146mZQKw-UI" alt="">
+<img class="main-activity-card__img h-full " data-delayed-url="https://media.licdn.com/dms/image/D5622AQFUIsTfJogb4w/feedshare-shrink_2048_1536/0/1710361985280?e=2147483647&amp;v=beta&amp;t=wzRY6VqsC8j_ZlmYPEdU5mjFfS5moOBEaA3rZFXuSMY" alt="">
 
 <!---->          </div>
 
@@ -4080,7 +4112,7 @@ base-main-card--link main-activity-card">
   <h3 class="base-main-card__title font-sans text-[18px] font-bold text-color-text overflow-hidden
       ">
     
-  För sjunde året i rad delar vi med oss av Novares jämställdhetsindex. Genom detta initiativ vill vi vara transparenta och visa upp hur fördelningen…
+  ⚡️At the Social Robotics Lab at Uppsala University in Sweden, Professor Ginevra Castellano, along with Maike Paetzel-Prüsmann (PhD), has been using…
 
   </h3>
   
@@ -4119,12 +4151,14 @@ Liked by <a href="https://se.linkedin.com/in/eduardo-alvarez-nowak?trk=public_pr
 base-main-card--link main-activity-card">
 
 
-<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://www.linkedin.com/posts/caeriehouchins_what-would-you-say-if-i-told-you-a-woman-led-activity-7171412465262473216-sBOg?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
+<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://www.linkedin.com/posts/amalia-berglof_womenintech-tech-activity-7177694097602711552-wbsH?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
   
   <span class="sr-only">
       
   
-  What would you say if I told you a woman-led game studio met with an all-women-led publishing team to negotiate a multimillion-dollar game contract…
+  Wanna talk tech with other young women in the field? Look no further! 👀
+
+Today I was invited to Fler Ungas think tank to speak about my 11 years…
 
 
   </span>
@@ -4134,7 +4168,7 @@ base-main-card--link main-activity-card">
   <div class="base-main-card__media relative w-[228px] block h-[134px] overflow-hidden flex-shrink-0 rounded-[2px] babybear:w-full babybear:h-auto babybear:min-h-[134px] babybear:max-h-[250px]
       ">
     
-<img class="main-activity-card__img h-full main-activity-card__img--ghost" data-delayed-url="https://static.licdn.com/aero-v1/sc/h/3tvls051d0zvu8nj7yljkjtgl" alt="">
+<img class="main-activity-card__img h-full " data-delayed-url="https://media.licdn.com/dms/image/D4D22AQHuDQJCqn3yWQ/feedshare-shrink_2048_1536/0/1711295627478?e=2147483647&amp;v=beta&amp;t=na1OjDxPlcnE9QhyNKvSE62N6XB7sdp_PizmHWJGUR8" alt="">
 
 <!---->          </div>
 
@@ -4142,7 +4176,9 @@ base-main-card--link main-activity-card">
   <h3 class="base-main-card__title font-sans text-[18px] font-bold text-color-text overflow-hidden
       ">
     
-  What would you say if I told you a woman-led game studio met with an all-women-led publishing team to negotiate a multimillion-dollar game contract…
+  Wanna talk tech with other young women in the field? Look no further! 👀
+
+Today I was invited to Fler Ungas think tank to speak about my 11 years…
 
   </h3>
   
@@ -4181,272 +4217,14 @@ Liked by <a href="https://se.linkedin.com/in/eduardo-alvarez-nowak?trk=public_pr
 base-main-card--link main-activity-card">
 
 
-<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://www.linkedin.com/posts/jonatangil_insidezalando-zalandocareers-icedamericano-activity-7170434649813311488-b_jf?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
+<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://www.linkedin.com/posts/luselymartinez_recruiting-datainsights-jobseekers-activity-7176878384994492416-aZl1?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
   
   <span class="sr-only">
       
   
-  Our new&nbsp;Zalando&nbsp;career website has launched! 
+  Recently, I filled a position that attracted 3360 applicants + 7 referrals.
 
-Explore our culture, workspace and what makes our community…
-
-
-  </span>
-</a>
-
-
-  <div class="base-main-card__media relative w-[228px] block h-[134px] overflow-hidden flex-shrink-0 rounded-[2px] babybear:w-full babybear:h-auto babybear:min-h-[134px] babybear:max-h-[250px]
-      ">
-    
-<img class="main-activity-card__img h-full " data-delayed-url="https://media.licdn.com/dms/image/D4D22AQFabd7kOmdTZQ/feedshare-shrink_2048_1536/0/1709564839345?e=2147483647&amp;v=beta&amp;t=oP7PKjQ9nCWn5nFzJb7GL6WvMdQipWjbPsk3jdgdTLg" alt="">
-
-<!---->          </div>
-
-<div class="base-main-card__info self-center ml-1 flex-1 relative break-words papabear:min-w-0 mamabear:min-w-0 babybear:w-full">
-  <h3 class="base-main-card__title font-sans text-[18px] font-bold text-color-text overflow-hidden
-      ">
-    
-  Our new&nbsp;Zalando&nbsp;career website has launched! 
-
-Explore our culture, workspace and what makes our community…
-
-  </h3>
-  
-
-    <h4 class="base-main-card__subtitle body-text text-color-text overflow-hidden">
-      
-Liked by <a href="https://se.linkedin.com/in/eduardo-alvarez-nowak?trk=public_profile_actor-name" data-tracking-control-name="public_profile_actor-name" data-tracking-will-navigate="true" class="hidden-nested-link">Eduardo Alvarez Nowak</a>
-
-    </h4>
-
-<!---->
-<!---->        </div>
-
-<!---->      
-
-</div>
-
-
-
-
-      </li>
-      <li>
-        
-
-
-
-
-
-
-
-
-
-
-<div class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-main-card flex flex-wrap py-2 pr-2 babybear:pr-0
-
-base-main-card--link main-activity-card">
-
-
-<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://www.linkedin.com/posts/catherineerichards_green-energy-in-africa-presents-significant-activity-7170312049477017600-3drf?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
-  
-  <span class="sr-only">
-      
-  
-  It is possible to address Africa’s large and growing energy needs while simultaneously transitioning to sustainable energy production on the…
-
-
-  </span>
-</a>
-
-
-  <div class="base-main-card__media relative w-[228px] block h-[134px] overflow-hidden flex-shrink-0 rounded-[2px] babybear:w-full babybear:h-auto babybear:min-h-[134px] babybear:max-h-[250px]
-      ">
-    
-<img class="main-activity-card__img h-full " data-delayed-url="https://media.licdn.com/dms/image/D4E10AQGoeaAk4RhY_A/image-shrink_800/0/1709535612116?e=2147483647&amp;v=beta&amp;t=jI93AJ7KnsGAiT1hi3RszKtP1LBLPv54sRYt51_33JU" alt="">
-
-<!---->          </div>
-
-<div class="base-main-card__info self-center ml-1 flex-1 relative break-words papabear:min-w-0 mamabear:min-w-0 babybear:w-full">
-  <h3 class="base-main-card__title font-sans text-[18px] font-bold text-color-text overflow-hidden
-      ">
-    
-  It is possible to address Africa’s large and growing energy needs while simultaneously transitioning to sustainable energy production on the…
-
-  </h3>
-  
-
-    <h4 class="base-main-card__subtitle body-text text-color-text overflow-hidden">
-      
-Liked by <a href="https://se.linkedin.com/in/eduardo-alvarez-nowak?trk=public_profile_actor-name" data-tracking-control-name="public_profile_actor-name" data-tracking-will-navigate="true" class="hidden-nested-link">Eduardo Alvarez Nowak</a>
-
-    </h4>
-
-<!---->
-<!---->        </div>
-
-<!---->      
-
-</div>
-
-
-
-
-      </li>
-      <li>
-        
-
-
-
-
-
-
-
-
-
-
-<div class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-main-card flex flex-wrap py-2 pr-2 babybear:pr-0
-
-base-main-card--link main-activity-card">
-
-
-<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://www.linkedin.com/posts/juanfrancocanepa_mckinseydigital-leapbymckinsey-newbusinessbuilding-activity-7169316195978932224-OcVX?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
-  
-  <span class="sr-only">
-      
-  
-  [Business building]
-
-You might probably ask what are the main levers CEOs consider when looking for value creation… it’s building new businesses!…
-
-
-  </span>
-</a>
-
-
-  <div class="base-main-card__media relative w-[228px] block h-[134px] overflow-hidden flex-shrink-0 rounded-[2px] babybear:w-full babybear:h-auto babybear:min-h-[134px] babybear:max-h-[250px]
-      ">
-    
-<img class="main-activity-card__img h-full " data-delayed-url="https://media.licdn.com/dms/image/D4D10AQF1Y0sOBZBiSg/image-shrink_1280/0/1709298180362?e=2147483647&amp;v=beta&amp;t=xJtKqO8mn6kCkrs72Hchv4_g_B01NXSBZOKcW7c-DsM" alt="">
-
-<!---->          </div>
-
-<div class="base-main-card__info self-center ml-1 flex-1 relative break-words papabear:min-w-0 mamabear:min-w-0 babybear:w-full">
-  <h3 class="base-main-card__title font-sans text-[18px] font-bold text-color-text overflow-hidden
-      ">
-    
-  [Business building]
-
-You might probably ask what are the main levers CEOs consider when looking for value creation… it’s building new businesses!…
-
-  </h3>
-  
-
-    <h4 class="base-main-card__subtitle body-text text-color-text overflow-hidden">
-      
-Liked by <a href="https://se.linkedin.com/in/eduardo-alvarez-nowak?trk=public_profile_actor-name" data-tracking-control-name="public_profile_actor-name" data-tracking-will-navigate="true" class="hidden-nested-link">Eduardo Alvarez Nowak</a>
-
-    </h4>
-
-<!---->
-<!---->        </div>
-
-<!---->      
-
-</div>
-
-
-
-
-      </li>
-      <li>
-        
-
-
-
-
-
-
-
-
-
-
-<div class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-main-card flex flex-wrap py-2 pr-2 babybear:pr-0
-
-base-main-card--link main-activity-card">
-
-
-<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://www.linkedin.com/posts/amalia-berglof_womenintech-networking-activity-7169235494432587776-4cm_?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
-  
-  <span class="sr-only">
-      
-  
-  Want some networking tips to your morning coffee? ☕️
-
-Since my last post about posting on LinkedIn was so warmly received (thank you!!!), I'd also…
-
-
-  </span>
-</a>
-
-
-  <div class="base-main-card__media relative w-[228px] block h-[134px] overflow-hidden flex-shrink-0 rounded-[2px] babybear:w-full babybear:h-auto babybear:min-h-[134px] babybear:max-h-[250px]
-      ">
-    
-<img class="main-activity-card__img h-full " data-delayed-url="https://media.licdn.com/dms/image/D4D22AQHUZW5Jo81uhA/feedshare-shrink_2048_1536/0/1709278938422?e=2147483647&amp;v=beta&amp;t=2I-SUBVRo-_S2_VX4PifWnUCfKiZbI-3ywqzJuJUQ6Q" alt="">
-
-<!---->          </div>
-
-<div class="base-main-card__info self-center ml-1 flex-1 relative break-words papabear:min-w-0 mamabear:min-w-0 babybear:w-full">
-  <h3 class="base-main-card__title font-sans text-[18px] font-bold text-color-text overflow-hidden
-      ">
-    
-  Want some networking tips to your morning coffee? ☕️
-
-Since my last post about posting on LinkedIn was so warmly received (thank you!!!), I'd also…
-
-  </h3>
-  
-
-    <h4 class="base-main-card__subtitle body-text text-color-text overflow-hidden">
-      
-Liked by <a href="https://se.linkedin.com/in/eduardo-alvarez-nowak?trk=public_profile_actor-name" data-tracking-control-name="public_profile_actor-name" data-tracking-will-navigate="true" class="hidden-nested-link">Eduardo Alvarez Nowak</a>
-
-    </h4>
-
-<!---->
-<!---->        </div>
-
-<!---->      
-
-</div>
-
-
-
-
-      </li>
-      <li>
-        
-
-
-
-
-
-
-
-
-
-
-<div class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-main-card flex flex-wrap py-2 pr-2 babybear:pr-0
-
-base-main-card--link main-activity-card">
-
-
-<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://www.linkedin.com/posts/charleneglenister_listen-to-marc-schlaeger-talk-about-sustainability-activity-7167992072141008896-wV58?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
-  
-  <span class="sr-only">
-      
-  
-  Short but sweet, nice clip Marc! Every business change has a tax consequence and at a time when there’s so much tax and regulatory change… it’s the…
+📍 1662 weren't located in any of the listed hiring locations (on the…
 
 
   </span>
@@ -4464,7 +4242,9 @@ base-main-card--link main-activity-card">
   <h3 class="base-main-card__title font-sans text-[18px] font-bold text-color-text overflow-hidden
       ">
     
-  Short but sweet, nice clip Marc! Every business change has a tax consequence and at a time when there’s so much tax and regulatory change… it’s the…
+  Recently, I filled a position that attracted 3360 applicants + 7 referrals.
+
+📍 1662 weren't located in any of the listed hiring locations (on the…
 
   </h3>
   
@@ -4503,14 +4283,13 @@ Liked by <a href="https://se.linkedin.com/in/eduardo-alvarez-nowak?trk=public_pr
 base-main-card--link main-activity-card">
 
 
-<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://www.linkedin.com/posts/adamhorner_last-week-i-was-at-techarenan-in-stockholm-activity-7168628472871919618-WgJU?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
+<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://www.linkedin.com/posts/vicci-smith-%F0%9F%91%BE%F0%9F%8E%AE%E2%9A%94-62a469144_alone-in-the-dark-in-real-life-activity-7176892001651429377-pCm1?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
   
   <span class="sr-only">
       
   
-  Last week, I was at Techarenan in Stockholm. To my surprise, the buzz was NOT exclusively about AI, as one might expect!
-
-The spotlight was firmly on…
+  THQ Nordic invited a load of content creators to experience "Alone in the Dark" for real... 💀 
+Hats off to them for taking part, after watching this…
 
 
   </span>
@@ -4520,7 +4299,7 @@ The spotlight was firmly on…
   <div class="base-main-card__media relative w-[228px] block h-[134px] overflow-hidden flex-shrink-0 rounded-[2px] babybear:w-full babybear:h-auto babybear:min-h-[134px] babybear:max-h-[250px]
       ">
     
-<img class="main-activity-card__img h-full " data-delayed-url="https://media.licdn.com/dms/image/D4E22AQFP3HT3zAqoUA/feedshare-shrink_2048_1536/0/1709134212493?e=2147483647&amp;v=beta&amp;t=W9i3N56avPFRSv42Ad_oabDxel-oxVSdO9Gmmc2rgrA" alt="">
+<img class="main-activity-card__img h-full " data-delayed-url="https://media.licdn.com/dms/image/sync/D4D27AQF2f_fBmn4VuQ/articleshare-shrink_800/0/1711026126662?e=2147483647&amp;v=beta&amp;t=9V_oce3lizxFL6SLojYfCmQcdBIen2a_Nof8bl8m5jM" alt="">
 
 <!---->          </div>
 
@@ -4528,9 +4307,8 @@ The spotlight was firmly on…
   <h3 class="base-main-card__title font-sans text-[18px] font-bold text-color-text overflow-hidden
       ">
     
-  Last week, I was at Techarenan in Stockholm. To my surprise, the buzz was NOT exclusively about AI, as one might expect!
-
-The spotlight was firmly on…
+  THQ Nordic invited a load of content creators to experience "Alone in the Dark" for real... 💀 
+Hats off to them for taking part, after watching this…
 
   </h3>
   
@@ -4569,16 +4347,16 @@ Liked by <a href="https://se.linkedin.com/in/eduardo-alvarez-nowak?trk=public_pr
 base-main-card--link main-activity-card">
 
 
-<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://www.linkedin.com/posts/elfriedsamba_this-is-so-true-i-was-a-terrible-manager-activity-7167794963181723648-KG4m?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
+<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://www.linkedin.com/posts/kathylovettalberta_you-resigned-from-your-current-role-and-your-activity-7175515980079484929-m44K?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
   
   <span class="sr-only">
       
   
-  This is so true.
-
-I was a terrible manager when first given the opportunity. 
-
-Leading by example came naturally to me, but quality management is an…
+  You resigned from your current role and your employer countered the offer.
+&nbsp;
+It is still time to move on. 
+&nbsp;
+You got to this point for a reason, you…
 
 
   </span>
@@ -4588,7 +4366,7 @@ Leading by example came naturally to me, but quality management is an…
   <div class="base-main-card__media relative w-[228px] block h-[134px] overflow-hidden flex-shrink-0 rounded-[2px] babybear:w-full babybear:h-auto babybear:min-h-[134px] babybear:max-h-[250px]
       ">
     
-<img class="main-activity-card__img h-full " data-delayed-url="https://media.licdn.com/dms/image/D4E22AQHJ1D6Hk0I01g/feedshare-shrink_2048_1536/0/1708935488925?e=2147483647&amp;v=beta&amp;t=0QnduL0BB9Q7IBkUXrH7ynHJqEtD1e9hpNWtdW_fXlA" alt="">
+<img class="main-activity-card__img h-full main-activity-card__img--ghost" data-delayed-url="https://static.licdn.com/aero-v1/sc/h/3tvls051d0zvu8nj7yljkjtgl" alt="">
 
 <!---->          </div>
 
@@ -4596,11 +4374,522 @@ Leading by example came naturally to me, but quality management is an…
   <h3 class="base-main-card__title font-sans text-[18px] font-bold text-color-text overflow-hidden
       ">
     
-  This is so true.
+  You resigned from your current role and your employer countered the offer.
+&nbsp;
+It is still time to move on. 
+&nbsp;
+You got to this point for a reason, you…
 
-I was a terrible manager when first given the opportunity. 
+  </h3>
+  
 
-Leading by example came naturally to me, but quality management is an…
+    <h4 class="base-main-card__subtitle body-text text-color-text overflow-hidden">
+      
+Liked by <a href="https://se.linkedin.com/in/eduardo-alvarez-nowak?trk=public_profile_actor-name" data-tracking-control-name="public_profile_actor-name" data-tracking-will-navigate="true" class="hidden-nested-link">Eduardo Alvarez Nowak</a>
+
+    </h4>
+
+<!---->
+<!---->        </div>
+
+<!---->      
+
+</div>
+
+
+
+
+      </li>
+      <li>
+        
+
+
+
+
+
+
+
+
+
+
+<div class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-main-card flex flex-wrap py-2 pr-2 babybear:pr-0
+
+base-main-card--link main-activity-card">
+
+
+<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://se.linkedin.com/posts/sabina-johansson-techqueen_itsecurity-cybercrime-utbildning-activity-7176622776127033344-rPil?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
+  
+  <span class="sr-only">
+      
+  
+  😵‍💫 Känns It-säkerheten som ett stort steg ibland 😵‍💫
+
+Den känslan är man verkligen inte ensam då det finns så mycket som händer runt omkring…
+
+
+  </span>
+</a>
+
+
+  <div class="base-main-card__media relative w-[228px] block h-[134px] overflow-hidden flex-shrink-0 rounded-[2px] babybear:w-full babybear:h-auto babybear:min-h-[134px] babybear:max-h-[250px]
+      ">
+    
+<img class="main-activity-card__img h-full " data-delayed-url="https://media.licdn.com/dms/image/D5622AQEXpiJxZDn97w/feedshare-shrink_2048_1536/0/1711040203327?e=2147483647&amp;v=beta&amp;t=uIIuVfl5_DGrhADLmfBe_6J04FKTBcymtUF8bAd6pjE" alt="">
+
+<!---->          </div>
+
+<div class="base-main-card__info self-center ml-1 flex-1 relative break-words papabear:min-w-0 mamabear:min-w-0 babybear:w-full">
+  <h3 class="base-main-card__title font-sans text-[18px] font-bold text-color-text overflow-hidden
+      ">
+    
+  😵‍💫 Känns It-säkerheten som ett stort steg ibland 😵‍💫
+
+Den känslan är man verkligen inte ensam då det finns så mycket som händer runt omkring…
+
+  </h3>
+  
+
+    <h4 class="base-main-card__subtitle body-text text-color-text overflow-hidden">
+      
+Liked by <a href="https://se.linkedin.com/in/eduardo-alvarez-nowak?trk=public_profile_actor-name" data-tracking-control-name="public_profile_actor-name" data-tracking-will-navigate="true" class="hidden-nested-link">Eduardo Alvarez Nowak</a>
+
+    </h4>
+
+<!---->
+<!---->        </div>
+
+<!---->      
+
+</div>
+
+
+
+
+      </li>
+      <li>
+        
+
+
+
+
+
+
+
+
+
+
+<div class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-main-card flex flex-wrap py-2 pr-2 babybear:pr-0
+
+base-main-card--link main-activity-card">
+
+
+<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://www.linkedin.com/posts/atlassian_jira-fundamentals-for-beginnersfree-jira-activity-7176453093121818627-ry4j?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
+  
+  <span class="sr-only">
+      
+  
+  New to Jira? Or looking to validate your skills? Atlassian has you covered! Our Jira Software Fundamentals course offers tailored learning paths for…
+
+
+  </span>
+</a>
+
+
+  <div class="base-main-card__media relative w-[228px] block h-[134px] overflow-hidden flex-shrink-0 rounded-[2px] babybear:w-full babybear:h-auto babybear:min-h-[134px] babybear:max-h-[250px]
+      ">
+    
+<img class="main-activity-card__img h-full " data-delayed-url="https://media.licdn.com/dms/image/D5610AQHwH-vt3xL5yw/image-shrink_1280/0/1710999640562/uni-spot-Certificatepng?e=2147483647&amp;v=beta&amp;t=yOdQ_mJQ1PH4FnLPTJInm_BXrmii6-mrJ02CMwvX_28" alt="">
+
+<!---->          </div>
+
+<div class="base-main-card__info self-center ml-1 flex-1 relative break-words papabear:min-w-0 mamabear:min-w-0 babybear:w-full">
+  <h3 class="base-main-card__title font-sans text-[18px] font-bold text-color-text overflow-hidden
+      ">
+    
+  New to Jira? Or looking to validate your skills? Atlassian has you covered! Our Jira Software Fundamentals course offers tailored learning paths for…
+
+  </h3>
+  
+
+    <h4 class="base-main-card__subtitle body-text text-color-text overflow-hidden">
+      
+Liked by <a href="https://se.linkedin.com/in/eduardo-alvarez-nowak?trk=public_profile_actor-name" data-tracking-control-name="public_profile_actor-name" data-tracking-will-navigate="true" class="hidden-nested-link">Eduardo Alvarez Nowak</a>
+
+    </h4>
+
+<!---->
+<!---->        </div>
+
+<!---->      
+
+</div>
+
+
+
+
+      </li>
+      <li>
+        
+
+
+
+
+
+
+
+
+
+
+<div class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-main-card flex flex-wrap py-2 pr-2 babybear:pr-0
+
+base-main-card--link main-activity-card">
+
+
+<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://www.linkedin.com/posts/eduardo-alvarez-nowak_data-dataengineer-dataengineering-activity-7176563992054665216--ZmQ?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
+  
+  <span class="sr-only">
+      
+  
+  To my LinkedIn network full of awesome software developers and engineers. One of the top insurance companies in Stockholm is seeking experienced data…
+
+
+  </span>
+</a>
+
+
+  <div class="base-main-card__media relative w-[228px] block h-[134px] overflow-hidden flex-shrink-0 rounded-[2px] babybear:w-full babybear:h-auto babybear:min-h-[134px] babybear:max-h-[250px]
+      ">
+    
+<img class="main-activity-card__img h-full " data-delayed-url="https://media.licdn.com/dms/image/D4D22AQH8Du6KHD0xZQ/feedshare-shrink_800/0/1711026187956?e=2147483647&amp;v=beta&amp;t=qxcQyrDeY4if13FgWFo4G5RVI0O7s5ftW2xkIdQ0LDQ" alt="">
+
+<!---->          </div>
+
+<div class="base-main-card__info self-center ml-1 flex-1 relative break-words papabear:min-w-0 mamabear:min-w-0 babybear:w-full">
+  <h3 class="base-main-card__title font-sans text-[18px] font-bold text-color-text overflow-hidden
+      ">
+    
+  To my LinkedIn network full of awesome software developers and engineers. One of the top insurance companies in Stockholm is seeking experienced data…
+
+  </h3>
+  
+
+    <h4 class="base-main-card__subtitle body-text text-color-text overflow-hidden">
+      
+Shared by <a href="https://se.linkedin.com/in/eduardo-alvarez-nowak?trk=public_profile_actor-name" data-tracking-control-name="public_profile_actor-name" data-tracking-will-navigate="true" class="hidden-nested-link">Eduardo Alvarez Nowak</a>
+
+    </h4>
+
+<!---->
+<!---->        </div>
+
+<!---->      
+
+</div>
+
+
+
+
+      </li>
+      <li>
+        
+
+
+
+
+
+
+
+
+
+
+<div class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-main-card flex flex-wrap py-2 pr-2 babybear:pr-0
+
+base-main-card--link main-activity-card">
+
+
+<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://www.linkedin.com/posts/bcanghel_designsystems-uxdesign-productdesign-activity-7176117416664399872-rJqB?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
+  
+  <span class="sr-only">
+      
+  
+  Design Systems are my favourite topic. 
+
+But they’re bad, as I can spend hours polishing up components to perfection (For some reason I enjoy this…
+
+
+  </span>
+</a>
+
+
+  <div class="base-main-card__media relative w-[228px] block h-[134px] overflow-hidden flex-shrink-0 rounded-[2px] babybear:w-full babybear:h-auto babybear:min-h-[134px] babybear:max-h-[250px]
+      ">
+    
+<img class="main-activity-card__img h-full " data-delayed-url="https://media.licdn.com/dms/image/D4E22AQFbKNK-GqwEew/feedshare-shrink_2048_1536/0/1710919716487?e=2147483647&amp;v=beta&amp;t=q3cNF1IN2t7Du7izGyHA1NM9DUk2g0p2pwBR2W3PoS0" alt="">
+
+<!---->          </div>
+
+<div class="base-main-card__info self-center ml-1 flex-1 relative break-words papabear:min-w-0 mamabear:min-w-0 babybear:w-full">
+  <h3 class="base-main-card__title font-sans text-[18px] font-bold text-color-text overflow-hidden
+      ">
+    
+  Design Systems are my favourite topic. 
+
+But they’re bad, as I can spend hours polishing up components to perfection (For some reason I enjoy this…
+
+  </h3>
+  
+
+    <h4 class="base-main-card__subtitle body-text text-color-text overflow-hidden">
+      
+Liked by <a href="https://se.linkedin.com/in/eduardo-alvarez-nowak?trk=public_profile_actor-name" data-tracking-control-name="public_profile_actor-name" data-tracking-will-navigate="true" class="hidden-nested-link">Eduardo Alvarez Nowak</a>
+
+    </h4>
+
+<!---->
+<!---->        </div>
+
+<!---->      
+
+</div>
+
+
+
+
+      </li>
+      <li>
+        
+
+
+
+
+
+
+
+
+
+
+<div class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-main-card flex flex-wrap py-2 pr-2 babybear:pr-0
+
+base-main-card--link main-activity-card">
+
+
+<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://www.linkedin.com/posts/annaram_utgifter-f%C3%B6r-att-s%C3%B6ka-arbete-activity-7175080786289672192-RCFC?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
+  
+  <span class="sr-only">
+      
+  
+  Dear Jobseeker in Sweden : 
+Skatteverkt is providing deduction for Job seeker as an exception if there is a requirement to actively search for work :…
+
+
+  </span>
+</a>
+
+
+  <div class="base-main-card__media relative w-[228px] block h-[134px] overflow-hidden flex-shrink-0 rounded-[2px] babybear:w-full babybear:h-auto babybear:min-h-[134px] babybear:max-h-[250px]
+      ">
+    
+<img class="main-activity-card__img h-full main-activity-card__img--ghost" data-delayed-url="https://static.licdn.com/aero-v1/sc/h/3tvls051d0zvu8nj7yljkjtgl" alt="">
+
+<!---->          </div>
+
+<div class="base-main-card__info self-center ml-1 flex-1 relative break-words papabear:min-w-0 mamabear:min-w-0 babybear:w-full">
+  <h3 class="base-main-card__title font-sans text-[18px] font-bold text-color-text overflow-hidden
+      ">
+    
+  Dear Jobseeker in Sweden : 
+Skatteverkt is providing deduction for Job seeker as an exception if there is a requirement to actively search for work :…
+
+  </h3>
+  
+
+    <h4 class="base-main-card__subtitle body-text text-color-text overflow-hidden">
+      
+Liked by <a href="https://se.linkedin.com/in/eduardo-alvarez-nowak?trk=public_profile_actor-name" data-tracking-control-name="public_profile_actor-name" data-tracking-will-navigate="true" class="hidden-nested-link">Eduardo Alvarez Nowak</a>
+
+    </h4>
+
+<!---->
+<!---->        </div>
+
+<!---->      
+
+</div>
+
+
+
+
+      </li>
+      <li>
+        
+
+
+
+
+
+
+
+
+
+
+<div class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-main-card flex flex-wrap py-2 pr-2 babybear:pr-0
+hover:show-play-button focus:show-play-button
+base-main-card--link main-activity-card">
+
+
+<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://www.linkedin.com/posts/david-schr%C3%B6der-4b219344_zeos-europeunlocked-activity-7175252220517507072-_1Np?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
+  
+  <span class="sr-only">
+      
+  
+  Since Zalando was founded in 2008, we have come a long way. Now, we are ready to take the next step: building a pan-European ecosystem for fashion…
+
+
+  </span>
+</a>
+
+
+  <div class="base-main-card__media relative w-[228px] block h-[134px] overflow-hidden flex-shrink-0 rounded-[2px] babybear:w-full babybear:h-auto babybear:min-h-[134px] babybear:max-h-[250px]
+      hover:show-play-button focus:show-play-button">
+    
+<img class="main-activity-card__img h-full " data-delayed-url="https://media.licdn.com/dms/image/D4D05AQFeG3zMPrJnrA/videocover-high/0/1710713419731?e=2147483647&amp;v=beta&amp;t=G0sU9HvGV1W_04DeO4cLWHen4MmOACpWSlzYeQA2e98" alt="">
+
+      <icon class="base-main-card__play-button w-auto overlay-center play-button" data-delayed-url="https://static.licdn.com/aero-v1/sc/h/9n9raq7fmdu241tpsxwodsmcd" data-svg-class-name="base-main-card__play-button-svg"></icon>
+  </div>
+
+<div class="base-main-card__info self-center ml-1 flex-1 relative break-words papabear:min-w-0 mamabear:min-w-0 babybear:w-full">
+  <h3 class="base-main-card__title font-sans text-[18px] font-bold text-color-text overflow-hidden
+      ">
+    
+  Since Zalando was founded in 2008, we have come a long way. Now, we are ready to take the next step: building a pan-European ecosystem for fashion…
+
+  </h3>
+  
+
+    <h4 class="base-main-card__subtitle body-text text-color-text overflow-hidden">
+      
+Liked by <a href="https://se.linkedin.com/in/eduardo-alvarez-nowak?trk=public_profile_actor-name" data-tracking-control-name="public_profile_actor-name" data-tracking-will-navigate="true" class="hidden-nested-link">Eduardo Alvarez Nowak</a>
+
+    </h4>
+
+<!---->
+<!---->        </div>
+
+<!---->      
+
+</div>
+
+
+
+
+      </li>
+      <li>
+        
+
+
+
+
+
+
+
+
+
+
+<div class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-main-card flex flex-wrap py-2 pr-2 babybear:pr-0
+
+base-main-card--link main-activity-card">
+
+
+<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://www.linkedin.com/posts/sasha-kray_stockholm-today-me-my-swedish-and-activity-7167260737952702464-HeKA?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
+  
+  <span class="sr-only">
+      
+  
+  Stockholm today 💙💛 
+
+Me, my Swedish and Ukrainian colleagues, my neighbors - nearly all who I know and hundreds people who i don’t know was on…
+
+
+  </span>
+</a>
+
+
+  <div class="base-main-card__media relative w-[228px] block h-[134px] overflow-hidden flex-shrink-0 rounded-[2px] babybear:w-full babybear:h-auto babybear:min-h-[134px] babybear:max-h-[250px]
+      ">
+    
+<img class="main-activity-card__img h-full " data-delayed-url="https://media.licdn.com/dms/image/D4D22AQEA7Mxy1sDStA/feedshare-shrink_2048_1536/0/1708808119245?e=2147483647&amp;v=beta&amp;t=Jn4izdrQoyXvdAbktM1FCRJdh4gBtrpXkgqON0eQNcc" alt="">
+
+<!---->          </div>
+
+<div class="base-main-card__info self-center ml-1 flex-1 relative break-words papabear:min-w-0 mamabear:min-w-0 babybear:w-full">
+  <h3 class="base-main-card__title font-sans text-[18px] font-bold text-color-text overflow-hidden
+      ">
+    
+  Stockholm today 💙💛 
+
+Me, my Swedish and Ukrainian colleagues, my neighbors - nearly all who I know and hundreds people who i don’t know was on…
+
+  </h3>
+  
+
+    <h4 class="base-main-card__subtitle body-text text-color-text overflow-hidden">
+      
+Liked by <a href="https://se.linkedin.com/in/eduardo-alvarez-nowak?trk=public_profile_actor-name" data-tracking-control-name="public_profile_actor-name" data-tracking-will-navigate="true" class="hidden-nested-link">Eduardo Alvarez Nowak</a>
+
+    </h4>
+
+<!---->
+<!---->        </div>
+
+<!---->      
+
+</div>
+
+
+
+
+      </li>
+      <li>
+        
+
+
+
+
+
+
+
+
+
+
+<div class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-main-card flex flex-wrap py-2 pr-2 babybear:pr-0
+
+base-main-card--link main-activity-card">
+
+
+<a class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]" href="https://www.linkedin.com/posts/oskar-nyg%C3%A5rds-b9a222199_working-with-a-great-team-that-successfully-activity-7174782216042930177-Xrvq?trk=public_profile" data-tracking-control-name="public_profile" data-tracking-will-navigate="">
+  
+  <span class="sr-only">
+      
+  
+  Working with a great team that successfully upgraded Arbetsförmedlingens Pega production environment to Infinity '23! 🌇
+
+
+  </span>
+</a>
+
+
+  <div class="base-main-card__media relative w-[228px] block h-[134px] overflow-hidden flex-shrink-0 rounded-[2px] babybear:w-full babybear:h-auto babybear:min-h-[134px] babybear:max-h-[250px]
+      ">
+    
+<img class="main-activity-card__img h-full " data-delayed-url="https://media.licdn.com/dms/image/D4D22AQE2lcPTplThJg/feedshare-shrink_800/0/1710601379041?e=2147483647&amp;v=beta&amp;t=LrI6eT7e6G-uwVS7ikB-kLiJH44NhaH6ERScSgDNY0g" alt="">
+
+<!---->          </div>
+
+<div class="base-main-card__info self-center ml-1 flex-1 relative break-words papabear:min-w-0 mamabear:min-w-0 babybear:w-full">
+  <h3 class="base-main-card__title font-sans text-[18px] font-bold text-color-text overflow-hidden
+      ">
+    
+  Working with a great team that successfully upgraded Arbetsförmedlingens Pega production environment to Infinity '23! 🌇
 
   </h3>
   
@@ -4733,10 +5022,62 @@ Liked by <a href="https://se.linkedin.com/in/eduardo-alvarez-nowak?trk=public_pr
 
 
 
-<div class="show-more-less aside-profiles-list">
+<ul class="show-more-less__list show-more-less__list--no-hidden-elems" data-impression-id="public_profile_browsemap_show-more-less">
+
+        <li>
+          
+
+
+
+
+
+
+<a href="https://se.linkedin.com/in/amalia-berglof?trk=public_profile_browsemap-profile" target="_self" data-tracking-control-name="public_profile_browsemap-profile" data-tracking-will-navigate="" class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-aside-card flex my-1.5
+
+base-aside-card--link">
+
+
 <!---->
-<ul data-max-num-to-show="10" class="show-more-less__list show-more-less__list--hide-after-10" data-impression-id="public_profile_browsemap_show-more-less">
-  
+
+<!---->
+    
+      <div class="bg-clip-content bg-contain border-2 border-color-container-neutral-border border-solid box-border h-[56px] rounded-[49.9%] shrink-0 w-[56px] lazy-loaded" data-ghost-classes="bg-color-entity-ghost-background" data-ghost-url="https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2" data-delayed-background="" aria-busy="false" style="background-image: url(&quot;https://media.licdn.com/dms/image/D4D03AQHVZ7Cwwlhi9Q/profile-displayphoto-shrink_400_400/0/1708943797507?e=2147483647&amp;v=beta&amp;t=HdbPH3vPC8m3nbchxgDVOfDQq_Dm7hZ7fMSINyvX4Cc&quot;);"></div>
+
+<div class="base-aside-card__info self-center pl-0.5 flex flex-col flex-1">
+  <h3 class="base-aside-card__title font-sans text-md font-bold text-color-text relative">
+    
+Amalia Berglöf
+
+<!---->          </h3>
+
+    <p class="base-aside-card__subtitle font-sans text-sm text-color-text leading-open mt-0.5 break-words
+        line-clamp-2">
+      
+Let’s change the tech industry | Developing Mpya Digital ✌️
+
+    </p>
+
+<!---->
+<!---->
+    <div class="base-aside-card__metadata font-sans text-sm leading-open font-regular text-color-text-low-emphasis mt-0.5">
+      Stockholm<!---->
+    </div>
+
+<!---->        </div>
+
+
+</a>
+
+
+
+
+            <a href="https://www.linkedin.com/login?session_redirect=https%3A%2F%2Fse%2Elinkedin%2Ecom%2Fin%2Feduardo-alvarez-nowak&amp;fromSignIn=true&amp;trk=public_profile_browsemap_browse-map_connect-button" aria-label="Connect with Amalia Berglöf" class="relative -top-0.5 btn-sm btn-secondary inline-flex items-center ml-[52px]" data-tracking-client-ingraph="" data-tracking-control-name="public_profile_browsemap_browse-map_connect-button" data-tracking-will-navigate="">
+              <icon class="w-2 h-2 align-middle mr-1 lazy-loaded" aria-hidden="true" aria-busy="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="connect-small" data-supported-dps="16x16" fill="currentColor" focusable="false" class="lazy-loaded" aria-busy="false">
+<path d="M9 4a3 3 0 11-3-3 3 3 0 013 3zM6.75 8h-1.5A2.25 2.25 0 003 10.25V15h6v-4.75A2.25 2.25 0 006.75 8zM13 8V6h-1v2h-2v1h2v2h1V9h2V8z"></path>
+</svg></icon>
+              Connect
+            </a>
+        </li>
         <li>
           
 
@@ -4833,60 +5174,6 @@ Affärsutvecklare på Novare Potential
 
 
             <a href="https://www.linkedin.com/login?session_redirect=https%3A%2F%2Fse%2Elinkedin%2Ecom%2Fin%2Feduardo-alvarez-nowak&amp;fromSignIn=true&amp;trk=public_profile_browsemap_browse-map_connect-button" aria-label="Connect with Erik Dreborg" class="relative -top-0.5 btn-sm btn-secondary inline-flex items-center ml-[52px]" data-tracking-client-ingraph="" data-tracking-control-name="public_profile_browsemap_browse-map_connect-button" data-tracking-will-navigate="">
-              <icon class="w-2 h-2 align-middle mr-1 lazy-loaded" aria-hidden="true" aria-busy="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="connect-small" data-supported-dps="16x16" fill="currentColor" focusable="false" class="lazy-loaded" aria-busy="false">
-<path d="M9 4a3 3 0 11-3-3 3 3 0 013 3zM6.75 8h-1.5A2.25 2.25 0 003 10.25V15h6v-4.75A2.25 2.25 0 006.75 8zM13 8V6h-1v2h-2v1h2v2h1V9h2V8z"></path>
-</svg></icon>
-              Connect
-            </a>
-        </li>
-        <li>
-          
-
-
-
-
-
-
-<a href="https://se.linkedin.com/in/clecardona?trk=public_profile_browsemap-profile" target="_self" data-tracking-control-name="public_profile_browsemap-profile" data-tracking-will-navigate="" class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-aside-card flex my-1.5
-
-base-aside-card--link">
-
-
-<!---->
-
-<!---->
-    
-      <div class="bg-clip-content bg-contain border-2 border-color-container-neutral-border border-solid box-border h-[56px] rounded-[49.9%] shrink-0 w-[56px] lazy-loaded" data-ghost-classes="bg-color-entity-ghost-background" data-ghost-url="https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2" data-delayed-background="" aria-busy="false" style="background-image: url(&quot;https://media.licdn.com/dms/image/C4D03AQHb0-7GzN2f9Q/profile-displayphoto-shrink_400_400/0/1619733542620?e=2147483647&amp;v=beta&amp;t=PvmbpOglUtRl_Mk0bfolbalFSIxcp3aZnO_w4K7_TkU&quot;);"></div>
-
-<div class="base-aside-card__info self-center pl-0.5 flex flex-col flex-1">
-  <h3 class="base-aside-card__title font-sans text-md font-bold text-color-text relative">
-    
-Clément CARDONA
-
-<!---->          </h3>
-
-    <p class="base-aside-card__subtitle font-sans text-sm text-color-text leading-open mt-0.5 break-words
-        line-clamp-2">
-      
-Frontend Developer
-
-    </p>
-
-<!---->
-<!---->
-    <div class="base-aside-card__metadata font-sans text-sm leading-open font-regular text-color-text-low-emphasis mt-0.5">
-      Stockholm<!---->
-    </div>
-
-<!---->        </div>
-
-
-</a>
-
-
-
-
-            <a href="https://www.linkedin.com/login?session_redirect=https%3A%2F%2Fse%2Elinkedin%2Ecom%2Fin%2Feduardo-alvarez-nowak&amp;fromSignIn=true&amp;trk=public_profile_browsemap_browse-map_connect-button" aria-label="Connect with Clément CARDONA" class="relative -top-0.5 btn-sm btn-secondary inline-flex items-center ml-[52px]" data-tracking-client-ingraph="" data-tracking-control-name="public_profile_browsemap_browse-map_connect-button" data-tracking-will-navigate="">
               <icon class="w-2 h-2 align-middle mr-1 lazy-loaded" aria-hidden="true" aria-busy="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="connect-small" data-supported-dps="16x16" fill="currentColor" focusable="false" class="lazy-loaded" aria-busy="false">
 <path d="M9 4a3 3 0 11-3-3 3 3 0 013 3zM6.75 8h-1.5A2.25 2.25 0 003 10.25V15h6v-4.75A2.25 2.25 0 006.75 8zM13 8V6h-1v2h-2v1h2v2h1V9h2V8z"></path>
 </svg></icon>
@@ -5003,6 +5290,54 @@ Partner &amp; COO at Novare Potential
 
 
 
+<a href="https://se.linkedin.com/in/swathy-s-71116548?trk=public_profile_browsemap-profile" target="_self" data-tracking-control-name="public_profile_browsemap-profile" data-tracking-will-navigate="" class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-aside-card flex my-1.5
+
+base-aside-card--link">
+
+
+<!---->
+
+<!---->
+    
+      <div class="bg-clip-content bg-contain border-2 border-color-container-neutral-border border-solid box-border h-[56px] rounded-[49.9%] shrink-0 w-[56px] lazy-loaded" data-ghost-classes="bg-color-entity-ghost-background" data-ghost-url="https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2" data-delayed-background="" aria-busy="false" style="background-image: url(&quot;https://media.licdn.com/dms/image/D4D03AQED9yO6ZexOtg/profile-displayphoto-shrink_400_400/0/1685359142090?e=2147483647&amp;v=beta&amp;t=6cBBO_mjzzg1dtOcLrh6-xdVNwML-VdC8qKJK8pVSb4&quot;);"></div>
+
+<div class="base-aside-card__info self-center pl-0.5 flex flex-col flex-1">
+  <h3 class="base-aside-card__title font-sans text-md font-bold text-color-text relative">
+    
+Swathy S
+
+<!---->          </h3>
+
+<!---->
+<!---->
+<!---->
+    <div class="base-aside-card__metadata font-sans text-sm leading-open font-regular text-color-text-low-emphasis mt-0.5">
+      Stockholm<!---->
+    </div>
+
+<!---->        </div>
+
+
+</a>
+
+
+
+
+            <a href="https://www.linkedin.com/login?session_redirect=https%3A%2F%2Fse%2Elinkedin%2Ecom%2Fin%2Feduardo-alvarez-nowak&amp;fromSignIn=true&amp;trk=public_profile_browsemap_browse-map_connect-button" aria-label="Connect with Swathy S" class="relative -top-0.5 btn-sm btn-secondary inline-flex items-center ml-[52px]" data-tracking-client-ingraph="" data-tracking-control-name="public_profile_browsemap_browse-map_connect-button" data-tracking-will-navigate="">
+              <icon class="w-2 h-2 align-middle mr-1 lazy-loaded" aria-hidden="true" aria-busy="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="connect-small" data-supported-dps="16x16" fill="currentColor" focusable="false" class="lazy-loaded" aria-busy="false">
+<path d="M9 4a3 3 0 11-3-3 3 3 0 013 3zM6.75 8h-1.5A2.25 2.25 0 003 10.25V15h6v-4.75A2.25 2.25 0 006.75 8zM13 8V6h-1v2h-2v1h2v2h1V9h2V8z"></path>
+</svg></icon>
+              Connect
+            </a>
+        </li>
+        <li>
+          
+
+
+
+
+
+
 <a href="https://se.linkedin.com/in/karolinfrennert?trk=public_profile_browsemap-profile" target="_self" data-tracking-control-name="public_profile_browsemap-profile" data-tracking-will-navigate="" class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-aside-card flex my-1.5
 
 base-aside-card--link">
@@ -5051,7 +5386,7 @@ base-aside-card--link">
 
 
 
-<a href="https://se.linkedin.com/in/pontus-liberg-14a467168/en?trk=public_profile_browsemap-profile" target="_self" data-tracking-control-name="public_profile_browsemap-profile" data-tracking-will-navigate="" class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-aside-card flex my-1.5
+<a href="https://se.linkedin.com/in/pontus-liberg-14a467168/en?trk=public_profile_browsemap-profile" target="_self" data-impression-id="public_profile_browsemap-7" data-tracking-control-name="public_profile_browsemap-profile" data-tracking-will-navigate="" class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-aside-card flex my-1.5
 
 base-aside-card--link">
 
@@ -5060,7 +5395,7 @@ base-aside-card--link">
 
 <!---->
     
-      <div class="bg-clip-content bg-contain border-2 border-color-container-neutral-border border-solid box-border h-[56px] rounded-[49.9%] shrink-0 w-[56px] lazy-loaded" data-ghost-classes="bg-color-entity-ghost-background" data-ghost-url="https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2" data-delayed-background="" aria-busy="false" style="background-image: url(&quot;https://media.licdn.com/dms/image/D4D03AQELlbIlvb9iRg/profile-displayphoto-shrink_400_400/0/1672089489559?e=2147483647&amp;v=beta&amp;t=-F2nelSf6lmw_xClOxILYUxqegtnVf3il_n9tt1PVXU&quot;);"></div>
+      <div class="bg-clip-content bg-contain border-2 border-color-container-neutral-border border-solid box-border h-[56px] rounded-[49.9%] shrink-0 w-[56px] lazy-loaded" data-ghost-classes="bg-color-entity-ghost-background" data-ghost-url="https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2" data-delayed-background="" data-impression-id="public_profile_browsemap-7" aria-busy="false" style="background-image: url(&quot;https://media.licdn.com/dms/image/D4D03AQELlbIlvb9iRg/profile-displayphoto-shrink_400_400/0/1672089489559?e=2147483647&amp;v=beta&amp;t=-F2nelSf6lmw_xClOxILYUxqegtnVf3il_n9tt1PVXU&quot;);"></div>
 
 <div class="base-aside-card__info self-center pl-0.5 flex flex-col flex-1">
   <h3 class="base-aside-card__title font-sans text-md font-bold text-color-text relative">
@@ -5105,54 +5440,6 @@ Student Frontend developer / Websec
 
 
 
-<a href="https://se.linkedin.com/in/swathy-s-71116548?trk=public_profile_browsemap-profile" target="_self" data-impression-id="public_profile_browsemap-7" data-tracking-control-name="public_profile_browsemap-profile" data-tracking-will-navigate="" class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-aside-card flex my-1.5
-
-base-aside-card--link">
-
-
-<!---->
-
-<!---->
-    
-      <div class="bg-clip-content bg-contain border-2 border-color-container-neutral-border border-solid box-border h-[56px] rounded-[49.9%] shrink-0 w-[56px] lazy-loaded" data-ghost-classes="bg-color-entity-ghost-background" data-ghost-url="https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2" data-delayed-background="" data-impression-id="public_profile_browsemap-7" aria-busy="false" style="background-image: url(&quot;https://media.licdn.com/dms/image/D4D03AQED9yO6ZexOtg/profile-displayphoto-shrink_400_400/0/1685359142090?e=2147483647&amp;v=beta&amp;t=6cBBO_mjzzg1dtOcLrh6-xdVNwML-VdC8qKJK8pVSb4&quot;);"></div>
-
-<div class="base-aside-card__info self-center pl-0.5 flex flex-col flex-1">
-  <h3 class="base-aside-card__title font-sans text-md font-bold text-color-text relative">
-    
-Swathy S
-
-<!---->          </h3>
-
-<!---->
-<!---->
-<!---->
-    <div class="base-aside-card__metadata font-sans text-sm leading-open font-regular text-color-text-low-emphasis mt-0.5">
-      Stockholm<!---->
-    </div>
-
-<!---->        </div>
-
-
-</a>
-
-
-
-
-            <a href="https://www.linkedin.com/login?session_redirect=https%3A%2F%2Fse%2Elinkedin%2Ecom%2Fin%2Feduardo-alvarez-nowak&amp;fromSignIn=true&amp;trk=public_profile_browsemap_browse-map_connect-button" aria-label="Connect with Swathy S" class="relative -top-0.5 btn-sm btn-secondary inline-flex items-center ml-[52px]" data-tracking-client-ingraph="" data-tracking-control-name="public_profile_browsemap_browse-map_connect-button" data-tracking-will-navigate="">
-              <icon class="w-2 h-2 align-middle mr-1 lazy-loaded" aria-hidden="true" aria-busy="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="connect-small" data-supported-dps="16x16" fill="currentColor" focusable="false" class="lazy-loaded" aria-busy="false">
-<path d="M9 4a3 3 0 11-3-3 3 3 0 013 3zM6.75 8h-1.5A2.25 2.25 0 003 10.25V15h6v-4.75A2.25 2.25 0 006.75 8zM13 8V6h-1v2h-2v1h2v2h1V9h2V8z"></path>
-</svg></icon>
-              Connect
-            </a>
-        </li>
-        <li>
-          
-
-
-
-
-
-
 <a href="https://se.linkedin.com/in/benjaminronneling?trk=public_profile_browsemap-profile" target="_self" data-impression-id="public_profile_browsemap-8" data-tracking-control-name="public_profile_browsemap-profile" data-tracking-will-navigate="" class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-aside-card flex my-1.5
 
 base-aside-card--link">
@@ -5162,7 +5449,8 @@ base-aside-card--link">
 
 <!---->
     
-      <div class="bg-clip-content bg-contain border-2 border-color-container-neutral-border border-solid box-border h-[56px] rounded-[49.9%] shrink-0 w-[56px] lazy-loaded" data-ghost-classes="bg-color-entity-ghost-background" data-ghost-url="https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2" data-delayed-background="" data-impression-id="public_profile_browsemap-8" aria-busy="false" style="background-image: url(&quot;https://media.licdn.com/dms/image/C4E03AQGMKYimAo2P8Q/profile-displayphoto-shrink_400_400/0/1651684255287?e=2147483647&amp;v=beta&amp;t=ExDQJ4JFT4Nbro-6eXk4sMy7wRnk_O3dGrbsKAWVxI4&quot;);"></div>
+      <div class="bg-clip-content bg-contain border-2 border-color-container-neutral-border border-solid box-border h-[56px] rounded-[49.9%] shrink-0 w-[56px]
+          " data-delayed-url="https://media.licdn.com/dms/image/C4E03AQGMKYimAo2P8Q/profile-displayphoto-shrink_400_400/0/1651684255287?e=2147483647&amp;v=beta&amp;t=ExDQJ4JFT4Nbro-6eXk4sMy7wRnk_O3dGrbsKAWVxI4" data-ghost-classes="bg-color-entity-ghost-background" data-ghost-url="https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2" data-delayed-background="" data-impression-id="public_profile_browsemap-8"></div>
 
 <div class="base-aside-card__info self-center pl-0.5 flex flex-col flex-1">
   <h3 class="base-aside-card__title font-sans text-md font-bold text-color-text relative">
@@ -5244,541 +5532,8 @@ Associate Professor KTH and National Technical Manager InfraVis - Interactive Co
               Connect
             </a>
         </li>
-        <li>
-          
-
-
-
-
-
-
-<a href="https://se.linkedin.com/in/siwei-zhang-1624a3235?trk=public_profile_browsemap-profile" target="_self" data-impression-id="public_profile_browsemap-10" data-tracking-control-name="public_profile_browsemap-profile" data-tracking-will-navigate="" class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-aside-card flex my-1.5
-
-base-aside-card--link">
-
-
-<!---->
-
-<!---->
-    
-      <div class="bg-clip-content bg-contain border-2 border-color-container-neutral-border border-solid box-border h-[56px] rounded-[49.9%] shrink-0 w-[56px] lazy-loaded" data-ghost-classes="bg-color-entity-ghost-background" data-ghost-url="https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2" data-delayed-background="" data-impression-id="public_profile_browsemap-10" aria-busy="false" style="background-image: url(&quot;https://media.licdn.com/dms/image/C5603AQH0TvRV0q7_vw/profile-displayphoto-shrink_100_100/0/1647966817297?e=2147483647&amp;v=beta&amp;t=JU4XGn673uKqOT3Szt52E4hUyByxg5_ViZn2BKebyCQ&quot;);"></div>
-
-<div class="base-aside-card__info self-center pl-0.5 flex flex-col flex-1">
-  <h3 class="base-aside-card__title font-sans text-md font-bold text-color-text relative">
-    
-Siwei Zhang
-
-<!---->          </h3>
-
-    <p class="base-aside-card__subtitle font-sans text-sm text-color-text leading-open mt-0.5 break-words
-        line-clamp-2">
-      
-Student at KTH Royal Institute of Technology
-
-    </p>
-
-<!---->
-<!---->
-    <div class="base-aside-card__metadata font-sans text-sm leading-open font-regular text-color-text-low-emphasis mt-0.5">
-      Stockholm<!---->
-    </div>
-
-<!---->        </div>
-
-
-</a>
-
-
-
-
-            <a href="https://www.linkedin.com/login?session_redirect=https%3A%2F%2Fse%2Elinkedin%2Ecom%2Fin%2Feduardo-alvarez-nowak&amp;fromSignIn=true&amp;trk=public_profile_browsemap_browse-map_connect-button" aria-label="Connect with Siwei Zhang" class="relative -top-0.5 btn-sm btn-secondary inline-flex items-center ml-[52px]" data-tracking-client-ingraph="" data-tracking-control-name="public_profile_browsemap_browse-map_connect-button" data-tracking-will-navigate="">
-              <icon class="w-2 h-2 align-middle mr-1 lazy-loaded" aria-hidden="true" aria-busy="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="connect-small" data-supported-dps="16x16" fill="currentColor" focusable="false" class="lazy-loaded" aria-busy="false">
-<path d="M9 4a3 3 0 11-3-3 3 3 0 013 3zM6.75 8h-1.5A2.25 2.25 0 003 10.25V15h6v-4.75A2.25 2.25 0 006.75 8zM13 8V6h-1v2h-2v1h2v2h1V9h2V8z"></path>
-</svg></icon>
-              Connect
-            </a>
-        </li>
-        <li>
-          
-
-
-
-
-
-
-<a href="https://se.linkedin.com/in/lisa-berg-b3045425a?trk=public_profile_browsemap-profile" target="_self" data-impression-id="public_profile_browsemap-11" data-tracking-control-name="public_profile_browsemap-profile" data-tracking-will-navigate="" class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-aside-card flex my-1.5
-
-base-aside-card--link">
-
-
-<!---->
-
-<!---->
-    
-      <div class="bg-clip-content bg-contain border-2 border-color-container-neutral-border border-solid box-border h-[56px] rounded-[49.9%] shrink-0 w-[56px] lazy-loaded" data-ghost-classes="bg-color-entity-ghost-background" data-ghost-url="https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2" data-delayed-background="" data-impression-id="public_profile_browsemap-11" aria-busy="false" style="background-image: url(&quot;https://media.licdn.com/dms/image/D4E03AQHUuRPBC1l98w/profile-displayphoto-shrink_400_400/0/1671033705615?e=2147483647&amp;v=beta&amp;t=OqIQf3RmIrpSKyfFHyxM216ST3Bo21wkfTrdqIsS1fo&quot;);"></div>
-
-<div class="base-aside-card__info self-center pl-0.5 flex flex-col flex-1">
-  <h3 class="base-aside-card__title font-sans text-md font-bold text-color-text relative">
-    
-Lisa Berg
-
-<!---->          </h3>
-
-    <p class="base-aside-card__subtitle font-sans text-sm text-color-text leading-open mt-0.5 break-words
-        line-clamp-2">
-      
-Verksamhetsutvecklare på Riksantikvarieämbetet
-
-    </p>
-
-<!---->
-<!---->
-    <div class="base-aside-card__metadata font-sans text-sm leading-open font-regular text-color-text-low-emphasis mt-0.5">
-      Visby<!---->
-    </div>
-
-<!---->        </div>
-
-
-</a>
-
-
-
-
-            <a href="https://www.linkedin.com/login?session_redirect=https%3A%2F%2Fse%2Elinkedin%2Ecom%2Fin%2Feduardo-alvarez-nowak&amp;fromSignIn=true&amp;trk=public_profile_browsemap_browse-map_connect-button" aria-label="Connect with Lisa Berg" class="relative -top-0.5 btn-sm btn-secondary inline-flex items-center ml-[52px]" data-tracking-client-ingraph="" data-tracking-control-name="public_profile_browsemap_browse-map_connect-button" data-tracking-will-navigate="">
-              <icon class="w-2 h-2 align-middle mr-1 lazy-loaded" aria-hidden="true" aria-busy="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="connect-small" data-supported-dps="16x16" fill="currentColor" focusable="false" class="lazy-loaded" aria-busy="false">
-<path d="M9 4a3 3 0 11-3-3 3 3 0 013 3zM6.75 8h-1.5A2.25 2.25 0 003 10.25V15h6v-4.75A2.25 2.25 0 006.75 8zM13 8V6h-1v2h-2v1h2v2h1V9h2V8z"></path>
-</svg></icon>
-              Connect
-            </a>
-        </li>
-        <li>
-          
-
-
-
-
-
-
-<a href="https://se.linkedin.com/in/mimmi-sandberg-17b65323?trk=public_profile_browsemap-profile" target="_self" data-impression-id="public_profile_browsemap-12" data-tracking-control-name="public_profile_browsemap-profile" data-tracking-will-navigate="" class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-aside-card flex my-1.5
-
-base-aside-card--link">
-
-
-<!---->
-
-<!---->
-    
-      <div class="bg-clip-content bg-contain border-2 border-color-container-neutral-border border-solid box-border h-[56px] rounded-[49.9%] shrink-0 w-[56px] lazy-loaded" data-ghost-classes="bg-color-entity-ghost-background" data-ghost-url="https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2" data-delayed-background="" data-impression-id="public_profile_browsemap-12" aria-busy="false" style="background-image: url(&quot;https://media.licdn.com/dms/image/C4E03AQE8hfKzuGQMsQ/profile-displayphoto-shrink_400_400/0/1632494190455?e=2147483647&amp;v=beta&amp;t=uptIcFTliUQmphVX8twY9YUGlUGtpP6_Suw3r-F38sc&quot;);"></div>
-
-<div class="base-aside-card__info self-center pl-0.5 flex flex-col flex-1">
-  <h3 class="base-aside-card__title font-sans text-md font-bold text-color-text relative">
-    
-Mimmi Sandberg
-
-<!---->          </h3>
-
-<!---->
-<!---->
-<!---->
-    <div class="base-aside-card__metadata font-sans text-sm leading-open font-regular text-color-text-low-emphasis mt-0.5">
-      Greater Stockholm Metropolitan Area<!---->
-    </div>
-
-<!---->        </div>
-
-
-</a>
-
-
-
-
-            <a href="https://www.linkedin.com/login?session_redirect=https%3A%2F%2Fse%2Elinkedin%2Ecom%2Fin%2Feduardo-alvarez-nowak&amp;fromSignIn=true&amp;trk=public_profile_browsemap_browse-map_connect-button" aria-label="Connect with Mimmi Sandberg" class="relative -top-0.5 btn-sm btn-secondary inline-flex items-center ml-[52px]" data-tracking-client-ingraph="" data-tracking-control-name="public_profile_browsemap_browse-map_connect-button" data-tracking-will-navigate="">
-              <icon class="w-2 h-2 align-middle mr-1 lazy-loaded" aria-hidden="true" aria-busy="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="connect-small" data-supported-dps="16x16" fill="currentColor" focusable="false" class="lazy-loaded" aria-busy="false">
-<path d="M9 4a3 3 0 11-3-3 3 3 0 013 3zM6.75 8h-1.5A2.25 2.25 0 003 10.25V15h6v-4.75A2.25 2.25 0 006.75 8zM13 8V6h-1v2h-2v1h2v2h1V9h2V8z"></path>
-</svg></icon>
-              Connect
-            </a>
-        </li>
-        <li>
-          
-
-
-
-
-
-
-<a href="https://se.linkedin.com/in/pierrehelgesson?trk=public_profile_browsemap-profile" target="_self" data-impression-id="public_profile_browsemap-13" data-tracking-control-name="public_profile_browsemap-profile" data-tracking-will-navigate="" class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-aside-card flex my-1.5
-
-base-aside-card--link">
-
-
-<!---->
-
-<!---->
-    
-      <div class="bg-clip-content bg-contain border-2 border-color-container-neutral-border border-solid box-border h-[56px] rounded-[49.9%] shrink-0 w-[56px] lazy-loaded" data-ghost-classes="bg-color-entity-ghost-background" data-ghost-url="https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2" data-delayed-background="" data-impression-id="public_profile_browsemap-13" aria-busy="false" style="background-image: url(&quot;https://media.licdn.com/dms/image/C4E03AQGnnrUJLnNtEQ/profile-displayphoto-shrink_400_400/0/1517732980413?e=2147483647&amp;v=beta&amp;t=GfEFSdg_0ho7RxpJ2sYNNBNH82yLXMrtQEgJ0FkRork&quot;);"></div>
-
-<div class="base-aside-card__info self-center pl-0.5 flex flex-col flex-1">
-  <h3 class="base-aside-card__title font-sans text-md font-bold text-color-text relative">
-    
-Pierre Helgesson
-
-<!---->          </h3>
-
-<!---->
-<!---->
-<!---->
-    <div class="base-aside-card__metadata font-sans text-sm leading-open font-regular text-color-text-low-emphasis mt-0.5">
-      Stockholm<!---->
-    </div>
-
-<!---->        </div>
-
-
-</a>
-
-
-
-
-            <a href="https://www.linkedin.com/login?session_redirect=https%3A%2F%2Fse%2Elinkedin%2Ecom%2Fin%2Feduardo-alvarez-nowak&amp;fromSignIn=true&amp;trk=public_profile_browsemap_browse-map_connect-button" aria-label="Connect with Pierre Helgesson" class="relative -top-0.5 btn-sm btn-secondary inline-flex items-center ml-[52px]" data-tracking-client-ingraph="" data-tracking-control-name="public_profile_browsemap_browse-map_connect-button" data-tracking-will-navigate="">
-              <icon class="w-2 h-2 align-middle mr-1 lazy-loaded" aria-hidden="true" aria-busy="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="connect-small" data-supported-dps="16x16" fill="currentColor" focusable="false" class="lazy-loaded" aria-busy="false">
-<path d="M9 4a3 3 0 11-3-3 3 3 0 013 3zM6.75 8h-1.5A2.25 2.25 0 003 10.25V15h6v-4.75A2.25 2.25 0 006.75 8zM13 8V6h-1v2h-2v1h2v2h1V9h2V8z"></path>
-</svg></icon>
-              Connect
-            </a>
-        </li>
-        <li>
-          
-
-
-
-
-
-
-<a href="https://se.linkedin.com/in/julia-karlberg-572a32197?trk=public_profile_browsemap-profile" target="_self" data-impression-id="public_profile_browsemap-14" data-tracking-control-name="public_profile_browsemap-profile" data-tracking-will-navigate="" class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-aside-card flex my-1.5
-
-base-aside-card--link">
-
-
-<!---->
-
-<!---->
-    
-      <div class="bg-clip-content bg-contain border-2 border-color-container-neutral-border border-solid box-border h-[56px] rounded-[49.9%] shrink-0 w-[56px] lazy-loaded" data-ghost-classes="bg-color-entity-ghost-background" data-ghost-url="https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2" data-delayed-background="" data-impression-id="public_profile_browsemap-14" aria-busy="false" style="background-image: url(&quot;https://media.licdn.com/dms/image/C4D03AQFHzOXs7Ic5Qw/profile-displayphoto-shrink_400_400/0/1651494862140?e=2147483647&amp;v=beta&amp;t=OWE9mh7ovXv6ASFvwbjuRpwc5jl4VRs0ake-tNvSltU&quot;);"></div>
-
-<div class="base-aside-card__info self-center pl-0.5 flex flex-col flex-1">
-  <h3 class="base-aside-card__title font-sans text-md font-bold text-color-text relative">
-    
-Julia Karlberg
-
-<!---->          </h3>
-
-    <p class="base-aside-card__subtitle font-sans text-sm text-color-text leading-open mt-0.5 break-words
-        line-clamp-2">
-      
-IT coordinator
-
-    </p>
-
-<!---->
-<!---->
-    <div class="base-aside-card__metadata font-sans text-sm leading-open font-regular text-color-text-low-emphasis mt-0.5">
-      Gothenburg<!---->
-    </div>
-
-<!---->        </div>
-
-
-</a>
-
-
-
-
-            <a href="https://www.linkedin.com/login?session_redirect=https%3A%2F%2Fse%2Elinkedin%2Ecom%2Fin%2Feduardo-alvarez-nowak&amp;fromSignIn=true&amp;trk=public_profile_browsemap_browse-map_connect-button" aria-label="Connect with Julia Karlberg" class="relative -top-0.5 btn-sm btn-secondary inline-flex items-center ml-[52px]" data-tracking-client-ingraph="" data-tracking-control-name="public_profile_browsemap_browse-map_connect-button" data-tracking-will-navigate="">
-              <icon class="w-2 h-2 align-middle mr-1 lazy-loaded" aria-hidden="true" aria-busy="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="connect-small" data-supported-dps="16x16" fill="currentColor" focusable="false" class="lazy-loaded" aria-busy="false">
-<path d="M9 4a3 3 0 11-3-3 3 3 0 013 3zM6.75 8h-1.5A2.25 2.25 0 003 10.25V15h6v-4.75A2.25 2.25 0 006.75 8zM13 8V6h-1v2h-2v1h2v2h1V9h2V8z"></path>
-</svg></icon>
-              Connect
-            </a>
-        </li>
-        <li>
-          
-
-
-
-
-
-
-<a href="https://se.linkedin.com/in/patrick-kostov-314154212?trk=public_profile_browsemap-profile" target="_self" data-impression-id="public_profile_browsemap-15" data-tracking-control-name="public_profile_browsemap-profile" data-tracking-will-navigate="" class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-aside-card flex my-1.5
-
-base-aside-card--link">
-
-
-<!---->
-
-<!---->
-    
-      <div class="bg-clip-content bg-contain border-2 border-color-container-neutral-border border-solid box-border h-[56px] rounded-[49.9%] shrink-0 w-[56px] bg-color-entity-ghost-background lazy-loaded" data-ghost-classes="bg-color-entity-ghost-background" data-ghost-url="https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2" data-delayed-background="" data-impression-id="public_profile_browsemap-15" aria-busy="false" style="background-image: url(&quot;https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2&quot;);"></div>
-
-<div class="base-aside-card__info self-center pl-0.5 flex flex-col flex-1">
-  <h3 class="base-aside-card__title font-sans text-md font-bold text-color-text relative">
-    
-Patrick Kostov
-
-<!---->          </h3>
-
-    <p class="base-aside-card__subtitle font-sans text-sm text-color-text leading-open mt-0.5 break-words
-        line-clamp-2">
-      
-Graphic Design Student
-
-    </p>
-
-<!---->
-<!---->
-    <div class="base-aside-card__metadata font-sans text-sm leading-open font-regular text-color-text-low-emphasis mt-0.5">
-      Stockholm<!---->
-    </div>
-
-<!---->        </div>
-
-
-</a>
-
-
-
-
-            <a href="https://www.linkedin.com/login?session_redirect=https%3A%2F%2Fse%2Elinkedin%2Ecom%2Fin%2Feduardo-alvarez-nowak&amp;fromSignIn=true&amp;trk=public_profile_browsemap_browse-map_connect-button" aria-label="Connect with Patrick Kostov" class="relative -top-0.5 btn-sm btn-secondary inline-flex items-center ml-[52px]" data-tracking-client-ingraph="" data-tracking-control-name="public_profile_browsemap_browse-map_connect-button" data-tracking-will-navigate="">
-              <icon class="w-2 h-2 align-middle mr-1 lazy-loaded" aria-hidden="true" aria-busy="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="connect-small" data-supported-dps="16x16" fill="currentColor" focusable="false" class="lazy-loaded" aria-busy="false">
-<path d="M9 4a3 3 0 11-3-3 3 3 0 013 3zM6.75 8h-1.5A2.25 2.25 0 003 10.25V15h6v-4.75A2.25 2.25 0 006.75 8zM13 8V6h-1v2h-2v1h2v2h1V9h2V8z"></path>
-</svg></icon>
-              Connect
-            </a>
-        </li>
-        <li>
-          
-
-
-
-
-
-
-<a href="https://se.linkedin.com/in/ninabremer?trk=public_profile_browsemap-profile" target="_self" data-impression-id="public_profile_browsemap-16" data-tracking-control-name="public_profile_browsemap-profile" data-tracking-will-navigate="" class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-aside-card flex my-1.5
-
-base-aside-card--link">
-
-
-<!---->
-
-<!---->
-    
-      <div class="bg-clip-content bg-contain border-2 border-color-container-neutral-border border-solid box-border h-[56px] rounded-[49.9%] shrink-0 w-[56px] lazy-loaded" data-ghost-classes="bg-color-entity-ghost-background" data-ghost-url="https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2" data-delayed-background="" data-impression-id="public_profile_browsemap-16" aria-busy="false" style="background-image: url(&quot;https://media.licdn.com/dms/image/D4D03AQEUf3g82nlUrQ/profile-displayphoto-shrink_400_400/0/1689940172760?e=2147483647&amp;v=beta&amp;t=9P1Rv-4vb29aJP223fb5WF0oGEj_bopm4DWplYknRCQ&quot;);"></div>
-
-<div class="base-aside-card__info self-center pl-0.5 flex flex-col flex-1">
-  <h3 class="base-aside-card__title font-sans text-md font-bold text-color-text relative">
-    
-Nina Bremer
-
-<!---->          </h3>
-
-<!---->
-<!---->
-<!---->
-    <div class="base-aside-card__metadata font-sans text-sm leading-open font-regular text-color-text-low-emphasis mt-0.5">
-      Solna kommun<!---->
-    </div>
-
-<!---->        </div>
-
-
-</a>
-
-
-
-
-            <a href="https://www.linkedin.com/login?session_redirect=https%3A%2F%2Fse%2Elinkedin%2Ecom%2Fin%2Feduardo-alvarez-nowak&amp;fromSignIn=true&amp;trk=public_profile_browsemap_browse-map_connect-button" aria-label="Connect with Nina Bremer" class="relative -top-0.5 btn-sm btn-secondary inline-flex items-center ml-[52px]" data-tracking-client-ingraph="" data-tracking-control-name="public_profile_browsemap_browse-map_connect-button" data-tracking-will-navigate="">
-              <icon class="w-2 h-2 align-middle mr-1 lazy-loaded" aria-hidden="true" aria-busy="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="connect-small" data-supported-dps="16x16" fill="currentColor" focusable="false" class="lazy-loaded" aria-busy="false">
-<path d="M9 4a3 3 0 11-3-3 3 3 0 013 3zM6.75 8h-1.5A2.25 2.25 0 003 10.25V15h6v-4.75A2.25 2.25 0 006.75 8zM13 8V6h-1v2h-2v1h2v2h1V9h2V8z"></path>
-</svg></icon>
-              Connect
-            </a>
-        </li>
-        <li>
-          
-
-
-
-
-
-
-<a href="https://se.linkedin.com/in/brouzoulis?trk=public_profile_browsemap-profile" target="_self" data-impression-id="public_profile_browsemap-17" data-tracking-control-name="public_profile_browsemap-profile" data-tracking-will-navigate="" class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-aside-card flex my-1.5
-
-base-aside-card--link">
-
-
-<!---->
-
-<!---->
-    
-      <div class="bg-clip-content bg-contain border-2 border-color-container-neutral-border border-solid box-border h-[56px] rounded-[49.9%] shrink-0 w-[56px] lazy-loaded" data-ghost-classes="bg-color-entity-ghost-background" data-ghost-url="https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2" data-delayed-background="" data-impression-id="public_profile_browsemap-17" aria-busy="false" style="background-image: url(&quot;https://media.licdn.com/dms/image/C4E03AQF1r2EezD3l4g/profile-displayphoto-shrink_400_400/0/1516805101754?e=2147483647&amp;v=beta&amp;t=RtK_uzlLSvKOx3v56I1ry07igQ3dYQ5QyglMSyyjV_M&quot;);"></div>
-
-<div class="base-aside-card__info self-center pl-0.5 flex flex-col flex-1">
-  <h3 class="base-aside-card__title font-sans text-md font-bold text-color-text relative">
-    
-Jim Brouzoulis
-
-<!---->          </h3>
-
-    <p class="base-aside-card__subtitle font-sans text-sm text-color-text leading-open mt-0.5 break-words
-        line-clamp-2">
-      
-Researcher at Chalmers tekniska högskola
-
-    </p>
-
-<!---->
-<!---->
-    <div class="base-aside-card__metadata font-sans text-sm leading-open font-regular text-color-text-low-emphasis mt-0.5">
-      Greater Gothenburg Metropolitan Area<!---->
-    </div>
-
-<!---->        </div>
-
-
-</a>
-
-
-
-
-            <a href="https://www.linkedin.com/login?session_redirect=https%3A%2F%2Fse%2Elinkedin%2Ecom%2Fin%2Feduardo-alvarez-nowak&amp;fromSignIn=true&amp;trk=public_profile_browsemap_browse-map_connect-button" aria-label="Connect with Jim Brouzoulis" class="relative -top-0.5 btn-sm btn-secondary inline-flex items-center ml-[52px]" data-tracking-client-ingraph="" data-tracking-control-name="public_profile_browsemap_browse-map_connect-button" data-tracking-will-navigate="">
-              <icon class="w-2 h-2 align-middle mr-1 lazy-loaded" aria-hidden="true" aria-busy="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="connect-small" data-supported-dps="16x16" fill="currentColor" focusable="false" class="lazy-loaded" aria-busy="false">
-<path d="M9 4a3 3 0 11-3-3 3 3 0 013 3zM6.75 8h-1.5A2.25 2.25 0 003 10.25V15h6v-4.75A2.25 2.25 0 006.75 8zM13 8V6h-1v2h-2v1h2v2h1V9h2V8z"></path>
-</svg></icon>
-              Connect
-            </a>
-        </li>
-        <li>
-          
-
-
-
-
-
-
-<a href="https://se.linkedin.com/in/bj%C3%B6rn-str%C3%A5%C3%A5t-8a844841?trk=public_profile_browsemap-profile" target="_self" data-impression-id="public_profile_browsemap-18" data-tracking-control-name="public_profile_browsemap-profile" data-tracking-will-navigate="" class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-aside-card flex my-1.5
-
-base-aside-card--link">
-
-
-<!---->
-
-<!---->
-    
-      <div class="bg-clip-content bg-contain border-2 border-color-container-neutral-border border-solid box-border h-[56px] rounded-[49.9%] shrink-0 w-[56px] lazy-loaded" data-ghost-classes="bg-color-entity-ghost-background" data-ghost-url="https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2" data-delayed-background="" data-impression-id="public_profile_browsemap-18" aria-busy="false" style="background-image: url(&quot;https://media.licdn.com/dms/image/C4E03AQH6mJWzddCAPA/profile-displayphoto-shrink_400_400/0/1596203310214?e=2147483647&amp;v=beta&amp;t=ceg-vbV4xBAIWn5Meam8FsBtnaAxq0p5FzBO9ZH4zNc&quot;);"></div>
-
-<div class="base-aside-card__info self-center pl-0.5 flex flex-col flex-1">
-  <h3 class="base-aside-card__title font-sans text-md font-bold text-color-text relative">
-    
-Björn Strååt
-
-<!---->          </h3>
-
-    <p class="base-aside-card__subtitle font-sans text-sm text-color-text leading-open mt-0.5 break-words
-        line-clamp-2">
-      
-PHD Researcher at Stockholm University
-
-    </p>
-
-<!---->
-<!---->
-    <div class="base-aside-card__metadata font-sans text-sm leading-open font-regular text-color-text-low-emphasis mt-0.5">
-      Stockholm County, Sweden<!---->
-    </div>
-
-<!---->        </div>
-
-
-</a>
-
-
-
-
-            <a href="https://www.linkedin.com/login?session_redirect=https%3A%2F%2Fse%2Elinkedin%2Ecom%2Fin%2Feduardo-alvarez-nowak&amp;fromSignIn=true&amp;trk=public_profile_browsemap_browse-map_connect-button" aria-label="Connect with Björn Strååt" class="relative -top-0.5 btn-sm btn-secondary inline-flex items-center ml-[52px]" data-tracking-client-ingraph="" data-tracking-control-name="public_profile_browsemap_browse-map_connect-button" data-tracking-will-navigate="">
-              <icon class="w-2 h-2 align-middle mr-1 lazy-loaded" aria-hidden="true" aria-busy="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="connect-small" data-supported-dps="16x16" fill="currentColor" focusable="false" class="lazy-loaded" aria-busy="false">
-<path d="M9 4a3 3 0 11-3-3 3 3 0 013 3zM6.75 8h-1.5A2.25 2.25 0 003 10.25V15h6v-4.75A2.25 2.25 0 006.75 8zM13 8V6h-1v2h-2v1h2v2h1V9h2V8z"></path>
-</svg></icon>
-              Connect
-            </a>
-        </li>
-        <li>
-          
-
-
-
-
-
-
-<a href="https://se.linkedin.com/in/brynestam/en?trk=public_profile_browsemap-profile" target="_self" data-impression-id="public_profile_browsemap-19" data-tracking-control-name="public_profile_browsemap-profile" data-tracking-will-navigate="" class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-aside-card flex my-1.5
-
-base-aside-card--link">
-
-
-<!---->
-
-<!---->
-    
-      <div class="bg-clip-content bg-contain border-2 border-color-container-neutral-border border-solid box-border h-[56px] rounded-[49.9%] shrink-0 w-[56px] lazy-loaded" data-ghost-classes="bg-color-entity-ghost-background" data-ghost-url="https://static.licdn.com/aero-v1/sc/h/9c8pery4andzj6ohjkjp54ma2" data-delayed-background="" data-impression-id="public_profile_browsemap-19" aria-busy="false" style="background-image: url(&quot;https://media.licdn.com/dms/image/C5603AQFcnnNrQaL0Jg/profile-displayphoto-shrink_400_400/0/1531134591181?e=2147483647&amp;v=beta&amp;t=H39ujtppOOSK431qUuk5e27r_oMjLKYZk6b24bM4jXg&quot;);"></div>
-
-<div class="base-aside-card__info self-center pl-0.5 flex flex-col flex-1">
-  <h3 class="base-aside-card__title font-sans text-md font-bold text-color-text relative">
-    
-Magnus Brynestam
-
-<!---->          </h3>
-
-<!---->
-<!---->
-<!---->
-    <div class="base-aside-card__metadata font-sans text-sm leading-open font-regular text-color-text-low-emphasis mt-0.5">
-      Karlskrona<!---->
-    </div>
-
-<!---->        </div>
-
-
-</a>
-
-
-
-
-            <a href="https://www.linkedin.com/login?session_redirect=https%3A%2F%2Fse%2Elinkedin%2Ecom%2Fin%2Feduardo-alvarez-nowak&amp;fromSignIn=true&amp;trk=public_profile_browsemap_browse-map_connect-button" aria-label="Connect with Magnus Brynestam" class="relative -top-0.5 btn-sm btn-secondary inline-flex items-center ml-[52px]" data-tracking-client-ingraph="" data-tracking-control-name="public_profile_browsemap_browse-map_connect-button" data-tracking-will-navigate="">
-              <icon class="w-2 h-2 align-middle mr-1 lazy-loaded" aria-hidden="true" aria-busy="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="connect-small" data-supported-dps="16x16" fill="currentColor" focusable="false" class="lazy-loaded" aria-busy="false">
-<path d="M9 4a3 3 0 11-3-3 3 3 0 013 3zM6.75 8h-1.5A2.25 2.25 0 003 10.25V15h6v-4.75A2.25 2.25 0 006.75 8zM13 8V6h-1v2h-2v1h2v2h1V9h2V8z"></path>
-</svg></icon>
-              Connect
-            </a>
-        </li>
     
 </ul>
-
-    <button class="show-more-less__button show-more-less__more-button show-more-less-button
-        " aria-expanded="false" data-tracking-control-name="public_profile_browsemap_show_more">
-        
-      Show more profiles
-    
-      <icon class="show-more-less__button--chevron show-more-less-button-icon" data-delayed-url="https://static.licdn.com/aero-v1/sc/h/cyolgscd0imw2ldqppkrb84vo"></icon>
-    </button>
-
-    <button class="show-more-less__button show-more-less__less-button show-more-less-button
-        show-more-less__button--hide" aria-expanded="false" data-tracking-control-name="public_profile_browsemap_show_more">
-        
-      Show fewer profiles
-    
-      <icon class="show-more-less__button--chevron show-more-less-button-icon lazy-loaded" aria-hidden="true" aria-busy="false"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" preserveAspectRatio="xMinYMin meet" focusable="false" class="lazy-loaded" aria-busy="false"><path d="M8 7l-5.9 4L1 9.5l6.2-4.2c.5-.3 1.2-.3 1.7 0L15 9.5 13.9 11 8 7z" fill="currentColor"></path></svg></icon>
-    </button>
-</div>
 
 
 </div>
@@ -5849,7 +5604,7 @@ Explore More
 
 
 
-<a href="https://www.linkedin.com/learning/building-react-and-asp-dot-net-core-applications?trk=public_profile_recommended-course" target="_self" data-tracking-control-name="public_profile_recommended-course" data-tracking-will-navigate="" class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-aside-card flex my-1.5
+<a href="https://www.linkedin.com/learning/building-restful-web-apis-with-django?trk=public_profile_recommended-course" target="_self" data-tracking-control-name="public_profile_recommended-course" data-tracking-will-navigate="" class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-aside-card flex my-1.5
 hover:show-play-button focus:show-play-button
 base-aside-card--link aside-learning-course-card">
 
@@ -5859,7 +5614,7 @@ base-aside-card--link aside-learning-course-card">
     <div class="base-aside-card__media flex-shrink-0 mr-0.5 overflow-hidden relative
         h-[54px] w-[95px]">
       
-<img class="base-aside-card__media-element w-[100px] h-full" alt="" data-delayed-url="https://media.licdn.com/dms/image/C4E0DAQH0sZKL1Bez1g/learning-public-crop_288_512/0/1575395391968?e=2147483647&amp;v=beta&amp;t=MruU5CnIFkqMq2OBV5HaT3j7CFbyC7AwsWNcJtc2csI">
+<img class="base-aside-card__media-element w-[100px] h-full" alt="" data-delayed-url="https://media.licdn.com/dms/image/C4E0DAQHIo6Q4XqxI9g/learning-public-crop_288_512/0/1568058527782?e=2147483647&amp;v=beta&amp;t=m1ID-h_aT7wN3NNieXr-E1zjJoqZpn2ug5VHgsCn4n8">
   
 
 
@@ -5886,7 +5641,7 @@ base-aside-card--link aside-learning-course-card">
 
 
 
-      <div class="aside-learning-course-card__duration duration">2h 41m</div>
+      <div class="aside-learning-course-card__duration duration">1h 9m</div>
     
 
 
@@ -5896,7 +5651,7 @@ base-aside-card--link aside-learning-course-card">
 <div class="base-aside-card__info self-center pl-0.5 flex flex-col flex-1">
   <h3 class="base-aside-card__title font-sans text-md font-bold text-color-text relative">
     
-Building React and ASP.NET Core Applications
+Building RESTful Web APIs with Django
 
 <!---->          </h3>
 
@@ -5920,7 +5675,7 @@ Building React and ASP.NET Core Applications
 
 
 
-<a href="https://www.linkedin.com/learning/build-a-react-application-using-aws-amplify?trk=public_profile_recommended-course" target="_self" data-tracking-control-name="public_profile_recommended-course" data-tracking-will-navigate="" class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-aside-card flex my-1.5
+<a href="https://www.linkedin.com/learning/building-react-and-django-apps?trk=public_profile_recommended-course" target="_self" data-tracking-control-name="public_profile_recommended-course" data-tracking-will-navigate="" class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-aside-card flex my-1.5
 hover:show-play-button focus:show-play-button
 base-aside-card--link aside-learning-course-card">
 
@@ -5930,7 +5685,7 @@ base-aside-card--link aside-learning-course-card">
     <div class="base-aside-card__media flex-shrink-0 mr-0.5 overflow-hidden relative
         h-[54px] w-[95px]">
       
-<img class="base-aside-card__media-element w-[100px] h-full" alt="" data-delayed-url="https://media.licdn.com/dms/image/C4E0DAQFqwRJ9ojry_A/learning-public-crop_288_512/0/1603127554479?e=2147483647&amp;v=beta&amp;t=WvW2Owd51JNRFqeuDAmFPl6SLjrRGTGv19n7OzCHjLg">
+<img class="base-aside-card__media-element w-[100px] h-full" alt="" data-delayed-url="https://media.licdn.com/dms/image/C4E0DAQE3ZPEPGGQhTQ/learning-public-crop_288_512/0/1575482817524?e=2147483647&amp;v=beta&amp;t=OLSJC4BwZRq1hVrdtckqaDtMfFxiO17xj6D3QTEFlS0">
   
 
 
@@ -5957,7 +5712,7 @@ base-aside-card--link aside-learning-course-card">
 
 
 
-      <div class="aside-learning-course-card__duration duration">1h 42m</div>
+      <div class="aside-learning-course-card__duration duration">56m</div>
     
 
 
@@ -5967,7 +5722,7 @@ base-aside-card--link aside-learning-course-card">
 <div class="base-aside-card__info self-center pl-0.5 flex flex-col flex-1">
   <h3 class="base-aside-card__title font-sans text-md font-bold text-color-text relative">
     
-Build a React Application Using AWS Amplify
+Building React and Django Apps
 
 <!---->          </h3>
 
@@ -5991,7 +5746,7 @@ Build a React Application Using AWS Amplify
 
 
 
-<a href="https://www.linkedin.com/learning/css-display?trk=public_profile_recommended-course" target="_self" data-tracking-control-name="public_profile_recommended-course" data-tracking-will-navigate="" class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-aside-card flex my-1.5
+<a href="https://www.linkedin.com/learning/ios-app-development-test-driven-development-2?trk=public_profile_recommended-course" target="_self" data-tracking-control-name="public_profile_recommended-course" data-tracking-will-navigate="" class="base-card relative w-full hover:no-underline focus:no-underline base-card--link base-aside-card flex my-1.5
 hover:show-play-button focus:show-play-button
 base-aside-card--link aside-learning-course-card">
 
@@ -6001,7 +5756,7 @@ base-aside-card--link aside-learning-course-card">
     <div class="base-aside-card__media flex-shrink-0 mr-0.5 overflow-hidden relative
         h-[54px] w-[95px]">
       
-<img class="base-aside-card__media-element w-[100px] h-full" alt="" data-delayed-url="https://media.licdn.com/dms/image/C4E0DAQF629fARgLMzA/learning-public-crop_288_512/0/1612547411492?e=2147483647&amp;v=beta&amp;t=WUqhqh4ugap9-fHxRDHLAfG76xnk8uFzxButiNzWCow">
+<img class="base-aside-card__media-element w-[100px] h-full" alt="" data-delayed-url="https://media.licdn.com/dms/image/C4E0DAQGaaOjpHJht0A/learning-public-crop_288_512/0/1567116259918?e=2147483647&amp;v=beta&amp;t=8-_htAoALJ4ENNSjq6NU8L9DLvFnwk85qCP7sCXfAyA">
   
 
 
@@ -6028,7 +5783,7 @@ base-aside-card--link aside-learning-course-card">
 
 
 
-      <div class="aside-learning-course-card__duration duration">42m</div>
+      <div class="aside-learning-course-card__duration duration">2h 10m</div>
     
 
 
@@ -6038,7 +5793,7 @@ base-aside-card--link aside-learning-course-card">
 <div class="base-aside-card__info self-center pl-0.5 flex flex-col flex-1">
   <h3 class="base-aside-card__title font-sans text-md font-bold text-color-text relative">
     
-CSS: Display
+iOS App Development: Test-Driven Development
 
 <!---->          </h3>
 
@@ -6426,7 +6181,7 @@ CSS: Display
 
 
 <form class="google-auth" action="https://www.linkedin.com/uas/login-submit" method="post" aria-hidden="true">
-<input name="loginCsrfParam" value="b8ba4d47-eced-4151-87db-e3c239934445" type="hidden">
+<input name="loginCsrfParam" value="9305de45-8276-4f48-8e5a-ba739b5c742f" type="hidden">
 
 <input name="session_redirect" value="https://se.linkedin.com/in/eduardo-alvarez-nowak" type="hidden">
 
@@ -6508,16 +6263,16 @@ CSS: Display
   
 
   
-<img class="bc lazy-loaded onerror" style="display:none;" width="1" height="1" aria-hidden="true" aria-busy="true" src="https://ponf.linkedin.com/pixel/tracking.png?reqid=tid-AAYTTxuhK26PipkePcVroQ==&amp;pageInstance=urn:li:page:public_profile_v3;0Cn5OW0bT0y7Rrcqx0i0FQ==&amp;js=enabled">
+<img class="bc lazy-loaded onerror" style="display:none;" width="1" height="1" aria-hidden="true" aria-busy="true" src="https://ponf.linkedin.com/pixel/tracking.png?reqid=tid-AAYU9aHkpyp2xGFYJNDmBg==&amp;pageInstance=urn:li:page:public_profile_v3;LtYQLrzESoWib+a7E7seQQ==&amp;js=enabled">
 <noscript aria-hidden="true">
-<img class="bc " style="display:none;" width="1" height="1" src="https://ponf.linkedin.com/pixel/tracking.png?reqid=tid-AAYTTxuhK26PipkePcVroQ==&amp;pageInstance=urn:li:page:public_profile_v3;0Cn5OW0bT0y7Rrcqx0i0FQ==&amp;js=disabled">
+<img class="bc " style="display:none;" width="1" height="1" src="https://ponf.linkedin.com/pixel/tracking.png?reqid=tid-AAYU9aHkpyp2xGFYJNDmBg==&amp;pageInstance=urn:li:page:public_profile_v3;LtYQLrzESoWib+a7E7seQQ==&amp;js=disabled">
 </noscript>
 
 
 
-    <script src="https://static.licdn.com/aero-v1/sc/h/12jn8edunbj0jah6829kj7zs7" async="" aria-hidden="true"></script>
+    <script src="https://static.licdn.com/aero-v1/sc/h/eh08muqvrde4h3hc6koyij5ti" async="" aria-hidden="true"></script>
 <!---->          
-<script src="https://static.licdn.com/aero-v1/sc/h/5s89lfexxnwlyltbqv3xx2ufy" async="" defer="" aria-hidden="true"></script>
+<script src="https://static.licdn.com/aero-v1/sc/h/f13cipb4s37hlah3xa9evo8u1" async="" defer="" aria-hidden="true"></script>
 <!---->      
 
 
@@ -6616,8 +6371,8 @@ CSS: Display
 
 <code id="i18n_password_error_too_long" style="display: none"><!--"The password you provided must have at most 400 characters"--></code>
 
-<form data-id="sign-in-form" action="https://www.linkedin.com/uas/login-submit" method="post" novalidate="" class="mt-1.5 mb-2">
-<input name="loginCsrfParam" value="b8ba4d47-eced-4151-87db-e3c239934445" type="hidden">
+<!---->    <form data-id="sign-in-form" action="https://www.linkedin.com/uas/login-submit" method="post" novalidate="" class="mt-1.5 mb-2">
+<input name="loginCsrfParam" value="9305de45-8276-4f48-8e5a-ba739b5c742f" type="hidden">
 
 <div class="flex flex-col">
 
@@ -6670,14 +6425,14 @@ CSS: Display
   Sign in
 </button>
 </div>
-<div class="sign-in-form__divider left-right-divider pt-2 pb-3">
-  <p class="sign-in-form__divider-text font-sans text-sm text-color-text px-2">
-    or
-  </p>
-</div>
-<input type="hidden" name="controlId" value="public_profile_v3_desktop-public_profile_contextual-sign-in-modal_sign-in-modal_sign-in-submit-btn"><input type="hidden" name="pageInstance" value="urn:li:page:public_profile_v3_desktop_jsbeacon;GqEl/agWTzy6Hes+jvhnCQ=="></form>
+  <div class="sign-in-form__divider left-right-divider pt-2 pb-3">
+    <p class="sign-in-form__divider-text font-sans text-sm text-color-text px-2">
+      or
+    </p>
+  </div>
+<input type="hidden" name="controlId" value="public_profile_v3_desktop-public_profile_contextual-sign-in-modal_sign-in-modal_sign-in-submit-btn"><input type="hidden" name="pageInstance" value="urn:li:page:public_profile_v3_desktop_jsbeacon;x4h9OYNVT8G2MWlcBcB2Ag=="></form>
 <div class="w-full max-w-[400px] mx-auto">
-
+  
 <div class="google-auth-button" data-tracking-control-name="public_profile_contextual-sign-in-modal_sign-in-modal_google-auth-button" data-tracking-client-ingraph="">
 <code id="isTermsAndConditionsSkipEnabledAuthButton" style="display: none"><!--true--></code>
 
@@ -6686,7 +6441,7 @@ CSS: Display
 By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?trk=public_profile_contextual-sign-in-modal_sign-in-modal_auth-button_user-agreement" target="_blank" data-tracking-control-name="public_profile_contextual-sign-in-modal_sign-in-modal_auth-button_user-agreement" data-tracking-will-navigate="true">User Agreement</a>, <a href="/legal/privacy-policy?trk=public_profile_contextual-sign-in-modal_sign-in-modal_auth-button_privacy-policy" target="_blank" data-tracking-control-name="public_profile_contextual-sign-in-modal_sign-in-modal_auth-button_privacy-policy" data-tracking-will-navigate="true">Privacy Policy</a>, and <a href="/legal/cookie-policy?trk=public_profile_contextual-sign-in-modal_sign-in-modal_auth-button_cookie-policy" target="_blank" data-tracking-control-name="public_profile_contextual-sign-in-modal_sign-in-modal_auth-button_cookie-policy" data-tracking-will-navigate="true">Cookie Policy</a>.
 </p>
 
-<div class="google-auth-button__placeholder"><div class="S9gUrf-YoZ4jf" style="position: relative;"><div></div><div id="gsi_353098_331382-wrapper" class="L5Fo6c-sM5MNb"><iframe src="https://accounts.google.com/gsi/button?logo_alignment=center&amp;shape=pill&amp;size=large&amp;text=continue_with&amp;theme=undefined&amp;type=undefined&amp;width=398&amp;client_id=990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com&amp;iframe_id=gsi_353098_331382&amp;as=mPjulg8rcu3FpPbRCFGI1Q&amp;hl=en_US" id="gsi_353098_331382" title="Sign in with Google Button" tabindex="-1" style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 418px; border: 0px; margin: -2px -10px;"></iframe><div aria-label="Sign in with Google" id="gsi_353098_331382-overlay" class="L5Fo6c-bF1uUb" tabindex="0"></div></div></div></div>
+<div class="google-auth-button__placeholder"><div class="S9gUrf-YoZ4jf" style="position: relative;"><div></div><div id="gsi_77080_446127-wrapper" class="L5Fo6c-sM5MNb"><iframe src="https://accounts.google.com/gsi/button?logo_alignment=center&amp;shape=pill&amp;size=large&amp;text=continue_with&amp;theme=undefined&amp;type=undefined&amp;width=398&amp;client_id=990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com&amp;iframe_id=gsi_77080_446127&amp;as=ZsUjpVTF6bcNmS5rdjvtTA&amp;hl=en_US" id="gsi_77080_446127" title="Sign in with Google Button" tabindex="-1" style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 418px; border: 0px; margin: -2px -10px;"></iframe><div aria-label="Sign in with Google" id="gsi_77080_446127-overlay" class="L5Fo6c-bF1uUb" tabindex="0"></div></div></div></div>
 </div>
 
 </div>
@@ -6722,7 +6477,7 @@ By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?t
 By clicking Continue, you agree to LinkedIn’s <a href="/legal/user-agreement?trk=public_profile_auth-button_user-agreement" target="_blank" data-tracking-control-name="public_profile_auth-button_user-agreement" data-tracking-will-navigate="true">User Agreement</a>, <a href="/legal/privacy-policy?trk=public_profile_auth-button_privacy-policy" target="_blank" data-tracking-control-name="public_profile_auth-button_privacy-policy" data-tracking-will-navigate="true">Privacy Policy</a>, and <a href="/legal/cookie-policy?trk=public_profile_auth-button_cookie-policy" target="_blank" data-tracking-control-name="public_profile_auth-button_cookie-policy" data-tracking-will-navigate="true">Cookie Policy</a>.
 </p>
 
-<div class="google-auth-button__placeholder"><div class="S9gUrf-YoZ4jf" style="position: relative;"><div></div><div id="gsi_353098_675932-wrapper" class="L5Fo6c-sM5MNb"><iframe src="https://accounts.google.com/gsi/button?logo_alignment=center&amp;shape=pill&amp;size=large&amp;text=continue_with&amp;theme=undefined&amp;type=undefined&amp;width=318&amp;client_id=990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com&amp;iframe_id=gsi_353098_675932&amp;as=mPjulg8rcu3FpPbRCFGI1Q&amp;hl=en_US" id="gsi_353098_675932" title="Sign in with Google Button" tabindex="-1" style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 338px; border: 0px; margin: -2px -10px;"></iframe><div aria-label="Sign in with Google" id="gsi_353098_675932-overlay" class="L5Fo6c-bF1uUb" tabindex="0"></div></div></div></div>
+<div class="google-auth-button__placeholder"><div class="S9gUrf-YoZ4jf" style="position: relative;"><div></div><div id="gsi_77080_652320-wrapper" class="L5Fo6c-sM5MNb"><iframe src="https://accounts.google.com/gsi/button?logo_alignment=center&amp;shape=pill&amp;size=large&amp;text=continue_with&amp;theme=undefined&amp;type=undefined&amp;width=318&amp;client_id=990339570472-k6nqn1tpmitg8pui82bfaun3jrpmiuhs.apps.googleusercontent.com&amp;iframe_id=gsi_77080_652320&amp;as=ZsUjpVTF6bcNmS5rdjvtTA&amp;hl=en_US" id="gsi_77080_652320" title="Sign in with Google Button" tabindex="-1" style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 338px; border: 0px; margin: -2px -10px;"></iframe><div aria-label="Sign in with Google" id="gsi_77080_652320-overlay" class="L5Fo6c-bF1uUb" tabindex="0"></div></div></div></div>
 </div>
 
           </div>

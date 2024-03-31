@@ -6,8 +6,9 @@ import getText from "./helpers/getText";
 import getImage from "./helpers/getImage";
 import getDurationInMonths from "./helpers/getDurationInMonths";
 import getPrimaryJob from "./helpers/getPrimaryJob";
+import LinkedInProfile from "../types/LinkedInProfile";
 
-export default function transformProfile(page: string): object {
+export default function pageToProfile(page: string): LinkedInProfile {
   const document: CheerioAPI = CheerioLoad(page);
   const company: string = ".top-card-layout__entity-info--right-column";
   const longJobTitle: string = getText(document, "h2.top-card-layout__headline");
