@@ -25,6 +25,6 @@ export default function reportEmptyFields(url: string, profile: LinkedInProfile)
   return {
     linked_in_url: url,
     error_severity: severity,
-    message: message,
+    error_message: message,
   };
 }
