@@ -58,6 +58,28 @@ test("Warning scenario, all candidates were parsed but there are some warnings",
   expect(test).toEqual(result);
 });
 
+test("Edge case scenario, some candidate was not parsed", () => {
+  // Arrange
+  const candidateRows = [
+    [1, "Eduardo", "Sample job title"], // Candidate failed to parse
+  ];
+  const errorReports: ErrorReport[] = [
+    { linked_in_url: "linked.com/eduardo", error_severity: 0, error_message: "No problems found" },
+    { linked_in_url: "linked.com/alexia", error_severity: 2, error_message: "Missing all fields" },
+  ];
+  const result: ResultsAPI = {
+    status: 200,
+    data: [[1, "Eduardo", "Sample job title"]],
+    message: [{ linked_in_url: "linked.com/alexia", error_severity: 2, error_message: "Missing all fields" }],
+  };
+
+  // Act
+  const test = packageResults(candidateRows, errorReports);
+
+  // Assert
+  expect(test).toEqual(result);
+});
+
 test("Bad scenario, no candidates were parsed", () => {
   // Arrange
   const candidateRows = []; // missing all data but auto generated id
