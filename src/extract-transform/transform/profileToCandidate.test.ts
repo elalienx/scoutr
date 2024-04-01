@@ -3,8 +3,8 @@ import { expect, test } from "vitest";
 
 // Project files
 import profileToCandidate from "./profileToCandidate";
-import LinkedInProfile from "../types/LinkedInProfile";
-import CandidateRow from "../types/CandidateRow";
+import LinkedInProfile from "../../types/LinkedInProfile";
+import CandidateRow from "../../types/CandidateRow";
 
 // prettier-ignore
 test("Expects a valid array from the candidare related objects", () => {

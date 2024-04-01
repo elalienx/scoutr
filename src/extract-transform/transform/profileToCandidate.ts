@@ -1,15 +1,15 @@
 // Project files
-import CandidateRow from "../types/CandidateRow";
-import LinkedInProfile from "../types/LinkedInProfile";
+import CandidateRow from "../../types/CandidateRow";
+import LinkedInProfile from "../../types/LinkedInProfile";
 
 interface missingKeys {
   url: string;
-  assignment_id: string;
+  assignment_id: number;
 }
 
 export default function profileToCandidate(profile: LinkedInProfile, missingKeys: missingKeys): CandidateRow {
   return [
-    Number(missingKeys.assignment_id),
+    missingKeys.assignment_id,
     missingKeys.url,
     profile.candidate_name,
     profile.candidate_job_title,

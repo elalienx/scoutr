@@ -3,8 +3,8 @@ import { expect, test } from "vitest";
 
 // Project files
 import packageResults from "./packageResults";
-import ErrorReport from "../types/ErrorReport";
-import ResultsAPI from "../types/ResultsAPI";
+import ErrorReport from "../../types/ErrorReport";
+import ResultsAPI from "../../types/ResultsAPI";
 
 test("Best scenario, all candidates were parsed and there is not errors", () => {
   // Arrange

@@ -2,7 +2,7 @@
 import { load as CheerioLoad, CheerioAPI } from "cheerio";
 
 // Project files
-import LinkedInProfile from "../types/LinkedInProfile";
+import LinkedInProfile from "../../types/LinkedInProfile";
 import getDurationInMonths from "./helpers/getDurationInMonths";
 import getImage from "./helpers/getImage";
 import getPrimaryJob from "./helpers/getPrimaryJob";

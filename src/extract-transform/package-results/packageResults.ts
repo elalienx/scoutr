@@ -1,6 +1,6 @@
 // Project files
-import ErrorReport from "../types/ErrorReport";
-import ResultsAPI from "../types/ResultsAPI";
+import ErrorReport from "../../types/ErrorReport";
+import ResultsAPI from "../../types/ResultsAPI";
 
 export default function packageResults(candidateRows: unknown[], errorReports: ErrorReport[]): ResultsAPI {
   const severeReports = errorReports.filter((item) => item.error_severity > 0);

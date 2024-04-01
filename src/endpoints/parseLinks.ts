@@ -3,40 +3,17 @@ import { Request, Response } from "express";
 import { Client } from "pg";
 
 // Project files
-import extractPage from "../extract/extractPage";
-import pageToProfile from "../transform/pageToProfile";
-import candidateQuery from "../sql-queries/insertCandidate";
-import errorQuery from "../sql-queries/insertErrorLog";
-import profileToCandidate from "../transform/profileToCandidate";
-import reportEmptyFields from "../reports/reportEmptyFields";
-import packageResults from "../package-results/packageResults";
+import etlProcess from "../extract-transform/etlProcess";
+import packageResults from "../extract-transform/package-results/packageResults";
 
 export default async function parseLinks(request: Request, response: Response, database: Client) {
-  const { assignment_id } = request.params;
-  const { links } = request.body;
-
-  async function ETLProcess(url: string) {
-    // Extract
-    const page = await extractPage(url);
-
-    // Transform
-    const profile = pageToProfile(page);
-    const candidate = profileToCandidate(profile, { assignment_id, url });
-    const report = reportEmptyFields(url, profile);
-    const reportArray = Object.values(report);
-
-    // Load
-    /** 🚨 REFACTOR: Do not store if severity == 2 (candidate was not parsed) */
-    const { rows } = await database.query(candidateQuery, candidate as unknown[]);
-    if (report.error_severity) await database.query(errorQuery, reportArray);
-
-    return [rows[0], report];
-  }
+  const assignment_id = Number(request.params.assignment_id);
+  const links: string[] = request.body.links;
 
   try {
-    const etlProccess = await Promise.all(links.map((link: string) => ETLProcess(link)));
-    const candidates = etlProccess.map(([item, _]) => item);
-    const reports = etlProccess.map(([_, item]) => item);
+    const etl = await Promise.all(links.map((link) => etlProcess(link, assignment_id, database)));
+    const candidates = etl.map(([item, _]) => item);
+    const reports = etl.map(([_, item]) => item);
     const results = packageResults(candidates, reports);
 
     response.status(200).send(results);

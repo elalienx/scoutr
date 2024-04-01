@@ -2,8 +2,8 @@
 import { expect, test } from "vitest";
 
 // Project files
-import ErrorReport from "../types/ErrorReport";
-import LinkedInProfile from "../types/LinkedInProfile";
+import ErrorReport from "../../types/ErrorReport";
+import LinkedInProfile from "../../types/LinkedInProfile";
 import reportEmptyFields from "./reportEmptyFields";
 
 test("Create an error severity #0 (no errors) when everything is complete", () => {
