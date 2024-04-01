@@ -9,8 +9,9 @@ import candidateQuery from "../sql-queries/insertCandidate";
 import errorQuery from "../sql-queries/insertErrorLog";
 import profileToCandidate from "../transform/profileToCandidate";
 import reportEmptyFields from "../reports/reportEmptyFields";
+import packageResults from "../package-results/packageResults";
 
-export default async function parseLinkedInLinks(request: Request, response: Response, database: Client) {
+export default async function parseLinks(request: Request, response: Response, database: Client) {
   const { assignment_id } = request.params;
   const { links } = request.body;
 
@@ -29,13 +30,14 @@ export default async function parseLinkedInLinks(request: Request, response: Res
     const { rows } = await database.query(candidateQuery, candidate as unknown[]);
     if (report.error_severity) await database.query(errorQuery, reportArray);
 
-    return rows[0];
+    return [rows[0], report];
   }
 
   try {
-    const rows = await Promise.all(links.map((link: string) => ETLProcess(link)));
+    const [candidateRows, report] = await Promise.all(links.map((link: string) => ETLProcess(link)));
+    const results = packageResults(candidateRows, report);
 
-    response.status(200).send(rows);
+    response.status(200).send(results);
   } catch (error) {
     console.error(error);
     response.sendStatus(500);
