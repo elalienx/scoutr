@@ -35,9 +35,9 @@ export default async function parseLinks(request: Request, response: Response, d
 
   try {
     const etlProccess = await Promise.all(links.map((link: string) => ETLProcess(link)));
-    const candidateRows = etlProccess.map(([item, _]) => item);
-    const errorReports = etlProccess.map(([_, item]) => item);
-    const results = packageResults(candidateRows, errorReports);
+    const candidates = etlProccess.map(([item, _]) => item);
+    const reports = etlProccess.map(([_, item]) => item);
+    const results = packageResults(candidates, reports);
 
     response.status(200).send(results);
   } catch (error) {
