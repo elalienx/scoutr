@@ -3,27 +3,21 @@ import ErrorReport from "../types/ErrorReport";
 import LinkedInProfile from "../types/LinkedInProfile";
 
 export default function reportEmptyFields(url: string, profile: LinkedInProfile): ErrorReport {
-  const numberOfFields = Object.keys(profile).length;
-  let missingFields: string[] = [];
+  const fields = Object.entries(profile);
+  const missingFields: string[] = [];
   let severity = 0;
   let message = "No problems found";
-  let foundErrors = 0;
 
-  for (let key in profile) {
-    const value = profile[key];
-
-    if (!value) {
-      missingFields.push(" " + key);
-      foundErrors++;
-    }
+  for (let [key, value] of fields) {
+    if (!value) missingFields.push(" " + key);
   }
 
-  if (foundErrors > 0) {
+  if (missingFields.length > 0) {
     message = "Missing" + missingFields;
     severity = 1;
   }
 
-  if (foundErrors == numberOfFields) {
+  if (missingFields.length == fields.length) {
     message = "Missing all fields";
     severity = 2;
   }
