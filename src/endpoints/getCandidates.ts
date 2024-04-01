@@ -2,7 +2,7 @@
 import { Request, Response } from "express";
 import { Client } from "pg";
 
-export default async function getCandidatesByAssignmentId(request: Request, response: Response, database: Client) {
+export default async function getCandidates(request: Request, response: Response, database: Client) {
   const { assignment_id } = request.params;
   const values = [assignment_id];
   const query = "SELECT * FROM candidates WHERE assignment_id = $1";
