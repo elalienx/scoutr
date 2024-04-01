@@ -1,5 +1,5 @@
 export default interface ResultsAPI {
-  data: unknown;
   status: number;
+  data: unknown;
   message: string | unknown[];
 }
