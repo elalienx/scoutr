@@ -4,25 +4,22 @@ import LinkedInProfile from "../types/LinkedInProfile";
 
 export default function reportEmptyFields(url: string, profile: LinkedInProfile): ErrorReport {
   const numberOfFields = Object.keys(profile).length;
-  let severity = 3; // start a danger level
-  let message = "Missing ";
+  let missingFields: string[] = [];
+  let severity = 0;
+  let message = "No problems found";
   let foundErrors = 0;
 
   for (let key in profile) {
     const value = profile[key];
 
     if (!value) {
-      message += key + " ";
+      missingFields.push(" " + key);
       foundErrors++;
     }
   }
 
-  if (foundErrors == 0) {
-    message = "No problems found";
-    severity = 0;
-  }
-
   if (foundErrors > 0) {
+    message = "Missing" + missingFields;
     severity = 1;
   }
 
@@ -34,6 +31,6 @@ export default function reportEmptyFields(url: string, profile: LinkedInProfile)
   return {
     linked_in_url: url,
     error_severity: severity,
-    message: message.trim(),
+    message: message,
   };
 }
