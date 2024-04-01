@@ -39,8 +39,7 @@ export default async function parseLinks(request: Request, response: Response, d
     const errorReports = etlProccess.map(([_, item]) => item);
     const results = packageResults(candidateRows, errorReports);
 
-    console.table(errorReports);
-    console.log(results);
+    response.status(200).send(results);
   } catch (error) {
     console.error(error);
     response.sendStatus(500);
