@@ -1,4 +1,4 @@
-export const insertCandidate: string = `INSERT INTO candidates (
+const insertCandidate: string = `INSERT INTO candidates (
     assignment_id,
     linked_in_url, 
     candidate_name, 
@@ -10,4 +10,6 @@ export const insertCandidate: string = `INSERT INTO candidates (
   ) 
   VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
   RETURNING *
-  `;
+`;
+
+export default insertCandidate;

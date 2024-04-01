@@ -5,8 +5,8 @@ import { Client } from "pg";
 // Project files
 import extractPage from "../extract/extractPage";
 import pageToProfile from "../transform/pageToProfile";
-import { insertCandidate } from "../sql-queries/insertCandidate";
-import { insertErrorLog } from "../sql-queries/insertErrorLog";
+import candidateQuery from "../sql-queries/insertCandidate";
+import errorQuery from "../sql-queries/insertErrorLog";
 import profileToCandidate from "../transform/profileToCandidate";
 import reportEmptyFields from "../reports/reportEmptyFields";
 
@@ -25,11 +25,8 @@ export default async function parseLinkedInLinks(request: Request, response: Res
     const reportArray = Object.values(report);
 
     // Load
-    const { rows } = await database.query(insertCandidate, candidate as unknown[]);
-    if (report.error_severity > 0) {
-      console.log(`Adding ${report.linked_in_url} to the ErrorLog table`);
-      await database.query(insertErrorLog, reportArray);
-    }
+    const { rows } = await database.query(candidateQuery, candidate as unknown[]);
+    if (report.error_severity) await database.query(errorQuery, reportArray);
 
     return rows[0];
   }
