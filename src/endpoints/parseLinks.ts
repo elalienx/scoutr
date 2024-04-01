@@ -25,7 +25,7 @@ export default async function parseLinkedInLinks(request: Request, response: Res
     const reportArray = Object.values(report);
 
     // Load
-    // ⭐️ If severity === 2 (everything is empty) DO NOT STORE INTO DB
+    /** 🚨 REFACTOR: Do not store if severity == 2 (candidate was not parsed) */
     const { rows } = await database.query(candidateQuery, candidate as unknown[]);
     if (report.error_severity) await database.query(errorQuery, reportArray);
 
