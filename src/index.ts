@@ -8,7 +8,6 @@ import postgresClient from "./database/postgresClient";
 import { credentials } from "./database/credentials";
 import getAssignments from "./endpoints/getAssignments";
 import postAssignment from "./endpoints/postAssignment";
-import postCandidate from "./endpoints/postCandidate";
 import getCandidatesByAssignmentId from "./endpoints/getCandidatesByAssignmentId";
 import parseLinks from "./endpoints/parseLinks";
 
@@ -26,7 +25,6 @@ export default async function initializeServer(_port: number) {
   app.get("/assignments", (request, response) => getAssignments(response, client));
   app.post("/assignments", (request, response) => postAssignment(request, response, client));
   app.get("/candidates/:assignment_id", (request, response) => getCandidatesByAssignmentId(request, response, client));
-  app.post("/candidates", (request, response) => postCandidate(request, response, client));
   app.get("/parse_links/:assignment_id", (request, response) => parseLinks(request, response, client));
 }
 
