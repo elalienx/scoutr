@@ -1,7 +1,7 @@
 /**
  * About:
- * This type outlines the exact order of items the candidate table expects its data
- * based on the query for inserting candidates extracted from the parse link endpoint.
+ * This type outlines the exact order of items the candidate table
+ * expects its values based on the query for inserting candidates.
  */
 type CandidateRow = [
   assignment_id: number,

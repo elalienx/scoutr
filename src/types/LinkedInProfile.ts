@@ -1,9 +1,9 @@
 /**
  * About:
- * This interface outlines the data extractable from LinkedIn.
- * However, for a complete candidate profile, additional keys are required.
- * Therefore, we've need a second interface named Candidate which is an array
- * to ensure compatibility with PostgreSQL insert query values.
+ * This interface outlines the data extracted from a LinkedIn user.
+ * But for a complete candidate profile, more information is required.
+ * So we need an array interface named Candidate to add the missing
+ * information and ensure compatibility with PostgreSQL insert queries.
  */
 export default interface LinkedInProfile {
   candidate_name: string;
