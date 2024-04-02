@@ -15,7 +15,7 @@ export default function pageToProfile(page: string): LinkedInProfile {
   const longDuration: string = getText(document, "ul.experience__list li .date-range span");
 
   return {
-    candidate_name: getText(document, "h1"),
+    candidate_name: getText(document, "h1.top-card-layout__title"),
     candidate_job_title: getPrimaryJob(longJobTitle),
     candidate_image_url: getImage(document, ".top-card__profile-image"),
     company_name: getText(document, `${company} span`),
