@@ -12,8 +12,8 @@ export default async function parseLinks(request: Request, response: Response, d
 
   try {
     const etl = await Promise.all(links.map((link) => etlProcess(link, assignment_id, database)));
-    const candidates: any[] = etl.map(([item, _]) => item);
-    const reports: any[] = etl.map(([_, item]) => item);
+    const candidates = etl.map((item) => item.candidate);
+    const reports = etl.map((item) => item.report);
     const results = packageResults(candidates, reports);
 
     response.status(200).send(results);

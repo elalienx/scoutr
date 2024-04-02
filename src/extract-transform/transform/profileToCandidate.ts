@@ -7,8 +7,8 @@ interface missingKeys {
   assignment_id: number;
 }
 
-export default function profileToCandidate(profile: LinkedInProfile, missingKeys: missingKeys): CandidateRow {
-  return [
+export default function profileToCandidate(profile: LinkedInProfile, missingKeys: missingKeys): any[] {
+  const profileAsArray: CandidateRow = [
     missingKeys.assignment_id,
     missingKeys.url,
     profile.candidate_name,
@@ -18,4 +18,6 @@ export default function profileToCandidate(profile: LinkedInProfile, missingKeys
     profile.company_duration_in_months,
     profile.company_image_url,
   ];
+
+  return profileAsArray;
 }

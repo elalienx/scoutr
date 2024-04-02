@@ -15,19 +15,15 @@ export default async function etlProcess(url: string, assignment_id: number, dat
 
   // Transform
   const profile = pageToProfile(page);
-  const candidate = profileToCandidate(profile, { assignment_id, url });
   const report = reportEmptyFields(url, profile);
-  const reportArray = Object.values(report);
+  const profileAsArray = profileToCandidate(profile, { assignment_id, url });
+  const reportAsArray = Object.values(report);
 
   // Load
-  let result = [];
+  let candidate = [];
 
-  if (report.severity < 2) {
-    const { rows } = await database.query(candidateQuery, candidate as unknown[]);
+  if (report.severity < 2) candidate = (await database.query(candidateQuery, profileAsArray)).rows[0];
+  if (report.severity) await database.query(errorQuery, reportAsArray);
 
-    result = rows[0];
-  }
-  if (report.severity) await database.query(errorQuery, reportArray);
-
-  return [result, report];
+  return { candidate, report };
 }
