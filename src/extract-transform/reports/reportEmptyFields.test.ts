@@ -19,8 +19,8 @@ test("Create an error severity #0 (no errors) when everything is complete", () =
   };
   const result: ErrorReport = {
     linked_in_url: "linked.com/eduardo-alvarez-nowak",
-    error_severity: 0,
-    error_message: "No problems found",
+    severity: 0,
+    message: "No problems found",
   };
 
   // Act
@@ -43,8 +43,8 @@ test("Create an error severity #1 report one field is missing", () => {
   };
   const result: ErrorReport = {
     linked_in_url: "linked.com/eduardo-alvarez-nowak",
-    error_severity: 1,
-    error_message: "Missing candidate_job_title",
+    severity: 1,
+    message: "Missing candidate_job_title",
   };
 
   // Act
@@ -67,8 +67,8 @@ test("Create an error severity #1 report more than one field are missing", () =>
   };
   const result: ErrorReport = {
     linked_in_url: "linked.com/eduardo-alvarez-nowak",
-    error_severity: 1,
-    error_message: "Missing candidate_job_title, candidate_image_url",
+    severity: 1,
+    message: "Missing candidate_job_title, candidate_image_url",
   };
 
   // Act
@@ -91,8 +91,8 @@ test("Create an error severity #2 report when all fields are missing", () => {
   };
   const result: ErrorReport = {
     linked_in_url: "linked.com/eduardo-alvarez-nowak",
-    error_severity: 2,
-    error_message: "Missing all fields",
+    severity: 2,
+    message: "Missing all fields",
   };
 
   // Act

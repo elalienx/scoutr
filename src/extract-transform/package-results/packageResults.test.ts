@@ -13,8 +13,8 @@ test("Best scenario, all candidates were parsed and there is not errors", () => 
     [2, "Alexia", "Fake job title"],
   ];
   const errorReports: ErrorReport[] = [
-    { linked_in_url: "linked.com/eduardo", error_severity: 0, error_message: "No problems found" },
-    { linked_in_url: "linked.com/alexia", error_severity: 0, error_message: "No problems found" },
+    { linked_in_url: "linked.com/eduardo", severity: 0, message: "No problems found" },
+    { linked_in_url: "linked.com/alexia", severity: 0, message: "No problems found" },
   ];
   const result: ResultsAPI = {
     status: 200,
@@ -39,8 +39,8 @@ test("Warning scenario, all candidates were parsed but there are some warnings",
     [2, "Alexia", "Fake job title"],
   ];
   const errorReports: ErrorReport[] = [
-    { linked_in_url: "linked.com/eduardo", error_severity: 1, error_message: "Missing candidate_job_title" },
-    { linked_in_url: "linked.com/alexia", error_severity: 0, error_message: "No problems found" },
+    { linked_in_url: "linked.com/eduardo", severity: 1, message: "Missing candidate_job_title" },
+    { linked_in_url: "linked.com/alexia", severity: 0, message: "No problems found" },
   ];
   const result: ResultsAPI = {
     status: 200,
@@ -48,7 +48,7 @@ test("Warning scenario, all candidates were parsed but there are some warnings",
       [1, "Eduardo", ""],
       [2, "Alexia", "Fake job title"],
     ],
-    message: [{ linked_in_url: "linked.com/eduardo", error_severity: 1, error_message: "Missing candidate_job_title" }],
+    message: [{ linked_in_url: "linked.com/eduardo", severity: 1, message: "Missing candidate_job_title" }],
   };
 
   // Act
@@ -64,13 +64,13 @@ test("Edge case scenario, some candidate was not parsed", () => {
     [1, "Eduardo", "Sample job title"], // Candidate failed to parse
   ];
   const errorReports: ErrorReport[] = [
-    { linked_in_url: "linked.com/eduardo", error_severity: 0, error_message: "No problems found" },
-    { linked_in_url: "linked.com/alexia", error_severity: 2, error_message: "Missing all fields" },
+    { linked_in_url: "linked.com/eduardo", severity: 0, message: "No problems found" },
+    { linked_in_url: "linked.com/alexia", severity: 2, message: "Missing all fields" },
   ];
   const result: ResultsAPI = {
     status: 200,
     data: [[1, "Eduardo", "Sample job title"]],
-    message: [{ linked_in_url: "linked.com/alexia", error_severity: 2, error_message: "Missing all fields" }],
+    message: [{ linked_in_url: "linked.com/alexia", severity: 2, message: "Missing all fields" }],
   };
 
   // Act
@@ -84,8 +84,8 @@ test("Bad scenario, no candidates were parsed", () => {
   // Arrange
   const candidateRows = []; // missing all data but auto generated id
   const errorReports: ErrorReport[] = [
-    { linked_in_url: "linked.com/eduardo", error_severity: 2, error_message: "Missing all fields" },
-    { linked_in_url: "linked.com/alexia", error_severity: 2, error_message: "Missing all fields" },
+    { linked_in_url: "linked.com/eduardo", severity: 2, message: "Missing all fields" },
+    { linked_in_url: "linked.com/alexia", severity: 2, message: "Missing all fields" },
   ];
   const result: ResultsAPI = {
     status: 500,

@@ -24,7 +24,7 @@ export default function reportEmptyFields(linked_in_url: string, profile: Linked
 
   return {
     linked_in_url,
-    error_severity,
-    error_message,
+    severity: error_severity,
+    message: error_message,
   };
 }

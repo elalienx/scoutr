@@ -22,7 +22,7 @@ export default async function etlProcess(url: string, assignment_id: number, dat
   // Load
   /** 🚨 REFACTOR: Do not store if severity == 2 (candidate was not parsed) */
   const { rows } = await database.query(candidateQuery, candidate as unknown[]);
-  if (report.error_severity) await database.query(errorQuery, reportArray);
+  if (report.severity) await database.query(errorQuery, reportArray);
 
   return [rows[0], report];
 }

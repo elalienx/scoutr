@@ -3,7 +3,7 @@ import ErrorReport from "../../types/ErrorReport";
 import ResultsAPI from "../../types/ResultsAPI";
 
 export default function packageResults(candidateRows: unknown[], errorReports: ErrorReport[]): ResultsAPI {
-  const severeReports = errorReports.filter((item) => item.error_severity > 0);
+  const severeReports = errorReports.filter((item) => item.severity > 0);
   const hasCandidates = candidateRows.length > 0;
 
   let status = 500;
