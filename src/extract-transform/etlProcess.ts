@@ -20,7 +20,7 @@ export default async function etlProcess(url: string, assignment_id: number, dat
   const reportAsArray = Object.values(report);
 
   // Load
-  let candidate = [];
+  let candidate = {};
 
   if (report.severity < 2) candidate = (await database.query(candidateQuery, profileAsArray)).rows[0];
   if (report.severity) await database.query(errorQuery, reportAsArray);
