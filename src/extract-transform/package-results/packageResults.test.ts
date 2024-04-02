@@ -9,8 +9,8 @@ import ResultsAPI from "../../types/ResultsAPI";
 test("Best scenario, all candidates were parsed and there is not errors", () => {
   // Arrange
   const candidateRows = [
-    [1, "Eduardo", "Sample job title"],
-    [2, "Alexia", "Fake job title"],
+    { id: 1, name: "Eduardo", title: "Sample job title" },
+    { id: 2, name: "Alexia", title: "Fake job title" },
   ];
   const errorReports: ErrorReport[] = [
     { linked_in_url: "linked.com/eduardo", severity: 0, message: "No problems found" },
@@ -19,8 +19,8 @@ test("Best scenario, all candidates were parsed and there is not errors", () => 
   const result: ResultsAPI = {
     status: 200,
     data: [
-      [1, "Eduardo", "Sample job title"],
-      [2, "Alexia", "Fake job title"],
+      { id: 1, name: "Eduardo", title: "Sample job title" },
+      { id: 2, name: "Alexia", title: "Fake job title" },
     ],
     message: "All candidates parsed perfectly",
   };
@@ -35,8 +35,8 @@ test("Best scenario, all candidates were parsed and there is not errors", () => 
 test("Warning scenario, all candidates were parsed but there are some warnings", () => {
   // Arrange
   const candidateRows = [
-    [1, "Eduardo", ""], // missing job
-    [2, "Alexia", "Fake job title"],
+    { id: 1, name: "Eduardo", title: "" }, // missing job
+    { id: 2, name: "Alexia", title: "Fake job title" },
   ];
   const errorReports: ErrorReport[] = [
     { linked_in_url: "linked.com/eduardo", severity: 1, message: "Missing candidate_job_title" },
@@ -45,8 +45,8 @@ test("Warning scenario, all candidates were parsed but there are some warnings",
   const result: ResultsAPI = {
     status: 200,
     data: [
-      [1, "Eduardo", ""],
-      [2, "Alexia", "Fake job title"],
+      { id: 1, name: "Eduardo", title: "" },
+      { id: 2, name: "Alexia", title: "Fake job title" },
     ],
     message: [{ linked_in_url: "linked.com/eduardo", severity: 1, message: "Missing candidate_job_title" }],
   };
@@ -61,7 +61,7 @@ test("Warning scenario, all candidates were parsed but there are some warnings",
 test("Edge case scenario, some candidate was not parsed", () => {
   // Arrange
   const candidateRows = [
-    [1, "Eduardo", "Sample job title"], // Candidate failed to parse
+    { id: 1, name: "Eduardo", title: "Sample job title" }, // Candidate failed to parse
   ];
   const errorReports: ErrorReport[] = [
     { linked_in_url: "linked.com/eduardo", severity: 0, message: "No problems found" },
@@ -69,7 +69,7 @@ test("Edge case scenario, some candidate was not parsed", () => {
   ];
   const result: ResultsAPI = {
     status: 200,
-    data: [[1, "Eduardo", "Sample job title"]],
+    data: [{ id: 1, name: "Eduardo", title: "Sample job title" }],
     message: [{ linked_in_url: "linked.com/alexia", severity: 2, message: "Missing all fields" }],
   };
 
