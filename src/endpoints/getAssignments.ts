@@ -2,15 +2,25 @@
 import { Response } from "express";
 import { Client } from "pg";
 
-export default async function getAssignments(response: Response, database: Client) {
+// Project files
+import ResultsAPI from "../types/ResultsAPI";
+
+export default async function getAssignments(response: Response, database: Client): Promise<void> {
   const query = "SELECT * FROM assignments";
+  const messageGood = "Assignments received";
+  const messageEmpty = "Warning: No assignments available";
+  const messageBad = "Error: Cannot get data";
+  let result: ResultsAPI = { data: [], message: messageBad, status: 500 };
 
   try {
     const { rows } = await database.query(query);
 
-    response.status(200).send(rows);
+    result.data = rows;
+    result.message = rows.length > 0 ? messageGood : messageEmpty;
+    result.status = 200;
   } catch (error) {
     console.error(error);
-    response.sendStatus(500);
+  } finally {
+    response.status(result.status).send(result);
   }
 }
