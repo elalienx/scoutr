@@ -4,10 +4,10 @@ import express from "express";
 // Project files
 import postgresClient from "./database/postgresClient";
 import credentials from "./database/credentials";
-import getAssignments from "./endpoints/getAssignments";
-import postAssignment from "./endpoints/postAssignment";
-import getCandidates from "./endpoints/getCandidates";
-import parseLinks from "./endpoints/parseLinks";
+import getAssignments from "./routes/getAssignments";
+import postAssignment from "./routes/postAssignment";
+import getCandidates from "./routes/getCandidates";
+import parseLinks from "./routes/parseLinks";
 
 export default async function initializeServer(port: number) {
   // Properties
