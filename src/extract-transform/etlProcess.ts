@@ -4,14 +4,14 @@ import { Client } from "pg";
 // Project files
 import candidateQuery from "../sql-queries/insertCandidate";
 import errorQuery from "../sql-queries/insertErrorLog";
-import extractPage from "./extract/extractPage";
+import getPage from "./extract/getPage";
 import pageToProfile from "./transform/pageToProfile";
 import profileToCandidate from "./transform/profileToCandidate";
 import reportEmptyFields from "./reports/reportEmptyFields";
 
 export default async function etlProcess(url: string, assignment_id: number, database: Client) {
   // Extract
-  const page = await extractPage(url);
+  const page = await getPage(url);
 
   // Transform
   const profile = pageToProfile(page);

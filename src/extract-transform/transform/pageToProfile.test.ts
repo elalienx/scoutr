@@ -3,9 +3,9 @@ import { expect, test } from "vitest";
 
 // Project files
 import pageToProfile from "./pageToProfile";
-import { profile1 } from "./test-data/profile1";
-import { profile2 } from "./test-data/profile2";
-import { profile3 } from "./test-data/profile3";
+import { profile1 } from "../test-data/profile1";
+import { profile2 } from "../test-data/profile2";
+import { profile3 } from "../test-data/profile3";
 import LinkedInProfile from "../../types/LinkedInProfile";
 
 test("Returns all fields on a complete profile", () => {

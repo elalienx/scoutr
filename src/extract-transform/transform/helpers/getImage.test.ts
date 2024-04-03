@@ -4,8 +4,8 @@ import { load as CheerioLoad } from "cheerio";
 
 // Project files
 import getImage from "./getImage";
-import { simpleHTML } from "../test-data/simple-html";
-import { profile2 } from "../test-data/profile2";
+import { simpleHTML } from "../../test-data/simple-html";
+import { profile2 } from "../../test-data/profile2";
 
 test("Returns a valid image URL", () => {
   // Arrange
