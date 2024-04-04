@@ -2,17 +2,17 @@
 import express from "express";
 
 // Project files
-import postgresClient from "./database/postgresClient";
 import credentials from "./database/credentials";
+import postgresClient from "./database/postgresClient";
 import getAssignments from "./routes/getAssignments";
-import postAssignment from "./routes/postAssignment";
 import getCandidates from "./routes/getCandidates";
 import parseLinks from "./routes/parseLinks";
+import postAssignment from "./routes/postAssignment";
 
 async function initializeServer(port: number) {
   // Properties
-  const app = express();
   const client = await postgresClient(credentials);
+  const app = express();
 
   // Start server
   app.use(express.json());
