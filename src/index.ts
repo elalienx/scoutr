@@ -9,7 +9,7 @@ import postAssignment from "./routes/postAssignment";
 import getCandidates from "./routes/getCandidates";
 import parseLinks from "./routes/parseLinks";
 
-export default async function initializeServer(port: number) {
+async function initializeServer(port: number) {
   // Properties
   const app = express();
   const client = await postgresClient(credentials);
