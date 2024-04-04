@@ -1,8 +1,8 @@
 // Project files
-import ErrorReport from "../../types/ErrorReport";
+import Report from "../../types/Report";
 import LinkedInProfile from "../../types/LinkedInProfile";
 
-export default function reportEmptyFields(linked_in_url: string, profile: LinkedInProfile): ErrorReport {
+export default function reportEmptyFields(linked_in_url: string, profile: LinkedInProfile): Report {
   const fields = Object.entries(profile);
   const missingFields: string[] = [];
   let error_severity = 0;
