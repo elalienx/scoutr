@@ -2,7 +2,7 @@
 import { expect, test } from "vitest";
 
 // Project files
-import getPrimaryJob from "./getPrimaryJob";
+import getPrimaryJobTitle from "./getPrimaryJob";
 
 test("Removes text after the sign: comma (,)", () => {
   // Arrange
@@ -10,7 +10,7 @@ test("Removes text after the sign: comma (,)", () => {
   const result = "Frontend Developer";
 
   // Act
-  const test = getPrimaryJob(text);
+  const test = getPrimaryJobTitle(text);
 
   // Assert
   expect(test).toBe(result);
@@ -22,7 +22,7 @@ test("Removes text after the symbol: at (@)", () => {
   const result = "Data Engineer";
 
   // Act
-  const test = getPrimaryJob(text);
+  const test = getPrimaryJobTitle(text);
 
   // Assert
   expect(test).toBe(result);
@@ -34,7 +34,7 @@ test("Removes text after the preposition: at", () => {
   const result = "Senior Data Analyst";
 
   // Act
-  const test = getPrimaryJob(text);
+  const test = getPrimaryJobTitle(text);
 
   // Assert
   expect(test).toBe(result);
@@ -46,7 +46,7 @@ test("Removes text after the Swedish preposition: på", () => {
   const result = "Utvecklare";
 
   // Act
-  const test = getPrimaryJob(text);
+  const test = getPrimaryJobTitle(text);
 
   // Assert
   expect(test).toBe(result);
