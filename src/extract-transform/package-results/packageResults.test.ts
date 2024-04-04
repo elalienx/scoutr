@@ -3,7 +3,7 @@ import { expect, test } from "vitest";
 
 // Project files
 import packageResults from "./packageResults";
-import Report from "../../types/Report";
+import ErrorReport from "../../types/ErrorReport";
 import ResultsAPI from "../../types/ResultsAPI";
 
 test("Best scenario, all candidates were parsed and there is not errors", () => {
@@ -12,7 +12,7 @@ test("Best scenario, all candidates were parsed and there is not errors", () => 
     { id: 1, name: "Eduardo", title: "Sample job title" },
     { id: 2, name: "Alexia", title: "Fake job title" },
   ];
-  const errorReports: Report[] = [
+  const errorReports: ErrorReport[] = [
     { linked_in_url: "linked.com/eduardo", severity: 0, message: "No problems found" },
     { linked_in_url: "linked.com/alexia", severity: 0, message: "No problems found" },
   ];
@@ -38,7 +38,7 @@ test("Warning scenario, all candidates were parsed but there are some warnings",
     { id: 1, name: "Eduardo", title: "" }, // missing job
     { id: 2, name: "Alexia", title: "Fake job title" },
   ];
-  const errorReports: Report[] = [
+  const errorReports: ErrorReport[] = [
     { linked_in_url: "linked.com/eduardo", severity: 1, message: "Missing candidate_job_title" },
     { linked_in_url: "linked.com/alexia", severity: 0, message: "No problems found" },
   ];
@@ -63,7 +63,7 @@ test("Edge case scenario, some candidate was not parsed", () => {
   const candidateRows = [
     { id: 1, name: "Eduardo", title: "Sample job title" }, // Candidate failed to parse
   ];
-  const errorReports: Report[] = [
+  const errorReports: ErrorReport[] = [
     { linked_in_url: "linked.com/eduardo", severity: 0, message: "No problems found" },
     { linked_in_url: "linked.com/alexia", severity: 2, message: "Missing all fields" },
   ];
@@ -83,7 +83,7 @@ test("Edge case scenario, some candidate was not parsed", () => {
 test("Bad scenario, no candidates were parsed", () => {
   // Arrange
   const candidateRows = []; // missing all data but auto generated id
-  const errorReports: Report[] = [
+  const errorReports: ErrorReport[] = [
     { linked_in_url: "linked.com/eduardo", severity: 2, message: "Missing all fields" },
     { linked_in_url: "linked.com/alexia", severity: 2, message: "Missing all fields" },
   ];
