@@ -4,7 +4,7 @@ import { Client } from "pg";
 
 // Project files
 import etlProcess from "../extract-transform/etlProcess";
-import packageResults from "../extract-transform/package-results/packageResults";
+import packageResults from "../extract-transform/load/packageResults";
 import ResultsAPI from "../types/ResultsAPI";
 
 export default async function parseLinks(request: Request, response: Response, database: Client) {
