@@ -8,13 +8,13 @@
 
 ### Postgress client
 
-## Extract & transform
+## Extract profile
 
 ### Extract/Get page
 
 ### Transform/Page to profile
 
-### Transform/Report empty fiedls
+### Transform/Report empty fields
 
 ### Transform/Helpers
 
