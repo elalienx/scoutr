@@ -8,6 +8,10 @@
 | 👨🏻 Candidates  | Stores details of all candidates, with the foreign key `assignment_id` linking each candidate to its corresponding assignment. |
 | 📈 Error logs  | Records encountered errors during candidate parsing processes.                                                                 |
 
+**⚠️ Note:**
+
+Candidates may be stored in multiple assignments, as it is common practice to present them to multiple companies. Each one with different notes, rating and contact depending on the client.
+
 ## 💼 Assignments
 
 | Key                  | Type   | Description                                        |
@@ -43,6 +47,7 @@
 | contact_date                  | date   | Date of the most recent contact with the candidate.                                                                       |
 
 **Contact date example**:
+
 If the candidate was added on Jan 1 and the first contact was on Jan 15, the `date_created` would remain Jan 1 and the `contact_date` would be updated to Jan 15. Subsequent contacts, such as the next day, would be recorded as `contact_date` Jan 16.
 
 **Legend:**
