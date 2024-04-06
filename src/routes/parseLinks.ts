@@ -3,8 +3,8 @@ import { Request, Response } from "express";
 import { Client } from "pg";
 
 // Project files
-import etlProcess from "../extract-transform/etlProcess";
-import packageResults from "../extract-transform/load/packageResults";
+import etlProcess from "../extract-profile/etlProcess";
+import packageResults from "../extract-profile/load/packageResults";
 import ResultsAPI from "../types/ResultsAPI";
 
 export default async function parseLinks(request: Request, response: Response, database: Client) {
