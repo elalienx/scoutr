@@ -1,45 +1,16 @@
 # Methods
 
-## Database
+### Input
 
-### Create table
+| Name           | Type             | Description           | Example           |
+| -------------- | ---------------- | --------------------- | ----------------- |
+| name_goes_here | `type_goes_here` | Description_goes_here | example_goes_here |
 
-### Credentials
+### Output
 
-### Postgress client
-
-## Extract profile
-
-### Extract/Get page
-
-#### Input
-
-```typescript
-// Node modules
-import { webkit } from "playwright";
-
-export default async function getPage(url: string): Promise<string> {
-  const browser = await webkit.launch();
-  const page = await browser.newPage();
-  let result = "";
-
-  try {
-    await page.goto(url);
-    await page.waitForSelector("h1");
-
-    result = await page.content();
-  } catch (error) {
-    console.error(`Playwright: Cannot navigate to invalid URL "${url}"`);
-  } finally {
-    await browser.close();
-    return result;
-  }
-}
-```
-
-### Transform/Page to profile
-
-### Transform/Report empty fields
+| Name           | Type             | Description           | Example           |
+| -------------- | ---------------- | --------------------- | ----------------- |
+| name_goes_here | `type_goes_here` | Description_goes_here | example_goes_here |
 
 ### Transform/Helpers
 
@@ -47,11 +18,3 @@ export default async function getPage(url: string): Promise<string> {
 1. **Get image:** Verifies if the candidate or company picture is a real image or a placeholder. It returns only real images, as we plan to use our own, stylized placeholders in the frontend.
 1. Get primary job: People usually write multiple jobs in their description. This function returns the first job mentioned.
 1. Get text: Cleans the text retrieved from LinkedIn by removing multiple empty lines and spaces.
-
-## Load/Package results
-
-## Routes
-
-## SQL queries
-
-## Types

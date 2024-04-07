@@ -2,8 +2,8 @@
 import ErrorReport from "../../types/ErrorReport";
 import ResultsAPI from "../../types/ResultsAPI";
 
-export default function packageResults(candidates: object[], errorReports: ErrorReport[]): ResultsAPI {
-  const severeReports = errorReports.filter((item) => item.severity > 0);
+export default function packageResults(candidates: object[], reports: ErrorReport[]): ResultsAPI {
+  const severeReports = reports.filter((item) => item.severity > 0);
   const hasCandidates = candidates.length > 0;
 
   let status = 500;

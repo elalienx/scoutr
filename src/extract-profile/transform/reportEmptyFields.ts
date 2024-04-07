@@ -2,7 +2,7 @@
 import ErrorReport from "../../types/ErrorReport";
 import LinkedInProfile from "../../types/LinkedInProfile";
 
-export default function reportEmptyFields(linked_in_url: string, profile: LinkedInProfile): ErrorReport {
+export default function reportEmptyFields(url: string, profile: LinkedInProfile): ErrorReport {
   const fields = Object.entries(profile);
   const missingFields: string[] = [];
   let severity = 0;
@@ -23,7 +23,7 @@ export default function reportEmptyFields(linked_in_url: string, profile: Linked
   }
 
   return {
-    linked_in_url,
+    linked_in_url: url,
     severity,
     message,
   };
