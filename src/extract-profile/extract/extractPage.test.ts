@@ -3,7 +3,7 @@ import { expect, test } from "vitest";
 
 // Project files
 import { example } from "./test-data/example";
-import getPage from "./getPage";
+import extractPage from "./extractPage";
 
 test("Gets all the HTML from Example.com, just to know it can extract any page", async () => {
   // Arrange
@@ -11,7 +11,7 @@ test("Gets all the HTML from Example.com, just to know it can extract any page",
   const result = example;
 
   // Act
-  const test = await getPage(url);
+  const test = await extractPage(url);
 
   // Assert
   expect(test).toBe(result);
@@ -23,7 +23,7 @@ test("Does not crash if url is empty", async () => {
   const result = "";
 
   // Act
-  const test = await getPage(url);
+  const test = await extractPage(url);
 
   // Assert
   expect(test).toBe(result);
@@ -35,7 +35,7 @@ test("Does not crash if unable to find webpage", async () => {
   const result = "";
 
   // Act
-  const test = await getPage(url);
+  const test = await extractPage(url);
 
   // Assert
   expect(test).toBe(result);
