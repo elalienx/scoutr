@@ -5,8 +5,8 @@ import { Client } from "pg";
 import Credentials from "../types/DatabaseCredentials";
 import createTables from "./createTables";
 
-export default async function postgresClient(credentials: Credentials) {
-  const client = new Client(credentials);
+export default async function postgresClient(credentials: Credentials): Promise<Client> {
+  const client: Client = new Client(credentials);
   const success = `Posgress server started on port ${credentials.port}`;
   const hostError = `Error: Ensure your environment has a Postgres server. If using Docker, verify that the host called ${credentials.host} matches the Docker container name of the database`;
   const portError = `Error: Check if the port ${credentials.port} matches the exposed port in Docker`;
