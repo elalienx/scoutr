@@ -18,7 +18,7 @@ test("Create an error severity #0 (no errors) when everything is complete", () =
     company_image_url: "http://sample-image.com/company.jpg",
   };
   const result: ErrorReport = {
-    linked_in_url: "linked.com/eduardo-alvarez-nowak",
+    url: "linked.com/eduardo-alvarez-nowak",
     severity: 0,
     message: "No problems found",
   };
@@ -42,7 +42,7 @@ test("Create an error severity #1 report one field is missing", () => {
     company_image_url: "http://sample-image.com/company.jpg",
   };
   const result: ErrorReport = {
-    linked_in_url: "linked.com/eduardo-alvarez-nowak",
+    url: "linked.com/eduardo-alvarez-nowak",
     severity: 1,
     message: "Missing candidate_job_title",
   };
@@ -66,7 +66,7 @@ test("Create an error severity #1 report more than one field are missing", () =>
     company_image_url: "http://sample-image.com/company.jpg",
   };
   const result: ErrorReport = {
-    linked_in_url: "linked.com/eduardo-alvarez-nowak",
+    url: "linked.com/eduardo-alvarez-nowak",
     severity: 1,
     message: "Missing candidate_job_title, candidate_image_url",
   };
@@ -90,7 +90,7 @@ test("Create an error severity #2 report when all fields are missing", () => {
     company_image_url: "",
   };
   const result: ErrorReport = {
-    linked_in_url: "linked.com/eduardo-alvarez-nowak",
+    url: "linked.com/eduardo-alvarez-nowak",
     severity: 2,
     message: "Missing all fields",
   };
