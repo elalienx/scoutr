@@ -4,9 +4,9 @@ import { load as CheerioLoad, CheerioAPI } from "cheerio";
 // Project files
 import LinkedInProfile from "../../types/LinkedInProfile";
 import getDurationInMonths from "./helpers/getDurationInMonths";
-import getText from "./helpers/getText";
 import getImage from "./helpers/getImage";
 import getPrimaryJobTitle from "./helpers/getPrimaryJob";
+import getText from "./helpers/getText";
 
 export default function pageToProfile(page: string): LinkedInProfile {
   const document: CheerioAPI = CheerioLoad(page);
