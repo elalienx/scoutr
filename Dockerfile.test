@@ -4,4 +4,4 @@ WORKDIR /app
 COPY ./package.json ./
 RUN npm install
 COPY . .
-CMD ["npm", "run", "test_once"]
+# NPM commands on purpose because we will run them on GitHub Actions

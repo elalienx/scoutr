@@ -1,4 +1,4 @@
-name: Run test suite
+name: Test Suite
 on:
   pull_request:
     branches:
@@ -9,10 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: 🔴 Build Docker Compose
         run: docker-compose -f docker-compose.yaml build
 
-      - name: 🟢 Run Docker Compose
-        run: docker-compose -f docker-compose.yaml up
+      - name: 🟢 Run Docker Compose in Detached Mode
+        run: docker-compose -f docker-compose.yaml up -d
+
+      - name: 🔵 Run Vitest
+        start: npm run test
