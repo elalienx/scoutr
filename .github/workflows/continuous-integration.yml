@@ -17,8 +17,5 @@ jobs:
       - name: 🟢 Docker Compose Up (detached mode)
         run: docker-compose -f docker-compose-test.yaml up -d
 
-      - name: 🔵 Install dependencies
-        run: sudo npm install
-
-      - name: 🟡 Run Unit Test
-        run: npx vitest --coverage
+      - name: 🔵 Run Unit Test
+        run: docker-compose -f docker-compose-test.yaml exec backend npm run test
