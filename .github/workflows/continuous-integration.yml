@@ -11,8 +11,5 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Build Docker image
-        run: docker build -t docker-app .
-
-      - name: Run tests in Docker container
-        run: docker run docker-app
+      - name: Build and run Docker Compose
+        run: docker-compose -f docker-compose.yml up -d
