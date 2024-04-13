@@ -32,6 +32,6 @@
     "cheerio": "^1.0.0-rc.12",
     "express": "^4.19.2",
     "pg": "^8.11.3",
-    "playwright": "^1.42.1"
+    "playwright": "^1.43.0"
   }
 }
