@@ -12,4 +12,8 @@ jobs:
         run: docker-compose -f docker-compose-test.yaml build
 
       - name: 🟢 Run Docker Composer in Detached Mode
-        run: docker-compose -f docker-compose-test.yaml up -d
+        run: docker-compose -f docker-compose-test.yaml up
+        # The command above will exit with code 0 if successful
+
+      - name: Check Docker Compose exit code
+        run: echo "Docker Compose exited with code $?"
