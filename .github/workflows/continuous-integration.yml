@@ -21,4 +21,4 @@ jobs:
         run: npm ci
 
       - name: 🟡 Run Unit Test
-        run: npx vitest --coverage # or run npm script
+        run: npx vitest --coverage
