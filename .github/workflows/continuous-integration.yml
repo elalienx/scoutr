@@ -18,4 +18,5 @@ jobs:
         run: docker-compose -f docker-compose-test.yaml up -d
 
       - name: 🔵 Run Vitest
-        run: docker-compose -f docker-compose-test.yaml exec backend npm run test_once
+        with:
+          start: npm run test
