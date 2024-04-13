@@ -12,7 +12,7 @@ services:
       - "5432:5432"
   backend:
     build:
-      dockerfile: Dockerfile.test
+      dockerfile: Dockerfile
       context: "./"
     ports:
       - "8000:8000"
