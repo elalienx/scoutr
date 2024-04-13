@@ -11,11 +11,11 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: 🔴 Build Docker Compose
+      - name: 🔴 Docker Compose Build
         run: docker-compose -f docker-compose-test.yaml build
 
-      - name: 🟢 Run Docker Compose in Detached Mode
+      - name: 🟢 Docker Compose Up (detached mode)
         run: docker-compose -f docker-compose-test.yaml up -d
 
       - name: 🔵 Run Vitest
-        run: npm run test
+        run: docker-compose -f docker-compose-test.yaml exec backend npm run test_once
