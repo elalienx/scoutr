@@ -1,21 +1,21 @@
-version: "3"
-services:
-  database:
-    image: postgres
-    environment:
-      POSTGRES_DB: scoutr_database
-      POSTGRES_USER: scoutr_user
-      POSTGRES_PASSWORD: scoutr_password
-    volumes:
-      - ${HOME}/database/scoutr:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
-  backend:
-    build:
-      dockerfile: Dockerfile
-      context: "./"
-    ports:
-      - "8000:8000"
-    volumes:
-      - /app/node_modules
-      - ./:/app
+name: Run Test Suite
+on: push
+jobs:
+  run-tests:
+    name: Run Vitest
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: 🔴 Build Docker Composer
+        run: docker-compose -f docker-compose-test.yaml build
+
+      - name: 🟢 Run Docker Composer in Detached Mode
+        run: docker-compose -f docker-compose-test.yaml up -d
+
+      - name: 🔵 Run Tests
+        run: docker-compose -f docker-compose-test.yaml exec -ti backend npm run test_once
+
+      - name: 🟡 Stop Docker Composer
+        run: docker-compose -f docker-compose-test.yaml down
