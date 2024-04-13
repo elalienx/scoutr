@@ -5,7 +5,8 @@
   "main": "src/index.ts",
   "scripts": {
     "dev": "nodemon",
-    "test": "vitest --coverage"
+    "test": "vitest --coverage",
+    "test_once": "vitest --watch=false"
   },
   "repository": {
     "type": "git",
