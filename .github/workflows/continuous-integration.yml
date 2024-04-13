@@ -8,8 +8,11 @@ jobs:
     name: Run Vitest
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v2
 
-      - name: Build and run Docker Compose
-        run: docker-compose -f docker-compose.yaml up -d
+      - name: 🔴 Build Docker Compose
+        run: docker-compose -f docker-compose.yaml build
+
+      - name: 🟢 Run Docker Compose
+        run: docker-compose -f docker-compose.yaml up
