@@ -17,6 +17,6 @@ jobs:
       - name: 🟢 Docker Compose Up (detached mode)
         run: docker-compose -f docker-compose-test.yaml up -d
 
-      - name: 🔵 Run Vitest
+      - name: 🔵 Run Vitest 2
         with:
           start: npm run test
