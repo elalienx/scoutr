@@ -13,7 +13,6 @@ export default async function extractPage(url: string): Promise<string> {
     result = await page.content();
   } catch (error) {
     console.error(`Playwright: Cant' navigate to URL "${url}"`);
-    console.error(error);
   } finally {
     await browser.close();
     return result;
