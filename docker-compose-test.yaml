@@ -1,0 +1,21 @@
+version: "3"
+services:
+  database:
+    image: postgres
+    environment:
+      POSTGRES_DB: scoutr_database
+      POSTGRES_USER: scoutr_user
+      POSTGRES_PASSWORD: scoutr_password
+    volumes:
+      - ${HOME}/database/scoutr:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  backend:
+    build:
+      dockerfile: Dockerfile.test
+      context: "./"
+    ports:
+      - "8000:8000"
+    volumes:
+      - /app/node_modules
+      - ./:/app
