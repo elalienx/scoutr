@@ -1,8 +1,8 @@
 // Node modules
-import { chromium } from "playwright";
+import { firefox } from "playwright";
 
 export default async function extractPage(url: string): Promise<string> {
-  const browser = await chromium.launch();
+  const browser = await firefox.launch();
   const page = await browser.newPage();
   let result = "";
 
