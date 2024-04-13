@@ -14,6 +14,8 @@ services:
     build:
       dockerfile: Dockerfile.test
       context: "./"
+    environment:
+      - NODE_ENV=development
     ports:
       - "8000:8000"
     volumes:
