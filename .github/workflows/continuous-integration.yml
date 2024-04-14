@@ -1,11 +1,11 @@
-name: Test Suite
+name: Backend Test Suite
 on:
   pull_request:
     branches:
       - main
 jobs:
   run-tests:
-    name: Run Vitest
+    name: Unit testing
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -14,5 +14,5 @@ jobs:
       - name: Build Docker image
         run: docker build -f ./Dockerfile.test -t docker-app .
 
-      - name: Run tests in Docker container
+      - name: Run Vitest inside Docker container
         run: docker run docker-app
