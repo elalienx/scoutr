@@ -20,4 +20,4 @@ services:
       - "8000:8000"
     volumes:
       - /app/node_modules
-      - ./:/app
+      - ./backend:/app
