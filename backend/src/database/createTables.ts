@@ -2,9 +2,9 @@
 import { Client } from "pg";
 
 // Project files
-import assignments from "../sql/assignments";
-import candidates from "../sql/candidates";
-import errorLogs from "../sql/errorLogs";
+import assignments from "../queries/assignments";
+import candidates from "../queries/candidates";
+import errorLogs from "../queries/errorLogs";
 
 export default async function createTables(database: Client): Promise<void> {
   const message = "Postgres initialized tables";

@@ -2,8 +2,8 @@
 import { Client } from "pg";
 
 // Project files
-import candidateQuery from "../sql/insertCandidate";
-import errorQuery from "../sql/insertErrorLog";
+import candidateQuery from "../queries/insertCandidate";
+import errorQuery from "../queries/insertErrorLog";
 import extractPage from "./extract/extractPage";
 import pageToProfile from "./transform/pageToProfile";
 import reportEmptyFields from "./transform/reportEmptyFields";

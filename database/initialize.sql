@@ -1,4 +1,12 @@
-const candidates: string = `CREATE TABLE IF NOT EXISTS candidates(
+CREATE TABLE IF NOT EXISTS assignments(
+    id SERIAL PRIMARY KEY, 
+    date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    assignment_name VARCHAR(50),
+    company_name VARCHAR(50),
+    company_image_url VARCHAR(255)
+)
+
+CREATE TABLE IF NOT EXISTS candidates(
     id SERIAL PRIMARY KEY,
     assignment_id INTEGER REFERENCES assignments(id),
     date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -13,6 +21,12 @@ const candidates: string = `CREATE TABLE IF NOT EXISTS candidates(
     relevance SMALLINT,
     contact_status SMALLINT,
     contact_date TIMESTAMP NULL
-)`;
+)
 
-export default candidates;
+CREATE TABLE IF NOT EXISTS error_logs(
+    id SERIAL PRIMARY KEY, 
+    date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    linked_in_url VARCHAR(100),
+    severity SMALLINT,
+    message  TEXT
+)
