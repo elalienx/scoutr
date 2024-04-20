@@ -3,7 +3,7 @@ import { Request, Response } from "express";
 import { Client } from "pg";
 
 // Project files
-import query from "../sql/insertAssignment";
+import query from "../queries/insertAssignment";
 import ResultsAPI from "../types/ResultsAPI";
 
 export default async function postAssignment(request: Request, response: Response, database: Client): Promise<void> {

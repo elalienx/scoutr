@@ -3,7 +3,6 @@ import { Client } from "pg";
 
 // Project files
 import Credentials from "../types/DatabaseCredentials";
-import createTables from "./createTables";
 
 export default async function postgresClient(credentials: Credentials): Promise<Client> {
   const client: Client = new Client(credentials);
@@ -15,7 +14,6 @@ export default async function postgresClient(credentials: Credentials): Promise<
 
   try {
     await client.connect();
-    await createTables(client);
 
     console.info(success);
   } catch (error) {

@@ -1,21 +1,24 @@
 version: "3"
 services:
   database:
-    image: postgres:alpine
+    build:
+      context: ./database
+      dockerfile: Dockerfile
     environment:
       POSTGRES_DB: scoutr_database
       POSTGRES_USER: scoutr_user
       POSTGRES_PASSWORD: scoutr_password
     volumes:
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
       - ${HOME}/database/scoutr:/var/lib/postgresql/data
     ports:
       - "5432:5432"
   backend:
     build:
+      context: ./backend
       dockerfile: Dockerfile
-      context: "./"
     ports:
       - "8000:8000"
     volumes:
       - /app/node_modules
-      - ./:/app
+      - ./backend:/app
