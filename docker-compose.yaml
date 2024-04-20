@@ -1,7 +1,9 @@
 version: "3"
 services:
   database:
-    image: postgres:alpine
+    build:
+      dockerfile: Dockerfile
+      context: "./database"
     environment:
       POSTGRES_DB: scoutr_database
       POSTGRES_USER: scoutr_user
@@ -13,7 +15,7 @@ services:
   backend:
     build:
       dockerfile: Dockerfile
-      context: "./"
+      context: "./backend"
     ports:
       - "8000:8000"
     volumes:
