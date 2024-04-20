@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS assignments(
     assignment_name VARCHAR(50),
     company_name VARCHAR(50),
     company_image_url VARCHAR(255)
-)
+);
 
 CREATE TABLE IF NOT EXISTS candidates(
     id SERIAL PRIMARY KEY,
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS candidates(
     relevance SMALLINT,
     contact_status SMALLINT,
     contact_date TIMESTAMP NULL
-)
+);
 
 CREATE TABLE IF NOT EXISTS error_logs(
     id SERIAL PRIMARY KEY, 
@@ -29,4 +29,4 @@ CREATE TABLE IF NOT EXISTS error_logs(
     linked_in_url VARCHAR(100),
     severity SMALLINT,
     message  TEXT
-)
+);
