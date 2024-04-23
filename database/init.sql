@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS candidates(
     date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     linked_in_url VARCHAR(100),
     candidate_name VARCHAR(50),
-    candidate_job_title VARCHAR(50),
+    candidate_job_title VARCHAR(255),
     candidate_image_url VARCHAR(255),
     company_name VARCHAR(50),
     company_duration_in_months SMALLINT,
