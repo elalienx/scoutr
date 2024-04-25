@@ -40,7 +40,7 @@ export default function App() {
 
   return (
     <div>
-      <h1>Setting up FE enviroment 5</h1>
+      <h1>Setting up FE enviroment 2</h1>
       <ul>{Assignments}</ul>
     </div>
   );
