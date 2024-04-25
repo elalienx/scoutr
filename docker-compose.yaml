@@ -22,3 +22,7 @@ services:
     volumes:
       - /app/node_modules
       - ./backend:/app
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
