@@ -1,6 +1,10 @@
 // Node modules
 import { useEffect, useState } from "react";
 
+// Project files
+import Card from "components/card/Card";
+import Assignment from "types/Assignment";
+
 export default function App() {
   const [data, setData] = useState([]);
   const [status, setStatus] = useState(0); // 0 loading, 1 loaded, 2 ready
@@ -25,10 +29,8 @@ export default function App() {
   }, []);
 
   // Components
-  const Assignments = data.map((item: any) => (
-    <li key={item.id}>
-      #{item.id} - {item.assignment_name}
-    </li>
+  const Assignments = data.map((item: Assignment) => (
+    <Card key={item.id} {...item} />
   ));
 
   // Safeguards
