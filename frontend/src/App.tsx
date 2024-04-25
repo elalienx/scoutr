@@ -14,13 +14,17 @@ export default function App() {
   // Methods
   useEffect(() => {
     fetch(endpoint + "/assignments")
-      .then((response) => response.json())
+      .then((response) => {
+        console.log("response", response);
+        return response.json();
+      })
       .then((result) => {
+        console.log("result", result);
         setStatus(1);
         setData(result);
       })
       .catch((error) => {
-        console.error(error);
+        console.error(error.message);
         setStatus(2);
       });
   }, []);
