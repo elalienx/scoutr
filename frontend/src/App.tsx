@@ -21,7 +21,7 @@ export default function App() {
       .then((result) => {
         console.log("result", result);
         setStatus(1);
-        setData(result);
+        setData(result.data);
       })
       .catch((error) => {
         console.error(error.message);
