@@ -15,16 +15,14 @@ export default function App() {
   useEffect(() => {
     fetch(endpoint + "/assignments")
       .then((response) => {
-        console.log("response", response);
         return response.json();
       })
       .then((result) => {
-        console.log("result", result);
         setStatus(1);
         setData(result.data);
       })
       .catch((error) => {
-        console.error(error.message);
+        console.error("useEffect() error:", error.message);
         setStatus(2);
       });
   }, []);
@@ -42,7 +40,7 @@ export default function App() {
 
   return (
     <div>
-      <h1>Setting up FE enviroment</h1>
+      <h1>Setting up FE enviroment 2</h1>
       <ul>{Assignments}</ul>
     </div>
   );
