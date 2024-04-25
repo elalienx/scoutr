@@ -1,0 +1,4 @@
+.card.card-new {
+  background-color: var(--color-gray-light);
+  border: none;
+}

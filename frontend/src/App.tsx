@@ -1,9 +1,6 @@
 // Node modules
 import { useEffect, useState } from "react";
 
-// Project files
-import "./App.css";
-
 export default function App() {
   const [data, setData] = useState([]);
   const [status, setStatus] = useState(0); // 0 loading, 1 loaded, 2 ready

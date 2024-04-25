@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--color-black);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+  -webkit-font-smoothing: auto; /* To make text look great on Apple devices */
+}
+
+image {
+  display: inline-block; /* to remove the weird space bottom that inline elements have */
+  max-width: 100%;
+  height: auto;
+}
+
+/* Utilities */
+ul.no-bullets {
+  padding: 0;
+}
+
+.trim-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

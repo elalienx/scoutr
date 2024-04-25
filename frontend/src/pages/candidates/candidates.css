@@ -1,0 +1,35 @@
+#candidates {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 64px; /* big space between header and table*/
+  min-height: 100vh;
+  padding-bottom: 24px;
+
+  /** Like in Hono.dev the navbar is wider but does not take the whole screen */
+  .navigation-bar {
+    width: min(1600px, 100%);
+    margin-inline: auto;
+  }
+
+  .section.content {
+    width: min(1200px, 100% - 24px - 24px); /* 24px per sidee */
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .section.loading,
+  .section.empty,
+  .section.error {
+    display: grid;
+    place-items: center;
+  }
+}
+
+/* Tablet */
+@media (min-width: 700px) {
+  #candidates {
+    .section.content table {
+      margin-bottom: var(--space-big);
+    }
+  }
+}

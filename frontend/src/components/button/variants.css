@@ -1,0 +1,28 @@
+/* Small */
+.button.small {
+  min-width: 95px;
+  padding: 6px 18px;
+  font-size: var(--font-size-small);
+}
+
+/* Primary */
+.button.primary {
+  background-color: var(--color-blue);
+  color: white;
+  border-color: var(--color-blue);
+
+  &:hover {
+    background-color: var(--color-blue-dark);
+    border-color: var(--color-blue-dark);
+  }
+
+  &:active {
+    color: #789dc1;
+  }
+
+  &:disabled {
+    background-color: var(--color-black-light);
+    color: var(--color-gray);
+    border-color: var(--color-black-light);
+  }
+}

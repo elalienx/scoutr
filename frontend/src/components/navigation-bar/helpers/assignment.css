@@ -1,0 +1,41 @@
+.navigation-bar .assignment {
+  display: flex;
+  align-items: center;
+
+  .title {
+    font-size: var(--font-size-normal);
+  }
+
+  .title.trim-text {
+    -webkit-line-clamp: 2; /** 2 lines on mobile */
+  }
+
+  .logo {
+    --size: 24px;
+
+    margin-right: var(--space-small);
+  }
+}
+
+/* Tablet */
+@media (min-width: 700px) {
+  .navigation-bar .assignment {
+    .title {
+      font-size: 32px;
+      max-width: unset; /* reset max width */
+    }
+
+    .logo {
+      --size: 48px;
+    }
+  }
+}
+
+/* Laptop */
+@media (min-width: 1000px) {
+  .navigation-bar .assignment {
+    .title.trim-text {
+      -webkit-line-clamp: 1; /** 1 line on desktop */
+    }
+  }
+}

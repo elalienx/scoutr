@@ -1,0 +1,31 @@
+#assignments .state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-medium);
+
+  .content {
+    text-align: center;
+  }
+
+  img {
+    width: auto;
+    height: 175px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 700px) {
+  #assignments .state {
+    flex-direction: row;
+
+    .content {
+      text-align: left;
+    }
+
+    img {
+      width: auto;
+      height: 250px;
+    }
+  }
+}

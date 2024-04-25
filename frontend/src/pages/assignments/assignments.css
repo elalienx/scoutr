@@ -1,0 +1,49 @@
+#assignments {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: var(--space-big);
+  width: min(960px, 100% - 24px - 24px); /* 24px per sidee */
+  min-height: 100vh;
+  margin-inline: auto;
+  padding: 24px 0;
+
+  .section.content {
+    display: grid;
+    align-content: start; /* to tell the cards to not stretch around the content space*/
+    gap: var(--space-medium);
+  }
+
+  .section.loading {
+    display: grid;
+    place-items: center;
+  }
+}
+
+/* Phablet */
+@media (min-width: 550px) {
+  #assignments {
+    .section.content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+/* Tablet */
+@media (min-width: 700px) {
+  #assignments {
+    padding-top: 64px; /** big space for hero */
+
+    .section.content {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+/* Desktop */
+@media (min-width: 1000px) {
+  #assignments {
+    .section.content {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

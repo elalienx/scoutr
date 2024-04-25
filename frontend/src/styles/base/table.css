@@ -1,0 +1,63 @@
+table {
+  width: 100%;
+  text-align: left;
+  font-weight: var(--font-weight-normal);
+}
+
+thead {
+  display: none; /* hide the header on mobile, as we will use special mobile headers */
+}
+
+tr {
+  display: block; /* to enable margin bottom between each row */
+  margin-bottom: var(--space-big);
+  background-color: white;
+}
+
+td {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-small);
+  padding: var(--space-small) var(--space-medium);
+  border-bottom: solid 0.5px var(--color-gray);
+}
+
+td::before {
+  display: flex;
+  align-items: center; /* to vertically center the labels */
+  content: attr(data-label) ":"; /* Add the mobile headers headers comming from HTML */
+  width: 104px; /* Our fake column width */
+  flex-shrink: 0; /* To force our fake column keep his width due to flexbox  */
+  font-weight: var(--font-weight-bold);
+}
+
+/* Laptop half screen */
+@media (min-width: 700px) {
+  table {
+    border-collapse: collapse;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  th {
+    font-weight: var(--font-weight-bold);
+    padding: var(--space-small);
+  }
+
+  tr {
+    display: table-row;
+    border-bottom: solid 0.5px var(--color-gray);
+  }
+
+  td {
+    display: table-cell;
+    padding: var(--space-small);
+    vertical-align: middle;
+  }
+
+  td::before {
+    content: unset; /* Remove the mobile headers headers comming from HTML */
+  }
+}
