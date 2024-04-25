@@ -1,0 +1,21 @@
+.header-candidate {
+  text-align: center;
+
+  .candidate-image {
+    --size: 72px;
+
+    border-radius: var(--border-radius-big);
+  }
+
+  .company-image {
+    --size: 32px;
+
+    margin-left: -16px; /* to move this image inside the other */
+    border-radius: var(--border-radius-small);
+  }
+
+  .label {
+    margin-top: var(--space-small);
+    margin-left: -16px; /* to visually center the label with the bigger image */
+  }
+}

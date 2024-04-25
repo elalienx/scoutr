@@ -1,0 +1,13 @@
+.item-company {
+  display: flex;
+  align-items: center;
+  gap: var(--space-small);
+
+  img {
+    --size: 24px;
+  }
+
+  small.label.red {
+    color: var(--color-red);
+  }
+}

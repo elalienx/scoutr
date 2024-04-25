@@ -1,0 +1,16 @@
+.loader {
+  text-align: center;
+
+  .icon {
+    --size: 32px;
+
+    width: var(--size);
+    height: var(--size);
+    margin-bottom: var(--space-small);
+  }
+
+  .text {
+    margin-right: -5px; /* to optically align the loading... word because of the elipsis (...) */
+    color: var(--color-gray);
+  }
+}

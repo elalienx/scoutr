@@ -1,0 +1,51 @@
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+  margin-bottom: var(--space-small);
+  line-height: 1.25;
+}
+
+h1 {
+  margin-bottom: 0;
+  font-size: 32px;
+  line-height: 1.15; /* As narrow as i can set it before line-clamp cuts low handing characters like g,p,q */
+}
+
+h2 {
+  margin-bottom: var(--space-medium);
+  font-size: 24px;
+  line-height: 1.15; /* As narrow as i can set it before line-clamp cuts low handing characters like g,p,q */
+}
+
+h3 {
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-bold);
+}
+
+p {
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+}
+
+a {
+  color: var(--color-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-blue-dark);
+  text-decoration: underline;
+}
+
+small {
+  display: block; /* to remove the weird space bottom that inline elements have */
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-normal);
+}
+
+small.label {
+  color: var(--color-gray);
+  text-transform: uppercase;
+}

@@ -1,0 +1,52 @@
+#assignments .hero {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--space-medium);
+
+  .content {
+    display: grid;
+    gap: var(--space-small);
+  }
+
+  h1 {
+    line-height: 0.7; /* to force the 2 lines to touch each other. This is a stylistic decision! */
+    letter-spacing: -1.5px;
+  }
+
+  .subtitle {
+    color: var(--color-gray);
+  }
+
+  img {
+    height: 135px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 700px) {
+  #assignments .hero {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .content {
+      gap: var(--space-medium);
+    }
+
+    .media {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 72px;
+      letter-spacing: -3.5px;
+    }
+
+    .subtitle {
+      font-size: 28px;
+    }
+
+    img {
+      height: 240px;
+    }
+  }
+}

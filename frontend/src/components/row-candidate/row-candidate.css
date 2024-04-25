@@ -1,0 +1,61 @@
+.row-candidate {
+  /* Layout */
+  .id {
+    display: none;
+  }
+
+  .candidate img,
+  .company img {
+    display: none; /* because we use a separate component to show them in a better way */
+  }
+
+  /* Design */
+  .notes small.trim-text {
+    -webkit-line-clamp: 3; /** Overides the default 1 line trim */
+  }
+}
+
+/* Laptop half screen */
+@media (min-width: 700px) {
+  .row-candidate {
+    /* Layout */
+    .header-candidate {
+      display: none;
+    }
+
+    .id {
+      display: table-cell;
+    }
+
+    .candidate img,
+    .company img {
+      display: unset;
+    }
+
+    /* Design */
+    .id {
+      text-align: center;
+    }
+
+    .candidate img {
+      --size: 44px;
+    }
+
+    .company img {
+      --size: 24px;
+    }
+
+    /* Column widths */
+    .column-small {
+      width: 6.25%;
+    }
+
+    .column-medium {
+      width: 11.25%;
+    }
+
+    .column-big {
+      width: 23.75%;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+:root {
+  /* # Swatches */
+  /* ## Main shades */
+  --color-red: #ce565d;
+  --color-orange: #e18433;
+  --color-black: #212529;
+  --color-green: #88ad3d;
+  --color-gray: #a9a9a9;
+  --color-yellow: #d0a63d;
+  --color-blue: #2a639b;
+  --color-purple: #6d358d;
+  --color-cyan: #4ea9c1;
+
+  /* ## Lighter shades */
+  --color-red-light: #f9ebec;
+  --color-orange-light: #f9ebec;
+  --color-black-light: #f1f2f4;
+  --color-green-light: #f4f8ec;
+  --color-gray-light: #f2f2f2;
+  --color-yellow-light: #faf6ea;
+  --color-blue-light: #ebf2fa;
+  --color-purple-light: #f4edf8;
+  --color-cyan-light: #ecf6f8;
+
+  /* ## Special colors */
+  --color-blue-medium: #789dc1; /* for button:active */
+  --color-blue-dark: #1a4065; /* for button:hover */
+
+  /* # Fonts */
+  --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-size-normal: 16px;
+  --font-size-small: 12.5px;
+  --font-weight-bold: 500;
+  --font-weight-normal: 300;
+
+  /* # Spacing */
+  --space-big: 32px;
+  --space-medium: 16px;
+  --space-small: 8px;
+
+  /* # Other */
+  --border-radius-small: 4px;
+  --border-radius-big: 8px;
+
+  /* # Media queries */
+  /* Mobile is the default */
+  --media-query-tablet: 700px; /* 700 instead of 750 so the tables work on half screen laptop */
+  --media-query-laptop: 1000px;
+  --media-query-desktop: 1500px;
+}

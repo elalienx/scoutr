@@ -1,0 +1,9 @@
+.item-candidate {
+  display: flex;
+  align-items: center;
+  gap: var(--space-small);
+
+  img {
+    --size: 44px;
+  }
+}

@@ -1,0 +1,33 @@
+.navigation-bar .response-rate {
+  text-align: right;
+
+  .symbol {
+    vertical-align: super; /* to make text superscript (x^2) */
+    font-size: 9.5px;
+  }
+
+  .value {
+    font-weight: var(--font-weight-bold);
+  }
+
+  .label {
+    font-size: 8px;
+  }
+}
+
+/* Bigger than laptop half width */
+@media (min-width: 700px) {
+  .navigation-bar .response-rate {
+    .symbol {
+      font-size: 18px;
+    }
+
+    .value {
+      font-size: 32px;
+    }
+
+    .label {
+      font-size: var(--font-size-small);
+    }
+  }
+}

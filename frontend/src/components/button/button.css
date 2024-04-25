@@ -1,0 +1,31 @@
+.button {
+  min-width: 145px;
+  padding: 12px 36px;
+  background-color: white;
+  color: var(--color-black);
+  border: solid 1.5px currentColor;
+  border-radius: 100px;
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-bold);
+
+  .icon {
+    margin-right: var(--space-small);
+  }
+
+  &:hover {
+    background-color: var(--color-black);
+    color: white;
+    border-color: var(--color-black);
+  }
+
+  &:active {
+    color: var(--color-gray);
+  }
+
+  &:disabled {
+    background-color: white;
+    color: var(--color-gray);
+    border-color: currentColor;
+    cursor: not-allowed;
+  }
+}

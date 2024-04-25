@@ -1,0 +1,23 @@
+.navigation-bar {
+  --scoutr-logo-size: 15px;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: var(--space-medium);
+  align-items: center;
+  padding: var(--space-small) 24px;
+  background-color: white;
+
+  .scoutr-logo {
+    height: var(--scoutr-logo-size);
+  }
+}
+
+/* Bigger than laptop half width */
+@media (min-width: 700px) {
+  .navigation-bar {
+    --scoutr-logo-size: 24px;
+
+    padding: 24px;
+  }
+}

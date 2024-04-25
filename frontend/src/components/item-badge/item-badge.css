@@ -1,0 +1,9 @@
+.item-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px; /* badge is the only item allowed to have such a small spacing, because its tiny */
+
+  .badge {
+    flex-shrink: 0; /* to avoid losing the circle shape when there is no space due to flexbox */
+  }
+}

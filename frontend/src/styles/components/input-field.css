@@ -1,0 +1,22 @@
+.input-field {
+  width: 100%; /* to protect from flex-shrink */
+
+  .input {
+    display: block;
+    width: 100%; /* inputs are weird, they don't take full width even with display block */
+    padding: var(--space-small);
+    background-color: var(--color-black-light);
+    color: var(--color-black);
+    border: none;
+    border-radius: var(--border-radius-big);
+    font-family: var(--font-family);
+    font-size: var(--font-size-normal);
+    font-weight: var(--font-weight-normal);
+  }
+
+  .label {
+    display: inline-block;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-small);
+  }
+}

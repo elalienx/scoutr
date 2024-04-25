@@ -1,0 +1,8 @@
+.image-thumbnail {
+  --size: 48px;
+
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--color-gray-light);
+  object-fit: contain;
+}
