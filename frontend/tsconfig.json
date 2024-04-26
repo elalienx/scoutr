@@ -19,11 +19,8 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-
-    /* Testing */
-    "types": ["@testing-library/jest-dom"]
+    "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", ".storybook/manager.ts"],
+  "include": ["src", ".storybook/manager.ts", "vite-setup.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -1,16 +1,14 @@
-import { render, screen } from "@testing-library/react";
+// Node modules
 import { expect, test } from "vitest";
+import { render, screen } from "@testing-library/react";
 
-import App from "App";
-import { JSDOM } from "jsdom";
+// Project files
+import App from "./App";
 
-const dom = new JSDOM("<!DOCTYPE html><html><body></body></html>");
-(global as any).document = dom.window.document;
-(global as any).window = dom.window;
-test("Hello", () => {
+test("Expect test to be in document", () => {
   render(<App />);
 
-  const test = screen.getByText("Hello");
+  const test = screen.queryByText("Vite + React");
 
   expect(test).toBeInTheDocument();
 });
