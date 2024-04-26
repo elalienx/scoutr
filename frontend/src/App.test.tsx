@@ -10,5 +10,6 @@ test("Expect test to be in document", () => {
 
   const test = screen.queryByText("Vite + React");
 
+  // @ts-ignore
   expect(test).toBeInTheDocument();
 });
