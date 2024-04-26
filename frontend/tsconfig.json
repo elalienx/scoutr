@@ -19,7 +19,10 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Testing */
+    "types": ["@testing-library/jest-dom"]
   },
   "include": ["src", ".storybook/manager.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]

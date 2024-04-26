@@ -24,13 +24,14 @@ export default function App() {
         setData(data);
       })
       .catch((error) => {
-        console.error("useEffect() error:", error.message);
+        console.error(error);
         setStatus("error");
       });
   }, []);
 
   return (
     <div>
+      <p>Hello</p>
       <Assignments data={data} status={status} />
     </div>
   );
