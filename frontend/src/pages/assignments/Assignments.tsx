@@ -3,7 +3,6 @@ import Card from "components/card/Card";
 import CardNew from "components/card-new/CardNew";
 import Loader from "components/loader/Loader";
 import Assignment from "types/Assignment";
-import Status from "types/Status";
 import Footer from "./helpers/Footer";
 import Hero from "./helpers/Hero";
 import StateEmpty from "./helpers/StateEmpty";
@@ -11,17 +10,15 @@ import StateError from "./helpers/StateError";
 import "./assignments.css";
 
 interface Props {
-  /** The assignments comming from the database. */
-  data: any;
-
-  /** The status of calling the server. */
-  status: Status;
+  customHook: any;
 }
 
 /** The homepage of Scoutr and the place to create new assignments. */
 export default function Assignments(item: Props) {
+  const { customHook } = item;
+
   // Local state
-  const { data, status } = item;
+  const { data, status, message } = customHook;
 
   // Components
   const Cards = data.map((item: Assignment) => (

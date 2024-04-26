@@ -1,4 +1,5 @@
 // Node modules
+import useFetchMock from "mocks/useFetchMock";
 import Assignments from "pages/assignments/Assignments";
 import { useEffect, useState } from "react";
 import Status from "types/Status";
@@ -31,7 +32,7 @@ export default function App() {
 
   return (
     <div>
-      <Assignments data={data} status={status} />
+      <Assignments customHook={useFetchMock("www.empty.com")} />
     </div>
   );
 }
