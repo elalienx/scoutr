@@ -3,10 +3,10 @@ import { expect, test } from "vitest";
 import { render, screen } from "@testing-library/react";
 
 // Project files
-import App from "./App";
+import Assignments from "./Assignments";
 
-test("Expect test to be in document", () => {
-  render(<App />);
+test("Expect loading to be in document", () => {
+  render(<Assignments data={undefined} status={"empty"} />);
 
   const test = screen.queryByText("Vite + React");
 

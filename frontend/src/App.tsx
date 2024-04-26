@@ -31,7 +31,6 @@ export default function App() {
 
   return (
     <div>
-      <p>Hello</p>
       <Assignments data={data} status={status} />
     </div>
   );
