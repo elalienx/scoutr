@@ -1,6 +1,5 @@
 // Node modules
-import { createContext, Dispatch, ReactNode } from "react";
-import { useContext, useRef, useState } from "react";
+import { createContext, ReactNode, useContext, useRef, useState } from "react";
 
 // Project files
 import ContextProvider from "types/ContextProvider";
@@ -8,13 +7,15 @@ import ContextProvider from "types/ContextProvider";
 // Properties
 interface ContextValue {
   dialog: ReactNode;
-  setDialog: Dispatch<any>;
   dialogRef: React.RefObject<HTMLDialogElement> | null;
+  showDialog: Function;
+  closeDialog: Function;
 }
 const initialValue: ContextValue = {
   dialog: null,
-  setDialog: () => {},
   dialogRef: null,
+  showDialog: () => {},
+  closeDialog: () => {},
 };
 const Context = createContext(initialValue);
 
@@ -24,10 +25,22 @@ export function DialogProvider({ children }: ContextProvider) {
   const [dialog, setDialog] = useState<ReactNode>();
   const dialogRef = useRef<HTMLDialogElement>(null);
 
-  // Properties
-  const value = { dialog, setDialog, dialogRef };
+  // Methods
+  function showDialog(reactNode: ReactNode) {
+    setDialog(reactNode);
+    dialogRef.current?.showModal();
+  }
 
-  return <Context.Provider value={value}>{children}</Context.Provider>;
+  function closeDialog() {
+    setDialog(null);
+    dialogRef.current?.close();
+  }
+
+  return (
+    <Context.Provider value={{ dialog, dialogRef, showDialog, closeDialog }}>
+      {children}
+    </Context.Provider>
+  );
 }
 
 // For the children

@@ -9,7 +9,7 @@ import "./form-assignment.css";
 
 export default function FormAssignment() {
   // Global state
-  const { setDialog, dialogRef } = useDialog();
+  const { closeDialog } = useDialog();
 
   // Local state
   const AssignmentNameRef = useRef<HTMLInputElement>(null);
@@ -50,11 +50,6 @@ export default function FormAssignment() {
     });
   }
 
-  function onClose() {
-    setDialog(null);
-    dialogRef?.current?.close();
-  }
-
   return (
     <form className="form-assignment" onSubmit={(event) => onSubmit(event)}>
       <h2>
@@ -66,7 +61,7 @@ export default function FormAssignment() {
       <InputText {...data.company} />
       <div className="buttons">
         <Button label={"Create"} primary={true} icon="circle-check" />
-        <Button label={"Dismiss"} onClick={onClose} />
+        <Button label={"Dismiss"} onClick={() => closeDialog()} />
       </div>
     </form>
   );
