@@ -22,11 +22,13 @@ export default function Assignments({ customHook }: Props) {
   const { data, status }: { data: Assignment[]; status: Status } = customHook();
 
   // Properties
-  const sortedData = data.sort((a, b) => a.id - b.id);
+  const assignmentsById = data.sort((a, b) => a.id - b.id);
 
   // Components
-  const Cards = sortedData.map((item) => <Card key={item.id} {...item} />);
-  Cards.push(<CardNew key={data.length + 1} />);
+  const Cards = assignmentsById.map((item) => <Card key={item.id} {...item} />);
+  Cards.push(
+    <CardNew key={data.length + 1} onClick={async () => alert("add new")} />
+  );
 
   return (
     <div id="assignments">
