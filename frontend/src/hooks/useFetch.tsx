@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 // Project files
 import Status from "types/Status";
 
-export default function useFetch(url: string, initialState: unknown) {
-  console.log("useFetch() url", url);
+export default function useFetch(url: string, initialState: unknown = []) {
+  console.log("useFetch() 🌎", url);
 
   const [data, setData] = useState(initialState);
   const [status, setStatus] = useState<Status>("loading");
@@ -17,7 +17,7 @@ export default function useFetch(url: string, initialState: unknown) {
 
       try {
         const response = await fetch(url);
-
+        console.log("try response", response);
         // safeguard
         if (!response.ok) throw new Error();
 

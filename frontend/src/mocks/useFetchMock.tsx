@@ -1,4 +1,6 @@
-export default function useFetchMock(url: string, initialState: unknown) {
+export default function useFetchMock(url: string, initialState: unknown = []) {
+  console.log("useFetchMock() 🎭");
+
   switch (url) {
     case "www.loading.com":
       return { data: [], status: "loading", message: "" };

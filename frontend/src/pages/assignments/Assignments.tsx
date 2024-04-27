@@ -2,25 +2,24 @@
 import Card from "components/card/Card";
 import CardNew from "components/card-new/CardNew";
 import Loader from "components/loader/Loader";
-import Assignment from "types/Assignment";
 import Footer from "./helpers/Footer";
 import Hero from "./helpers/Hero";
 import StateEmpty from "./helpers/StateEmpty";
 import StateError from "./helpers/StateError";
-import "./assignments.css";
+import Assignment from "types/Assignment";
+import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
+import "./assignments.css";
 
 interface Props {
   /** A React custom hook to fetch data. It returns data, status, and message. */
-  customHook: any;
+  customHook: () => ResultsAPI;
 }
 
 /** The homepage of Scoutr and the place to create new assignments. */
-export default function Assignments(item: Props) {
-  const { customHook } = item;
-
+export default function Assignments({ customHook }: Props) {
   // Local state
-  const { data, status }: { data: Assignment[]; status: Status } = customHook;
+  const { data, status }: { data: Assignment[]; status: Status } = customHook();
 
   // Properties
   const sortedData = data.sort((a, b) => a.id - b.id);
