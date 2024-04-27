@@ -14,7 +14,7 @@ h1 {
 }
 
 h2 {
-  margin-bottom: var(--space-medium);
+  margin-bottom: 0;
   font-size: 24px;
   line-height: 1.15; /* As narrow as i can set it before line-clamp cuts low handing characters like g,p,q */
 }

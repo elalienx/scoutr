@@ -1,8 +1,14 @@
 // Project files
 import Button from "components/button/Button";
 import InputText from "components/input-text/InputText";
+import useDialog from "state/DialogContextAPI";
+import "./form-assignment.css";
 
 export default function FormAssignment() {
+  // Global state
+  const { setDialog, dialogRef } = useDialog();
+
+  // Properties
   const assignment = {
     label: "Assignment name",
     placeholder: "Graphic Designer",
@@ -15,6 +21,12 @@ export default function FormAssignment() {
     defaultValue: "",
     required: true,
   };
+
+  // Methods
+  function onClose() {
+    setDialog(null);
+    dialogRef.current.close();
+  }
 
   return (
     <form className="form-assignment">
@@ -30,13 +42,13 @@ export default function FormAssignment() {
           label={"Create"}
           primary={true}
           icon="circle-check"
-          onClick={() => alert("ok")}
+          onClick={() => alert("createk")}
         />
         <Button
           label={"Dismiss"}
           primary={false}
           icon="xmark"
-          onClick={closeDialog}
+          onClick={onClose}
         />
       </div>
     </form>

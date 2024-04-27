@@ -5,8 +5,7 @@ import { useState, useEffect } from "react";
 import Status from "types/Status";
 
 export default function useFetch(url: string, initialState: unknown = []) {
-  console.log("useFetch() 🌎", url);
-
+  // Local state
   const [data, setData] = useState(initialState);
   const [status, setStatus] = useState<Status>("loading");
   const [message, setMessage] = useState("");

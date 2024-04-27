@@ -4,7 +4,7 @@
   .input {
     display: block;
     width: 100%; /* inputs are weird, they don't take full width even with display block */
-    padding: var(--space-small);
+    padding: var(--space-small) var(--space-medium);
     background-color: var(--color-black-light);
     color: var(--color-black);
     border: none;
