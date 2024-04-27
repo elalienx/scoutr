@@ -26,7 +26,7 @@ export default function Assignments({ hook }: Props) {
 
   // Components
   const Cards = assignmentsById.map((item) => <Card key={item.id} {...item} />);
-  Cards.push(<CardNew key={data.length + 1} />);
+  Cards.push(<CardNew key={"card-new"} />);
 
   return (
     <div id="assignments">
