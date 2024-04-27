@@ -8,6 +8,7 @@ import Hero from "./helpers/Hero";
 import StateEmpty from "./helpers/StateEmpty";
 import StateError from "./helpers/StateError";
 import "./assignments.css";
+import Status from "types/Status";
 
 interface Props {
   /** A React custom hook to fetch data. It returns data, status, and message. */
@@ -19,15 +20,13 @@ export default function Assignments(item: Props) {
   const { customHook } = item;
 
   // Local state
-  const { data, status } = customHook;
+  const { data, status }: { data: Assignment[]; status: Status } = customHook;
 
   // Properties
-  const sortedData = data.sort((a: Assignment, b: Assignment) => a.id - b.id);
+  const sortedData = data.sort((a, b) => a.id - b.id);
 
   // Components
-  const Cards = sortedData.map((item: Assignment) => (
-    <Card key={item.id} {...item} />
-  ));
+  const Cards = sortedData.map((item) => <Card key={item.id} {...item} />);
   Cards.push(<CardNew key={data.length + 1} />);
 
   return (
