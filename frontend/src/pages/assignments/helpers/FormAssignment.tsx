@@ -52,7 +52,7 @@ export default function FormAssignment() {
 
   function onClose() {
     setDialog(null);
-    dialogRef.current?.close();
+    dialogRef?.current?.close();
   }
 
   return (

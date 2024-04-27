@@ -7,21 +7,21 @@ import ContextProvider from "types/ContextProvider";
 
 // Properties
 interface ContextValue {
-  dialog: ReactNode | null;
+  dialog: ReactNode;
   setDialog: Dispatch<any>;
-  dialogRef: React.RefObject<HTMLDialogElement>;
+  dialogRef: React.RefObject<HTMLDialogElement> | null;
 }
 const initialValue: ContextValue = {
   dialog: null,
   setDialog: () => {},
-  dialogRef: useRef<HTMLDialogElement>(null),
+  dialogRef: null,
 };
 const Context = createContext(initialValue);
 
 // For the parent
 export function DialogProvider({ children }: ContextProvider) {
   // Local state
-  const [dialog, setDialog] = useState<ReactNode>(null);
+  const [dialog, setDialog] = useState<ReactNode>();
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   // Properties
