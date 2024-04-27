@@ -5,7 +5,6 @@ import { FormEvent, useRef } from "react";
 import Button from "components/button/Button";
 import InputText from "components/input-text/InputText";
 import useDialog from "state/DialogContextAPI";
-import useFetch from "hooks/useFetch";
 import "./form-assignment.css";
 
 export default function FormAssignment() {
@@ -53,7 +52,7 @@ export default function FormAssignment() {
 
   function onClose() {
     setDialog(null);
-    dialogRef.current.close();
+    dialogRef.current?.close();
   }
 
   return (

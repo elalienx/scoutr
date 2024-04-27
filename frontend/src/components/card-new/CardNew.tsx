@@ -14,7 +14,7 @@ export default function CardNew() {
   // Methods
   function onClick() {
     setDialog(<FormAssignment />);
-    dialogRef.current.showModal();
+    dialogRef.current?.showModal();
   }
 
   return (
