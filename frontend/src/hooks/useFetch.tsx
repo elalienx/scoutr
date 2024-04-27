@@ -13,16 +13,12 @@ export default function useFetch(url: string, initialState: unknown = []) {
 
   useEffect(() => {
     const fetchData = async (url: string) => {
-      console.log("fetchData() url", url);
-
       try {
         const response = await fetch(url);
-        console.log("try response", response);
         // safeguard
         if (!response.ok) throw new Error();
 
         const result = await response.json();
-        console.log(result);
 
         setData(result.data);
         setStatus("ready");
@@ -33,7 +29,7 @@ export default function useFetch(url: string, initialState: unknown = []) {
       }
     };
 
-    fetchData(url); // Immediately fetch data
+    fetchData(url);
   }, [url]);
 
   return { data, status, message };

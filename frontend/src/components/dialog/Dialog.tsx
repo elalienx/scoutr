@@ -8,12 +8,5 @@ interface Props {
 
 /** The native implementation of the popup window. It receivez any React JSX component. */
 export default function Dialog({ children }: Props) {
-  // Properties
-  const isOpen = children === null;
-
-  return (
-    <dialog className="dialog" open={isOpen}>
-      {children}
-    </dialog>
-  );
+  return <dialog className="dialog">{children}</dialog>;
 }

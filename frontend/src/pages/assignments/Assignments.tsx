@@ -10,7 +10,6 @@ import Assignment from "types/Assignment";
 import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
 import "./assignments.css";
-import FormAssignment from "./helpers/FormAssignment";
 
 interface Props {
   /** A React custom hook to fetch data. It returns data, status, and message. */

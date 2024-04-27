@@ -1,3 +1,4 @@
+// Project files
 import Button from "components/button/Button";
 import InputText from "components/input-text/InputText";
 
@@ -35,7 +36,7 @@ export default function FormAssignment() {
           label={"Dismiss"}
           primary={false}
           icon="xmark"
-          onClick={() => alert("cancel")}
+          onClick={closeDialog}
         />
       </div>
     </form>
