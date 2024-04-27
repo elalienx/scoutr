@@ -11,8 +11,8 @@ interface Props {
   /** The example text to display when the field is empty. */
   placeholder: string;
 
-  /** Determines if is an obligatory field. */
-  required: boolean;
+  /** Determines if is an obligatory field. Defaults to true. */
+  required?: boolean;
 
   /** The text the user writes in the field. */
   defaultValue: string;
@@ -20,7 +20,7 @@ interface Props {
 
 /** Input control to allow a single line of text. */
 export default function InputText(item: Props) {
-  const { label, placeholder, required, defaultValue } = item;
+  const { label, placeholder, required = true, defaultValue } = item;
 
   // Local state
   const inputRef = useRef<HTMLInputElement>(null);

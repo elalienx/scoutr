@@ -10,25 +10,24 @@ import Assignment from "types/Assignment";
 import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
 import "./assignments.css";
+import FormAssignment from "./helpers/FormAssignment";
 
 interface Props {
   /** A React custom hook to fetch data. It returns data, status, and message. */
-  customHook: () => ResultsAPI;
+  hook: () => ResultsAPI;
 }
 
 /** The homepage of Scoutr and the place to create new assignments. */
-export default function Assignments({ customHook }: Props) {
+export default function Assignments({ hook }: Props) {
   // Local state
-  const { data, status }: { data: Assignment[]; status: Status } = customHook();
+  const { data, status }: { data: Assignment[]; status: Status } = hook();
 
   // Properties
   const assignmentsById = data.sort((a, b) => a.id - b.id);
 
   // Components
   const Cards = assignmentsById.map((item) => <Card key={item.id} {...item} />);
-  Cards.push(
-    <CardNew key={data.length + 1} onClick={async () => alert("add new")} />
-  );
+  Cards.push(<CardNew key={data.length + 1} />);
 
   return (
     <div id="assignments">

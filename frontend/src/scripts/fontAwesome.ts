@@ -8,6 +8,7 @@ import {
   faPlus,
   faRotateRight,
   faSpinner,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Brands
@@ -21,7 +22,8 @@ library.add(
   faLinkedin,
   faPlus,
   faRotateRight,
-  faSpinner
+  faSpinner,
+  faXmark
 );
 
 export default library;

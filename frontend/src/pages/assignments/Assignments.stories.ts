@@ -18,7 +18,7 @@ type Story = StoryObj<typeof meta>;
 // Stories
 export const Default: Story = {
   args: {
-    customHook: {
+    hook: {
       data: [
         {
           id: 1,
@@ -57,18 +57,18 @@ export const Default: Story = {
 
 export const Loading: Story = {
   args: {
-    customHook: { data: [], message: [], status: "loading" },
+    hook: { data: [], message: [], status: "loading" },
   },
 };
 
 export const Error: Story = {
   args: {
-    customHook: { data: [], message: [], status: "error" },
+    hook: { data: [], message: [], status: "error" },
   },
 };
 
 export const Empty: Story = {
   args: {
-    customHook: { data: [], message: [], status: "empty" },
+    hook: { data: [], message: [], status: "empty" },
   },
 };
