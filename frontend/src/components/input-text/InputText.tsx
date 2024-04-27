@@ -1,5 +1,5 @@
 // Node modules
-import { useRef } from "react";
+import { RefObject } from "react";
 
 // Project files
 import "styles/components/input-field.css";
@@ -16,14 +16,14 @@ interface Props {
 
   /** The text the user writes in the field. */
   defaultValue: string;
+
+  /** The reference to this component HTML element so we can read the value outside. */
+  reference: RefObject<HTMLInputElement>;
 }
 
 /** Input control to allow a single line of text. */
 export default function InputText(item: Props) {
-  const { label, placeholder, required = true, defaultValue } = item;
-
-  // Local state
-  const inputRef = useRef<HTMLInputElement>(null);
+  const { label, placeholder, required = true, defaultValue, reference } = item;
 
   return (
     <label className="input-field">
@@ -33,7 +33,7 @@ export default function InputText(item: Props) {
         type="text"
         placeholder={placeholder}
         required={required}
-        ref={inputRef}
+        ref={reference}
         defaultValue={defaultValue}
       />
     </label>

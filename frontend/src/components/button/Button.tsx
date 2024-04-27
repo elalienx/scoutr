@@ -11,7 +11,7 @@ interface Props {
   label: string;
 
   /** Is this the principal call to action on the page? */
-  primary: boolean;
+  primary?: boolean;
 
   /** The icon category of FontAwesome. This can be the "fas" solid icons or the "fab" brand icons. */
   icon_prefix?: IconPrefix;
@@ -30,9 +30,9 @@ interface Props {
 export default function Button(item: Props) {
   const {
     label,
-    primary,
+    primary = false,
     icon_prefix = "fas",
-    icon = "plus",
+    icon = "",
     size = "small",
     ...props
   } = item;
@@ -42,7 +42,7 @@ export default function Button(item: Props) {
 
   return (
     <button className={`button ${size} ${classNamePrimary}`} {...props}>
-      <FontAwesomeIcon className="icon" icon={[icon_prefix, icon]} />
+      {icon && <FontAwesomeIcon className="icon" icon={[icon_prefix, icon]} />}
       {label}
     </button>
   );
