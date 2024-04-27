@@ -9,7 +9,7 @@ import useFetchMock from "mocks/useFetchMock";
 test("Expect loading state", () => {
   // Arrange
   const customHook = useFetchMock("www.loading.com");
-  render(<Assignments customHook={customHook} />);
+  render(<Assignments customHook={() => customHook} />);
 
   // Act
   const test = screen.queryByText("loading...");
@@ -22,7 +22,7 @@ test("Expect loading state", () => {
 test("Expect error state", () => {
   // Arrange
   const customHook = useFetchMock("www.error.com");
-  render(<Assignments customHook={customHook} />);
+  render(<Assignments customHook={() => customHook} />);
 
   // Act
   const test = screen.queryByText("Oh no! We could not load any assigment.");
@@ -35,7 +35,7 @@ test("Expect error state", () => {
 test("Expect emtpy state", () => {
   // Arrange
   const customHook = useFetchMock("www.empty.com");
-  render(<Assignments customHook={customHook} />);
+  render(<Assignments customHook={() => customHook} />);
 
   // Act
   const test = screen.queryByText(
@@ -50,7 +50,7 @@ test("Expect emtpy state", () => {
 test("Expect content state", () => {
   // Arrange
   const customHook = useFetchMock("www.content.com/assignments");
-  render(<Assignments customHook={customHook} />);
+  render(<Assignments customHook={() => customHook} />);
 
   // Act
   const test1 = screen.queryByText("Data Engineer");

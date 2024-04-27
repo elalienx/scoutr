@@ -1,17 +1,29 @@
+import ResultsAPI from "types/ResultsAPI";
+
 export default function useFetchMock(url: string, initialState: unknown = []) {
   console.log("useFetchMock() 🎭");
 
+  let result: ResultsAPI = {
+    data: [],
+    status: "loading",
+    message: "",
+  };
+
   switch (url) {
     case "www.loading.com":
-      return { data: [], status: "loading", message: "" };
+      result = { data: [], status: "loading", message: "" };
+      break;
     case "www.error.com":
-      return { data: [], status: "error", message: "" };
+      result = { data: [], status: "error", message: "" };
+      break;
     case "www.empty.com":
-      return { data: [], status: "empty", message: "" };
+      result = { data: [], status: "empty", message: "" };
+      break;
     case "www.content.com":
-      return { data: [1, 2, 3], status: "ready", message: "" };
+      result = { data: [1, 2, 3], status: "ready", message: "" };
+      break;
     case "www.content.com/assignments":
-      return {
+      result = {
         data: [
           {
             id: 1,
@@ -45,7 +57,14 @@ export default function useFetchMock(url: string, initialState: unknown = []) {
         status: "ready",
         message: "",
       };
+      break;
     default:
-      throw new Error(`Case url: ${url} not found`);
+      result = {
+        data: [],
+        status: "error",
+        message: `Unknow case ${url} found`,
+      };
   }
+
+  return result;
 }
