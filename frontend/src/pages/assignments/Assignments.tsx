@@ -10,6 +10,7 @@ import StateError from "./helpers/StateError";
 import "./assignments.css";
 
 interface Props {
+  /** A React custom hook to fetch data. It returns data, status, and message. */
   customHook: any;
 }
 

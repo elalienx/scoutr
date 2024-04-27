@@ -18,57 +18,57 @@ type Story = StoryObj<typeof meta>;
 // Stories
 export const Default: Story = {
   args: {
-    data: [
-      {
-        id: 1,
-        date_created: "2024-01-31 21:00:30.610279",
-        assignment_name: "Data Engineer",
-        company_name: "Folksam",
-        company_image_url: ImageURLs.company_foklsam,
-      },
-      {
-        id: 2,
-        date_created: "2024-02-01 21:00:30.610279",
-        assignment_name: "Developer Architect",
-        company_name: "Folksam",
-        company_image_url: ImageURLs.company_foklsam,
-      },
-      {
-        id: 3,
-        date_created: "2024-02-02 21:00:30.610279",
-        assignment_name: "Master Data Specialist",
-        company_name: "McDonalds",
-        company_image_url: ImageURLs.company_mcdonalds,
-      },
-      {
-        id: 4,
-        date_created: "2024-02-02 21:00:30.610279",
-        assignment_name: "Pega Lead System Architech",
-        company_name: "Nordea Bank",
-        company_image_url: ImageURLs.company_nordea,
-      },
-    ],
-    status: "content",
+    customHook: {
+      data: [
+        {
+          id: 1,
+          date_created: "2024-01-31 21:00:30.610279",
+          assignment_name: "Data Engineer",
+          company_name: "Folksam",
+          company_image_url: ImageURLs.company_foklsam,
+        },
+        {
+          id: 2,
+          date_created: "2024-02-01 21:00:30.610279",
+          assignment_name: "Developer Architect",
+          company_name: "Folksam",
+          company_image_url: ImageURLs.company_foklsam,
+        },
+        {
+          id: 3,
+          date_created: "2024-02-02 21:00:30.610279",
+          assignment_name: "Master Data Specialist",
+          company_name: "McDonalds",
+          company_image_url: ImageURLs.company_mcdonalds,
+        },
+        {
+          id: 4,
+          date_created: "2024-02-02 21:00:30.610279",
+          assignment_name: "Pega Lead System Architech",
+          company_name: "Nordea Bank",
+          company_image_url: ImageURLs.company_nordea,
+        },
+      ],
+      status: "content",
+      message: "",
+    },
   },
 };
 
 export const Loading: Story = {
   args: {
-    data: [],
-    status: "loading",
+    customHook: { data: [], message: [], status: "loading" },
   },
 };
 
 export const Error: Story = {
   args: {
-    data: [],
-    status: "error",
+    customHook: { data: [], message: [], status: "error" },
   },
 };
 
 export const Empty: Story = {
   args: {
-    data: [],
-    status: "empty",
+    customHook: { data: [], message: [], status: "empty" },
   },
 };

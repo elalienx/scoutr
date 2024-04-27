@@ -32,7 +32,7 @@ export default function App() {
 
   return (
     <div>
-      <Assignments customHook={useFetchMock("www.empty.com")} />
+      <Assignments customHook={useFetchMock("www.loading.com")} />
     </div>
   );
 }
