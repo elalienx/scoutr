@@ -54,7 +54,7 @@ export default function Candidates(item: Props) {
         {status === "loading" && <Loader />}
         {status === "empty" && <StateEmpty />}
         {status === "error" && <StateError />}
-        {status === "content" && Content}
+        {status === "ready" && Content}
       </section>
     </div>
   );

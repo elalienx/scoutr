@@ -10,7 +10,7 @@ test("Shows loading while fetching data", () => {
   const result = { data: [], status: "loading", message: "" };
 
   // Act
-  const test = useFetchMock(url);
+  const test = useFetchMock(url, []);
 
   // Assert
   expect(test).toEqual(result);
@@ -22,7 +22,7 @@ test("Shows error when fetch fails", () => {
   const result = { data: [], status: "error", message: "" };
 
   // Act
-  const test = useFetchMock(url);
+  const test = useFetchMock(url, []);
 
   // Assert
   expect(test).toEqual(result);
@@ -34,7 +34,7 @@ test("Shows empty when fetch is done but there is no content", () => {
   const result = { data: [], status: "empty", message: "" };
 
   // Act
-  const test = useFetchMock(url);
+  const test = useFetchMock(url, []);
 
   // Assert
   expect(test).toEqual(result);
@@ -43,10 +43,10 @@ test("Shows empty when fetch is done but there is no content", () => {
 test("Shows content when fetch is done and there is content", () => {
   // Arrange
   const url: string = "www.content.com";
-  const result = { data: [1, 2, 3], status: "content", message: "" };
+  const result = { data: [1, 2, 3], status: "ready", message: "" };
 
   // Act
-  const test = useFetchMock(url);
+  const test = useFetchMock(url, []);
 
   // Assert
   expect(test).toEqual(result);

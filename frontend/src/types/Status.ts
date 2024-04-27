@@ -1,3 +1,3 @@
-type Status = "loading" | "empty" | "content" | "error";
+type Status = "loading" | "empty" | "ready" | "error";
 
 export default Status;

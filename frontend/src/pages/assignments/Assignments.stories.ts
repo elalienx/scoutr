@@ -49,7 +49,7 @@ export const Default: Story = {
           company_image_url: ImageURLs.company_nordea,
         },
       ],
-      status: "content",
+      status: "ready",
       message: "",
     },
   },

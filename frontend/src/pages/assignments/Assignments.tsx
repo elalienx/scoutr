@@ -19,10 +19,13 @@ export default function Assignments(item: Props) {
   const { customHook } = item;
 
   // Local state
-  const { data, status, message } = customHook;
+  const { data, status } = customHook;
+
+  // Properties
+  const sortedData = data.sort((a: Assignment, b: Assignment) => a.id - b.id);
 
   // Components
-  const Cards = data.map((item: Assignment) => (
+  const Cards = sortedData.map((item: Assignment) => (
     <Card key={item.id} {...item} />
   ));
   Cards.push(<CardNew key={data.length + 1} />);
@@ -34,7 +37,7 @@ export default function Assignments(item: Props) {
         {status === "loading" && <Loader />}
         {status === "empty" && <StateEmpty />}
         {status === "error" && <StateError />}
-        {status === "content" && Cards}
+        {status === "ready" && Cards}
       </section>
       <Footer />
     </div>

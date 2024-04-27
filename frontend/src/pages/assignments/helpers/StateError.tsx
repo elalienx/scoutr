@@ -4,6 +4,8 @@ import Button from "components/button/Button";
 import "./state.css";
 
 export default function StateError() {
+  console.log("error ❌");
+
   return (
     <div className="state">
       <img

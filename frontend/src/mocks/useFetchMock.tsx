@@ -1,4 +1,4 @@
-export default function useFetchMock(url: string) {
+export default function useFetchMock(url: string, initialState: unknown) {
   switch (url) {
     case "www.loading.com":
       return { data: [], status: "loading", message: "" };
@@ -7,7 +7,7 @@ export default function useFetchMock(url: string) {
     case "www.empty.com":
       return { data: [], status: "empty", message: "" };
     case "www.content.com":
-      return { data: [1, 2, 3], status: "content", message: "" };
+      return { data: [1, 2, 3], status: "ready", message: "" };
     case "www.content.com/assignments":
       return {
         data: [
@@ -40,7 +40,7 @@ export default function useFetchMock(url: string) {
             company_image_url: "",
           },
         ],
-        status: "content",
+        status: "ready",
         message: "",
       };
     default:
