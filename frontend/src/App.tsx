@@ -4,9 +4,12 @@ import { Routes, Route } from "react-router-dom";
 // Project files
 import useFetch from "hooks/useFetch";
 import Assignments from "pages/assignments/Assignments";
-import Dialog from "components/dialog/Dialog";
+import useDialog from "state/DialogContextAPI";
 
 export default function App() {
+  // Global state
+  const { dialogRef, dialog } = useDialog();
+
   // Components
   const assignments = <Assignments hook={() => useFetch("/api/assignments")} />;
 
@@ -15,7 +18,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={assignments} />
       </Routes>
-      <Dialog />
+      <dialog ref={dialogRef}>{dialog}</dialog>
     </div>
   );
 }
