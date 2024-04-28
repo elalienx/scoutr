@@ -11,6 +11,8 @@ import Table from "./helpers/Table";
 import Candidate from "types/Candidate";
 import Status from "types/Status";
 import "./candidates.css";
+import useDialog from "state/DialogContextAPI";
+import FormCandidates from "./helpers/FormCandidates";
 
 interface Props {
   /** A React custom hook to fetch data. The return complies with the ResultsAPI interface. */
@@ -25,6 +27,7 @@ interface Props {
 export default function Candidates({ fetchHook }: Props) {
   // Global state
   const { assignment_id } = useParams();
+  const { showDialog } = useDialog();
 
   // Local state
   const uri = "/api/candidates/" + assignment_id;
@@ -36,6 +39,8 @@ export default function Candidates({ fetchHook }: Props) {
   const response_rate = Math.round(contacted.length / candidates.length) * 100;
 
   // Components
+  const ShowForm = () =>
+    showDialog(<FormCandidates assignment_id={assignment_id}  />);
   const Content = (
     <>
       <Table candidates={sortedById} />
@@ -45,6 +50,7 @@ export default function Candidates({ fetchHook }: Props) {
         size="big"
         icon_prefix="fab"
         icon="linkedin"
+        onClick={ShowForm}
       />
     </>
   );
