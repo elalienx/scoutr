@@ -7,27 +7,29 @@ import Hero from "./helpers/Hero";
 import StateEmpty from "./helpers/StateEmpty";
 import StateError from "./helpers/StateError";
 import Assignment from "types/Assignment";
-import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
 import "./assignments.css";
 
 interface Props {
   /** A React custom hook to fetch data. It returns a ResultsAPI interface. */
-  fetchHook: (url: string) => ResultsAPI;
+  fetchHook: (url: string) => {
+    data: Assignment[];
+    status: Status;
+    message: string;
+  };
 }
 
 /** The homepage of Scoutr and the place to create new assignments. */
 export default function Assignments({ fetchHook }: Props) {
   // Local state
-  const { data, status } = fetchHook("/api/assignments");
+  const uri = "/api/assignments";
+  const { data: assignments, status } = fetchHook(uri);
 
   // Properties
-  const assignmentsById = data.sort((a, b) => a.id - b.id);
+  const sortedById = assignments.sort((a, b) => a.id - b.id);
 
   // Components
-  const Content = assignmentsById.map((item) => (
-    <Card key={item.id} {...item} />
-  ));
+  const Content = sortedById.map((item) => <Card key={item.id} {...item} />);
   Content.push(<CardNew key={"card-new"} />);
 
   return (

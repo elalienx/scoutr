@@ -9,13 +9,16 @@ import StateEmpty from "./helpers/StateEmpty";
 import StateError from "./helpers/StateError";
 import Table from "./helpers/Table";
 import Candidate from "types/Candidate";
-import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
 import "./candidates.css";
 
 interface Props {
   /** A React custom hook to fetch data. It returns a ResultsAPI interface. */
-  fetchHook: (url: string) => ResultsAPI;
+  fetchHook: (url: string) => {
+    data: Candidate[];
+    status: Status;
+    message: string;
+  };
 }
 
 /** The page with the candidate table where you can add more LinkedIn profiles by pressing one button. */
@@ -24,19 +27,19 @@ export default function Candidates({ fetchHook }: Props) {
   const { assignment_id } = useParams();
 
   // Local state
-  const { data, status } = fetchHook("/api/candidates/" + assignment_id);
+  const uri = "/api/candidates/" + assignment_id;
+  const { data: candidates, status } = fetchHook(uri);
 
   // Properties
-  const candidatesById = data.sort((a, b) => a.id - b.id);
-  const contacted = candidatesById.filter((item) => item.contact_status > 0);
-  const response_rate: number = Math.round(
-    (contacted.length / candidatesById.length) * 100
-  );
+  const sortedById = candidates.sort((a, b) => a.id - b.id);
+  const contacted = sortedById.filter((item) => item.contact_status > 0);
+  const response_rate: number =
+    Math.round(contacted.length / candidates.length) * 100;
 
   // Components
   const Content = (
     <>
-      <Table candidates={candidatesById} />
+      <Table candidates={sortedById} />
       <Button
         label={"Add candidates"}
         primary={true}
