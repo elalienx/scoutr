@@ -1,38 +1,36 @@
 // Project files
 import Loader from "components/loader/Loader";
 import NavigationBar from "components/navigation-bar/NavigationBar";
-import Status from "types/Status";
 import StateEmpty from "./helpers/StateEmpty";
 import StateError from "./helpers/StateError";
 import Table from "./helpers/Table";
 import "./candidates.css";
 import Button from "components/button/Button";
 import Candidate from "types/Candidate";
+import ResultsAPI from "types/ResultsAPI";
+import Status from "types/Status";
 
 interface Props {
-  /** The candidates belonging to an assignment. */
-  data: any;
-
-  /** The status of calling the server. */
-  status: Status;
+  /** A React custom hook to fetch data. It returns data, status, and message. */
+  hook: () => ResultsAPI;
 }
 
 /** The page with the candidate table where you can add more LinkedIn profiles by pressing one button. */
-export default function Candidates(item: Props) {
+export default function Candidates({ hook }: Props) {
   // Local state
-  const { data, status } = item;
+  const { data, status }: { data: Candidate[]; status: Status } = hook();
 
   // Properties
-  const candidates: Candidate[] = data;
-  const contacted = candidates.filter((item) => item.contact_status > 0);
+  const candidatesById = data.sort((a, b) => a.id - b.id);
+  const contacted = candidatesById.filter((item) => item.contact_status > 0);
   const response_rate: number = Math.round(
-    (contacted.length / candidates.length) * 100
+    (contacted.length / candidatesById.length) * 100
   );
 
   // Components
   const Content = (
     <>
-      <Table candidates={candidates} />
+      <Table candidates={candidatesById} />
       <Button
         label={"Add candidates"}
         primary={true}

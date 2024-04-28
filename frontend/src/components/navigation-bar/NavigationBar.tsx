@@ -1,3 +1,6 @@
+// Node modules
+import { Link } from "react-router-dom";
+
 // Project files
 import Logo from "assets/logo-scoutr.svg";
 import Assignment from "./helpers/Assignment";
@@ -30,7 +33,9 @@ export default function NavigationBar(item: Props) {
       />
 
       {/* Midle */}
-      <img className="scoutr-logo" src={Logo} />
+      <Link to="/">
+        <img className="scoutr-logo" src={Logo} />
+      </Link>
 
       {/* Right */}
       {response_rate >= 0 && <ResponseRate response_rate={response_rate} />}

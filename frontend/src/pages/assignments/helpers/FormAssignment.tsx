@@ -1,16 +1,18 @@
 // Node modules
 import { FormEvent, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 // Project files
 import Button from "components/button/Button";
 import InputText from "components/input-text/InputText";
 import useDialog from "state/DialogContextAPI";
-import "./form-assignment.css";
 import ResultsAPI from "types/ResultsAPI";
+import "./form-assignment.css";
 
 export default function FormAssignment() {
   // Global state
   const { closeDialog } = useDialog();
+  const navigate = useNavigate();
 
   // Local state
   const AssignmentNameRef = useRef<HTMLInputElement>(null);
@@ -57,9 +59,13 @@ export default function FormAssignment() {
   function onSuccess(result: ResultsAPI) {
     // add assignment to the global/app state assignment
     // get the assignment ID
-    console.log(result.data);
-    alert("Created!");
+    const id = result.data;
+
+    console.log("assignment id:", id);
+
     // navigate to the Candidate page
+    navigate(`/candidates/${id}`);
+
     // close modal
     closeDialog();
   }
