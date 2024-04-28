@@ -18,13 +18,12 @@ export default function useFetch(uri: string): ResultsAPI {
     const fetchData = async (url: string) => {
       try {
         const response = await fetch(url);
-        // safeguard
-        if (!response.ok) throw new Error();
+        const { data, message } = await response.json();
+        const status: Status = data.length ? "ready" : "empty";
 
-        const result = await response.json();
-
-        setData(result.data);
-        setStatus("ready");
+        setData(data);
+        setStatus(status);
+        setMessage(message);
       } catch (error: unknown) {
         console.error(error);
         if (error instanceof Error) setMessage(error.message);

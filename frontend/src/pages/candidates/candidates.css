@@ -11,10 +11,14 @@
     margin-inline: auto;
   }
 
-  .section.content {
+  .section.ready {
     width: min(1200px, 100% - 24px - 24px); /* 24px per sidee */
     margin-inline: auto;
     text-align: center;
+  }
+
+  .section.ready table {
+    margin-bottom: var(--space-medium);
   }
 
   .section.loading,

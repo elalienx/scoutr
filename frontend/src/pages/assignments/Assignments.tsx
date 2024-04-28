@@ -11,7 +11,7 @@ import Status from "types/Status";
 import "./assignments.css";
 
 interface Props {
-  /** A React custom hook to fetch data. It returns a ResultsAPI interface. */
+  /** A React custom hook to fetch data. The return complies with the ResultsAPI interface. */
   fetchHook: (url: string) => {
     data: Assignment[];
     status: Status;

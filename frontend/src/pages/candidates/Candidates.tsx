@@ -13,7 +13,7 @@ import Status from "types/Status";
 import "./candidates.css";
 
 interface Props {
-  /** A React custom hook to fetch data. It returns a ResultsAPI interface. */
+  /** A React custom hook to fetch data. The return complies with the ResultsAPI interface. */
   fetchHook: (url: string) => {
     data: Candidate[];
     status: Status;
@@ -33,8 +33,7 @@ export default function Candidates({ fetchHook }: Props) {
   // Properties
   const sortedById = candidates.sort((a, b) => a.id - b.id);
   const contacted = sortedById.filter((item) => item.contact_status > 0);
-  const response_rate: number =
-    Math.round(contacted.length / candidates.length) * 100;
+  const response_rate = Math.round(contacted.length / candidates.length) * 100;
 
   // Components
   const Content = (
