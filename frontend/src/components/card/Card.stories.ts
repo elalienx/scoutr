@@ -32,7 +32,7 @@ export const Default: Story = {
 
 export const Empty: Story = {
   args: {
-    id: 1,
+    id: 2,
     date_created: "2024-04-15",
     assignment_name: "Data Engineer",
     company_name: "Folksam",

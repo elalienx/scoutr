@@ -1,8 +1,8 @@
 // Node modules
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Project files
-import Button from "components/button/Button";
 import ImageThumbnail from "components/image-thumbnail/ImageThumbnail";
 import Assignment from "types/Assignment";
 import "./card.css";
@@ -11,20 +11,18 @@ import "./card.css";
 export default function Card(item: Assignment) {
   const { id, assignment_name, company_name, company_image_url } = item;
 
-  // Global state
-  const navigate = useNavigate();
+  // Properties
+  const link = `/candidates/${id}`;
 
   return (
     <article className="card">
       <ImageThumbnail src={company_image_url} alt="The company logo" />
       <h2 className="trim-text">{assignment_name}</h2>
       <small className="label trim-text">{company_name}</small>
-      <Button
-        icon="folder-open"
-        label={"Open"}
-        onClick={() => navigate(`/candidates/${id}`)}
-        primary={false}
-      />
+      <Link className="button small" to={link}>
+        <FontAwesomeIcon className="icon" icon={["fas", "folder-open"]} />
+        Open
+      </Link>
     </article>
   );
 }
