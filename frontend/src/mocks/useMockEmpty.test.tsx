@@ -5,7 +5,7 @@ import { expect, test } from "vitest";
 import useMockEmpty from "./useMockEmpty";
 import Status from "types/Status";
 
-test("Expect return error if passed an url", () => {
+test("Expect return empty state if passed an url", () => {
   // Arrange
   const uri = "api/example/";
   const resultStatus: Status = "empty";

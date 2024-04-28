@@ -6,7 +6,7 @@ import useMockReadyAssignments from "./useMockReadyAssignments";
 import Status from "types/Status";
 import Assignment from "types/Assignment";
 
-test("Expect return loading if passed an url", () => {
+test("Expect return content if passed a valid url", () => {
   // Arrange
   const uri = "api/example/";
   const resultStatus: Status = "ready";

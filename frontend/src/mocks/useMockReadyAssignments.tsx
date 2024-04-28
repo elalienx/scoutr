@@ -1,7 +1,7 @@
 // Project files
 import ResultsAPI from "types/ResultsAPI";
 
-export default function useMockLoading(uri: string): ResultsAPI {
+export default function useMockReadyAssignments(uri: string): ResultsAPI {
   return {
     data: [
       {
@@ -19,7 +19,7 @@ export default function useMockLoading(uri: string): ResultsAPI {
         company_image_url: "mcdonalds.png",
       },
     ],
-    status: "loading",
-    message: uri,
+    status: "ready",
+    message: `Success fetching ${uri}`,
   };
 }

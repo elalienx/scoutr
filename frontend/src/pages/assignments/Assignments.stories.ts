@@ -2,8 +2,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 // Project files
-import ImageURLs from "stories/image_urls.json";
 import Assignments from "./Assignments";
+import useMockReadyAssignments from "mocks/useMockReadyAssignments";
+import useMockLoading from "mocks/useMockLoading";
+import useMockError from "mocks/useMockError";
+import useMockEmpty from "mocks/useMockEmpty";
 
 const meta = {
   title: "Pages/Assignments",
@@ -18,57 +21,24 @@ type Story = StoryObj<typeof meta>;
 // Stories
 export const Default: Story = {
   args: {
-    hook: {
-      data: [
-        {
-          id: 1,
-          date_created: "2024-01-31 21:00:30.610279",
-          assignment_name: "Data Engineer",
-          company_name: "Folksam",
-          company_image_url: ImageURLs.company_foklsam,
-        },
-        {
-          id: 2,
-          date_created: "2024-02-01 21:00:30.610279",
-          assignment_name: "Developer Architect",
-          company_name: "Folksam",
-          company_image_url: ImageURLs.company_foklsam,
-        },
-        {
-          id: 3,
-          date_created: "2024-02-02 21:00:30.610279",
-          assignment_name: "Master Data Specialist",
-          company_name: "McDonalds",
-          company_image_url: ImageURLs.company_mcdonalds,
-        },
-        {
-          id: 4,
-          date_created: "2024-02-02 21:00:30.610279",
-          assignment_name: "Pega Lead System Architech",
-          company_name: "Nordea Bank",
-          company_image_url: ImageURLs.company_nordea,
-        },
-      ],
-      status: "ready",
-      message: "",
-    },
+    fetchHook: useMockReadyAssignments,
   },
 };
 
 export const Loading: Story = {
   args: {
-    hook: { data: [], message: [], status: "loading" },
+    fetchHook: useMockLoading,
   },
 };
 
 export const Error: Story = {
   args: {
-    hook: { data: [], message: [], status: "error" },
+    fetchHook: useMockError,
   },
 };
 
 export const Empty: Story = {
   args: {
-    hook: { data: [], message: [], status: "empty" },
+    fetchHook: useMockEmpty,
   },
 };

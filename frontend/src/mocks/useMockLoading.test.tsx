@@ -5,7 +5,7 @@ import { expect, test } from "vitest";
 import useMockLoading from "./useMockLoading";
 import Status from "types/Status";
 
-test("Expect return loading if passed an url", () => {
+test("Expect return loading status if passed an url", () => {
   // Arrange
   const uri = "api/example/";
   const result: Status = "loading";
