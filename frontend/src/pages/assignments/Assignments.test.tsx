@@ -4,12 +4,15 @@ import { render, screen } from "@testing-library/react";
 
 // Project files
 import Assignments from "./Assignments";
-import useFetchMock from "mocks/useFetchMock";
+import useMockLoading from "mocks/useMockLoading";
+import useMockError from "mocks/useMockError";
+
+//
 
 test("Expect loading state", () => {
   // Arrange
-  const customHook = useFetchMock("www.loading.com");
-  render(<Assignments hook={() => customHook} />);
+  const mockHook = useMockLoading;
+  render(<Assignments fetchHook={mockHook} />);
 
   // Act
   const test = screen.queryByText("loading...");
@@ -21,8 +24,8 @@ test("Expect loading state", () => {
 
 test("Expect error state", () => {
   // Arrange
-  const customHook = useFetchMock("www.error.com");
-  render(<Assignments hook={() => customHook} />);
+  const mockHook = useMockError;
+  render(<Assignments fetchHook={mockHook} />);
 
   // Act
   const test = screen.queryByText("Oh no! We could not load any assigment.");
@@ -34,8 +37,7 @@ test("Expect error state", () => {
 
 test("Expect emtpy state", () => {
   // Arrange
-  const customHook = useFetchMock("www.empty.com");
-  render(<Assignments hook={() => customHook} />);
+  render(<Assignments fetchHook={mockEmpty} />);
 
   // Act
   const test = screen.queryByText(
@@ -49,8 +51,7 @@ test("Expect emtpy state", () => {
 
 test("Expect content state", () => {
   // Arrange
-  const customHook = useFetchMock("www.content.com/assignments");
-  render(<Assignments hook={() => customHook} />);
+  render(<Assignments fetchHook={mockAssignments} />);
 
   // Act
   const test1 = screen.queryByText("Data Engineer");
