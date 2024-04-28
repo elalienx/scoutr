@@ -13,6 +13,7 @@ import Status from "types/Status";
 import "./candidates.css";
 import useDialog from "state/DialogContextAPI";
 import FormCandidates from "./helpers/FormCandidates";
+import { useEffect, useState } from "react";
 
 interface Props {
   /** A React custom hook to fetch data. The return complies with the ResultsAPI interface. */
@@ -31,16 +32,27 @@ export default function Candidates({ fetchHook }: Props) {
 
   // Local state
   const uri = "/api/candidates/" + assignment_id;
-  const { data: candidates, status } = fetchHook(uri);
+  const { data, status } = fetchHook(uri);
+  const [candidates, setCandidates] = useState<Candidate[]>([]);
 
   // Properties
   const sortedById = candidates.sort((a, b) => a.id - b.id);
   const contacted = sortedById.filter((item) => item.contact_status > 0);
   const response_rate = Math.round(contacted.length / candidates.length) * 100;
 
+  // Methods
+  useEffect(() => {
+    setCandidates(data);
+  }, [data]);
+
   // Components
   const ShowForm = () =>
-    showDialog(<FormCandidates assignment_id={assignment_id}  />);
+    showDialog(
+      <FormCandidates
+        assignment_id={assignment_id}
+        state={[candidates, setCandidates]}
+      />
+    );
   const Content = (
     <>
       <Table candidates={sortedById} />

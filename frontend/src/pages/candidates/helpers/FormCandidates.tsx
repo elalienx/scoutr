@@ -13,9 +13,14 @@ import textAreaToArray from "scripts/textAreaToArray";
 interface Props {
   /** The ID of the assignment to parse. This id is a number on the database, but is a string when read and pass from the URL */
   assignment_id: string;
+
+  /** Set Candidates */
+  state: [any, any];
 }
 
-export default function FormCandidates({ assignment_id }: Props) {
+export default function FormCandidates({ assignment_id, state }: Props) {
+  const [candidates, setCandidates] = state;
+
   // Global state
   const { closeDialog } = useDialog();
 
@@ -56,6 +61,9 @@ export default function FormCandidates({ assignment_id }: Props) {
 
   function onSuccess(result: ResultsAPI) {
     console.log(result);
+    const data = result.data;
+
+    setCandidates([...candidates, ...data]);
     setStatus("ready");
     setMessage("Success! ✅");
     closeDialog();
