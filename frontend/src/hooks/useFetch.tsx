@@ -5,11 +5,14 @@ import ResultsAPI from "types/ResultsAPI";
 // Project files
 import Status from "types/Status";
 
-export default function useFetch(url: string): ResultsAPI {
+export default function useFetch(uri: string): ResultsAPI {
   // Local state
   const [data, setData] = useState([]);
   const [status, setStatus] = useState<Status>("loading");
   const [message, setMessage] = useState("");
+
+  // Safeguard
+  if (uri === "") return { data, status: "error", message: `URI is empty` };
 
   useEffect(() => {
     const fetchData = async (url: string) => {
@@ -29,8 +32,8 @@ export default function useFetch(url: string): ResultsAPI {
       }
     };
 
-    fetchData(url);
-  }, [url]);
+    fetchData(uri);
+  }, [uri]);
 
   return { data, status, message };
 }

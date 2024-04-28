@@ -6,8 +6,8 @@ import { render, screen } from "@testing-library/react";
 import Assignments from "./Assignments";
 import useMockLoading from "mocks/useMockLoading";
 import useMockError from "mocks/useMockError";
-
-//
+import useMockEmpty from "mocks/useMockEmpty";
+import useMockReadyAssignments from "mocks/useMockReadyAssignments";
 
 test("Expect loading state", () => {
   // Arrange
@@ -37,7 +37,8 @@ test("Expect error state", () => {
 
 test("Expect emtpy state", () => {
   // Arrange
-  render(<Assignments fetchHook={mockEmpty} />);
+  const mockHook = useMockEmpty;
+  render(<Assignments fetchHook={mockHook} />);
 
   // Act
   const test = screen.queryByText(
@@ -49,16 +50,19 @@ test("Expect emtpy state", () => {
   expect(test).toBeInTheDocument();
 });
 
-test("Expect content state", () => {
+test("Expect ready state", () => {
   // Arrange
-  render(<Assignments fetchHook={mockAssignments} />);
+  const mockHook = useMockReadyAssignments;
+  render(<Assignments fetchHook={mockHook} />);
 
   // Act
   const test1 = screen.queryByText("Data Engineer");
-  const test2 = screen.queryByText("Developer Architect");
+  const test2 = screen.queryByText("Folksam");
   const test3 = screen.queryByText("Master Data Specialist");
-  const test4 = screen.queryByText("New assignment");
+  const test4 = screen.queryByText("McDonalds");
 
+  console.log("Test:");
+  console.log(test1);
   // Assert
   // @ts-ignore
   expect(test1).toBeInTheDocument();

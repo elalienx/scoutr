@@ -1,0 +1,36 @@
+// Node modules
+import { expect, test } from "vitest";
+
+// Project files
+import useMockReadyAssignments from "./useMockReadyAssignments";
+import Status from "types/Status";
+import Assignment from "types/Assignment";
+
+test("Expect return loading if passed an url", () => {
+  // Arrange
+  const uri = "api/example/";
+  const resultStatus: Status = "ready";
+  const resultData: Assignment[] = [
+    {
+      id: 1,
+      date_created: "",
+      assignment_name: "Data Engineer",
+      company_name: "Folksam",
+      company_image_url: "",
+    },
+    {
+      id: 2,
+      date_created: "",
+      assignment_name: "Master Data Specialist",
+      company_name: "McDonalds",
+      company_image_url: "",
+    },
+  ];
+
+  // Act
+  const test = useMockReadyAssignments(uri);
+
+  // Assert
+  expect(test.status).toEqual(resultStatus);
+  expect(test.data).toEqual(resultData);
+});
