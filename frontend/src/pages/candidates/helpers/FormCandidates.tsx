@@ -28,7 +28,7 @@ export default function FormCandidates({ assignment_id }: Props) {
   const data = {
     label: "Paste the LinkedIn links here",
     placeholder: "www.linkedin.com/in/eduardo-alvarez-nowak",
-    defaultValue: "https://www.linkedin.com/in/susanna-vaara-0b33b03a/",
+    defaultValue: "",
     required: true,
     reference: LinksRef,
   };
@@ -40,16 +40,14 @@ export default function FormCandidates({ assignment_id }: Props) {
     setMessage("Loading... 🕒");
 
     // Make sure this converts stuff into an array
-    const rawData = LinksRef.current?.value;
-    console.log("rawData", rawData);
-    const parseData = textAreaToArray(LinksRef.current?.value);
-    console.log("parseData", parseData);
+    const links = textAreaToArray(LinksRef.current?.value);
+    const data = { links: links };
 
     // add a try catch here
     await fetch(`/api/parse_links/${assignment_id}`, {
       headers: { "Content-Type": "application/json" },
       method: "POST",
-      body: JSON.stringify(parseData),
+      body: JSON.stringify(data),
     })
       .then((respone) => respone.json())
       .then((result) => onSuccess(result))

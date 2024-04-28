@@ -1,10 +1,11 @@
 export default function textAreaToArray(value: string): string[] {
-  const comma: RegExp = /,/g;
+  const newLineAndComma: RegExp = /[\n,]/;
+
   const result = value
     .trim()
-    .split("\n")
-    .map((item) => item.replace(comma, ""))
-    .map((item) => item.trim());
+    .split(newLineAndComma)
+    .map((item) => item.trim())
+    .filter((item) => item !== "");
 
   return result;
 }
