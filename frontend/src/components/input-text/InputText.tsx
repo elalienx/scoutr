@@ -30,11 +30,11 @@ export default function InputText(item: Props) {
       <span className="label">{label}</span>
       <input
         className="input"
-        type="text"
-        placeholder={placeholder}
-        required={required}
-        ref={reference}
         defaultValue={defaultValue}
+        placeholder={placeholder}
+        ref={reference}
+        required={required}
+        type="text"
       />
     </label>
   );

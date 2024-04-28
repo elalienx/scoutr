@@ -61,8 +61,6 @@ test("Expect ready state", () => {
   const test3 = screen.queryByText("Master Data Specialist");
   const test4 = screen.queryByText("McDonalds");
 
-  console.log("Test:");
-  console.log(test1);
   // Assert
   // @ts-ignore
   expect(test1).toBeInTheDocument();
