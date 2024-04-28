@@ -59,7 +59,7 @@ export default function FormAssignment() {
   function onSuccess(result: ResultsAPI) {
     // add assignment to the global/app state assignment
     // get the assignment ID
-    const id = result.data;
+    const id = result.data.id;
 
     console.log("assignment id:", id);
 
