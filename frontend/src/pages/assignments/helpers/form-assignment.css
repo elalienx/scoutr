@@ -3,6 +3,10 @@
   flex-direction: column;
   gap: var(--space-medium);
 
+  h2 {
+    width: 50%; /* to force titles be 2 lines */
+  }
+
   .buttons {
     display: flex;
     gap: var(--space-small);

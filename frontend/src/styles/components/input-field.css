@@ -1,5 +1,6 @@
 .input-field {
-  width: 100%; /* to protect from flex-shrink */
+  min-width: 240px;
+  /* if there is problems with with, this had: width: 100%; (to protect from flex-shrink) */
 
   .input {
     display: block;

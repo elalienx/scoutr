@@ -20,10 +20,10 @@ export default function Card(item: Assignment) {
       <h2 className="trim-text">{assignment_name}</h2>
       <small className="label trim-text">{company_name}</small>
       <Button
-        label={"Open"}
-        primary={false}
         icon="folder-open"
+        label={"Open"}
         onClick={() => navigate(`/candidates/${id}`)}
+        primary={false}
       />
     </article>
   );
