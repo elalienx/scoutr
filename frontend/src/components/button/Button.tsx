@@ -22,6 +22,9 @@ interface Props {
   /** How large should the button be? */
   size?: "small" | "big";
 
+  /** Is the button actionable? */
+  disabled?: Boolean;
+
   /** Optional click handler. */
   onClick?: () => void;
 }

@@ -1,5 +1,5 @@
 // Node modules
-import { FormEvent, useRef } from "react";
+import { FormEvent, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // Project files
@@ -8,6 +8,7 @@ import InputText from "components/input-text/InputText";
 import useDialog from "state/DialogContextAPI";
 import ResultsAPI from "types/ResultsAPI";
 import "./form-assignment.css";
+import Status from "types/Status";
 
 export default function FormAssignment() {
   // Global state
@@ -15,6 +16,8 @@ export default function FormAssignment() {
   const navigate = useNavigate();
 
   // Local state
+  const [status, setStatus] = useState<Status>("empty");
+  const [message, setMessage] = useState("");
   const AssignmentNameRef = useRef<HTMLInputElement>(null);
   const CompanyRef = useRef<HTMLInputElement>(null);
 
@@ -39,6 +42,7 @@ export default function FormAssignment() {
   // Methods
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setStatus("loading");
 
     const assignment_name = AssignmentNameRef.current?.value;
     const company_name = CompanyRef.current?.value;
@@ -57,23 +61,18 @@ export default function FormAssignment() {
   }
 
   function onSuccess(result: ResultsAPI) {
-    // add assignment to the global/app state assignment
-    // get the assignment ID
     const id = result.data.id;
 
-    console.log("assignment id:", id);
-
-    // navigate to the Candidate page
+    setStatus("ready");
+    setMessage("Success! ✅");
     navigate(`/candidates/${id}`);
-
-    // close modal
     closeDialog();
   }
 
   function onFailure(error: Error) {
     console.error(error);
-    alert("Could not create assignment");
-    // re-enable buttons
+    setStatus("error");
+    setMessage("Could not create assignment! ");
   }
 
   return (
@@ -81,9 +80,19 @@ export default function FormAssignment() {
       <h2>New Assignment</h2>
       <InputText {...data.assignment} />
       <InputText {...data.company} />
+      <small className="info">{message}</small>
       <div className="buttons">
-        <Button label={"Create"} primary={true} icon="circle-check" />
-        <Button label={"Dismiss"} onClick={() => closeDialog()} />
+        <Button
+          label={"Create"}
+          primary={true}
+          icon="circle-check"
+          disabled={status === "loading"}
+        />
+        <Button
+          label={"Dismiss"}
+          onClick={() => closeDialog()}
+          disabled={status === "loading"}
+        />
       </div>
     </form>
   );
