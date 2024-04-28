@@ -11,11 +11,9 @@ export default function App() {
   // Global state
   const { dialogRef, dialog } = useDialog();
 
-  // Components
-  const assigment = <Assignments hook={() => useFetch("/api/assignments")} />;
-  const candidates = (
-    <Candidates hook={() => useFetch("/api/candidates/:assignment_id")} />
-  );
+  // Pages
+  const assigment = <Assignments fetchHook={useFetch} />;
+  const candidates = <Candidates fetchHook={useFetch} />;
 
   return (
     <div id="app">

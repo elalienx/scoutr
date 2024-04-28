@@ -1,24 +1,30 @@
+// Node modules
+import { useParams } from "react-router-dom";
+
 // Project files
+import Button from "components/button/Button";
 import Loader from "components/loader/Loader";
 import NavigationBar from "components/navigation-bar/NavigationBar";
 import StateEmpty from "./helpers/StateEmpty";
 import StateError from "./helpers/StateError";
 import Table from "./helpers/Table";
-import "./candidates.css";
-import Button from "components/button/Button";
 import Candidate from "types/Candidate";
 import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
+import "./candidates.css";
 
 interface Props {
-  /** A React custom hook to fetch data. It returns data, status, and message. */
-  hook: () => ResultsAPI;
+  /** A React custom hook to fetch data. It returns a ResultsAPI interface. */
+  fetchHook: (url: string) => ResultsAPI;
 }
 
 /** The page with the candidate table where you can add more LinkedIn profiles by pressing one button. */
-export default function Candidates({ hook }: Props) {
+export default function Candidates({ fetchHook }: Props) {
+  // Global state
+  const { assignment_id } = useParams();
+
   // Local state
-  const { data, status }: { data: Candidate[]; status: Status } = hook();
+  const { data, status } = fetchHook("/api/candidates/" + assignment_id);
 
   // Properties
   const candidatesById = data.sort((a, b) => a.id - b.id);

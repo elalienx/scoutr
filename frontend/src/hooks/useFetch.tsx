@@ -1,12 +1,13 @@
 // Node modules
 import { useState, useEffect } from "react";
+import ResultsAPI from "types/ResultsAPI";
 
 // Project files
 import Status from "types/Status";
 
-export default function useFetch(url: string, initialState: unknown = []) {
+export default function useFetch(url: string): ResultsAPI {
   // Local state
-  const [data, setData] = useState(initialState);
+  const [data, setData] = useState([]);
   const [status, setStatus] = useState<Status>("loading");
   const [message, setMessage] = useState("");
 

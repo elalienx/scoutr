@@ -12,14 +12,14 @@ import Status from "types/Status";
 import "./assignments.css";
 
 interface Props {
-  /** A React custom hook to fetch data. It returns data, status, and message. */
-  hook: () => ResultsAPI;
+  /** A React custom hook to fetch data. It returns a ResultsAPI interface. */
+  fetchHook: (url: string) => ResultsAPI;
 }
 
 /** The homepage of Scoutr and the place to create new assignments. */
-export default function Assignments({ hook }: Props) {
+export default function Assignments({ fetchHook }: Props) {
   // Local state
-  const { data, status }: { data: Assignment[]; status: Status } = hook();
+  const { data, status } = fetchHook("/api/assignments");
 
   // Properties
   const assignmentsById = data.sort((a, b) => a.id - b.id);
