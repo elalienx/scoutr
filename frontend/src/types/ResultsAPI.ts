@@ -1,3 +1,4 @@
+// Project files
 import Status from "./Status";
 
 export default interface ResultsAPI {

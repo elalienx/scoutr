@@ -6,6 +6,7 @@ import Button from "components/button/Button";
 import InputText from "components/input-text/InputText";
 import useDialog from "state/DialogContextAPI";
 import "./form-assignment.css";
+import ResultsAPI from "types/ResultsAPI";
 
 export default function FormAssignment() {
   // Global state
@@ -42,12 +43,31 @@ export default function FormAssignment() {
     const company_image_url = ""; // because the database needs it.
     const data = { assignment_name, company_name, company_image_url };
 
-    console.log(`Submitting ${assignment_name} for ${company_name}.`);
+    // add a try catch here
     await fetch("/api/assignments", {
       headers: { "Content-Type": "application/json" },
       method: "POST",
       body: JSON.stringify(data),
-    });
+    })
+      .then((respone) => respone.json())
+      .then((result) => onSuccess(result))
+      .catch((error) => onFailure(error));
+  }
+
+  function onSuccess(result: ResultsAPI) {
+    // add assignment to the global/app state assignment
+    // get the assignment ID
+    console.log(result.data);
+    alert("Created!");
+    // navigate to the Candidate page
+    // close modal
+    closeDialog();
+  }
+
+  function onFailure(error: Error) {
+    console.error(error);
+    alert("Could not create assignment");
+    // re-enable buttons
   }
 
   return (
