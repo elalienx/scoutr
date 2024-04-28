@@ -25,8 +25,10 @@ export default function Assignments({ fetchHook }: Props) {
   const assignmentsById = data.sort((a, b) => a.id - b.id);
 
   // Components
-  const Cards = assignmentsById.map((item) => <Card key={item.id} {...item} />);
-  Cards.push(<CardNew key={"card-new"} />);
+  const Content = assignmentsById.map((item) => (
+    <Card key={item.id} {...item} />
+  ));
+  Content.push(<CardNew key={"card-new"} />);
 
   return (
     <div id="assignments">
@@ -35,7 +37,7 @@ export default function Assignments({ fetchHook }: Props) {
         {status === "loading" && <Loader />}
         {status === "empty" && <StateEmpty />}
         {status === "error" && <StateError />}
-        {status === "ready" && Cards}
+        {status === "ready" && Content}
       </section>
       <Footer />
     </div>
