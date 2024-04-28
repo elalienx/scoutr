@@ -10,7 +10,12 @@ import Status from "types/Status";
 import "./form-candidates.css";
 import textAreaToArray from "scripts/textAreaToArray";
 
-export default function FormCandidates() {
+interface Props {
+  /** The ID of the assignment to parse. This id is a number on the database, but is a string when read and pass from the URL */
+  assignment_id: string;
+}
+
+export default function FormCandidates({ assignment_id }: Props) {
   // Global state
   const { closeDialog } = useDialog();
 
@@ -23,7 +28,7 @@ export default function FormCandidates() {
   const data = {
     label: "Paste the LinkedIn links here",
     placeholder: "www.linkedin.com/in/eduardo-alvarez-nowak",
-    defaultValue: "",
+    defaultValue: "https://www.linkedin.com/in/susanna-vaara-0b33b03a/",
     required: true,
     reference: LinksRef,
   };
@@ -41,7 +46,7 @@ export default function FormCandidates() {
     console.log("parseData", parseData);
 
     // add a try catch here
-    await fetch("/api/parse-links", {
+    await fetch(`/api/parse_links/${assignment_id}`, {
       headers: { "Content-Type": "application/json" },
       method: "POST",
       body: JSON.stringify(parseData),
@@ -61,7 +66,7 @@ export default function FormCandidates() {
   function onFailure(error: Error) {
     console.error(error);
     setStatus("error");
-    setMessage("Could not create assignment!");
+    setMessage("Could not parse Links! 🚨");
   }
 
   return (

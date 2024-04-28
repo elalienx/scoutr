@@ -58,7 +58,7 @@ export default function Candidates({ fetchHook }: Props) {
       />
       <section className={`section ${status}`}>
         {status === "loading" && <Loader />}
-        {status === "empty" && <StateEmpty />}
+        {status === "empty" && <StateEmpty assignment_id={assignment_id} />}
         {status === "error" && <StateError />}
         {status === "ready" && Content}
       </section>

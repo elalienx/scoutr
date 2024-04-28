@@ -5,12 +5,18 @@ import useDialog from "state/DialogContextAPI";
 import FormCandidates from "./FormCandidates";
 import "./state.css";
 
-export default function StateEmpty() {
+interface Props {
+  /** The ID of the assignment to parse. This id is a number on the database, but is a string when read and pass from the URL */
+  assignment_id: string;
+}
+
+export default function StateEmpty({ assignment_id }: Props) {
   // Global state
   const { showDialog } = useDialog();
 
   // Components
-  const ShowForm = () => showDialog(<FormCandidates />);
+  const ShowForm = () =>
+    showDialog(<FormCandidates assignment_id={assignment_id} />);
 
   return (
     <div className="state">
