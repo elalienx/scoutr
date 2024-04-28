@@ -6,33 +6,34 @@ import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
 
 export default function useFetch(uri: string): ResultsAPI {
+  // Initial values
+  const init: ResultsAPI = { data: [], status: "loading", message: "" };
+  const badURI: ResultsAPI = { ...init, message: "URI is empty" };
+
   // Local state
-  const [data, setData] = useState([]);
-  const [status, setStatus] = useState<Status>("loading");
-  const [message, setMessage] = useState("");
+  const [result, setResult] = useState<ResultsAPI>(init);
 
   // Safeguard
-  if (uri === "") return { data, status: "error", message: `URI is empty` };
+  if (uri === "") return badURI;
 
   useEffect(() => {
-    const fetchData = async (url: string) => {
+    const fetchData = async () => {
       try {
-        const response = await fetch(url);
+        const response = await fetch(uri);
         const { data, message } = await response.json();
         const status: Status = data.length ? "ready" : "empty";
 
-        setData(data);
-        setStatus(status);
-        setMessage(message);
+        setResult({ data, status, message });
       } catch (error: unknown) {
+        const message = error instanceof Error ? error.message : "unknow error";
+
         console.error(error);
-        if (error instanceof Error) setMessage(error.message);
-        setStatus("error");
+        setResult({ data: [], status: "error", message });
       }
     };
 
-    fetchData(uri);
+    fetchData();
   }, [uri]);
 
-  return { data, status, message };
+  return result;
 }

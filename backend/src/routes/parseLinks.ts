@@ -10,6 +10,8 @@ import ResultsAPI from "../types/ResultsAPI";
 export default async function parseLinks(request: Request, response: Response, database: Client) {
   const assignment_id = Number(request.params.assignment_id);
   const links: string[] = request.body.links;
+  console.log("parseLinks()");
+  console.log(links);
   const messageBad = "Error: Cannot parse links";
   let result: ResultsAPI = { data: [], message: messageBad, status: 500 };
 

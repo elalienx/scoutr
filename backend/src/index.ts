@@ -22,7 +22,7 @@ async function initializeServer(port: number) {
   app.get("/assignments", (request, response) => getAssignments(response, client));
   app.post("/assignments", (request, response) => postAssignment(request, response, client));
   app.get("/candidates/:assignment_id", (request, response) => getCandidates(request, response, client));
-  app.get("/parse_links/:assignment_id", (request, response) => parseLinks(request, response, client));
+  app.post("/parse_links/:assignment_id", (request, response) => parseLinks(request, response, client));
 }
 
 initializeServer(8000);
