@@ -8,15 +8,18 @@ import "./state.css";
 interface Props {
   /** The ID of the assignment to parse. This id is a number on the database, but is a string when read and pass from the URL */
   assignment_id: string;
+
+  /** Set Candidates */
+  state: [any, any];
 }
 
-export default function StateEmpty({ assignment_id }: Props) {
+export default function StateEmpty({ assignment_id, state }: Props) {
   // Global state
   const { showDialog } = useDialog();
 
   // Components
   const ShowForm = () =>
-    showDialog(<FormCandidates assignment_id={assignment_id} />);
+    showDialog(<FormCandidates assignment_id={assignment_id} state={state} />);
 
   return (
     <div className="state">
