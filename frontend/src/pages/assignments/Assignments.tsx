@@ -2,10 +2,10 @@
 import Card from "components/card/Card";
 import CardNew from "components/card-new/CardNew";
 import Loader from "components/loader/Loader";
-import Footer from "./helpers/Footer";
-import Hero from "./helpers/Hero";
-import StateEmpty from "./helpers/StateEmpty";
-import StateError from "./helpers/StateError";
+import Footer from "./page-footer/Footer";
+import Hero from "./page-header/Hero";
+import StateEmpty from "./state-empty/StateEmpty";
+import StateError from "./state-error/StateError";
 import Assignment from "types/Assignment";
 import Status from "types/Status";
 import "scripts/fontAwesome";

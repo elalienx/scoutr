@@ -2,8 +2,8 @@
 import Image from "assets/state-empty-assignments.png";
 import Button from "components/button/Button";
 import useDialog from "state/DialogContextAPI";
-import FormAssignment from "./FormAssignment";
-import "./state.css";
+import FormAssignment from "../form-assignment/FormAssignment";
+import "styles/components/state.css";
 
 export default function StateEmpty() {
   // Global state

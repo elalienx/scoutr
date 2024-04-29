@@ -1,6 +1,6 @@
 // Project files
 import Image from "assets/state-error.png";
-import "./state.css";
+import "styles/components/state.css"
 
 export default function StateError() {
   return (

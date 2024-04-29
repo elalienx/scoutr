@@ -1,7 +1,7 @@
 // Project files
 import Button from "components/button/Button";
 import ImageThumbnail from "components/image-thumbnail/ImageThumbnail";
-import FormAssignment from "pages/assignments/helpers/FormAssignment";
+import FormAssignment from "pages/assignments/form-assignment/FormAssignment";
 import useDialog from "state/DialogContextAPI";
 import "components/card/card.css";
 import "./card-new.css";
