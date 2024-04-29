@@ -23,10 +23,10 @@ interface Props {
 export default function Assignments({ fetchHook }: Props) {
   // Local state
   const uri = "/api/assignments";
-  const { data: assignments, status } = fetchHook(uri);
+  const { data, status } = fetchHook(uri);
 
   // Properties
-  const sortedById = assignments.sort((a, b) => a.id - b.id);
+  const sortedById = data.sort((a, b) => a.id - b.id);
 
   // Components
   const Content = sortedById.map((item) => <Card key={item.id} {...item} />);
