@@ -17,7 +17,9 @@ export default function Card(item: Assignment) {
   return (
     <article className="card">
       <ImageThumbnail src={company_image_url} alt="The company logo" />
-      <h2 className="trim-text">{assignment_name}</h2>
+      <h2 lang="en" className="trim-text">
+        {assignment_name}
+      </h2>
       <small className="label trim-text">{company_name}</small>
       <Link className="button small" to={link}>
         <FontAwesomeIcon className="icon" icon={["fas", "folder-open"]} />
