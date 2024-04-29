@@ -2,12 +2,13 @@
 import Card from "components/card/Card";
 import CardNew from "components/card-new/CardNew";
 import Loader from "components/loader/Loader";
+import Assignment from "types/Assignment";
+import Status from "types/Status";
 import Footer from "./footer/Footer";
+import FormAssignment from "./form-assignment/FormAssignment";
 import Hero from "./hero/Hero";
 import StateEmpty from "./state-empty/StateEmpty";
 import StateError from "./state-error/StateError";
-import Assignment from "types/Assignment";
-import Status from "types/Status";
 import "scripts/fontAwesome";
 import "./assignments.css";
 
@@ -31,18 +32,21 @@ export default function Assignments({ fetchHook }: Props) {
 
   // Components
   const Content = sortedById.map((item) => <Card key={item.id} {...item} />);
-  Content.push(<CardNew key={"card-new"} />);
+  Content.push(<CardNew key={"card-new"} component={<FormAssignment />} />);
 
   return (
     <div id="assignments">
       <Hero />
       <section className={`section ${status}`}>
         {status === "loading" && <Loader />}
-        {status === "empty" && <StateEmpty />}
+        {status === "empty" && <StateEmpty component={<FormAssignment />} />}
         {status === "error" && <StateError />}
         {status === "ready" && Content}
       </section>
       <Footer />
     </div>
   );
+}
+function showDialog(arg0: JSX.Element) {
+  throw new Error("Function not implemented.");
 }

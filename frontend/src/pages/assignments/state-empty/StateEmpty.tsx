@@ -1,16 +1,20 @@
+// Node modules
+import { ReactNode } from "react";
 // Project files
+
 import Image from "assets/state-empty-assignments.png";
 import Button from "components/button/Button";
 import useDialog from "state/DialogContextAPI";
-import FormAssignment from "../form-assignment/FormAssignment";
 import "styles/components/state.css";
 
-export default function StateEmpty() {
+interface Props {
+  /** The React component to show when you click primary button.  */
+  component: ReactNode;
+}
+
+export default function StateEmpty({ component }: Props) {
   // Global state
   const { showDialog } = useDialog();
-
-  // Components
-  const ShowForm = () => showDialog(<FormAssignment />);
 
   return (
     <div className="state">
@@ -24,8 +28,8 @@ export default function StateEmpty() {
         <Button
           icon="plus"
           label="New assignment"
-          onClick={ShowForm}
-          primary={true}
+          onClick={() => showDialog(component)}
+          primary
         />
       </div>
     </div>
