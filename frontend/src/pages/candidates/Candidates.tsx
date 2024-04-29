@@ -32,26 +32,26 @@ export default function Candidates({ fetchHook }: Props) {
 
   // Local state
   const uri = "/api/candidates/" + assignment_id;
-  const { data, status } = fetchHook(uri);
-  const [candidates, setCandidates] = useState<Candidate[]>([]);
+  const { data: hookData, status: hookStatus } = fetchHook(uri);
+  const [data, setData] = useState<Candidate[]>([]);
+  const [status, setStatus] = useState<Status>("loading");
 
   // Properties
-  const sortedById = candidates.sort((a, b) => a.id - b.id);
+  const sortedById = data.sort((a, b) => a.id - b.id);
   const contacted = sortedById.filter((item) => item.contact_status > 0);
-  const response_rate = Math.round(contacted.length / candidates.length) * 100;
+  const response_rate = Math.round(contacted.length / data.length) * 100;
 
   // Methods
+  useEffect(() => setData(hookData), [hookData]);
+  useEffect(() => setStatus(hookStatus), [hookStatus]);
   useEffect(() => {
-    setCandidates(data);
-  }, [data]);
+    if (data.length > 0) setStatus("ready");
+  });
 
   // Components
   const ShowForm = () =>
     showDialog(
-      <FormCandidates
-        assignment_id={assignment_id}
-        state={[candidates, setCandidates]}
-      />
+      <FormCandidates assignment_id={assignment_id} state={[data, setData]} />
     );
   const Content = (
     <>
@@ -77,10 +77,7 @@ export default function Candidates({ fetchHook }: Props) {
       <section className={`section ${status}`}>
         {status === "loading" && <Loader />}
         {status === "empty" && (
-          <StateEmpty
-            assignment_id={assignment_id}
-            state={[candidates, setCandidates]}
-          />
+          <StateEmpty assignment_id={assignment_id} state={[data, setData]} />
         )}
         {status === "error" && <StateError />}
         {status === "ready" && Content}
