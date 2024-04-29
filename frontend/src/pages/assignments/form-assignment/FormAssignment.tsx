@@ -1,5 +1,5 @@
 // Node modules
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // Project files
@@ -8,6 +8,7 @@ import InputText from "components/input-text/InputText";
 import useDialog from "state/DialogContextAPI";
 import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
+import Data from "./data.json";
 import "styles/components/form.css";
 
 export default function FormAssignment() {
@@ -18,43 +19,26 @@ export default function FormAssignment() {
   // Local state
   const [status, setStatus] = useState<Status>("empty");
   const [message, setMessage] = useState("");
-  const AssignmentNameRef = useRef<HTMLInputElement>(null);
-  const CompanyRef = useRef<HTMLInputElement>(null);
-
-  // Properties
-  const data = {
-    assignment: {
-      label: "Assignment name",
-      placeholder: "Graphic Designer",
-      defaultValue: "",
-      required: true,
-      reference: AssignmentNameRef,
-    },
-    company: {
-      label: "Company",
-      placeholder: "Spotify",
-      defaultValue: "",
-      required: true,
-      reference: CompanyRef,
-    },
-  };
 
   // Methods
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setStatus("loading");
-
-    const assignment_name = AssignmentNameRef.current?.value;
-    const company_name = CompanyRef.current?.value;
-    const company_image_url = ""; // because the database needs it.
-    const data = { assignment_name, company_name, company_image_url };
-
-    // add a try catch here
-    await fetch("/api/assignments", {
+    const uri = "/api/assignments";
+    const formData = new FormData(event.currentTarget);
+    const assignment_name = formData.get(Data.assignment_name.name);
+    const company_name = formData.get(Data.company_name.name);
+    const company_image_url = "";
+    const body = { assignment_name, company_name, company_image_url };
+    const options = {
       headers: { "Content-Type": "application/json" },
       method: "POST",
-      body: JSON.stringify(data),
-    })
+      body: JSON.stringify(body),
+    };
+
+    event.preventDefault();
+    setStatus("loading");
+    setMessage("Loading... 🕒");
+
+    await fetch(uri, options)
       .then((respone) => respone.json())
       .then((result) => onSuccess(result))
       .catch((error) => onFailure(error));
@@ -78,8 +62,8 @@ export default function FormAssignment() {
   return (
     <form className="form" onSubmit={(event) => onSubmit(event)}>
       <h2>New Assignment</h2>
-      <InputText {...data.assignment} />
-      <InputText {...data.company} />
+      <InputText {...Data.assignment_name} />
+      <InputText {...Data.company_name} />
       <small className="info">{message}</small>
       <div className="buttons">
         <Button

@@ -1,0 +1,18 @@
+{
+  "assignment_name": {
+    "name": "assignment_name",
+    "label": "Assignment name",
+    "placeholder": "Graphic Designer",
+    "defaultValue": "",
+    "required": true,
+    "reference": "AssignmentNameRef"
+  },
+  "company_name": {
+    "name": "company_name",
+    "label": "Company",
+    "placeholder": "Spotify",
+    "defaultValue": "",
+    "required": true,
+    "reference": "CompanyRef"
+  }
+}

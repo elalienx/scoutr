@@ -1,10 +1,10 @@
-// Node modules
-import { RefObject } from "react";
-
 // Project files
 import "styles/components/input-field.css";
 
 interface Props {
+  /** The unique name of this input element so we can get the values using the FormData API.  */
+  name: string;
+
   /** The name of this field. */
   label: string;
 
@@ -16,14 +16,11 @@ interface Props {
 
   /** The text the user writes in the field. */
   defaultValue: string;
-
-  /** The reference to this component HTML element so we can read the value outside. */
-  reference: RefObject<HTMLInputElement>;
 }
 
 /** Input control to allow a single line of text. */
 export default function InputText(item: Props) {
-  const { label, placeholder, required = true, defaultValue, reference } = item;
+  const { name, label, placeholder, required = true, defaultValue } = item;
 
   return (
     <label className="input-field">
@@ -31,8 +28,8 @@ export default function InputText(item: Props) {
       <input
         className="input"
         defaultValue={defaultValue}
+        name={name}
         placeholder={placeholder}
-        ref={reference}
         required={required}
         type="text"
       />

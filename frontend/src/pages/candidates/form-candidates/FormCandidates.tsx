@@ -1,5 +1,5 @@
 // Node modules
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, useState } from "react";
 
 // Project files
 import Button from "components/button/Button";
@@ -8,6 +8,7 @@ import textAreaToArray from "scripts/textAreaToArray";
 import useDialog from "state/DialogContextAPI";
 import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
+import Data from "./data.json";
 import "styles/components/form.css";
 
 interface Props {
@@ -27,40 +28,31 @@ export default function FormCandidates({ id, state }: Props) {
   // Local state
   const [status, setStatus] = useState<Status>("empty");
   const [message, setMessage] = useState("");
-  const LinksRef = useRef<HTMLTextAreaElement>(null);
-
-  // Properties
-  const data = {
-    label: "Paste the LinkedIn links here",
-    placeholder: "www.linkedin.com/in/eduardo-alvarez-nowak",
-    defaultValue: "",
-    required: true,
-    reference: LinksRef,
-  };
 
   // Methods
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
+    const uri = "/api/parse_links/" + id;
+    const formData = new FormData(event.currentTarget);
+    const unparsedLinks = formData.get(Data.links.name);
+    const links = textAreaToArray(unparsedLinks);
+    const body = { links };
+    const options = {
+      headers: { "Content-Type": "application/json" },
+      method: "POST",
+      body: JSON.stringify(body),
+    };
+
     event.preventDefault();
     setStatus("loading");
     setMessage("Loading... 🕒");
 
-    // Make sure this converts stuff into an array
-    const links = textAreaToArray(LinksRef.current?.value);
-    const data = { links: links };
-
-    // add a try catch here
-    await fetch(`/api/parse_links/${id}`, {
-      headers: { "Content-Type": "application/json" },
-      method: "POST",
-      body: JSON.stringify(data),
-    })
+    await fetch(uri, options)
       .then((respone) => respone.json())
       .then((result) => onSuccess(result))
       .catch((error) => onFailure(error));
   }
 
   function onSuccess(result: ResultsAPI) {
-    console.log(result);
     const data = result.data;
 
     setCandidates([...candidates, ...data]);
@@ -78,7 +70,7 @@ export default function FormCandidates({ id, state }: Props) {
   return (
     <form className="form" onSubmit={(event) => onSubmit(event)}>
       <h2>Add Candidates</h2>
-      <TextArea {...data} />
+      <TextArea {...Data.links} />
       <small className="info">{message}</small>
       <div className="buttons">
         <Button
