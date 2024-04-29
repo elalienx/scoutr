@@ -7,8 +7,8 @@ import Button from "components/button/Button";
 import InputText from "components/input-text/InputText";
 import useDialog from "state/DialogContextAPI";
 import ResultsAPI from "types/ResultsAPI";
-import "./form-assignment.css";
 import Status from "types/Status";
+import "styles/components/form.css";
 
 export default function FormAssignment() {
   // Global state

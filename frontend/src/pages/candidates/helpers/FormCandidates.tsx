@@ -4,11 +4,11 @@ import { FormEvent, useRef, useState } from "react";
 // Project files
 import Button from "components/button/Button";
 import TextArea from "components/input-textarea/TextArea";
+import textAreaToArray from "scripts/textAreaToArray";
 import useDialog from "state/DialogContextAPI";
 import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
-import "./form-candidates.css";
-import textAreaToArray from "scripts/textAreaToArray";
+import "styles/components/form.css";
 
 interface Props {
   /** The ID of the assignment to parse. This id is a number on the database, but is a string when read and pass from the URL */
