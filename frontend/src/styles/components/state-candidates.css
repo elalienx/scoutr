@@ -1,4 +1,4 @@
-#assignments .state {
+.state-candidates {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,16 +16,9 @@
 
 /* Tablet */
 @media (min-width: 700px) {
-  #assignments .state {
-    flex-direction: row;
-
-    .content {
-      text-align: left;
-    }
-
+  .state-candidates {
     img {
-      width: auto;
-      height: 250px;
+      height: 300px;
     }
   }
 }

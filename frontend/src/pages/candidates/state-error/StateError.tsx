@@ -1,11 +1,11 @@
 // Project files
 import Image from "assets/state-error.png";
 import Button from "components/button/Button";
-import "styles/components/state.css"
+import "styles/components/state-candidates.css";
 
 export default function StateError() {
   return (
-    <div className="state">
+    <div className="state-candidates">
       <img
         src={Image}
         alt="A woman holding his hands behind the head looking surprised"

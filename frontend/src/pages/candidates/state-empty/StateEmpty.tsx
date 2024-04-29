@@ -5,7 +5,7 @@ import { ReactNode } from "react";
 import Image from "assets/state-empty-candidates.png";
 import Button from "components/button/Button";
 import useDialog from "state/DialogContextAPI";
-import "styles/components/state.css";
+import "styles/components/state-candidates.css";
 
 interface Props {
   /** The React component to show when you click primary button.  */
@@ -16,7 +16,7 @@ export default function StateEmpty({ component }: Props) {
   const { showDialog } = useDialog();
 
   return (
-    <div className="state">
+    <div className="state-candidates">
       <img
         src={Image}
         alt="A male a female construction engineers checking a blueprint"

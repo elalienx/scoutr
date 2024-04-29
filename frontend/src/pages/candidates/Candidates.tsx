@@ -27,8 +27,8 @@ interface Props {
 /** The page with the candidate table where you can add more LinkedIn profiles by pressing one button. */
 export default function Candidates({ fetchHook }: Props) {
   // Global state
-  const { showDialog } = useDialog();
   const { assignment_id } = useParams();
+  const { showDialog } = useDialog();
 
   // Local state
   const uri = "/api/candidates/" + assignment_id;
