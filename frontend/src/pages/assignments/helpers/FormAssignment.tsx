@@ -76,7 +76,7 @@ export default function FormAssignment() {
   }
 
   return (
-    <form className="form-assignment" onSubmit={(event) => onSubmit(event)}>
+    <form className="form" onSubmit={(event) => onSubmit(event)}>
       <h2>New Assignment</h2>
       <InputText {...data.assignment} />
       <InputText {...data.company} />

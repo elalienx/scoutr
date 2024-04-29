@@ -76,7 +76,7 @@ export default function FormCandidates({ assignment_id, state }: Props) {
   }
 
   return (
-    <form className="form-candidates" onSubmit={(event) => onSubmit(event)}>
+    <form className="form" onSubmit={(event) => onSubmit(event)}>
       <h2>Add Candidates</h2>
       <TextArea {...data} />
       <small className="info">{message}</small>
