@@ -31,15 +31,16 @@ export default function Assignments({ fetchHook }: Props) {
   const sortedById = data.sort((a, b) => a.id - b.id);
 
   // Components
+  const Form = <FormAssignment />;
   const Content = sortedById.map((item) => <Card key={item.id} {...item} />);
-  Content.push(<CardNew key={"card-new"} component={<FormAssignment />} />);
+  Content.push(<CardNew key={"card-new"} component={Form} />);
 
   return (
     <div id="assignments">
       <Hero />
       <section className={`section ${status}`}>
         {status === "loading" && <Loader />}
-        {status === "empty" && <StateEmpty component={<FormAssignment />} />}
+        {status === "empty" && <StateEmpty component={Form} />}
         {status === "error" && <StateError />}
         {status === "ready" && Content}
       </section>

@@ -11,14 +11,14 @@ import Status from "types/Status";
 import "styles/components/form.css";
 
 interface Props {
-  /** The ID of the assignment to parse. This id is a number on the database, but is a string when read and pass from the URL */
-  assignment_id: string;
+  /** The ID of the assignment to parse. */
+  id: number;
 
   /** Set Candidates */
   state: [any, any];
 }
 
-export default function FormCandidates({ assignment_id, state }: Props) {
+export default function FormCandidates({ id, state }: Props) {
   const [candidates, setCandidates] = state;
 
   // Global state
@@ -49,7 +49,7 @@ export default function FormCandidates({ assignment_id, state }: Props) {
     const data = { links: links };
 
     // add a try catch here
-    await fetch(`/api/parse_links/${assignment_id}`, {
+    await fetch(`/api/parse_links/${id}`, {
       headers: { "Content-Type": "application/json" },
       method: "POST",
       body: JSON.stringify(data),

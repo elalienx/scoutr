@@ -4,9 +4,9 @@ import { ReactNode } from "react";
 // Project files
 import Button from "components/button/Button";
 import ImageThumbnail from "components/image-thumbnail/ImageThumbnail";
+import useDialog from "state/DialogContextAPI";
 import "components/card/card.css";
 import "./card-new.css";
-import useDialog from "state/DialogContextAPI";
 
 interface Props {
   /** The React component to show when you click primary button.  */

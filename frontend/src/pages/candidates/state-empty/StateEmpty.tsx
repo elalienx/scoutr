@@ -1,25 +1,19 @@
+// Node modules
+import { ReactNode } from "react";
+
 // Project files
 import Image from "assets/state-empty-candidates.png";
 import Button from "components/button/Button";
 import useDialog from "state/DialogContextAPI";
-import FormCandidates from "./FormCandidates";
-import "./state.css";
+import "styles/components/state.css";
 
 interface Props {
-  /** The ID of the assignment to parse. This id is a number on the database, but is a string when read and pass from the URL */
-  assignment_id: string;
-
-  /** Set Candidates */
-  state: [any, any];
+  /** The React component to show when you click primary button.  */
+  component: ReactNode;
 }
-
-export default function StateEmpty({ assignment_id, state }: Props) {
+export default function StateEmpty({ component }: Props) {
   // Global state
   const { showDialog } = useDialog();
-
-  // Components
-  const ShowForm = () =>
-    showDialog(<FormCandidates assignment_id={assignment_id} state={state} />);
 
   return (
     <div className="state">
@@ -35,7 +29,7 @@ export default function StateEmpty({ assignment_id, state }: Props) {
         icon_prefix="fab"
         icon="linkedin"
         label="New assignment"
-        onClick={ShowForm}
+        onClick={() => showDialog(component)}
         primary={true}
         size="big"
       />
