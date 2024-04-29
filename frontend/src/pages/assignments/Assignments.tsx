@@ -48,6 +48,3 @@ export default function Assignments({ fetchHook }: Props) {
     </div>
   );
 }
-function showDialog(arg0: JSX.Element) {
-  throw new Error("Function not implemented.");
-}
