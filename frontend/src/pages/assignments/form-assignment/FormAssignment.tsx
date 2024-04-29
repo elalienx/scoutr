@@ -47,16 +47,16 @@ export default function FormAssignment() {
   function onSuccess(result: ResultsAPI) {
     const id = result.data.id;
 
-    setStatus("ready");
     setMessage("Success! ✅");
+    setStatus("ready");
     navigate(`/candidates/${id}`);
     closeDialog();
   }
 
   function onFailure(error: Error) {
     console.error(error);
-    setStatus("error");
     setMessage("Could not create assignment! ");
+    setStatus("error");
   }
 
   return (
