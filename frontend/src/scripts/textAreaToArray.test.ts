@@ -4,6 +4,18 @@ import { expect, test } from "vitest";
 // Project files
 import textAreaToArray from "./textAreaToArray";
 
+test("Pasing null returns empty array ['']", () => {
+  // Arrange
+  const value = null;
+  const result = [""];
+
+  // Act
+  const test = textAreaToArray(value);
+
+  // Assert
+  expect(test).toEqual(result);
+});
+
 test("Converts 1 line of text into a 1 item array", () => {
   // Arrange
   const value = "Hello World";

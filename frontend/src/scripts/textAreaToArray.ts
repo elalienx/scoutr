@@ -1,7 +1,10 @@
-export default function textAreaToArray(value: string): string[] {
-  const newLineAndComma: RegExp = /[\n,]/;
+export default function textAreaToArray(value: FormDataEntryValue | null) {
+  // Safeguard
+  if (value === null) return [""];
 
-  const result = value
+  const contents = String(value);
+  const newLineAndComma: RegExp = /[\n,]/;
+  const result = contents
     .trim()
     .split(newLineAndComma)
     .map((item) => item.trim())
