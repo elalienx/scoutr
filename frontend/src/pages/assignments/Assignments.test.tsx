@@ -1,13 +1,15 @@
 // Node modules
 import { expect, test } from "vitest";
 import { render, screen } from "@testing-library/react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 // Project files
-import Assignments from "./Assignments";
 import useMockLoading from "mocks/useMockLoading";
 import useMockError from "mocks/useMockError";
 import useMockEmpty from "mocks/useMockEmpty";
 import useMockReadyAssignments from "mocks/useMockReadyAssignments";
+import { DialogProvider } from "state/DialogContextAPI";
+import Assignments from "./Assignments";
 
 test("Expect loading state", () => {
   // Arrange
@@ -53,7 +55,15 @@ test("Expect emtpy state", () => {
 test("Expect ready state", () => {
   // Arrange
   const mockHook = useMockReadyAssignments;
-  render(<Assignments fetchHook={mockHook} />);
+  render(
+    <DialogProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Assignments fetchHook={mockHook} />} />
+        </Routes>
+      </BrowserRouter>
+    </DialogProvider>
+  ); // you need the browser router as the cards have the Link to navigate between routes
 
   // Act
   const test1 = screen.queryByText("Data Engineer");
