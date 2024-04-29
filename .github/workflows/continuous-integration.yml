@@ -4,8 +4,8 @@ on:
     branches:
       - main
 jobs:
-  run-tests:
-    name: Unit testing
+  backend-test:
+    name: Backend unit testing
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -13,6 +13,19 @@ jobs:
 
       - name: Build Docker image
         run: docker build -f ./backend/Dockerfile.test -t docker-backend-test ./backend
+
+      - name: Run Vitest inside Docker container
+        run: docker run docker-backend-test
+
+  frontend-test:
+    name: Frontend unit testing
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -f ./frontend/Dockerfile.test -t docker-backend-test ./backend
 
       - name: Run Vitest inside Docker container
         run: docker run docker-backend-test
