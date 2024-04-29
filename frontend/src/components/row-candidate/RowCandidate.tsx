@@ -14,7 +14,9 @@ export default function RowCandidate(item: Candidate) {
 
   return (
     <tr className="row-candidate">
-      <HeaderCandidate {...header} />
+      <td className="mobile-only-header">
+        <HeaderCandidate {...header} />
+      </td>
       <td className="id column-small" data-label="Id">
         {item.id}
       </td>

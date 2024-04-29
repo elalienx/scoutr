@@ -1,5 +1,9 @@
 .row-candidate {
   /* Layout */
+  .mobile-only-header {
+    display: block; /* to remove the responsive table settings in table.css */
+  }
+
   .id {
     display: none;
   }
@@ -19,7 +23,7 @@
 @media (min-width: 700px) {
   .row-candidate {
     /* Layout */
-    .header-candidate {
+    .mobile-only-header {
       display: none;
     }
 
