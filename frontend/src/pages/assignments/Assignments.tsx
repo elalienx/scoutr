@@ -8,6 +8,7 @@ import StateEmpty from "./helpers/StateEmpty";
 import StateError from "./helpers/StateError";
 import Assignment from "types/Assignment";
 import Status from "types/Status";
+import "scripts/fontAwesome";
 import "./assignments.css";
 
 interface Props {
