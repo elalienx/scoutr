@@ -36,7 +36,7 @@ export default function FormAssignment() {
 
     event.preventDefault();
     setStatus("loading");
-    setMessage("Loading... 🕒");
+    setMessage("🕒 Creating new assignment");
 
     await fetch(uri, options)
       .then((respone) => respone.json())
@@ -47,7 +47,7 @@ export default function FormAssignment() {
   function onSuccess(result: ResultsAPI) {
     const id = result.data.id;
 
-    setMessage("Success! ✅");
+    setMessage("✅ Created new assignment");
     setStatus("ready");
     navigate(`/candidates/${id}`);
     closeDialog();
@@ -55,7 +55,7 @@ export default function FormAssignment() {
 
   function onFailure(error: Error) {
     console.error(error);
-    setMessage("Could not create assignment! ");
+    setMessage("🚨 Could not create new assignment");
     setStatus("error");
   }
 

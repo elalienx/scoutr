@@ -16,17 +16,10 @@ image {
   height: auto;
 }
 
-dialog {
-  padding: 24px;
-  background-color: white;
-  border: solid 0.5px var(--color-gray);
-  border-radius: var(--border-radius-small);
-
-  &::backdrop {
-    --blur: 10px;
-    backdrop-filter: blur(var(--blur));
-    -webkit-backdrop-filter: blur(var(--blur));
-  }
+dialog::backdrop {
+  --blur: 10px;
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
 }
 
 /* Utilities */
