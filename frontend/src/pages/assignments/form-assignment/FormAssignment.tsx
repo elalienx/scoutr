@@ -35,8 +35,8 @@ export default function FormAssignment() {
     };
 
     event.preventDefault();
-    setStatus("loading");
     setMessage("🕒 Creating new assignment");
+    setStatus("loading");
 
     await fetch(uri, options)
       .then((respone) => respone.json())
