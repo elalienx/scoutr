@@ -20,9 +20,11 @@ export default function FormAssignment() {
   const [status, setStatus] = useState<Status>("empty");
   const [message, setMessage] = useState("");
 
+  // Properties
+  const uri = "/api/assignments";
+
   // Methods
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    const uri = "/api/assignments";
     const formData = new FormData(event.currentTarget);
     const assignment_name = formData.get(Data.assignment_name.name);
     const company_name = formData.get(Data.company_name.name);
