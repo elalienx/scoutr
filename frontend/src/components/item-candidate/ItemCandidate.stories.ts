@@ -24,6 +24,7 @@ export const Default: Story = {
     candidate_image_url: ImageURLs.candidate_eduardo,
     candidate_name: "Eduardo Alvarez",
     candidate_job_title: "Frontend Developer",
+    linked_in_url: "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
   },
 };
 
@@ -33,13 +34,15 @@ export const JobTitleTrimmed: Story = {
     candidate_name: "Eduardo Alvarez",
     candidate_job_title:
       "Senior Frontend Developer with a touch of Graphic Design, UI, and UX",
+    linked_in_url: "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
   },
 };
 
 export const Empty: Story = {
   args: {
     candidate_image_url: "",
-    candidate_name: "George Domingez",
-    candidate_job_title: "UX Lead",
+    candidate_name: "Jorge Dominguez Perdomo",
+    candidate_job_title: "UX Generalist",
+    linked_in_url: "https://www.linkedin.com/in/jorgedp/",
   },
 };
