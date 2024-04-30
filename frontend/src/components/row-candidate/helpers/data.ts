@@ -14,6 +14,7 @@ export function data(item: Candidate) {
     candidate_image_url: item.candidate_image_url,
     candidate_name: item.candidate_name,
     candidate_job_title: item.candidate_job_title,
+    linked_in_url: item.linked_in_url,
   };
   const company = {
     company_image_url: item.company_image_url,
