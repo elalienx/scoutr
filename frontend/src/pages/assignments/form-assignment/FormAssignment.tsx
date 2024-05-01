@@ -17,29 +17,44 @@ export default function FormAssignment() {
   const navigate = useNavigate();
 
   // Local state
+  /** Make a single state conforming to ResultsAPI */
+  // const [result, setResult] = useState<ResultsAPI>({data:[], status:"empty", message:""})
   const [status, setStatus] = useState<Status>("empty");
   const [message, setMessage] = useState("");
 
   // Properties
   const uri = "/api/assignments";
 
+  /** 1A. Create input fields dynamically 📝 */
+  /** Input fields take the data.json (rename to fields.json) and optionally the data (the values the recruiter put for the assignment/candidate)  */
+  // Components
+  // const InputFields = GenerateInputs(Data);
+
   // Methods
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    const formData = new FormData(event.currentTarget);
-    const assignment_name = formData.get(Data.assignment_name.name);
-    const company_name = formData.get(Data.company_name.name);
-    const company_image_url = "";
-    const body = { assignment_name, company_name, company_image_url };
-    const options = {
-      headers: { "Content-Type": "application/json" },
-      method: "POST",
-      body: JSON.stringify(body),
-    };
-
     event.preventDefault();
     setMessage("🕒 Creating new assignment");
     setStatus("loading");
 
+    /** 2. Gather data 🧺 */
+    const formData = new FormData(event.currentTarget);
+    const assignment_name = formData.get(Data.assignment_name.name);
+    const company_name = formData.get(Data.company_name.name);
+    const company_image_url = "";
+    const data = { assignment_name, company_name, company_image_url };
+
+    /** 3. Package data 📦 */
+    const options = {
+      headers: { "Content-Type": "application/json" },
+      method: "POST",
+      body: JSON.stringify(data),
+    };
+
+    /** 4. Submit data 📧 */
+    // const result = await fetchService(uri, options)
+    //   .then((respone) => respone.json())
+    //   .then((result) => onSuccess(result))
+    //   .catch((error) => onFailure(error));
     await fetch(uri, options)
       .then((respone) => respone.json())
       .then((result) => onSuccess(result))
@@ -64,6 +79,7 @@ export default function FormAssignment() {
   return (
     <form className="form" onSubmit={(event) => onSubmit(event)}>
       <h2>New Assignment</h2>
+      {/* 1B. Put the dynamic inputs 📝 */}
       <InputText {...Data.assignment_name} />
       <InputText {...Data.company_name} />
       <small className="info">{message}</small>
