@@ -1,7 +1,7 @@
 // Project files
 import ResultsAPI from "types/ResultsAPI";
 
-export default function useMockError(uri: string): ResultsAPI {
+export default function useError(uri: string): ResultsAPI {
   // safeguard
   if (uri === "") return { data: [], status: "error", message: `URI is empty` };
 

@@ -4,10 +4,10 @@ import { MemoryRouter, Route, Routes } from "react-router-dom";
 
 // Project files
 import Candidates from "./Candidates";
-import useMockLoading from "mocks/useMockLoading";
-import useMockError from "mocks/useMockError";
-import useMockEmpty from "mocks/useMockEmpty";
-import useMockReadyCandidates from "mocks/useMockReadyCandidates";
+import useLoading from "mocks/useLoading";
+import useError from "mocks/useError";
+import useEmpty from "mocks/useEmpty";
+import useReadyCandidates from "mocks/useReadyCandidates";
 
 const meta = {
   title: "Pages/Candidates",
@@ -31,24 +31,24 @@ type Story = StoryObj<typeof meta>;
 // Stories
 export const Default: Story = {
   args: {
-    fetchHook: useMockReadyCandidates,
+    fetchHook: useReadyCandidates,
   },
 };
 
 export const Loading: Story = {
   args: {
-    fetchHook: useMockLoading,
+    fetchHook: useLoading,
   },
 };
 
 export const Error: Story = {
   args: {
-    fetchHook: useMockError,
+    fetchHook: useError,
   },
 };
 
 export const Empty: Story = {
   args: {
-    fetchHook: useMockEmpty,
+    fetchHook: useEmpty,
   },
 };

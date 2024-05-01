@@ -1,7 +1,7 @@
 // Project files
 import ResultsAPI from "types/ResultsAPI";
 
-export default function useMockReadyAssignments(uri: string): ResultsAPI {
+export default function useReadyAssignments(uri: string): ResultsAPI {
   return {
     data: [
       {

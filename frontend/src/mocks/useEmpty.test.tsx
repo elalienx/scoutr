@@ -2,7 +2,7 @@
 import { expect, test } from "vitest";
 
 // Project files
-import useMockEmpty from "./useMockEmpty";
+import useEmpty from "./useEmpty";
 import Status from "types/Status";
 
 test("Expect return empty state if passed an url", () => {
@@ -12,7 +12,7 @@ test("Expect return empty state if passed an url", () => {
   const resultMessage = "Endpoint api/example/ works but does not have data";
 
   // Act
-  const test = useMockEmpty(uri);
+  const test = useEmpty(uri);
 
   // Assert
   expect(test.status).toBe(resultStatus);

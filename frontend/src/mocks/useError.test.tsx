@@ -2,7 +2,7 @@
 import { expect, test } from "vitest";
 
 // Project files
-import useMockError from "./useMockError";
+import useError from "./useError";
 import Status from "types/Status";
 
 test("Expect return error state if passed a uri that fails to fetch", () => {
@@ -12,7 +12,7 @@ test("Expect return error state if passed a uri that fails to fetch", () => {
   const resultMessage = "Can't load api/example/";
 
   // Act
-  const test = useMockError(uri);
+  const test = useError(uri);
 
   // Assert
   expect(test.status).toBe(resultStatus);
@@ -26,7 +26,7 @@ test("Expect a message explaining you passed a empty uri", () => {
   const resultMessage = "URI is empty";
 
   // Act
-  const test = useMockError(uri);
+  const test = useError(uri);
 
   // Assert
   expect(test.status).toBe(resultStatus);

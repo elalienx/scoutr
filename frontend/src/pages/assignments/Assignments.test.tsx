@@ -4,16 +4,16 @@ import { render, screen } from "@testing-library/react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 // Project files
-import useMockLoading from "mocks/useMockLoading";
-import useMockError from "mocks/useMockError";
-import useMockEmpty from "mocks/useMockEmpty";
-import useMockReadyAssignments from "mocks/useMockReadyAssignments";
+import useLoading from "mocks/useLoading";
+import useError from "mocks/useError";
+import useEmpty from "mocks/useEmpty";
+import useReadyAssignments from "mocks/useReadyAssignments";
 import { DialogProvider } from "state/DialogContextAPI";
 import Assignments from "./Assignments";
 
 test("Expect loading state", () => {
   // Arrange
-  const mockHook = useMockLoading;
+  const mockHook = useLoading;
   render(<Assignments fetchHook={mockHook} />);
 
   // Act
@@ -26,7 +26,7 @@ test("Expect loading state", () => {
 
 test("Expect error state", () => {
   // Arrange
-  const mockHook = useMockError;
+  const mockHook = useError;
   render(<Assignments fetchHook={mockHook} />);
 
   // Act
@@ -39,7 +39,7 @@ test("Expect error state", () => {
 
 test("Expect emtpy state", () => {
   // Arrange
-  const mockHook = useMockEmpty;
+  const mockHook = useEmpty;
   render(<Assignments fetchHook={mockHook} />);
 
   // Act
@@ -54,7 +54,7 @@ test("Expect emtpy state", () => {
 
 test("Expect ready state", () => {
   // Arrange
-  const mockHook = useMockReadyAssignments;
+  const mockHook = useReadyAssignments;
   render(
     <DialogProvider>
       <BrowserRouter>

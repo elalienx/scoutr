@@ -2,7 +2,7 @@
 import { expect, test } from "vitest";
 
 // Project files
-import useMockReadyCandidates from "./useMockReadyCandidates";
+import useReadyCandidates from "./useReadyCandidates";
 import Status from "types/Status";
 import Candidate from "types/Candidate";
 
@@ -70,7 +70,7 @@ test("Expect return content if passed a valid url", () => {
   ];
 
   // Act
-  const test = useMockReadyCandidates(uri);
+  const test = useReadyCandidates(uri);
 
   // Assert
   expect(test.status).toEqual(resultStatus);
