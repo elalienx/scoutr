@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import InputText from "./InputText";
 
 const meta = {
-  title: "Form controls/Input text",
+  title: "Input fields/Input Text",
   component: InputText,
   parameters: { layout: "centered" },
   tags: ["autodocs"],
@@ -21,6 +21,7 @@ export const Default: Story = {
     placeholder: "Eduardo Alvarez",
     required: true,
     defaultValue: "Cecilia Nowak",
+    name: "candidate_name",
   },
 };
 
@@ -30,5 +31,6 @@ export const Empty: Story = {
     placeholder: "Eduardo Alvarez",
     required: true,
     defaultValue: "",
+    name: "candidate_name",
   },
 };

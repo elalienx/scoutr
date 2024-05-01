@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import FormAssignment from "./FormAssignment";
 
 const meta = {
-  title: "Form Controls/Form Assignment",
+  title: "Formularies/New Assignment",
   component: FormAssignment,
   parameters: { layout: "centered" },
   decorators: [

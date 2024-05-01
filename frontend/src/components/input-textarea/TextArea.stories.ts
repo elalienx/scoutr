@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import TextArea from "./TextArea";
 
 const meta = {
-  title: "Form controls/Text area",
+  title: "Input fields/Text area",
   component: TextArea,
   parameters: { layout: "centered" },
   tags: ["autodocs"],
@@ -22,6 +22,7 @@ export const Default: Story = {
     required: true,
     defaultValue:
       "https://www.linkedin.com/in/susanna-vaara-0b33b03a/\nhttps://www.linkedin.com/in/farzad-golchin-1926461b/",
+    name: "links",
   },
 };
 
@@ -31,5 +32,6 @@ export const Empty: Story = {
     placeholder: "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
     required: true,
     defaultValue: "",
+    name: "links",
   },
 };
