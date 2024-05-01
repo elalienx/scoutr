@@ -2,7 +2,7 @@
 import { expect, test } from "vitest";
 
 // Project files
-import fetchPostLoading from "./fetchPostLoading";
+import postSlowLoading from "./postSlowLoading";
 import Status from "types/Status";
 
 test("Returns a loading state inmediatelly", async () => {
@@ -11,7 +11,7 @@ test("Returns a loading state inmediatelly", async () => {
   const result: Status = "loading";
 
   // Act
-  const test = await fetchPostLoading(uri, {});
+  const test = await postSlowLoading(uri, {});
 
   // Assert
   expect(test.status).toBe(result);

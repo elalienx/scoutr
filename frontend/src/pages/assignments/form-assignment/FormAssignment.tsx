@@ -51,10 +51,6 @@ export default function FormAssignment() {
     };
 
     /** 4. Submit data 📧 */
-    // const result = await fetchService(uri, options)
-    //   .then((respone) => respone.json())
-    //   .then((result) => onSuccess(result))
-    //   .catch((error) => onFailure(error));
     await fetch(uri, options)
       .then((respone) => respone.json())
       .then((result) => onSuccess(result))
