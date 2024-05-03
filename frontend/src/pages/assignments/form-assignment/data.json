@@ -4,15 +4,13 @@
     "label": "Assignment name",
     "placeholder": "Graphic Designer",
     "defaultValue": "",
-    "required": true,
-    "reference": "AssignmentNameRef"
+    "required": true
   },
   "company_name": {
     "name": "company_name",
     "label": "Company",
     "placeholder": "Spotify",
     "defaultValue": "",
-    "required": true,
-    "reference": "CompanyRef"
+    "required": true
   }
 }
