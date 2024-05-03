@@ -6,15 +6,14 @@ import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
 
 export default function useFetch(uri: string): ResultsAPI {
+  // Safeguard
+  if (uri === "") return { data: [], status: "error", message: "Bad uri" };
+
   // Initial values
   const init: ResultsAPI = { data: [], status: "loading", message: "" };
-  const badURI: ResultsAPI = { data: [], status: "error", message: "Bad uri" };
 
   // Local state
   const [result, setResult] = useState<ResultsAPI>(init);
-
-  // Safeguard
-  if (uri === "") return badURI;
 
   // Methods
   useEffect(() => {

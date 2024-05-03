@@ -5,7 +5,7 @@ export default interface Candidate {
   /** Foreign key linking candidates to assignments. */
   projectId: number;
 
-  /** Date when the candidate profile was added to the database. */
+  /** Date when the candidate was added to the database. */
   date_created: string;
 
   /** URL of the candidate's LinkedIn profile. */
