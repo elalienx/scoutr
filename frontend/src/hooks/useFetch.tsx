@@ -8,7 +8,7 @@ import Status from "types/Status";
 export default function useFetch(uri: string): ResultsAPI {
   // Initial values
   const init: ResultsAPI = { data: [], status: "loading", message: "" };
-  const badURI: ResultsAPI = { ...init, message: "URI is empty" };
+  const badURI: ResultsAPI = { data: [], status: "error", message: "Bad uri" };
 
   // Local state
   const [result, setResult] = useState<ResultsAPI>(init);
@@ -16,24 +16,25 @@ export default function useFetch(uri: string): ResultsAPI {
   // Safeguard
   if (uri === "") return badURI;
 
+  // Methods
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(uri);
-        const { data, message } = await response.json();
-        const status: Status = data.length ? "ready" : "empty";
-
-        setResult({ data, status, message });
-      } catch (error: unknown) {
-        const message = error instanceof Error ? error.message : "unknow error";
-
-        console.error(error);
-        setResult({ data: [], status: "error", message });
-      }
-    };
-
     fetchData();
   }, [uri]);
+
+  async function fetchData() {
+    try {
+      const response = await fetch(uri);
+      const { data, message } = await response.json();
+      const status: Status = data.length ? "ready" : "empty";
+
+      setResult({ data, status, message });
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : "unknow error";
+
+      console.error(error);
+      setResult({ data: [], status: "error", message });
+    }
+  }
 
   return result;
 }
