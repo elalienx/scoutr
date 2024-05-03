@@ -3,7 +3,7 @@
     "name": "assignment_name",
     "label": "Assignment name",
     "placeholder": "Graphic Designer",
-    "defaultValue": "Janitor",
+    "defaultValue": "",
     "required": true,
     "reference": "AssignmentNameRef"
   },
@@ -11,7 +11,7 @@
     "name": "company_name",
     "label": "Company",
     "placeholder": "Spotify",
-    "defaultValue": "ONU",
+    "defaultValue": "",
     "required": true,
     "reference": "CompanyRef"
   }
