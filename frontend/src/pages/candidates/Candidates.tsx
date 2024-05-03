@@ -8,6 +8,8 @@ import Loader from "components/loader/Loader";
 import NavigationBar from "components/navigation-bar/NavigationBar";
 import Candidate from "types/Candidate";
 import Status from "types/Status";
+
+// Page files
 import FormCandidates from "./form-candidates/FormCandidates";
 import StateEmpty from "./state-empty/StateEmpty";
 import StateError from "./state-error/StateError";
