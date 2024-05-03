@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import Button from "components/button/Button";
 import Loader from "components/loader/Loader";
 import NavigationBar from "components/navigation-bar/NavigationBar";
+import useDialog from "state/DialogContextAPI";
 import Candidate from "types/Candidate";
 import Status from "types/Status";
 
@@ -14,7 +15,6 @@ import FormCandidates from "./form-candidates/FormCandidates";
 import StateEmpty from "./state-empty/StateEmpty";
 import StateError from "./state-error/StateError";
 import Table from "./table/Table";
-import useDialog from "state/DialogContextAPI";
 import "./candidates.css";
 
 interface Props {
