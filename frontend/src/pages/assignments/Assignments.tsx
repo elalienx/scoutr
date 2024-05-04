@@ -11,7 +11,6 @@ import FormAssignment from "./form-assignment/FormAssignment";
 import Hero from "./hero/Hero";
 import StateEmpty from "./state-empty/StateEmpty";
 import StateError from "./state-error/StateError";
-import "scripts/fontAwesome";
 import "./assignments.css";
 
 interface Props {
