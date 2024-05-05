@@ -26,7 +26,7 @@ interface Props {
 
   // Extra props
   /** Is the button actionable? */
-  disabled?: Boolean;
+  disabled?: boolean;
 
   /** The click handler. */
   onClick?: () => void;
@@ -36,14 +36,18 @@ interface Props {
 export default function Button(item: Props) {
   const { label, primary = false, big = false } = item;
   const { icon_prefix = "fas", icon = "" } = item;
-  const { ...props } = item;
+  const { disabled, onClick } = item;
 
   // Properties
   const cssPrimary = primary ? "primary" : "";
   const cssSize = big ? "big" : "small";
 
   return (
-    <button className={`button ${cssSize} ${cssPrimary}`} {...props}>
+    <button
+      className={`button ${cssSize} ${cssPrimary}`}
+      disabled={disabled}
+      onClick={onClick}
+    >
       {icon && <FontAwesomeIcon className="icon" icon={[icon_prefix, icon]} />}
       {label}
     </button>
