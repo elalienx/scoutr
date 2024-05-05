@@ -26,12 +26,12 @@ export default function StateEmpty({ component }: Props) {
         <p>Click below to start adding candidates.</p>
       </div>
       <Button
+        big
         icon_prefix="fab"
         icon="linkedin"
         label="New assignment"
         onClick={() => showDialog(component)}
-        primary={true}
-        size="big"
+        primary
       />
     </div>
   );

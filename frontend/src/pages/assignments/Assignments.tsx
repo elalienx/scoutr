@@ -4,6 +4,7 @@ import CardNew from "components/card-new/CardNew";
 import Loader from "components/loader/Loader";
 import Assignment from "types/Assignment";
 import Status from "types/Status";
+import "scripts/fontAwesome";
 
 // Page files
 import Footer from "./footer/Footer";

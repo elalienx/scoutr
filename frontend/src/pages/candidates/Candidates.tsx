@@ -57,12 +57,12 @@ export default function Candidates({ fetchHook }: Props) {
     <>
       <Table candidates={sortedById} />
       <Button
-        label={"Add candidates"}
-        primary={true}
-        size="big"
+        big
         icon_prefix="fab"
         icon="linkedin"
+        label={"Add candidates"}
         onClick={() => showDialog(Form)}
+        primary
       />
     </>
   );

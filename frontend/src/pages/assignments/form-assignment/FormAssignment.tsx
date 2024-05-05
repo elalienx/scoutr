@@ -81,15 +81,15 @@ export default function FormAssignment() {
       <small className="info">{message}</small>
       <div className="buttons">
         <Button
-          label={"Create"}
-          primary={true}
-          icon="circle-check"
           disabled={status === "loading"}
+          icon="circle-check"
+          label={"Create"}
+          primary
         />
         <Button
+          disabled={status === "loading"}
           label={"Dismiss"}
           onClick={() => closeDialog()}
-          disabled={status === "loading"}
         />
       </div>
     </form>

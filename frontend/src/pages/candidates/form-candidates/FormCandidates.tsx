@@ -75,7 +75,7 @@ export default function FormCandidates({ id, state }: Props) {
       <div className="buttons">
         <Button
           label={"Create"}
-          primary={true}
+          primary
           icon="circle-check"
           disabled={status === "loading"}
         />
