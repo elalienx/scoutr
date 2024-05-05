@@ -21,7 +21,6 @@ describe("Data loading state", () => {
     const test = screen.queryByText("loading...");
 
     // Assert
-    // @ts-ignore
     expect(test).toBeInTheDocument();
   });
 
@@ -34,7 +33,6 @@ describe("Data loading state", () => {
     const test = screen.queryByText("Oh no! We could not load any assigment.");
 
     // Assert
-    // @ts-ignore
     expect(test).toBeInTheDocument();
   });
 
@@ -49,7 +47,6 @@ describe("Data loading state", () => {
     );
 
     // Assert
-    // @ts-ignore
     expect(test).toBeInTheDocument();
   });
 
@@ -70,13 +67,9 @@ describe("Data loading state", () => {
     const test4 = screen.queryByText("McDonalds");
 
     // Assert
-    // @ts-ignore
     expect(test1).toBeInTheDocument();
-    // @ts-ignore
     expect(test2).toBeInTheDocument();
-    // @ts-ignore
     expect(test3).toBeInTheDocument();
-    // @ts-ignore
     expect(test4).toBeInTheDocument();
   });
 });
@@ -101,7 +94,6 @@ describe("Empty and Ready state open new assigment formulary", () => {
     fireEvent.click(button);
 
     // Assert
-    // @ts-ignore
     expect(test()).toBeInTheDocument();
   });
 
@@ -124,7 +116,6 @@ describe("Empty and Ready state open new assigment formulary", () => {
     fireEvent.click(button);
 
     // Assert
-    // @ts-ignore
     expect(test()).toBeInTheDocument();
   });
 });
