@@ -1,6 +1,6 @@
 // Node modules
-import { expect, test } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { beforeAll, expect, test, vi } from "vitest";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 // Project files
@@ -9,6 +9,7 @@ import useError from "mocks/useError";
 import useEmpty from "mocks/useEmpty";
 import useReadyAssignments from "mocks/useReadyAssignments";
 import Assignments from "./Assignments";
+import useDialog, { DialogProvider } from "state/DialogContextAPI";
 
 test("Expect loading state", () => {
   // Arrange
@@ -77,4 +78,65 @@ test("Expect ready state", () => {
   expect(test3).toBeInTheDocument();
   // @ts-ignore
   expect(test4).toBeInTheDocument();
+});
+
+function Dialog() {
+  // Global state
+  const { dialogRef, dialog } = useDialog();
+
+  return <dialog ref={dialogRef}>{dialog}</dialog>;
+}
+
+beforeAll(() => {
+  HTMLDialogElement.prototype.show = vi.fn();
+  HTMLDialogElement.prototype.showModal = vi.fn();
+  HTMLDialogElement.prototype.close = vi.fn();
+});
+
+test("Show new assignment formulary from ready state", async () => {
+  // Arrange
+  const mockHook = useReadyAssignments;
+  render(
+    <DialogProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Assignments fetchHook={mockHook} />} />
+        </Routes>
+        <Dialog />
+      </BrowserRouter>
+    </DialogProvider>
+  );
+
+  // Act
+  const button = screen.getByText(/new assignment/i);
+  const test = () => screen.getByTestId("form-assignment");
+  fireEvent.click(button);
+
+  // Assert
+  // @ts-ignore
+  expect(test()).toBeInTheDocument();
+});
+
+test("Show new assignment formulary from empty state", async () => {
+  // Arrange
+  const mockHook = useEmpty;
+  render(
+    <DialogProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Assignments fetchHook={mockHook} />} />
+        </Routes>
+        <Dialog />
+      </BrowserRouter>
+    </DialogProvider>
+  );
+
+  // Act
+  const button = screen.getByText(/new assignment/i);
+  const test = () => screen.getByTestId("form-assignment");
+  fireEvent.click(button);
+
+  // Assert
+  // @ts-ignore
+  expect(test()).toBeInTheDocument();
 });

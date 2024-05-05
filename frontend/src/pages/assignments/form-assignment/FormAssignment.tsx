@@ -73,7 +73,11 @@ export default function FormAssignment() {
   }
 
   return (
-    <form className="form" onSubmit={(event) => onSubmit(event)}>
+    <form
+      data-testid="form-assignment"
+      className="form"
+      onSubmit={(event) => onSubmit(event)}
+    >
       <h2>New Assignment</h2>
       {/* 1B. Put the dynamic inputs 📝 */}
       <InputText {...Data.assignment_name} />
