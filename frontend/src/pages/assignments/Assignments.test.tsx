@@ -1,15 +1,15 @@
 // Node modules
-import { beforeAll, describe, expect, test, vi } from "vitest";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { describe, expect, test } from "vitest";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 // Project files
+import { fireEvent, render, screen } from "scripts/testing-library-globals";
 import useLoading from "mocks/useLoading";
 import useError from "mocks/useError";
 import useEmpty from "mocks/useEmpty";
 import useReadyAssignments from "mocks/useReadyAssignments";
 import Assignments from "./Assignments";
-import useDialog, { DialogProvider } from "state/DialogContextAPI";
+import Dialog from "components/dialog/Dialog";
 
 describe("Data loading state", () => {
   test("Expect loading state", () => {
@@ -56,13 +56,12 @@ describe("Data loading state", () => {
   test("Expect ready state", () => {
     // Arrange
     const mockHook = useReadyAssignments;
+    const assignments = <Assignments fetchHook={mockHook} />;
     render(
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Assignments fetchHook={mockHook} />} />
-        </Routes>
-      </BrowserRouter>
-    ); // you need the browser router as the cards have the Link to navigate between routes
+      <Routes>
+        <Route path="/" element={assignments} />
+      </Routes>
+    );
 
     // Act
     const test1 = screen.queryByText("Data Engineer");
@@ -82,32 +81,18 @@ describe("Data loading state", () => {
   });
 });
 
-function Dialog() {
-  // Global state
-  const { dialogRef, dialog } = useDialog();
-
-  return <dialog ref={dialogRef}>{dialog}</dialog>;
-}
-
-beforeAll(() => {
-  HTMLDialogElement.prototype.show = vi.fn();
-  HTMLDialogElement.prototype.showModal = vi.fn();
-  HTMLDialogElement.prototype.close = vi.fn();
-});
-
 describe("Empty and Ready state open new assigment formulary", () => {
   test("Show new assignment formulary from ready state", async () => {
     // Arrange
     const mockHook = useReadyAssignments;
+    const assignments = <Assignments fetchHook={mockHook} />;
     render(
-      <DialogProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Assignments fetchHook={mockHook} />} />
-          </Routes>
-          <Dialog />
-        </BrowserRouter>
-      </DialogProvider>
+      <>
+        <Routes>
+          <Route path="/" element={assignments} />
+        </Routes>
+        <Dialog />
+      </>
     );
 
     // Act
@@ -123,15 +108,14 @@ describe("Empty and Ready state open new assigment formulary", () => {
   test("Show new assignment formulary from empty state", async () => {
     // Arrange
     const mockHook = useEmpty;
+    const assignments = <Assignments fetchHook={mockHook} />;
     render(
-      <DialogProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Assignments fetchHook={mockHook} />} />
-          </Routes>
-          <Dialog />
-        </BrowserRouter>
-      </DialogProvider>
+      <>
+        <Routes>
+          <Route path="/" element={assignments} />
+        </Routes>
+        <Dialog />
+      </>
     );
 
     // Act
