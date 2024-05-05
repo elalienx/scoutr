@@ -20,15 +20,15 @@ export default function HeaderCandidate(item: Props) {
   return (
     <header className="header-candidate">
       <ImageThumbnail
-        src={candidate_image_url}
-        className="candidate-image"
         alt="Candidate profile picture"
+        className="candidate-image"
         profile="candidate"
+        src={candidate_image_url}
       />
       <ImageThumbnail
-        src={company_image_url}
-        className="company-image"
         alt="Company logo"
+        className="company-image"
+        src={company_image_url}
       />
       <small className="label">Profile #{id}</small>
     </header>

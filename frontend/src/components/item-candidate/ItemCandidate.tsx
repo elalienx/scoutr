@@ -3,6 +3,7 @@ import ImageThumbnail from "components/image-thumbnail/ImageThumbnail";
 import "./item-candidate.css";
 
 interface Props {
+  // Candidare data
   /** Full name of the candidate. */
   candidate_image_url: string;
 
@@ -12,18 +13,15 @@ interface Props {
   /** The job title of the candidate. */
   candidate_job_title: string;
 
+  // Link
   /** URL of the candidate's LinkedIn profile. */
   linked_in_url: string;
 }
 
 /** Shows the personal details of a candidate. */
 export default function ItemCandidate(item: Props) {
-  const {
-    candidate_image_url,
-    candidate_name,
-    candidate_job_title,
-    linked_in_url,
-  } = item;
+  const { candidate_image_url, candidate_name, candidate_job_title } = item;
+  const { linked_in_url } = item;
 
   return (
     <div className="item-candidate">
