@@ -1,0 +1,11 @@
+.dialog {
+  background: none;
+  border: none;
+  padding: 0;
+
+  &::backdrop {
+    --blur: 10px;
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+  }
+}
