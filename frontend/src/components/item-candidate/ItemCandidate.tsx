@@ -27,8 +27,8 @@ export default function ItemCandidate(item: Props) {
     <div className="item-candidate">
       <ImageThumbnail src={candidate_image_url} profile="candidate" />
       <div className="content">
-        <a href={linked_in_url} target="_blank">
-          <span className="title trim-text">{candidate_name}</span>
+        <a href={linked_in_url} className="title trim-text" target="_blank">
+          {candidate_name}
         </a>
         <small className="label trim-text" title={candidate_job_title}>
           {candidate_job_title}
