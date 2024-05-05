@@ -8,7 +8,6 @@ import useLoading from "mocks/useLoading";
 import useError from "mocks/useError";
 import useEmpty from "mocks/useEmpty";
 import useReadyAssignments from "mocks/useReadyAssignments";
-import { DialogProvider } from "state/DialogContextAPI";
 import Assignments from "./Assignments";
 
 test("Expect loading state", () => {
