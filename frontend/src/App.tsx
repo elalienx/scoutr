@@ -2,15 +2,12 @@
 import { Routes, Route } from "react-router-dom";
 
 // Project files
+import Dialog from "components/dialog/Dialog";
 import useFetch from "hooks/useFetch";
 import Assignments from "pages/assignments/Assignments";
-import useDialog from "state/DialogContextAPI";
 import Candidates from "pages/candidates/Candidates";
 
 export default function App() {
-  // Global state
-  const { dialogRef, dialog } = useDialog();
-
   // Pages
   const assigment = <Assignments fetchHook={useFetch} />;
   const candidates = <Candidates fetchHook={useFetch} />;
@@ -21,7 +18,7 @@ export default function App() {
         <Route path="/" element={assigment} />
         <Route path="/candidates/:assignment_id" element={candidates} />
       </Routes>
-      <dialog ref={dialogRef}>{dialog}</dialog>
+      <Dialog />
     </div>
   );
 }
