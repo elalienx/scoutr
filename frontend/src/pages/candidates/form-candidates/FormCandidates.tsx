@@ -10,6 +10,7 @@ import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
 import Data from "./data.json";
 import "styles/components/form.css";
+import "./form-candidates.css";
 
 interface Props {
   /** The ID of the assignment to parse. */
@@ -68,7 +69,10 @@ export default function FormCandidates({ id, state }: Props) {
   }
 
   return (
-    <form className="form" onSubmit={(event) => onSubmit(event)}>
+    <form
+      className="form form-candidates"
+      onSubmit={(event) => onSubmit(event)}
+    >
       <h2>Add Candidates</h2>
       <TextArea {...Data.links} />
       <small className="info">{message}</small>
