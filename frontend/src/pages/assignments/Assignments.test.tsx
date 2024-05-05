@@ -56,13 +56,11 @@ test("Expect ready state", () => {
   // Arrange
   const mockHook = useReadyAssignments;
   render(
-    <DialogProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Assignments fetchHook={mockHook} />} />
-        </Routes>
-      </BrowserRouter>
-    </DialogProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Assignments fetchHook={mockHook} />} />
+      </Routes>
+    </BrowserRouter>
   ); // you need the browser router as the cards have the Link to navigate between routes
 
   // Act
