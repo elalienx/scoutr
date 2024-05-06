@@ -96,7 +96,7 @@ describe("Empty and Ready state open new assigment formulary", () => {
     );
 
     // Act
-    const button = screen.getByText(/new assignment/i);
+    const button = screen.getByRole("button", { name: /new assignment/i });
     const test = () => screen.getByTestId("form-assignment");
     fireEvent.click(button);
 
@@ -119,7 +119,7 @@ describe("Empty and Ready state open new assigment formulary", () => {
     );
 
     // Act
-    const button = screen.getByText(/new assignment/i);
+    const button = screen.getByRole("button", { name: /new assignment/i });
     const test = () => screen.getByTestId("form-assignment");
     fireEvent.click(button);
 
