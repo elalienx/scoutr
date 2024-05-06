@@ -30,7 +30,7 @@ test("Return 1 input field when passed data", () => {
   // Arrange
   const fields: InputField[] = [
     {
-      type: "InputText",
+      type: "input-text",
       name: "customer_name",
       label: "Customer Name",
       placeholder: "Jhon Smith",
@@ -51,14 +51,14 @@ test("Return 2 input fields when passed data", () => {
   // Arrange
   const fields: InputField[] = [
     {
-      type: "InputText",
+      type: "input-text",
       name: "customer_name",
       label: "Customer Name",
       placeholder: "Jhon Smith",
       defaultValue: "",
     },
     {
-      type: "InputText",
+      type: "input-text",
       name: "age",
       label: "Your age",
       placeholder: "You must be older than 18",
@@ -79,4 +79,32 @@ test("Return 2 input fields when passed data", () => {
   expect(labelB).toBeInTheDocument();
   expect(inputB).toBeInTheDocument();
 });
-test.todo("Return 1 input field and 1 textarea when passed data");
+
+test.todo("Return 1 input field and 1 textarea when passed data", () => {
+  // Arrange
+  const fields: InputField[] = [
+    {
+      type: "input-text",
+      name: "customer_name",
+      label: "Customer Name",
+      placeholder: "Jhon Smith",
+      defaultValue: "",
+    },
+    {
+      type: "text-area",
+      name: "comment",
+      label: "Your comments",
+      placeholder: "The food in this restaurant was great",
+      defaultValue: "",
+    },
+  ];
+  render(<InputFields fields={fields} />);
+
+  // Act
+  const textbox = () => screen.getByTestId("text-area");
+  const input = () => screen.getByTestId("input-text");
+
+  // Assert
+  expect(textbox).toBeInTheDocument();
+  expect(input).toBeInTheDocument();
+});

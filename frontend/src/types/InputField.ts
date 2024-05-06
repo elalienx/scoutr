@@ -1,6 +1,6 @@
 export default interface InputField {
   /** Determine the type of input field */
-  type: "InputText" | "TextArea";
+  type: "input-text" | "text-area";
 
   /** Acts as the Id of the input element so we can get the values using the FormData API.  */
   name: string;

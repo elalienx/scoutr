@@ -12,8 +12,10 @@ export default function InputFields({ fields }: Props) {
 
   // Components
   const Fields = fields.map((item) => {
-    if (item.type === "InputText") return <InputText {...item} />;
-    if (item.type === "TextArea") return <TextArea {...item} />;
+    const { name, type } = item;
+
+    if (type === "input-text") return <InputText key={name} {...item} />;
+    if (type === "text-area") return <TextArea key={name} {...item} />;
   });
 
   return <>{Fields}</>;

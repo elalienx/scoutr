@@ -7,7 +7,7 @@ export default function InputText(item: InputField) {
   const { name, label, placeholder, required = true, defaultValue } = item;
 
   return (
-    <label className="input-field">
+    <label className="input-field" data-testid="input-text">
       <span className="label">{label}</span>
       <input
         className="input"
