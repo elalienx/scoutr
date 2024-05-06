@@ -36,8 +36,7 @@ export default function FormAssignment() {
     const formData = new FormData(event.currentTarget);
     const assignment_name = formData.get(data[0].name);
     const company_name = formData.get(data[1].name);
-    const company_image_url = "";
-    const body = { assignment_name, company_name, company_image_url };
+    const body = { assignment_name, company_name };
 
     /** 3. Package data 📦 */
     const options = {
@@ -70,7 +69,7 @@ export default function FormAssignment() {
 
   return (
     <form data-testid="form-assignment" className="form" onSubmit={onSubmit}>
-      <h2>New Assignment</h2>
+      <h2>New Assignment Plus</h2>
       <InputFields fields={data} />
       <small className="info">{message}</small>
       <div className="buttons">
