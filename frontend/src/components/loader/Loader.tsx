@@ -9,7 +9,7 @@ export default function Loader() {
   return (
     <div className="loader">
       <FontAwesomeIcon className="icon" icon={["fas", "spinner"]} spin />
-      <small className="text">loading...</small>
+      <small className="text">Loading...</small>
     </div>
   );
 }
