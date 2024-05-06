@@ -1,35 +1,42 @@
 .card {
-    aspect-ratio: 10 / 5.5;
-    display: flex;
-    flex-direction: column;
-    align-items: start; /* to avoid button from streching */
-    gap: var(--space-small);
-    padding: var(--space-medium);
-    background-color: white;
-    border: solid 0.5px var(--color-gray);
+  aspect-ratio: 10 / 5.5;
+  display: flex;
+  flex-direction: column;
+  align-items: start; /* to avoid button from streching */
+  gap: var(--space-small);
+  padding: var(--space-medium);
+  background-color: white;
+  border: solid 0.5px var(--color-gray);
+  border-radius: var(--border-radius-small);
+
+  img {
+    --size: 44px;
+
+    background-color: var(--color-gray-light);
     border-radius: var(--border-radius-small);
+  }
 
-    img {
-        --size: 44px;
+  h2 {
+    margin-bottom: 0;
+    -webkit-line-clamp: 3; /** to override the lines to trim */
+  }
 
-        background-color: var(--color-gray-light);
-        border-radius: var(--border-radius-small);
-    }
-
-    h2 {
-        margin-bottom: 0;
-        -webkit-line-clamp: 3; /** to override the lines to trim */
-    }
-
-    .label {
-        margin-bottom: auto; /* to push the button down */
-    }
+  .label {
+    margin-bottom: auto; /* to push the button down */
+  }
 }
 
-/* Laptop half width */
+/* Phablet */
+@media (min-width: 550px) {
+  .card {
+    aspect-ratio: 10 / 10;
+  }
+}
+
+/* Table */
 @media (min-width: 700px) {
-    .card {
-        aspect-ratio: 10 / 11;
-        padding-top: var(--space-big);
-    }
+  .card {
+    aspect-ratio: 10 / 11;
+    padding-top: var(--space-big);
+  }
 }
