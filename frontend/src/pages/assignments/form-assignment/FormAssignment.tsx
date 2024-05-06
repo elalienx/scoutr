@@ -76,12 +76,12 @@ export default function FormAssignment() {
         <Button
           disabled={status === "loading"}
           icon="circle-check"
-          label={"Create"}
+          label="Create"
           primary
         />
         <Button
           disabled={status === "loading"}
-          label={"Dismiss"}
+          label="Dismiss"
           onClick={() => closeDialog()}
         />
       </div>

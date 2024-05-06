@@ -82,15 +82,15 @@ export default function FormCandidates({ id, state }: Props) {
       <small className="info">{message}</small>
       <div className="buttons">
         <Button
-          label={"Create"}
-          primary
-          icon="circle-check"
           disabled={status === "loading"}
+          icon="circle-check"
+          label="Create"
+          primary
         />
         <Button
-          label={"Dismiss"}
-          onClick={() => closeDialog()}
           disabled={status === "loading"}
+          label="Dismiss"
+          onClick={() => closeDialog()}
         />
       </div>
     </form>
