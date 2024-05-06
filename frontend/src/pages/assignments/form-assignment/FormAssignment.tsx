@@ -45,7 +45,7 @@ export default function FormAssignment() {
       body: JSON.stringify(body),
     };
 
-    /** 4. Submit data 📧 */
+    /** 4. Submit data 📮 */
     await fetch(uri, options)
       .then((respone) => respone.json())
       .then((result) => onSuccess(result))
@@ -53,7 +53,7 @@ export default function FormAssignment() {
   }
 
   function onSuccess(result: ResultsAPI) {
-    const id = result.data.id;
+    const { id } = result.data;
 
     setMessage("✅ Created new assignment");
     setStatus("ready");
@@ -69,7 +69,7 @@ export default function FormAssignment() {
 
   return (
     <form data-testid="form-assignment" className="form" onSubmit={onSubmit}>
-      <h2>New Assignment Plus</h2>
+      <h2>New Assignment</h2>
       <InputFields fields={data} />
       <small className="info">{message}</small>
       <div className="buttons">
