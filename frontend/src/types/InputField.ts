@@ -11,9 +11,9 @@ export default interface InputField {
   /** The example text to display when the field is empty. */
   placeholder: string;
 
-  /** Determines if is an obligatory field. Defaults to true. */
-  required?: boolean;
-
   /** The text the user writes in the field. */
   defaultValue: string;
+
+  /** Determines if is an obligatory field. Defaults to true. */
+  required?: boolean;
 }
