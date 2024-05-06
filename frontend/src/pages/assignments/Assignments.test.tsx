@@ -18,7 +18,7 @@ describe("Data loading state", () => {
     render(<Assignments fetchHook={mockHook} />);
 
     // Act
-    const test = screen.queryByText("loading...");
+    const test = screen.queryByText(/loading.../i);
 
     // Assert
     expect(test).toBeInTheDocument();
