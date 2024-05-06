@@ -1,9 +1,20 @@
+// Project files
+import InputText from "components/input-text/InputText";
+import TextArea from "components/input-textarea/TextArea";
+import InputField from "types/InputField";
+
 interface Props {
-  fields: any[];
+  fields: InputField[];
 }
 
 export default function InputFields({ fields }: Props) {
   if (fields.length === 0) return <small>No fields passed</small>;
 
-  return <></>;
+  // Components
+  const Fields = fields.map((item) => {
+    if (item.type === "InputText") return <InputText {...item} />;
+    if (item.type === "TextArea") return <TextArea {...item} />;
+  });
+
+  return <>{Fields}</>;
 }

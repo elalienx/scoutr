@@ -26,7 +26,7 @@ test("Returns warning message if nothing is passed", () => {
   expect(test).toBeInTheDocument();
 });
 
-test.todo("Return 1 input field when passed data", () => {
+test("Return 1 input field when passed data", () => {
   // Arrange
   const fields: InputField[] = [
     {
@@ -40,9 +40,43 @@ test.todo("Return 1 input field when passed data", () => {
   render(<InputFields fields={fields} />);
 
   // Act
-  const test = screen.getByRole()
+  const label = screen.getByText(/customer name/i, { selector: ".label" });
+  const input = screen.getByPlaceholderText(/jhon smith/i);
 
   // Assert
+  expect(label).toBeInTheDocument();
+  expect(input).toBeInTheDocument();
 });
-test.todo("Return 2 input fields when passed data");
-test.todo("Return 1 input field and 1 textare when passed data");
+test("Return 2 input fields when passed data", () => {
+  // Arrange
+  const fields: InputField[] = [
+    {
+      type: "InputText",
+      name: "customer_name",
+      label: "Customer Name",
+      placeholder: "Jhon Smith",
+      defaultValue: "",
+    },
+    {
+      type: "InputText",
+      name: "age",
+      label: "Your age",
+      placeholder: "You must be older than 18",
+      defaultValue: "",
+    },
+  ];
+  render(<InputFields fields={fields} />);
+
+  // Act
+  const labelA = screen.getByText(/customer name/i, { selector: ".label" });
+  const inputA = screen.getByPlaceholderText(/jhon smith/i);
+  const labelB = screen.getByText(/your age/i, { selector: ".label" });
+  const inputB = screen.getByPlaceholderText(/you must be older than 18/i);
+
+  // Assert
+  expect(labelA).toBeInTheDocument();
+  expect(inputA).toBeInTheDocument();
+  expect(labelB).toBeInTheDocument();
+  expect(inputB).toBeInTheDocument();
+});
+test.todo("Return 1 input field and 1 textarea when passed data");
