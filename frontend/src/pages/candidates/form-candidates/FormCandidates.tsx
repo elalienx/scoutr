@@ -3,9 +3,10 @@ import { FormEvent, useState } from "react";
 
 // Project files
 import Button from "components/button/Button";
-import TextArea from "components/input-textarea/TextArea";
+import InputFields from "components/input-fields/InputFields";
 import textAreaToArray from "scripts/textAreaToArray";
 import useDialog from "state/DialogContextAPI";
+import InputField from "types/InputField";
 import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
 import Data from "./data.json";
@@ -29,11 +30,14 @@ export default function FormCandidates({ id, state }: Props) {
   const [status, setStatus] = useState<Status>("empty");
   const [message, setMessage] = useState("");
 
+  // Properties
+  const data = Data as InputField[];
+
   // Methods
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     const uri = "/api/parse_links/" + id;
     const formData = new FormData(event.currentTarget);
-    const unparsedLinks = formData.get(Data.links.name);
+    const unparsedLinks = formData.get(data[0].name);
     const links = textAreaToArray(unparsedLinks);
     const body = { links };
     const options = {
@@ -70,7 +74,7 @@ export default function FormCandidates({ id, state }: Props) {
   return (
     <form className="form" onSubmit={(event) => onSubmit(event)}>
       <h2>Add Candidates</h2>
-      <TextArea {...Data.links} />
+      <InputFields fields={data} />
       <small className="info">{message}</small>
       <div className="buttons">
         <Button
