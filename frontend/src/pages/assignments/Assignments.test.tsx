@@ -1,15 +1,15 @@
 // Node modules
 import { describe, expect, test } from "vitest";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 // Project files
-import { fireEvent, render, screen } from "scripts/testing-library-globals";
+import Dialog from "components/dialog/Dialog";
 import useLoading from "mocks/useLoading";
 import useError from "mocks/useError";
 import useEmpty from "mocks/useEmpty";
 import useReadyAssignments from "mocks/useReadyAssignments";
+import { fireEvent, render, screen } from "scripts/testing-library-globals";
 import Assignments from "./Assignments";
-import Dialog from "components/dialog/Dialog";
 
 describe("Data loading state", () => {
   test("Expect loading state", () => {
