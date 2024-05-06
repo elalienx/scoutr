@@ -23,7 +23,7 @@ export default function StateEmpty({ component }: Props) {
         alt="A male a female construction engineers checking a blueprint"
       />
       <div className="content">
-        <p>Seems like you haven’t created any assigments yet.</p>
+        <p>Seems like you have not created any assigments yet.</p>
         <p>Click the button below to start!</p>
         <Button
           icon="plus"

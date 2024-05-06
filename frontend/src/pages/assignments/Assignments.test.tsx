@@ -43,7 +43,7 @@ describe("Data loading state", () => {
 
     // Act
     const test = screen.queryByText(
-      "Seems like you haven’t created any assigments yet."
+      "Seems like you have not created any assigments yet."
     );
 
     // Assert
