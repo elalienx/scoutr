@@ -19,7 +19,7 @@ export default function FormAssignment() {
 
   // Local state
   /** Make a single state conforming to ResultsAPI */
-  // const [result, setResult] = useState<ResultsAPI>({data:[], status:"empty", message:""})
+  /** const [result, setResult] = useState<ResultsAPI>({data:[], status:"empty", message:""}) */
   const [status, setStatus] = useState<Status>("empty");
   const [message, setMessage] = useState("");
 
