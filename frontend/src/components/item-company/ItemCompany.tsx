@@ -21,14 +21,14 @@ export default function ItemCompany(item: Props) {
   // Properties
   const monthsInAYear = 12;
   const durationInyears = monthsToYears(company_duration_in_months);
-  const durationCSS = company_duration_in_months < monthsInAYear && "red";
+  const markTextInRed = company_duration_in_months < monthsInAYear;
 
   return (
     <div className="item-company">
       <ImageThumbnail src={company_image_url} alt="The company logo" />
       <div className="content">
         <span className="title trim-text">{company_name}</span>
-        <small className={`label trim-text ${durationCSS}`}>
+        <small className={`label trim-text ${markTextInRed && "red"}`}>
           {durationInyears}
         </small>
       </div>
