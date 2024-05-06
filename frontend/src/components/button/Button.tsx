@@ -14,10 +14,10 @@ interface Props {
   /** The click handler. */
   onClick?: () => void;
 
-  /** Is this the principal call to action on the page? */
+  /** Is this the main button amongst other buttons? */
   primary?: boolean;
 
-  /** Is this the biggest button on the screen? It can be only be use once inside a page, not on a component. */
+  /** Is this the principal call to action on the page? It can be only be one per page. */
   big?: boolean;
 
   /** Is the button actionable? */
@@ -32,12 +32,13 @@ interface Props {
 
 /** Primary UI component for user interaction. */
 export default function Button(item: Props) {
-  const { label, onClick, primary = false, big = false, disabled } = item;
+  const { label, onClick } = item;
+  const { primary = false, big = false, disabled = false } = item;
   const { icon_prefix = "fas", icon = "" } = item;
 
   // Properties
-  const cssPrimary = primary ? "primary" : "";
-  const cssSize = big ? "big" : "small";
+  const cssPrimary = primary && "primary";
+  const cssSize = !big && "small";
 
   return (
     <button

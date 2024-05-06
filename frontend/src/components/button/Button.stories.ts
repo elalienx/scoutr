@@ -3,12 +3,16 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 // Project files
 import Button from "./Button";
+import { IconName } from "@fortawesome/fontawesome-svg-core";
+
+// Properties
+const label: string = "Click me";
+const icon: IconName = "plus";
 
 const meta = {
   title: "Components/Button",
   component: Button,
   parameters: { layout: "centered" },
-  args: { size: "small" },
   tags: ["autodocs"],
 } satisfies Meta<typeof Button>;
 
@@ -18,34 +22,25 @@ type Story = StoryObj<typeof meta>;
 // Stories
 export const Primary: Story = {
   args: {
-    label: "Click me",
+    icon: icon,
+    label: label,
     primary: true,
-    icon: "plus",
   },
 };
 
 export const Secondary: Story = {
   args: {
+    icon: icon,
+    label: label,
     primary: false,
-    label: "Click me",
-    icon: "plus",
   },
 };
 
 export const PrimaryBig: Story = {
   args: {
-    label: "Click me",
+    big: true,
+    icon: icon,
+    label: label,
     primary: true,
-    size: "big",
-    icon: "plus",
-  },
-};
-
-export const SecondaryBig: Story = {
-  args: {
-    label: "Click me",
-    primary: false,
-    icon: "plus",
-    size: "big",
   },
 };
