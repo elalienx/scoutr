@@ -15,10 +15,11 @@ describe("Data loading state", () => {
   test("Expect loading state", () => {
     // Arrange
     const mockHook = useLoading;
+    const result = /loading.../i;
     render(<Assignments fetchHook={mockHook} />);
 
     // Act
-    const test = screen.queryByText(/loading.../i);
+    const test = screen.queryByText(result);
 
     // Assert
     expect(test).toBeInTheDocument();
@@ -27,10 +28,11 @@ describe("Data loading state", () => {
   test("Expect error state", () => {
     // Arrange
     const mockHook = useError;
+    const result = /Oh no! We could not load any assigment./i;
     render(<Assignments fetchHook={mockHook} />);
 
     // Act
-    const test = screen.queryByText("Oh no! We could not load any assigment.");
+    const test = screen.queryByText(result);
 
     // Assert
     expect(test).toBeInTheDocument();
@@ -39,12 +41,11 @@ describe("Data loading state", () => {
   test("Expect emtpy state", () => {
     // Arrange
     const mockHook = useEmpty;
+    const result = /Seems like you have not created any assigments yet./i;
     render(<Assignments fetchHook={mockHook} />);
 
     // Act
-    const test = screen.queryByText(
-      "Seems like you have not created any assigments yet."
-    );
+    const test = screen.queryByText(result);
 
     // Assert
     expect(test).toBeInTheDocument();
