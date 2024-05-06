@@ -21,18 +21,18 @@ export default function parseData(item: Candidate) {
     company_name: item.company_name,
     company_duration_in_months: item.company_duration_in_months,
   };
-  const relevanceBadge = {
+  const relevance = {
     color: relevanceColors(item.relevance),
     value: item.relevance,
     title: relevancetitle(item.relevance),
     subtitle: "",
   };
-  const contactBadge = {
+  const contact = {
     color: contactColors(item.contact_status),
     value: item.contact_status,
     title: contactTitle(item.contact_status),
     subtitle: formatDate(item.contact_date),
   };
 
-  return { header, candidate, company, relevanceBadge, contactBadge };
+  return { header, candidate, company, relevance, contact };
 }
