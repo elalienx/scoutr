@@ -1,55 +1,53 @@
 // Node modules
 import { describe, expect, test } from "vitest";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 // Project files
-import { fireEvent, render, screen } from "scripts/testing-library-globals";
+import Dialog from "components/dialog/Dialog";
 import useLoading from "mocks/useLoading";
 import useError from "mocks/useError";
 import useEmpty from "mocks/useEmpty";
 import useReadyAssignments from "mocks/useReadyAssignments";
+import { fireEvent, render, screen } from "scripts/testing-library-globals";
 import Assignments from "./Assignments";
-import Dialog from "components/dialog/Dialog";
 
 describe("Data loading state", () => {
   test("Expect loading state", () => {
     // Arrange
     const mockHook = useLoading;
+    const result = /loading.../i;
     render(<Assignments fetchHook={mockHook} />);
 
     // Act
-    const test = screen.queryByText("loading...");
+    const test = screen.queryByText(result);
 
     // Assert
-    // @ts-ignore
     expect(test).toBeInTheDocument();
   });
 
   test("Expect error state", () => {
     // Arrange
     const mockHook = useError;
+    const result = /Oh no! We could not load any assigment./i;
     render(<Assignments fetchHook={mockHook} />);
 
     // Act
-    const test = screen.queryByText("Oh no! We could not load any assigment.");
+    const test = screen.queryByText(result);
 
     // Assert
-    // @ts-ignore
     expect(test).toBeInTheDocument();
   });
 
   test("Expect emtpy state", () => {
     // Arrange
     const mockHook = useEmpty;
+    const result = /Seems like you have not created any assigments yet./i;
     render(<Assignments fetchHook={mockHook} />);
 
     // Act
-    const test = screen.queryByText(
-      "Seems like you haven’t created any assigments yet."
-    );
+    const test = screen.queryByText(result);
 
     // Assert
-    // @ts-ignore
     expect(test).toBeInTheDocument();
   });
 
@@ -70,13 +68,9 @@ describe("Data loading state", () => {
     const test4 = screen.queryByText("McDonalds");
 
     // Assert
-    // @ts-ignore
     expect(test1).toBeInTheDocument();
-    // @ts-ignore
     expect(test2).toBeInTheDocument();
-    // @ts-ignore
     expect(test3).toBeInTheDocument();
-    // @ts-ignore
     expect(test4).toBeInTheDocument();
   });
 });
@@ -101,7 +95,6 @@ describe("Empty and Ready state open new assigment formulary", () => {
     fireEvent.click(button);
 
     // Assert
-    // @ts-ignore
     expect(test()).toBeInTheDocument();
   });
 
@@ -124,7 +117,6 @@ describe("Empty and Ready state open new assigment formulary", () => {
     fireEvent.click(button);
 
     // Assert
-    // @ts-ignore
     expect(test()).toBeInTheDocument();
   });
 });

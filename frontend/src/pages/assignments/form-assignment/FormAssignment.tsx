@@ -4,12 +4,13 @@ import { useNavigate } from "react-router-dom";
 
 // Project files
 import Button from "components/button/Button";
-import InputText from "components/input-text/InputText";
+import InputFields from "components/input-fields/InputFields";
 import useDialog from "state/DialogContextAPI";
 import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
 import Data from "./data.json";
 import "styles/components/form.css";
+import InputField from "types/InputField";
 
 export default function FormAssignment() {
   // Global state
@@ -23,12 +24,8 @@ export default function FormAssignment() {
   const [message, setMessage] = useState("");
 
   // Properties
+  const data = Data as InputField[];
   const uri = "/api/assignments";
-
-  /** 1A. Create input fields dynamically 📝 */
-  /** Input fields take the data.json (rename to fields.json) and optionally the data (the values the recruiter put for the assignment/candidate)  */
-  // Components
-  // const InputFields = GenerateInputs(Data);
 
   // Methods
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -38,16 +35,16 @@ export default function FormAssignment() {
 
     /** 2. Gather data 🧺 */
     const formData = new FormData(event.currentTarget);
-    const assignment_name = formData.get(Data.assignment_name.name);
-    const company_name = formData.get(Data.company_name.name);
+    const assignment_name = formData.get(data[0].name);
+    const company_name = formData.get(data[1].name);
     const company_image_url = "";
-    const data = { assignment_name, company_name, company_image_url };
+    const body = { assignment_name, company_name, company_image_url };
 
     /** 3. Package data 📦 */
     const options = {
       headers: { "Content-Type": "application/json" },
       method: "POST",
-      body: JSON.stringify(data),
+      body: JSON.stringify(body),
     };
 
     /** 4. Submit data 📧 */
@@ -75,9 +72,7 @@ export default function FormAssignment() {
   return (
     <form data-testid="form-assignment" className="form" onSubmit={onSubmit}>
       <h2>New Assignment</h2>
-      {/* 1B. Put the dynamic inputs 📝 */}
-      <InputText {...Data.assignment_name} />
-      <InputText {...Data.company_name} />
+      <InputFields fields={data} />
       <small className="info">{message}</small>
       <div className="buttons">
         <Button
