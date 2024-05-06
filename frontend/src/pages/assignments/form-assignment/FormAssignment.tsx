@@ -6,11 +6,11 @@ import { useNavigate } from "react-router-dom";
 import Button from "components/button/Button";
 import InputFields from "components/input-fields/InputFields";
 import useDialog from "state/DialogContextAPI";
+import InputField from "types/InputField";
 import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
 import Data from "./data.json";
 import "styles/components/form.css";
-import InputField from "types/InputField";
 
 export default function FormAssignment() {
   // Global state
