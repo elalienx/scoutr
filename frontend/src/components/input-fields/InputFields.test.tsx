@@ -4,6 +4,7 @@ import { expect, test } from "vitest";
 // Project files
 import InputFields from "./InputFields";
 import { render, screen } from "scripts/testing-library-globals";
+import InputField from "types/InputField";
 
 /**
  * Todo:
@@ -15,16 +16,33 @@ import { render, screen } from "scripts/testing-library-globals";
 
 test("Returns warning message if nothing is passed", () => {
   // Arrange
-  const fields: any[] = [];
+  const fields: InputField[] = [];
   render(<InputFields fields={fields} />);
 
   // Act
-  const test = screen.getByText("No fields passed");
+  const test = screen.getByText("No fields passed"); // This can return <FormStatus error/>
 
   // Assert
   expect(test).toBeInTheDocument();
 });
 
-test.todo("Return 1 input field when passed data");
+test.todo("Return 1 input field when passed data", () => {
+  // Arrange
+  const fields: InputField[] = [
+    {
+      type: "InputText",
+      name: "customer_name",
+      label: "Customer Name",
+      placeholder: "Jhon Smith",
+      defaultValue: "",
+    },
+  ];
+  render(<InputFields fields={fields} />);
+
+  // Act
+  const test = screen.getByRole()
+
+  // Assert
+});
 test.todo("Return 2 input fields when passed data");
 test.todo("Return 1 input field and 1 textare when passed data");
