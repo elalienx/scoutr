@@ -9,6 +9,8 @@ import InputField from "types/InputField";
  * Todo
  * 1. Conver the gatherFormData1 into gatherFormData2
  * 2. See if I can rename the test .tsx to render better mock forms.
+ * 3. Integrate into FormAssignment and FormCandidates
+ * 4. Pass the CI GitHub Action!
  */
 
 test("Fields with empty name throw error", () => {
