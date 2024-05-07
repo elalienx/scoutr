@@ -6,12 +6,11 @@ import Button from "components/button/Button";
 import InputFields from "components/input-fields/InputFields";
 import textAreaToArray from "scripts/textAreaToArray";
 import useDialog from "state/DialogContextAPI";
-import InputField from "types/InputField";
 import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
-import Data from "./data.json";
-import "styles/components/form.css";
+import fields from "./fields";
 import "./form-candidates.css";
+import "styles/components/form.css";
 
 interface Props {
   /** The ID of the assignment to parse. */
@@ -32,13 +31,12 @@ export default function FormCandidates({ id, state }: Props) {
   const [message, setMessage] = useState("");
 
   // Properties
-  const data = Data as InputField[];
+  const uri = "/api/parse_links/" + id;
 
   // Methods
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    const uri = "/api/parse_links/" + id;
     const formData = new FormData(event.currentTarget);
-    const unparsedLinks = formData.get(data[0].name);
+    const unparsedLinks = formData.get(fields[0].name);
     const links = textAreaToArray(unparsedLinks);
     const body = { links };
     const options = {
@@ -78,7 +76,7 @@ export default function FormCandidates({ id, state }: Props) {
       onSubmit={(event) => onSubmit(event)}
     >
       <h2>Add Candidates</h2>
-      <InputFields fields={data} />
+      <InputFields fields={fields} />
       <small className="info">{message}</small>
       <div className="buttons">
         <Button

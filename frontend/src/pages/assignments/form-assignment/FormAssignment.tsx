@@ -6,10 +6,9 @@ import { useNavigate } from "react-router-dom";
 import Button from "components/button/Button";
 import InputFields from "components/input-fields/InputFields";
 import useDialog from "state/DialogContextAPI";
-import InputField from "types/InputField";
 import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
-import Data from "./data.json";
+import fields from "./fields";
 import "styles/components/form.css";
 
 export default function FormAssignment() {
@@ -23,7 +22,6 @@ export default function FormAssignment() {
   const [message, setMessage] = useState("");
 
   // Properties
-  const data = Data as InputField[];
   const uri = "/api/assignments";
 
   // Methods
@@ -34,8 +32,8 @@ export default function FormAssignment() {
 
     /** 2. Gather data 🧺 */
     const formData = new FormData(event.currentTarget);
-    const assignment_name = formData.get(data[0].name);
-    const company_name = formData.get(data[1].name);
+    const assignment_name = formData.get(fields[0].name);
+    const company_name = formData.get(fields[1].name);
     const body = { assignment_name, company_name };
 
     /** 3. Package data 📦 */
@@ -70,7 +68,7 @@ export default function FormAssignment() {
   return (
     <form data-testid="form-assignment" className="form" onSubmit={onSubmit}>
       <h2>New Assignment</h2>
-      <InputFields fields={data} />
+      <InputFields fields={fields} />
       <small className="info">{message}</small>
       <div className="buttons">
         <Button
