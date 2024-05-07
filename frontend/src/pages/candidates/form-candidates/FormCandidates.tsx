@@ -11,6 +11,7 @@ import Status from "types/Status";
 import fields from "./fields";
 import "./form-candidates.css";
 import "styles/components/form.css";
+import gatherFormData from "scripts/gatherFormData";
 
 interface Props {
   /** The ID of the assignment to parse. */
@@ -35,14 +36,12 @@ export default function FormCandidates({ id, state }: Props) {
 
   // Methods
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    const formData = new FormData(event.currentTarget);
-    const unparsedLinks = formData.get(fields[0].name);
-    const links = textAreaToArray(unparsedLinks);
-    const body = { links };
+    const formData = gatherFormData(event.currentTarget);
+    const links = textAreaToArray(formData.links);
     const options = {
       headers: { "Content-Type": "application/json" },
       method: "POST",
-      body: JSON.stringify(body),
+      body: JSON.stringify(links),
     };
 
     event.preventDefault();

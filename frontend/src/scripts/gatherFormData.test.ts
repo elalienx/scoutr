@@ -4,14 +4,6 @@ import { expect, test } from "vitest";
 // Project files
 import gatherFormData from "./gatherFormData";
 
-/**
- * Todo
- * - Add the empty names check to FieldGenerator
- * - Add the repeates names check to FieldGenerator
- * - Integrate into FormAssignment and FormCandidates
- * - Pass the CI GitHub Action!
- */
-
 test("Fields with repeated names throw error as must be unique", () => {
   // Arrange
   // Mock the form HTML Form
