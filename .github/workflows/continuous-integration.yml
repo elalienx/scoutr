@@ -1,4 +1,5 @@
 name: Scoutr Test Suite
+
 on:
   pull_request:
     branches:
