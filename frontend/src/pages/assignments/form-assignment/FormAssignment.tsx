@@ -31,17 +31,15 @@ export default function FormAssignment() {
     setMessage("🕒 Creating new assignment");
     setStatus("loading");
 
-    /** 2. Gather data 🧺 */
+    /** Package data 📦 */
     const formData = gatherFormData(event.currentTarget);
-
-    /** 3. Package data 📦 */
     const options = {
       headers: { "Content-Type": "application/json" },
       method: "POST",
       body: JSON.stringify(formData),
     };
 
-    /** 4. Submit data 📮 */
+    /** Submit data 📮 */
     await fetch(uri, options)
       .then((respone) => respone.json())
       .then((result) => onSuccess(result))
