@@ -6,8 +6,10 @@ import gatherFormData from "./gatherFormData";
 
 /**
  * Todo
- * 1. Integrate into FormAssignment and FormCandidates
- * 2. Pass the CI GitHub Action!
+ * - Add the empty names check to FieldGenerator
+ * - Add the repeates names check to FieldGenerator
+ * - Integrate into FormAssignment and FormCandidates
+ * - Pass the CI GitHub Action!
  */
 
 test("Fields with repeated names throw error as must be unique", () => {
