@@ -6,9 +6,8 @@ import gatherFormData from "./gatherFormData";
 
 /**
  * Todo
- * 1. See if I can rename the test .tsx to render better mock forms.
- * 2. Integrate into FormAssignment and FormCandidates
- * 3. Pass the CI GitHub Action!
+ * 1. Integrate into FormAssignment and FormCandidates
+ * 2. Pass the CI GitHub Action!
  */
 
 test("Fields with repeated names throw error as must be unique", () => {
@@ -16,8 +15,8 @@ test("Fields with repeated names throw error as must be unique", () => {
   // Mock the form HTML Form
   document.body.innerHTML = `
   <form id="test-form">
-    <input type="text" name="name" value="Eduardo"> 
-    <input type="text" name="name" value="Alvarez">
+    <input type="text" name="name" value="Eduardo" />
+    <input type="text" name="name" value="Alvarez" />
   </form>
   `;
   const form = document.getElementById("test-form") as HTMLFormElement;
@@ -35,8 +34,8 @@ test("Sending valid fields returns a correct object", () => {
   // Mock the form HTML Form
   document.body.innerHTML = `
   <form id="test-form">
-    <input type="text" name="user" value="Eduardo">
-    <input type="text" name="country" value="Sweden">
+    <input type="text" name="user" value="Eduardo" />
+    <input type="text" name="country" value="Sweden" />
   </form>
   `;
   const form = document.getElementById("test-form") as HTMLFormElement;
