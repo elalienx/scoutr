@@ -1,4 +1,5 @@
 name: Scoutr Test Suite
+
 on:
   pull_request:
     branches:
@@ -6,7 +7,7 @@ on:
 jobs:
   backend-test:
     name: Backend unit testing
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -19,7 +20,7 @@ jobs:
 
   frontend-test:
     name: Frontend unit testing
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
