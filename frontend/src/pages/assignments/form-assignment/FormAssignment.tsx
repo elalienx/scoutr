@@ -10,6 +10,7 @@ import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
 import fields from "./fields";
 import "styles/components/form.css";
+import gatherFormData from "scripts/gatherFormData";
 
 export default function FormAssignment() {
   // Global state
@@ -31,16 +32,13 @@ export default function FormAssignment() {
     setStatus("loading");
 
     /** 2. Gather data 🧺 */
-    const formData = new FormData(event.currentTarget);
-    const assignment_name = formData.get(fields[0].name);
-    const company_name = formData.get(fields[1].name);
-    const body = { assignment_name, company_name };
+    const formData = gatherFormData(event.currentTarget);
 
     /** 3. Package data 📦 */
     const options = {
       headers: { "Content-Type": "application/json" },
       method: "POST",
-      body: JSON.stringify(body),
+      body: JSON.stringify(formData),
     };
 
     /** 4. Submit data 📮 */
