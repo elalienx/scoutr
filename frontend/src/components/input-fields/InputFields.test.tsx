@@ -23,15 +23,15 @@ describe("Shows warning text on screen if find any errors", () => {
     // Arrange
     const fields: InputField[] = [
       {
+        id: "full_name",
         type: "input-text",
-        name: "full_name",
         label: "Full name",
         placeholder: "Eduardo Alvarez",
         defaultValue: "",
       },
       {
+        id: "",
         type: "input-text",
-        name: "",
         label: "Age",
         placeholder: "37",
         defaultValue: "",
@@ -50,15 +50,15 @@ describe("Shows warning text on screen if find any errors", () => {
     // Arrange
     const fields: InputField[] = [
       {
+        id: "full_name",
         type: "input-text",
-        name: "full_name",
         label: "Full name",
         placeholder: "Eduardo Alvarez",
         defaultValue: "",
       },
       {
+        id: "full_name", // this has full_name instead of age on purpose
         type: "input-text",
-        name: "full_name", // this has full_name instead of age on purpose
         label: "Age",
         placeholder: "37",
         defaultValue: "",
@@ -79,8 +79,8 @@ describe("Correctly rendered input fields", () => {
     // Arrange
     const fields: InputField[] = [
       {
+        id: "customer_name",
         type: "input-text",
-        name: "customer_name",
         label: "Customer Name",
         placeholder: "Jhon Smith",
         defaultValue: "",
@@ -101,15 +101,15 @@ describe("Correctly rendered input fields", () => {
     // Arrange
     const fields: InputField[] = [
       {
+        id: "customer_name",
         type: "input-text",
-        name: "customer_name",
         label: "Customer Name",
         placeholder: "Jhon Smith",
         defaultValue: "",
       },
       {
+        id: "age",
         type: "input-text",
-        name: "age",
         label: "Your age",
         placeholder: "You must be older than 18",
         defaultValue: "",
@@ -134,15 +134,15 @@ describe("Correctly rendered input fields", () => {
     // Arrange
     const fields: InputField[] = [
       {
+        id: "customer_name",
         type: "input-text",
-        name: "customer_name",
         label: "Customer Name",
         placeholder: "Jhon Smith",
         defaultValue: "",
       },
       {
+        id: "comment",
         type: "text-area",
-        name: "comment",
         label: "Your comments",
         placeholder: "The food in this restaurant was great",
         defaultValue: "",
