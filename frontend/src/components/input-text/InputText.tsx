@@ -4,7 +4,7 @@ import "styles/components/input-field.css";
 
 /** Input control to allow a single line of text. */
 export default function InputText(item: InputField) {
-  const { name, label, placeholder, required = true, defaultValue } = item;
+  const { id, label, placeholder, required = true, defaultValue } = item;
 
   return (
     <label className="input-field" data-testid="input-text">
@@ -12,7 +12,7 @@ export default function InputText(item: InputField) {
       <input
         className="input"
         defaultValue={defaultValue}
-        name={name}
+        name={id}
         placeholder={placeholder}
         required={required}
         type="text"

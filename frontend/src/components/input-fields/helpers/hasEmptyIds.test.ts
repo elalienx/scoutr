@@ -2,7 +2,7 @@
 import { expect, test } from "vitest";
 
 // Project files
-import hasEmptyNames from "./hasEmptyNames";
+import hasEmpyIds from "./hasEmptyIds";
 
 test("Returns TRUE if single item is empty", () => {
   // Arrange
@@ -10,7 +10,7 @@ test("Returns TRUE if single item is empty", () => {
   const result = true;
 
   // Act
-  const test = hasEmptyNames(values);
+  const test = hasEmpyIds(values);
 
   // Assert
   expect(test).toBe(result);
@@ -22,7 +22,7 @@ test("Returns FALSE if single item has a value", () => {
   const result = false;
 
   // Act
-  const test = hasEmptyNames(values);
+  const test = hasEmpyIds(values);
 
   // Assert
   expect(test).toBe(result);
@@ -34,7 +34,7 @@ test("Returns TRUE if any item is empty", () => {
   const result = true;
 
   // Act
-  const test = hasEmptyNames(values);
+  const test = hasEmpyIds(values);
 
   // Assert
   expect(test).toBe(result);
@@ -46,7 +46,7 @@ test("Returns FALSE if no item is empty", () => {
   const result = false;
 
   // Act
-  const test = hasEmptyNames(values);
+  const test = hasEmpyIds(values);
 
   // Assert
   expect(test).toBe(result);
