@@ -3,8 +3,8 @@ import InputField from "types/InputField";
 
 const fields: InputField[] = [
   {
+    id: "unparsed_links",
     type: "text-area",
-    name: "unparsed_links",
     label: "Paste the LinkedIn links here",
     placeholder: "www.linkedin.com/in/eduardo-alvarez-nowak",
     defaultValue: "",
