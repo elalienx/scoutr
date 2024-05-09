@@ -27,9 +27,7 @@ export default function FormAssignment() {
 
   // Methods
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setMessage("🕒 Creating new assignment");
-    setStatus("loading");
+    onLoading(event);
 
     const formData = gatherFormData(event.currentTarget);
     const fetchOptions = packageData("POST", formData);
@@ -38,6 +36,12 @@ export default function FormAssignment() {
       .then((respone) => respone.json())
       .then((result) => onSuccess(result))
       .catch((error) => onFailure(error));
+  }
+
+  function onLoading(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setMessage("🕒 Creating new assignment");
+    setStatus("loading");
   }
 
   function onSuccess(result: ResultsAPI) {

@@ -37,9 +37,7 @@ export default function FormCandidates({ id, state }: Props) {
 
   // Methods
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setStatus("loading");
-    setMessage("Loading... 🕒");
+    onLoading(event);
 
     const formData = gatherFormData(event.currentTarget);
     const links = textAreaToArray(formData.unparsed_links);
@@ -50,6 +48,12 @@ export default function FormCandidates({ id, state }: Props) {
       .then((respone) => respone.json())
       .then((result) => onSuccess(result))
       .catch((error) => onFailure(error));
+  }
+
+  function onLoading(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatus("loading");
+    setMessage("Loading... 🕒");
   }
 
   function onSuccess(result: ResultsAPI) {
