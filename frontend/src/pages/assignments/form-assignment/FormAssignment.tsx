@@ -11,6 +11,7 @@ import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
 import fields from "./fields";
 import "styles/components/form.css";
+import packageData from "scripts/packageData";
 
 export default function FormAssignment() {
   // Global state
@@ -30,16 +31,10 @@ export default function FormAssignment() {
     setMessage("🕒 Creating new assignment");
     setStatus("loading");
 
-    /** Package data 📦 */
     const formData = gatherFormData(event.currentTarget);
-    const options = {
-      headers: { "Content-Type": "application/json" },
-      method: "POST",
-      body: JSON.stringify(formData),
-    };
+    const fetchOptions = packageData("POST", formData);
 
-    /** Submit data 📮 */
-    await fetch(uri, options)
+    await fetch(uri, fetchOptions)
       .then((respone) => respone.json())
       .then((result) => onSuccess(result))
       .catch((error) => onFailure(error));
