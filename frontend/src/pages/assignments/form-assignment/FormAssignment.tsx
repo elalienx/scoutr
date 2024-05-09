@@ -6,12 +6,12 @@ import { useNavigate } from "react-router-dom";
 import Button from "components/button/Button";
 import InputFields from "components/input-fields/InputFields";
 import gatherFormData from "scripts/gatherFormData";
+import packageData from "scripts/packageData";
 import useDialog from "state/DialogContextAPI";
 import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
 import fields from "./fields";
 import "styles/components/form.css";
-import packageData from "scripts/packageData";
 
 export default function FormAssignment() {
   // Global state
@@ -47,7 +47,6 @@ export default function FormAssignment() {
   function onSuccess(result: ResultsAPI) {
     const { id } = result.data;
 
-    setStatus("ready");
     navigate(`/candidates/${id}`);
     closeDialog();
   }

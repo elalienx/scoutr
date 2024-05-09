@@ -4,22 +4,23 @@ import { FormEvent, useState } from "react";
 // Project files
 import Button from "components/button/Button";
 import InputFields from "components/input-fields/InputFields";
+import gatherFormData from "scripts/gatherFormData";
+import packageData from "scripts/packageData";
 import textAreaToArray from "scripts/textAreaToArray";
 import useDialog from "state/DialogContextAPI";
+import Candidate from "types/Candidate";
 import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
 import fields from "./fields";
-import "./form-candidates.css";
 import "styles/components/form.css";
-import gatherFormData from "scripts/gatherFormData";
-import packageData from "scripts/packageData";
+import "./form-candidates.css";
 
 interface Props {
   /** The ID of the assignment to parse. */
   id: number;
 
   /** Set Candidates */
-  state: [any, any];
+  state: [Candidate[], Function];
 }
 
 export default function FormCandidates({ id, state }: Props) {
@@ -40,8 +41,8 @@ export default function FormCandidates({ id, state }: Props) {
     onLoading(event);
 
     const formData = gatherFormData(event.currentTarget);
-    const links = textAreaToArray(formData.unparsed_links);
-    const body = { links };
+    const parsedLinks = textAreaToArray(formData.unparsed_links);
+    const body = { links: parsedLinks };
     const fetchOptions = packageData("POST", body);
 
     await fetch(uri, fetchOptions)
@@ -60,8 +61,6 @@ export default function FormCandidates({ id, state }: Props) {
     const data = result.data;
 
     setCandidates([...candidates, ...data]);
-    setStatus("ready");
-    setMessage("Success! ✅");
     closeDialog();
   }
 
