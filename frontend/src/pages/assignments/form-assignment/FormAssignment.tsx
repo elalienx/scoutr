@@ -5,20 +5,20 @@ import { useNavigate } from "react-router-dom";
 // Project files
 import Button from "components/button/Button";
 import InputFields from "components/input-fields/InputFields";
+import gatherFormData from "scripts/gatherFormData";
+import packageData from "scripts/packageData";
 import useDialog from "state/DialogContextAPI";
 import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
 import fields from "./fields";
 import "styles/components/form.css";
-import gatherFormData from "scripts/gatherFormData";
 
 export default function FormAssignment() {
   // Global state
-  const { closeDialog } = useDialog();
   const navigate = useNavigate();
+  const { closeDialog } = useDialog();
 
   // Local state
-  /** Make a single state conforming to ResultsAPI */
   const [status, setStatus] = useState<Status>("empty");
   const [message, setMessage] = useState("");
 
@@ -27,30 +27,26 @@ export default function FormAssignment() {
 
   // Methods
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setMessage("🕒 Creating new assignment");
-    setStatus("loading");
+    onLoading(event);
 
-    /** Package data 📦 */
     const formData = gatherFormData(event.currentTarget);
-    const options = {
-      headers: { "Content-Type": "application/json" },
-      method: "POST",
-      body: JSON.stringify(formData),
-    };
+    const fetchOptions = packageData("POST", formData);
 
-    /** Submit data 📮 */
-    await fetch(uri, options)
+    await fetch(uri, fetchOptions)
       .then((respone) => respone.json())
       .then((result) => onSuccess(result))
       .catch((error) => onFailure(error));
   }
 
+  function onLoading(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setMessage("🕒 Creating new assignment");
+    setStatus("loading");
+  }
+
   function onSuccess(result: ResultsAPI) {
     const { id } = result.data;
 
-    setMessage("✅ Created new assignment");
-    setStatus("ready");
     navigate(`/candidates/${id}`);
     closeDialog();
   }
