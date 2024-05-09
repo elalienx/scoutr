@@ -9,7 +9,7 @@ import {
   waitFor,
 } from "scripts/testing-library-globals";
 import FormAssignment from "./FormAssignment";
-import fetchAssignment from "mocks/fetchScriptReadyAssignment";
+import fetchAssignment from "mocks/fetchAssignment";
 /** import the mocks here... */
 
 test("Filling the formulary correctly submits the assignment", async () => {
