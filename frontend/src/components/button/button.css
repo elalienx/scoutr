@@ -16,6 +16,7 @@
     background-color: var(--color-black);
     color: white;
     border-color: var(--color-black);
+    text-decoration: none; /* to remove links having an underline when using the button class */
   }
 
   &:active {
