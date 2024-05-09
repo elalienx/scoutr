@@ -4,9 +4,9 @@ import { FormEvent, useState } from "react";
 // Project files
 import Button from "components/button/Button";
 import InputFields from "components/input-fields/InputFields";
-import gatherFormData from "scripts/form-utils/gatherFormData";
-import packageData from "scripts/form-utils/packageData";
-import textAreaToArray from "scripts/form-utils/textAreaToArray";
+import gatherFormData from "scripts/forms/gatherFormData";
+import packageData from "scripts/forms/packageData";
+import textAreaToArray from "scripts/forms/textAreaToArray";
 import useDialog from "hooks/dialog-state/DialogContextAPI";
 import Candidate from "types/Candidate";
 import ResultsAPI from "types/ResultsAPI";
