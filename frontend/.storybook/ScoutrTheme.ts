@@ -17,7 +17,7 @@ export default create({
   appBg: "#E6E9EB", // Scoutr Ink black light
   appBorderColor: "#A9A9A9", // Scoutr Silver gray
   barTextColor: "#212529", // Scoutr Ink black
-  colorSecondary: "#265889", // Scoutr Ocean blue
+  colorSecondary: "#2A639B", // Scoutr Ocean blue
   textColor: "#212529", // Scoutr Ink black
 
   // Form colors
