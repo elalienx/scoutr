@@ -8,12 +8,25 @@ import InputFields from "components/input-fields/InputFields";
 import gatherFormData from "scripts/gatherFormData";
 import packageData from "scripts/packageData";
 import useDialog from "state/DialogContextAPI";
+import Assignment from "types/Assignment";
 import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
 import fields from "./fields";
 import "styles/components/form.css";
 
-export default function FormAssignment() {
+interface Props {
+  /** A script to fetch data. The return complies with the ResultsAPI interface. */
+  fetchScript: (
+    uri: string,
+    init: object
+  ) => Promise<{
+    data: Assignment;
+    status: Status;
+    message: string;
+  }>;
+}
+
+export default function FormAssignment({ fetchScript }: Props) {
   // Global state
   const navigate = useNavigate();
   const { closeDialog } = useDialog();
@@ -29,13 +42,14 @@ export default function FormAssignment() {
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     onLoading(event);
 
-    const formData = gatherFormData(event.currentTarget);
-    const fetchOptions = packageData("POST", formData);
-
-    await fetch(uri, fetchOptions)
-      .then((respone) => respone.json())
-      .then((result) => onSuccess(result))
-      .catch((error) => onFailure(error));
+    try {
+      const formData = gatherFormData(event.currentTarget);
+      const fetchOptions = packageData("POST", formData);
+      const result = await fetchScript(uri, fetchOptions);
+      onSuccess(result);
+    } catch (error: any) {
+      onFailure(error);
+    }
   }
 
   function onLoading(event: FormEvent<HTMLFormElement>) {
@@ -47,6 +61,7 @@ export default function FormAssignment() {
   function onSuccess(result: ResultsAPI) {
     const { id } = result.data;
 
+    setMessage("Assignment created");
     navigate(`/candidates/${id}`);
     closeDialog();
   }

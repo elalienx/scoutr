@@ -95,7 +95,7 @@ describe("Empty and Ready state open new assigment formulary", () => {
     fireEvent.click(button);
 
     // Assert
-    expect(test()).toBeInTheDocument();
+    expect(test).toBeInTheDocument();
   });
 
   test("Show new assignment formulary from empty state", async () => {
@@ -117,6 +117,6 @@ describe("Empty and Ready state open new assigment formulary", () => {
     fireEvent.click(button);
 
     // Assert
-    expect(test()).toBeInTheDocument();
+    expect(test).toBeInTheDocument();
   });
 });

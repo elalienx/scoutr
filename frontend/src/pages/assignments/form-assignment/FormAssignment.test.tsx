@@ -2,8 +2,14 @@
 import { expect, test } from "vitest";
 
 // Project files
-import { fireEvent, render, screen } from "scripts/testing-library-globals";
+import {
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from "scripts/testing-library-globals";
 import FormAssignment from "./FormAssignment";
+import fetchAssignment from "mocks/fetchScriptReadyAssignment";
 /** import the mocks here... */
 
 test("Filling the formulary correctly submits the assignment", () => {
@@ -12,7 +18,7 @@ test("Filling the formulary correctly submits the assignment", () => {
   const value2 = "Qualcom";
   const result = "Assignment with ID #1 created";
 
-  render(<FormAssignment />); /** ⬅️ Pass mock fetchMethod here */
+  render(<FormAssignment fetchScript={fetchAssignment} />);
 
   // Act
   const input1 = screen.getByRole("textbox", { name: /assignment_name/i });
@@ -23,9 +29,12 @@ test("Filling the formulary correctly submits the assignment", () => {
   fireEvent.change(input1, { target: { value: value1 } });
   fireEvent.change(input2, { target: { value: value2 } });
   fireEvent.click(button);
+  console.log(test());
 
   // Assert
-  expect(test).toBeInTheDocument();
+  waitFor(() => {
+    expect(test).toBeInTheDocument();
+  });
 });
 
 test.todo("Getting an error from server shows error state", () => {});
