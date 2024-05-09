@@ -1,6 +1,8 @@
-type Method = "POST" | "UPDATE" | "DELETE";
+// Project files
+import FetchMethods from "types/FetchMethods";
+import FetchOptions from "types/FetchOptions";
 
-export default function packageData(method: Method, body: object) {
+function packageData(method: FetchMethods, body: object): FetchOptions {
   // Safeguard
   if (Object.keys(body).length === 0) throw new Error("Body is empty");
 
@@ -10,3 +12,5 @@ export default function packageData(method: Method, body: object) {
     body: JSON.stringify(body),
   };
 }
+
+export default packageData;
