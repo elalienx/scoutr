@@ -4,6 +4,7 @@ import ResultsAPI from "types/ResultsAPI";
 
 async function fetchAssignment(uri: string, init: object): Promise<ResultsAPI> {
   // test that init.body has assignment_name and company_name
+  console.log(uri, init);
 
   const assignment: Assignment = {
     id: 9999,
