@@ -10,6 +10,7 @@ export default function InputText(item: InputField) {
     <label className="input-field" data-testid="input-text">
       <span className="label">{label}</span>
       <input
+        aria-label={id}
         className="input"
         defaultValue={defaultValue}
         name={id}

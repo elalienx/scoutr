@@ -7,7 +7,7 @@ const fields: InputField[] = [
     type: "input-text",
     label: "Assignment name",
     placeholder: "Graphic Designer",
-    defaultValue: "GD",
+    defaultValue: "",
     required: true,
   },
   {
@@ -15,7 +15,7 @@ const fields: InputField[] = [
     type: "input-text",
     label: "Company",
     placeholder: "Spotify",
-    defaultValue: "S",
+    defaultValue: "",
     required: true,
   },
 ];
