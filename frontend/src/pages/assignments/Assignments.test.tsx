@@ -16,6 +16,7 @@ describe("Data loading state", () => {
     // Arrange
     const mockHook = useLoading;
     const result = /loading.../i;
+
     render(<Assignments fetchHook={mockHook} />);
 
     // Act
@@ -29,6 +30,7 @@ describe("Data loading state", () => {
     // Arrange
     const mockHook = useError;
     const result = /Oh no! We could not load any assigment./i;
+
     render(<Assignments fetchHook={mockHook} />);
 
     // Act
@@ -42,6 +44,7 @@ describe("Data loading state", () => {
     // Arrange
     const mockHook = useEmpty;
     const result = /Seems like you have not created any assigments yet./i;
+
     render(<Assignments fetchHook={mockHook} />);
 
     // Act
@@ -55,6 +58,7 @@ describe("Data loading state", () => {
     // Arrange
     const mockHook = useReadyAssignments;
     const assignments = <Assignments fetchHook={mockHook} />;
+
     render(
       <Routes>
         <Route path="/" element={assignments} />
@@ -80,6 +84,8 @@ describe("Empty and Ready state open new assigment formulary", () => {
     // Arrange
     const mockHook = useReadyAssignments;
     const assignments = <Assignments fetchHook={mockHook} />;
+    const result = "form-assignment";
+
     render(
       <>
         <Routes>
@@ -91,17 +97,19 @@ describe("Empty and Ready state open new assigment formulary", () => {
 
     // Act
     const button = screen.getByRole("button", { name: /new assignment/i });
-    const test = () => screen.getByTestId("form-assignment");
+
     fireEvent.click(button);
 
     // Assert
-    expect(test).toBeInTheDocument();
+    expect(screen.getByTestId(result)).toBeInTheDocument();
   });
 
   test("Show new assignment formulary from empty state", async () => {
     // Arrange
     const mockHook = useEmpty;
     const assignments = <Assignments fetchHook={mockHook} />;
+    const result = "form-assignment";
+
     render(
       <>
         <Routes>
@@ -113,10 +121,10 @@ describe("Empty and Ready state open new assigment formulary", () => {
 
     // Act
     const button = screen.getByRole("button", { name: /new assignment/i });
-    const test = () => screen.getByTestId("form-assignment");
+
     fireEvent.click(button);
 
     // Assert
-    expect(test).toBeInTheDocument();
+    expect(screen.getByTestId(result)).toBeInTheDocument();
   });
 });

@@ -11,7 +11,7 @@ async function fetchAssignment(uri: string, init: object): Promise<ResultsAPI> {
     date_created: "2024-01-31",
     assignment_name: "CPU Engineer",
     company_name: "Qualcom",
-    company_image_url: "",
+    company_image_url: "some-image.png",
   };
   const result: ResultsAPI = {
     data: assignment,

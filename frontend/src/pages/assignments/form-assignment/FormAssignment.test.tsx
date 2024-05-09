@@ -12,11 +12,11 @@ import FormAssignment from "./FormAssignment";
 import fetchAssignment from "mocks/fetchScriptReadyAssignment";
 /** import the mocks here... */
 
-test("Filling the formulary correctly submits the assignment", () => {
+test("Filling the formulary correctly submits the assignment", async () => {
   // Arrange
   const value1 = "Software Developer";
   const value2 = "Qualcom";
-  const result = "Assignment with ID #1 created";
+  const result = "Assignment created";
 
   render(<FormAssignment fetchScript={fetchAssignment} />);
 
@@ -24,16 +24,14 @@ test("Filling the formulary correctly submits the assignment", () => {
   const input1 = screen.getByRole("textbox", { name: /assignment_name/i });
   const input2 = screen.getByRole("textbox", { name: /company_name/i });
   const button = screen.getByRole("button", { name: /create/i });
-  const test = () => screen.getByText(result);
 
   fireEvent.change(input1, { target: { value: value1 } });
   fireEvent.change(input2, { target: { value: value2 } });
   fireEvent.click(button);
-  console.log(test());
 
   // Assert
-  waitFor(() => {
-    expect(test).toBeInTheDocument();
+  await waitFor(() => {
+    expect(screen.getByText(result)).toBeInTheDocument();
   });
 });
 
