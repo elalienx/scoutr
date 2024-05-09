@@ -5,7 +5,7 @@ import { beforeAll, vi } from "vitest";
 import { render, RenderOptions } from "@testing-library/react";
 
 // Project files
-import { DialogProvider } from "state/DialogContextAPI";
+import { DialogProvider } from "hooks/dialog-state/DialogContextAPI";
 import "scripts/fontAwesome";
 import "styles/style.css";
 

@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import Button from "components/button/Button";
 import Loader from "components/loader/Loader";
 import NavigationBar from "components/navigation-bar/NavigationBar";
-import useDialog from "state/DialogContextAPI";
+import useDialog from "hooks/dialog-state/DialogContextAPI";
 import Candidate from "types/Candidate";
 import Status from "types/Status";
 

@@ -5,20 +5,21 @@ import { useNavigate } from "react-router-dom";
 // Project files
 import Button from "components/button/Button";
 import InputFields from "components/input-fields/InputFields";
-import gatherFormData from "scripts/gatherFormData";
-import packageData from "scripts/packageData";
-import useDialog from "state/DialogContextAPI";
+import gatherFormData from "scripts/form-utils/gatherFormData";
+import packageData from "scripts/form-utils/packageData";
+import useDialog from "hooks/dialog-state/DialogContextAPI";
 import Assignment from "types/Assignment";
 import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
 import fields from "./fields";
 import "styles/components/form.css";
+import FetchOptions from "types/FetchOptions";
 
 interface Props {
   /** A script to fetch data. The return complies with the ResultsAPI interface. */
   fetchScript: (
     uri: string,
-    init: object
+    init: FetchOptions
   ) => Promise<{
     data: Assignment;
     status: Status;

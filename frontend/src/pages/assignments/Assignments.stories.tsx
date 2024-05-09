@@ -4,10 +4,10 @@ import { BrowserRouter } from "react-router-dom";
 
 // Project files
 import Assignments from "./Assignments";
-import useReadyAssignments from "mocks/useReadyAssignments";
-import useLoading from "mocks/useLoading";
-import useError from "mocks/useError";
-import useEmpty from "mocks/useEmpty";
+import useReadyAssignments from "hooks/use-fetch/mocks/useReadyAssignments";
+import useLoading from "hooks/use-fetch/mocks/useLoading";
+import useError from "hooks/use-fetch/mocks/useError";
+import useEmpty from "hooks/use-fetch/mocks/useEmpty";
 
 const meta = {
   title: "Pages/Assignments",

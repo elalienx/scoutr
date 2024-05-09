@@ -4,7 +4,7 @@ import { expect, test } from "vitest";
 // Project files
 import fetchAssignment from "./fetchAssignment";
 import Assignment from "types/Assignment";
-import packageData from "scripts/packageData";
+import packageData from "scripts/form-utils/packageData";
 
 test("Show error if URI is not correct", async () => {
   // Arrange

@@ -4,10 +4,10 @@ import { Route, Routes } from "react-router-dom";
 
 // Project files
 import Dialog from "components/dialog/Dialog";
-import useLoading from "mocks/useLoading";
-import useError from "mocks/useError";
-import useEmpty from "mocks/useEmpty";
-import useReadyAssignments from "mocks/useReadyAssignments";
+import useLoading from "hooks/use-fetch/mocks/useLoading";
+import useError from "hooks/use-fetch/mocks/useError";
+import useEmpty from "hooks/use-fetch/mocks/useEmpty";
+import useReadyAssignments from "hooks/use-fetch/mocks/useReadyAssignments";
 import { fireEvent, render, screen } from "scripts/testing-library-globals";
 import Assignments from "./Assignments";
 

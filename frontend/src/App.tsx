@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 // Project files
 import Dialog from "components/dialog/Dialog";
-import useFetch from "hooks/useFetch";
+import useFetch from "hooks/use-fetch/useFetch";
 import Assignments from "pages/assignments/Assignments";
 import Candidates from "pages/candidates/Candidates";
 import Page404 from "pages/page404/page404";

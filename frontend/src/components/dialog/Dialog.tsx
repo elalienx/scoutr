@@ -1,5 +1,5 @@
 // Project files
-import useDialog from "state/DialogContextAPI";
+import useDialog from "hooks/dialog-state/DialogContextAPI";
 import "./dialog.css";
 
 /**

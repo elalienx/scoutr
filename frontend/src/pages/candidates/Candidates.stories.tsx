@@ -4,10 +4,10 @@ import { MemoryRouter, Route, Routes } from "react-router-dom";
 
 // Project files
 import Candidates from "./Candidates";
-import useLoading from "mocks/useLoading";
-import useError from "mocks/useError";
-import useEmpty from "mocks/useEmpty";
-import useReadyCandidates from "mocks/useReadyCandidates";
+import useLoading from "hooks/use-fetch/mocks/useLoading";
+import useError from "hooks/use-fetch/mocks/useError";
+import useEmpty from "hooks/use-fetch/mocks/useEmpty";
+import useReadyCandidates from "hooks/use-fetch/mocks/useReadyCandidates";
 
 const meta = {
   title: "Pages/Candidates",

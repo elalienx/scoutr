@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 // Project files
 import Illustration from "assets/state-empty-candidates.png";
 import Button from "components/button/Button";
-import useDialog from "state/DialogContextAPI";
+import useDialog from "hooks/dialog-state/DialogContextAPI";
 import "styles/components/state-candidates.css";
 
 interface Props {

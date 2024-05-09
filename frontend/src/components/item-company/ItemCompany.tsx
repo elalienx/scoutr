@@ -1,6 +1,6 @@
 // Project files
 import ImageThumbnail from "components/image-thumbnail/ImageThumbnail";
-import monthsToYears from "scripts/monthsToYears";
+import monthsToYears from "scripts/format-date/monthsToYears";
 import "./item-company.css";
 
 interface Props {
