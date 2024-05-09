@@ -5,20 +5,19 @@ import { useNavigate } from "react-router-dom";
 // Project files
 import Button from "components/button/Button";
 import InputFields from "components/input-fields/InputFields";
+import gatherFormData from "scripts/gatherFormData";
 import useDialog from "state/DialogContextAPI";
 import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
 import fields from "./fields";
 import "styles/components/form.css";
-import gatherFormData from "scripts/gatherFormData";
 
 export default function FormAssignment() {
   // Global state
-  const { closeDialog } = useDialog();
   const navigate = useNavigate();
+  const { closeDialog } = useDialog();
 
   // Local state
-  /** Make a single state conforming to ResultsAPI */
   const [status, setStatus] = useState<Status>("empty");
   const [message, setMessage] = useState("");
 
@@ -49,7 +48,6 @@ export default function FormAssignment() {
   function onSuccess(result: ResultsAPI) {
     const { id } = result.data;
 
-    setMessage("✅ Created new assignment");
     setStatus("ready");
     navigate(`/candidates/${id}`);
     closeDialog();
