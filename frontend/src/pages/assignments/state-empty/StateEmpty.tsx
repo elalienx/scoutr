@@ -2,7 +2,7 @@
 import { ReactNode } from "react";
 // Project files
 
-import Image from "assets/state-empty-assignments.png";
+import Illustration from "assets/state-empty-assignments.png";
 import Button from "components/button/Button";
 import useDialog from "state/DialogContextAPI";
 import "styles/components/state-assignments.css";
@@ -19,7 +19,7 @@ export default function StateEmpty({ component }: Props) {
   return (
     <div className="state-assignments">
       <img
-        src={Image}
+        src={Illustration}
         alt="A male a female construction engineers checking a blueprint"
       />
       <div className="content">
