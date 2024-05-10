@@ -4,9 +4,9 @@ import { BrowserRouter } from "react-router-dom";
 
 // Project files
 import FormAssignment from "./FormAssignment";
-import fetchAssignment from "scripts/fetch-service/mocks/fetchAssignment";
-import fetchAssignmentSlow from "scripts/fetch-service/mocks/fetchAssignmentSlow";
-import fetchError from "scripts/fetch-service/mocks/fetchError";
+import mockFetchAssignment from "scripts/fetch-service/mocks/mockFetchAssignment";
+import mockFetchError from "scripts/fetch-service/mocks/mockFetchError";
+import mockFetchAssignmentSlow from "scripts/fetch-service/mocks/mockFetchAssignmentSlow";
 
 const meta = {
   title: "Formularies/New Assignment",
@@ -28,18 +28,18 @@ type Story = StoryObj<typeof meta>;
 // Stories
 export const Default: Story = {
   args: {
-    fetchScript: fetchAssignment,
+    fetchScript: mockFetchAssignment,
   },
 };
 
 export const Error: Story = {
   args: {
-    fetchScript: fetchError,
+    fetchScript: mockFetchError,
   },
 };
 
 export const Takes5SecondsToSubmit: Story = {
   args: {
-    fetchScript: fetchAssignmentSlow,
+    fetchScript: mockFetchAssignmentSlow,
   },
 };
