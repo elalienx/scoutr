@@ -6,7 +6,7 @@ import fetchAssignment from "./fetchAssignment";
 import Assignment from "types/Assignment";
 import packageData from "scripts/forms/packageData";
 
-test("Show error if URI is not correct", async () => {
+test("Show error if URI is not correct", () => {
   // Arrange
   const uri = "api/assigments/"; // missing the "n" between "g" and "m" on purpose
   const formData = {
