@@ -8,6 +8,7 @@ import InputFields from "components/input-fields/InputFields";
 import useDialog from "hooks/dialog-state/DialogContextAPI";
 import gatherFormData from "scripts/forms/gatherFormData";
 import packageData from "scripts/forms/packageData";
+import Assignment from "types/Assignment";
 import FetchOptions from "types/FetchOptions";
 import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
@@ -39,47 +40,37 @@ export default function FormAssignment({ fetchScript }: Props) {
       const formData = gatherFormData(event.currentTarget);
       const fetchOptions = packageData("POST", formData);
       const result = await fetchScript(uri, fetchOptions);
-      // here we should go to onConnected or onServerResponse, because that is what we know at this stage,
-      /**
-       * Here we should go to a method called onResponse() or onResult(),
-       * because that's what we know at this stage, that we got a ResultAPI
-       * from the server, but does not know if is positive or negative.
-       */
-      onSuccess(result);
+
+      onResult(result);
     } catch (error: any) {
-      /**
-       * This one hanldes the scenario were we could not establish a connection
-       * to the server.
-       *
-       * This can be becuase:
-       * 1. There is no internet
-       * 2. The URI is invalid or does not exist anymore in the server.
-       * 3. The formulary data is invalid.
-       * 4. The formualry data could not be packaged.
-       *  */
       onFailure(error);
     }
   }
 
-  function onLoading(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setMessage("🕒 Creating new assignment");
-    setStatus("loading");
+  function onResult(result: ResultsAPI) {
+    const { data, message, status } = result;
+
+    if (status === "error") onFailure(message);
+    else onSuccess(data);
   }
 
-  function onSuccess(result: ResultsAPI) {
-    const { id } = result.data;
+  function onLoading(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatus("loading");
+    setMessage("🕒 Creating new assignment");
+  }
 
+  function onSuccess(assignment: Assignment) {
     setStatus("ready");
     setMessage("✅ Assignment created");
-    navigate(`/candidates/${id}`);
+    navigate(`/candidates/${assignment.id}`);
     closeDialog();
   }
 
-  function onFailure(error: Error) {
+  function onFailure(error: Error | string) {
     console.error(error);
-    setMessage("🚨 Could not create new assignment");
     setStatus("error");
+    setMessage("🚨 Could not create new assignment");
   }
 
   return (

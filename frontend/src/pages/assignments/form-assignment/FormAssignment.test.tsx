@@ -16,6 +16,7 @@ test("Filling the formulary correctly submits the assignment", async () => {
   render(<FormAssignment fetchScript={fetchAssignment} />);
 
   // Act
+  const formStatus = screen.getByTestId("status");
   const input1 = screen.getByRole("textbox", { name: /assignment_name/i });
   const input2 = screen.getByRole("textbox", { name: /company_name/i });
   const button = screen.getByRole("button", { name: /create/i });
@@ -26,7 +27,7 @@ test("Filling the formulary correctly submits the assignment", async () => {
 
   // Assert
   await waitFor(() => {
-    expect(screen.getByText(result)).toBeInTheDocument();
+    expect(formStatus).toHaveTextContent(result);
   });
 });
 
