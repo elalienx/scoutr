@@ -14,7 +14,7 @@ test("Show error if URI is not correct", () => {
     unparsed_links: "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
   };
   const options = packageData("POST", formData);
-  const result = "URI is invalid. Check for typos or update the test if the endpoint changed.";
+  const result = "URI is invalid. Check if has assignment_id, for typos, or update the test if the endpoint changed.";
 
   // Act
   const test = mockFetchOneCandidate(uri, options);

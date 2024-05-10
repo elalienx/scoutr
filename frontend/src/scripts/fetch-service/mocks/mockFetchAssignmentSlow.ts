@@ -23,7 +23,7 @@ export default async function mockFetchAssignmentSlow(uri: string, init: FetchOp
   const message: string = "Created assignment #9999";
   const status: Status = "ready";
 
-  await waitForSeconds(5);
+  await waitForSeconds(3);
 
   return { data, message, status };
 }

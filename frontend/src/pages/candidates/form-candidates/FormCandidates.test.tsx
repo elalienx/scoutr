@@ -7,8 +7,9 @@ import mockFetchError from "scripts/fetch-service/mocks/mockFetchError";
 import mockFetchOneCandidate from "scripts/fetch-service/mocks/mockFetchOneCandidate";
 import Candidate from "types/Candidate";
 import FormCandidates from "./FormCandidates";
+import mockFetchManyCandidates from "scripts/fetch-service/mocks/mockFetchManyCandidates";
 
-test.todo("Filling the formulary with 1 valid link returns the scanned profile", async () => {
+test("Filling the formulary with 1 valid link returns the scanned profile", async () => {
   // Arrange
   const assignment_id = 1;
   const candidates: Candidate[] = [];
@@ -34,7 +35,7 @@ test.todo("Filling the formulary with 1 valid link returns the scanned profile",
   });
 });
 
-test.todo("Filling the formulary with multiple valid links returns the scanned profiles", async () => {
+test("Filling the formulary with multiple valid links returns the scanned profiles", async () => {
   // Arrange
   const assignment_id = 1;
   const candidates: Candidate[] = [];
@@ -43,7 +44,7 @@ test.todo("Filling the formulary with multiple valid links returns the scanned p
   };
   // values separated with a comma and a empty space on purpose. Note that is not an array, FormCandidate should convert it to the appropiate data format.
   const value =
-    "https://www.linkedin.com/in/eduardo-alvarez-nowak/, https://www.linkedin.com/in/susanna-vaara-0b33b03a/ https://www.linkedin.com/in/farzad-golchin-1926461b/";
+    "https://www.linkedin.com/in/eduardo-alvarez-nowak/, https://www.linkedin.com/in/susanna-vaara-0b33b03a/ https://www.linkedin.com/in/lanahaddad87/";
   const result = "LinkedIn profiles scanned";
 
   render(

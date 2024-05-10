@@ -7,7 +7,7 @@ import Status from "types/Status";
 export default async function mockFetchOneCandidate(uri: string, init: FetchOptions): Promise<ResultsAPI> {
   const body = JSON.parse(init.body);
   const errorInit = "Data send to the server is invalid. Check for typos or update the test if the endpoint changed.";
-  const errorURI = "URI is invalid. Check for typos or update the test if the endpoint changed.";
+  const errorURI = "URI is invalid. Check if has assignment_id, for typos, or update the test if the endpoint changed.";
 
   // Safeguards
   if (uri !== "/api/parse_links/1") throw new Error(errorURI);

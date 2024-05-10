@@ -3,11 +3,10 @@ export default function textAreaToArray(value: FormDataEntryValue | null) {
   if (value === null) return [""];
 
   const contents = String(value);
-  const newLineAndComma: RegExp = /[\n,]/;
+  const separatingSymbols: RegExp = /[\n, ]/;
   const result = contents
     .trim()
-    .split(newLineAndComma)
-    .map((item) => item.trim())
+    .split(separatingSymbols)
     .filter((item) => item !== "");
 
   return result;

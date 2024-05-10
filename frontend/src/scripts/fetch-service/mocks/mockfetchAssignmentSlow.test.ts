@@ -6,7 +6,7 @@ import mockFetchAssignmentSlow from "./mockFetchAssignmentSlow";
 import Assignment from "types/Assignment";
 import packageData from "scripts/forms/packageData";
 
-test("Simulates returning a valid assignment after 10 seconds due to a slow connection", async () => {
+test("Simulates returning a valid assignment after 3 seconds due to a slow connection", async () => {
   // Arrange
   const uri = "/api/assignments";
   const data = {
