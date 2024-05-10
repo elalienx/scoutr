@@ -4,11 +4,10 @@ import FetchOptions from "types/FetchOptions";
 import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
 
-// prettier-ignore
 export default async function fetchAssignment(uri: string, init: FetchOptions): Promise<ResultsAPI> {
   const body = JSON.parse(init.body);
-  const errorInit = "The data send to the server appears invalid. Check for typos or update the test for any endpoint changes.";
-  const errorURI = "The URI appears invalid. Check for typos or update the test for any endpoint changes.";
+  const errorInit = "Data send to the server is invalid. Check for typos or update the test if the endpoint changed.";
+  const errorURI = "URI is invalid. Check for typos or update the test if the endpoint changed.";
 
   // Safeguards
   if (uri !== "/api/assignments") throw new Error(errorURI);

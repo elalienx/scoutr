@@ -12,14 +12,11 @@ export default function Table(item: Props) {
   const { candidates } = item;
 
   // Properties
-  // prettier-ignore
-  const headers = ["Id", "Candidate","Company","Notes","Relevance","Contact"]
+  const headers = ["Id", "Candidate", "Company", "Notes", "Relevance", "Contact"];
 
   // Components
   const Headers = headers.map((item, index) => <th key={index}>{item}</th>);
-  const Rows = candidates.map((item) => (
-    <RowCandidate key={item.id} {...item} />
-  ));
+  const Rows = candidates.map((item) => <RowCandidate key={item.id} {...item} />);
 
   return (
     <table className="table">

@@ -14,8 +14,7 @@ test("Show error if URI is not correct", async () => {
     company_name: "Spotify",
   };
   const options = packageData("POST", formData);
-  // prettier-ignore
-  const result = "The URI appears invalid. Check for typos or update the test for any endpoint changes."
+  const result = "URI is invalid. Check for typos or update the test if the endpoint changed.";
 
   // Act
   const test = fetchAssignment(uri, options);
@@ -32,8 +31,7 @@ test("Show error if form data is not valid", () => {
     company: "Spotify", // company should be company_name
   };
   const options = packageData("POST", formData);
-  // prettier-ignore
-  const result = "The data send to the server appears invalid. Check for typos or update the test for any endpoint changes."
+  const result = "Data send to the server is invalid. Check for typos or update the test if the endpoint changed.";
 
   // Act
   const test = fetchAssignment(uri, options);
