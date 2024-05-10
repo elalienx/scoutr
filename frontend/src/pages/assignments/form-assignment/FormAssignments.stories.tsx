@@ -38,7 +38,7 @@ export const Error: Story = {
   },
 };
 
-export const Takes5SecondsToSubmit: Story = {
+export const TakesAFewSecondsToSubmit: Story = {
   args: {
     fetchScript: mockFetchAssignmentSlow,
   },
