@@ -35,7 +35,7 @@ test("Getting an error from server shows error state", async () => {
   // Arrange
   const value1 = "Software Developer";
   const value2 = "Qualcom";
-  const result = "Could not create new assignment";
+  const result = "Could not create assignment";
 
   render(<FormAssignment fetchScript={mockFetchError} />);
 
