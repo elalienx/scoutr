@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Project files
 import Status from "types/Status";
-import "styles/components/colors.css";
+import "styles/components/background-colors.css";
 import "./form-status.css";
 
 interface Props {
@@ -19,27 +19,27 @@ export default function FormStatus(item: Props) {
   const { status, message } = item;
 
   // Properties
-  let colorCSS = "gray";
+  let color = "gray";
   let icon: IconName = "plus";
 
   if (status === "error") {
-    colorCSS = "red";
+    color = "red";
     icon = "circle-exclamation";
   }
   if (status === "loading") {
-    colorCSS = "blue";
+    color = "blue";
     icon = "spinner";
   }
   if (status === "ready") {
-    colorCSS = "green";
+    color = "green";
     icon = "check";
   }
   if (status === "empty") {
-    colorCSS = "invisible";
+    color = "invisible";
   }
 
   return (
-    <small data-testid="status" className={`form-status ${colorCSS}`}>
+    <small data-testid="status" className={`form-status background-${color}`}>
       <FontAwesomeIcon className="icon" icon={["fas", icon]} spin={status === "loading"} />
       {message}
     </small>

@@ -1,6 +1,6 @@
 // Project files
 import Color from "types/Color";
-import "styles/components/colors.css";
+import "styles/components/background-colors.css";
 import "./badge.css";
 
 interface Props {
@@ -13,5 +13,5 @@ interface Props {
 
 /** Indicates progress or status in a sequence. */
 export default function Badge({ color, value }: Props) {
-  return <div className={`badge ${color}`}>{value}</div>;
+  return <div className={`badge background-${color}`}>{value}</div>;
 }
