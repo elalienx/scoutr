@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 // Project files
 import Button from "components/button/Button";
 import ImageThumbnail from "components/image-thumbnail/ImageThumbnail";
-import useDialog from "hooks/dialog-state/DialogContextAPI";
+import useDialog from "state/DialogContextAPI";
 import "components/card/card.css";
 import "./card-new.css";
 
@@ -23,12 +23,7 @@ export default function CardNew({ component }: Props) {
       <ImageThumbnail alt="A generic building" src={""} />
       <h2>Role name</h2>
       <small className="label">Company name</small>
-      <Button
-        icon="plus"
-        label="New assignment"
-        onClick={() => showDialog(component)}
-        primary
-      />
+      <Button icon="plus" label="New assignment" onClick={() => showDialog(component)} primary />
     </article>
   );
 }

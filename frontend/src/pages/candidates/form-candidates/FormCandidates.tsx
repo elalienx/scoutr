@@ -7,7 +7,7 @@ import InputFields from "components/input-fields/InputFields";
 import gatherFormData from "scripts/forms/gatherFormData";
 import packageData from "scripts/forms/packageData";
 import textAreaToArray from "scripts/forms/textAreaToArray";
-import useDialog from "hooks/dialog-state/DialogContextAPI";
+import useDialog from "state/DialogContextAPI";
 import Candidate from "types/Candidate";
 import FetchOptions from "types/FetchOptions";
 import ResultsAPI from "types/ResultsAPI";

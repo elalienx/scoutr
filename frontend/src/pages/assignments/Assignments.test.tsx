@@ -4,10 +4,10 @@ import { Route, Routes } from "react-router-dom";
 
 // Project files
 import Dialog from "components/dialog/Dialog";
-import mockUseLoading from "hooks/use-fetch/mocks/mockUseLoading";
-import mockUseError from "hooks/use-fetch/mocks/mockUseError";
-import mockUseEmpty from "hooks/use-fetch/mocks/mockUseEmpty";
-import mockUseReadyAssignments from "hooks/use-fetch/mocks/mockUseReadyAssignments";
+import mockUseLoading from "scripts/fetch-hook/mocks/mockUseLoading";
+import mockUseError from "scripts/fetch-hook/mocks/mockUseError";
+import mockUseEmpty from "scripts/fetch-hook/mocks/mockUseEmpty";
+import mockUseReadyAssignments from "scripts/fetch-hook/mocks/mockUseReadyAssignments";
 import { fireEvent, render, screen } from "scripts/testing-library-globals";
 import Assignments from "./Assignments";
 

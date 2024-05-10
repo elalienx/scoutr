@@ -3,9 +3,10 @@ import { expect, test } from "vitest";
 
 // Project files
 import { fireEvent, render, screen, waitFor } from "scripts/testing-library-globals";
-import FormCandidates from "./FormCandidates";
 import mockFetchError from "scripts/fetch-service/mocks/mockFetchError";
+import mockFetchOneCandidate from "scripts/fetch-service/mocks/mockFetchOneCandidate";
 import Candidate from "types/Candidate";
+import FormCandidates from "./FormCandidates";
 
 test.todo("Filling the formulary with 1 valid link returns the scanned profile", async () => {
   // Arrange

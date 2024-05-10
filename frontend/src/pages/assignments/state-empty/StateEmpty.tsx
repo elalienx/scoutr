@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 
 import Illustration from "assets/state-empty-assignments.png";
 import Button from "components/button/Button";
-import useDialog from "hooks/dialog-state/DialogContextAPI";
+import useDialog from "state/DialogContextAPI";
 import "styles/components/state-assignments.css";
 
 interface Props {
@@ -18,19 +18,11 @@ export default function StateEmpty({ component }: Props) {
 
   return (
     <div className="state-assignments">
-      <img
-        src={Illustration}
-        alt="A male a female construction engineers checking a blueprint"
-      />
+      <img src={Illustration} alt="A male a female construction engineers checking a blueprint" />
       <div className="content">
         <p>Seems like you have not created any assigments yet.</p>
         <p>Click the button below to start!</p>
-        <Button
-          icon="plus"
-          label="New assignment"
-          onClick={() => showDialog(component)}
-          primary
-        />
+        <Button icon="plus" label="New assignment" onClick={() => showDialog(component)} primary />
       </div>
     </div>
   );

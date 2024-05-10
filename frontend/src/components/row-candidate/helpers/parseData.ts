@@ -1,5 +1,5 @@
 // Project files
-import formatDate from "scripts/date/formatDate";
+import formatDate from "scripts/dates/formatDate";
 import Candidate from "types/Candidate";
 import { contactColors, contactTitle } from "./meta-data";
 import { relevanceColors, relevancetitle } from "./meta-data";

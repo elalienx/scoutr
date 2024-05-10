@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 
 // Project files
 import App from "./App.tsx";
-import { DialogProvider } from "hooks/dialog-state/DialogContextAPI.tsx";
+import { DialogProvider } from "state/DialogContextAPI.tsx";
 import "styles/style.css";
 import "scripts/fontAwesome.ts";
 
@@ -16,5 +16,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <App />
       </DialogProvider>
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

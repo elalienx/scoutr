@@ -1,6 +1,6 @@
 // Project files
 import ImageThumbnail from "components/image-thumbnail/ImageThumbnail";
-import monthsToYears from "scripts/date/monthsToYears";
+import monthsToYears from "scripts/dates/monthsToYears";
 import "./item-company.css";
 
 interface Props {
@@ -28,9 +28,7 @@ export default function ItemCompany(item: Props) {
       <ImageThumbnail src={company_image_url} alt="The company logo" />
       <div className="content">
         <span className="title trim-text">{company_name}</span>
-        <small className={`label trim-text ${markTextInRed && "red"}`}>
-          {durationInyears}
-        </small>
+        <small className={`label trim-text ${markTextInRed && "red"}`}>{durationInyears}</small>
       </div>
     </div>
   );

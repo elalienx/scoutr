@@ -7,7 +7,7 @@ import Assignments from "./Assignments";
 import useReadyAssignments from "hooks/use-fetch/mocks/useReadyAssignments";
 import useLoading from "hooks/use-fetch/mocks/useLoading";
 import useError from "hooks/use-fetch/mocks/useError";
-import mockUseEmpty from "hooks/use-fetch/mocks/mockUseEmpty";
+import mockUseEmpty from "scripts/fetch-hook/mocks/mockUseEmpty";
 
 const meta = {
   title: "Pages/Assignments",

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 // Project files
 import Button from "components/button/Button";
 import InputFields from "components/input-fields/InputFields";
-import useDialog from "hooks/dialog-state/DialogContextAPI";
+import useDialog from "state/DialogContextAPI";
 import gatherFormData from "scripts/forms/gatherFormData";
 import packageData from "scripts/forms/packageData";
 import Assignment from "types/Assignment";

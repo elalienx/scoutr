@@ -6,7 +6,7 @@ import { MemoryRouter, Route, Routes } from "react-router-dom";
 import Candidates from "./Candidates";
 import useLoading from "hooks/use-fetch/mocks/useLoading";
 import useError from "hooks/use-fetch/mocks/useError";
-import mockUseEmpty from "hooks/use-fetch/mocks/mockUseEmpty";
+import mockUseEmpty from "scripts/fetch-hook/mocks/mockUseEmpty";
 import useReadyCandidates from "hooks/use-fetch/mocks/useReadyCandidates";
 
 const meta = {

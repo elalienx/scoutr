@@ -5,7 +5,7 @@ import { beforeAll, vi } from "vitest";
 import { render, RenderOptions } from "@testing-library/react";
 
 // Project files
-import { DialogProvider } from "hooks/dialog-state/DialogContextAPI";
+import { DialogProvider } from "state/DialogContextAPI";
 import "scripts/fontAwesome";
 import "styles/style.css";
 
@@ -29,10 +29,8 @@ const AllTheProviders = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-const customRender = (
-  ui: ReactElement,
-  options?: Omit<RenderOptions, "wrapper">
-) => render(ui, { wrapper: AllTheProviders, ...options });
+const customRender = (ui: ReactElement, options?: Omit<RenderOptions, "wrapper">) =>
+  render(ui, { wrapper: AllTheProviders, ...options });
 
 export * from "@testing-library/react";
 export { customRender as render };
