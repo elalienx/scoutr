@@ -1,5 +1,5 @@
 // Project files
-import FetchMethods from "types/FetchMethods";
+import FetchMethods from "types/FetchMethod";
 import FetchOptions from "types/FetchOptions";
 
 function packageData(method: FetchMethods, body: object): FetchOptions {

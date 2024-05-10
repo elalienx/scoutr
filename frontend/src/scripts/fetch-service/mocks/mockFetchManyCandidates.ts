@@ -1,7 +1,7 @@
 // Project files
 import Candidate from "types/Candidate";
 import FetchOptions from "types/FetchOptions";
-import ResultsAPI from "types/ResultsAPI";
+import ResultsAPI from "types/ResultAPI";
 import Status from "types/Status";
 
 export default async function mockFetchManyCandidates(uri: string, init: FetchOptions): Promise<ResultsAPI> {

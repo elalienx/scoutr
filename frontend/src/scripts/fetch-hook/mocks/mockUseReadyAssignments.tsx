@@ -1,5 +1,5 @@
 // Project files
-import ResultsAPI from "types/ResultsAPI";
+import ResultsAPI from "types/ResultAPI";
 
 export default function mockUseReadyAssignments(uri: string): ResultsAPI {
   return {

@@ -2,7 +2,7 @@
 import waitForSeconds from "scripts/waitForSeconds";
 import Assignment from "types/Assignment";
 import FetchOptions from "types/FetchOptions";
-import ResultsAPI from "types/ResultsAPI";
+import ResultsAPI from "types/ResultAPI";
 import Status from "types/Status";
 
 export default async function mockFetchAssignmentSlow(uri: string, init: FetchOptions): Promise<ResultsAPI> {

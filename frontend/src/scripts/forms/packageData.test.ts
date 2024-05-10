@@ -3,7 +3,7 @@ import { expect, test } from "vitest";
 
 // Project files
 import packageData from "./packageData";
-import FetchMethods from "types/FetchMethods";
+import FetchMethods from "types/FetchMethod";
 
 test("Throws error if body is empty", () => {
   // Arrange

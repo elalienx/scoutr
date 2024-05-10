@@ -1,6 +1,6 @@
 // Node modules
 import { useState, useEffect } from "react";
-import ResultsAPI from "types/ResultsAPI";
+import ResultsAPI from "types/ResultAPI";
 
 // Project files
 import Status from "types/Status";

@@ -1,6 +1,6 @@
 // Project files
 import FetchOptions from "types/FetchOptions";
-import ResultsAPI from "types/ResultsAPI";
+import ResultsAPI from "types/ResultAPI";
 import Status from "types/Status";
 
 export default async function mockFetchError(uri: string, init: FetchOptions): Promise<ResultsAPI> {

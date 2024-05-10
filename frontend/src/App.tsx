@@ -6,7 +6,7 @@ import Dialog from "components/dialog/Dialog";
 import useFetch from "scripts/fetch-hook/useFetch";
 import Assignments from "pages/assignments/Assignments";
 import Candidates from "pages/candidates/Candidates";
-import Page404 from "pages/page404/page404";
+import Page404 from "pages/page404/Page404";
 
 export default function App() {
   // Pages
