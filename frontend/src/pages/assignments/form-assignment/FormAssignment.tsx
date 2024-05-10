@@ -5,26 +5,18 @@ import { useNavigate } from "react-router-dom";
 // Project files
 import Button from "components/button/Button";
 import InputFields from "components/input-fields/InputFields";
+import useDialog from "hooks/dialog-state/DialogContextAPI";
 import gatherFormData from "scripts/forms/gatherFormData";
 import packageData from "scripts/forms/packageData";
-import useDialog from "hooks/dialog-state/DialogContextAPI";
-import Assignment from "types/Assignment";
+import FetchOptions from "types/FetchOptions";
 import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
 import fields from "./fields";
 import "styles/components/form.css";
-import FetchOptions from "types/FetchOptions";
 
 interface Props {
   /** A script to fetch data. The return complies with the ResultsAPI interface. */
-  fetchScript: (
-    uri: string,
-    init: FetchOptions
-  ) => Promise<{
-    data: Assignment;
-    status: Status;
-    message: string;
-  }>;
+  fetchScript: (uri: string, init: FetchOptions) => Promise<ResultsAPI>;
 }
 
 export default function FormAssignment({ fetchScript }: Props) {
@@ -62,7 +54,8 @@ export default function FormAssignment({ fetchScript }: Props) {
   function onSuccess(result: ResultsAPI) {
     const { id } = result.data;
 
-    setMessage("Assignment created");
+    setStatus("ready");
+    setMessage("✅ Assignment created");
     navigate(`/candidates/${id}`);
     closeDialog();
   }
@@ -77,19 +70,12 @@ export default function FormAssignment({ fetchScript }: Props) {
     <form data-testid="form-assignment" className="form" onSubmit={onSubmit}>
       <h2>New Assignment</h2>
       <InputFields fields={fields} />
-      <small className="info">{message}</small>
+      <small data-testid="status" className="info">
+        {message}
+      </small>
       <div className="buttons">
-        <Button
-          disabled={status === "loading"}
-          icon="circle-check"
-          label="Create"
-          primary
-        />
-        <Button
-          disabled={status === "loading"}
-          label="Dismiss"
-          onClick={() => closeDialog()}
-        />
+        <Button disabled={status === "loading"} icon="circle-check" label="Create" primary />
+        <Button disabled={status === "loading"} label="Dismiss" onClick={() => closeDialog()} />
       </div>
     </form>
   );

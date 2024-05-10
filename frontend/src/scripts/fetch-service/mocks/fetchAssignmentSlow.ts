@@ -23,7 +23,7 @@ export default async function fetchAssignmentSlow(uri: string, init: FetchOption
   const message: string = "Created assignment #9999";
   const status: Status = "ready";
 
-  await waitForSeconds(3);
+  await waitForSeconds(5);
 
   return { data, message, status };
 }
