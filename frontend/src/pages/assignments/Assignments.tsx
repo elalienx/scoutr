@@ -6,11 +6,12 @@ import Assignment from "types/Assignment";
 import Status from "types/Status";
 
 // Page files
-import Footer from "./footer/Footer";
+import fetchService from "scripts/fetch-service/fetchService";
 import FormAssignment from "./form-assignment/FormAssignment";
-import Hero from "./hero/Hero";
 import StateEmpty from "./state-empty/StateEmpty";
 import StateError from "./state-error/StateError";
+import Footer from "./footer/Footer";
+import Hero from "./hero/Hero";
 import "./assignments.css";
 
 interface Props {
@@ -32,7 +33,7 @@ export default function Assignments({ fetchHook }: Props) {
   const sortedById = data.sort((a, b) => a.id - b.id);
 
   // Components
-  const Form = <FormAssignment />;
+  const Form = <FormAssignment fetchScript={fetchService} />;
   const Content = sortedById.map((item) => <Card key={item.id} {...item} />);
   Content.push(<CardNew key={"card-new"} component={Form} />);
 

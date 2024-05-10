@@ -23,12 +23,7 @@ export default function CardNew({ component }: Props) {
       <ImageThumbnail alt="A generic building" src={""} />
       <h2>Role name</h2>
       <small className="label">Company name</small>
-      <Button
-        icon="plus"
-        label="New assignment"
-        onClick={() => showDialog(component)}
-        primary
-      />
+      <Button icon="plus" label="New assignment" onClick={() => showDialog(component)} primary />
     </article>
   );
 }

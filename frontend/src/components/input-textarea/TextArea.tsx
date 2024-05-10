@@ -10,6 +10,7 @@ export default function TextArea(item: InputField) {
     <label className="input-field" data-testid="text-area">
       <span className="label">{label}</span>
       <textarea
+        aria-label={id}
         className="input"
         defaultValue={defaultValue}
         name={id}

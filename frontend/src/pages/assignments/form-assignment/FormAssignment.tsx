@@ -5,15 +5,22 @@ import { useNavigate } from "react-router-dom";
 // Project files
 import Button from "components/button/Button";
 import InputFields from "components/input-fields/InputFields";
-import gatherFormData from "scripts/gatherFormData";
-import packageData from "scripts/packageData";
 import useDialog from "state/DialogContextAPI";
+import gatherFormData from "scripts/forms/gatherFormData";
+import packageData from "scripts/forms/packageData";
+import Assignment from "types/Assignment";
+import FetchOptions from "types/FetchOptions";
 import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
 import fields from "./fields";
 import "styles/components/form.css";
 
-export default function FormAssignment() {
+interface Props {
+  /** A script to submit data. The return complies with the ResultsAPI interface. */
+  fetchScript: (uri: string, init: FetchOptions) => Promise<ResultsAPI>;
+}
+
+export default function FormAssignment({ fetchScript }: Props) {
   // Global state
   const navigate = useNavigate();
   const { closeDialog } = useDialog();
@@ -29,51 +36,53 @@ export default function FormAssignment() {
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     onLoading(event);
 
-    const formData = gatherFormData(event.currentTarget);
-    const fetchOptions = packageData("POST", formData);
+    try {
+      const formData = gatherFormData(event.currentTarget);
+      const fetchOptions = packageData("POST", formData);
+      const result = await fetchScript(uri, fetchOptions);
 
-    await fetch(uri, fetchOptions)
-      .then((respone) => respone.json())
-      .then((result) => onSuccess(result))
-      .catch((error) => onFailure(error));
+      onResult(result);
+    } catch (error: unknown) {
+      onFailure(error);
+    }
   }
 
   function onLoading(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setMessage("🕒 Creating new assignment");
     setStatus("loading");
+    setMessage("🕒 Creating new assignment");
   }
 
-  function onSuccess(result: ResultsAPI) {
-    const { id } = result.data;
+  function onResult(result: ResultsAPI) {
+    const { data, message, status } = result;
 
-    navigate(`/candidates/${id}`);
+    if (status === "error") onFailure(message);
+    else onSuccess(data);
+  }
+
+  function onSuccess(newAssignment: Assignment) {
+    setStatus("ready");
+    setMessage("✅ Assignment created");
+    navigate(`/candidates/${newAssignment.id}`);
     closeDialog();
   }
 
-  function onFailure(error: Error) {
+  function onFailure(error: Error | unknown) {
     console.error(error);
-    setMessage("🚨 Could not create new assignment");
     setStatus("error");
+    setMessage("🚨 Could not create new assignment");
   }
 
   return (
     <form data-testid="form-assignment" className="form" onSubmit={onSubmit}>
       <h2>New Assignment</h2>
       <InputFields fields={fields} />
-      <small className="info">{message}</small>
+      <small data-testid="status" className="info">
+        {message}
+      </small>
       <div className="buttons">
-        <Button
-          disabled={status === "loading"}
-          icon="circle-check"
-          label="Create"
-          primary
-        />
-        <Button
-          disabled={status === "loading"}
-          label="Dismiss"
-          onClick={() => closeDialog()}
-        />
+        <Button disabled={status === "loading"} icon="circle-check" label="Create" primary />
+        <Button disabled={status === "loading"} label="Dismiss" onClick={() => closeDialog()} />
       </div>
     </form>
   );

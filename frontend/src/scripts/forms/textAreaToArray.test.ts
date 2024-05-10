@@ -18,8 +18,20 @@ test("Pasing null returns empty array ['']", () => {
 
 test("Converts 1 line of text into a 1 item array", () => {
   // Arrange
+  const value = "Hello";
+  const result = ["Hello"];
+
+  // Act
+  const test = textAreaToArray(value);
+
+  // Assert
+  expect(test).toEqual(result);
+});
+
+test("Converts 1 line of text with space in the middle into a 2 item array", () => {
+  // Arrange
   const value = "Hello World";
-  const result = ["Hello World"];
+  const result = ["Hello", "World"];
 
   // Act
   const test = textAreaToArray(value);
@@ -31,10 +43,10 @@ test("Converts 1 line of text into a 1 item array", () => {
 test("Converts 2 lines of text into an item array", () => {
   // Arrange
   const value = `
-  Hello World
-  How Are You?
+  Hello
+  World
   `;
-  const result = ["Hello World", "How Are You?"];
+  const result = ["Hello", "World"];
 
   // Act
   const test = textAreaToArray(value);
@@ -45,8 +57,8 @@ test("Converts 2 lines of text into an item array", () => {
 
 test("Converts a single long string with a comma into an array", () => {
   // Arrange
-  const value = `Hello World,How Are You?`;
-  const result = ["Hello World", "How Are You?"];
+  const value = `Hello,World`;
+  const result = ["Hello", "World"];
 
   // Act
   const test = textAreaToArray(value);
@@ -54,13 +66,14 @@ test("Converts a single long string with a comma into an array", () => {
   // Assert
   expect(test).toEqual(result);
 });
+
 test("Removes any user commas and item array", () => {
   // Arrange
   const value = `
-    Hello World,
-    How Are You?
+    Hello,
+    World
     `;
-  const result = ["Hello World", "How Are You?"];
+  const result = ["Hello", "World"];
 
   // Act
   const test = textAreaToArray(value);

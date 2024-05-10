@@ -1,5 +1,7 @@
-<!-- Coverage directory used by tools like istanbul -->
+<!-- Coverage directory used by Vitest dependencies like istanbul -->
+
 coverage
 
 <!-- Dependency directories -->
+
 node_modules/

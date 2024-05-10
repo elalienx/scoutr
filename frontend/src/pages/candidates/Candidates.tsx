@@ -16,6 +16,7 @@ import StateEmpty from "./state-empty/StateEmpty";
 import StateError from "./state-error/StateError";
 import Table from "./table/Table";
 import "./candidates.css";
+import fetchService from "scripts/fetch-service/fetchService";
 
 interface Props {
   /** A React custom hook to fetch data. The return complies with the ResultsAPI interface. */
@@ -52,18 +53,11 @@ export default function Candidates({ fetchHook }: Props) {
   }, [data]);
 
   // Components
-  const Form = <FormCandidates id={id} state={[data, setData]} />;
+  const Form = <FormCandidates fetchScript={fetchService} id={id} state={[data, setData]} />;
   const Content = (
     <>
       <Table candidates={sortedById} />
-      <Button
-        big
-        icon_prefix="fab"
-        icon="linkedin"
-        label={"Add candidates"}
-        onClick={() => showDialog(Form)}
-        primary
-      />
+      <Button big icon_prefix="fab" icon="linkedin" label={"Add candidates"} onClick={() => showDialog(Form)} primary />
     </>
   );
 
@@ -72,11 +66,7 @@ export default function Candidates({ fetchHook }: Props) {
 
   return (
     <div id="candidates">
-      <NavigationBar
-        assignment_name={"Assignment Page"}
-        company_image_url={""}
-        response_rate={response_rate}
-      />
+      <NavigationBar assignment_name={"Assignment Page"} company_image_url={""} response_rate={response_rate} />
       <section className={`section ${status}`}>
         {status === "loading" && <Loader />}
         {status === "empty" && <StateEmpty component={Form} />}

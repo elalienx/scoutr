@@ -4,18 +4,19 @@ import { Route, Routes } from "react-router-dom";
 
 // Project files
 import Dialog from "components/dialog/Dialog";
-import useLoading from "mocks/useLoading";
-import useError from "mocks/useError";
-import useEmpty from "mocks/useEmpty";
-import useReadyAssignments from "mocks/useReadyAssignments";
+import mockUseLoading from "scripts/fetch-hook/mocks/mockUseLoading";
+import mockUseError from "scripts/fetch-hook/mocks/mockUseError";
+import mockUseEmpty from "scripts/fetch-hook/mocks/mockUseEmpty";
+import mockUseReadyAssignments from "scripts/fetch-hook/mocks/mockUseReadyAssignments";
 import { fireEvent, render, screen } from "scripts/testing-library-globals";
 import Assignments from "./Assignments";
 
 describe("Data loading state", () => {
   test("Expect loading state", () => {
     // Arrange
-    const mockHook = useLoading;
+    const mockHook = mockUseLoading;
     const result = /loading.../i;
+
     render(<Assignments fetchHook={mockHook} />);
 
     // Act
@@ -27,8 +28,9 @@ describe("Data loading state", () => {
 
   test("Expect error state", () => {
     // Arrange
-    const mockHook = useError;
+    const mockHook = mockUseError;
     const result = /Oh no! We could not load any assigment./i;
+
     render(<Assignments fetchHook={mockHook} />);
 
     // Act
@@ -40,8 +42,9 @@ describe("Data loading state", () => {
 
   test("Expect emtpy state", () => {
     // Arrange
-    const mockHook = useEmpty;
+    const mockHook = mockUseEmpty;
     const result = /Seems like you have not created any assigments yet./i;
+
     render(<Assignments fetchHook={mockHook} />);
 
     // Act
@@ -53,12 +56,13 @@ describe("Data loading state", () => {
 
   test("Expect ready state", () => {
     // Arrange
-    const mockHook = useReadyAssignments;
+    const mockHook = mockUseReadyAssignments;
     const assignments = <Assignments fetchHook={mockHook} />;
+
     render(
       <Routes>
         <Route path="/" element={assignments} />
-      </Routes>
+      </Routes>,
     );
 
     // Act
@@ -78,45 +82,49 @@ describe("Data loading state", () => {
 describe("Empty and Ready state open new assigment formulary", () => {
   test("Show new assignment formulary from ready state", async () => {
     // Arrange
-    const mockHook = useReadyAssignments;
+    const mockHook = mockUseReadyAssignments;
     const assignments = <Assignments fetchHook={mockHook} />;
+    const result = "form-assignment";
+
     render(
       <>
         <Routes>
           <Route path="/" element={assignments} />
         </Routes>
         <Dialog />
-      </>
+      </>,
     );
 
     // Act
     const button = screen.getByRole("button", { name: /new assignment/i });
-    const test = () => screen.getByTestId("form-assignment");
+
     fireEvent.click(button);
 
     // Assert
-    expect(test()).toBeInTheDocument();
+    expect(screen.getByTestId(result)).toBeInTheDocument();
   });
 
   test("Show new assignment formulary from empty state", async () => {
     // Arrange
-    const mockHook = useEmpty;
+    const mockHook = mockUseEmpty;
     const assignments = <Assignments fetchHook={mockHook} />;
+    const result = "form-assignment";
+
     render(
       <>
         <Routes>
           <Route path="/" element={assignments} />
         </Routes>
         <Dialog />
-      </>
+      </>,
     );
 
     // Act
     const button = screen.getByRole("button", { name: /new assignment/i });
-    const test = () => screen.getByTestId("form-assignment");
+
     fireEvent.click(button);
 
     // Assert
-    expect(test()).toBeInTheDocument();
+    expect(screen.getByTestId(result)).toBeInTheDocument();
   });
 });

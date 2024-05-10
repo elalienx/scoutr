@@ -1,5 +1,5 @@
 // Project files
-import Color from "../../../types/Color";
+import Color from "types/Color";
 
 export function contactColors(value: number): Color {
   const colors: Color[] = ["gray", "green", "cyan", "blue", "red", "gray"];
@@ -13,14 +13,12 @@ export function relevanceColors(value: number): Color {
 }
 
 export function contactTitle(value: number): string {
-  // prettier-ignore
   const label = ["unlabeled", "interviewed", "scheduled", "talking", "declined", "contacted"];
 
   return label[value];
 }
 
 export function relevancetitle(value: number): string {
-  // prettier-ignore
   const label = ["unlabeled", "not relevant", "too junior", "maybe", "yes", "super yes"];
 
   return label[value];

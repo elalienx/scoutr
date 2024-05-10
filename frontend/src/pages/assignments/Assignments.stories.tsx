@@ -3,11 +3,11 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { BrowserRouter } from "react-router-dom";
 
 // Project files
+import mockUseEmpty from "scripts/fetch-hook/mocks/mockUseEmpty";
+import mockUseError from "scripts/fetch-hook/mocks/mockUseError";
+import mockUseLoading from "scripts/fetch-hook/mocks/mockUseLoading";
+import mockUseReadyAssignments from "scripts/fetch-hook/mocks/mockUseReadyAssignments";
 import Assignments from "./Assignments";
-import useReadyAssignments from "mocks/useReadyAssignments";
-import useLoading from "mocks/useLoading";
-import useError from "mocks/useError";
-import useEmpty from "mocks/useEmpty";
 
 const meta = {
   title: "Pages/Assignments",
@@ -29,24 +29,24 @@ type Story = StoryObj<typeof meta>;
 // Stories
 export const Default: Story = {
   args: {
-    fetchHook: useReadyAssignments,
+    fetchHook: mockUseReadyAssignments,
   },
 };
 
 export const Loading: Story = {
   args: {
-    fetchHook: useLoading,
+    fetchHook: mockUseLoading,
   },
 };
 
 export const Error: Story = {
   args: {
-    fetchHook: useError,
+    fetchHook: mockUseError,
   },
 };
 
 export const Empty: Story = {
   args: {
-    fetchHook: useEmpty,
+    fetchHook: mockUseEmpty,
   },
 };

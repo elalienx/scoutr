@@ -17,10 +17,7 @@ export default function StateEmpty({ component }: Props) {
 
   return (
     <div className="state-candidates">
-      <img
-        src={Illustration}
-        alt="A male a female construction engineers checking a blueprint"
-      />
+      <img src={Illustration} alt="A male a female construction engineers checking a blueprint" />
       <div className="content">
         <p>Welcome to a new Scoutr assignment.</p>
         <p>Click below to start adding candidates.</p>
