@@ -13,7 +13,7 @@ async function fetchService(uri: string, options: object): Promise<ResultsAPI> {
 
     result = { data, status, message };
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 
   return result;
