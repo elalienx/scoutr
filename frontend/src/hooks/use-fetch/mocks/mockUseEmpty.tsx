@@ -1,7 +1,7 @@
 // Project files
 import ResultsAPI from "types/ResultsAPI";
 
-export default function useEmpty(uri: string): ResultsAPI {
+export default function mockUseEmpty(uri: string): ResultsAPI {
   return {
     data: [],
     status: "empty",

@@ -2,7 +2,7 @@
 import { expect, test } from "vitest";
 
 // Project files
-import fetchAssignmentSlow from "./fetchAssignmentSlow";
+import mockFetchAssignmentSlow from "./mockFetchAssignmentSlow";
 import Assignment from "types/Assignment";
 import packageData from "scripts/forms/packageData";
 
@@ -23,7 +23,7 @@ test("Simulates returning a valid assignment after 10 seconds due to a slow conn
   };
 
   // Act
-  const test = await fetchAssignmentSlow(uri, options);
+  const test = await mockFetchAssignmentSlow(uri, options);
 
   // Assert
   expect(test.data).toEqual(result);

@@ -7,7 +7,7 @@ import Assignments from "./Assignments";
 import useReadyAssignments from "hooks/use-fetch/mocks/useReadyAssignments";
 import useLoading from "hooks/use-fetch/mocks/useLoading";
 import useError from "hooks/use-fetch/mocks/useError";
-import useEmpty from "hooks/use-fetch/mocks/useEmpty";
+import mockUseEmpty from "hooks/use-fetch/mocks/mockUseEmpty";
 
 const meta = {
   title: "Pages/Assignments",
@@ -47,6 +47,6 @@ export const Error: Story = {
 
 export const Empty: Story = {
   args: {
-    fetchHook: useEmpty,
+    fetchHook: mockUseEmpty,
   },
 };

@@ -1,7 +1,7 @@
 // Project files
 import ResultsAPI from "types/ResultsAPI";
 
-export default function useReadyCandidates(uri: string): ResultsAPI {
+export default function mockUseReadyCandidates(uri: string): ResultsAPI {
   return {
     data: [
       {

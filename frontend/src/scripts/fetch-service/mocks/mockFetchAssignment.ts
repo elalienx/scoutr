@@ -4,11 +4,13 @@ import FetchOptions from "types/FetchOptions";
 import ResultsAPI from "types/ResultsAPI";
 import Status from "types/Status";
 
-export default async function fetchAssignmentSlow(uri: string, init: FetchOptions): Promise<ResultsAPI> {
+export default async function mockFetchAssignment(uri: string, init: FetchOptions): Promise<ResultsAPI> {
   const body = JSON.parse(init.body);
   const errorInit = "Data send to the server is invalid. Check for typos or update the test if the endpoint changed.";
+  const errorURI = "URI is invalid. Check for typos or update the test if the endpoint changed.";
 
   // Safeguards
+  if (uri !== "/api/assignments") throw new Error(errorURI);
   if (!body.hasOwnProperty("assignment_name")) throw new Error(errorInit);
   if (!body.hasOwnProperty("company_name")) throw new Error(errorInit);
 
@@ -23,13 +25,5 @@ export default async function fetchAssignmentSlow(uri: string, init: FetchOption
   const message: string = "Created assignment #9999";
   const status: Status = "ready";
 
-  await waitForSeconds(5);
-
   return { data, message, status };
-}
-
-async function waitForSeconds(seconds: number) {
-  const secondToMiliseconds = 1000;
-
-  await new Promise((resolve) => setTimeout(resolve, seconds * secondToMiliseconds));
 }

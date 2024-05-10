@@ -71,25 +71,13 @@ export default function FormCandidates({ id, state }: Props) {
   }
 
   return (
-    <form
-      className="form form-candidates"
-      onSubmit={(event) => onSubmit(event)}
-    >
+    <form className="form form-candidates" onSubmit={(event) => onSubmit(event)}>
       <h2>Add Candidates</h2>
       <InputFields fields={fields} />
       <small className="info">{message}</small>
       <div className="buttons">
-        <Button
-          disabled={status === "loading"}
-          icon="circle-check"
-          label="Create"
-          primary
-        />
-        <Button
-          disabled={status === "loading"}
-          label="Dismiss"
-          onClick={() => closeDialog()}
-        />
+        <Button disabled={status === "loading"} icon="circle-check" label="Create" primary />
+        <Button disabled={status === "loading"} label="Dismiss" onClick={() => closeDialog()} />
       </div>
     </form>
   );

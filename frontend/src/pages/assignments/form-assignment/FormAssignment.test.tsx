@@ -4,8 +4,8 @@ import { expect, test } from "vitest";
 // Project files
 import { fireEvent, render, screen, waitFor } from "scripts/testing-library-globals";
 import FormAssignment from "./FormAssignment";
-import fetchAssignment from "scripts/fetch-service/mocks/fetchAssignment";
-import fetchError from "scripts/fetch-service/mocks/fetchError";
+import mockFetchAssignment from "scripts/fetch-service/mocks/mockFetchAssignment";
+import mockFetchError from "scripts/fetch-service/mocks/mockFetchError";
 
 test("Filling the formulary correctly submits the assignment", async () => {
   // Arrange
@@ -13,7 +13,7 @@ test("Filling the formulary correctly submits the assignment", async () => {
   const value2 = "Qualcom";
   const result = "Assignment created";
 
-  render(<FormAssignment fetchScript={fetchAssignment} />);
+  render(<FormAssignment fetchScript={mockFetchAssignment} />);
 
   // Act
   const formStatus = screen.getByTestId("status");
@@ -37,7 +37,7 @@ test("Getting an error from server shows error state", async () => {
   const value2 = "Qualcom";
   const result = "Could not create new assignment";
 
-  render(<FormAssignment fetchScript={fetchError} />);
+  render(<FormAssignment fetchScript={mockFetchError} />);
 
   // Act
   const formStatus = screen.getByTestId("status");

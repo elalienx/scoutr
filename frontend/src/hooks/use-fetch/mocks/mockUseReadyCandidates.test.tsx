@@ -2,7 +2,7 @@
 import { expect, test } from "vitest";
 
 // Project files
-import useReadyCandidates from "./useReadyCandidates";
+import mockUseReadyCandidates from "./mockUseReadyCandidates";
 import Status from "types/Status";
 import Candidate from "types/Candidate";
 
@@ -21,8 +21,7 @@ test("Expect return content if passed a valid url", () => {
       company_duration_in_months: 34,
       company_image_url:
         "https://media.licdn.com/dms/image/C4E0BAQHElmOdWZ-xZA/company-logo_100_100/0/1631374829245/novare_potential_logo?e=1721260800&v=beta&t=ZRqH0M228v3G2tsbV5UsqqbmXstjR5_GQ69QLuw0eR8",
-      notes:
-        "Highly qualified, likes to help people and stays up to date with the latest frontend development tools.",
+      notes: "Highly qualified, likes to help people and stays up to date with the latest frontend development tools.",
       relevance: 3,
       contact_status: 4,
       contact_date: "2024-04-02 21:00:30.610279",
@@ -70,7 +69,7 @@ test("Expect return content if passed a valid url", () => {
   ];
 
   // Act
-  const test = useReadyCandidates(uri);
+  const test = mockUseReadyCandidates(uri);
 
   // Assert
   expect(test.status).toEqual(resultStatus);

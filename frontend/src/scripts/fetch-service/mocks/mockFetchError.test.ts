@@ -2,7 +2,7 @@
 import { expect, test } from "vitest";
 
 // Project files
-import fetchError from "./fetchError";
+import mockFetchError from "./mockFetchError";
 import Status from "types/Status";
 import packageData from "scripts/forms/packageData";
 
@@ -14,7 +14,7 @@ test("Returns status error when called", async () => {
   const result: Status = "error";
 
   // Act
-  const test = await fetchError(uri, options);
+  const test = await mockFetchError(uri, options);
 
   // Assert
   expect(test.status).toBe(result);

@@ -2,7 +2,7 @@
 import { expect, test } from "vitest";
 
 // Project files
-import fetchAssignment from "./fetchAssignment";
+import mockFetchAssignment from "./mockFetchAssignment";
 import Assignment from "types/Assignment";
 import packageData from "scripts/forms/packageData";
 
@@ -17,7 +17,7 @@ test("Show error if URI is not correct", () => {
   const result = "URI is invalid. Check for typos or update the test if the endpoint changed.";
 
   // Act
-  const test = fetchAssignment(uri, options);
+  const test = mockFetchAssignment(uri, options);
 
   // Assert
   expect(test).rejects.toThrowError(result);
@@ -34,7 +34,7 @@ test("Show error if form data is not valid", () => {
   const result = "Data send to the server is invalid. Check for typos or update the test if the endpoint changed.";
 
   // Act
-  const test = fetchAssignment(uri, options);
+  const test = mockFetchAssignment(uri, options);
 
   // Assert
   expect(test).rejects.toThrowError(result);
@@ -57,7 +57,7 @@ test("Returns a valid assignment with ID if everything is correct", async () => 
   };
 
   // Act
-  const test = await fetchAssignment(uri, options);
+  const test = await mockFetchAssignment(uri, options);
 
   // Assert
   expect(test.data).toEqual(result);

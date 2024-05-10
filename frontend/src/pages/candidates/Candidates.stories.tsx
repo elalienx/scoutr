@@ -6,7 +6,7 @@ import { MemoryRouter, Route, Routes } from "react-router-dom";
 import Candidates from "./Candidates";
 import useLoading from "hooks/use-fetch/mocks/useLoading";
 import useError from "hooks/use-fetch/mocks/useError";
-import useEmpty from "hooks/use-fetch/mocks/useEmpty";
+import mockUseEmpty from "hooks/use-fetch/mocks/mockUseEmpty";
 import useReadyCandidates from "hooks/use-fetch/mocks/useReadyCandidates";
 
 const meta = {
@@ -49,6 +49,6 @@ export const Error: Story = {
 
 export const Empty: Story = {
   args: {
-    fetchHook: useEmpty,
+    fetchHook: mockUseEmpty,
   },
 };
