@@ -39,8 +39,24 @@ export default function FormAssignment({ fetchScript }: Props) {
       const formData = gatherFormData(event.currentTarget);
       const fetchOptions = packageData("POST", formData);
       const result = await fetchScript(uri, fetchOptions);
+      // here we should go to onConnected or onServerResponse, because that is what we know at this stage,
+      /**
+       * Here we should go to a method called onResponse() or onResult(),
+       * because that's what we know at this stage, that we got a ResultAPI
+       * from the server, but does not know if is positive or negative.
+       */
       onSuccess(result);
     } catch (error: any) {
+      /**
+       * This one hanldes the scenario were we could not establish a connection
+       * to the server.
+       *
+       * This can be becuase:
+       * 1. There is no internet
+       * 2. The URI is invalid or does not exist anymore in the server.
+       * 3. The formulary data is invalid.
+       * 4. The formualry data could not be packaged.
+       *  */
       onFailure(error);
     }
   }
