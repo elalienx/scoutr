@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react";
 // Project files
 import Button from "components/button/Button";
 import InputFields from "components/input-fields/InputFields";
+import FormStatus from "components/form-status/FormStatus";
 import gatherFormData from "scripts/forms/gatherFormData";
 import packageData from "scripts/forms/packageData";
 import textAreaToArray from "scripts/forms/textAreaToArray";
@@ -15,6 +16,7 @@ import Status from "types/Status";
 import fields from "./fields";
 import "styles/components/form.css";
 import "./form-candidates.css";
+import waitForSeconds from "scripts/waitForSeconds";
 
 interface Props {
   /** The ID of the assignment to parse. */
@@ -60,7 +62,7 @@ export default function FormCandidates({ id, state, fetchScript }: Props) {
   function onLoading(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setStatus("loading");
-    setMessage("🕒 Scaning LinkedIn profiles");
+    setMessage("Scaning LinkedIn profiles");
   }
 
   function onResult(result: ResultsAPI) {
@@ -70,8 +72,11 @@ export default function FormCandidates({ id, state, fetchScript }: Props) {
     else onSuccess(data);
   }
 
-  function onSuccess(newCandidates: Candidate[]) {
-    setMessage("✅ LinkedIn profiles scanned");
+  async function onSuccess(newCandidates: Candidate[]) {
+    setStatus("ready");
+    setMessage("LinkedIn profiles scanned");
+
+    await waitForSeconds(0.5);
     setCandidates([...candidates, ...newCandidates]);
     closeDialog();
   }
@@ -79,16 +84,14 @@ export default function FormCandidates({ id, state, fetchScript }: Props) {
   function onFailure(error: Error | unknown) {
     console.error(error);
     setStatus("error");
-    setMessage("🚨 Could not scan LinkedIn profiles");
+    setMessage("Could not scan LinkedIn profiles");
   }
 
   return (
     <form className="form form-candidates" onSubmit={(event) => onSubmit(event)}>
       <h2>Add Candidates</h2>
       <InputFields fields={fields} />
-      <small data-testid="status" className="info">
-        {message}
-      </small>
+      <FormStatus status={status} message={message} />
       <div className="buttons">
         <Button disabled={status === "loading"} icon="circle-check" label="Create" primary />
         <Button disabled={status === "loading"} label="Dismiss" onClick={() => closeDialog()} />

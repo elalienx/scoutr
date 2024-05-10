@@ -1,4 +1,5 @@
 // Project files
+import waitForSeconds from "scripts/waitForSeconds";
 import Assignment from "types/Assignment";
 import FetchOptions from "types/FetchOptions";
 import ResultsAPI from "types/ResultsAPI";
@@ -26,10 +27,4 @@ export default async function mockFetchAssignmentSlow(uri: string, init: FetchOp
   await waitForSeconds(3);
 
   return { data, message, status };
-}
-
-async function waitForSeconds(seconds: number) {
-  const secondToMiliseconds = 1000;
-
-  await new Promise((resolve) => setTimeout(resolve, seconds * secondToMiliseconds));
 }
