@@ -1,7 +1,7 @@
 // Project files
 import Color from "types/Color";
+import "styles/components/colors.css";
 import "./badge.css";
-import "./colors.css";
 
 interface Props {
   /** What color to use. */
