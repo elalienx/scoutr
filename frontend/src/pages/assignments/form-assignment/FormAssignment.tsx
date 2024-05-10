@@ -16,7 +16,7 @@ import fields from "./fields";
 import "styles/components/form.css";
 
 interface Props {
-  /** A script to fetch data. The return complies with the ResultsAPI interface. */
+  /** A script to submit data. The return complies with the ResultsAPI interface. */
   fetchScript: (uri: string, init: FetchOptions) => Promise<ResultsAPI>;
 }
 
@@ -42,9 +42,15 @@ export default function FormAssignment({ fetchScript }: Props) {
       const result = await fetchScript(uri, fetchOptions);
 
       onResult(result);
-    } catch (error: any) {
+    } catch (error: unknown) {
       onFailure(error);
     }
+  }
+
+  function onLoading(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatus("loading");
+    setMessage("🕒 Creating new assignment");
   }
 
   function onResult(result: ResultsAPI) {
@@ -54,20 +60,14 @@ export default function FormAssignment({ fetchScript }: Props) {
     else onSuccess(data);
   }
 
-  function onLoading(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setStatus("loading");
-    setMessage("🕒 Creating new assignment");
-  }
-
-  function onSuccess(assignment: Assignment) {
+  function onSuccess(newAssignment: Assignment) {
     setStatus("ready");
     setMessage("✅ Assignment created");
-    navigate(`/candidates/${assignment.id}`);
+    navigate(`/candidates/${newAssignment.id}`);
     closeDialog();
   }
 
-  function onFailure(error: Error | string) {
+  function onFailure(error: Error | unknown) {
     console.error(error);
     setStatus("error");
     setMessage("🚨 Could not create new assignment");
