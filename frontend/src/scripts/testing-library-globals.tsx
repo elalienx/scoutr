@@ -10,7 +10,7 @@ import "scripts/fontAwesome";
 import "styles/style.css";
 
 /**
- * Support the new HTML Dialog element as JSDom,
+ * Adds support the new HTML Dialog element as JSDom,
  * Testing Library's rendering engine,
  * doesn't support it natively.
  */
