@@ -11,7 +11,7 @@ import gatherFormData from "scripts/forms/gatherFormData";
 import packageData from "scripts/forms/packageData";
 import Assignment from "types/Assignment";
 import FetchOptions from "types/FetchOptions";
-import ResultsAPI from "types/ResultsAPI";
+import ResultsAPI from "types/ResultAPI";
 import Status from "types/Status";
 import fields from "./fields";
 import "styles/components/form.css";

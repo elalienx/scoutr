@@ -11,7 +11,7 @@ import textAreaToArray from "scripts/forms/textAreaToArray";
 import useDialog from "state/DialogContextAPI";
 import Candidate from "types/Candidate";
 import FetchOptions from "types/FetchOptions";
-import ResultsAPI from "types/ResultsAPI";
+import ResultsAPI from "types/ResultAPI";
 import Status from "types/Status";
 import fields from "./fields";
 import "styles/components/form.css";

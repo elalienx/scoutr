@@ -4,11 +4,12 @@ import "styles/components/input-field.css";
 
 /** Input control to allow a single line of text. */
 export default function InputText(item: InputField) {
-  const { id, label, placeholder, required = true, defaultValue } = item;
+  const { id, label, placeholder, required = true, defaultValue, description } = item;
 
   return (
     <label className="input-field" data-testid="input-text">
       <span className="label">{label}</span>
+      {description && <small className="description">{description}</small>}
       <input
         aria-label={id}
         className="input"

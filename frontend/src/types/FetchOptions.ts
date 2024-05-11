@@ -1,5 +1,5 @@
 // Project files
-import FetchMethods from "./FetchMethods";
+import FetchMethods from "./FetchMethod";
 
 export default interface FetchOptions {
   /** The headers of the REST API request. Scoutr only uses content in JSON format. */
