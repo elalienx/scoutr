@@ -83,13 +83,13 @@ describe("Empty and Ready state open new assigment formulary", () => {
   test("Show new assignment formulary from ready state", async () => {
     // Arrange
     const mockHook = mockUseReadyAssignments;
-    const assignments = <Assignments fetchHook={mockHook} />;
+    const page = <Assignments fetchHook={mockHook} />;
     const result = "form-assignment";
 
     render(
       <>
         <Routes>
-          <Route path="/" element={assignments} />
+          <Route path="/" element={page} />
         </Routes>
         <Dialog />
       </>,
@@ -107,13 +107,13 @@ describe("Empty and Ready state open new assigment formulary", () => {
   test("Show new assignment formulary from empty state", async () => {
     // Arrange
     const mockHook = mockUseEmpty;
-    const assignments = <Assignments fetchHook={mockHook} />;
+    const page = <Assignments fetchHook={mockHook} />;
     const result = "form-assignment";
 
     render(
       <>
         <Routes>
-          <Route path="/" element={assignments} />
+          <Route path="/" element={page} />
         </Routes>
         <Dialog />
       </>,
