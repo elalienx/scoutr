@@ -11,14 +11,14 @@ import Candidate from "types/Candidate";
 import Status from "types/Status";
 
 // Page files
+import fetchService from "scripts/fetch-service/fetchService";
+import contactedCandidates from "scripts/response-rate/contactedCandidates";
+import calculatePercentage from "scripts/response-rate/calculatePercentage";
 import FormCandidates from "./form-candidates/FormCandidates";
 import StateEmpty from "./state-empty/StateEmpty";
 import StateError from "./state-error/StateError";
 import Table from "./table/Table";
 import "./candidates.css";
-import fetchService from "scripts/fetch-service/fetchService";
-import contactedCandidates from "scripts/response-rate/contactedCandidates";
-import calculatePercentage from "scripts/response-rate/calculatePercentage";
 
 interface Props {
   /** A React custom hook to fetch data. The return complies with the ResultsAPI interface. */
