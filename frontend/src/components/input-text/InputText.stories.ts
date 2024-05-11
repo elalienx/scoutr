@@ -7,7 +7,7 @@ import InputText from "./InputText";
 const meta = {
   title: "Input fields/Input Text",
   component: InputText,
-  parameters: { layout: "centered" },
+  parameters: { layout: "centered", controls: { exclude: "type" } },
   tags: ["autodocs"],
 } satisfies Meta<typeof InputText>;
 
@@ -17,20 +17,22 @@ type Story = StoryObj<typeof meta>;
 // Stories
 export const Default: Story = {
   args: {
+    id: "candidate_name",
+    type: "input-text",
     label: "Name",
     placeholder: "Eduardo Alvarez",
     required: true,
     defaultValue: "Cecilia Nowak",
-    name: "candidate_name",
   },
 };
 
 export const Empty: Story = {
   args: {
+    id: "candidate_name",
+    type: "input-text",
     label: "Name",
     placeholder: "Eduardo Alvarez",
     required: true,
     defaultValue: "",
-    name: "candidate_name",
   },
 };

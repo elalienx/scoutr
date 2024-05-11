@@ -16,4 +16,7 @@ export default interface InputField {
 
   /** Determines if is an obligatory field. Defaults to true. */
   required?: boolean;
+
+  /** Additional instructiosn for the user. Example: The password must be minimun 8 character long. */
+  description?: string;
 }

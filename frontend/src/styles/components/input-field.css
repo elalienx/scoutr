@@ -20,4 +20,9 @@
     font-weight: var(--font-weight-bold);
     margin-bottom: var(--space-small);
   }
+
+  .description {
+    margin-bottom: var(--space-small);
+    color: var(--color-gray);
+  }
 }
