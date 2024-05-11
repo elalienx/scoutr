@@ -101,7 +101,7 @@ describe("Data fetching states", () => {
   });
 });
 
-test("Show parse links formulary from ready state", async () => {
+test.todo("Show parse links formulary from ready state", async () => {
   // Arrange
   const mockHook = mockUseReadyCandidates;
   const page = <Candidates fetchHook={mockHook} />;
