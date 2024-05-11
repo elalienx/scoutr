@@ -1,6 +1,5 @@
 // Node modules
 import React, { ReactElement } from "react";
-import { MemoryRouter, Routes } from "react-router-dom";
 import { beforeAll, vi } from "vitest";
 import { render, RenderOptions } from "@testing-library/react";
 
@@ -22,12 +21,16 @@ beforeAll(() => {
 });
 
 // Properties
+/**
+ * Note:
+ * The reason that we only automatize the <DialogProvider/> and <Dialog/>
+ * and not the <MemoryRouter/> and the <Routes/> is because there is a test
+ * on Candidate pages about sending the wrong initialEntries to <MemoryRouter/>
+ */
 const AllTheProviders = ({ children }: { children: React.ReactNode }) => {
   return (
     <DialogProvider>
-      <MemoryRouter initialEntries={["/path/1"]}>
-        <Routes>{children}</Routes>
-      </MemoryRouter>
+      {children}
       <Dialog />
     </DialogProvider>
   );

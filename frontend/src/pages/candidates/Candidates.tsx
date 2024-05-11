@@ -1,6 +1,6 @@
 // Node modules
-import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 // Project files
 import Loader from "components/loader/Loader";
@@ -19,6 +19,7 @@ import StateEmpty from "./state-empty/StateEmpty";
 import StateError from "./state-error/StateError";
 import "./candidates.css";
 import Content from "./content/Content";
+import Page404 from "pages/page404/Page404";
 
 interface Props {
   /** A React custom hook to fetch data. The return complies with the ResultsAPI interface. */
@@ -58,7 +59,7 @@ export default function Candidates({ fetchHook }: Props) {
   const Form = <FormCandidates fetchScript={fetchService} id={id} state={[data, setData]} />;
 
   // Safeguard
-  if (id === -1) return <StateError />;
+  if (id === -1) return <Page404 />;
 
   return (
     <div id="candidates">

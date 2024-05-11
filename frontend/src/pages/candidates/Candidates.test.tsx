@@ -1,6 +1,6 @@
 // Node modules
 import { describe, expect, test } from "vitest";
-import { Route } from "react-router-dom";
+import { MemoryRouter, Route, Routes } from "react-router-dom";
 
 // Project files
 import { fireEvent, render, screen } from "scripts/testing-library/candidates-page-globals";
@@ -10,6 +10,56 @@ import Candidates from "./Candidates";
 import mockUseEmpty from "scripts/fetch-hook/mocks/mockUseEmpty";
 import mockUseReadyCandidates from "scripts/fetch-hook/mocks/mockUseReadyCandidates";
 
+describe("Wrong assigment_id passed on the URL", () => {
+  test("Not passing an assignment_id in the URL goes to the 404 page", () => {
+    // Arrange
+    const mockHook = mockUseError;
+    const page = <Candidates fetchHook={mockHook} />;
+    const page404 = <div>404 - Page not found</div>;
+    const assignment_id = ""; // empty on purpose
+    const result = /404 - Page not found/i;
+
+    render(
+      <MemoryRouter initialEntries={[`/path/${assignment_id}`]}>
+        <Routes>
+          <Route path="*" element={page404} />
+          <Route path="/path/:assignment_id" element={page} />
+        </Routes>
+      </MemoryRouter>,
+    );
+
+    // Act
+    const test = screen.queryByText(result);
+
+    // Assert
+    expect(test).toBeInTheDocument();
+  });
+
+  test("Passing a wrong value to assignment_id goes to the 404 page", () => {
+    // Arrange
+    const mockHook = mockUseError;
+    const page = <Candidates fetchHook={mockHook} />;
+    const page404 = <div>404 - Page not found</div>;
+    const assignment_id = "hello"; // a word instead of number on purpose
+    const result = /404 - Page not found/i;
+
+    render(
+      <MemoryRouter initialEntries={[`/path/${assignment_id}`]}>
+        <Routes>
+          <Route path="*" element={page404} />
+          <Route path="/path/:assignment_id" element={page} />
+        </Routes>
+      </MemoryRouter>,
+    );
+
+    // Act
+    const test = screen.queryByText(result);
+
+    // Assert
+    expect(test).toBeInTheDocument();
+  });
+});
+
 describe("Data fetching states", () => {
   test("Loading state", () => {
     // Arrange
@@ -17,7 +67,13 @@ describe("Data fetching states", () => {
     const page = <Candidates fetchHook={mookHook} />;
     const result = /loading/i;
 
-    render(<Route path="/path/:assignment_id" element={page} />);
+    render(
+      <MemoryRouter initialEntries={["/path/1"]}>
+        <Routes>
+          <Route path="/path/:assignment_id" element={page} />
+        </Routes>
+      </MemoryRouter>,
+    );
 
     // Act
     const test = screen.queryByText(result);
@@ -32,7 +88,13 @@ describe("Data fetching states", () => {
     const page = <Candidates fetchHook={mockHook} />;
     const result = /The office WIFI strikes again/i;
 
-    render(<Route path="/path/:assignment_id" element={page} />);
+    render(
+      <MemoryRouter initialEntries={["/path/1"]}>
+        <Routes>
+          <Route path="/path/:assignment_id" element={page} />
+        </Routes>
+      </MemoryRouter>,
+    );
 
     // Act
     const test = screen.queryByText(result);
@@ -47,7 +109,13 @@ describe("Data fetching states", () => {
     const page = <Candidates fetchHook={mockHook} />;
     const result = /Click below to start adding candidates./i;
 
-    render(<Route path="/path/:assignment_id" element={page} />);
+    render(
+      <MemoryRouter initialEntries={["/path/1"]}>
+        <Routes>
+          <Route path="/path/:assignment_id" element={page} />
+        </Routes>
+      </MemoryRouter>,
+    );
 
     // Act
     const test = screen.queryByText(result);
@@ -61,7 +129,13 @@ describe("Data fetching states", () => {
     const mockHook = mockUseReadyCandidates;
     const page = <Candidates fetchHook={mockHook} />;
 
-    render(<Route path="/path/:assignment_id" element={page} />);
+    render(
+      <MemoryRouter initialEntries={["/path/1"]}>
+        <Routes>
+          <Route path="/path/:assignment_id" element={page} />
+        </Routes>
+      </MemoryRouter>,
+    );
 
     // Act
     const test1 = screen.queryByText("Eduardo Alvarez Nowak");
@@ -82,7 +156,13 @@ describe("Empty and Ready state open new assigment formulary", () => {
     const page = <Candidates fetchHook={mockHook} />;
     const result = "form-candidates";
 
-    render(<Route path="/path/:assignment_id" element={page} />);
+    render(
+      <MemoryRouter initialEntries={["/path/1"]}>
+        <Routes>
+          <Route path="/path/:assignment_id" element={page} />
+        </Routes>
+      </MemoryRouter>,
+    );
 
     // Act
     const button = screen.getByRole("button", { name: /add candidates/i });
@@ -99,7 +179,13 @@ describe("Empty and Ready state open new assigment formulary", () => {
     const page = <Candidates fetchHook={mockHook} />;
     const result = "form-candidates";
 
-    render(<Route path="/path/:assignment_id" element={page} />);
+    render(
+      <MemoryRouter initialEntries={["/path/1"]}>
+        <Routes>
+          <Route path="/path/:assignment_id" element={page} />
+        </Routes>
+      </MemoryRouter>,
+    );
 
     // Act
     const button = screen.getByRole("button", { name: /add candidates/i });
