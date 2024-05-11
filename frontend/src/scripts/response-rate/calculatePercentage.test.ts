@@ -4,10 +4,23 @@ import { expect, test } from "vitest";
 // Project files
 import calculatePercentage from "./calculatePercentage";
 
-test("Two empty values return a response rate of 0", () => {
+test("Passing empty total return a response rate of -1 as there is no percentage to calculate", () => {
   // Arrange
   const valueA = 0;
   const valueB = 0;
+  const result = -1;
+
+  // Act
+  const test = calculatePercentage(valueA, valueB);
+
+  // Assert
+  expect(test).toBe(result);
+});
+
+test("Passing empty ammount return a response rate of 0", () => {
+  // Arrange
+  const valueA = 0;
+  const valueB = 100;
   const result = 0;
 
   // Act
