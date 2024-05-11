@@ -88,7 +88,11 @@ export default function FormCandidates({ id, state, fetchScript }: Props) {
   }
 
   return (
-    <form className="form form-candidates" onSubmit={(event) => onSubmit(event)}>
+    <form
+      data-testid="form-candidates"
+      className="form form-candidates"
+      onSubmit={(event) => onSubmit(event)}
+    >
       <h2>Add Candidates</h2>
       <InputFields fields={fields} />
       <FormStatus status={status} message={message} />

@@ -36,9 +36,9 @@ export default function Candidates({ fetchHook }: Props) {
 
   // Local state
   const uri = "/api/candidates/" + assignment_id;
-  const { data: hookData, status: hookStatus } = fetchHook(uri);
-  const [data, setData] = useState<Candidate[]>([]);
-  const [status, setStatus] = useState<Status>("loading");
+  const { data: serverData, status: serverStatus } = fetchHook(uri);
+  const [data, setData] = useState(serverData);
+  const [status, setStatus] = useState(serverStatus);
 
   // Properties
   const id = Number(assignment_id) || -1;
@@ -46,8 +46,10 @@ export default function Candidates({ fetchHook }: Props) {
   const response_rate = calculatePercentage(contacted.length, data.length);
 
   // Methods
-  useEffect(() => setData(hookData), [hookData]);
-  useEffect(() => setStatus(hookStatus), [hookStatus]);
+  useEffect(() => {
+    setData(serverData);
+    setStatus(serverStatus);
+  }, [serverData]);
   useEffect(() => {
     if (data.length > 0) setStatus("ready");
   }, [data]);
