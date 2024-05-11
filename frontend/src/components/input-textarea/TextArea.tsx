@@ -17,7 +17,7 @@ export default function TextArea(item: InputField) {
         name={id}
         placeholder={placeholder}
         required={required}
-        rows={10}
+        rows={8}
       />
     </label>
   );
