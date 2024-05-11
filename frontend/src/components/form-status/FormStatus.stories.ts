@@ -15,13 +15,6 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // Stories
-export const Hidden: Story = {
-  args: {
-    status: "empty",
-    message: "",
-  },
-};
-
 export const Loading: Story = {
   args: {
     status: "loading",
@@ -40,5 +33,12 @@ export const Error: Story = {
   args: {
     status: "error",
     message: "Cannot create assignment",
+  },
+};
+
+export const Hidden: Story = {
+  args: {
+    status: "empty",
+    message: "",
   },
 };

@@ -16,7 +16,7 @@ export default function Table(item: Props) {
 
   // Components
   const Headers = headers.map((item, index) => <th key={index}>{item}</th>);
-  const Rows = candidates.map((item) => <RowCandidate key={item.id} {...item} />);
+  const Rows = candidates.map((item, index) => <RowCandidate key={item.id} candidate={item} index={index} />);
 
   return (
     <table className="table">

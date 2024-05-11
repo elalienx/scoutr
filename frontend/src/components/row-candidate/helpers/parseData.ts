@@ -4,9 +4,9 @@ import Candidate from "types/Candidate";
 import { contactColors, contactTitle } from "./meta-data";
 import { relevanceColors, relevancetitle } from "./meta-data";
 
-export default function parseData(item: Candidate) {
+export default function parseData(item: Candidate, index: number) {
   const header = {
-    id: item.id,
+    id: index,
     candidate_image_url: item.candidate_image_url,
     company_image_url: item.company_image_url,
   };

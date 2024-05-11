@@ -13,6 +13,9 @@ const meta = {
   title: "Components/Button",
   component: Button,
   parameters: { layout: "centered" },
+  argTypes: {
+    icon_prefix: { control: { disable: true } },
+  },
   tags: ["autodocs"],
 } satisfies Meta<typeof Button>;
 
@@ -25,6 +28,8 @@ export const Primary: Story = {
     icon: icon,
     label: label,
     primary: true,
+    big: false,
+    disabled: false,
   },
 };
 

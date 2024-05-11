@@ -7,12 +7,21 @@ import Candidate from "types/Candidate";
 import parseData from "./helpers/parseData";
 import "./row-candidate.css";
 
+interface Props {
+  /** The candidate to present */
+  candidate: Candidate;
+
+  /** The row number. Note, we don't use the candidate.id because all assignments save the candidates a single table so the ID do not have a sequence for each assignment */
+  index: number;
+}
+
 /** A row containing the complete candidate information. */
-export default function RowCandidate(item: Candidate) {
-  const { id, notes, relevance, contact_status } = item;
+export default function RowCandidate({ candidate, index }: Props) {
+  const { notes, relevance, contact_status } = candidate;
 
   // Properties
-  const parsedData = parseData(item);
+  const rowNumber = index + 1;
+  const parsedData = parseData(candidate, rowNumber);
 
   return (
     <tr className="row-candidate">
@@ -20,7 +29,7 @@ export default function RowCandidate(item: Candidate) {
         <HeaderCandidate {...parsedData.header} />
       </td>
       <td className="id column-small" data-label="Id">
-        {id}
+        {rowNumber}
       </td>
       <td className="candidate column-big" data-label="Candidate">
         <ItemCandidate {...parsedData.candidate} />
