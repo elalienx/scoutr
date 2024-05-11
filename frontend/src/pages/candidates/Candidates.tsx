@@ -17,6 +17,8 @@ import StateError from "./state-error/StateError";
 import Table from "./table/Table";
 import "./candidates.css";
 import fetchService from "scripts/fetch-service/fetchService";
+import contactedCandidates from "scripts/response-rate/contactedCandidates";
+import calculatePercentage from "scripts/response-rate/calculatePercentage";
 
 interface Props {
   /** A React custom hook to fetch data. The return complies with the ResultsAPI interface. */
@@ -42,8 +44,8 @@ export default function Candidates({ fetchHook }: Props) {
   // Properties
   const id = Number(assignment_id) || -1;
   const sortedById = data.sort((a, b) => a.id - b.id);
-  const contacted = sortedById.filter((item) => item.contact_status > 0);
-  const response_rate = Math.round(contacted.length / data.length) * 100;
+  const contacted = contactedCandidates(sortedById);
+  const response_rate = calculatePercentage(contacted.length, sortedById.length);
 
   // Methods
   useEffect(() => setData(hookData), [hookData]);
