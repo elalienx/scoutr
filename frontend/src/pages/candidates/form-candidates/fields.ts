@@ -9,6 +9,7 @@ const fields: InputField[] = [
     placeholder: "www.linkedin.com/in/eduardo-alvarez-nowak",
     defaultValue: "",
     required: true,
+    description: "Only paste links and delete any other type of text.",
   },
 ];
 
