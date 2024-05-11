@@ -11,8 +11,8 @@ import mockUseReadyAssignments from "scripts/fetch-hook/mocks/mockUseReadyAssign
 import { fireEvent, render, screen } from "scripts/testing-library-globals";
 import Assignments from "./Assignments";
 
-describe("Data loading state", () => {
-  test("Expect loading state", () => {
+describe("Data fetching states", () => {
+  test("Loading state", () => {
     // Arrange
     const mockHook = mockUseLoading;
     const result = /loading.../i;
@@ -26,7 +26,7 @@ describe("Data loading state", () => {
     expect(test).toBeInTheDocument();
   });
 
-  test("Expect error state", () => {
+  test("Error state", () => {
     // Arrange
     const mockHook = mockUseError;
     const result = /Oh no! We could not load any assigment./i;
@@ -40,7 +40,7 @@ describe("Data loading state", () => {
     expect(test).toBeInTheDocument();
   });
 
-  test("Expect emtpy state", () => {
+  test("Emtpy state", () => {
     // Arrange
     const mockHook = mockUseEmpty;
     const result = /Seems like you have not created any assigments yet./i;
@@ -54,7 +54,7 @@ describe("Data loading state", () => {
     expect(test).toBeInTheDocument();
   });
 
-  test("Expect ready state", () => {
+  test("Ready (normal) state", () => {
     // Arrange
     const mockHook = mockUseReadyAssignments;
     const assignments = <Assignments fetchHook={mockHook} />;
