@@ -1,16 +1,64 @@
 // Node modules
 import { describe, expect, test } from "vitest";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
-import { fireEvent, render, screen } from "@testing-library/react";
 
 // Project files
-import Dialog from "components/dialog/Dialog";
+import { fireEvent, render, screen } from "scripts/testing-library/candidates-page-globals";
 import mockUseLoading from "scripts/fetch-hook/mocks/mockUseLoading";
 import mockUseError from "scripts/fetch-hook/mocks/mockUseError";
 import Candidates from "./Candidates";
 import mockUseEmpty from "scripts/fetch-hook/mocks/mockUseEmpty";
 import mockUseReadyCandidates from "scripts/fetch-hook/mocks/mockUseReadyCandidates";
-import { DialogProvider } from "state/DialogContextAPI";
+
+describe("Wrong assigment_id passed on the URL", () => {
+  test("Not passing an assignment_id in the URL goes to the 404 page", () => {
+    // Arrange
+    const mockHook = mockUseError;
+    const page = <Candidates fetchHook={mockHook} />;
+    const page404 = <div>404 - Page not found</div>;
+    const assignment_id = ""; // empty on purpose
+    const result = /404 - Page not found/i;
+
+    render(
+      <MemoryRouter initialEntries={[`/path/${assignment_id}`]}>
+        <Routes>
+          <Route path="*" element={page404} />
+          <Route path="/path/:assignment_id" element={page} />
+        </Routes>
+      </MemoryRouter>,
+    );
+
+    // Act
+    const test = screen.queryByText(result);
+
+    // Assert
+    expect(test).toBeInTheDocument();
+  });
+
+  test("Passing a wrong value to assignment_id goes to the 404 page", () => {
+    // Arrange
+    const mockHook = mockUseError;
+    const page = <Candidates fetchHook={mockHook} />;
+    const page404 = <div>404 - Page not found</div>;
+    const assignment_id = "hello"; // a word instead of number on purpose
+    const result = /404 - Page not found/i;
+
+    render(
+      <MemoryRouter initialEntries={[`/path/${assignment_id}`]}>
+        <Routes>
+          <Route path="*" element={page404} />
+          <Route path="/path/:assignment_id" element={page} />
+        </Routes>
+      </MemoryRouter>,
+    );
+
+    // Act
+    const test = screen.queryByText(result);
+
+    // Assert
+    expect(test).toBeInTheDocument();
+  });
+});
 
 describe("Data fetching states", () => {
   test("Loading state", () => {
@@ -101,28 +149,50 @@ describe("Data fetching states", () => {
   });
 });
 
-test.todo("Show parse links formulary from ready state", async () => {
-  // Arrange
-  const mockHook = mockUseReadyCandidates;
-  const page = <Candidates fetchHook={mockHook} />;
-  const result = "form-candidates";
+describe("Empty and Ready state open new assigment formulary", () => {
+  test("Show parse links formulary from ready state", async () => {
+    // Arrange
+    const mockHook = mockUseReadyCandidates;
+    const page = <Candidates fetchHook={mockHook} />;
+    const result = "form-candidates";
 
-  render(
-    <DialogProvider>
+    render(
       <MemoryRouter initialEntries={["/path/1"]}>
         <Routes>
           <Route path="/path/:assignment_id" element={page} />
         </Routes>
-        <Dialog />
-      </MemoryRouter>
-    </DialogProvider>,
-  );
+      </MemoryRouter>,
+    );
 
-  // Act
-  const button = screen.getByRole("button", { name: /add candidates/i });
+    // Act
+    const button = screen.getByRole("button", { name: /add candidates/i });
 
-  fireEvent.click(button);
+    fireEvent.click(button);
 
-  // Assert
-  expect(screen.getByTestId(result)).toBeInTheDocument();
+    // Assert
+    expect(screen.getByTestId(result)).toBeInTheDocument();
+  });
+
+  test("Show parse links formulary from empty state", async () => {
+    // Arrange
+    const mockHook = mockUseEmpty;
+    const page = <Candidates fetchHook={mockHook} />;
+    const result = "form-candidates";
+
+    render(
+      <MemoryRouter initialEntries={["/path/1"]}>
+        <Routes>
+          <Route path="/path/:assignment_id" element={page} />
+        </Routes>
+      </MemoryRouter>,
+    );
+
+    // Act
+    const button = screen.getByRole("button", { name: /add candidates/i });
+
+    fireEvent.click(button);
+
+    // Assert
+    expect(screen.getByTestId(result)).toBeInTheDocument();
+  });
 });

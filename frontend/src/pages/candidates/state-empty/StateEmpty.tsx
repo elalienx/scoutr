@@ -26,7 +26,7 @@ export default function StateEmpty({ component }: Props) {
         big
         icon_prefix="fab"
         icon="linkedin"
-        label="New assignment"
+        label="Add candidates"
         onClick={() => showDialog(component)}
         primary
       />

@@ -1,6 +1,6 @@
 // Node modules
-import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 // Project files
 import Loader from "components/loader/Loader";
@@ -8,6 +8,7 @@ import NavigationBar from "components/navigation-bar/NavigationBar";
 import fetchService from "scripts/fetch-service/fetchService";
 import Candidate from "types/Candidate";
 import Status from "types/Status";
+import Page404 from "pages/page-404/Page404";
 
 // -- Refactor: this must belong to page files
 import contactedCandidates from "scripts/response-rate/contactedCandidates";
@@ -58,7 +59,7 @@ export default function Candidates({ fetchHook }: Props) {
   const Form = <FormCandidates fetchScript={fetchService} id={id} state={[data, setData]} />;
 
   // Safeguard
-  if (id === -1) return <StateError />;
+  if (id === -1) return <Page404 />;
 
   return (
     <div id="candidates">
