@@ -2,7 +2,12 @@
 import { expect, test } from "vitest";
 
 // Project files
-import { fireEvent, render, screen, waitFor } from "scripts/testing-library-globals";
+import {
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from "scripts/testing-library/assignments-page-globals";
 import mockFetchError from "scripts/fetch-service/mocks/mockFetchError";
 import mockFetchOneCandidate from "scripts/fetch-service/mocks/mockFetchOneCandidate";
 import Candidate from "types/Candidate";
@@ -19,7 +24,13 @@ test("Filling the formulary with 1 valid link returns the scanned profile", asyn
   const value = "https://www.linkedin.com/in/eduardo-alvarez-nowak/";
   const result = "LinkedIn profiles scanned";
 
-  render(<FormCandidates fetchScript={mockFetchOneCandidate} id={assignment_id} state={[candidates, setCandidates]} />);
+  render(
+    <FormCandidates
+      fetchScript={mockFetchOneCandidate}
+      id={assignment_id}
+      state={[candidates, setCandidates]}
+    />,
+  );
 
   // Act
   const formStatus = screen.getByTestId("status");
@@ -48,7 +59,11 @@ test("Filling the formulary with multiple valid links returns the scanned profil
   const result = "LinkedIn profiles scanned";
 
   render(
-    <FormCandidates fetchScript={mockFetchManyCandidates} id={assignment_id} state={[candidates, setCandidates]} />,
+    <FormCandidates
+      fetchScript={mockFetchManyCandidates}
+      id={assignment_id}
+      state={[candidates, setCandidates]}
+    />,
   );
 
   // Act
@@ -75,7 +90,13 @@ test("Getting an error from server shows error state", async () => {
   const value = "linkedin.com/invalid-profile";
   const result = "Could not scan LinkedIn profiles";
 
-  render(<FormCandidates fetchScript={mockFetchError} id={assignment_id} state={[candidates, setCandidates]} />);
+  render(
+    <FormCandidates
+      fetchScript={mockFetchError}
+      id={assignment_id}
+      state={[candidates, setCandidates]}
+    />,
+  );
 
   // Act
   const formStatus = screen.getByTestId("status");

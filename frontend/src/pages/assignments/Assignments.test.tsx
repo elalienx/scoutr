@@ -8,7 +8,7 @@ import mockUseLoading from "scripts/fetch-hook/mocks/mockUseLoading";
 import mockUseError from "scripts/fetch-hook/mocks/mockUseError";
 import mockUseEmpty from "scripts/fetch-hook/mocks/mockUseEmpty";
 import mockUseReadyAssignments from "scripts/fetch-hook/mocks/mockUseReadyAssignments";
-import { fireEvent, render, screen } from "scripts/testing-library-globals";
+import { fireEvent, render, screen } from "scripts/testing-library/assignments-page-globals";
 import Assignments from "./Assignments";
 
 describe("Data fetching states", () => {

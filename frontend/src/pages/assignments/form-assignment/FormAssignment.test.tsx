@@ -2,7 +2,12 @@
 import { expect, test } from "vitest";
 
 // Project files
-import { fireEvent, render, screen, waitFor } from "scripts/testing-library-globals";
+import {
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from "scripts/testing-library/assignments-page-globals";
 import FormAssignment from "./FormAssignment";
 import mockFetchAssignment from "scripts/fetch-service/mocks/mockFetchAssignment";
 import mockFetchError from "scripts/fetch-service/mocks/mockFetchError";

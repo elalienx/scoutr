@@ -1,16 +1,14 @@
 // Node modules
 import { describe, expect, test } from "vitest";
-import { MemoryRouter, Route, Routes } from "react-router-dom";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { Route } from "react-router-dom";
 
 // Project files
-import Dialog from "components/dialog/Dialog";
+import { fireEvent, render, screen } from "scripts/testing-library/candidates-page-globals";
 import mockUseLoading from "scripts/fetch-hook/mocks/mockUseLoading";
 import mockUseError from "scripts/fetch-hook/mocks/mockUseError";
 import Candidates from "./Candidates";
 import mockUseEmpty from "scripts/fetch-hook/mocks/mockUseEmpty";
 import mockUseReadyCandidates from "scripts/fetch-hook/mocks/mockUseReadyCandidates";
-import { DialogProvider } from "state/DialogContextAPI";
 
 describe("Data fetching states", () => {
   test("Loading state", () => {
@@ -19,13 +17,7 @@ describe("Data fetching states", () => {
     const page = <Candidates fetchHook={mookHook} />;
     const result = /loading/i;
 
-    render(
-      <MemoryRouter initialEntries={["/path/1"]}>
-        <Routes>
-          <Route path="/path/:assignment_id" element={page} />
-        </Routes>
-      </MemoryRouter>,
-    );
+    render(<Route path="/path/:assignment_id" element={page} />);
 
     // Act
     const test = screen.queryByText(result);
@@ -40,13 +32,7 @@ describe("Data fetching states", () => {
     const page = <Candidates fetchHook={mockHook} />;
     const result = /The office WIFI strikes again/i;
 
-    render(
-      <MemoryRouter initialEntries={["/path/1"]}>
-        <Routes>
-          <Route path="/path/:assignment_id" element={page} />
-        </Routes>
-      </MemoryRouter>,
-    );
+    render(<Route path="/path/:assignment_id" element={page} />);
 
     // Act
     const test = screen.queryByText(result);
@@ -61,13 +47,7 @@ describe("Data fetching states", () => {
     const page = <Candidates fetchHook={mockHook} />;
     const result = /Click below to start adding candidates./i;
 
-    render(
-      <MemoryRouter initialEntries={["/path/1"]}>
-        <Routes>
-          <Route path="/path/:assignment_id" element={page} />
-        </Routes>
-      </MemoryRouter>,
-    );
+    render(<Route path="/path/:assignment_id" element={page} />);
 
     // Act
     const test = screen.queryByText(result);
@@ -81,13 +61,7 @@ describe("Data fetching states", () => {
     const mockHook = mockUseReadyCandidates;
     const page = <Candidates fetchHook={mockHook} />;
 
-    render(
-      <MemoryRouter initialEntries={["/path/1"]}>
-        <Routes>
-          <Route path="/path/:assignment_id" element={page} />
-        </Routes>
-      </MemoryRouter>,
-    );
+    render(<Route path="/path/:assignment_id" element={page} />);
 
     // Act
     const test1 = screen.queryByText("Eduardo Alvarez Nowak");
@@ -101,28 +75,38 @@ describe("Data fetching states", () => {
   });
 });
 
-test.todo("Show parse links formulary from ready state", async () => {
-  // Arrange
-  const mockHook = mockUseReadyCandidates;
-  const page = <Candidates fetchHook={mockHook} />;
-  const result = "form-candidates";
+describe("Empty and Ready state open new assigment formulary", () => {
+  test("Show parse links formulary from ready state", async () => {
+    // Arrange
+    const mockHook = mockUseReadyCandidates;
+    const page = <Candidates fetchHook={mockHook} />;
+    const result = "form-candidates";
 
-  render(
-    <DialogProvider>
-      <MemoryRouter initialEntries={["/path/1"]}>
-        <Routes>
-          <Route path="/path/:assignment_id" element={page} />
-        </Routes>
-        <Dialog />
-      </MemoryRouter>
-    </DialogProvider>,
-  );
+    render(<Route path="/path/:assignment_id" element={page} />);
 
-  // Act
-  const button = screen.getByRole("button", { name: /add candidates/i });
+    // Act
+    const button = screen.getByRole("button", { name: /add candidates/i });
 
-  fireEvent.click(button);
+    fireEvent.click(button);
 
-  // Assert
-  expect(screen.getByTestId(result)).toBeInTheDocument();
+    // Assert
+    expect(screen.getByTestId(result)).toBeInTheDocument();
+  });
+
+  test("Show parse links formulary from empty state", async () => {
+    // Arrange
+    const mockHook = mockUseEmpty;
+    const page = <Candidates fetchHook={mockHook} />;
+    const result = "form-candidates";
+
+    render(<Route path="/path/:assignment_id" element={page} />);
+
+    // Act
+    const button = screen.getByRole("button", { name: /add candidates/i });
+
+    fireEvent.click(button);
+
+    // Assert
+    expect(screen.getByTestId(result)).toBeInTheDocument();
+  });
 });

@@ -3,7 +3,7 @@ import { describe, expect, test } from "vitest";
 
 // Project files
 import InputFields from "./InputFields";
-import { render, screen } from "scripts/testing-library-globals";
+import { render, screen } from "scripts/testing-library/assignments-page-globals";
 import InputField from "types/InputField";
 
 describe("Shows warning text on screen if find any errors", () => {
