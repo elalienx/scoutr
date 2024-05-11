@@ -8,7 +8,7 @@ import useDialog from "state/DialogContextAPI";
 import "styles/components/state-candidates.css";
 
 interface Props {
-  /** The React component to show when you click primary button.  */
+  /** The React component to show when you click the button.  */
   component: ReactNode;
 }
 export default function StateEmpty({ component }: Props) {

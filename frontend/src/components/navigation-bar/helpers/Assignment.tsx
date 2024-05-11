@@ -14,11 +14,7 @@ export default function Assignment(item: Props) {
 
   return (
     <div className="assignment">
-      <ImageThumbnail
-        className="logo"
-        src={company_image_url}
-        alt="Logo of the company giving the assigment"
-      />
+      <ImageThumbnail className="logo" src={company_image_url} alt="Logo of the company giving the assigment" />
       <h1 className="title trim-text">{assignment_name}</h1>
     </div>
   );
