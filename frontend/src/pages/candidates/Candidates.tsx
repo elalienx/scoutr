@@ -8,6 +8,7 @@ import NavigationBar from "components/navigation-bar/NavigationBar";
 import fetchService from "scripts/fetch-service/fetchService";
 import Candidate from "types/Candidate";
 import Status from "types/Status";
+import Page404 from "pages/page-404/Page404";
 
 // -- Refactor: this must belong to page files
 import contactedCandidates from "scripts/response-rate/contactedCandidates";
@@ -19,7 +20,6 @@ import StateEmpty from "./state-empty/StateEmpty";
 import StateError from "./state-error/StateError";
 import "./candidates.css";
 import Content from "./content/Content";
-import Page404 from "pages/page404/Page404";
 
 interface Props {
   /** A React custom hook to fetch data. The return complies with the ResultsAPI interface. */
