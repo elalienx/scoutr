@@ -4,16 +4,28 @@ import FetchOptions from "types/FetchOptions";
 import ResultsAPI from "types/ResultAPI";
 import Status from "types/Status";
 
-export default async function mockFetchManyCandidates(uri: string, init: FetchOptions): Promise<ResultsAPI> {
+async function mockFetchManyCandidates(uri: string, init: FetchOptions): Promise<ResultsAPI> {
   const body = JSON.parse(init.body);
-  const errorInit = "Data send to the server is invalid. Check for typos or update the test if the endpoint changed.";
+  const errorProblem = "Data send to the server is invalid.";
+  const errorSolution = "Check for typos or update the test if the endpoint changed.";
+  const errorMessage = `${errorProblem} ${errorSolution}`;
 
   // Safeguards
-  if (body.links[0] !== "https://www.linkedin.com/in/eduardo-alvarez-nowak/") throw new Error(errorInit);
-  if (body.links[1] !== "https://www.linkedin.com/in/susanna-vaara-0b33b03a/") throw new Error(errorInit);
-  if (body.links[2] !== "https://www.linkedin.com/in/lanahaddad87/") throw new Error(errorInit);
+  if (body.links[0] !== "https://www.linkedin.com/in/eduardo-alvarez-nowak/") {
+    throw new Error(errorMessage);
+  }
+
+  if (body.links[1] !== "https://www.linkedin.com/in/susanna-vaara-0b33b03a/") {
+    throw new Error(errorMessage);
+  }
+
+  if (body.links[2] !== "https://www.linkedin.com/in/lanahaddad87/") {
+    throw new Error(errorMessage);
+  }
 
   // Properties
+  const status: Status = "ready";
+  const message = "Candidates scanned";
   const data: Candidate[] = [
     {
       id: 1,
@@ -25,7 +37,8 @@ export default async function mockFetchManyCandidates(uri: string, init: FetchOp
       company_duration_in_months: 34,
       company_image_url:
         "https://media.licdn.com/dms/image/C4E0BAQHElmOdWZ-xZA/company-logo_100_100/0/1631374829245/novare_potential_logo?e=1721260800&v=beta&t=ZRqH0M228v3G2tsbV5UsqqbmXstjR5_GQ69QLuw0eR8",
-      notes: "Highly qualified, likes to help people and stays up to date with the latest frontend development tools.",
+      notes:
+        "Highly qualified, likes to help people and stays up to date with the latest frontend development tools.",
       relevance: 3,
       contact_status: 4,
       contact_date: "2024-04-02 21:00:30.610279",
@@ -71,8 +84,8 @@ export default async function mockFetchManyCandidates(uri: string, init: FetchOp
       linked_in_url: "https://www.linkedin.com/in/lanahaddad87/",
     },
   ];
-  const status: Status = "ready";
-  const message = "Candidates scanned";
 
   return { data, status, message };
 }
+
+export default mockFetchManyCandidates;

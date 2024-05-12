@@ -4,9 +4,10 @@ import FetchOptions from "types/FetchOptions";
 import ResultsAPI from "types/ResultAPI";
 import Status from "types/Status";
 
-export default async function mockFetchAssignment(uri: string, init: FetchOptions): Promise<ResultsAPI> {
+async function mockFetchAssignment(uri: string, init: FetchOptions): Promise<ResultsAPI> {
   const body = JSON.parse(init.body);
-  const errorInit = "Data send to the server is invalid. Check for typos or update the test if the endpoint changed.";
+  const errorInit =
+    "Data send to the server is invalid. Check for typos or update the test if the endpoint changed.";
   const errorURI = "URI is invalid. Check for typos or update the test if the endpoint changed.";
 
   // Safeguards
@@ -27,3 +28,5 @@ export default async function mockFetchAssignment(uri: string, init: FetchOption
 
   return { data, message, status };
 }
+
+export default mockFetchAssignment;
