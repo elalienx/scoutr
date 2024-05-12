@@ -29,7 +29,7 @@ export default function Content({ candidates, component }: Props) {
         big
         icon_prefix="fab"
         icon="linkedin"
-        label={"Add candidates"}
+        label={"Add more candidates"}
         onClick={() => showDialog(component)}
         primary
       />

@@ -165,7 +165,7 @@ describe("Empty and Ready state open new assigment formulary", () => {
     );
 
     // Act
-    const button = screen.getByRole("button", { name: /add candidates/i });
+    const button = screen.getByRole("button", { name: /add more candidates/i }); // note that this one says "more" as we know we have more than one in the table.
 
     fireEvent.click(button);
 
