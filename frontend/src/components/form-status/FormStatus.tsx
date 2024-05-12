@@ -20,7 +20,7 @@ export default function FormStatus(item: Props) {
 
   // Properties
   let color = "gray";
-  let icon: IconName | null = "plus";
+  let icon: IconName = "plus";
 
   if (status === "error") {
     color = "red";
@@ -36,12 +36,12 @@ export default function FormStatus(item: Props) {
   }
   if (status === "empty") {
     color = "invisible";
-    icon = null;
+    icon = "plus";
   }
 
   return (
     <small data-testid="status" className={`form-status background-${color}`}>
-      {icon && <FontAwesomeIcon className="icon" icon={["fas", icon]} spin={status === "loading"} />}
+      <FontAwesomeIcon className="icon" icon={["fas", icon]} spin={status === "loading"} />
       {message}
     </small>
   );
