@@ -15,6 +15,8 @@
  *   project where we add canddiates.
  */
 
+// Update we may no need to verify, let Posgres do it and return an error
+
 export default function updateCandidate(id: number, data: any): string {
   const keys: string[] = Object.keys(data); // [ "candidate_name", "candidate_job_title" ]
   const parameters: string[] = keys.map((key, index) => `${key} = $${index + 1}`); // [ "candidate_name = $1", "candidate_job_title = $2" ]
