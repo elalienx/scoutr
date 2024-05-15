@@ -18,8 +18,14 @@ export default async function patchCandidate(request: Request, response: Respons
     const setClause = Object.keys(updates)
       .map((key, idx) => `${key} = $${idx + 1}`)
       .join(", ");
+    console.log("setClause:", setClause);
+
     const values = Object.values(updates);
-    const query = `UPDATE candidates SET ${setClause} WHERE id = $${values.length + 1} RETURNING *`;
+    console.log("values:", values);
+
+    const query = `UPDATE candidates SET ${setClause} WHERE id = ${id} RETURNING *`;
+    console.log("query:", query);
+
     const { rows } = await database.query(query, values);
     const updatedFields = rows[0];
 
