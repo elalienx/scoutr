@@ -10,8 +10,7 @@ export default async function getCandidates(request: Request, response: Response
   const query = "SELECT * FROM candidates WHERE assignment_id = $1";
   const messageGood = "Candidates received";
   const messageEmpty = `Warning: No candidates match assignment_id ${assignment_id}`;
-  const messageBad = "Error: Cannot get data";
-  let result: ResultsAPI = { data: [], message: messageBad, status: 500 };
+  let result: ResultsAPI = { data: [], message: "Unknown error", status: 500 };
 
   try {
     const { rows } = await database.query(query, [assignment_id]);
@@ -20,7 +19,7 @@ export default async function getCandidates(request: Request, response: Response
     result.message = rows.length > 0 ? messageGood : messageEmpty;
     result.status = 200;
   } catch (error) {
-    console.error(error);
+    result.message = error;
   } finally {
     response.status(result.status).send(result);
   }

@@ -4,36 +4,28 @@ import { Client } from "pg";
 
 // Project files
 import ResultsAPI from "../types/ResultsAPI";
+import updateCandidate from "../queries/updateCandidate";
 
 export default async function patchCandidate(request: Request, response: Response, database: Client) {
   const id = Number(request.params.id);
   const updates = request.body;
-  const messageBad = "Error: Cannot parse links";
-  let result: ResultsAPI = { data: [], message: messageBad, status: 500 };
+  console.log("updates:", updates);
 
-  // add safeguard if the keys received arent part of the Candidate interface
-  // add safeguard if the candidate.id does not exist in the database.
+  let result: ResultsAPI = { data: [], message: "Unknown error", status: 500 };
+
+  // Safeguard for keys received aren't part of Candidate. Done by passing keyOffCandidate to veryify the keys.
+  // Safeguard for candidate.id not existing in the database. This may be done by encapsulating and mocking database.query()
 
   try {
-    const setClause = Object.keys(updates)
-      .map((key, idx) => `${key} = $${idx + 1}`)
-      .join(", ");
-    console.log("setClause:", setClause);
-
-    const values = Object.values(updates);
-    console.log("values:", values);
-
-    const query = `UPDATE candidates SET ${setClause} WHERE id = ${id} RETURNING *`;
-    console.log("query:", query);
-
+    const query = updateCandidate(id, updates); // `UPDATE candidates SET candidate_name = $1, candidate_job_title = $2 WHERE id = 1 RETURNING *`
+    const values = Object.values(updates); // [ "Eduardo Alvarez", "Tech Lead" ]
     const { rows } = await database.query(query, values);
-    const updatedFields = rows[0];
 
-    result.data = updatedFields;
-    result.message = "Updated candidate data";
+    result.data = rows[0];
+    result.message = "Updated candidate";
     result.status = 200;
   } catch (error) {
-    console.error(error);
+    result.message = error;
   } finally {
     response.status(result.status).send(result);
   }
