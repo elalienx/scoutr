@@ -1,4 +1,5 @@
-const insertCandidate: string = `INSERT INTO candidates (
+const insertCandidate: string = `
+INSERT INTO candidates (
     assignment_id,
     linked_in_url, 
     candidate_name, 
