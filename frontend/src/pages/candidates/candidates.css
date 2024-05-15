@@ -22,7 +22,6 @@
   }
 
   .section.loading,
-  .section.empty,
   .section.error {
     display: grid;
     place-items: center;
