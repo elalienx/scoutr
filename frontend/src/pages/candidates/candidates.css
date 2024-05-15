@@ -10,8 +10,13 @@
     width: min(1600px, 100%);
     margin-inline: auto;
   }
+  .section {
+    display: grid;
+    place-items: center;
+  }
 
-  .section.ready {
+  .section.ready .page-content {
+    place-self: start; /* to avoid the place-item center, centering the table */
     width: min(1200px, 100% - 24px - 24px); /* 24px per sidee */
     margin-inline: auto;
     text-align: center;
@@ -20,18 +25,12 @@
   .section.ready table {
     margin-bottom: var(--space-medium);
   }
-
-  .section.loading,
-  .section.error {
-    display: grid;
-    place-items: center;
-  }
 }
 
 /* Tablet */
 @media (min-width: 700px) {
   #candidates {
-    .section.content table {
+    .section.ready .page-content table {
       margin-bottom: var(--space-big);
     }
   }

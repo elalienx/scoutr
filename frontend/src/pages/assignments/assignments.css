@@ -7,22 +7,22 @@
   margin-inline: auto;
   padding: 24px 0;
 
-  .section.ready {
-    display: grid;
-    align-content: start; /* to tell the cards to not stretch around the content space*/
-    gap: var(--space-medium);
-  }
-
-  .section.loading {
+  .section {
     display: grid;
     place-items: center;
+  }
+
+  .section.ready .page-content {
+    display: grid;
+    align-self: start; /** to avoid place-items center, centering the cards */
+    gap: var(--space-medium);
   }
 }
 
 /* Phablet */
 @media (min-width: 550px) {
   #assignments {
-    .section.ready {
+    .section.ready .page-content {
       grid-template-columns: repeat(2, 1fr);
     }
   }
@@ -33,7 +33,7 @@
   #assignments {
     padding-top: 64px; /** big space for hero */
 
-    .section.ready {
+    .section.ready .page-content {
       grid-template-columns: repeat(3, 1fr);
     }
   }
@@ -42,7 +42,7 @@
 /* Desktop */
 @media (min-width: 1000px) {
   #assignments {
-    .section.ready {
+    .section.ready .page-content {
       grid-template-columns: repeat(4, 1fr);
     }
   }

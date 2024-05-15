@@ -28,7 +28,7 @@ export default function Content({ state, id }: Props) {
   if (candidates.length === 0) return <StateEmpty component={Form} />;
 
   return (
-    <>
+    <div className="page-content">
       <Table candidates={candidates}></Table>
       <Button
         big
@@ -38,6 +38,6 @@ export default function Content({ state, id }: Props) {
         onClick={() => showDialog(Form)}
         primary
       />
-    </>
+    </div>
   );
 }
