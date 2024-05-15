@@ -1,17 +1,11 @@
 // Project files
-import Card from "components/card/Card";
-import CardNew from "components/card-new/CardNew";
 import Loader from "components/loader/Loader";
 import Assignment from "types/Assignment";
 import Status from "types/Status";
-
-// Page files
-import fetchService from "scripts/fetch-service/fetchService";
-import FormAssignment from "./form-assignment/FormAssignment";
-import StateEmpty from "./state-empty/StateEmpty";
-import StateError from "./state-error/StateError";
+import Content from "./content/Content";
 import Footer from "./footer/Footer";
 import Hero from "./hero/Hero";
+import StateError from "./state-error/StateError";
 import "./assignments.css";
 
 interface Props {
@@ -26,25 +20,15 @@ interface Props {
 /** The homepage of Scoutr and the place to create new assignments. */
 export default function Assignments({ fetchHook }: Props) {
   // Local state
-  const uri = "/api/assignments";
-  const { data, status } = fetchHook(uri);
-
-  // Properties
-  const sortedById = data.sort((a, b) => a.id - b.id);
-
-  // Components
-  const Form = <FormAssignment fetchScript={fetchService} />;
-  const Content = sortedById.map((item) => <Card key={item.id} {...item} />);
-  Content.push(<CardNew key={"card-new"} component={Form} />);
+  const { data, status } = fetchHook("/api/assignments");
 
   return (
     <div id="assignments">
       <Hero />
       <section className={`section ${status}`}>
         {status === "loading" && <Loader />}
-        {status === "empty" && <StateEmpty component={Form} />}
         {status === "error" && <StateError />}
-        {status === "ready" && Content}
+        {status === "ready" && <Content assignments={data} />}
       </section>
       <Footer />
     </div>

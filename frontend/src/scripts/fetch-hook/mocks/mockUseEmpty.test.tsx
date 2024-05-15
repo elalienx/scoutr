@@ -5,10 +5,10 @@ import { expect, test } from "vitest";
 import mockUseEmpty from "./mockUseEmpty";
 import Status from "types/Status";
 
-test("Expect return empty state if passed an url", () => {
+test("Expect return ready state but with a warning message if passed a correct URI", () => {
   // Arrange
   const uri = "api/example/";
-  const resultStatus: Status = "empty";
+  const resultStatus: Status = "ready";
   const resultMessage = "Endpoint api/example/ works but does not have data";
 
   // Act
