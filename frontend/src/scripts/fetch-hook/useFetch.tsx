@@ -24,7 +24,7 @@ export default function useFetch(uri: string): ResultsAPI {
     try {
       const response = await fetch(uri);
       const { data, message } = await response.json();
-      const status: Status = data.length ? "ready" : "empty";
+      const status: Status = "ready"
 
       setResult({ data, status, message });
     } catch (error: unknown) {

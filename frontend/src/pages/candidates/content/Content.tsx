@@ -1,36 +1,41 @@
-// Node modules
-import { ReactNode } from "react";
-
 // Project files
 import Candidate from "types/Candidate";
 import Table from "../table/Table";
 import Button from "components/button/Button";
 import useDialog from "state/DialogContextAPI";
+import StateEmpty from "../state-empty/StateEmpty";
+import FormCandidates from "../form-candidates/FormCandidates";
+import fetchService from "scripts/fetch-service/fetchService";
 
 interface Props {
   /** The candidates to dispaly on the table. */
-  candidates: Candidate[];
+  state: [Candidate[], Function];
 
   /** The React component to show when you click the button.  */
-  component: ReactNode;
+  id: number;
 }
 
-export default function Content({ candidates, component }: Props) {
+export default function Content({ state, id }: Props) {
+  const [candidates] = state;
+
   // Global state
   const { showDialog } = useDialog();
 
-  // Properties
-  const sortedById = candidates.sort((a, b) => a.id - b.id);
+  // Components
+  const Form = <FormCandidates fetchScript={fetchService} id={id} state={state} />;
+
+  // Safeguard
+  if (candidates.length === 0) return <StateEmpty component={Form} />;
 
   return (
     <>
-      <Table candidates={sortedById}></Table>
+      <Table candidates={candidates}></Table>
       <Button
         big
         icon_prefix="fab"
         icon="linkedin"
         label={"Add more candidates"}
-        onClick={() => showDialog(component)}
+        onClick={() => showDialog(Form)}
         primary
       />
     </>
