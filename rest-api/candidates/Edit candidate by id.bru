@@ -15,3 +15,18 @@ body:json {
     "candidate_name": "Ameli"
   }
 }
+
+tests {
+  test("Should be able to get data", function() {
+    // Arrange
+    const data = res.getBody();
+    const result = 200; // status ok
+    console.log("data",data)
+    
+    // Act 
+    const test = res.getStatus();
+    
+    // Assert
+    expect(test).to.equal(result);
+  });
+}
