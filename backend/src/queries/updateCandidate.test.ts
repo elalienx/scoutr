@@ -4,16 +4,14 @@ import { expect, test } from "vitest";
 // Project files
 import updateCandidate from "./updateCandidate";
 
-test.todo("Throws error if ID is less than 1, as databases starts with ID 1 upwards");
-
-test.todo("Throws error if any key inside data do not belong to Candidate", () => {
+test("Throws error if data is empty as that would break the query", () => {
   // Arrange
   const id = 1;
-  const data = { candidate_name: "Eduardo Alvarez", assignment_name: "Data Engineers" }; // wrong data on purpose
-  const result = "The key assignment_name does not exist in the Candidate table.";
+  const keys = [];
+  const result = "Error: keys passed in empty";
 
   // Act
-  const test = updateCandidate(id, data);
+  const test = () => updateCandidate(id, keys);
 
   // Assert
   expect(test).toThrowError(result);
@@ -22,11 +20,11 @@ test.todo("Throws error if any key inside data do not belong to Candidate", () =
 test("Returns valid query if we pass one valid key", () => {
   // Arrange
   const id = 1;
-  const data = { candidate_name: "Eduardo Alvarez" };
+  const keys = ["candidate_name"];
   const result = `UPDATE candidates SET candidate_name = $1 WHERE id = 1 RETURNING *`;
 
   // Act
-  const test = updateCandidate(id, data);
+  const test = updateCandidate(id, keys);
 
   // Assert
   expect(test).toBe(result);
@@ -35,11 +33,11 @@ test("Returns valid query if we pass one valid key", () => {
 test("Returns valid query if we pass multiple valid keys", () => {
   // Arrange
   const id = 1;
-  const data = { candidate_name: "Eduardo Alvarez", notes: "Egocentric but nice person" };
+  const keys = ["candidate_name", "notes"];
   const result = `UPDATE candidates SET candidate_name = $1, notes = $2 WHERE id = 1 RETURNING *`;
 
   // Act
-  const test = updateCandidate(id, data);
+  const test = updateCandidate(id, keys);
 
   // Assert
   expect(test).toBe(result);
