@@ -19,5 +19,5 @@ To see a product tour check this YouTube video: [https://youtu.be/Da8lH9Z1e-4](h
 ```
 🟡 database-1  | [YOUR_CURRENT_DATE] LOG:  database system is ready to accept connections
 🟢 frontend-1  | VITE v5.2.11  ready in [SOME_MILLISECONDS] ms
-🔵 backend-1   | Scoutr server ready on port 8000
+🔵 backend-1   | Scoutr backend server ready on port 8000
 ```
