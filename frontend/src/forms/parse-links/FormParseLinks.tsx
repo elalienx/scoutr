@@ -67,9 +67,8 @@ export default function FormParseLinks({ id, state, fetchScript }: Props) {
 
   function onResult(result: ResultsAPI) {
     const { data, message, status } = result;
-    const badProfile = data.report.severity > 1;
 
-    if (status === "error" || badProfile) onFailure(message);
+    if (status === "error") onFailure(message);
     else onSuccess(data);
   }
 
