@@ -3,8 +3,8 @@ import ImageThumbnail from "components/image-thumbnail/ImageThumbnail";
 import "./header-candidate.css";
 
 interface Props {
-  /** The unique indentifier of the candidate. */
-  id: number;
+  /** The number of the row. */
+  index: number;
 
   /** The name of the candidate. */
   candidate_image_url: string;
@@ -15,7 +15,7 @@ interface Props {
 
 /** A mobile component for table rows, styled to resemble a social media platform. */
 export default function HeaderCandidate(item: Props) {
-  const { id, candidate_image_url, company_image_url } = item;
+  const { index, candidate_image_url, company_image_url } = item;
 
   return (
     <header className="header-candidate">
@@ -25,12 +25,8 @@ export default function HeaderCandidate(item: Props) {
         profile="candidate"
         src={candidate_image_url}
       />
-      <ImageThumbnail
-        alt="Company logo"
-        className="company-image"
-        src={company_image_url}
-      />
-      <small className="label">Profile #{id}</small>
+      <ImageThumbnail alt="Company logo" className="company-image" src={company_image_url} />
+      <small className="label">Profile #{index}</small>
     </header>
   );
 }

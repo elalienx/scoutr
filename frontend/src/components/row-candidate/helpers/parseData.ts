@@ -5,7 +5,7 @@ import { contactData, relevanceData } from "./meta-data";
 
 export default function parseData(item: Candidate, index: number) {
   const header = {
-    id: index,
+    index: index,
     candidate_image_url: item.candidate_image_url,
     company_image_url: item.company_image_url,
   };
