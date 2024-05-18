@@ -52,7 +52,7 @@ export default function Candidates({ fetchHook }: Props) {
         company_image_url={""}
         response_rate={response_rate}
       />
-      <section className={`section ${status}`}>
+      <section className="section">
         {status === "loading" && <Loader />}
         {status === "error" && <StateError />}
         {status === "ready" && <Content id={id} state={[candidates, setCandidates]} />}

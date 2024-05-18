@@ -19,7 +19,7 @@ export default function Table({ candidates }: Props) {
   ));
 
   return (
-    <table className="table">
+    <table>
       <thead>
         <tr>{Headers}</tr>
       </thead>

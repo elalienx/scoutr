@@ -25,7 +25,7 @@ export default function Assignments({ fetchHook }: Props) {
   return (
     <div id="assignments">
       <Hero />
-      <section className={`section ${status}`}>
+      <section className="section">
         {status === "loading" && <Loader />}
         {status === "error" && <StateError />}
         {status === "ready" && <Content assignments={data} />}

@@ -22,7 +22,7 @@ export default function Content({ assignments }: Props) {
   if (assignments.length === 0) return <StateEmpty component={Form} />;
 
   return (
-    <div className="page-content">
+    <div className="cards">
       {Cards}
       <CardNew key={"card-new"} component={Form} />
     </div>

@@ -9,21 +9,23 @@
 
   .section {
     display: grid;
-    place-items: center;
+    place-items: start;
   }
 
-  .section.ready .page-content {
+  .section .loader {
+    place-self: center;
+  }
+
+  .section .cards {
     display: grid;
-    align-self: start; /** to avoid place-items center, centering the cards */
     gap: var(--space-medium);
-    width: 100%; /* complements align-self: start */
   }
 }
 
 /* Phablet */
 @media (min-width: 550px) {
   #assignments {
-    .section.ready .page-content {
+    .section .cards {
       grid-template-columns: repeat(2, 1fr);
     }
   }
@@ -34,7 +36,7 @@
   #assignments {
     padding-top: 64px; /** big space for hero */
 
-    .section.ready .page-content {
+    .section .cards {
       grid-template-columns: repeat(3, 1fr);
     }
   }
@@ -43,7 +45,7 @@
 /* Desktop */
 @media (min-width: 1000px) {
   #assignments {
-    .section.ready .page-content {
+    .section .cards {
       grid-template-columns: repeat(4, 1fr);
     }
   }

@@ -1,11 +1,11 @@
 // Project files
-import Candidate from "types/Candidate";
-import Table from "../table/Table";
 import Button from "components/button/Button";
-import useDialog from "state/DialogContextAPI";
-import StateEmpty from "../state-empty/StateEmpty";
-import FormCandidates from "../form-candidates/FormCandidates";
 import fetchService from "scripts/fetch-service/fetchService";
+import useDialog from "state/DialogContextAPI";
+import Candidate from "types/Candidate";
+import FormCandidates from "../form-candidates/FormCandidates";
+import StateEmpty from "../state-empty/StateEmpty";
+import Table from "../table/Table";
 
 interface Props {
   /** The candidates to dispaly on the table. */
@@ -28,7 +28,7 @@ export default function Content({ state, id }: Props) {
   if (candidates.length === 0) return <StateEmpty component={Form} />;
 
   return (
-    <div className="page-content">
+    <div className="candidates">
       <Table candidates={candidates} />
       <Button
         big
