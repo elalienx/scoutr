@@ -7,7 +7,7 @@ import query from "../queries/insertAssignment";
 import ResultsAPI from "../types/ResultsAPI";
 
 export default async function postAssignment(request: Request, response: Response, database: Client): Promise<void> {
-  const { assignment_name, company_name, company_image_url } = request.body;
+  const { assignment_name, company_name, company_image_url = "" } = request.body;
   const messageGood = "Assignment saved with id ";
   const messageBad = "Error: Cannot save data";
   let result: ResultsAPI = { data: [], message: messageBad, status: 500 };

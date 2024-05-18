@@ -20,8 +20,7 @@ export default function RowCandidate({ candidate, index }: Props) {
   const { notes, relevance, contact_status } = candidate;
 
   // Properties
-  const rowNumber = index + 1;
-  const parsedData = parseData(candidate, rowNumber);
+  const parsedData = parseData(candidate, index);
 
   return (
     <tr className="row-candidate">
@@ -29,22 +28,22 @@ export default function RowCandidate({ candidate, index }: Props) {
         <HeaderCandidate {...parsedData.header} />
       </td>
       <td className="id column-small" data-label="Id">
-        {rowNumber}
+        {index}
       </td>
-      <td className="candidate column-big" data-label="Candidate">
+      <td className="column-big" data-label="Candidate">
         <ItemCandidate {...parsedData.candidate} />
       </td>
-      <td className="company column-big" data-label="Company">
+      <td className="column-big" data-label="Company">
         <ItemCompany {...parsedData.company} />
       </td>
-      <td className="notes column-big" data-label="Notes">
+      <td className="column-big" data-label="Notes">
         <small className="trim-text">{notes}</small>
       </td>
-      <td className="relevance column-medium" data-label="Relevance">
-        {relevance ? <ItemBadge {...parsedData.relevance} /> : null}
+      <td className="column-medium" data-label="Relevance">
+        {relevance > 0 && <ItemBadge {...parsedData.relevance} />}
       </td>
-      <td className="contact column-medium" data-label="Contact">
-        {contact_status ? <ItemBadge {...parsedData.contact} /> : null}
+      <td className="column-medium" data-label="Contact">
+        {contact_status > 0 && <ItemBadge {...parsedData.contact} />}
       </td>
     </tr>
   );

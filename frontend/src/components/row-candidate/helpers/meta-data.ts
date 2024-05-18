@@ -1,25 +1,61 @@
 // Project files
 import Color from "types/Color";
 
-export function contactColors(value: number): Color {
-  const colors: Color[] = ["gray", "green", "cyan", "blue", "red", "gray"];
-
-  return colors[value];
-}
-export function relevanceColors(value: number): Color {
-  const colors: Color[] = ["gray", "red", "orange", "yellow", "green", "blue"];
-
-  return colors[value];
+interface coloredLabels {
+  label: string;
+  color: Color;
 }
 
-export function contactTitle(value: number): string {
-  const label = ["unlabeled", "interviewed", "scheduled", "talking", "declined", "contacted"];
+export const contactData: coloredLabels[] = [
+  {
+    label: "Unlabeled",
+    color: "gray",
+  },
+  {
+    label: "Interviewed",
+    color: "green",
+  },
+  {
+    label: "Scheduled",
+    color: "cyan",
+  },
+  {
+    label: "Talking",
+    color: "blue",
+  },
+  {
+    label: "Declined",
+    color: "red",
+  },
+  {
+    label: "Contacted",
+    color: "gray",
+  },
+];
 
-  return label[value];
-}
-
-export function relevancetitle(value: number): string {
-  const label = ["unlabeled", "not relevant", "too junior", "maybe", "yes", "super yes"];
-
-  return label[value];
-}
+export const relevanceData: coloredLabels[] = [
+  {
+    label: "Unlabeled",
+    color: "gray",
+  },
+  {
+    label: "Not relevant",
+    color: "red",
+  },
+  {
+    label: "Too junior",
+    color: "orange",
+  },
+  {
+    label: "Maybe",
+    color: "yellow",
+  },
+  {
+    label: "Yes",
+    color: "green",
+  },
+  {
+    label: "Super yes",
+    color: "blue",
+  },
+];
