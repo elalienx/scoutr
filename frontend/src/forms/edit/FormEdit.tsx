@@ -81,7 +81,6 @@ export default function FormEdit({ uri, fields, fetchScript, dispatcher }: Props
 
   return (
     <form data-testid="form-assignment" className="form" onSubmit={onSubmit}>
-      <h2>Edit Information</h2>
       <InputFields fields={fields} />
       <FormStatus status={status} message={message} />
       <div className="buttons">

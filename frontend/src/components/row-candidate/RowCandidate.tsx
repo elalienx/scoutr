@@ -7,9 +7,9 @@ import fields from "data/candidate";
 import useDialog from "state/DialogContextAPI";
 import Candidate from "types/Candidate";
 import parseData from "./helpers/parseData";
-import "./row-candidate.css";
 import FormEdit from "forms/edit/FormEdit";
 import fetchService from "scripts/fetch-service/fetchService";
+import "./row-candidate.css";
 
 interface Props {
   /** The candidate to present */
@@ -70,13 +70,21 @@ export default function RowCandidate({ candidate, index }: Props) {
       <td className="company column-big" data-label="Company">
         <ItemCompany {...candidate} />
       </td>
-      <td onClick={() => onClick("notes")} className="notes column-big" data-label="Notes">
+      <td onClick={() => onClick("notes")} className="notes column-big hover" data-label="Notes">
         <small className="trim-text">{notes}</small>
       </td>
-      <td className="relevance column-medium" data-label="Relevance">
+      <td
+        onClick={() => onClick("relevance")}
+        className="relevance column-medium hover"
+        data-label="Relevance"
+      >
         {relevance > 0 && <ItemBadge {...parsedData.relevance} />}
       </td>
-      <td className="contact column-medium" data-label="Contact">
+      <td
+        onClick={() => onClick("contact_status")}
+        className="contact column-medium hover"
+        data-label="Contact"
+      >
         {contact_status > 0 && <ItemBadge {...parsedData.contact} />}
       </td>
     </tr>
