@@ -29,7 +29,7 @@ export default function Content({ state, id }: Props) {
 
   return (
     <div className="page-content">
-      <Table candidates={candidates}></Table>
+      <Table candidates={candidates} />
       <Button
         big
         icon_prefix="fab"

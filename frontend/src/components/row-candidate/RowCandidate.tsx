@@ -20,8 +20,7 @@ export default function RowCandidate({ candidate, index }: Props) {
   const { notes, relevance, contact_status } = candidate;
 
   // Properties
-  const rowNumber = index + 1;
-  const parsedData = parseData(candidate, rowNumber);
+  const parsedData = parseData(candidate, index);
 
   return (
     <tr className="row-candidate">
@@ -29,7 +28,7 @@ export default function RowCandidate({ candidate, index }: Props) {
         <HeaderCandidate {...parsedData.header} />
       </td>
       <td className="id column-small" data-label="Id">
-        {rowNumber}
+        {index}
       </td>
       <td className="column-big" data-label="Candidate">
         <ItemCandidate {...parsedData.candidate} />
