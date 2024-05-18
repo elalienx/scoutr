@@ -1,4 +1,4 @@
-name: scoutr
+version: "3.8"
 
 services:
   database:
@@ -34,8 +34,8 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     volumes:
-      - /app/node_modules
       - ./backend:/app
+      - /app/node_modules
     depends_on:
       database:
         condition: service_healthy
@@ -47,8 +47,8 @@ services:
       dockerfile: Dockerfile
       context: ./frontend
     volumes:
-      - /app/node_modules
       - ./frontend:/app
+      - /app/node_modules
     depends_on:
       database:
         condition: service_healthy
