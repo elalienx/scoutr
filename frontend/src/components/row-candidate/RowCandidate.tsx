@@ -6,6 +6,7 @@ import ItemCompany from "components/item-company/ItemCompany";
 import Candidate from "types/Candidate";
 import parseData from "./helpers/parseData";
 import "./row-candidate.css";
+import useDialog from "state/DialogContextAPI";
 
 interface Props {
   /** The candidate to present */
@@ -19,8 +20,16 @@ interface Props {
 export default function RowCandidate({ candidate, index }: Props) {
   const { notes, relevance, contact_status } = candidate;
 
+  // Global state
+  const { showDialog } = useDialog();
+
   // Properties
   const parsedData = parseData(candidate, index);
+
+  // Methods
+  function onClick(key: string) {
+    showDialog(<p className="form">You clicked on {key}</p>);
+  }
 
   return (
     <tr className="row-candidate">
@@ -30,19 +39,19 @@ export default function RowCandidate({ candidate, index }: Props) {
       <td className="id column-small" data-label="Id">
         {index}
       </td>
-      <td className="column-big" data-label="Candidate">
+      <td className="candidate column-big" data-label="Candidate">
         <ItemCandidate {...candidate} />
       </td>
-      <td className="column-big" data-label="Company">
+      <td className="company column-big" data-label="Company">
         <ItemCompany {...candidate} />
       </td>
-      <td className="column-big" data-label="Notes">
+      <td onClick={() => onClick("notes")} className="notes column-big" data-label="Notes">
         <small className="trim-text">{notes}</small>
       </td>
-      <td className="column-medium" data-label="Relevance">
+      <td className="relevance column-medium" data-label="Relevance">
         {relevance > 0 && <ItemBadge {...parsedData.relevance} />}
       </td>
-      <td className="column-medium" data-label="Contact">
+      <td className="contact column-medium" data-label="Contact">
         {contact_status > 0 && <ItemBadge {...parsedData.contact} />}
       </td>
     </tr>
