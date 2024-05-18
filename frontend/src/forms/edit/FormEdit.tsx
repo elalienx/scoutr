@@ -13,6 +13,7 @@ import InputField from "types/InputField";
 import ResultsAPI from "types/ResultAPI";
 import Status from "types/Status";
 import "styles/components/form.css";
+import waitForSeconds from "scripts/waitForSeconds";
 
 interface Props {
   /** The uri to sent the data. It comes with the edit of the specific item to modify. */
@@ -42,7 +43,7 @@ export default function FormEdit({ uri, fields, fetchScript, dispatcher }: Props
 
     try {
       const formData = gatherFormData(event.currentTarget);
-      const fetchOptions = packageData("POST", formData);
+      const fetchOptions = packageData("PATCH", formData);
       const result = await fetchScript(uri, fetchOptions);
 
       onResult(result);
@@ -67,6 +68,8 @@ export default function FormEdit({ uri, fields, fetchScript, dispatcher }: Props
   async function onSuccess(result: unknown) {
     setStatus("ready");
     dispatcher(result);
+
+    await waitForSeconds(0.5);
     closeDialog();
   }
 
@@ -78,7 +81,7 @@ export default function FormEdit({ uri, fields, fetchScript, dispatcher }: Props
 
   return (
     <form data-testid="form-assignment" className="form" onSubmit={onSubmit}>
-      <h2>New Assignment</h2>
+      <h2>Edit Information</h2>
       <InputFields fields={fields} />
       <FormStatus status={status} message={message} />
       <div className="buttons">

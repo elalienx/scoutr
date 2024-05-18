@@ -3,10 +3,13 @@ import HeaderCandidate from "components/header-candidate/HeaderCandidate";
 import ItemBadge from "components/item-badge/ItemBadge";
 import ItemCandidate from "components/item-candidate/ItemCandidate";
 import ItemCompany from "components/item-company/ItemCompany";
+import fields from "data/candidate";
 import useDialog from "state/DialogContextAPI";
 import Candidate from "types/Candidate";
 import parseData from "./helpers/parseData";
 import "./row-candidate.css";
+import FormEdit from "forms/edit/FormEdit";
+import fetchService from "scripts/fetch-service/fetchService";
 
 interface Props {
   /** The candidate to present */
@@ -18,17 +21,39 @@ interface Props {
 
 /** A row containing the complete candidate information. */
 export default function RowCandidate({ candidate, index }: Props) {
-  const { notes, relevance, contact_status } = candidate;
+  const { id, notes, relevance, contact_status } = candidate;
 
   // Global state
   const { showDialog } = useDialog();
 
   // Properties
   const parsedData = parseData(candidate, index);
+  const uri = "/api/candidates/" + id;
 
   // Methods
-  function onClick(key: string) {
-    showDialog(<p className="form">You clicked on {key}</p>);
+  function onClick(key: keyof Candidate) {
+    const field = fields.find((item) => item.id === key);
+
+    if (field === undefined) {
+      alert(`Error: Cannot find an input field for ${key}`);
+      return;
+    }
+
+    field.defaultValue = candidate[key].toString();
+
+    showDialog(
+      <FormEdit
+        fields={[field]}
+        uri={uri}
+        fetchScript={fetchService}
+        dispatcher={fakeDispatcher}
+      />,
+    );
+  }
+
+  function fakeDispatcher(result: unknown) {
+    console.log("Updating");
+    console.log(result);
   }
 
   return (
