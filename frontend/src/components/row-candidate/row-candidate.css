@@ -17,11 +17,6 @@
   .notes small.trim-text {
     -webkit-line-clamp: 3; /** Overides the default 1 line trim */
   }
-
-  /* Hover */
-  .notes:hover {
-    background-color: var(--color-gray-light);
-  }
 }
 
 /* Laptop half screen */
