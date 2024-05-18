@@ -3,10 +3,10 @@ import HeaderCandidate from "components/header-candidate/HeaderCandidate";
 import ItemBadge from "components/item-badge/ItemBadge";
 import ItemCandidate from "components/item-candidate/ItemCandidate";
 import ItemCompany from "components/item-company/ItemCompany";
+import useDialog from "state/DialogContextAPI";
 import Candidate from "types/Candidate";
 import parseData from "./helpers/parseData";
 import "./row-candidate.css";
-import useDialog from "state/DialogContextAPI";
 
 interface Props {
   /** The candidate to present */
