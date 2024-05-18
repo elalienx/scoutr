@@ -1,9 +1,9 @@
 // Project files
 import Button from "components/button/Button";
+import FormParseLinks from "forms/parse-links/FormParseLinks";
 import fetchService from "scripts/fetch-service/fetchService";
 import useDialog from "state/DialogContextAPI";
 import Candidate from "types/Candidate";
-import FormParseLinks from "../../../forms/parse-links/FormParseLinks";
 import StateEmpty from "../state-empty/StateEmpty";
 import Table from "../table/Table";
 

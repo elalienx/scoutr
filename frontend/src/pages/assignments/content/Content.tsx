@@ -1,9 +1,9 @@
 // Project files
 import Card from "components/card/Card";
 import CardNew from "components/card-new/CardNew";
+import FormNewAssignment from "forms/new-assignment/FormNewAssignment";
 import fetchService from "scripts/fetch-service/fetchService";
 import Assignment from "types/Assignment";
-import FormNewAssignment from "../../../forms/new-assignment/FormNewAssignment";
 import StateEmpty from "../state-empty/StateEmpty";
 
 interface Props {
