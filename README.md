@@ -14,7 +14,7 @@ To see a product tour check this YouTube video: [https://youtu.be/Da8lH9Z1e-4](h
 1. Open the terminal in the directory containing this README file and execute `docker compose up --build`
 1. Open this address in your web browser: [http://localhost:3050](http://localhost:3050)
 
-⚠️ Note: The Docker build proceess takes time. so don't the web browser until you see these messages in the terminal:
+⚠️ Note: The Docker build proceess takes a lot of time on the initial installation. So don't the web browser until you see these messages in the terminal:
 
 ```
 🟡 database-1  | (YOUR_CURRENT_DATE) LOG:  database system is ready to accept connections
