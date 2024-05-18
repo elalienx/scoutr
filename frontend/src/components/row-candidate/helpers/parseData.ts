@@ -27,9 +27,9 @@ export default function parseData(item: Candidate, index: number) {
     subtitle: "",
   };
   const contact = {
-    color: contactData[item.contact_status | 0].color,
+    color: contactData[item.contact_status].color,
     value: item.contact_status,
-    title: contactData[item.contact_status | 0].label,
+    title: contactData[item.contact_status].label,
     subtitle: formatDate(item.contact_date),
   };
 

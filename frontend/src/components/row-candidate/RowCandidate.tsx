@@ -40,10 +40,10 @@ export default function RowCandidate({ candidate, index }: Props) {
         <small className="trim-text">{notes}</small>
       </td>
       <td className="column-medium" data-label="Relevance">
-        {relevance && <ItemBadge {...parsedData.relevance} />}
+        {relevance > 0 && <ItemBadge {...parsedData.relevance} />}
       </td>
       <td className="column-medium" data-label="Contact">
-        {contact_status && <ItemBadge {...parsedData.contact} />}
+        {contact_status > 0 && <ItemBadge {...parsedData.contact} />}
       </td>
     </tr>
   );
