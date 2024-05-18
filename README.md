@@ -10,7 +10,7 @@ To see a product tour check this YouTube video: [https://youtu.be/Da8lH9Z1e-4](h
 # Installation
 
 1. Clone this Git repository into your computer.
-1. Download and install Docker. I recommend using [Docker Desktop](https://www.docker.com/products/docker-desktop/) to setup everything for you.
+1. Install Docker. I recommend using [Docker Desktop](https://www.docker.com/products/docker-desktop/) to setup everything for you.
 1. Open the terminal in the directory containing this README file and execute `docker compose up --build`
 1. Open your browser and type this address: [http://localhost:3050](http://localhost:3050)
 
