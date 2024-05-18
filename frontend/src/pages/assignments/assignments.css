@@ -16,6 +16,7 @@
     display: grid;
     align-self: start; /** to avoid place-items center, centering the cards */
     gap: var(--space-medium);
+    width: 100%; /* complements align-self: start */
   }
 }
 
