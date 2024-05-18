@@ -3,35 +3,32 @@ import { FormEvent, useState } from "react";
 
 // Project files
 import Button from "components/button/Button";
-import InputFields from "components/input-fields/InputFields";
 import FormStatus from "components/form-status/FormStatus";
+import InputFields from "components/input-fields/InputFields";
 import gatherFormData from "scripts/forms/gatherFormData";
 import packageData from "scripts/forms/packageData";
-import textAreaToArray from "scripts/forms/textAreaToArray";
 import useDialog from "state/DialogContextAPI";
-import Candidate from "types/Candidate";
 import FetchOptions from "types/FetchOptions";
+import InputField from "types/InputField";
 import ResultsAPI from "types/ResultAPI";
 import Status from "types/Status";
-import fields from "../../data/parse-links";
 import "styles/components/form.css";
-import "./form-candidates.css";
-import waitForSeconds from "scripts/waitForSeconds";
 
 interface Props {
-  /** The ID of the assignment to parse. */
-  id: number;
+  /** The uri to sent the data. It comes with the edit of the specific item to modify. */
+  uri: string;
 
-  /** Set Candidates */
-  state: [Candidate[], Function];
+  /** The fields with the user written values */
+  fields: InputField[];
 
   /** A script to submit data. The return complies with the ResultsAPI interface. */
   fetchScript: (uri: string, init: FetchOptions) => Promise<ResultsAPI>;
+
+  /** The function that handles updating the state of the item edited */
+  dispatcher: Function;
 }
 
-export default function FormParseLinks({ id, state, fetchScript }: Props) {
-  const [candidates, setCandidates] = state;
-
+export default function FormEdit({ uri, fields, fetchScript, dispatcher }: Props) {
   // Global state
   const { closeDialog } = useDialog();
 
@@ -39,18 +36,13 @@ export default function FormParseLinks({ id, state, fetchScript }: Props) {
   const [status, setStatus] = useState<Status>("empty");
   const [message, setMessage] = useState("");
 
-  // Properties
-  const uri = "/api/parse_links/" + id;
-
   // Methods
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     onLoading(event);
 
     try {
       const formData = gatherFormData(event.currentTarget);
-      const parsedLinks = textAreaToArray(formData.unparsed_links);
-      const body = { links: parsedLinks };
-      const fetchOptions = packageData("POST", body);
+      const fetchOptions = packageData("POST", formData);
       const result = await fetchScript(uri, fetchOptions);
 
       onResult(result);
@@ -62,7 +54,7 @@ export default function FormParseLinks({ id, state, fetchScript }: Props) {
   function onLoading(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setStatus("loading");
-    setMessage("Scaning LinkedIn profiles");
+    setMessage("Saving changes");
   }
 
   function onResult(result: ResultsAPI) {
@@ -72,28 +64,21 @@ export default function FormParseLinks({ id, state, fetchScript }: Props) {
     else onSuccess(data);
   }
 
-  async function onSuccess(newCandidates: Candidate[]) {
+  async function onSuccess(result: unknown) {
     setStatus("ready");
-    setMessage("LinkedIn profiles scanned");
-
-    await waitForSeconds(0.5);
-    setCandidates([...candidates, ...newCandidates]);
+    dispatcher(result);
     closeDialog();
   }
 
   function onFailure(error: Error | unknown) {
     console.error(error);
     setStatus("error");
-    setMessage("Could not scan LinkedIn profiles");
+    setMessage("Could not save changes");
   }
 
   return (
-    <form
-      data-testid="form-candidates"
-      className="form form-candidates"
-      onSubmit={(event) => onSubmit(event)}
-    >
-      <h2>Add Candidates</h2>
+    <form data-testid="form-assignment" className="form" onSubmit={onSubmit}>
+      <h2>New Assignment</h2>
       <InputFields fields={fields} />
       <FormStatus status={status} message={message} />
       <div className="buttons">

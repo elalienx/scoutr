@@ -13,7 +13,7 @@ import Assignment from "types/Assignment";
 import FetchOptions from "types/FetchOptions";
 import ResultsAPI from "types/ResultAPI";
 import Status from "types/Status";
-import fields from "./fields";
+import fields from "../../data/new-assignment";
 import "styles/components/form.css";
 import waitForSeconds from "scripts/waitForSeconds";
 

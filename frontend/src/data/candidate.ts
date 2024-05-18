@@ -1,0 +1,16 @@
+// Project files
+import InputField from "types/InputField";
+
+const fields: InputField[] = [
+  {
+    id: "notes",
+    type: "text-area",
+    label: "Notes",
+    placeholder:
+      "Has worked for the 4 biggest consultant companies. Has multiple certification in latest technologies.",
+    defaultValue: "",
+    required: true,
+  },
+];
+
+export default fields;
