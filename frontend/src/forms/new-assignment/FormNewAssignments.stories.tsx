@@ -3,14 +3,14 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { BrowserRouter } from "react-router-dom";
 
 // Project files
-import FormAssignment from "./FormAssignment";
+import FormNewAssignment from "./FormNewAssignment";
 import mockFetchAssignment from "scripts/fetch-service/mocks/mockFetchAssignment";
 import mockFetchError from "scripts/fetch-service/mocks/mockFetchError";
 import mockFetchAssignmentSlow from "scripts/fetch-service/mocks/mockFetchAssignmentSlow";
 
 const meta = {
   title: "Formularies/New Assignment",
-  component: FormAssignment,
+  component: FormNewAssignment,
   parameters: { layout: "centered" },
   decorators: [
     (Story) => (
@@ -20,7 +20,7 @@ const meta = {
     ),
   ],
   tags: ["autodocs"],
-} satisfies Meta<typeof FormAssignment>;
+} satisfies Meta<typeof FormNewAssignment>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

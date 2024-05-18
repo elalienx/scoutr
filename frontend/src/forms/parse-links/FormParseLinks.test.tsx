@@ -11,7 +11,7 @@ import {
 import mockFetchError from "scripts/fetch-service/mocks/mockFetchError";
 import mockFetchOneCandidate from "scripts/fetch-service/mocks/mockFetchOneCandidate";
 import Candidate from "types/Candidate";
-import FormCandidates from "./FormCandidates";
+import FormParseLinks from "./FormParseLinks";
 import mockFetchManyCandidates from "scripts/fetch-service/mocks/mockFetchManyCandidates";
 
 test("Filling the formulary with 1 valid link returns the scanned profile", async () => {
@@ -25,7 +25,7 @@ test("Filling the formulary with 1 valid link returns the scanned profile", asyn
   const result = "LinkedIn profiles scanned";
 
   render(
-    <FormCandidates
+    <FormParseLinks
       fetchScript={mockFetchOneCandidate}
       id={assignment_id}
       state={[candidates, setCandidates]}
@@ -59,7 +59,7 @@ test("Filling the formulary with multiple valid links returns the scanned profil
   const result = "LinkedIn profiles scanned";
 
   render(
-    <FormCandidates
+    <FormParseLinks
       fetchScript={mockFetchManyCandidates}
       id={assignment_id}
       state={[candidates, setCandidates]}
@@ -91,7 +91,7 @@ test("Getting an error from server shows error state", async () => {
   const result = "Could not scan LinkedIn profiles";
 
   render(
-    <FormCandidates
+    <FormParseLinks
       fetchScript={mockFetchError}
       id={assignment_id}
       state={[candidates, setCandidates]}

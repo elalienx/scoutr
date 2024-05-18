@@ -3,7 +3,7 @@ import Button from "components/button/Button";
 import fetchService from "scripts/fetch-service/fetchService";
 import useDialog from "state/DialogContextAPI";
 import Candidate from "types/Candidate";
-import FormCandidates from "../form-candidates/FormCandidates";
+import FormParseLinks from "../../../forms/parse-links/FormParseLinks";
 import StateEmpty from "../state-empty/StateEmpty";
 import Table from "../table/Table";
 
@@ -22,7 +22,7 @@ export default function Content({ state, id }: Props) {
   const { showDialog } = useDialog();
 
   // Components
-  const Form = <FormCandidates fetchScript={fetchService} id={id} state={state} />;
+  const Form = <FormParseLinks fetchScript={fetchService} id={id} state={state} />;
 
   // Safeguard
   if (candidates.length === 0) return <StateEmpty component={Form} />;

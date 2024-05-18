@@ -1,30 +1,38 @@
 // Node modules
 import { FormEvent, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 // Project files
 import Button from "components/button/Button";
 import InputFields from "components/input-fields/InputFields";
 import FormStatus from "components/form-status/FormStatus";
-import useDialog from "state/DialogContextAPI";
 import gatherFormData from "scripts/forms/gatherFormData";
 import packageData from "scripts/forms/packageData";
-import Assignment from "types/Assignment";
+import textAreaToArray from "scripts/forms/textAreaToArray";
+import useDialog from "state/DialogContextAPI";
+import Candidate from "types/Candidate";
 import FetchOptions from "types/FetchOptions";
 import ResultsAPI from "types/ResultAPI";
 import Status from "types/Status";
 import fields from "./fields";
 import "styles/components/form.css";
+import "./form-candidates.css";
 import waitForSeconds from "scripts/waitForSeconds";
 
 interface Props {
+  /** The ID of the assignment to parse. */
+  id: number;
+
+  /** Set Candidates */
+  state: [Candidate[], Function];
+
   /** A script to submit data. The return complies with the ResultsAPI interface. */
   fetchScript: (uri: string, init: FetchOptions) => Promise<ResultsAPI>;
 }
 
-export default function FormAssignment({ fetchScript }: Props) {
+export default function FormParseLinks({ id, state, fetchScript }: Props) {
+  const [candidates, setCandidates] = state;
+
   // Global state
-  const navigate = useNavigate();
   const { closeDialog } = useDialog();
 
   // Local state
@@ -32,7 +40,7 @@ export default function FormAssignment({ fetchScript }: Props) {
   const [message, setMessage] = useState("");
 
   // Properties
-  const uri = "/api/assignments";
+  const uri = "/api/parse_links/" + id;
 
   // Methods
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -40,7 +48,9 @@ export default function FormAssignment({ fetchScript }: Props) {
 
     try {
       const formData = gatherFormData(event.currentTarget);
-      const fetchOptions = packageData("POST", formData);
+      const parsedLinks = textAreaToArray(formData.unparsed_links);
+      const body = { links: parsedLinks };
+      const fetchOptions = packageData("POST", body);
       const result = await fetchScript(uri, fetchOptions);
 
       onResult(result);
@@ -52,7 +62,7 @@ export default function FormAssignment({ fetchScript }: Props) {
   function onLoading(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setStatus("loading");
-    setMessage("Creating new assignment");
+    setMessage("Scaning LinkedIn profiles");
   }
 
   function onResult(result: ResultsAPI) {
@@ -62,24 +72,28 @@ export default function FormAssignment({ fetchScript }: Props) {
     else onSuccess(data);
   }
 
-  async function onSuccess(newAssignment: Assignment) {
+  async function onSuccess(newCandidates: Candidate[]) {
     setStatus("ready");
-    setMessage("Assignment created");
+    setMessage("LinkedIn profiles scanned");
 
     await waitForSeconds(0.5);
-    navigate(`/candidates/${newAssignment.id}`);
+    setCandidates([...candidates, ...newCandidates]);
     closeDialog();
   }
 
   function onFailure(error: Error | unknown) {
     console.error(error);
     setStatus("error");
-    setMessage("Could not create assignment");
+    setMessage("Could not scan LinkedIn profiles");
   }
 
   return (
-    <form data-testid="form-assignment" className="form" onSubmit={onSubmit}>
-      <h2>New Assignment</h2>
+    <form
+      data-testid="form-candidates"
+      className="form form-candidates"
+      onSubmit={(event) => onSubmit(event)}
+    >
+      <h2>Add Candidates</h2>
       <InputFields fields={fields} />
       <FormStatus status={status} message={message} />
       <div className="buttons">
