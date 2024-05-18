@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS assignments(
     date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     assignment_name VARCHAR(50),
     company_name VARCHAR(50),
-    company_image_url VARCHAR(255)
+    company_image_url VARCHAR(255) DEFAULT ''
 );
 
 CREATE TABLE IF NOT EXISTS candidates(
@@ -17,9 +17,9 @@ CREATE TABLE IF NOT EXISTS candidates(
     company_name VARCHAR(50),
     company_duration_in_months SMALLINT,
     company_image_url VARCHAR(255),
-    notes TEXT,
-    relevance SMALLINT,
-    contact_status SMALLINT,
+    notes TEXT DEFAULT '',
+    relevance SMALLINT DEFAULT 0,
+    contact_status SMALLINT DEFAULT 0,
     contact_date TIMESTAMP NULL
 );
 
