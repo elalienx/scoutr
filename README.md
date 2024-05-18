@@ -17,7 +17,7 @@ To see a product tour check this YouTube video: [https://youtu.be/Da8lH9Z1e-4](h
 ⚠️ Note: The Docker installation takes time to install everything, so don't open [http://localhost:3050](http://localhost:3050) until you see these messages in the terminal:
 
 ```
-🟡 database-1  | [YOUR_CURRENT_DATE] LOG:  database system is ready to accept connections
-🟢 frontend-1  | VITE v5.2.11  ready in [SOME_MILLISECONDS] ms
+🟡 database-1  | (YOUR_CURRENT_DATE) LOG:  database system is ready to accept connections
+🟢 frontend-1  | VITE v5.2.11  ready in (SOME_MILLISECONDS) ms
 🔵 backend-1   | Scoutr backend server ready on port 8000
 ```
