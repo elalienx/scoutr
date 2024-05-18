@@ -31,10 +31,10 @@ export default function RowCandidate({ candidate, index }: Props) {
         {index}
       </td>
       <td className="column-big" data-label="Candidate">
-        <ItemCandidate {...parsedData.candidate} />
+        <ItemCandidate {...candidate} />
       </td>
       <td className="column-big" data-label="Company">
-        <ItemCompany {...parsedData.company} />
+        <ItemCompany {...candidate} />
       </td>
       <td className="column-big" data-label="Notes">
         <small className="trim-text">{notes}</small>
