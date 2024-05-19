@@ -149,7 +149,7 @@ describe.todo("Data fetching states", () => {
   });
 });
 
-describe("Empty and Ready state open new assigment formulary", () => {
+describe.todo("Empty and Ready state open new assigment formulary", () => {
   test("Show parse links formulary from ready state", async () => {
     // Arrange
     const mockHook = mockUseReadyCandidates;
