@@ -13,23 +13,20 @@ import mockFetchOneCandidate from "scripts/fetch-service/mocks/mockFetchOneCandi
 import Candidate from "types/Candidate";
 import FormParseLinks from "./FormParseLinks";
 import mockFetchManyCandidates from "scripts/fetch-service/mocks/mockFetchManyCandidates";
+import CandidateActions from "types/CandidateActions";
 
 test("Filling the formulary with 1 valid link returns the scanned profile", async () => {
   // Arrange
   const assignment_id = 1;
   const candidates: Candidate[] = [];
-  const setCandidates = (newCandidates: Candidate[]) => {
-    [...candidates, ...newCandidates];
+  const dispatch = (actions: CandidateActions) => {
+    [...candidates, ...actions.payload];
   };
   const value = "https://www.linkedin.com/in/eduardo-alvarez-nowak/";
   const result = "LinkedIn profiles scanned";
 
   render(
-    <FormParseLinks
-      fetchScript={mockFetchOneCandidate}
-      id={assignment_id}
-      state={[candidates, setCandidates]}
-    />,
+    <FormParseLinks fetchScript={mockFetchOneCandidate} id={assignment_id} dispatch={dispatch} />,
   );
 
   // Act
@@ -50,8 +47,8 @@ test("Filling the formulary with multiple valid links returns the scanned profil
   // Arrange
   const assignment_id = 1;
   const candidates: Candidate[] = [];
-  const setCandidates = (newCandidates: Candidate[]) => {
-    [...candidates, ...newCandidates];
+  const dispatch = (actions: CandidateActions) => {
+    [...candidates, ...actions.payload];
   };
   // values separated with a comma and a empty space on purpose. Note that is not an array, FormCandidate should convert it to the appropiate data format.
   const value =
@@ -59,11 +56,7 @@ test("Filling the formulary with multiple valid links returns the scanned profil
   const result = "LinkedIn profiles scanned";
 
   render(
-    <FormParseLinks
-      fetchScript={mockFetchManyCandidates}
-      id={assignment_id}
-      state={[candidates, setCandidates]}
-    />,
+    <FormParseLinks fetchScript={mockFetchManyCandidates} id={assignment_id} dispatch={dispatch} />,
   );
 
   // Act
@@ -84,19 +77,13 @@ test("Getting an error from server shows error state", async () => {
   // Arrange
   const assignment_id = 1;
   const candidates: Candidate[] = [];
-  const setCandidates = (newCandidates: Candidate[]) => {
-    [...candidates, ...newCandidates];
+  const dispatch = (actions: CandidateActions) => {
+    [...candidates, ...actions.payload];
   };
   const value = "linkedin.com/invalid-profile";
   const result = "Could not scan LinkedIn profiles";
 
-  render(
-    <FormParseLinks
-      fetchScript={mockFetchError}
-      id={assignment_id}
-      state={[candidates, setCandidates]}
-    />,
-  );
+  render(<FormParseLinks fetchScript={mockFetchError} id={assignment_id} dispatch={dispatch} />);
 
   // Act
   const formStatus = screen.getByTestId("status");

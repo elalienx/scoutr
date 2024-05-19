@@ -28,7 +28,7 @@ export default function FormNewAssignment({ fetchScript }: Props) {
   const { closeDialog } = useDialog();
 
   // Local state
-  const [status, setStatus] = useState<Status>("empty");
+  const [status, setStatus] = useState<Status>("form-stand-by");
   const [message, setMessage] = useState("");
 
   // Properties
