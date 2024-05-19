@@ -5,16 +5,14 @@ import { useParams } from "react-router-dom";
 // Project files
 import Loader from "components/loader/Loader";
 import NavigationBar from "components/navigation-bar/NavigationBar";
+import contactedCandidates from "scripts/response-rate/contactedCandidates";
+import calculatePercentage from "scripts/response-rate/calculatePercentage";
 import Candidate from "types/Candidate";
 import Status from "types/Status";
 import Page404 from "pages/page-404/Page404";
 import Content from "./content/Content";
 import StateError from "./state-error/StateError";
 import "./candidates.css";
-
-// -- Refactor: this must belong to page files
-import contactedCandidates from "scripts/response-rate/contactedCandidates";
-import calculatePercentage from "scripts/response-rate/calculatePercentage";
 
 interface Props {
   /** A React custom hook to fetch data. The return complies with the ResultsAPI interface. */
@@ -47,11 +45,7 @@ export default function Candidates({ fetchHook }: Props) {
 
   return (
     <div id="candidates">
-      <NavigationBar
-        assignment_name={"Candidates"}
-        company_image_url={""}
-        response_rate={response_rate}
-      />
+      <NavigationBar assignment_name={"Candidates"} response_rate={response_rate} />
       <section className="section">
         {status === "loading" && <Loader />}
         {status === "error" && <StateError />}
