@@ -29,6 +29,7 @@
 
     .id {
       display: table-cell;
+      text-align: center;
     }
 
     .candidate img,
