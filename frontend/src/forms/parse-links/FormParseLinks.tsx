@@ -8,6 +8,7 @@ import FormStatus from "components/form-status/FormStatus";
 import gatherFormData from "scripts/forms/gatherFormData";
 import packageData from "scripts/forms/packageData";
 import textAreaToArray from "scripts/forms/textAreaToArray";
+import waitForSeconds from "scripts/waitForSeconds";
 import useDialog from "state/DialogContextAPI";
 import Candidate from "types/Candidate";
 import FetchOptions from "types/FetchOptions";
@@ -16,22 +17,19 @@ import Status from "types/Status";
 import fields from "../../data/parse-links";
 import "styles/components/form.css";
 import "./form-candidates.css";
-import waitForSeconds from "scripts/waitForSeconds";
 
 interface Props {
   /** The ID of the assignment to parse. */
   id: number;
 
-  /** Set Candidates */
-  state: [Candidate[], Function];
+  /** A function that uses reducers to update the candidates state. */
+  dispatch: Function;
 
   /** A script to submit data. The return complies with the ResultsAPI interface. */
   fetchScript: (uri: string, init: FetchOptions) => Promise<ResultsAPI>;
 }
 
-export default function FormParseLinks({ id, state, fetchScript }: Props) {
-  const [candidates, setCandidates] = state;
-
+export default function FormParseLinks({ id, dispatch, fetchScript }: Props) {
   // Global state
   const { closeDialog } = useDialog();
 
@@ -77,7 +75,7 @@ export default function FormParseLinks({ id, state, fetchScript }: Props) {
     setMessage("LinkedIn profiles scanned");
 
     await waitForSeconds(0.5);
-    setCandidates([...candidates, ...newCandidates]);
+    dispatch({ type: "add-many", payload: newCandidates });
     closeDialog();
   }
 

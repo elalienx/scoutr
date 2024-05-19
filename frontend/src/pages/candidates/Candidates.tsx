@@ -1,5 +1,5 @@
 // Node modules
-import { useEffect, useState } from "react";
+import { useEffect, useReducer } from "react";
 import { useParams } from "react-router-dom";
 
 // Project files
@@ -13,6 +13,7 @@ import Page404 from "pages/page-404/Page404";
 import Content from "./content/Content";
 import StateError from "./state-error/StateError";
 import "./candidates.css";
+import CandidatesReducer from "state/CandidatesReducer";
 
 interface Props {
   /** A React custom hook to fetch data. The return complies with the ResultsAPI interface. */
@@ -30,7 +31,7 @@ export default function Candidates({ fetchHook }: Props) {
   const { data, status } = fetchHook("/api/candidates/" + assignment_id);
 
   // Local state
-  const [candidates, setCandidates] = useState(data);
+  const [candidates, dispatch] = useReducer(CandidatesReducer, []);
 
   // Properties
   const id = Number(assignment_id) || -1;
@@ -38,7 +39,9 @@ export default function Candidates({ fetchHook }: Props) {
   const response_rate = calculatePercentage(contacted.length, candidates.length);
 
   // Methods
-  useEffect(() => setCandidates(data), [data]);
+  useEffect(() => {
+    dispatch({ type: "set", payload: data });
+  }, [data]);
 
   // Safeguard
   if (id === -1) return <Page404 />;
@@ -49,7 +52,7 @@ export default function Candidates({ fetchHook }: Props) {
       <section className="section">
         {status === "loading" && <Loader />}
         {status === "error" && <StateError />}
-        {status === "ready" && <Content id={id} state={[candidates, setCandidates]} />}
+        {status === "ready" && <Content id={id} state={[candidates, dispatch]} />}
       </section>
     </div>
   );

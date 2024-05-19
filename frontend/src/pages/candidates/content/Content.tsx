@@ -16,13 +16,13 @@ interface Props {
 }
 
 export default function Content({ state, id }: Props) {
-  const [candidates] = state;
+  const [candidates, dispatch] = state;
 
   // Global state
   const { showDialog } = useDialog();
 
   // Components
-  const Form = <FormParseLinks fetchScript={fetchService} id={id} state={state} />;
+  const Form = <FormParseLinks fetchScript={fetchService} id={id} dispatch={dispatch} />;
 
   // Safeguard
   if (candidates.length === 0) return <StateEmpty component={Form} />;
