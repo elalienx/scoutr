@@ -1,20 +1,19 @@
 // Node modules
-import { useEffect, useState } from "react";
+import { useEffect, useReducer } from "react";
 import { useParams } from "react-router-dom";
 
 // Project files
 import Loader from "components/loader/Loader";
 import NavigationBar from "components/navigation-bar/NavigationBar";
+import contactedCandidates from "scripts/response-rate/contactedCandidates";
+import calculatePercentage from "scripts/response-rate/calculatePercentage";
 import Candidate from "types/Candidate";
 import Status from "types/Status";
 import Page404 from "pages/page-404/Page404";
 import Content from "./content/Content";
 import StateError from "./state-error/StateError";
 import "./candidates.css";
-
-// -- Refactor: this must belong to page files
-import contactedCandidates from "scripts/response-rate/contactedCandidates";
-import calculatePercentage from "scripts/response-rate/calculatePercentage";
+import CandidatesReducer from "state/CandidatesReducer";
 
 interface Props {
   /** A React custom hook to fetch data. The return complies with the ResultsAPI interface. */
@@ -32,7 +31,7 @@ export default function Candidates({ fetchHook }: Props) {
   const { data, status } = fetchHook("/api/candidates/" + assignment_id);
 
   // Local state
-  const [candidates, setCandidates] = useState(data);
+  const [candidates, dispatch] = useReducer(CandidatesReducer, data);
 
   // Properties
   const id = Number(assignment_id) || -1;
@@ -40,22 +39,18 @@ export default function Candidates({ fetchHook }: Props) {
   const response_rate = calculatePercentage(contacted.length, candidates.length);
 
   // Methods
-  useEffect(() => setCandidates(data), [data]);
+  useEffect(() => dispatch({ type: "set-candidates", payload: data }), [data]);
 
   // Safeguard
   if (id === -1) return <Page404 />;
 
   return (
     <div id="candidates">
-      <NavigationBar
-        assignment_name={"Candidates"}
-        company_image_url={""}
-        response_rate={response_rate}
-      />
+      <NavigationBar assignment_name={"Candidates"} response_rate={response_rate} />
       <section className="section">
         {status === "loading" && <Loader />}
         {status === "error" && <StateError />}
-        {status === "ready" && <Content id={id} state={[candidates, setCandidates]} />}
+        {status === "ready" && <Content id={id} state={[candidates, dispatch]} />}
       </section>
     </div>
   );

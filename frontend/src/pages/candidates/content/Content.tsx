@@ -1,35 +1,37 @@
 // Project files
 import Button from "components/button/Button";
+import FormParseLinks from "forms/parse-links/FormParseLinks";
 import fetchService from "scripts/fetch-service/fetchService";
 import useDialog from "state/DialogContextAPI";
 import Candidate from "types/Candidate";
-import FormCandidates from "../form-candidates/FormCandidates";
+import CandidateActions from "types/CandidateActions";
 import StateEmpty from "../state-empty/StateEmpty";
 import Table from "../table/Table";
+import { Dispatch } from "react";
 
 interface Props {
   /** The candidates to dispaly on the table. */
-  state: [Candidate[], Function];
+  state: [Candidate[], Dispatch<CandidateActions>];
 
   /** The React component to show when you click the button.  */
   id: number;
 }
 
 export default function Content({ state, id }: Props) {
-  const [candidates] = state;
+  const [candidates, dispatch] = state;
 
   // Global state
   const { showDialog } = useDialog();
 
   // Components
-  const Form = <FormCandidates fetchScript={fetchService} id={id} state={state} />;
+  const Form = <FormParseLinks fetchScript={fetchService} id={id} dispatch={dispatch} />;
 
   // Safeguard
   if (candidates.length === 0) return <StateEmpty component={Form} />;
 
   return (
     <div className="candidates">
-      <Table candidates={candidates} />
+      <Table state={state} />
       <Button
         big
         icon_prefix="fab"

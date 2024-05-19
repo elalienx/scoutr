@@ -3,16 +3,12 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { BrowserRouter } from "react-router-dom";
 
 // Project files
-import ImageURLs from "stories/image_urls.json";
 import NavigationBar from "./NavigationBar";
 
 const meta = {
   title: "Components/Navigation Bar",
   component: NavigationBar,
   parameters: { layout: "fullscreen" },
-  argTypes: {
-    company_image_url: { control: { type: "file", accept: ".jpg, .png" } },
-  },
   decorators: [
     (Story) => (
       <BrowserRouter>
@@ -30,7 +26,6 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     assignment_name: "Data Engineer",
-    company_image_url: ImageURLs.company_foklsam,
     response_rate: 37,
   },
 };
@@ -38,7 +33,6 @@ export const Default: Story = {
 export const NoResponses: Story = {
   args: {
     assignment_name: "Data Engineer",
-    company_image_url: ImageURLs.company_foklsam,
     response_rate: 0,
   },
 };
@@ -46,7 +40,6 @@ export const NoResponses: Story = {
 export const Empty: Story = {
   args: {
     assignment_name: "Data Engineer",
-    company_image_url: "",
     response_rate: -1,
   },
 };

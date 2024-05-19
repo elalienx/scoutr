@@ -1,9 +1,17 @@
+// Node modules
+import { Dispatch } from "react";
+
 // Project files
 import HeaderCandidate from "components/header-candidate/HeaderCandidate";
 import ItemBadge from "components/item-badge/ItemBadge";
 import ItemCandidate from "components/item-candidate/ItemCandidate";
 import ItemCompany from "components/item-company/ItemCompany";
+import fields from "data/candidate";
+import FormEdit from "forms/edit/FormEdit";
+import fetchService from "scripts/fetch-service/fetchService";
+import useDialog from "state/DialogContextAPI";
 import Candidate from "types/Candidate";
+import CandidateActions from "types/CandidateActions";
 import parseData from "./helpers/parseData";
 import "./row-candidate.css";
 
@@ -13,15 +21,43 @@ interface Props {
 
   /** The row number. Note, we don't use the candidate.id because all assignments save the candidates a single table so the ID do not have a sequence for each assignment */
   index: number;
+
+  /** A function that uses reducers to update the candidates state. */
+  dispatch: Dispatch<CandidateActions>;
 }
 
 /** A row containing the complete candidate information. */
-export default function RowCandidate({ candidate, index }: Props) {
-  const { notes, relevance, contact_status } = candidate;
+export default function RowCandidate({ candidate, index, dispatch }: Props) {
+  const { id, notes, relevance, contact_status } = candidate;
+
+  // Global state
+  const { showDialog } = useDialog();
 
   // Properties
   const parsedData = parseData(candidate, index);
+  const uri = "/api/candidates/";
 
+  // Methods
+  function onClick(key: keyof Candidate) {
+    const field = fields.find((item) => item.id === key);
+
+    if (field === undefined) {
+      alert(`Error: Cannot find an input field for ${key}`);
+      return;
+    }
+
+    field.defaultValue = candidate[key].toString();
+
+    showDialog(
+      <FormEdit
+        id={id}
+        fields={[field]}
+        uri={uri}
+        fetchScript={fetchService}
+        dispatcher={dispatch}
+      />,
+    );
+  }
   return (
     <tr className="row-candidate">
       <td className="mobile-only-header">
@@ -36,7 +72,7 @@ export default function RowCandidate({ candidate, index }: Props) {
       <td className="company column-big" data-label="Company">
         <ItemCompany {...candidate} />
       </td>
-      <td className="notes column-big" data-label="Notes">
+      <td onClick={() => onClick("notes")} className="notes column-big hover" data-label="Notes">
         <small className="trim-text">{notes}</small>
       </td>
       <td className="relevance column-medium" data-label="Relevance">

@@ -13,24 +13,18 @@ interface Props {
   /** The name of the current assignment. */
   assignment_name: string;
 
-  /** The company logo. */
-  company_image_url: string;
-
   /** How many candidates have responded to us after initial contact? A value of -1 indicates we haven't started to contact anyone yet. */
   response_rate: number;
 }
 
 /** The menu bar for the Candidate page. */
 export default function NavigationBar(item: Props) {
-  const { assignment_name, company_image_url, response_rate } = item;
+  const { assignment_name, response_rate } = item;
 
   return (
     <nav className="navigation-bar">
       {/* Left */}
-      <Assignment
-        assignment_name={assignment_name}
-        company_image_url={company_image_url}
-      />
+      <Assignment assignment_name={assignment_name} />
 
       {/* Midle */}
       <Link to="/">

@@ -13,7 +13,7 @@ import Assignment from "types/Assignment";
 import FetchOptions from "types/FetchOptions";
 import ResultsAPI from "types/ResultAPI";
 import Status from "types/Status";
-import fields from "./fields";
+import fields from "../../data/new-assignment";
 import "styles/components/form.css";
 import waitForSeconds from "scripts/waitForSeconds";
 
@@ -22,13 +22,13 @@ interface Props {
   fetchScript: (uri: string, init: FetchOptions) => Promise<ResultsAPI>;
 }
 
-export default function FormAssignment({ fetchScript }: Props) {
+export default function FormNewAssignment({ fetchScript }: Props) {
   // Global state
   const navigate = useNavigate();
   const { closeDialog } = useDialog();
 
   // Local state
-  const [status, setStatus] = useState<Status>("empty");
+  const [status, setStatus] = useState<Status>("form-stand-by");
   const [message, setMessage] = useState("");
 
   // Properties

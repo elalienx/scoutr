@@ -34,7 +34,7 @@ export default function FormStatus(item: Props) {
     color = "green";
     icon = "check";
   }
-  if (status === "empty") {
+  if (status === "form-stand-by") {
     color = "invisible";
     icon = "plus";
   }
