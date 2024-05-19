@@ -28,9 +28,6 @@ interface Props {
 export default function RowCandidate({ candidate, index, dispatch }: Props) {
   const { id, notes, relevance, contact_status } = candidate;
 
-  // Global state
-  const { showDialog } = useDialog();
-
   // Properties
   const parsedData = parseData(candidate, index);
   const uri = "/api/candidates/";
@@ -56,7 +53,6 @@ export default function RowCandidate({ candidate, index, dispatch }: Props) {
       />,
     );
   }
-
   return (
     <tr className="row-candidate">
       <td className="mobile-only-header">
