@@ -60,8 +60,8 @@ describe("Wrong assigment_id passed on the URL", () => {
   });
 });
 
-describe.todo("Data fetching states", () => {
-  test.todo("Loading state", () => {
+describe("Data fetching states", () => {
+  test("Loading state", () => {
     // Arrange
     const mookHook = mockUseLoading;
     const page = <Candidates fetchHook={mookHook} />;
@@ -82,7 +82,7 @@ describe.todo("Data fetching states", () => {
     expect(test).toBeInTheDocument();
   });
 
-  test.todo("Error state", () => {
+  test("Error state", () => {
     // Arrange
     const mockHook = mockUseError;
     const page = <Candidates fetchHook={mockHook} />;
@@ -103,7 +103,7 @@ describe.todo("Data fetching states", () => {
     expect(test).toBeInTheDocument();
   });
 
-  test.todo("Empty state", () => {
+  test("Empty state", () => {
     // Arrange
     const mockHook = mockUseEmpty;
     const page = <Candidates fetchHook={mockHook} />;
@@ -124,7 +124,7 @@ describe.todo("Data fetching states", () => {
     expect(test).toBeInTheDocument();
   });
 
-  test.todo("Ready (normal) state", () => {
+  test("Ready (normal) state", () => {
     // Arrange
     const mockHook = mockUseReadyCandidates;
     const page = <Candidates fetchHook={mockHook} />;
@@ -149,7 +149,7 @@ describe.todo("Data fetching states", () => {
   });
 });
 
-describe.todo("Empty and Ready state open new assigment formulary", () => {
+describe("Empty and Ready state open new assigment formulary", () => {
   test("Show parse links formulary from ready state", async () => {
     // Arrange
     const mockHook = mockUseReadyCandidates;

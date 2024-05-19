@@ -18,8 +18,6 @@ export default function CandidatesReducer(state: Candidate[], actions: Candidate
 }
 
 function set(payload: Candidate[]) {
-  console.log("CandidatesReducer() set() payload", payload);
-
   return payload;
 }
 

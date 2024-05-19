@@ -31,7 +31,7 @@ export default function Candidates({ fetchHook }: Props) {
   const { data, status } = fetchHook("/api/candidates/" + assignment_id);
 
   // Local state
-  const [candidates, dispatch] = useReducer(CandidatesReducer, []);
+  const [candidates, dispatch] = useReducer(CandidatesReducer, data);
 
   // Properties
   const id = Number(assignment_id) || -1;
@@ -40,7 +40,6 @@ export default function Candidates({ fetchHook }: Props) {
 
   // Methods
   useEffect(() => {
-    console.log("CandidatesPage() data", data);
     dispatch({ type: "set", payload: data });
   }, [data]);
 
