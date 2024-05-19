@@ -10,7 +10,7 @@ import Candidates from "./Candidates";
 import mockUseEmpty from "scripts/fetch-hook/mocks/mockUseEmpty";
 import mockUseReadyCandidates from "scripts/fetch-hook/mocks/mockUseReadyCandidates";
 
-describe.todo("Wrong assigment_id passed on the URL", () => {
+describe("Wrong assigment_id passed on the URL", () => {
   test("Not passing an assignment_id in the URL goes to the 404 page", () => {
     // Arrange
     const mockHook = mockUseError;
@@ -35,7 +35,7 @@ describe.todo("Wrong assigment_id passed on the URL", () => {
     expect(test).toBeInTheDocument();
   });
 
-  test("Passing a wrong value to assignment_id goes to the 404 page", () => {
+  test.todo("Passing a wrong value to assignment_id goes to the 404 page", () => {
     // Arrange
     const mockHook = mockUseError;
     const page = <Candidates fetchHook={mockHook} />;
@@ -61,7 +61,7 @@ describe.todo("Wrong assigment_id passed on the URL", () => {
 });
 
 describe.todo("Data fetching states", () => {
-  test("Loading state", () => {
+  test.todo("Loading state", () => {
     // Arrange
     const mookHook = mockUseLoading;
     const page = <Candidates fetchHook={mookHook} />;
@@ -82,7 +82,7 @@ describe.todo("Data fetching states", () => {
     expect(test).toBeInTheDocument();
   });
 
-  test("Error state", () => {
+  test.todo("Error state", () => {
     // Arrange
     const mockHook = mockUseError;
     const page = <Candidates fetchHook={mockHook} />;
@@ -103,7 +103,7 @@ describe.todo("Data fetching states", () => {
     expect(test).toBeInTheDocument();
   });
 
-  test("Empty state", () => {
+  test.todo("Empty state", () => {
     // Arrange
     const mockHook = mockUseEmpty;
     const page = <Candidates fetchHook={mockHook} />;
@@ -124,7 +124,7 @@ describe.todo("Data fetching states", () => {
     expect(test).toBeInTheDocument();
   });
 
-  test("Ready (normal) state", () => {
+  test.todo("Ready (normal) state", () => {
     // Arrange
     const mockHook = mockUseReadyCandidates;
     const page = <Candidates fetchHook={mockHook} />;
