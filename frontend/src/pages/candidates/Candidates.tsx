@@ -39,9 +39,7 @@ export default function Candidates({ fetchHook }: Props) {
   const response_rate = calculatePercentage(contacted.length, candidates.length);
 
   // Methods
-  useEffect(() => {
-    dispatch({ type: "set", payload: data });
-  }, [data]);
+  useEffect(() => dispatch({ type: "set", payload: data }), [data]);
 
   // Safeguard
   if (id === -1) return <Page404 />;

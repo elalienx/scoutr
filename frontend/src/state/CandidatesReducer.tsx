@@ -1,9 +1,6 @@
+// Project files
 import Candidate from "types/Candidate";
-
-interface CandidateActions {
-  type: "set" | "add-many" | "edit";
-  payload?: any;
-}
+import CandidateActions from "types/CandidateActions";
 
 export default function CandidatesReducer(state: Candidate[], actions: CandidateActions) {
   const { type, payload } = actions;

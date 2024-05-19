@@ -1,5 +1,5 @@
 // Node modules
-import { FormEvent, useState } from "react";
+import { Dispatch, FormEvent, useState } from "react";
 
 // Project files
 import Button from "components/button/Button";
@@ -17,13 +17,14 @@ import Status from "types/Status";
 import fields from "../../data/parse-links";
 import "styles/components/form.css";
 import "./form-candidates.css";
+import CandidateActions from "types/CandidateActions";
 
 interface Props {
   /** The ID of the assignment to parse. */
   id: number;
 
   /** A function that uses reducers to update the candidates state. */
-  dispatch: Function;
+  dispatch: Dispatch<CandidateActions>;
 
   /** A script to submit data. The return complies with the ResultsAPI interface. */
   fetchScript: (uri: string, init: FetchOptions) => Promise<ResultsAPI>;
@@ -34,7 +35,7 @@ export default function FormParseLinks({ id, dispatch, fetchScript }: Props) {
   const { closeDialog } = useDialog();
 
   // Local state
-  const [status, setStatus] = useState<Status>("empty");
+  const [status, setStatus] = useState<Status>("form-stand-by");
   const [message, setMessage] = useState("");
 
   // Properties

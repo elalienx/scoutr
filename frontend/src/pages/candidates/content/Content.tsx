@@ -4,12 +4,14 @@ import FormParseLinks from "forms/parse-links/FormParseLinks";
 import fetchService from "scripts/fetch-service/fetchService";
 import useDialog from "state/DialogContextAPI";
 import Candidate from "types/Candidate";
+import CandidateActions from "types/CandidateActions";
 import StateEmpty from "../state-empty/StateEmpty";
 import Table from "../table/Table";
+import { Dispatch } from "react";
 
 interface Props {
   /** The candidates to dispaly on the table. */
-  state: [Candidate[], Function];
+  state: [Candidate[], Dispatch<CandidateActions>];
 
   /** The React component to show when you click the button.  */
   id: number;
