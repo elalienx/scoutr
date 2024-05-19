@@ -35,7 +35,7 @@ describe("Wrong assigment_id passed on the URL", () => {
     expect(test).toBeInTheDocument();
   });
 
-  test.todo("Passing a wrong value to assignment_id goes to the 404 page", () => {
+  test("Passing a wrong value to assignment_id goes to the 404 page", () => {
     // Arrange
     const mockHook = mockUseError;
     const page = <Candidates fetchHook={mockHook} />;
