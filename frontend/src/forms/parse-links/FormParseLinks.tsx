@@ -14,10 +14,10 @@ import Candidate from "types/Candidate";
 import FetchOptions from "types/FetchOptions";
 import ResultsAPI from "types/ResultAPI";
 import Status from "types/Status";
+import CandidateActions from "types/CandidateActions";
 import fields from "../../data/parse-links";
 import "styles/components/form.css";
 import "./form-candidates.css";
-import CandidateActions from "types/CandidateActions";
 
 interface Props {
   /** The ID of the assignment to parse. */
@@ -74,9 +74,10 @@ export default function FormParseLinks({ id, dispatch, fetchScript }: Props) {
   async function onSuccess(newCandidates: Candidate[]) {
     setStatus("ready");
     setMessage("LinkedIn profiles scanned");
+    console.log(newCandidates);
 
     await waitForSeconds(0.5);
-    dispatch({ type: "add-many", payload: newCandidates });
+    dispatch({ type: "add-candidates", payload: newCandidates });
     closeDialog();
   }
 

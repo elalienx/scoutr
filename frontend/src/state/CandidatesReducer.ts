@@ -6,28 +6,31 @@ export default function CandidatesReducer(state: Candidate[], actions: Candidate
   const { type, payload } = actions;
 
   switch (type) {
-    case "set":
+    case "set-candidates":
       return set(payload);
-    case "add-many":
+    case "add-candidates":
       return addMany(state, payload);
-    case "edit":
+    case "edit-single":
       return edit(state, payload);
     default:
       throw new Error(`Error: Action type ${type} does not exist`);
   }
 }
 
-function set(payload: Candidate[]) {
+export function set(payload: Candidate[]) {
   return payload;
 }
 
-function addMany(state: Candidate[], payload: Candidate[]) {
+export function addMany(state: Candidate[], payload: Candidate[]) {
+  
+
+
   const newState = [...state, ...payload];
 
   return newState;
 }
 
-function edit(state: Candidate[], payload: { id: number; data: Candidate }) {
+export function edit(state: Candidate[], payload: { id: number; data: Candidate }) {
   const { id, data } = payload;
 
   const newState = [...state];

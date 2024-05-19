@@ -1,17 +1,19 @@
+// Node modules
+import { Dispatch } from "react";
+
 // Project files
 import HeaderCandidate from "components/header-candidate/HeaderCandidate";
 import ItemBadge from "components/item-badge/ItemBadge";
 import ItemCandidate from "components/item-candidate/ItemCandidate";
 import ItemCompany from "components/item-company/ItemCompany";
 import fields from "data/candidate";
-import useDialog from "state/DialogContextAPI";
-import Candidate from "types/Candidate";
-import parseData from "./helpers/parseData";
 import FormEdit from "forms/edit/FormEdit";
 import fetchService from "scripts/fetch-service/fetchService";
-import "./row-candidate.css";
-import { Dispatch } from "react";
+import useDialog from "state/DialogContextAPI";
+import Candidate from "types/Candidate";
 import CandidateActions from "types/CandidateActions";
+import parseData from "./helpers/parseData";
+import "./row-candidate.css";
 
 interface Props {
   /** The candidate to present */
@@ -27,6 +29,9 @@ interface Props {
 /** A row containing the complete candidate information. */
 export default function RowCandidate({ candidate, index, dispatch }: Props) {
   const { id, notes, relevance, contact_status } = candidate;
+
+  // Global state
+  const { showDialog } = useDialog();
 
   // Properties
   const parsedData = parseData(candidate, index);
