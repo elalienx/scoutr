@@ -12,24 +12,6 @@ const fields: InputField[] = [
     defaultValue: "",
     required: false,
   },
-  {
-    id: "relevance",
-    type: "input-text",
-    label: "Relevance",
-    description: "Higher values denote greater candidate relevance.",
-    placeholder: "",
-    defaultValue: "",
-    required: true,
-  },
-  {
-    id: "contact_status",
-    type: "input-text",
-    label: "Contact status",
-    description: "Values closer to 1, mean close to get hired.",
-    placeholder: "",
-    defaultValue: "",
-    required: true,
-  },
 ];
 
 export default fields;

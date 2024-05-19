@@ -75,18 +75,10 @@ export default function RowCandidate({ candidate, index, dispatch }: Props) {
       <td onClick={() => onClick("notes")} className="notes column-big hover" data-label="Notes">
         <small className="trim-text">{notes}</small>
       </td>
-      <td
-        onClick={() => onClick("relevance")}
-        className="relevance column-medium hover"
-        data-label="Relevance"
-      >
+      <td className="relevance column-medium" data-label="Relevance">
         {relevance > 0 && <ItemBadge {...parsedData.relevance} />}
       </td>
-      <td
-        onClick={() => onClick("contact_status")}
-        className="contact column-medium hover"
-        data-label="Contact"
-      >
+      <td className="contact column-medium" data-label="Contact">
         {contact_status > 0 && <ItemBadge {...parsedData.contact} />}
       </td>
     </tr>
