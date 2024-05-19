@@ -1,5 +1,5 @@
 // Node modules
-import { FormEvent, useState } from "react";
+import { Dispatch, FormEvent, useState } from "react";
 
 // Project files
 import Button from "components/button/Button";
@@ -14,9 +14,13 @@ import ResultsAPI from "types/ResultAPI";
 import Status from "types/Status";
 import "styles/components/form.css";
 import waitForSeconds from "scripts/waitForSeconds";
+import CandidateActions from "types/CandidateActions";
 
 interface Props {
-  /** The uri to sent the data. It comes with the edit of the specific item to modify. */
+  /** The id of the item to update. */
+  id: number;
+
+  /** The uri to sent the data. */
   uri: string;
 
   /** The fields with the user written values */
@@ -26,16 +30,19 @@ interface Props {
   fetchScript: (uri: string, init: FetchOptions) => Promise<ResultsAPI>;
 
   /** The function that handles updating the state of the item edited */
-  dispatcher: Function;
+  dispatcher: Dispatch<CandidateActions>;
 }
 
-export default function FormEdit({ uri, fields, fetchScript, dispatcher }: Props) {
+export default function FormEdit({ id, uri, fields, fetchScript, dispatcher }: Props) {
   // Global state
   const { closeDialog } = useDialog();
 
   // Local state
-  const [status, setStatus] = useState<Status>("empty");
+  const [status, setStatus] = useState<Status>("form-stand-by");
   const [message, setMessage] = useState("");
+
+  // Properties
+  const uriWidthId = uri + id;
 
   // Methods
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -44,7 +51,7 @@ export default function FormEdit({ uri, fields, fetchScript, dispatcher }: Props
     try {
       const formData = gatherFormData(event.currentTarget);
       const fetchOptions = packageData("PATCH", formData);
-      const result = await fetchScript(uri, fetchOptions);
+      const result = await fetchScript(uriWidthId, fetchOptions);
 
       onResult(result);
     } catch (error: unknown) {
@@ -65,9 +72,9 @@ export default function FormEdit({ uri, fields, fetchScript, dispatcher }: Props
     else onSuccess(data);
   }
 
-  async function onSuccess(result: unknown) {
+  async function onSuccess(data: unknown) {
     setStatus("ready");
-    dispatcher(result);
+    dispatcher({ type: "edit", payload: { id, data } });
 
     await waitForSeconds(0.5);
     closeDialog();

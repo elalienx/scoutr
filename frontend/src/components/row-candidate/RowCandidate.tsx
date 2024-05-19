@@ -10,6 +10,8 @@ import parseData from "./helpers/parseData";
 import FormEdit from "forms/edit/FormEdit";
 import fetchService from "scripts/fetch-service/fetchService";
 import "./row-candidate.css";
+import { Dispatch } from "react";
+import CandidateActions from "types/CandidateActions";
 
 interface Props {
   /** The candidate to present */
@@ -17,10 +19,13 @@ interface Props {
 
   /** The row number. Note, we don't use the candidate.id because all assignments save the candidates a single table so the ID do not have a sequence for each assignment */
   index: number;
+
+  /** A function that uses reducers to update the candidates state. */
+  dispatch: Dispatch<CandidateActions>;
 }
 
 /** A row containing the complete candidate information. */
-export default function RowCandidate({ candidate, index }: Props) {
+export default function RowCandidate({ candidate, index, dispatch }: Props) {
   const { id, notes, relevance, contact_status } = candidate;
 
   // Global state
@@ -28,7 +33,7 @@ export default function RowCandidate({ candidate, index }: Props) {
 
   // Properties
   const parsedData = parseData(candidate, index);
-  const uri = "/api/candidates/" + id;
+  const uri = "/api/candidates/";
 
   // Methods
   function onClick(key: keyof Candidate) {
@@ -43,17 +48,13 @@ export default function RowCandidate({ candidate, index }: Props) {
 
     showDialog(
       <FormEdit
+        id={id}
         fields={[field]}
         uri={uri}
         fetchScript={fetchService}
-        dispatcher={fakeDispatcher}
+        dispatcher={dispatch}
       />,
     );
-  }
-
-  function fakeDispatcher(result: unknown) {
-    console.log("Updating");
-    console.log(result);
   }
 
   return (

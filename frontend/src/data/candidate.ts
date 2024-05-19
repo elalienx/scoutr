@@ -10,7 +10,7 @@ const fields: InputField[] = [
     placeholder:
       "Has worked for the 4 biggest consultant companies. Has multiple certification in latest technologies.",
     defaultValue: "",
-    required: true,
+    required: false,
   },
   {
     id: "relevance",

@@ -31,7 +31,7 @@ export default function Content({ state, id }: Props) {
 
   return (
     <div className="candidates">
-      <Table candidates={candidates} />
+      <Table state={state} />
       <Button
         big
         icon_prefix="fab"

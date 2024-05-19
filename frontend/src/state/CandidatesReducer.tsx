@@ -22,21 +22,18 @@ function set(payload: Candidate[]) {
 }
 
 function addMany(state: Candidate[], payload: Candidate[]) {
-  console.log("addMany payload", payload);
-
   const newState = [...state, ...payload];
 
   return newState;
 }
 
-function edit(state: Candidate[], payload: { id: number; newValues: object }) {
-  const { id, newValues } = payload;
+function edit(state: Candidate[], payload: { id: number; data: Candidate }) {
+  const { id, data } = payload;
 
   const newState = [...state];
   const index = state.findIndex((item) => item.id === id);
-  const editedCandidate = { ...state[index], newValues };
 
-  newState[index] = editedCandidate;
+  newState[index] = data;
 
   return newState;
 }
