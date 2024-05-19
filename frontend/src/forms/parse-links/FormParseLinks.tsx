@@ -74,7 +74,6 @@ export default function FormParseLinks({ id, dispatch, fetchScript }: Props) {
   async function onSuccess(newCandidates: Candidate[]) {
     setStatus("ready");
     setMessage("LinkedIn profiles scanned");
-    console.log(newCandidates);
 
     await waitForSeconds(0.5);
     dispatch({ type: "add-candidates", payload: newCandidates });
