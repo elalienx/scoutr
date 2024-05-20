@@ -10,6 +10,10 @@
   }
 }
 
+.radio input:focus {
+  outline: none;
+}
+
 .radio:hover {
   background-color: var(--color-gray-light);
 }

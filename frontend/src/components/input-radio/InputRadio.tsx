@@ -16,7 +16,12 @@ export default function InputRadio(item: InputField) {
 
   // Components
   const Options = myOptions.map((item) => (
-    <Radio key={item.value} id={id} {...item} defaultValue={Number(defaultValue)} />
+    <Radio
+      key={`${item.value}-${defaultValue}`}
+      id={id}
+      {...item}
+      defaultValue={Number(defaultValue)}
+    />
   ));
 
   return (
