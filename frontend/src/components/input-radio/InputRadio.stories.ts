@@ -22,7 +22,7 @@ export const Default: Story = {
     label: "Relevance",
     placeholder: "",
     required: true,
-    value: 3,
+    defaultValue: 1,
     description: "Higher valus means a more valuable candidate.",
     options: [
       { name: "Remove relevance", value: 0 },

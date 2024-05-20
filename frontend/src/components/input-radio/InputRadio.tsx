@@ -5,7 +5,7 @@ import Radio from "./Radio";
 import "styles/components/input-field.css";
 
 export default function InputRadio(item: InputField) {
-  const { id, label, value, description, options } = item;
+  const { id, label, defaultValue, description, options } = item;
 
   // Safeguard
   if (!options)
@@ -13,7 +13,7 @@ export default function InputRadio(item: InputField) {
 
   // Components
   const Options = options.map((item) => (
-    <Radio key={item.value} id={id} {...item} defaultValue={value} />
+    <Radio key={item.value} id={id} {...item} defaultValue={defaultValue} />
   ));
 
   return (

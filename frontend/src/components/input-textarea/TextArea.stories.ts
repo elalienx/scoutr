@@ -25,7 +25,7 @@ export const Default: Story = {
     label: "Links",
     placeholder: "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
     required: true,
-    value:
+    defaultValue:
       "https://www.linkedin.com/in/susanna-vaara-0b33b03a/\nhttps://www.linkedin.com/in/farzad-golchin-1926461b/",
   },
 };
@@ -37,7 +37,7 @@ export const DefaultWithDescription: Story = {
     label: "Links",
     placeholder: "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
     required: true,
-    value:
+    defaultValue:
       "https://www.linkedin.com/in/susanna-vaara-0b33b03a/\nhttps://www.linkedin.com/in/farzad-golchin-1926461b/",
     description: "Only paste links and delete any other type of text.",
   },
@@ -50,6 +50,6 @@ export const Empty: Story = {
     label: "Links",
     placeholder: "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
     required: true,
-    value: "",
+    defaultValue: "",
   },
 };

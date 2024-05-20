@@ -8,7 +8,7 @@ const fields: InputField[] = [
     label: "Paste one or more LinkedIn links here",
     placeholder:
       "https://www.linkedin.com/in/eduardo-alvarez-nowak/\nhttps://www.linkedin.com/in/lanahaddad87/",
-    value: "",
+    defaultValue: "",
     required: true,
     description: "Only paste links and delete any other type of text.",
   },

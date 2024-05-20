@@ -24,7 +24,7 @@ export default interface InputField {
   placeholder: string;
 
   /** The text the user writes in the field and that is stored in the database. */
-  value: string | number;
+  defaultValue: string | number;
 
   /** Determines if is an obligatory field. Defaults to true. */
   required?: boolean;

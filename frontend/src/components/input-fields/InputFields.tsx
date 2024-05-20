@@ -4,6 +4,8 @@ import TextArea from "components/input-textarea/TextArea";
 import InputField from "types/InputField";
 import hasEmpyIds from "./helpers/hasEmptyIds";
 import hasRepeatedIds from "./helpers/hasRepeatedIds";
+import FormStatus from "components/form-status/FormStatus";
+import InputRadio from "components/input-radio/InputRadio";
 
 interface Props {
   fields: InputField[];
@@ -24,6 +26,10 @@ export default function InputFields({ fields }: Props) {
 
     if (type === "input-text") return <InputText key={id} {...item} />;
     if (type === "text-area") return <TextArea key={id} {...item} />;
+    if (type === "radio") return <InputRadio key={id} {...item} />;
+  
+    // prettier-ignore
+    else return <FormStatus key={id} status="error" message={`InputFields has not implemented ${type}`} />;
   });
 
   return <>{Fields}</>;

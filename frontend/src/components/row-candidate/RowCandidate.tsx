@@ -46,7 +46,7 @@ export default function RowCandidate({ candidate, index, dispatch }: Props) {
       return;
     }
 
-    field.value = candidate[key].toString();
+    field.defaultValue = candidate[key];
 
     showDialog(
       <FormEdit
@@ -75,10 +75,18 @@ export default function RowCandidate({ candidate, index, dispatch }: Props) {
       <td onClick={() => onClick("notes")} className="notes column-big hover" data-label="Notes">
         <small className="trim-text">{notes}</small>
       </td>
-      <td className="relevance column-medium" data-label="Relevance">
+      <td
+        onClick={() => onClick("relevance")}
+        className="relevance column-medium hover"
+        data-label="Relevance"
+      >
         {relevance > 0 && <ItemBadge {...parsedData.relevance} />}
       </td>
-      <td className="contact column-medium" data-label="Contact">
+      <td
+        onClick={() => onClick("contact_status")}
+        className="contact column-medium hover"
+        data-label="Contact"
+      >
         {contact_status > 0 && <ItemBadge {...parsedData.contact} />}
       </td>
     </tr>
