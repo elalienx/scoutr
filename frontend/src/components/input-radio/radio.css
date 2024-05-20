@@ -1,0 +1,18 @@
+.radio {
+  display: block;
+  min-width: 200px;
+  padding: var(--space-small) var(--space-medium);
+  border-radius: var(--border-radius-big);
+
+  input {
+    background-color: yellow;
+    margin-right: var(--space-small);
+  }
+}
+.radio:hover {
+  background-color: var(--color-gray-light);
+}
+
+.radio.child-is-checked {
+  background-color: var(--color-blue-light);
+}

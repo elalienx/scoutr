@@ -9,7 +9,7 @@ import mockFetchError from "scripts/fetch-service/mocks/mockFetchError";
 import mockFetchAssignmentSlow from "scripts/fetch-service/mocks/mockFetchAssignmentSlow";
 
 const meta = {
-  title: "Formularies/New Assignment",
+  title: "Components/Formulary",
   component: FormNewAssignment,
   parameters: { layout: "centered" },
   decorators: [
