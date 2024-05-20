@@ -9,10 +9,11 @@
     margin-right: var(--space-small);
   }
 }
+
 .radio:hover {
   background-color: var(--color-gray-light);
 }
 
-.radio.child-is-checked {
+.radio:has(input:checked) {
   background-color: var(--color-blue-light);
 }

@@ -1,8 +1,8 @@
 // Project files
 import InputField from "types/InputField";
-import "styles/components/input-field.css";
 import FormStatus from "components/form-status/FormStatus";
 import Radio from "./Radio";
+import "styles/components/input-field.css";
 
 export default function InputRadio(item: InputField) {
   const { id, label, value, description, options } = item;
@@ -12,13 +12,15 @@ export default function InputRadio(item: InputField) {
     return <FormStatus status="error" message="No options available for this input type radio" />;
 
   // Components
-  const Options = options.map((item) => <Radio key={item.value} id={id} {...item} value={value} />);
+  const Options = options.map((item) => (
+    <Radio key={item.value} id={id} {...item} defaultValue={value} />
+  ));
 
   return (
-    <label className="input-field" data-testid="input-text">
+    <label className="input-field" data-testid="input-radio">
       <span className="label">{label}</span>
       {description && <small className="description">{description}</small>}
-      {Options}
+      <div className="radio-options">{Options}</div>
     </label>
   );
 }

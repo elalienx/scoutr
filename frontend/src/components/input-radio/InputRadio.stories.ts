@@ -1,6 +1,5 @@
 // Node modules
 import type { Meta, StoryObj } from "@storybook/react";
-import { BrowserRouter } from "react-router-dom";
 
 // Project files
 import InputRadio from "./InputRadio";
@@ -8,7 +7,7 @@ import InputRadio from "./InputRadio";
 const meta = {
   title: "Input fields/Input Radio",
   component: InputRadio,
-  parameters: { layout: "centered" },
+  parameters: { layout: "centered", controls: { exclude: ["type", "required", "placeholder"] } },
   tags: ["autodocs"],
 } satisfies Meta<typeof InputRadio>;
 
@@ -23,7 +22,8 @@ export const Default: Story = {
     label: "Relevance",
     placeholder: "",
     required: true,
-    value: 1,
+    value: 3,
+    description: "Higher valus means a more valuable candidate.",
     options: [
       { name: "Remove relevance", value: 0 },
       { name: "Not relevant", value: 1 },
