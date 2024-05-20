@@ -25,4 +25,11 @@
     margin-bottom: var(--space-small);
     color: var(--color-gray);
   }
+
+  /** only for the radio component */
+  .radio-options {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
 }
