@@ -1,3 +1,3 @@
-type FetchMethods = "POST" | "PATCH" | "UPDATE" | "DELETE";
+type FetchMethods = "POST" | "PATCH" | "DELETE";
 
 export default FetchMethods;

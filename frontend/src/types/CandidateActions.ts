@@ -5,7 +5,7 @@ import Candidate from "./Candidate";
  * About:
  * This is the actions available for the Candidate Reducer.
  * The reducer utilizes useDispatch(), an avanded version of useState()
- * that allow us to have more control about the data mutation and write tests.
+ * to have more control on the data mutation and writing tests.
  */
 
 interface Set {

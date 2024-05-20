@@ -1,6 +1,5 @@
+// Project files
 import InputRadioOptions from "./InputRadioOptions";
-
-type InputType = "input-text" | "text-area" | "radio";
 
 interface TextAreaOptions {
   rows: number;
@@ -12,7 +11,7 @@ export default interface InputField {
   id: string;
 
   /** Determine the type of input field */
-  type: InputType;
+  type: "input-text" | "text-area" | "radio";
 
   /** The name of this field. */
   label: string;
