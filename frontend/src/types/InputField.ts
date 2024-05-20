@@ -1,9 +1,6 @@
-type InputType = "input-text" | "text-area" | "radio";
+import InputRadioOptions from "./InputRadioOptions";
 
-interface RadioOptions {
-  name: string;
-  value: number;
-}
+type InputType = "input-text" | "text-area" | "radio";
 
 interface TextAreaOptions {
   rows: number;
@@ -33,5 +30,5 @@ export default interface InputField {
   description?: string;
 
   /** Additional options unique for each type of input */
-  options?: TextAreaOptions | RadioOptions[];
+  options?: TextAreaOptions | InputRadioOptions[];
 }

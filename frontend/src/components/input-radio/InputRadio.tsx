@@ -3,17 +3,20 @@ import InputField from "types/InputField";
 import FormStatus from "components/form-status/FormStatus";
 import Radio from "./Radio";
 import "styles/components/input-field.css";
+import InputRadioOptions from "types/InputRadioOptions";
 
 export default function InputRadio(item: InputField) {
   const { id, label, defaultValue, description, options } = item;
 
+  const myOptions = (options as InputRadioOptions[]) || [];
+
   // Safeguard
-  if (!options)
+  if (myOptions.length === 0)
     return <FormStatus status="error" message="No options available for this input type radio" />;
 
   // Components
-  const Options = options.map((item) => (
-    <Radio key={item.value} id={id} {...item} defaultValue={defaultValue} />
+  const Options = myOptions.map((item) => (
+    <Radio key={item.value} id={id} {...item} defaultValue={Number(defaultValue)} />
   ));
 
   return (
