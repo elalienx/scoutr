@@ -4,7 +4,7 @@ Your LinkedIn Headhunter Companion
 
 ## About
 
-Scoutr  web app allows recruiters to create summaries of the canddiates they are scouting on LinkedIn by copy and paste their profile links.
+The Scoutr  web app allows recruiters to create summaries of the canddiates they are scouting on LinkedIn by copy and paste their profile links.
 To see a product tour check this YouTube video: [https://youtu.be/Da8lH9Z1e-4](https://youtu.be/Da8lH9Z1e-4)
 [![Watch demo](https://img.youtube.com/vi/Da8lH9Z1e-4/maxresdefault.jpg)](https://youtu.be/Da8lH9Z1e-4)
 
