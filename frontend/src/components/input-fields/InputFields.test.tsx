@@ -27,14 +27,14 @@ describe("Shows warning text on screen if find any errors", () => {
         type: "input-text",
         label: "Full name",
         placeholder: "Eduardo Alvarez",
-        defaultValue: "",
+        value: "",
       },
       {
         id: "",
         type: "input-text",
         label: "Age",
         placeholder: "37",
-        defaultValue: "",
+        value: "",
       },
     ];
     render(<InputFields fields={fields} />);
@@ -54,14 +54,14 @@ describe("Shows warning text on screen if find any errors", () => {
         type: "input-text",
         label: "Full name",
         placeholder: "Eduardo Alvarez",
-        defaultValue: "",
+        value: "",
       },
       {
         id: "full_name", // this has full_name instead of age on purpose
         type: "input-text",
         label: "Age",
         placeholder: "37",
-        defaultValue: "",
+        value: "",
       },
     ];
     render(<InputFields fields={fields} />);
@@ -83,7 +83,7 @@ describe("Correctly rendered input fields", () => {
         type: "input-text",
         label: "Customer Name",
         placeholder: "Jhon Smith",
-        defaultValue: "",
+        value: "",
       },
     ];
     render(<InputFields fields={fields} />);
@@ -105,14 +105,14 @@ describe("Correctly rendered input fields", () => {
         type: "input-text",
         label: "Customer Name",
         placeholder: "Jhon Smith",
-        defaultValue: "",
+        value: "",
       },
       {
         id: "age",
         type: "input-text",
         label: "Your age",
         placeholder: "You must be older than 18",
-        defaultValue: "",
+        value: "",
       },
     ];
     render(<InputFields fields={fields} />);
@@ -138,14 +138,14 @@ describe("Correctly rendered input fields", () => {
         type: "input-text",
         label: "Customer Name",
         placeholder: "Jhon Smith",
-        defaultValue: "",
+        value: "",
       },
       {
         id: "comment",
         type: "text-area",
         label: "Your comments",
         placeholder: "The food in this restaurant was great",
-        defaultValue: "",
+        value: "",
       },
     ];
     render(<InputFields fields={fields} />);

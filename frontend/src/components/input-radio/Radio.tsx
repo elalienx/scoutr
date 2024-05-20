@@ -2,6 +2,9 @@
 import "./radio.css";
 
 interface Props {
+  /** The unique identifier shared by all radio buttons that belong to a single group. */
+  id: string;
+
   /** The text to diplay to the user. */
   name: string;
 
@@ -14,14 +17,14 @@ interface Props {
 
 /** The individual piece to create larger Input Radio components to allow users to choose 1 option out of many. */
 export default function Radio(item: Props) {
-  const { name, value, checked } = item;
+  const { id, name, value, checked } = item;
 
   // Properties
   const cssChecked = checked ? "child-is-checked" : "";
 
   return (
     <label className={`radio ${cssChecked}`}>
-      <input type="radio" value={value} checked={checked} />
+      <input type="radio" value={value} name={id} />
       {name}
     </label>
   );

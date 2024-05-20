@@ -46,7 +46,7 @@ export default function RowCandidate({ candidate, index, dispatch }: Props) {
       return;
     }
 
-    field.defaultValue = candidate[key].toString();
+    field.value = candidate[key].toString();
 
     showDialog(
       <FormEdit

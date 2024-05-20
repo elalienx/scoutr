@@ -22,7 +22,7 @@ export const Default: Story = {
     label: "Name",
     placeholder: "Eduardo Alvarez",
     required: true,
-    defaultValue: "Cecilia Nowak",
+    value: "Cecilia Nowak",
   },
 };
 
@@ -33,6 +33,6 @@ export const Empty: Story = {
     label: "Name",
     placeholder: "Eduardo Alvarez",
     required: true,
-    defaultValue: "",
+    value: "",
   },
 };
