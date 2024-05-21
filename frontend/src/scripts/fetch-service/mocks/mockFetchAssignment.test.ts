@@ -8,7 +8,7 @@ import packageData from "scripts/forms/packageData";
 
 test("Show error if URI is not correct", () => {
   // Arrange
-  const uri = "/api/assigments/"; // missing the "n" between "g" and "m" on purpose
+  const uri = "api/assigments/"; // missing the "n" between "g" and "m" on purpose
   const formData = {
     assignment_name: "Graphic Designer",
     company_name: "Spotify",

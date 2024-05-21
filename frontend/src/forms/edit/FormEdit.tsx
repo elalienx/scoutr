@@ -74,7 +74,6 @@ export default function FormEdit({ id, uri, fields, fetchScript, dispatcher }: P
 
   async function onSuccess(data: unknown) {
     setStatus("ready");
-    setMessage("Edited candidate");
     dispatcher({ type: "edit-single", payload: { id, data } });
 
     await waitForSeconds(0.5);

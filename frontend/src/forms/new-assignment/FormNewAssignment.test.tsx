@@ -14,12 +14,11 @@ import mockFetchError from "scripts/fetch-service/mocks/mockFetchError";
 
 test("Filling the formulary correctly submits the assignment", async () => {
   // Arrange
-  const mockFetchScript = mockFetchAssignment;
   const value1 = "Software Developer";
   const value2 = "Qualcom";
   const result = "Assignment created";
 
-  render(<FormNewAssignment fetchScript={mockFetchScript} />);
+  render(<FormNewAssignment fetchScript={mockFetchAssignment} />);
 
   // Act
   const formStatus = screen.getByTestId("status");
@@ -39,12 +38,11 @@ test("Filling the formulary correctly submits the assignment", async () => {
 
 test("Getting an error from server shows error state", async () => {
   // Arrange
-  const mockFetchScript = mockFetchError;
   const value1 = "Software Developer";
   const value2 = "Qualcom";
   const result = "Could not create assignment";
 
-  render(<FormNewAssignment fetchScript={mockFetchScript} />);
+  render(<FormNewAssignment fetchScript={mockFetchError} />);
 
   // Act
   const formStatus = screen.getByTestId("status");
