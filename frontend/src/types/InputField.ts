@@ -1,10 +1,6 @@
 // Project files
 import InputRadioOptions from "./InputRadioOptions";
-
-interface TextAreaOptions {
-  rows: number;
-  columns: number;
-}
+import TextAreaOptions from "./TextAreaOptions";
 
 export default interface InputField {
   /** The unique indentified the input element so we can get the values using the FormData API.  */

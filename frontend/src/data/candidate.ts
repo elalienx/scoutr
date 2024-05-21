@@ -11,6 +11,9 @@ const fields: InputField[] = [
       "Has worked for the 4 biggest consultant companies. Has multiple certification in latest technologies.",
     defaultValue: "",
     required: false,
+    options: {
+      maxLength: 300,
+    },
   },
   {
     id: "relevance",
