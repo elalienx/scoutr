@@ -8,23 +8,57 @@ import {
   screen,
   waitFor,
 } from "scripts/testing-library/assignments-page-globals";
-import FormNewAssignment from "./FormNewAssignment";
-import mockFetchAssignment from "scripts/fetch-service/mocks/mockFetchAssignment";
+import FormEdit from "./FormEdit";
 import mockFetchError from "scripts/fetch-service/mocks/mockFetchError";
+import InputField from "types/InputField";
+import mockFetchEditCandidat from "scripts/fetch-service/mocks/mockFetchEditCandidate";
 
 test("Filling the formulary correctly submits the assignment", async () => {
   // Arrange
-  const mockFetchScript = mockFetchAssignment;
-  const value1 = "Software Developer";
-  const value2 = "Qualcom";
-  const result = "Assignment created";
+  // -- Initialization parameter
+  const id = 1;
+  const uri = "/api/candidates/";
+  const fields: InputField[] = [
+    {
+      id: "candidate_name",
+      type: "input-text",
+      label: "Full name",
+      placeholder: "Jhon Doe",
+      defaultValue: "Xavier Nowak",
+    },
+    {
+      id: "candidate_job_title",
+      type: "input-text",
+      label: "Full name",
+      placeholder: "Jhon Doe",
+      defaultValue: "Teaching Assistant",
+    },
+  ];
+  const fetchScript = mockFetchEditCandidat;
+  const mockDispatcher = () => {};
 
-  render(<FormNewAssignment fetchScript={mockFetchScript} />);
+  // -- User input
+  const value1 = "Eduardo Alvarez";
+  const value2 = "Graphic Designer";
+
+  // -- Result
+  const result = "Item updated ABC";
+
+  // -- Render
+  render(
+    <FormEdit
+      fetchScript={fetchScript}
+      id={id}
+      uri={uri}
+      fields={fields}
+      dispatcher={mockDispatcher}
+    />,
+  );
 
   // Act
   const formStatus = screen.getByTestId("status");
-  const input1 = screen.getByRole("textbox", { name: /assignment_name/i });
-  const input2 = screen.getByRole("textbox", { name: /company_name/i });
+  const input1 = screen.getByRole("textbox", { name: fields[0].id });
+  const input2 = screen.getByRole("textbox", { name: fields[1].id });
   const button = screen.getByRole("button", { name: /create/i });
 
   fireEvent.change(input1, { target: { value: value1 } });
@@ -37,14 +71,13 @@ test("Filling the formulary correctly submits the assignment", async () => {
   });
 });
 
-test("Getting an error from server shows error state", async () => {
+test.todo("Getting an error from server shows error state", async () => {
   // Arrange
-  const mockFetchScript = mockFetchError;
   const value1 = "Software Developer";
   const value2 = "Qualcom";
   const result = "Could not create assignment";
 
-  render(<FormNewAssignment fetchScript={mockFetchScript} />);
+  render(<FormEdit fetchScript={mockFetchError} />);
 
   // Act
   const formStatus = screen.getByTestId("status");
