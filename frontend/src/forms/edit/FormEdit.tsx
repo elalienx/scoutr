@@ -46,15 +46,12 @@ export default function FormEdit({ id, uri, fields, fetchScript, dispatcher }: P
 
   // Methods
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    console.log("onSubmit() start");
     onLoading(event);
 
     try {
-      console.log("onSubmit() try");
       const formData = gatherFormData(event.currentTarget);
       const fetchOptions = packageData("PATCH", formData);
       const result = await fetchScript(uriWidthId, fetchOptions);
-      console.log("onSubmit() result", result);
 
       onResult(result);
     } catch (error: unknown) {
@@ -77,6 +74,7 @@ export default function FormEdit({ id, uri, fields, fetchScript, dispatcher }: P
 
   async function onSuccess(data: unknown) {
     setStatus("ready");
+    setMessage("Edited candidate");
     dispatcher({ type: "edit-single", payload: { id, data } });
 
     await waitForSeconds(0.5);
