@@ -20,7 +20,7 @@ interface Add {
 
 interface Edit {
   type: "edit-single";
-  payload: { id: number; data: Candidate };
+  payload: { id: number; updates: unknown }; // in this case unknown is an object with some but not all the keys belonging to Candidate
 }
 
 type CandidateActions = Set | Add | Edit;

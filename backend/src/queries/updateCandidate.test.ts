@@ -21,7 +21,7 @@ test("Returns valid query if we pass one valid key", () => {
   // Arrange
   const id = 1;
   const keys = ["candidate_name"];
-  const result = `UPDATE candidates SET candidate_name = $1 WHERE id = 1 RETURNING *`;
+  const result = `UPDATE candidates SET candidate_name = $1 WHERE id = 1 RETURNING candidate_name`;
 
   // Act
   const test = updateCandidate(id, keys);
@@ -34,7 +34,7 @@ test("Returns valid query if we pass multiple valid keys", () => {
   // Arrange
   const id = 1;
   const keys = ["candidate_name", "notes"];
-  const result = `UPDATE candidates SET candidate_name = $1, notes = $2 WHERE id = 1 RETURNING *`;
+  const result = `UPDATE candidates SET candidate_name = $1, notes = $2 WHERE id = 1 RETURNING candidate_name, notes`;
 
   // Act
   const test = updateCandidate(id, keys);
