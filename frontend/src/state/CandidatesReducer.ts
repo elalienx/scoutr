@@ -1,42 +1,21 @@
 // Project files
 import Candidate from "types/Candidate";
 import CandidateActions from "types/CandidateActions";
+import setCandidates from "./helpers/setCandidates";
+import addCandidates from "./helpers/addCandidates";
+import editCandidate from "./helpers/editCandidate";
 
 export default function CandidatesReducer(state: Candidate[], actions: CandidateActions) {
   const { type, payload } = actions;
 
   switch (type) {
     case "set-candidates":
-      return set(payload);
+      return setCandidates(payload);
     case "add-candidates":
-      return addMany(state, payload);
+      return addCandidates(state, payload);
     case "edit-single":
-      return edit(state, payload);
+      return editCandidate(state, payload);
     default:
       throw new Error(`Error: Action type ${type} does not exist`);
   }
-}
-
-export function set(payload: Candidate[]) {
-  return payload;
-}
-
-export function addMany(state: Candidate[], payload: Candidate[]) {
-  
-
-
-  const newState = [...state, ...payload];
-
-  return newState;
-}
-
-export function edit(state: Candidate[], payload: { id: number; data: Candidate }) {
-  const { id, data } = payload;
-
-  const newState = [...state];
-  const index = state.findIndex((item) => item.id === id);
-
-  newState[index] = data;
-
-  return newState;
 }

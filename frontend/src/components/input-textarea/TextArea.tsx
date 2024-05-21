@@ -1,10 +1,14 @@
 // Project files
 import InputField from "types/InputField";
 import "styles/components/input-field.css";
+import TextAreaOptions from "types/TextAreaOptions";
 
 /** Input control to allow multiple lines of text. */
 export default function TextArea(item: InputField) {
-  const { id, label, placeholder, required = true, defaultValue, description } = item;
+  const { id, label, placeholder, required = true, defaultValue, description, options } = item;
+
+  // Properties
+  const myOptions = options as TextAreaOptions;
 
   return (
     <label className="input-field" data-testid="text-area">
@@ -18,6 +22,7 @@ export default function TextArea(item: InputField) {
         placeholder={placeholder}
         required={required}
         rows={8}
+        maxLength={myOptions?.maxLength}
       />
     </label>
   );

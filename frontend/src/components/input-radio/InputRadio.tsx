@@ -8,6 +8,7 @@ import InputRadioOptions from "types/InputRadioOptions";
 export default function InputRadio(item: InputField) {
   const { id, label, defaultValue, description, options } = item;
 
+  // Properties
   const myOptions = (options as InputRadioOptions[]) || [];
 
   // Safeguard
