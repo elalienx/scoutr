@@ -22,7 +22,7 @@ type Story = StoryObj<typeof meta>;
 // Stories
 export const Default: Story = {
   args: {
-    id: 1,
+    index: 1,
     candidate_image_url: ImageURLs.candidate_eduardo,
     company_image_url: ImageURLs.company_novare,
   },
@@ -30,7 +30,7 @@ export const Default: Story = {
 
 export const OnlyProfile: Story = {
   args: {
-    id: 2,
+    index: 2,
     candidate_image_url: ImageURLs.candidate_eduardo,
     company_image_url: "",
   },
@@ -38,7 +38,7 @@ export const OnlyProfile: Story = {
 
 export const OnlyLogo: Story = {
   args: {
-    id: 3,
+    index: 3,
     candidate_image_url: "",
     company_image_url: ImageURLs.company_novare,
   },
@@ -46,7 +46,7 @@ export const OnlyLogo: Story = {
 
 export const Empty: Story = {
   args: {
-    id: 4,
+    index: 4,
     candidate_image_url: "",
     company_image_url: "",
   },

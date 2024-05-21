@@ -38,7 +38,7 @@ export const Error: Story = {
 
 export const Hidden: Story = {
   args: {
-    status: "empty",
+    status: "form-stand-by",
     message: "",
   },
 };

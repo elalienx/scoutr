@@ -16,5 +16,7 @@ type Story = StoryObj<typeof meta>;
 
 // Stories
 export const Default: Story = {
-  args: {},
+  args: {
+    component: <></>,
+  },
 };
