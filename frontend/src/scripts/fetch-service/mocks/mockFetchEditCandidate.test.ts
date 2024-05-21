@@ -13,7 +13,7 @@ test("Show error if URI is not correct", () => {
     candidate_job_title: "Graphic Designer",
   };
   const options = packageData("POST", formData);
-  const result = "URI is invalid. Check for typos or update the test if the endpoint changed.";
+  const result = `URI "/api/candidates/" is invalid. Check for typos or update the test if the endpoint changed.`;
 
   // Act
   const test = mockFetchEditCandidate(uri, options);
