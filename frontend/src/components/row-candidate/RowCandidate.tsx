@@ -6,7 +6,7 @@ import HeaderCandidate from "components/header-candidate/HeaderCandidate";
 import ItemBadge from "components/item-badge/ItemBadge";
 import ItemCandidate from "components/item-candidate/ItemCandidate";
 import ItemCompany from "components/item-company/ItemCompany";
-import fields from "data/candidate";
+import fields from "./fields";
 import FormEdit from "forms/edit/FormEdit";
 import fetchService from "scripts/fetch-service/fetchService";
 import useDialog from "state/DialogContextAPI";
@@ -60,21 +60,41 @@ export default function RowCandidate({ candidate, index, dispatch }: Props) {
   }
   return (
     <tr className="row-candidate">
+      {/* 📱 Mobile only header */}
       <td className="mobile-only-header">
         <HeaderCandidate {...parsedData.header} />
       </td>
+
+      {/* 🪪 Id */}
       <td className="id column-small" data-label="Id">
         {index}
       </td>
-      <td className="candidate column-big" data-label="Candidate">
+
+      {/* 👨🏻 Canddiate */}
+      <td className="candidate column-big " data-label="Candidate">
         <ItemCandidate {...candidate} />
       </td>
-      <td className="company column-big" data-label="Company">
+
+      {/* 🏢 Company */}
+      <td
+        onClick={() => onClick("company_duration_in_months")}
+        className="company column-big hover"
+        data-label="Company"
+      >
         <ItemCompany {...candidate} />
       </td>
-      <td onClick={() => onClick("notes")} className="notes column-big hover" data-label="Notes">
+
+      {/* 📝 Notes */}
+      <td
+        onClick={() => onClick("notes")}
+        className="notes column-big hover"
+        data-label="Notes"
+        title={notes}
+      >
         <small className="trim-text">{notes}</small>
       </td>
+
+      {/* 📈 Relevance */}
       <td
         onClick={() => onClick("relevance")}
         className="relevance column-medium hover"
@@ -82,10 +102,13 @@ export default function RowCandidate({ candidate, index, dispatch }: Props) {
       >
         {relevance > 0 && <ItemBadge {...parsedData.relevance} />}
       </td>
+
+      {/* 📲 Contact */}
       <td
         onClick={() => onClick("contact_status")}
         className="contact column-medium hover"
         data-label="Contact"
+        title=""
       >
         {contact_status > 0 && <ItemBadge {...parsedData.contact} />}
       </td>

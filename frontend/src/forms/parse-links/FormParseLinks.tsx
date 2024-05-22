@@ -15,7 +15,7 @@ import FetchOptions from "types/FetchOptions";
 import ResultsAPI from "types/ResultAPI";
 import Status from "types/Status";
 import CandidateActions from "types/CandidateActions";
-import fields from "../../data/parse-links";
+import fields from "./parse-links";
 import "styles/components/form.css";
 import "./form-candidates.css";
 

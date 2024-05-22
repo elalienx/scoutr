@@ -92,7 +92,7 @@ export default function FormEdit({ id, uri, fields, fetchScript, dispatcher }: P
       <InputFields fields={fields} />
       <FormStatus status={status} message={message} />
       <div className="buttons">
-        <Button disabled={status === "loading"} icon="circle-check" label="Create" primary />
+        <Button disabled={status === "loading"} label="Update" icon="circle-check" primary />
         <Button disabled={status === "loading"} label="Dismiss" onClick={() => closeDialog()} />
       </div>
     </form>
