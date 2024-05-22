@@ -3,6 +3,22 @@ import InputField from "types/InputField";
 
 const fields: InputField[] = [
   {
+    id: "candidate_job_title",
+    type: "input-text",
+    label: "Job title",
+    placeholder: "Graphic Designer",
+    defaultValue: "Data Engineer",
+    required: false,
+  },
+  {
+    id: "company_duration_in_months",
+    type: "input-text",
+    label: "Job duration in months",
+    placeholder: "18 = 1 year 6 months",
+    defaultValue: "",
+    required: false,
+  },
+  {
     id: "notes",
     type: "text-area",
     label: "Notes",
