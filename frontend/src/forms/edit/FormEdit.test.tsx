@@ -59,7 +59,7 @@ test("Filling the formulary correctly submits the assignment", async () => {
   const formStatus = screen.getByTestId("status");
   const input1 = screen.getByRole("textbox", { name: fields[0].id });
   const input2 = screen.getByRole("textbox", { name: fields[1].id });
-  const button = screen.getByRole("button", { name: /create/i });
+  const button = screen.getByRole("button", { name: /update/i });
 
   fireEvent.change(input1, { target: { value: value1 } });
   fireEvent.change(input2, { target: { value: value2 } });
@@ -117,7 +117,7 @@ test("Getting an error from server shows error state", async () => {
   const formStatus = screen.getByTestId("status");
   const input1 = screen.getByRole("textbox", { name: fields[0].id });
   const input2 = screen.getByRole("textbox", { name: fields[1].id });
-  const button = screen.getByRole("button", { name: /create/i });
+  const button = screen.getByRole("button", { name: /update/i });
 
   fireEvent.change(input1, { target: { value: value1 } });
   fireEvent.change(input2, { target: { value: value2 } });
