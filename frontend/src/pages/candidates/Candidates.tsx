@@ -14,6 +14,7 @@ import Content from "./content/Content";
 import StateError from "./state-error/StateError";
 import "./candidates.css";
 import CandidatesReducer from "state/CandidatesReducer";
+import repliedCandidates from "scripts/response-rate/repliedCandidates";
 
 interface Props {
   /** A React custom hook to fetch data. The return complies with the ResultsAPI interface. */
@@ -36,7 +37,8 @@ export default function Candidates({ fetchHook }: Props) {
   // Properties
   const id = Number(assignment_id) || -1;
   const contacted = contactedCandidates(candidates);
-  const response_rate = calculatePercentage(contacted.length, candidates.length);
+  const replied = repliedCandidates(candidates);
+  const response_rate = calculatePercentage(replied, contacted);
 
   // Methods
   useEffect(() => dispatch({ type: "set-candidates", payload: data }), [data]);

@@ -2,9 +2,8 @@
 import { expect, test } from "vitest";
 
 // Project files
-import "./contactedCandidates";
 import Candidate from "types/Candidate";
-import contactedCandidates from "./contactedCandidates";
+import repliedCandidates from "./repliedCandidates";
 
 test("Expects a correct filter of contacted candidates", () => {
   // note only candidates with id 1 and 3 have been contacted
@@ -54,14 +53,14 @@ test("Expects a correct filter of contacted candidates", () => {
       company_image_url: "",
       notes: "",
       relevance: 0,
-      contact_status: 5, // contacted just sent a message but not reply yet
+      contact_status: 5, // contacted but not reply yet so it does not count!!!
       contact_date: "",
     },
   ];
-  const result = 2;
+  const result = 1;
 
   // Act
-  const test = contactedCandidates(value);
+  const test = repliedCandidates(value);
 
   // Assert
   expect(test).toBe(result);
@@ -122,7 +121,7 @@ test("No contacted candidates returns an empty array instead of an error", () =>
   const result = 0;
 
   // Act
-  const test = contactedCandidates(value);
+  const test = repliedCandidates(value);
 
   // Assert
   expect(test).toBe(result);
