@@ -1,11 +1,9 @@
 import Candidate from "types/Candidate";
 
-export default function contactedCandidates(candidates: Candidate[]): Candidate[] {
+export default function contactedCandidates(candidates: Candidate[]): number {
   const status_uncontacted = 0;
-  const status_wrote_but_no_reply = 5;
+  const filter = candidates.filter((item) => item.contact_status > status_uncontacted);
+  const result = filter.length;
 
-  return candidates.filter(
-    (item) =>
-      item.contact_status > status_uncontacted && item.contact_status < status_wrote_but_no_reply,
-  );
+  return result;
 }
