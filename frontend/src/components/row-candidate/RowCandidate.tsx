@@ -76,11 +76,7 @@ export default function RowCandidate({ candidate, index, dispatch }: Props) {
       </td>
 
       {/* 🏢 Company */}
-      <td
-        onClick={() => onClick("company_duration_in_months")}
-        className="company column-big hover"
-        data-label="Company"
-      >
+      <td className="company column-big hover" data-label="Company">
         <ItemCompany item={candidate} onClick={onClick} />
       </td>
 

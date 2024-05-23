@@ -19,6 +19,14 @@ const fields: InputField[] = [
     required: false,
   },
   {
+    id: "company_name",
+    type: "input-text",
+    label: "Company name",
+    placeholder: "Spotify",
+    defaultValue: "",
+    required: false,
+  },
+  {
     id: "notes",
     type: "text-area",
     label: "Notes",

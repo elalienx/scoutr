@@ -25,7 +25,9 @@ export default function ItemCompany({ item, onClick }: Props) {
     <div className="item-company">
       <ImageThumbnail src={company_image_url} alt="The company logo" />
       <div className="content">
-        <span className="title trim-text">{company_name}</span>
+        <span onClick={() => onClick("company_name")} className="title trim-text">
+          {company_name || "---"}
+        </span>
         <small
           onClick={() => onClick("company_duration_in_months")}
           className={`label trim-text ${markTextInRed && "red"}`}
