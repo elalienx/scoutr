@@ -7,7 +7,7 @@ import ResultsAPI from "../types/ResultsAPI";
 
 export default async function getCandidates(request: Request, response: Response, database: Client): Promise<void> {
   const { assignment_id } = request.params;
-  const query = "SELECT * FROM candidates WHERE assignment_id = $1";
+  const query = "SELECT * FROM candidates WHERE assignment_id = $1 ORDER BY id";
   const messageGood = "Candidates received";
   const messageEmpty = `Warning: No candidates match assignment_id ${assignment_id}`;
   let result: ResultsAPI = { data: [], message: "Unknown error", status: 500 };

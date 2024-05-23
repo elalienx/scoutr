@@ -11,11 +11,8 @@ interface Props {
 }
 
 export default function Content({ assignments }: Props) {
-  // Properties
-  const sortedById = assignments.sort((a, b) => a.id - b.id);
-
   // Components
-  const Cards = sortedById.map((item) => <Card key={item.id} {...item} />);
+  const Cards = assignments.map((item) => <Card key={item.id} {...item} />);
   const Form = <FormNewAssignment fetchScript={fetchService} />;
 
   // Safeguard

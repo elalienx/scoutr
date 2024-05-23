@@ -6,7 +6,7 @@ import { Client } from "pg";
 import ResultsAPI from "../types/ResultsAPI";
 
 export default async function getAssignments(response: Response, database: Client): Promise<void> {
-  const query = "SELECT * FROM assignments";
+  const query = "SELECT * FROM assignments ORDER BY id";
   const messageGood = "Assignments received";
   const messageEmpty = "Warning: No assignments available";
   const messageBad = "Error: Cannot get data";
