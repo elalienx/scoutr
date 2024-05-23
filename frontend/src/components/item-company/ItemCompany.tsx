@@ -1,21 +1,19 @@
 // Project files
 import ImageThumbnail from "components/image-thumbnail/ImageThumbnail";
 import monthsToYears from "scripts/dates/monthsToYears";
+import Candidate from "types/Candidate";
 import "./item-company.css";
 
 interface Props {
-  /** URL of the company's logo the candidate is currently working. */
-  company_image_url: string;
+  /** Candidare data focused on personal information */
+  item: Candidate;
 
-  /** The name of the company the candidate is currently working. */
-  company_name: string;
-
-  /** Duration the candidate has been working at the current company, in months. */
-  company_duration_in_months: number;
+  /** A click event to edit missing information. */
+  onClick: Function;
 }
 
 /** Shows the company details of the candidate. */
-export default function ItemCompany(item: Props) {
+export default function ItemCompany({ item, onClick }: Props) {
   const { company_image_url, company_name, company_duration_in_months } = item;
 
   // Properties
@@ -28,7 +26,12 @@ export default function ItemCompany(item: Props) {
       <ImageThumbnail src={company_image_url} alt="The company logo" />
       <div className="content">
         <span className="title trim-text">{company_name}</span>
-        <small className={`label trim-text ${markTextInRed && "red"}`}>{durationInyears}</small>
+        <small
+          onClick={() => onClick("company_duration_in_months")}
+          className={`label trim-text ${markTextInRed && "red"}`}
+        >
+          {durationInyears}
+        </small>
       </div>
     </div>
   );

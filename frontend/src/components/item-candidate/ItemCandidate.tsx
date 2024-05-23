@@ -1,27 +1,19 @@
 // Project files
 import ImageThumbnail from "components/image-thumbnail/ImageThumbnail";
 import "./item-candidate.css";
+import Candidate from "types/Candidate";
 
 interface Props {
-  // Candidare data
-  /** Full name of the candidate. */
-  candidate_image_url: string;
+  /** Candidare data focused on personal information */
+  item: Candidate;
 
-  /** The name of the candidate. */
-  candidate_name: string;
-
-  /** The job title of the candidate. */
-  candidate_job_title: string;
-
-  // Link
-  /** URL of the candidate's LinkedIn profile. */
-  linked_in_url: string;
+  /** A click event to edit missing information. */
+  onClick: Function;
 }
 
 /** Shows the personal details of a candidate. */
-export default function ItemCandidate(item: Props) {
-  const { candidate_image_url, candidate_name, candidate_job_title } = item;
-  const { linked_in_url } = item;
+export default function ItemCandidate({ item, onClick }: Props) {
+  const { candidate_image_url, candidate_name, candidate_job_title, linked_in_url } = item;
 
   return (
     <div className="item-candidate">
@@ -30,8 +22,12 @@ export default function ItemCandidate(item: Props) {
         <a href={linked_in_url} className="title trim-text" target="_blank">
           {candidate_name}
         </a>
-        <small className="label trim-text" title={candidate_job_title}>
-          {candidate_job_title}
+        <small
+          onClick={() => onClick("candidate_job_title")}
+          className="label trim-text"
+          title={candidate_job_title}
+        >
+          {candidate_job_title || "---"}
         </small>
       </div>
     </div>
