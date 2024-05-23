@@ -15,11 +15,10 @@ export default function Table({ state }: Props) {
 
   // Properties
   const headers = ["Id", "Candidate", "Company", "Notes", "Relevance", "Contact"];
-  const sortedById = candidates.sort((a, b) => a.id - b.id);
 
   // Components
   const Headers = headers.map((item, index) => <th key={index}>{item}</th>);
-  const Rows = sortedById.map((item, index) => (
+  const Rows = candidates.map((item, index) => (
     <RowCandidate key={item.id} candidate={item} index={index + 1} dispatch={dispatch} />
   ));
 
