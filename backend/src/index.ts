@@ -25,6 +25,7 @@ async function initializeServer(port: number) {
   app.get("/candidates/:assignment_id", (request, response) => getCandidates(request, response, client));
   app.patch("/candidates/:id", (request, response) => patchCandidate(request, response, client));
   app.post("/parse_links/:assignment_id", (request, response) => parseLinks(request, response, client));
+  app.post("/parse-links-sse/:assignment_id", (request, response) => parseLinks(request, response, client));
 }
 
 initializeServer(8000);
