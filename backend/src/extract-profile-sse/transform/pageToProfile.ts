@@ -1,15 +1,16 @@
 // Node modules
-import { load as CheerioLoad, CheerioAPI } from "cheerio";
+import { load } from "cheerio";
+import type { CheerioAPI } from "cheerio";
 
 // Project files
-import LinkedInProfile from "../../types/LinkedInProfile";
+import type LinkedInProfile from "../../types/LinkedInProfile";
 import getDurationInMonths from "./helpers/getDurationInMonths";
 import getImage from "./helpers/getImage";
 import getPrimaryJobTitle from "./helpers/getPrimaryJob";
 import getText from "./helpers/getText";
 
 export default function pageToProfile(page: string): LinkedInProfile {
-  const document: CheerioAPI = CheerioLoad(page);
+  const document: CheerioAPI = load(page);
   const company: string = ".top-card-layout__entity-info--right-column";
   const jobTitle: string = getText(document, "h2.top-card-layout__headline");
   const duration: string = getText(document, "ul.experience__list li .date-range span");

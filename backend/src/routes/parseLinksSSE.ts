@@ -6,6 +6,7 @@ import type { Client } from "pg";
 import etlProcess from "../extract-profile-sse/etlProcess";
 
 export default async function parseLinksSSE(request: Request, response: Response, database: Client) {
+  /** Check on Spike if one or all can be deleted */
   // Headers
   response.setHeader("Content-Type", "text/event-stream");
   response.setHeader("Cache-Control", "no-cache");
