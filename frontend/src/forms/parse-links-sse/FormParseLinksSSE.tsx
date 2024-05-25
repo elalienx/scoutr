@@ -39,7 +39,7 @@ export default function FormParseLinksSSE({ id, dispatch, fetchScript }: Props) 
   const [message, setMessage] = useState("");
 
   // Properties
-  const uri = "/api/parse_links/" + id;
+  const uri = "/api/parse-links-sse/" + id;
 
   // Methods
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
