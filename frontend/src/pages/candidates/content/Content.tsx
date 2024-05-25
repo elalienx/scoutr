@@ -1,6 +1,6 @@
 // Project files
 import Button from "components/button/Button";
-import FormParseLinks from "forms/parse-links/FormParseLinks";
+import FormParseLinksSSE from "forms/parse-links-sse/FormParseLinksSSE";
 import fetchService from "scripts/fetch-service/fetchService";
 import useDialog from "state/DialogContextAPI";
 import Candidate from "types/Candidate";
@@ -24,7 +24,7 @@ export default function Content({ state, id }: Props) {
   const { showDialog } = useDialog();
 
   // Components
-  const Form = <FormParseLinks fetchScript={fetchService} id={id} dispatch={dispatch} />;
+  const Form = <FormParseLinksSSE fetchScript={fetchService} id={id} dispatch={dispatch} />;
 
   // Safeguard
   if (candidates.length === 0) return <StateEmpty component={Form} />;
