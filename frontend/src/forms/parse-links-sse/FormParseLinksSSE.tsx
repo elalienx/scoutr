@@ -6,11 +6,9 @@ import Button from "components/button/Button";
 import InputFields from "components/input-fields/InputFields";
 import FormStatus from "components/form-status/FormStatus";
 import gatherFormData from "scripts/forms/gatherFormData";
-import packageData from "scripts/forms/packageData";
 import textAreaToArray from "scripts/forms/textAreaToArray";
 import waitForSeconds from "scripts/waitForSeconds";
 import useDialog from "state/DialogContextAPI";
-import Candidate from "types/Candidate";
 import FetchOptions from "types/FetchOptions";
 import ResultsAPI from "types/ResultAPI";
 import Status from "types/Status";
@@ -18,7 +16,6 @@ import CandidateActions from "types/CandidateActions";
 import fields from "./parse-links-sse";
 import "styles/components/form.css";
 import "./form-parse-links-sse.css";
-import { json } from "react-router-dom";
 
 interface Props {
   /** The ID of the assignment to parse. */
@@ -49,29 +46,34 @@ export default function FormParseLinksSSE({ id, dispatch, fetchScript }: Props) 
     try {
       const formData = gatherFormData(event.currentTarget);
       const parsedLinks = textAreaToArray(formData.unparsed_links);
-      const queryString = parsedLinks.map((link) => `link=${encodeURIComponent(link)}`).join("&");
-      const eventSource = new EventSource(`${uri}?${queryString}`);
+      const query = parsedLinks.map((link) => `links=${link}`).join("&");
+      const eventSource = new EventSource(`${uri}?${query}`);
 
       eventSource.onmessage = function (event) {
-        updateMessage(event.data);
+        updateEvent(event);
       };
 
       eventSource.onerror = function () {
-        endMessage();
-        eventSource.close();
+        endEvent(eventSource);
       };
     } catch (error: unknown) {
       onFailure(error);
     }
   }
 
-  function updateMessage(newMessage: string) {
-    const { data, message, status } = JSON.parse(newMessage);
+  function updateEvent(event: MessageEvent) {
+    const { candidate, report } = JSON.parse(event.data);
+    console.log("candidate & report", candidate, report);
 
-    dispatch({ type: "add-candidates", payload: data.candiate });
+    if (report.severity < 2) {
+      dispatch({ type: "add-single", payload: candidate });
+    } else {
+      console.warn("Broken candidate", candidate, report);
+    }
   }
 
-  async function endMessage() {
+  async function endEvent(eventSource: EventSource) {
+    eventSource.close();
     setStatus("ready");
 
     await waitForSeconds(0.5);

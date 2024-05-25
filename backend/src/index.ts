@@ -18,7 +18,7 @@ async function initializeServer(port: number) {
 
   // Start server
   app.use(express.json());
-  app.listen(port, () => console.info(`Scoutr backend server ready on port ${port}`));
+  app.listen(port, () => console.info(`Scoutr backend server v3 ready on port ${port}`));
 
   // Routes
   app.get("/assignments", (request, response) => getAssignments(response, client));
@@ -26,7 +26,7 @@ async function initializeServer(port: number) {
   app.get("/candidates/:assignment_id", (request, response) => getCandidates(request, response, client));
   app.patch("/candidates/:id", (request, response) => patchCandidate(request, response, client));
   app.post("/parse_links/:assignment_id", (request, response) => parseLinks(request, response, client));
-  app.post("/parse-links-sse/:assignment_id", (request, response) => parseLinksSSE(request, response, client));
+  app.get("/parse-links-sse/:assignment_id", (request, response) => parseLinksSSE(request, response, client));
 }
 
 initializeServer(8000);

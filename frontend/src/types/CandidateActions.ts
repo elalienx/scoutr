@@ -18,11 +18,16 @@ interface Add {
   payload: Candidate[];
 }
 
-interface Edit {
-  type: "edit-single";
-  payload: { id: number; updates: unknown }; // in this case unknown is an object with some but not all the keys belonging to Candidate
+interface AddSingle {
+  type: "add-single";
+  payload: Candidate;
 }
 
-type CandidateActions = Set | Add | Edit;
+interface Edit {
+  type: "edit-single";
+  payload: { id: number; updates: object }; // in this case unknown is an object with some but not all the keys belonging to Candidate
+}
+
+type CandidateActions = Set | Add | AddSingle | Edit;
 
 export default CandidateActions;
