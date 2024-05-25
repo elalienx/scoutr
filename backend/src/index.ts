@@ -7,6 +7,7 @@ import postgresClient from "./database/postgresClient";
 import getAssignments from "./routes/getAssignments";
 import getCandidates from "./routes/getCandidates";
 import parseLinks from "./routes/parseLinks";
+import parseLinksSSE from "./routes/parseLinksSSE";
 import postAssignment from "./routes/postAssignment";
 import patchCandidate from "./routes/patchCandidate";
 
@@ -25,7 +26,7 @@ async function initializeServer(port: number) {
   app.get("/candidates/:assignment_id", (request, response) => getCandidates(request, response, client));
   app.patch("/candidates/:id", (request, response) => patchCandidate(request, response, client));
   app.post("/parse_links/:assignment_id", (request, response) => parseLinks(request, response, client));
-  app.post("/parse-links-sse/:assignment_id", (request, response) => parseLinks(request, response, client));
+  app.post("/parse-links-sse/:assignment_id", (request, response) => parseLinksSSE(request, response, client));
 }
 
 initializeServer(8000);

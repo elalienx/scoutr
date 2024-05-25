@@ -7,7 +7,7 @@ import etlProcess from "../extract-profile-sse/etlProcess";
 import packageResults from "../extract-profile-sse/load/packageResults";
 import ResultsAPI from "../types/ResultsAPI";
 
-export default async function parseLinks(request: Request, response: Response, database: Client) {
+export default async function parseLinksSSE(request: Request, response: Response, database: Client) {
   const assignment_id = Number(request.params.assignment_id);
   const links: string[] = request.body.links;
   const messageBad = "Error: Cannot parse links";
