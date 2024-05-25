@@ -18,6 +18,7 @@ import CandidateActions from "types/CandidateActions";
 import fields from "./parse-links-sse";
 import "styles/components/form.css";
 import "./form-parse-links-sse.css";
+import { json } from "react-router-dom";
 
 interface Props {
   /** The ID of the assignment to parse. */
@@ -48,35 +49,32 @@ export default function FormParseLinksSSE({ id, dispatch, fetchScript }: Props) 
     try {
       const formData = gatherFormData(event.currentTarget);
       const parsedLinks = textAreaToArray(formData.unparsed_links);
-      const body = { links: parsedLinks };
-      const fetchOptions = packageData("POST", body);
-      const result = await fetchScript(uri, fetchOptions);
+      const queryString = parsedLinks.map((link) => `link=${encodeURIComponent(link)}`).join("&");
+      const eventSource = new EventSource(`${uri}?${queryString}`);
 
-      onResult(result);
+      eventSource.onmessage = function (event) {
+        updateMessage(event.data);
+      };
+
+      eventSource.onerror = function () {
+        endMessage();
+        eventSource.close();
+      };
     } catch (error: unknown) {
       onFailure(error);
     }
   }
 
-  function onLoading(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setStatus("loading");
-    setMessage("Scaning LinkedIn profiles");
+  function updateMessage(newMessage: string) {
+    const { data, message, status } = JSON.parse(newMessage);
+
+    dispatch({ type: "add-candidates", payload: data.candiate });
   }
 
-  function onResult(result: ResultsAPI) {
-    const { data, message, status } = result;
-
-    if (status === "error") onFailure(message);
-    else onSuccess(data);
-  }
-
-  async function onSuccess(newCandidates: Candidate[]) {
+  async function endMessage() {
     setStatus("ready");
-    setMessage("LinkedIn profiles scanned");
 
     await waitForSeconds(0.5);
-    dispatch({ type: "add-candidates", payload: newCandidates });
     closeDialog();
   }
 
@@ -84,6 +82,12 @@ export default function FormParseLinksSSE({ id, dispatch, fetchScript }: Props) 
     console.error(error);
     setStatus("error");
     setMessage("Could not scan LinkedIn profiles");
+  }
+
+  function onLoading(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatus("loading");
+    setMessage("Scaning LinkedIn profiles");
   }
 
   return (
