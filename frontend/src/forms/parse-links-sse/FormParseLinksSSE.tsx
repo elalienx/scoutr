@@ -63,7 +63,6 @@ export default function FormParseLinksSSE({ id, dispatch, fetchScript }: Props) 
 
   function updateEvent(event: MessageEvent) {
     const { candidate, report } = JSON.parse(event.data);
-    console.log("candidate & report", candidate, report);
 
     if (report.severity < 2) {
       dispatch({ type: "add-single", payload: candidate });
