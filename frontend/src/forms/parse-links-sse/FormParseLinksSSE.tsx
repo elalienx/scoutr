@@ -1,5 +1,6 @@
 // Node modules
-import { Dispatch, FormEvent, useState } from "react";
+import { useState } from "react";
+import type { Dispatch, FormEvent } from "react";
 
 // Project files
 import Button from "components/button/Button";
@@ -9,10 +10,10 @@ import gatherFormData from "scripts/forms/gatherFormData";
 import textAreaToArray from "scripts/forms/textAreaToArray";
 import waitForSeconds from "scripts/waitForSeconds";
 import useDialog from "state/DialogContextAPI";
-import FetchOptions from "types/FetchOptions";
-import ResultsAPI from "types/ResultAPI";
-import Status from "types/Status";
-import CandidateActions from "types/CandidateActions";
+import type FetchOptions from "types/FetchOptions";
+import type ResultsAPI from "types/ResultAPI";
+import type Status from "types/Status";
+import type CandidateActions from "types/CandidateActions";
 import fields from "./parse-links-sse";
 import "styles/components/form.css";
 import "./form-parse-links-sse.css";
@@ -37,7 +38,7 @@ export default function FormParseLinksSSE({ id, dispatch, fetchScript }: Props) 
   const [message, setMessage] = useState("");
 
   // Properties
-  const uri = "/api/parse-links-sse/" + id;
+  const uri = `/api/parse-links-sse/${id}`;
 
   // Methods
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -49,13 +50,8 @@ export default function FormParseLinksSSE({ id, dispatch, fetchScript }: Props) 
       const query = parsedLinks.map((link) => `links=${link}`).join("&");
       const eventSource = new EventSource(`${uri}?${query}`);
 
-      eventSource.onmessage = function (event) {
-        updateEvent(event);
-      };
-
-      eventSource.onerror = function () {
-        endEvent(eventSource);
-      };
+      eventSource.onmessage = (event) => updateEvent(event);
+      eventSource.onerror = () => endEvent(eventSource);
     } catch (error: unknown) {
       onFailure(error);
     }
@@ -64,6 +60,7 @@ export default function FormParseLinksSSE({ id, dispatch, fetchScript }: Props) 
   function updateEvent(event: MessageEvent) {
     const { candidate, report } = JSON.parse(event.data);
 
+    // Note: This should be part of the dispatcher, like send the payload: can, rep and let the reducer protect the state
     if (report.severity < 2) {
       dispatch({ type: "add-single", payload: candidate });
     } else {
@@ -72,6 +69,7 @@ export default function FormParseLinksSSE({ id, dispatch, fetchScript }: Props) 
   }
 
   async function endEvent(eventSource: EventSource) {
+    // Remove this code, as its part of Progress Worker
     eventSource.close();
     setStatus("ready");
 
@@ -92,11 +90,7 @@ export default function FormParseLinksSSE({ id, dispatch, fetchScript }: Props) 
   }
 
   return (
-    <form
-      data-testid="form-candidates"
-      className="form form-candidates"
-      onSubmit={(event) => onSubmit(event)}
-    >
+    <form className="form form-parse-links" onSubmit={(event) => onSubmit(event)}>
       <h2>Add Candidates (SSE)</h2>
       <InputFields fields={fields} />
       <FormStatus status={status} message={message} />

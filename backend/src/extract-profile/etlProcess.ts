@@ -1,5 +1,5 @@
 // Node modules
-import { Client } from "pg";
+import type { Client } from "pg";
 
 // Project files
 import candidateQuery from "../queries/insertCandidate";
