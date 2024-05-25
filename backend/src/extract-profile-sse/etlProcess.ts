@@ -8,6 +8,7 @@ import extractPage from "./extract/extractPage";
 import pageToProfile from "./transform/pageToProfile";
 import reportEmptyFields from "./transform/reportEmptyFields";
 
+
 export default async function etlProcess(url: string, assignment_id: number, database: Client) {
   // Extract
   const page = await extractPage(url);
@@ -15,7 +16,6 @@ export default async function etlProcess(url: string, assignment_id: number, dat
   // Transform
   const profile = pageToProfile(page);
   const report = reportEmptyFields(url, profile);
-
   const profileAsArray = [assignment_id, url, ...Object.values(profile)];
   const reportAsArray = Object.values(report);
 
