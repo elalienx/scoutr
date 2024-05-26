@@ -5,7 +5,7 @@ import type LinkedInProfile from "../../types/LinkedInProfile";
 export default function reportEmptyFields(url: string, profile: LinkedInProfile): ErrorReport {
   const fields = Object.entries(profile);
   const missingFields = fields.filter(([_, value]) => !value);
-  const labels = missingFields.map(([key]) => " " + key);
+  const labels = missingFields.map(([key]) => " " + key); // check if we keep it as an array and then stringify...
   let severity = 0;
   let message = "No problems found";
 
