@@ -2,7 +2,7 @@
 import { Client } from "pg";
 
 // Project files
-import Credentials from "../types/DatabaseCredentials";
+import type Credentials from "../types/DatabaseCredentials";
 
 export default async function postgresClient(credentials: Credentials): Promise<Client> {
   const client: Client = new Client(credentials);

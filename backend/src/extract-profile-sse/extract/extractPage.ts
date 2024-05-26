@@ -15,6 +15,6 @@ export default async function extractPage(url: string): Promise<string> {
     console.error(`Playwright: Cant' navigate to URL "${url}"`);
   } finally {
     await browser.close();
-    return result;
+    return result; // Backend backlog #1: return in finally overwrites the control flow statements inside try and catch.
   }
 }

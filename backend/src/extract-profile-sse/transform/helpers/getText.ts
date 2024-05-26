@@ -1,5 +1,5 @@
 // Node modules
-import { CheerioAPI } from "cheerio";
+import type { CheerioAPI } from "cheerio";
 
 export default function getText(document: CheerioAPI, selector: string): string {
   return document(selector).first().text().trim();
