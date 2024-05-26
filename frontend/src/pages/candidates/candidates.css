@@ -41,5 +41,10 @@
     .section .candidates table {
       margin-bottom: var(--space-big);
     }
+
+    .form-parse-links textarea.input {
+      width: 450px;
+      line-height: 1.5;
+    }
   }
 }

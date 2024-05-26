@@ -14,7 +14,6 @@ import type Status from "types/Status";
 import type CandidateActions from "types/CandidateActions";
 import fields from "./parse-links-sse";
 import "styles/components/form.css";
-import "./form-parse-links-sse.css";
 
 interface Props {
   /** The ID of the assignment to parse. */

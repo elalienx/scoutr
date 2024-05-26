@@ -1,9 +1,0 @@
-/* Tablet */
-@media (min-width: 700px) {
-  .form-parse-links {
-    textarea.input {
-      width: 450px;
-      line-height: 1.5;
-    }
-  }
-}
