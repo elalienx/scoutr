@@ -29,7 +29,7 @@ interface Props {
   fetchScript: (uri: string, init: FetchOptions) => Promise<ResultsAPI>;
 }
 
-export default function FormParseLinksSSE({ id, dispatch, fetchScript }: Props) {
+export default function FormParseLinks({ id, dispatch, fetchScript }: Props) {
   // Global state
   const { closeDialog } = useDialog();
 
@@ -59,6 +59,7 @@ export default function FormParseLinksSSE({ id, dispatch, fetchScript }: Props) 
 
   function updateEvent(event: MessageEvent) {
     const { candidate, report } = JSON.parse(event.data);
+    console.log("candidate,report", candidate, report);
 
     // Note: This should be part of the dispatcher, like send the payload: can, rep and let the reducer protect the state
     if (report.severity < 2) {
@@ -91,7 +92,7 @@ export default function FormParseLinksSSE({ id, dispatch, fetchScript }: Props) 
 
   return (
     <form className="form form-parse-links" onSubmit={(event) => onSubmit(event)}>
-      <h2>Add Candidates (SSE)</h2>
+      <h2>Add Candidates</h2>
       <InputFields fields={fields} />
       <FormStatus status={status} message={message} />
       <div className="buttons">
