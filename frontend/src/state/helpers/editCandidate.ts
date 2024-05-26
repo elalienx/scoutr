@@ -1,5 +1,5 @@
 // Project files
-import Candidate from "types/Candidate";
+import type Candidate from "types/Candidate";
 
 type Payload = {
   id: number;

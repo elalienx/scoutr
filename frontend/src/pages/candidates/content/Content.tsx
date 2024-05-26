@@ -1,12 +1,14 @@
+// Node modules
+import type { Dispatch } from "react";
+
 // Project files
 import Button from "components/button/Button";
 import FormParseLinks from "forms/parse-links/FormParseLinks";
 import useDialog from "state/DialogContextAPI";
-import Candidate from "types/Candidate";
-import CandidateActions from "types/CandidateActions";
+import type Candidate from "types/Candidate";
+import type CandidateActions from "types/CandidateActions";
 import StateEmpty from "../state-empty/StateEmpty";
 import Table from "../table/Table";
-import { Dispatch } from "react";
 
 interface Props {
   /** The candidates to dispaly on the table. */

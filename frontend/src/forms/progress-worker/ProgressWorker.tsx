@@ -2,7 +2,7 @@
 import type { Dispatch } from "react";
 
 // Project files
-import CandidateActions from "types/CandidateActions";
+import type CandidateActions from "types/CandidateActions";
 
 interface Props {
   /** The ID of the assignment to parse. */

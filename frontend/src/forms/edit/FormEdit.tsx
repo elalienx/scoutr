@@ -1,20 +1,21 @@
 // Node modules
-import { Dispatch, FormEvent, useState } from "react";
+import { useState } from "react";
+import type { Dispatch, FormEvent } from "react";
 
 // Project files
 import Button from "components/button/Button";
 import FormStatus from "components/form-status/FormStatus";
 import InputFields from "components/input-fields/InputFields";
+import useDialog from "state/DialogContextAPI";
 import gatherFormData from "scripts/forms/gatherFormData";
 import packageData from "scripts/forms/packageData";
-import useDialog from "state/DialogContextAPI";
-import FetchOptions from "types/FetchOptions";
-import InputField from "types/InputField";
-import ResultsAPI from "types/ResultAPI";
-import Status from "types/Status";
-import "styles/components/form.css";
 import waitForSeconds from "scripts/waitForSeconds";
-import CandidateActions from "types/CandidateActions";
+import type FetchOptions from "types/FetchOptions";
+import type InputField from "types/InputField";
+import type ResultsAPI from "types/ResultAPI";
+import type Status from "types/Status";
+import type CandidateActions from "types/CandidateActions";
+import "styles/components/form.css";
 
 interface Props {
   /** The id of the item to update. */
@@ -72,7 +73,7 @@ export default function FormEdit({ id, uri, fields, fetchScript, dispatcher }: P
     else onSuccess(data);
   }
 
-  async function onSuccess(data: unknown) {
+  async function onSuccess(data: object) {
     setStatus("ready");
     setMessage("Edited candidate");
     dispatcher({ type: "edit-single", payload: { id: id, updates: data } });

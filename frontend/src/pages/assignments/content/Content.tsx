@@ -3,7 +3,7 @@ import Card from "components/card/Card";
 import CardNew from "components/card-new/CardNew";
 import FormNewAssignment from "forms/new-assignment/FormNewAssignment";
 import fetchService from "scripts/fetch-service/fetchService";
-import Assignment from "types/Assignment";
+import type Assignment from "types/Assignment";
 import StateEmpty from "../state-empty/StateEmpty";
 
 interface Props {

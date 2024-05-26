@@ -1,21 +1,22 @@
 // Node modules
-import { FormEvent, useState } from "react";
+import { useState } from "react";
+import type { FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 
 // Project files
 import Button from "components/button/Button";
-import InputFields from "components/input-fields/InputFields";
 import FormStatus from "components/form-status/FormStatus";
-import useDialog from "state/DialogContextAPI";
+import InputFields from "components/input-fields/InputFields";
 import gatherFormData from "scripts/forms/gatherFormData";
 import packageData from "scripts/forms/packageData";
-import Assignment from "types/Assignment";
-import FetchOptions from "types/FetchOptions";
-import ResultsAPI from "types/ResultAPI";
-import Status from "types/Status";
+import waitForSeconds from "scripts/waitForSeconds";
+import useDialog from "state/DialogContextAPI";
+import type Assignment from "types/Assignment";
+import type FetchOptions from "types/FetchOptions";
+import type ResultsAPI from "types/ResultAPI";
+import type Status from "types/Status";
 import fields from "./new-assignment";
 import "styles/components/form.css";
-import waitForSeconds from "scripts/waitForSeconds";
 
 interface Props {
   /** A script to submit data. The return complies with the ResultsAPI interface. */
