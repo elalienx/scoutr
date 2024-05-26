@@ -10,8 +10,6 @@ import gatherFormData from "scripts/forms/gatherFormData";
 import textAreaToArray from "scripts/forms/textAreaToArray";
 import waitForSeconds from "scripts/waitForSeconds";
 import useDialog from "state/DialogContextAPI";
-import type FetchOptions from "types/FetchOptions";
-import type ResultsAPI from "types/ResultAPI";
 import type Status from "types/Status";
 import type CandidateActions from "types/CandidateActions";
 import fields from "./parse-links-sse";
@@ -24,12 +22,9 @@ interface Props {
 
   /** A function that uses reducers to update the candidates state. */
   dispatch: Dispatch<CandidateActions>;
-
-  /** A script to submit data. The return complies with the ResultsAPI interface. */
-  fetchScript: (uri: string, init: FetchOptions) => Promise<ResultsAPI>;
 }
 
-export default function FormParseLinks({ id, dispatch, fetchScript }: Props) {
+export default function FormParseLinks({ id, dispatch }: Props) {
   // Global state
   const { closeDialog } = useDialog();
 
@@ -57,6 +52,7 @@ export default function FormParseLinks({ id, dispatch, fetchScript }: Props) {
     }
   }
 
+  // Refactor: Belongs to Progress Worker
   function updateEvent(event: MessageEvent) {
     const { candidate, report } = JSON.parse(event.data);
     console.log("candidate,report", candidate, report);
@@ -69,8 +65,8 @@ export default function FormParseLinks({ id, dispatch, fetchScript }: Props) {
     }
   }
 
+  // Refactor: Belongs to Progress Worker
   async function endEvent(eventSource: EventSource) {
-    // Remove this code, as its part of Progress Worker
     eventSource.close();
     setStatus("ready");
 

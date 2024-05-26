@@ -24,7 +24,7 @@ export default function Content({ state, id }: Props) {
   const { showDialog } = useDialog();
 
   // Components
-  const Form = <FormParseLinks fetchScript={fetchService} id={id} dispatch={dispatch} />;
+  const Form = <FormParseLinks id={id} dispatch={dispatch} />;
 
   // Safeguard
   if (candidates.length === 0) return <StateEmpty component={Form} />;
