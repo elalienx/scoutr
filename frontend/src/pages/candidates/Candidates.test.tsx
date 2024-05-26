@@ -155,6 +155,7 @@ describe("Empty and Ready state open the parse linnks formulary", () => {
     // Arrange
     const mockHook = mockUseReadyCandidates;
     const page = <Candidates fetchHook={mockHook} />;
+    const result = "form-parse-links";
 
     render(
       <MemoryRouter initialEntries={["/path/1"]}>
@@ -165,18 +166,12 @@ describe("Empty and Ready state open the parse linnks formulary", () => {
     );
 
     // Act
-    const button = screen.getByRole("button", { name: /add more candidates/i });
+    const button = screen.getByRole("button", { name: /add more candidates/i }); // note that this one says "more" as we know we have more than one in the table.
 
-    // Initially, the heading should not be present
-    const form = screen.getByTestId("form-parse-links");
-
-    // Click the button to add more candidates
     fireEvent.click(button);
 
-    // Use waitFor to handle async state updates
-    await waitFor(() => {
-      expect(form).toBeInTheDocument();
-    });
+    // Assert
+    expect(screen.getByTestId(result)).toBeInTheDocument();
   });
 
   test.todo("Show parse links formulary from empty state", async () => {
