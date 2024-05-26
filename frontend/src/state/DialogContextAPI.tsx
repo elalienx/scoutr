@@ -1,8 +1,9 @@
 // Node modules
-import { createContext, ReactNode, useContext, useRef, useState } from "react";
+import { createContext, useContext, useRef, useState } from "react";
+import type { ReactNode } from "react";
 
 // Project files
-import ContextProvider from "types/ContextProvider";
+import type ContextProvider from "types/ContextProvider";
 
 // Properties
 interface ContextValue {

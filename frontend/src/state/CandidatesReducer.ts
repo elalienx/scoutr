@@ -1,6 +1,6 @@
 // Project files
-import Candidate from "types/Candidate";
-import CandidateActions from "types/CandidateActions";
+import type Candidate from "types/Candidate";
+import type CandidateActions from "types/CandidateActions";
 import addCandidates from "./helpers/addCandidates";
 import addSingle from "./helpers/addSingle";
 import editCandidate from "./helpers/editCandidate";
