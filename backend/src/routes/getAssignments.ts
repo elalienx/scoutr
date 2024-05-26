@@ -1,16 +1,16 @@
 // Node modules
-import { Response } from "express";
-import { Client } from "pg";
+import type { Response } from "express";
+import type { Client } from "pg";
 
 // Project files
-import ResultsAPI from "../types/ResultsAPI";
+import type ResultsAPI from "../types/ResultsAPI";
 
 export default async function getAssignments(response: Response, database: Client): Promise<void> {
   const query = "SELECT * FROM assignments ORDER BY id";
   const messageGood = "Assignments received";
   const messageEmpty = "Warning: No assignments available";
   const messageBad = "Error: Cannot get data";
-  let result: ResultsAPI = { data: [], message: messageBad, status: 500 };
+  const result: ResultsAPI = { data: [], message: messageBad, status: 500 };
 
   try {
     const { rows } = await database.query(query);

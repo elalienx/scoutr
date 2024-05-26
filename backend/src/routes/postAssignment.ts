@@ -1,16 +1,16 @@
 // Node modules
-import { Request, Response } from "express";
-import { Client } from "pg";
+import type { Request, Response } from "express";
+import type { Client } from "pg";
 
 // Project files
 import query from "../queries/insertAssignment";
-import ResultsAPI from "../types/ResultsAPI";
+import type ResultsAPI from "../types/ResultsAPI";
 
 export default async function postAssignment(request: Request, response: Response, database: Client): Promise<void> {
   const { assignment_name, company_name, company_image_url = "" } = request.body;
   const messageGood = "Assignment saved with id ";
   const messageBad = "Error: Cannot save data";
-  let result: ResultsAPI = { data: [], message: messageBad, status: 500 };
+  const result: ResultsAPI = { data: [], message: messageBad, status: 500 };
 
   try {
     const { rows } = await database.query(query, [assignment_name, company_name, company_image_url]);
