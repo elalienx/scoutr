@@ -1,4 +1,5 @@
-import Candidate from "types/Candidate";
+// Project files
+import type Candidate from "types/Candidate";
 
 export default function contactedCandidates(candidates: Candidate[]): number {
   const status_uncontacted = 0;
