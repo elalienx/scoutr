@@ -12,7 +12,7 @@ import waitForSeconds from "scripts/waitForSeconds";
 import useDialog from "state/DialogContextAPI";
 import type Status from "types/Status";
 import type CandidateActions from "types/CandidateActions";
-import fields from "./parse-links-sse";
+import fields from "./parse-links";
 import "styles/components/form.css";
 
 interface Props {
@@ -87,7 +87,7 @@ export default function FormParseLinks({ id, dispatch }: Props) {
 
   return (
     <form
-      data-test-id="form-parse-links"
+      data-testid="form-parse-links"
       className="form form-parse-links"
       onSubmit={(event) => onSubmit(event)}
     >

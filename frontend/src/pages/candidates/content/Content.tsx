@@ -1,6 +1,6 @@
 // Project files
 import Button from "components/button/Button";
-import FormParseLinks from "forms/parse-links-sse/FormParseLinks";
+import FormParseLinks from "forms/parse-links/FormParseLinks";
 import useDialog from "state/DialogContextAPI";
 import Candidate from "types/Candidate";
 import CandidateActions from "types/CandidateActions";

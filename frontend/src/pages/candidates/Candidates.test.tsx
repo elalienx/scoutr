@@ -174,11 +174,11 @@ describe("Empty and Ready state open the parse linnks formulary", () => {
     expect(screen.getByTestId(result)).toBeInTheDocument();
   });
 
-  test.todo("Show parse links formulary from empty state", async () => {
+  test("Show parse links formulary from empty state", async () => {
     // Arrange
     const mockHook = mockUseEmpty;
     const page = <Candidates fetchHook={mockHook} />;
-    const result = "form-candidates";
+    const result = "form-parse-links";
 
     render(
       <MemoryRouter initialEntries={["/path/1"]}>
