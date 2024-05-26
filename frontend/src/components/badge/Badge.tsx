@@ -1,5 +1,5 @@
 // Project files
-import Color from "types/Color";
+import type Color from "types/Color";
 import "styles/components/background-colors.css";
 import "./badge.css";
 

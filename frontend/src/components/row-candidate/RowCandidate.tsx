@@ -1,18 +1,18 @@
 // Node modules
-import { Dispatch } from "react";
+import type { Dispatch } from "react";
 
 // Project files
 import HeaderCandidate from "components/header-candidate/HeaderCandidate";
 import ItemBadge from "components/item-badge/ItemBadge";
 import ItemCandidate from "components/item-candidate/ItemCandidate";
 import ItemCompany from "components/item-company/ItemCompany";
-import fields from "./fields";
 import FormEdit from "forms/edit/FormEdit";
 import fetchService from "scripts/fetch-service/fetchService";
 import useDialog from "state/DialogContextAPI";
-import Candidate from "types/Candidate";
-import CandidateActions from "types/CandidateActions";
+import type Candidate from "types/Candidate";
+import type CandidateActions from "types/CandidateActions";
 import parseData from "./helpers/parseData";
+import fields from "./fields";
 import "./row-candidate.css";
 
 interface Props {

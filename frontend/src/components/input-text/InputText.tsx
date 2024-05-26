@@ -1,5 +1,5 @@
 // Project files
-import InputField from "types/InputField";
+import type InputField from "types/InputField";
 import "styles/components/input-field.css";
 
 /** Input control to allow a single line of text. */

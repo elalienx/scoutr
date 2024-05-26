@@ -28,7 +28,7 @@ export default function NavigationBar(item: Props) {
 
       {/* Midle */}
       <Link to="/">
-        <img className="scoutr-logo" src={Logo} />
+        <img className="scoutr-logo" src={Logo} alt="The word scouter withouth the letter R" />
       </Link>
 
       {/* Right */}

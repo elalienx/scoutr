@@ -1,9 +1,9 @@
 // Node modules
-import { IconName } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { IconName } from "@fortawesome/fontawesome-svg-core";
 
 // Project files
-import Status from "types/Status";
+import type Status from "types/Status";
 import "styles/components/background-colors.css";
 import "./form-status.css";
 

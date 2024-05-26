@@ -1,7 +1,7 @@
 // Project files
-import InputField from "types/InputField";
+import type InputField from "types/InputField";
+import type TextAreaOptions from "types/TextAreaOptions";
 import "styles/components/input-field.css";
-import TextAreaOptions from "types/TextAreaOptions";
 
 /** Input control to allow multiple lines of text. */
 export default function TextArea(item: InputField) {
