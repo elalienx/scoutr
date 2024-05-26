@@ -42,8 +42,9 @@ export default function FormParseLinks({ id, dispatch }: Props) {
       const formData = gatherFormData(event.currentTarget);
       const parsedLinks = textAreaToArray(formData.unparsed_links);
       const query = parsedLinks.map((link) => `links=${link}`).join("&");
-      const eventSource = new EventSource(`${uri}?${query}`);
 
+      // 1. This code belongs to Parse Workert
+      const eventSource = new EventSource(`${uri}?${query}`);
       eventSource.onmessage = (event) => updateEvent(event);
       eventSource.onerror = () => endEvent(eventSource);
     } catch (error: unknown) {
@@ -51,7 +52,7 @@ export default function FormParseLinks({ id, dispatch }: Props) {
     }
   }
 
-  // Refactor: Belongs to Progress Worker
+  // 2. Refactor: Belongs to Progress Worker
   function updateEvent(event: MessageEvent) {
     const { candidate, report } = JSON.parse(event.data);
     console.log("candidate,report", candidate, report);
@@ -64,7 +65,7 @@ export default function FormParseLinks({ id, dispatch }: Props) {
     }
   }
 
-  // Refactor: Belongs to Progress Worker
+  // 3. Refactor: Belongs to Progress Worker
   async function endEvent(eventSource: EventSource) {
     eventSource.close();
     setStatus("ready");
