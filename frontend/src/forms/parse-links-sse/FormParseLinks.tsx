@@ -86,7 +86,11 @@ export default function FormParseLinks({ id, dispatch }: Props) {
   }
 
   return (
-    <form className="form form-parse-links" onSubmit={(event) => onSubmit(event)}>
+    <form
+      data-test-id="form-parse-links"
+      className="form form-parse-links"
+      onSubmit={(event) => onSubmit(event)}
+    >
       <h2>Add Candidates</h2>
       <InputFields fields={fields} />
       <FormStatus status={status} message={message} />

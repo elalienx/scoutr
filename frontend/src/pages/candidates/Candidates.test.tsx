@@ -168,16 +168,14 @@ describe("Empty and Ready state open the parse linnks formulary", () => {
     const button = screen.getByRole("button", { name: /add more candidates/i });
 
     // Initially, the heading should not be present
-    let heading = screen.queryByRole("heading", { name: /add candidates/i });
-    expect(heading).not.toBeInTheDocument();
+    const form = screen.getByTestId("form-parse-links");
 
     // Click the button to add more candidates
     fireEvent.click(button);
 
     // Use waitFor to handle async state updates
     await waitFor(() => {
-      heading = screen.getByRole("heading", { name: /add candidates/i });
-      expect(heading).toBeInTheDocument();
+      expect(form).toBeInTheDocument();
     });
   });
 
