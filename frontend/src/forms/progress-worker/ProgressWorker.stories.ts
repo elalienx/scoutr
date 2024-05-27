@@ -18,7 +18,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     id: 1,
-    links: [],
+    links: ["http://www.abc.com"],
     serverScript: () => {},
     dispatch: () => {},
   },

@@ -1,9 +1,11 @@
 // Node modules
-import type { Dispatch } from "react";
-import stringArrayToURL from "scripts/forms/stringArrayToURL";
+import { useState, type Dispatch } from "react";
 
 // Project files
+import stringArrayToURL from "scripts/forms/stringArrayToURL";
 import type CandidateActions from "types/CandidateActions";
+import "./progress-worker.css";
+import Button from "components/button/Button";
 
 interface Props {
   /** The ID of the assignment to parse. */
@@ -22,9 +24,15 @@ interface Props {
 /** An UI element that manages the loading state the candidate scrapping using Server Side Events. */
 
 export default function ProgressWorker({ id, links, serverScript, dispatch }: Props) {
+  // Local state
+  const [scanned, setScanned] = useState(0);
+  const [nonPublic, setNonPublic] = useState(0);
+  const [failed, setFailed] = useState(0);
+
   // Properties
   const query = stringArrayToURL(links);
   const uri = `/api/parse-links-sse/${id}?${query}`;
+  const progress = `${scanned} / ${links.length}`;
 
   // Methods
   function onSubmit() {
@@ -38,11 +46,11 @@ export default function ProgressWorker({ id, links, serverScript, dispatch }: Pr
   function updateEvent(event: MessageEvent) {
     const { candidate, report } = JSON.parse(event.data);
 
-    // Note: If severity is 1, dispatch and raise the "warning" notification
-    // Note: If severity is 3, NO dispatch and raise the "private profile" notification
-    // Note: IF severity is 4, NO dispatch and raise the "temporailly_banned" notification
     if (report.severity < 2) dispatch({ type: "add-single", payload: candidate });
-    else console.warn("Broken candidate", candidate, report);
+    if (report.severity === 2) setNonPublic((previousState) => previousState++);
+    if (report.severity === 3) setFailed((previousState) => previousState++);
+
+    setScanned((previousState) => previousState++);
   }
 
   async function endEvent(eventSource: EventSource) {
@@ -52,15 +60,12 @@ export default function ProgressWorker({ id, links, serverScript, dispatch }: Pr
   return (
     <div className="progress-worker" data-testid="progress-worker">
       <h2>Scouting candidates</h2>
-      <p>✅ Scanned: {0}</p>
-      <hr />
+      <p>Scanned: {progress}</p>
       <div className="statuses">
-        <p>🔁 Repeated: {0}</p>
-        <p>🕵️ Private: {0}</p>
-        <p>🚨 Errors: {0}</p>
+        <p>🕵️ Private: {nonPublic}</p>
+        <p>🚨 Failed: {failed}</p>
       </div>
-      <hr />
-      <button onClick={() => onSubmit()}>This is a placeholder</button>
+      <Button onClick={() => onSubmit()} label={"Close"} />
     </div>
   );
 }

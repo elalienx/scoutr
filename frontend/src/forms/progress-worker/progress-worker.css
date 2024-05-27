@@ -1,9 +1,20 @@
 .progress-worker {
-  background-color: var(--color-blue);
-  height: 33vh;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-medium);
+  align-items: start;
   overflow: scroll;
-  border-radius: var(--border-radious-big);
+  height: 33vh;
   margin-inline: auto;
+  padding: 24px;
+  background-color: var(--color-blue);
+  color: white;
+  border-radius: var(--border-radius-big);
+
+  .statuses {
+    padding: var(--space-small);
+    border: solid 1px white;
+  }
 }
 
 /* Laptop */
