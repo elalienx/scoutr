@@ -16,7 +16,7 @@ export default function Content({ assignments }: Props) {
   const Form = <FormNewAssignment fetchScript={fetchService} />;
 
   // Safeguard
-  if (assignments.length === 0) return <StateEmpty component={Form} />;
+  if (!assignments.length) return <StateEmpty component={Form} />;
 
   return (
     <div className="cards">

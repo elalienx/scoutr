@@ -27,7 +27,7 @@ export default function Content({ state, id }: Props) {
   const Form = <FormParseLinks fetchScript={fetchService} id={id} dispatch={dispatch} />;
 
   // Safeguard
-  if (candidates.length === 0) return <StateEmpty component={Form} />;
+  if (!candidates.length) return <StateEmpty component={Form} />;
 
   return (
     <div className="candidates">
