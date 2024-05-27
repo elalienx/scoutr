@@ -10,7 +10,7 @@ import gatherFormData from "scripts/forms/gatherFormData";
 import textAreaToArray from "scripts/forms/textAreaToArray";
 import useDialog from "state/DialogContextAPI";
 import type Status from "types/Status";
-import fields from "./parse-links";
+import fields from "./fields";
 import "styles/components/form.css";
 
 export default function FormParseLinks() {

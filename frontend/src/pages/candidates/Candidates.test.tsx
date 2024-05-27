@@ -3,7 +3,7 @@ import { describe, expect, test } from "vitest";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 
 // Project files
-import { render, screen, waitFor } from "scripts/testing-library/candidates-page-globals";
+import { render, screen } from "scripts/testing-library/candidates-page-globals";
 import { fireEvent } from "scripts/testing-library/candidates-page-globals";
 import mockUseLoading from "scripts/fetch-hook/mocks/mockUseLoading";
 import mockUseError from "scripts/fetch-hook/mocks/mockUseError";

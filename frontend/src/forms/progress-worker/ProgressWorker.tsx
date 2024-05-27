@@ -19,15 +19,14 @@ export default function ProgressWorker({ id, sseScript, dispatch }: Props) {
   // Properties
   const uri = `/api/parse-links-sse/${id}`;
   const query = ""; // this must come from FormParseLinks
-  console.log("this event source is replaced by sseScript for abstraction & testing", sseScript);
 
   // Methods
   function onSubmit() {
-    // this event source is replaced by sseScript for abstraction & testing
     const eventSource = new EventSource(`${uri}?${query}`);
 
     eventSource.onmessage = (event) => updateEvent(event);
     eventSource.onerror = () => endEvent(eventSource);
+    console.log("this event source is replaced by sseScript for abstraction & testing", sseScript);
   }
 
   function updateEvent(event: MessageEvent) {
@@ -46,7 +45,8 @@ export default function ProgressWorker({ id, sseScript, dispatch }: Props) {
 
   return (
     <div className="progress-worker" data-testid="progress-worker">
-      <button onClick={() => onSubmit}>This is a placeholder</button>
+      <h2>Progress Worker 🛟</h2>
+      <button onClick={() => onSubmit()}>This is a placeholder</button>
     </div>
   );
 }

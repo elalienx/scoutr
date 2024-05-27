@@ -12,7 +12,7 @@ import useDialog from "state/DialogContextAPI";
 import type Candidate from "types/Candidate";
 import type CandidateActions from "types/CandidateActions";
 import parseData from "./helpers/parseData";
-import fields from "./fields";
+import fields from "../../forms/edit/fields-candidate";
 import "./row-candidate.css";
 
 interface Props {

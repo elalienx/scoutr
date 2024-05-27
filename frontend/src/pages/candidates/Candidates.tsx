@@ -5,16 +5,17 @@ import { useParams } from "react-router-dom";
 // Project files
 import Loader from "components/loader/Loader";
 import NavigationBar from "components/navigation-bar/NavigationBar";
-import contactedCandidates from "scripts/response-rate/contactedCandidates";
+import Page404 from "pages/page-404/Page404";
 import calculatePercentage from "scripts/response-rate/calculatePercentage";
+import contactedCandidates from "scripts/response-rate/contactedCandidates";
+import repliedCandidates from "scripts/response-rate/repliedCandidates";
+import CandidatesReducer from "state/CandidatesReducer";
 import type Candidate from "types/Candidate";
 import type Status from "types/Status";
-import Page404 from "pages/page-404/Page404";
 import Content from "./content/Content";
 import StateError from "./state-error/StateError";
 import "./candidates.css";
-import CandidatesReducer from "state/CandidatesReducer";
-import repliedCandidates from "scripts/response-rate/repliedCandidates";
+import ProgressWorker from "forms/progress-worker/ProgressWorker";
 
 interface Props {
   /** A React custom hook to fetch data. The return complies with the ResultsAPI interface. */
@@ -52,8 +53,9 @@ export default function Candidates({ fetchHook }: Props) {
       <section className="section">
         {status === "loading" && <Loader />}
         {status === "error" && <StateError />}
-        {status === "ready" && <Content id={id} state={[candidates, dispatch]} />}
+        {status === "ready" && <Content state={[candidates, dispatch]} />}
       </section>
+      <ProgressWorker id={id} sseScript={() => {}} dispatch={dispatch} />
     </div>
   );
 }

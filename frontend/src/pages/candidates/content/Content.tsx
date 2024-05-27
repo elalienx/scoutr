@@ -13,19 +13,16 @@ import Table from "../table/Table";
 interface Props {
   /** The candidates to dispaly on the table. */
   state: [Candidate[], Dispatch<CandidateActions>];
-
-  /** The React component to show when you click the button.  */
-  id: number;
 }
 
-export default function Content({ state, id }: Props) {
-  const [candidates, dispatch] = state;
+export default function Content({ state }: Props) {
+  const [candidates] = state;
 
   // Global state
   const { showDialog } = useDialog();
 
   // Components
-  const Form = <FormParseLinks id={id} dispatch={dispatch} />;
+  const Form = <FormParseLinks />;
 
   // Safeguard
   if (candidates.length === 0) return <StateEmpty component={Form} />;

@@ -15,7 +15,7 @@ import type Assignment from "types/Assignment";
 import type FetchOptions from "types/FetchOptions";
 import type ResultsAPI from "types/ResultAPI";
 import type Status from "types/Status";
-import fields from "./new-assignment";
+import fields from "./fields";
 import "styles/components/form.css";
 
 interface Props {
