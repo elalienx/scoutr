@@ -15,7 +15,7 @@ interface Props {
   links: string[];
 
   /** The script used for initializing the Server Side Event */
-  serverScript: Function;
+  FetchClass: any;
 
   /** A function that uses reducers to update the candidates state. */
   dispatch: Dispatch<CandidateActions>;
@@ -23,7 +23,7 @@ interface Props {
 
 /** An UI element that manages the loading state the candidate scrapping using Server Side Events. */
 
-export default function ProgressWorker({ id, links, serverScript, dispatch }: Props) {
+export default function ProgressWorker({ id, links, FetchClass, dispatch }: Props) {
   // Local state
   const [scanned, setScanned] = useState(0);
   const [nonPublic, setNonPublic] = useState(0);
@@ -35,29 +35,29 @@ export default function ProgressWorker({ id, links, serverScript, dispatch }: Pr
 
   // Methods
   function onSubmit() {
-    const eventSource = new EventSource(`${uri}?${query}`);
-    console.log("replace EventSource with serverScript for abstraction & testing", serverScript);
+    const eventSource = new FetchClass(`${uri}?${query}`);
 
-    eventSource.onmessage = (event) => updateEvent(event);
+    eventSource.onmessage = (event: any) => updateEvent(event);
     eventSource.onerror = () => endEvent(eventSource);
   }
 
-  function updateEvent(event: MessageEvent) {
+  function updateEvent(event: any) {
     const { candidate, report } = JSON.parse(event.data);
+    console.log(`PW update() candidate: ${candidate.candidate_name}, severity: ${report.severity}`);
 
     if (report.severity < 2) dispatch({ type: "add-single", payload: candidate });
-    if (report.severity === 2) setNonPublic((previousState) => previousState++);
-    if (report.severity === 3) setFailed((previousState) => previousState++);
+    if (report.severity === 2) setNonPublic((previusState) => previusState + 1);
+    if (report.severity === 3) setFailed((previusState) => previusState + 1);
 
-    setScanned((previousState) => previousState++);
+    setScanned((previusState) => previusState + 1);
   }
 
-  async function endEvent(eventSource: EventSource) {
+  async function endEvent(eventSource: any) {
     eventSource.close();
   }
 
   return (
-    <div className="progress-worker" data-testid="progress-worker">
+    <div data-testid="progress-worker" className="progress-worker">
       <div className="progress-numbers">
         <span className="big">{scanned}</span>/{links.length}
       </div>
@@ -70,7 +70,7 @@ export default function ProgressWorker({ id, links, serverScript, dispatch }: Pr
         <p className="status">🕵️ Private profiles: {nonPublic}</p>
         <p className="status">🚨 Unable to scan: {failed}</p>
       </div>
-      <Button onClick={() => onSubmit()} label={"Close"} icon="xmark" disabled={true} />
+      <Button onClick={() => onSubmit()} label={"Star SSE"} icon="circle-check" />
     </div>
   );
 }
