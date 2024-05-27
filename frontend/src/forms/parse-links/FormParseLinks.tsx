@@ -35,7 +35,7 @@ export default function FormParseLinks() {
       const parsedLinks = textAreaToArray(formData.unparsed_links);
       const query = stringArrayToURL(parsedLinks);
 
-      console.log(query);
+      console.log("Send this to the Progress Worker:", query);
       onSuccess();
     } catch (error: unknown) {
       onFailure(error);
