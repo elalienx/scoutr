@@ -35,7 +35,7 @@ export default function Candidates({ fetchHook }: Props) {
   const [candidates, dispatch] = useReducer(CandidatesReducer, data);
 
   // Properties
-  const id = Number(assignment_id) || -1;
+  const id = Number(assignment_id) || undefined;
   const contacted = contactedCandidates(candidates);
   const replied = repliedCandidates(candidates);
   const response_rate = calculatePercentage(replied, contacted);
@@ -44,7 +44,7 @@ export default function Candidates({ fetchHook }: Props) {
   useEffect(() => dispatch({ type: "set-candidates", payload: data }), [data]);
 
   // Safeguard
-  if (id === -1) return <Page404 />;
+  if (!id) return <Page404 />;
 
   return (
     <div id="candidates">
