@@ -4,18 +4,18 @@ import type Candidate from "types/Candidate";
 import type ReportLog from "types/ReportLog";
 
 type ParsedLinks = {
-  candidate: Candidate;
+  candidate: Candidate | null;
   report: ReportLog;
 };
 
-export default class MockSSEManyCandidates {
+export default class MockSSEPrivate {
   // Properties
   parsedLinks: ParsedLinks[] = [
     {
       candidate: {
         id: 1,
         assignment_id: 1,
-        candidate_name: "Eduardo Alvarez Nowak",
+        candidate_name: "Xavier Alvarez Nowak",
         candidate_job_title: "Tech Lead",
         candidate_image_url:
           "https://media.licdn.com/dms/image/C4E03AQHwKgpnjrXkZA/profile-displayphoto-shrink_400_400/0/1643017689481?e=1718841600&v=beta&t=oXzvwBCY0QRE9ZnWl5CCqyBmDZFS2c_Jk9fDpndKzf8",
@@ -38,28 +38,11 @@ export default class MockSSEManyCandidates {
       },
     },
     {
-      candidate: {
-        id: 2,
-        assignment_id: 1,
-        candidate_name: "Sussana Vara",
-        candidate_job_title: "Partner",
-        candidate_image_url:
-          "https://media.licdn.com/dms/image/D5603AQF_QPzYf-dJDg/profile-displayphoto-shrink_400_400/0/1697639168537?e=1719446400&v=beta&t=_BQWtHxKlLQYZQi1YSwkZLNaeEUsYvCtwz7Ck0Jr-NA",
-        company_name: "Novare Potential",
-        company_duration_in_months: 80,
-        company_image_url:
-          "https://media.licdn.com/dms/image/C4E0BAQHElmOdWZ-xZA/company-logo_100_100/0/1631374829245/novare_potential_logo?e=1721260800&v=beta&t=ZRqH0M228v3G2tsbV5UsqqbmXstjR5_GQ69QLuw0eR8",
-        notes: "A servant type of leader.",
-        relevance: 4,
-        contact_status: 1,
-        contact_date: "2024-04-02 21:00:30.610279",
-        date_created: "2024-01-31 21:00:30.610279",
-        linked_in_url: "https://www.linkedin.com/in/susanna-vaara-0b33b03a/",
-      },
+      candidate: null,
       report: {
-        severity: 0, // means good!
-        url: "https://www.linkedin.com/in/susanna-vaara-0b33b03a/",
-        message: "No problems found!",
+        url: "https://www.linkedin.com/in/ivanahmadfatoni/",
+        severity: 2,
+        message: "This profile is private",
       },
     },
     {

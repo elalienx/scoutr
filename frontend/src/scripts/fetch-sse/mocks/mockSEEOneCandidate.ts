@@ -15,7 +15,7 @@ export default class MockSSEEOneCandidate {
       candidate: {
         id: 1,
         assignment_id: 1,
-        candidate_name: "Xavier Alvarez Nowak",
+        candidate_name: "Eduardo Alvarez Nowak",
         candidate_job_title: "Tech Lead",
         candidate_image_url:
           "https://media.licdn.com/dms/image/C4E03AQHwKgpnjrXkZA/profile-displayphoto-shrink_400_400/0/1643017689481?e=1718841600&v=beta&t=oXzvwBCY0QRE9ZnWl5CCqyBmDZFS2c_Jk9fDpndKzf8",

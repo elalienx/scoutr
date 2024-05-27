@@ -5,6 +5,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 import ProgressWorker from "./ProgressWorker";
 import MockSSEEOneCandidate from "scripts/fetch-sse/mocks/mockSEEOneCandidate";
 import MockSSEManyCandidates from "scripts/fetch-sse/mocks/mockSEEManyCandidates";
+import MockSSEPrivate from "scripts/fetch-sse/mocks/mockSEEPrivate";
+import MockSSEBan from "scripts/fetch-sse/mocks/mockSEEBan";
 
 const meta = {
   title: "Components/Progress Worker",
@@ -20,7 +22,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     id: 1,
-    links: ["one.com"],
+    links: ["eduardo.com"],
     FetchClass: MockSSEEOneCandidate,
     dispatch: () => {},
   },
@@ -29,11 +31,26 @@ export const Default: Story = {
 export const ManyCandidates: Story = {
   args: {
     id: 1,
-    links: ["one.com", "two.com", "three.com"],
+    links: ["eduardo.com", "sussana.com", "lana.com"],
     FetchClass: MockSSEManyCandidates,
     dispatch: () => {},
   },
 };
 
-// MockSSEPrivate: Returns 3 candidates, the middle one is a "private profile".
-// MockSSEBan: Returns 3 candidates, the last 2 are "banned" to simulate that we exceed the scrapping limit.
+export const PrivateProfile: Story = {
+  args: {
+    id: 1,
+    links: ["eduardo.com", "ivan.com", "lana.com"],
+    FetchClass: MockSSEPrivate,
+    dispatch: () => {},
+  },
+};
+
+export const Banned: Story = {
+  args: {
+    id: 1,
+    links: ["eduardo.com", "sussana.com", "lana.com"],
+    FetchClass: MockSSEBan,
+    dispatch: () => {},
+  },
+};

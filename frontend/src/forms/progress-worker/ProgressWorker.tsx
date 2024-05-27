@@ -43,7 +43,6 @@ export default function ProgressWorker({ id, links, FetchClass, dispatch }: Prop
 
   function updateEvent(event: any) {
     const { candidate, report } = JSON.parse(event.data);
-    console.log(`PW update() candidate: ${candidate.candidate_name}, severity: ${report.severity}`);
 
     if (report.severity < 2) dispatch({ type: "add-single", payload: candidate });
     if (report.severity === 2) setNonPublic((previusState) => previusState + 1);
@@ -67,8 +66,8 @@ export default function ProgressWorker({ id, links, FetchClass, dispatch }: Prop
         candidates
       </h2>
       <div className="statuses">
-        <p className="status">🕵️ Private profiles: {nonPublic}</p>
-        <p className="status">🚨 Unable to scan: {failed}</p>
+        {nonPublic > 0 && <p className="status">🕵️ Private profile: {nonPublic}</p>}
+        {failed > 0 && <p className="status">🚨 Unable to scan: {failed}</p>}
       </div>
       <Button onClick={() => onSubmit()} label={"Star SSE"} icon="circle-check" />
     </div>
