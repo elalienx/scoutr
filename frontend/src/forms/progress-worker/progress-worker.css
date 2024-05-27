@@ -1,0 +1,15 @@
+.progress-worker {
+  background-color: var(--color-blue);
+  height: 33vh;
+  overflow: scroll;
+  border-radius: var(--border-radious-big);
+  margin-inline: auto;
+}
+
+/* Laptop */
+@media (min-width: 700) {
+  .progress-worker {
+    width: 240px;
+    height: 264px;
+  }
+}

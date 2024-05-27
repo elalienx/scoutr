@@ -1,5 +1,6 @@
 // Node modules
 import type { Dispatch } from "react";
+import stringArrayToURL from "scripts/forms/stringArrayToURL";
 
 // Project files
 import type CandidateActions from "types/CandidateActions";
@@ -8,11 +9,11 @@ interface Props {
   /** The ID of the assignment to parse. */
   id: number;
 
-  /** The links converted to a serialized string to read on the backend. */
-  query: string;
+  /** The links to be serialized and sent to the backend. */
+  links: string[];
 
   /** The script used for initializing the Server Side Event */
-  sseScript: Function;
+  serverScript: Function;
 
   /** A function that uses reducers to update the candidates state. */
   dispatch: Dispatch<CandidateActions>;
@@ -20,17 +21,18 @@ interface Props {
 
 /** An UI element that manages the loading state the candidate scrapping using Server Side Events. */
 
-export default function ProgressWorker({ id, query, sseScript, dispatch }: Props) {
+export default function ProgressWorker({ id, links, serverScript, dispatch }: Props) {
   // Properties
-  const uri = `/api/parse-links-sse/${id}?${query}`; // Refactor: Combine URI, Id, and Query and bring it from the parent
+  const query = stringArrayToURL(links);
+  const uri = `/api/parse-links-sse/${id}?${query}`;
 
   // Methods
   function onSubmit() {
     const eventSource = new EventSource(`${uri}?${query}`);
+    console.log("replace EventSource with serverScript for abstraction & testing", serverScript);
 
     eventSource.onmessage = (event) => updateEvent(event);
     eventSource.onerror = () => endEvent(eventSource);
-    console.log("this event source is replaced by sseScript for abstraction & testing", sseScript);
   }
 
   function updateEvent(event: MessageEvent) {
@@ -49,7 +51,15 @@ export default function ProgressWorker({ id, query, sseScript, dispatch }: Props
 
   return (
     <div className="progress-worker" data-testid="progress-worker">
-      <h2>Progress Worker 🛟</h2>
+      <h2>Scouting candidates</h2>
+      <p>✅ Scanned: {0}</p>
+      <hr />
+      <div className="statuses">
+        <p>🔁 Repeated: {0}</p>
+        <p>🕵️ Private: {0}</p>
+        <p>🚨 Errors: {0}</p>
+      </div>
+      <hr />
       <button onClick={() => onSubmit()}>This is a placeholder</button>
     </div>
   );
