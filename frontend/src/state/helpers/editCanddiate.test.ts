@@ -107,7 +107,7 @@ test("Shows error if you try to edit the candidate project_id, only the server c
   expect(test).toThrowError(result);
 });
 
-test.todo("Correctly edits one modified field from a particular Candidate", () => {
+test("Correctly edits one modified field from a particular Candidate", () => {
   // Arrange
   const payload = { id: 2, updates: { candidate_name: "Sussana Vara" } }; // corrected name
   const state: Candidate[] = [
@@ -196,7 +196,7 @@ test.todo("Correctly edits one modified field from a particular Candidate", () =
   expect(test).toEqual(result);
 });
 
-test.todo("Correctly edits multiple modified fields from a particular Candidate", () => {
+test("Correctly edits multiple modified fields from a particular Candidate", () => {
   // Arrange
   const payload = {
     id: 2,
