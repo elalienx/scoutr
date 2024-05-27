@@ -13,6 +13,7 @@ import useDialog from "state/DialogContextAPI";
 import type Status from "types/Status";
 import fields from "./fields";
 import "styles/components/form.css";
+import stringArrayToURL from "scripts/forms/stringArrayToURL";
 
 /**
  * Note this one should not have form status, nor message as nothing here should trigger an error.
@@ -32,7 +33,7 @@ export default function FormParseLinks() {
     try {
       const formData = gatherFormData(event.currentTarget);
       const parsedLinks = textAreaToArray(formData.unparsed_links);
-      const query = parsedLinks.map((link) => `?links=${link}`).join("&");
+      const query = stringArrayToURL(parsedLinks);
 
       console.log(query);
       onSuccess();

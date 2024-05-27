@@ -18,7 +18,7 @@ test("Giving it an empty array return an error", () => {
 test("Giving it an array with 1 valid string returns the content as a string", () => {
   // Arrange
   const value: string[] = ["htttp://www.abc.com"];
-  const result = "?links=htttp://www.abc.com";
+  const result = "link=htttp://www.abc.com";
 
   // Act
   const test = stringArrayToURL(value);
@@ -30,7 +30,7 @@ test("Giving it an array with 1 valid string returns the content as a string", (
 test("Giving it an array with many valid strings returns the content as a string", () => {
   // Arrange
   const value: string[] = ["htttp://www.abc.com", "http://www.cnn.com", "http://www.nbc.com"];
-  const result = "?links=htttp://www.abc.com&http://www.cnn.com&http://www.nbc.com";
+  const result = "link=htttp://www.abc.com&link=http://www.cnn.com&link=http://www.nbc.com";
 
   // Act
   const test = stringArrayToURL(value);
