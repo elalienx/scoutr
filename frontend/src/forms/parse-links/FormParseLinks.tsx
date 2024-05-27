@@ -8,11 +8,15 @@ import InputFields from "components/input-fields/InputFields";
 import FormStatus from "components/form-status/FormStatus";
 import gatherFormData from "scripts/forms/gatherFormData";
 import textAreaToArray from "scripts/forms/textAreaToArray";
+import waitForSeconds from "scripts/waitForSeconds";
 import useDialog from "state/DialogContextAPI";
 import type Status from "types/Status";
 import fields from "./fields";
 import "styles/components/form.css";
 
+/**
+ * Note this one should not have form status, nor message as nothing here should trigger an error.
+ */
 export default function FormParseLinks() {
   // Global state
   const { closeDialog } = useDialog();
@@ -28,22 +32,33 @@ export default function FormParseLinks() {
     try {
       const formData = gatherFormData(event.currentTarget);
       const parsedLinks = textAreaToArray(formData.unparsed_links);
-      const query = parsedLinks.map((link) => `links=${link}`).join("&");
+      const query = parsedLinks.map((link) => `?links=${link}`).join("&");
+
+      console.log(query);
+      onSuccess();
     } catch (error: unknown) {
       onFailure(error);
     }
   }
 
+  async function onSuccess() {
+    setStatus("ready");
+    setMessage("LinkedIn links ready to be scanned");
+
+    await waitForSeconds(0.5);
+    closeDialog();
+  }
+
   function onFailure(error: Error | unknown) {
     console.error(error);
     setStatus("error");
-    setMessage("Could not scan LinkedIn profiles");
+    setMessage("Could not collect LinkedIn links to scan");
   }
 
   function onLoading(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setStatus("loading");
-    setMessage("Scaning LinkedIn profiles");
+    setMessage("Collecting LinkedIn links to scan");
   }
 
   return (
