@@ -25,7 +25,7 @@ export default function Content({ state }: Props) {
   const Form = <FormParseLinks />;
 
   // Safeguard
-  if (candidates.length === 0) return <StateEmpty component={Form} />;
+  if (!candidates.length) return <StateEmpty component={Form} />;
 
   return (
     <div className="candidates">

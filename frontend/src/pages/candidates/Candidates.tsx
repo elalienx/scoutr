@@ -55,7 +55,7 @@ export default function Candidates({ fetchHook }: Props) {
         {status === "error" && <StateError />}
         {status === "ready" && <Content state={[candidates, dispatch]} />}
       </section>
-      <ProgressWorker id={id} sseScript={() => {}} dispatch={dispatch} />
+      <ProgressWorker id={id} query="" sseScript={() => {}} dispatch={dispatch} />
     </div>
   );
 }
