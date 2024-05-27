@@ -8,6 +8,9 @@ interface Props {
   /** The ID of the assignment to parse. */
   id: number;
 
+  /** The links converted to a serialized string to read on the backend. */
+  query: string;
+
   /** The script used for initializing the Server Side Event */
   sseScript: Function;
 
@@ -15,10 +18,11 @@ interface Props {
   dispatch: Dispatch<CandidateActions>;
 }
 
-export default function ProgressWorker({ id, sseScript, dispatch }: Props) {
+/** An UI element that manages the loading state the candidate scrapping using Server Side Events. */
+
+export default function ProgressWorker({ id, query, sseScript, dispatch }: Props) {
   // Properties
-  const uri = `/api/parse-links-sse/${id}`;
-  const query = ""; // this must come from FormParseLinks
+  const uri = `/api/parse-links-sse/${id}?${query}`; // Refactor: Combine URI, Id, and Query and bring it from the parent
 
   // Methods
   function onSubmit() {
@@ -32,11 +36,11 @@ export default function ProgressWorker({ id, sseScript, dispatch }: Props) {
   function updateEvent(event: MessageEvent) {
     const { candidate, report } = JSON.parse(event.data);
 
-    if (report.severity < 2) {
-      dispatch({ type: "add-single", payload: candidate });
-    } else {
-      console.warn("Broken candidate", candidate, report);
-    }
+    // Note: If severity is 1, dispatch and raise the "warning" notification
+    // Note: If severity is 3, NO dispatch and raise the "private profile" notification
+    // Note: IF severity is 4, NO dispatch and raise the "temporailly_banned" notification
+    if (report.severity < 2) dispatch({ type: "add-single", payload: candidate });
+    else console.warn("Broken candidate", candidate, report);
   }
 
   async function endEvent(eventSource: EventSource) {
