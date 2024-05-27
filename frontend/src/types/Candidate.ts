@@ -3,7 +3,7 @@ export default interface Candidate {
   id: number;
 
   /** Foreign key linking candidates to assignments. */
-  projectId: number;
+  assignment_id: number;
 
   /** Date when the candidate was added to the database. */
   date_created: string;
