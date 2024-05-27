@@ -32,7 +32,6 @@ export default function ProgressWorker({ id, links, serverScript, dispatch }: Pr
   // Properties
   const query = stringArrayToURL(links);
   const uri = `/api/parse-links-sse/${id}?${query}`;
-  const progress = `${scanned} / ${links.length}`;
 
   // Methods
   function onSubmit() {
@@ -59,13 +58,19 @@ export default function ProgressWorker({ id, links, serverScript, dispatch }: Pr
 
   return (
     <div className="progress-worker" data-testid="progress-worker">
-      <h2>Scouting candidates</h2>
-      <p>Scanned: {progress}</p>
-      <div className="statuses">
-        <p>🕵️ Private: {nonPublic}</p>
-        <p>🚨 Failed: {failed}</p>
+      <div className="progress-numbers">
+        <span className="big">{scanned}</span>/{links.length}
       </div>
-      <Button onClick={() => onSubmit()} label={"Close"} />
+      <h2>
+        Scouting
+        <br />
+        candidates
+      </h2>
+      <div className="statuses">
+        <p className="status">🕵️ Private profiles: {nonPublic}</p>
+        <p className="status">🚨 Unable to scan: {failed}</p>
+      </div>
+      <Button onClick={() => onSubmit()} label={"Close"} icon="xmark" disabled={true} />
     </div>
   );
 }

@@ -4,6 +4,7 @@
   gap: var(--space-medium);
   align-items: start;
   overflow: scroll;
+  min-width: 240px;
   height: 33vh;
   margin-inline: auto;
   padding: 24px;
@@ -11,7 +12,16 @@
   color: white;
   border-radius: var(--border-radius-big);
 
-  .statuses {
+  .progress-numbers {
+    font-size: 24px;
+    font-weight: var(--font-weight-bold);
+  }
+
+  .progress-numbers .big {
+    font-size: 52px;
+  }
+
+  .status {
     padding: var(--space-small);
     border: solid 1px white;
   }
