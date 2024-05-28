@@ -3,7 +3,7 @@ import type { Request, Response } from "express";
 import type { Client } from "pg";
 
 // Project files
-import etlProcess from "../extract-profile-sse/etlProcess";
+import etlProcess from "../extract-profile/etlProcess";
 
 export default async function parseLinks(request: Request, response: Response, database: Client) {
   /** Check on Spike if one or all can be deleted */
