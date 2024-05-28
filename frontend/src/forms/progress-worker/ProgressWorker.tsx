@@ -24,6 +24,8 @@ interface Props {
 export default function ProgressWorker({ id, links, FetchClass, dispatch }: Props) {
   // Local state
   const [scanned, setScanned] = useState(0);
+  const [nonPublic, setNonPublic] = useState(0);
+  const [failed, setFailed] = useState(0);
 
   // Methods
   useEffect(() => {
@@ -31,18 +33,20 @@ export default function ProgressWorker({ id, links, FetchClass, dispatch }: Prop
   }, [links]);
 
   function onStart() {
-    console.log("onStart()");
     const query = stringArrayToURL(links);
-    const uri = `/sse/parse-links/${id}?${query}`; // CRITICAL: note that it points to /sse/ not /api/
-    const eventSource = new EventSource(uri);
+    const uriSpecialSSE = `/sse/parse-links/${id}?${query}`;
+    const eventSource = new FetchClass(uriSpecialSSE);
 
-    eventSource.onmessage = (event) => updateEvent(event);
+    eventSource.onmessage = (event: MessageEvent) => updateEvent(event);
     eventSource.onerror = () => endEvent(eventSource);
   }
 
   function updateEvent(event: MessageEvent) {
-    const data = JSON.parse(event.data);
-    console.log("updateEvent() data", data);
+    const { candidate, report } = JSON.parse(event.data);
+
+    if (report.severity < 2) dispatch({ type: "add-single", payload: candidate });
+    if (report.severity === 2) setNonPublic((previusState) => previusState + 1);
+    if (report.severity === 3) setFailed((previusState) => previusState + 1);
 
     setScanned((previusState) => previusState + 1);
   }
@@ -61,6 +65,10 @@ export default function ProgressWorker({ id, links, FetchClass, dispatch }: Prop
         <br />
         candidates
       </h2>
+      <div className="statuses">
+        {nonPublic > 0 && <p className="status">🕵️ Private profile: {nonPublic}</p>}
+        {failed > 0 && <p className="status">🚨 Unable to scan: {failed}</p>}
+      </div>
     </div>
   );
 }

@@ -19,16 +19,13 @@ export default async function parseLinks(request: Request, response: Response, d
 
   // Safeguard for single links
   if (!Array.isArray(links)) links = [links];
-  console.log("Server links", links);
 
   try {
     for (const link of links) {
-      // const { candidate, report } = await etlProcess(link, assignment_id, database);
-      // const data = { candidate, report }; // check if i can pass cand and repo directly
-      const data = { page: "linkedin", url: link };
+      const { candidate, report } = await etlProcess(link, assignment_id, database);
+      const data = { candidate, report };
+      // const data = { page: "linkedin", url: link };
 
-      await sleep(1000);
-      console.log("Ready to send result to frontent of:", link);
       response.write(`data: ${JSON.stringify(data)}\n\n`);
     }
   } catch (error) {

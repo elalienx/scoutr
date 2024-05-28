@@ -9,7 +9,7 @@ const fields: InputField[] = [
     placeholder:
       "https://www.linkedin.com/in/eduardo-alvarez-nowak/\nhttps://www.linkedin.com/in/lanahaddad87/",
     defaultValue:
-      "https://www.linkedin.com/in/eduardo-alvarez-nowak/\nhttps://www.linkedin.com/in/lanahaddad87/\nhttps://www.linkedin.com/in/susanna-vara/",
+      "https://www.linkedin.com/in/eduardo-alvarez-nowak/\nhttps://www.linkedin.com/in/lanahaddad87/\nhttps://www.linkedin.com/in/susanna-vaara-0b33b03a/",
     required: true,
     description: "Only paste links and delete any other type of text.",
   },
