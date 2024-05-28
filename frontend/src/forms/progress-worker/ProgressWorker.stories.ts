@@ -6,7 +6,7 @@ import ProgressWorker from "./ProgressWorker";
 import MockSSEEOneCandidate from "scripts/fetch-sse/mocks/mockSEEOneCandidate";
 import MockSSEManyCandidates from "scripts/fetch-sse/mocks/mockSEEManyCandidates";
 import MockSSEPrivate from "scripts/fetch-sse/mocks/mockSEEPrivate";
-import MockSSEBan from "scripts/fetch-sse/mocks/mockSEEBan";
+import MockSSEBan from "scripts/fetch-sse/mocks/mockSSEBan";
 
 const meta = {
   title: "Components/Progress Worker",

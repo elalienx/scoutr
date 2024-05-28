@@ -4,7 +4,7 @@ import type Candidate from "types/Candidate";
 import type ReportLog from "types/ReportLog";
 
 type ParsedLinks = {
-  candidate: Candidate;
+  candidate: Candidate | null;
   report: ReportLog;
 };
 
