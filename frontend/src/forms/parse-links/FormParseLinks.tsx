@@ -47,7 +47,7 @@ export default function FormParseLinks({ setLinks }: Props) {
     setStatus("ready");
     setMessage("LinkedIn links ready to be scanned");
 
-    await waitForSeconds(0.5);
+    await waitForSeconds(0.1);
     closeDialog();
   }
 

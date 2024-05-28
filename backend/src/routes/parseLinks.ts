@@ -16,7 +16,7 @@ export default async function parseLinks(request: Request, response: Response, d
 
   // Properties
   const assignment_id = Number(request.params.assignment_id);
-  const endEventMessage = "\n\n";
+  const eventCloser = "\n\n";
   let links = request.query.links as string[];
 
   // Safeguard for single links
@@ -28,7 +28,7 @@ export default async function parseLinks(request: Request, response: Response, d
       const { candidate, report } = await etlProcess(link, assignment_id, database);
       const data = { candidate, report }; // check if i can pass cand and repo directly
 
-      response.write(`data: ${JSON.stringify(data)}${endEventMessage}`);
+      response.write(`data: ${JSON.stringify(data)}${eventCloser}`);
     }
   } catch (error) {
     console.error("Error:", error);

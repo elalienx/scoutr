@@ -44,9 +44,16 @@ export default function ProgressWorker({ id, links, FetchClass, dispatch }: Prop
   }
 
   function updateEvent(event: any) {
+    console.log("got a new event!!!");
     const { candidate, report } = JSON.parse(event.data);
 
     if (report.severity < 2) dispatch({ type: "add-single", payload: candidate });
+
+    /**
+     * Refactor:
+     * Right now we only report anyhting above severity 1 as "missing all fields", severity: 2.
+     * I need to actually read the content of the HTML page to see if is private or a ban.
+     */
     if (report.severity === 2) setNonPublic((previusState) => previusState + 1);
     if (report.severity === 3) setFailed((previusState) => previusState + 1);
 
