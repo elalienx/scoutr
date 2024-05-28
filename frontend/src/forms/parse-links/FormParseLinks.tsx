@@ -13,12 +13,14 @@ import useDialog from "state/DialogContextAPI";
 import type Status from "types/Status";
 import fields from "./fields";
 import "styles/components/form.css";
-import stringArrayToURL from "scripts/forms/stringArrayToURL";
+import "./form-parse-links.css";
 
-/**
- * Note this one should not have form status, nor message as nothing here should trigger an error.
- */
-export default function FormParseLinks() {
+interface Props {
+  /** The links the FormParseLinks will gather from the user and sent to the Progress Worker. */
+  setLinks: Function;
+}
+
+export default function FormParseLinks({ setLinks }: Props) {
   // Global state
   const { closeDialog } = useDialog();
 
@@ -33,9 +35,8 @@ export default function FormParseLinks() {
     try {
       const formData = gatherFormData(event.currentTarget);
       const parsedLinks = textAreaToArray(formData.unparsed_links);
-      const query = stringArrayToURL(parsedLinks);
 
-      console.log("Send this to the Progress Worker:", query);
+      setLinks(parsedLinks);
       onSuccess();
     } catch (error: unknown) {
       onFailure(error);

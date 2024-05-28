@@ -13,16 +13,19 @@ import Table from "../table/Table";
 interface Props {
   /** The candidates to dispaly on the table. */
   state: [Candidate[], Dispatch<CandidateActions>];
+
+  /** The links the FormParseLinks will gather from the user and sent to the Progress Worker. */
+  setLinks: Function;
 }
 
-export default function Content({ state }: Props) {
+export default function Content({ state, setLinks }: Props) {
   const [candidates] = state;
 
   // Global state
   const { showDialog } = useDialog();
 
   // Components
-  const Form = <FormParseLinks />;
+  const Form = <FormParseLinks setLinks={setLinks} />;
 
   // Safeguard
   if (!candidates.length) return <StateEmpty component={Form} />;

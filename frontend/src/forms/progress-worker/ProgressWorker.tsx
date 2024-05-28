@@ -1,11 +1,10 @@
 // Node modules
-import { useState, type Dispatch } from "react";
+import { useEffect, useState, type Dispatch } from "react";
 
 // Project files
 import stringArrayToURL from "scripts/forms/stringArrayToURL";
 import type CandidateActions from "types/CandidateActions";
 import "./progress-worker.css";
-import Button from "components/button/Button";
 
 interface Props {
   /** The ID of the assignment to parse. */
@@ -22,20 +21,24 @@ interface Props {
 }
 
 /** An UI element that manages the loading state the candidate scrapping using Server Side Events. */
-
 export default function ProgressWorker({ id, links, FetchClass, dispatch }: Props) {
   // Local state
   const [scanned, setScanned] = useState(0);
   const [nonPublic, setNonPublic] = useState(0);
   const [failed, setFailed] = useState(0);
 
-  // Properties
-  const query = stringArrayToURL(links);
-  const uri = `/api/parse-links-sse/${id}?${query}`;
-
   // Methods
-  function onSubmit() {
+  useEffect(() => {
+    if (links.length > 0) startSSE();
+  }, [links]);
+
+  function startSSE() {
+    console.log("1. ProgressWorker startSSE() links", links);
+
+    const query = stringArrayToURL(links);
+    const uri = `/api/parse-links-sse/${id}?${query}`;
     const eventSource = new FetchClass(`${uri}?${query}`);
+    console.log("1. ProgressWorker startSSE() query", query);
 
     eventSource.onmessage = (event: any) => updateEvent(event);
     eventSource.onerror = () => endEvent(eventSource);
@@ -69,7 +72,6 @@ export default function ProgressWorker({ id, links, FetchClass, dispatch }: Prop
         {nonPublic > 0 && <p className="status">🕵️ Private profile: {nonPublic}</p>}
         {failed > 0 && <p className="status">🚨 Unable to scan: {failed}</p>}
       </div>
-      <Button onClick={() => onSubmit()} label={"Star SSE"} icon="circle-check" />
     </div>
   );
 }

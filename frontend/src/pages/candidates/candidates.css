@@ -31,6 +31,12 @@
   .section .candidates table {
     margin-bottom: var(--space-medium);
   }
+
+  .progress-worker {
+    position: absolute;
+    bottom: var(--space-big);
+    right: var(--space-big);
+  }
 }
 
 /* Tablet */
@@ -40,11 +46,6 @@
 
     .section .candidates table {
       margin-bottom: var(--space-big);
-    }
-
-    .form-parse-links textarea.input {
-      width: 450px;
-      line-height: 1.5;
     }
   }
 }

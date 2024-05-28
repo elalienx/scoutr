@@ -1,5 +1,5 @@
 // Node modules
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { useParams } from "react-router-dom";
 
 // Project files
@@ -34,6 +34,7 @@ export default function Candidates({ fetchHook }: Props) {
 
   // Local state
   const [candidates, dispatch] = useReducer(CandidatesReducer, data);
+  const [links, setLinks] = useState<string[]>([]);
 
   // Properties
   const id = Number(assignment_id) || -1;
@@ -53,9 +54,9 @@ export default function Candidates({ fetchHook }: Props) {
       <section className="section">
         {status === "loading" && <Loader />}
         {status === "error" && <StateError />}
-        {status === "ready" && <Content state={[candidates, dispatch]} />}
+        {status === "ready" && <Content state={[candidates, dispatch]} setLinks={setLinks} />}
       </section>
-      <ProgressWorker id={id} query="" sseScript={() => {}} dispatch={dispatch} />
+      <ProgressWorker id={id} links={links} FetchClass={EventSource} dispatch={dispatch} />
     </div>
   );
 }
