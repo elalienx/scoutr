@@ -6,7 +6,7 @@ import type { Client } from "pg";
 import etlProcess from "../extract-profile-sse/etlProcess";
 
 export default async function parseLinks(request: Request, response: Response, database: Client) {
-  console.log("Server parseLinks API");
+  console.log("Server parseLinks API", request.query.link);
   /** Check on Spike if one or all can be deleted */
   // Headers
   response.setHeader("Content-Type", "text/event-stream");
@@ -17,7 +17,7 @@ export default async function parseLinks(request: Request, response: Response, d
   // Properties
   const assignment_id = Number(request.params.assignment_id);
   const endEventMessage = "\n\n";
-  let links = request.query.link as string[];
+  let links = request.query.links as string[];
 
   // Safeguard for single links
   if (!Array.isArray(links)) links = [links];

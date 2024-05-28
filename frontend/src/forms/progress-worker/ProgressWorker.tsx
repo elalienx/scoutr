@@ -33,12 +33,11 @@ export default function ProgressWorker({ id, links, FetchClass, dispatch }: Prop
   }, [links]);
 
   function startSSE() {
-    console.log("2. ProgressWorker startSSE() links", links);
+    console.log("1. ProgressWorker startSSE() links", links);
 
     const query = stringArrayToURL(links);
-    const uri = `/api/parse-links/${id}?${query}`;
-    const eventSource = new FetchClass(`${uri}?${query}`);
-    console.log("3. ProgressWorker startSSE() query", query);
+    const eventSource = new FetchClass(`/api/parse-links/${id}?${query}`);
+    console.log("2. ProgressWorker startSSE() query", query);
 
     eventSource.onmessage = (event: any) => updateEvent(event);
     eventSource.onerror = () => endEvent(eventSource);

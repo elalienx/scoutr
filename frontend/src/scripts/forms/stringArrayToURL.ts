@@ -5,7 +5,7 @@ export default function stringArrayToURL(stringArray: string[]) {
   if (stringArray.length === 0) throw new Error(error);
 
   // Properties
-  const result = stringArray.map((item) => `link=${item}`).join("&");
+  const result = stringArray.map((item) => `links=${item}`).join("&");
 
   return result;
 }
