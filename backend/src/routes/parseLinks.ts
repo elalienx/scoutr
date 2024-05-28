@@ -27,7 +27,7 @@ export default async function parseLinks(request: Request, response: Response, d
       // const data = { candidate, report }; // check if i can pass cand and repo directly
       const data = { page: "linkedin", url: link };
 
-      await sleep(3000);
+      await sleep(1000);
       console.log("Ready to send result to frontent of:", link);
       response.write(`data: ${JSON.stringify(data)}\n\n`);
     }

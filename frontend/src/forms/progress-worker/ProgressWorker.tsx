@@ -33,7 +33,7 @@ export default function ProgressWorker({ id, links, FetchClass, dispatch }: Prop
   function onStart() {
     console.log("onStart()");
     const query = stringArrayToURL(links);
-    const uri = `/api/parse-links/${id}?${query}`;
+    const uri = `/sse/parse-links/${id}?${query}`; // CRITICAL: note that it points to /sse/ not /api/
     const eventSource = new EventSource(uri);
 
     eventSource.onmessage = (event) => updateEvent(event);
