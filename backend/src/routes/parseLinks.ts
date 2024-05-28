@@ -15,7 +15,6 @@ export default async function parseLinks(request: Request, response: Response, d
 
   // Properties
   const assignment_id = Number(request.params.assignment_id);
-  const eventCloser = "\n\n";
   let links = request.query.links as string[];
 
   // Safeguard for single links
@@ -24,11 +23,11 @@ export default async function parseLinks(request: Request, response: Response, d
 
   try {
     for (const link of links) {
-      const { candidate, report } = await etlProcess(link, assignment_id, database);
-      const data = { candidate, report }; // check if i can pass cand and repo directly
+      // const { candidate, report } = await etlProcess(link, assignment_id, database);
+      // const data = { candidate, report }; // check if i can pass cand and repo directly
 
       console.log("Ready to send result to frontent of:", link);
-      response.write(`data: ${JSON.stringify(data)}${eventCloser}`);
+      response.write(`hello\n\n`);
     }
   } catch (error) {
     console.error("Error:", error);
