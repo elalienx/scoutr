@@ -33,12 +33,12 @@ export default function ProgressWorker({ id, links, FetchClass, dispatch }: Prop
   }, [links]);
 
   function startSSE() {
-    console.log("1. ProgressWorker startSSE() links", links);
+    console.log("2. ProgressWorker startSSE() links", links);
 
     const query = stringArrayToURL(links);
-    const uri = `/api/parse-links-sse/${id}?${query}`;
+    const uri = `/api/parse-links/${id}?${query}`;
     const eventSource = new FetchClass(`${uri}?${query}`);
-    console.log("1. ProgressWorker startSSE() query", query);
+    console.log("3. ProgressWorker startSSE() query", query);
 
     eventSource.onmessage = (event: any) => updateEvent(event);
     eventSource.onerror = () => endEvent(eventSource);
@@ -54,7 +54,7 @@ export default function ProgressWorker({ id, links, FetchClass, dispatch }: Prop
     setScanned((previusState) => previusState + 1);
   }
 
-  async function endEvent(eventSource: any) {
+  function endEvent(eventSource: any) {
     eventSource.close();
   }
 

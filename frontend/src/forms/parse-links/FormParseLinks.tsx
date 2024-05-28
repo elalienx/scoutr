@@ -36,6 +36,7 @@ export default function FormParseLinks({ setLinks }: Props) {
       const formData = gatherFormData(event.currentTarget);
       const parsedLinks = textAreaToArray(formData.unparsed_links);
 
+      console.log("1. Form parsedLinks", parsedLinks);
       setLinks(parsedLinks);
       onSuccess();
     } catch (error: unknown) {
