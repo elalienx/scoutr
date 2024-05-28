@@ -24,8 +24,6 @@ interface Props {
 export default function ProgressWorker({ id, links, FetchClass, dispatch }: Props) {
   // Local state
   const [scanned, setScanned] = useState(0);
-  const [nonPublic, setNonPublic] = useState(0);
-  const [failed, setFailed] = useState(0);
 
   // Methods
   useEffect(() => {
@@ -33,21 +31,18 @@ export default function ProgressWorker({ id, links, FetchClass, dispatch }: Prop
   }, [links]);
 
   function onStart() {
+    console.log("onStart()");
     const query = stringArrayToURL(links);
-    const eventSource = new EventSource(`/api/parse-links/${id}?${query}`);
+    const uri = `/api/parse-links/${id}?${query}`;
+    const eventSource = new EventSource(uri);
 
     eventSource.onmessage = (event) => updateEvent(event);
     eventSource.onerror = () => endEvent(eventSource);
   }
 
-  // Refactor: Currently we report anything above severity 1 as "missing all fields".
   function updateEvent(event: MessageEvent) {
-    console.log("got a new event!!!");
-    const { candidate, report } = JSON.parse(event.data);
-
-    if (report.severity < 2) dispatch({ type: "add-single", payload: candidate });
-    if (report.severity === 2) setNonPublic((previusState) => previusState + 1);
-    if (report.severity === 3) setFailed((previusState) => previusState + 1);
+    const data = JSON.parse(event.data);
+    console.log("updateEvent() data", data);
 
     setScanned((previusState) => previusState + 1);
   }
@@ -66,10 +61,6 @@ export default function ProgressWorker({ id, links, FetchClass, dispatch }: Prop
         <br />
         candidates
       </h2>
-      <div className="statuses">
-        {nonPublic > 0 && <p className="status">🕵️ Private profile: {nonPublic}</p>}
-        {failed > 0 && <p className="status">🚨 Unable to scan: {failed}</p>}
-      </div>
     </div>
   );
 }
