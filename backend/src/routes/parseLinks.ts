@@ -6,7 +6,6 @@ import type { Client } from "pg";
 import etlProcess from "../extract-profile-sse/etlProcess";
 
 export default async function parseLinks(request: Request, response: Response, database: Client) {
-  console.log("Server parseLinks API", request.query.link);
   /** Check on Spike if one or all can be deleted */
   // Headers
   response.setHeader("Content-Type", "text/event-stream");
@@ -28,6 +27,7 @@ export default async function parseLinks(request: Request, response: Response, d
       const { candidate, report } = await etlProcess(link, assignment_id, database);
       const data = { candidate, report }; // check if i can pass cand and repo directly
 
+      console.log("Ready to send result to frontent of:", link);
       response.write(`data: ${JSON.stringify(data)}${eventCloser}`);
     }
   } catch (error) {
