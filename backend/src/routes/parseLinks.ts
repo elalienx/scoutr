@@ -24,7 +24,6 @@ export default async function parseLinks(request: Request, response: Response, d
     for (const link of links) {
       const { candidate, report } = await etlProcess(link, assignment_id, database);
       const data = { candidate, report };
-      // const data = { page: "linkedin", url: link };
 
       response.write(`data: ${JSON.stringify(data)}\n\n`);
     }
@@ -33,8 +32,4 @@ export default async function parseLinks(request: Request, response: Response, d
   } finally {
     response.end();
   }
-}
-
-function sleep(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
 }
