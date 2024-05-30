@@ -20,7 +20,7 @@ interface Props {
   setLinks: Function;
 }
 
-export default function FormParseLinks({ setLinks }: Props) {
+export default function FormParseLinks({ id, fetchScript, dispatch }: Props) {
   // Global state
   const { closeDialog } = useDialog();
 

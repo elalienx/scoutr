@@ -11,21 +11,21 @@ import StateEmpty from "../state-empty/StateEmpty";
 import Table from "../table/Table";
 
 interface Props {
+  /** The id of the current assigment. */
+  id: number;
+
   /** The candidates to dispaly on the table. */
   state: [Candidate[], Dispatch<CandidateActions>];
-
-  /** The links the FormParseLinks will gather from the user and sent to the Progress Worker. */
-  setLinks: Function;
 }
 
-export default function Content({ state, setLinks }: Props) {
+export default function Content({ state }: Props) {
   const [candidates] = state;
 
   // Global state
   const { showDialog } = useDialog();
 
   // Components
-  const Form = <FormParseLinks setLinks={setLinks} />;
+  const Form = <FormParseLinks id={id} />;
 
   // Safeguard
   if (!candidates.length) return <StateEmpty component={Form} />;

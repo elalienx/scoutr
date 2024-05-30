@@ -15,7 +15,6 @@ import type Status from "types/Status";
 import Content from "./content/Content";
 import StateError from "./state-error/StateError";
 import "./candidates.css";
-import ProgressWorker from "forms/progress-worker/ProgressWorker";
 
 interface Props {
   /** A React custom hook to fetch data. The return complies with the ResultsAPI interface. */
@@ -34,7 +33,6 @@ export default function Candidates({ fetchHook }: Props) {
 
   // Local state
   const [candidates, dispatch] = useReducer(CandidatesReducer, data);
-  const [links, setLinks] = useState<string[]>([]);
 
   // Properties
   const id = Number(assignment_id) || -1;
@@ -54,9 +52,8 @@ export default function Candidates({ fetchHook }: Props) {
       <section className="section">
         {status === "loading" && <Loader />}
         {status === "error" && <StateError />}
-        {status === "ready" && <Content state={[candidates, dispatch]} setLinks={setLinks} />}
+        {status === "ready" && <Content id={id} state={[candidates, dispatch]} />}
       </section>
-      <ProgressWorker id={id} links={links} FetchClass={EventSource} dispatch={dispatch} />
     </div>
   );
 }
