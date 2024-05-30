@@ -3,7 +3,8 @@ import { describe, expect, test } from "vitest";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 
 // Project files
-import { fireEvent, render, screen } from "scripts/testing-library/candidates-page-globals";
+import { render, screen } from "scripts/testing-library/candidates-page-globals";
+import { fireEvent } from "scripts/testing-library/candidates-page-globals";
 import mockUseLoading from "scripts/fetch-hook/mocks/mockUseLoading";
 import mockUseError from "scripts/fetch-hook/mocks/mockUseError";
 import Candidates from "./Candidates";
@@ -149,12 +150,12 @@ describe("Data fetching states", () => {
   });
 });
 
-describe("Empty and Ready state open new assigment formulary", () => {
+describe("Empty and Ready state open the parse linnks formulary", () => {
   test("Show parse links formulary from ready state", async () => {
     // Arrange
     const mockHook = mockUseReadyCandidates;
     const page = <Candidates fetchHook={mockHook} />;
-    const result = "form-candidates";
+    const result = "form-parse-links";
 
     render(
       <MemoryRouter initialEntries={["/path/1"]}>
@@ -177,7 +178,7 @@ describe("Empty and Ready state open new assigment formulary", () => {
     // Arrange
     const mockHook = mockUseEmpty;
     const page = <Candidates fetchHook={mockHook} />;
-    const result = "form-candidates";
+    const result = "form-parse-links";
 
     render(
       <MemoryRouter initialEntries={["/path/1"]}>

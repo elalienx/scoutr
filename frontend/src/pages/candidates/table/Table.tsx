@@ -1,12 +1,14 @@
+// Node modules
+import type { Dispatch } from "react";
+
 // Project files
 import RowCandidate from "components/row-candidate/RowCandidate";
-import Candidate from "types/Candidate";
+import type Candidate from "types/Candidate";
+import type CandidateActions from "types/CandidateActions";
 import "./table.css";
-import { Dispatch } from "react";
-import CandidateActions from "types/CandidateActions";
 
 interface Props {
-  /** The candidates to dispaly on the table. */
+  /** The candidates to display on the table. */
   state: [Candidate[], Dispatch<CandidateActions>];
 }
 

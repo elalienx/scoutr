@@ -1,30 +1,32 @@
+// Node modules
+import type { Dispatch } from "react";
+
 // Project files
 import Button from "components/button/Button";
 import FormParseLinks from "forms/parse-links/FormParseLinks";
-import fetchService from "scripts/fetch-service/fetchService";
 import useDialog from "state/DialogContextAPI";
-import Candidate from "types/Candidate";
-import CandidateActions from "types/CandidateActions";
+import type Candidate from "types/Candidate";
+import type CandidateActions from "types/CandidateActions";
+import fetchSSE from "scripts/fetch-sse/fetchSSE";
 import StateEmpty from "../state-empty/StateEmpty";
 import Table from "../table/Table";
-import { Dispatch } from "react";
 
 interface Props {
+  /** The id of the current assigment. */
+  id: number;
+
   /** The candidates to dispaly on the table. */
   state: [Candidate[], Dispatch<CandidateActions>];
-
-  /** The React component to show when you click the button.  */
-  id: number;
 }
 
-export default function Content({ state, id }: Props) {
+export default function Content({ id, state }: Props) {
   const [candidates, dispatch] = state;
 
   // Global state
   const { showDialog } = useDialog();
 
   // Components
-  const Form = <FormParseLinks fetchScript={fetchService} id={id} dispatch={dispatch} />;
+  const Form = <FormParseLinks id={id} FetchClass={fetchSSE} dispatch={dispatch} />;
 
   // Safeguard
   if (!candidates.length) return <StateEmpty component={Form} />;

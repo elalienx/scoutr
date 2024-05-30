@@ -1,6 +1,6 @@
 // Project files
 import formatDate from "scripts/dates/formatDate";
-import Candidate from "types/Candidate";
+import type Candidate from "types/Candidate";
 import { contactData, relevanceData } from "./meta-data";
 
 export default function parseData(item: Candidate, index: number) {

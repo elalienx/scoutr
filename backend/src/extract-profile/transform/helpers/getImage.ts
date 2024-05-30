@@ -1,5 +1,5 @@
 // Node modules
-import { CheerioAPI } from "cheerio";
+import type { CheerioAPI } from "cheerio";
 
 export default function getImage(document: CheerioAPI, selector: string): string {
   const placeholderURL = "https://static.licdn.com/";

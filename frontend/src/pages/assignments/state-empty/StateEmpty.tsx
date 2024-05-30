@@ -1,5 +1,5 @@
 // Node modules
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 // Project files
 
 import Illustration from "assets/state-empty-assignments.png";

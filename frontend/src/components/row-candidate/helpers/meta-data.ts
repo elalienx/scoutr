@@ -1,5 +1,5 @@
 // Project files
-import Color from "types/Color";
+import type Color from "types/Color";
 
 interface coloredLabels {
   label: string;

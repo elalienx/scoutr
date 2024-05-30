@@ -1,11 +1,11 @@
 // Project files
-import ErrorReport from "../../types/ErrorReport";
-import LinkedInProfile from "../../types/LinkedInProfile";
+import type ErrorReport from "../../types/ErrorReport";
+import type LinkedInProfile from "../../types/LinkedInProfile";
 
 export default function reportEmptyFields(url: string, profile: LinkedInProfile): ErrorReport {
   const fields = Object.entries(profile);
   const missingFields = fields.filter(([_, value]) => !value);
-  const labels = missingFields.map(([key]) => " " + key);
+  const labels = missingFields.map(([key]) => " " + key); // check if we keep it as an array and then stringify...
   let severity = 0;
   let message = "No problems found";
 
@@ -14,7 +14,7 @@ export default function reportEmptyFields(url: string, profile: LinkedInProfile)
     severity = 1;
   }
 
-  if (missingFields.length == fields.length) {
+  if (missingFields.length === fields.length) {
     message = "Missing all fields";
     severity = 2;
   }

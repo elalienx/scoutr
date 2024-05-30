@@ -1,5 +1,5 @@
 // Project files
-import InputField from "types/InputField";
+import type InputField from "types/InputField";
 
 const fields: InputField[] = [
   {

@@ -1,0 +1,19 @@
+meta {
+  name: Parse links SSE
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base_url}}/parse-links-sse/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "links": [
+      "https://www.linkedin.com/in/susanna-vaara-0b33b03a/"
+    ]
+  }
+}

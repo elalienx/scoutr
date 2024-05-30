@@ -41,11 +41,7 @@ export default function Button(item: Props) {
   const cssSize = !big && "small";
 
   return (
-    <button
-      className={`button ${cssSize} ${cssPrimary}`}
-      disabled={disabled}
-      onClick={onClick}
-    >
+    <button className={`button ${cssSize} ${cssPrimary}`} disabled={disabled} onClick={onClick}>
       {icon && <FontAwesomeIcon className="icon" icon={[icon_prefix, icon]} />}
       {label}
     </button>

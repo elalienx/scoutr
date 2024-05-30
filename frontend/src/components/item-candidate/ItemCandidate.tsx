@@ -1,7 +1,7 @@
 // Project files
 import ImageThumbnail from "components/image-thumbnail/ImageThumbnail";
+import type Candidate from "types/Candidate";
 import "./item-candidate.css";
-import Candidate from "types/Candidate";
 
 interface Props {
   /** Candidare data focused on personal information */
@@ -19,7 +19,7 @@ export default function ItemCandidate({ item, onClick }: Props) {
     <div className="item-candidate">
       <ImageThumbnail src={candidate_image_url} profile="candidate" />
       <div className="content">
-        <a href={linked_in_url} className="title trim-text" target="_blank">
+        <a href={linked_in_url} className="title trim-text" target="_blank" rel="noreferrer">
           {candidate_name}
         </a>
         <small

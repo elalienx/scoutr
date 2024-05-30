@@ -1,4 +1,5 @@
-import ResultsAPI from "types/ResultAPI";
+// Project files
+import type ResultsAPI from "types/ResultAPI";
 
 async function fetchService(uri: string, options: object): Promise<ResultsAPI> {
   let result: ResultsAPI = {

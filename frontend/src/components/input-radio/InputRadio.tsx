@@ -1,9 +1,9 @@
 // Project files
-import InputField from "types/InputField";
 import FormStatus from "components/form-status/FormStatus";
+import type InputField from "types/InputField";
+import type InputRadioOptions from "types/InputRadioOptions";
 import Radio from "./Radio";
 import "styles/components/input-field.css";
-import InputRadioOptions from "types/InputRadioOptions";
 
 export default function InputRadio(item: InputField) {
   const { id, label, defaultValue, description, options } = item;

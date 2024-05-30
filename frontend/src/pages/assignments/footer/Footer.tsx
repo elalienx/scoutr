@@ -7,7 +7,7 @@ export default function Footer() {
       <small>© 2024 Eduardo Alvarez.</small>
       <small>
         GitHub:{" "}
-        <a href="https://www.github.com/elalienx" target="_blank">
+        <a href="https://www.github.com/elalienx" target="_blank" rel="noreferrer">
           github.com/elalienx
         </a>
       </small>

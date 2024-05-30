@@ -5,7 +5,7 @@ export default function calculatePercentage(ammount: number, total: number): num
   // Properties
   let result = -1; // start in the worst case scenario
 
-  if (total > 0) return Math.round((ammount / total) * 100);
+  if (total > 0) result = Math.round((ammount / total) * 100);
 
   return result;
 }

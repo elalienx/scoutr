@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Project files
 import ImageThumbnail from "components/image-thumbnail/ImageThumbnail";
-import Assignment from "types/Assignment";
+import type Assignment from "types/Assignment";
 import "./card.css";
 
 /** UI element to visualize an assignment. */

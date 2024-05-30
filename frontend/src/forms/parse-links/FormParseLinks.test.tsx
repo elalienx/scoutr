@@ -1,36 +1,29 @@
 // Node modules
 import { expect, test } from "vitest";
+import { render, screen, waitFor } from "scripts/testing-library/assignments-page-globals";
+import { fireEvent } from "scripts/testing-library/assignments-page-globals";
 
 // Project files
-import {
-  fireEvent,
-  render,
-  screen,
-  waitFor,
-} from "scripts/testing-library/assignments-page-globals";
-import mockFetchError from "scripts/fetch-service/mocks/mockFetchError";
-import mockFetchOneCandidate from "scripts/fetch-service/mocks/mockFetchOneCandidate";
-import Candidate from "types/Candidate";
 import FormParseLinks from "./FormParseLinks";
-import mockFetchManyCandidates from "scripts/fetch-service/mocks/mockFetchManyCandidates";
-import CandidateActions from "types/CandidateActions";
 
-test("Filling the formulary with 1 valid link returns the scanned profile", async () => {
+// Mocks
+import MockSSEBan from "scripts/fetch-sse/mocks/mockSSEBan";
+import MockSSEEOneCandidate from "scripts/fetch-sse/mocks/mockSSEOneCandidate";
+import MockSSEManyCandidates from "scripts/fetch-sse/mocks/mockSSEManyCandidates";
+
+test("Expect 1 profile to scan susscesfully", async () => {
   // Arrange
-  const assignment_id = 1;
-  const candidates: Candidate[] = [];
-  const dispatch = (actions: CandidateActions) => {
-    [...candidates, ...actions.payload];
-  };
-  const value = "https://www.linkedin.com/in/eduardo-alvarez-nowak/";
-  const result = "LinkedIn profiles scanned";
+  const dispatch = () => {};
+  const FetchClass = MockSSEEOneCandidate;
+  const id = 1;
 
-  render(
-    <FormParseLinks fetchScript={mockFetchOneCandidate} id={assignment_id} dispatch={dispatch} />,
-  );
+  const value = "https://www.linkedin.com/in/eduardo-alvarez-nowak/";
+  const goodMessage = "Finished adding profiles";
+  const badMessage = "profile failed to scan";
+
+  render(<FormParseLinks dispatch={dispatch} id={id} FetchClass={FetchClass} />);
 
   // Act
-  const formStatus = screen.getByTestId("status");
   const textarea = screen.getByRole("textbox", { name: /unparsed_links/i });
   const button = screen.getByRole("button", { name: /create/i });
 
@@ -38,29 +31,33 @@ test("Filling the formulary with 1 valid link returns the scanned profile", asyn
   fireEvent.click(button);
 
   // Assert
-  await waitFor(() => {
-    expect(formStatus).toHaveTextContent(result);
-  });
+  await waitFor(
+    () => {
+      const good = screen.queryByText(goodMessage);
+      const bad = screen.queryByText(badMessage);
+
+      expect(good).toBeInTheDocument();
+      expect(bad).not.toBeInTheDocument();
+    },
+    { timeout: 3000 },
+  );
 });
 
-test("Filling the formulary with multiple valid links returns the scanned profiles", async () => {
+test("Expect multiple profiles to scan susscesfully", async () => {
   // Arrange
-  const assignment_id = 1;
-  const candidates: Candidate[] = [];
-  const dispatch = (actions: CandidateActions) => {
-    [...candidates, ...actions.payload];
-  };
+  const dispatch = () => {};
+  const FetchClass = MockSSEManyCandidates;
+  const id = 1;
+
   // values separated with a comma and a empty space on purpose. Note that is not an array, FormCandidate should convert it to the appropiate data format.
   const value =
     "https://www.linkedin.com/in/eduardo-alvarez-nowak/, https://www.linkedin.com/in/susanna-vaara-0b33b03a/ https://www.linkedin.com/in/lanahaddad87/";
-  const result = "LinkedIn profiles scanned";
+  const goodMessage = "Finished adding profiles";
+  const badMessage = "profile failed to scan";
 
-  render(
-    <FormParseLinks fetchScript={mockFetchManyCandidates} id={assignment_id} dispatch={dispatch} />,
-  );
+  render(<FormParseLinks dispatch={dispatch} id={id} FetchClass={FetchClass} />);
 
   // Act
-  const formStatus = screen.getByTestId("status");
   const textarea = screen.getByRole("textbox", { name: /unparsed_links/i });
   const button = screen.getByRole("button", { name: /create/i });
 
@@ -68,25 +65,32 @@ test("Filling the formulary with multiple valid links returns the scanned profil
   fireEvent.click(button);
 
   // Assert
-  await waitFor(() => {
-    expect(formStatus).toHaveTextContent(result);
-  });
+  await waitFor(
+    () => {
+      const good = screen.queryByText(goodMessage);
+      const bad = screen.queryByText(badMessage);
+
+      expect(good).toBeInTheDocument();
+      expect(bad).not.toBeInTheDocument();
+    },
+    { timeout: 5000 },
+  );
 });
 
-test("Getting an error from server shows error state", async () => {
+test("Expect error message mentioning 2 failed scans", async () => {
   // Arrange
-  const assignment_id = 1;
-  const candidates: Candidate[] = [];
-  const dispatch = (actions: CandidateActions) => {
-    [...candidates, ...actions.payload];
-  };
-  const value = "linkedin.com/invalid-profile";
-  const result = "Could not scan LinkedIn profiles";
+  const dispatch = () => {};
+  const FetchClass = MockSSEBan;
+  const id = 1;
 
-  render(<FormParseLinks fetchScript={mockFetchError} id={assignment_id} dispatch={dispatch} />);
+  // values separated with a comma and a empty space on purpose. Note that is not an array, FormCandidate should convert it to the appropiate data format.
+  const value =
+    "https://www.linkedin.com/in/eduardo-alvarez-nowak/, https://www.linkedin.com/in/susanna-vaara-0b33b03a/ https://www.linkedin.com/in/lanahaddad87/";
+  const result = "2 profile failed to scan";
+
+  render(<FormParseLinks dispatch={dispatch} id={id} FetchClass={FetchClass} />);
 
   // Act
-  const formStatus = screen.getByTestId("status");
   const textarea = screen.getByRole("textbox", { name: /unparsed_links/i });
   const button = screen.getByRole("button", { name: /create/i });
 
@@ -94,7 +98,12 @@ test("Getting an error from server shows error state", async () => {
   fireEvent.click(button);
 
   // Assert
-  await waitFor(() => {
-    expect(formStatus).toHaveTextContent(result);
-  });
+  await waitFor(
+    () => {
+      const element = screen.queryByText(result);
+
+      expect(element).toBeInTheDocument();
+    },
+    { timeout: 5000 },
+  );
 });

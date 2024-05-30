@@ -1,6 +1,6 @@
 // Project files
-import FetchMethods from "types/FetchMethod";
-import FetchOptions from "types/FetchOptions";
+import type FetchMethods from "types/FetchMethod";
+import type FetchOptions from "types/FetchOptions";
 
 function packageData(method: FetchMethods, body: object): FetchOptions {
   // Safeguard
