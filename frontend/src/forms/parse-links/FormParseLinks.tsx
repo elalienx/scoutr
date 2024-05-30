@@ -1,6 +1,6 @@
 // Node modules
 import { useState } from "react";
-import type { FormEvent } from "react";
+import type { Dispatch, FormEvent } from "react";
 
 // Project files
 import Button from "components/button/Button";
@@ -11,15 +11,23 @@ import textAreaToArray from "scripts/forms/textAreaToArray";
 import waitForSeconds from "scripts/waitForSeconds";
 import useDialog from "state/DialogContextAPI";
 import type Status from "types/Status";
+import type FetchOptions from "types/FetchOptions";
+import type ResultsAPI from "types/ResultAPI";
+import type CandidateActions from "types/CandidateActions";
 import fields from "./fields";
 import "styles/components/form.css";
 import "./form-parse-links.css";
 
 interface Props {
-  /** The links the FormParseLinks will gather from the user and sent to the Progress Worker. */
-  setLinks: Function;
-}
+  /** The ID of the assignment to parse. */
+  id: number;
 
+  /** A function that uses reducers to update the candidates state. */
+  dispatch: Dispatch<CandidateActions>;
+
+  /** A script to submit data. The return complies with the ResultsAPI interface. */
+  fetchScript: (uri: string, init: FetchOptions) => Promise<ResultsAPI>;
+}
 export default function FormParseLinks({ id, fetchScript, dispatch }: Props) {
   // Global state
   const { closeDialog } = useDialog();
