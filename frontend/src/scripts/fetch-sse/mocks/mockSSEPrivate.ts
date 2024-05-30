@@ -82,8 +82,6 @@ export default class MockSSEPrivate {
 
   // Methods
   async start() {
-    console.log("MockSSEManyCandidates start()");
-
     await waitForSeconds(1);
     this.onmessage({ data: JSON.stringify(this.parsedLinks[0]) });
 
@@ -106,6 +104,6 @@ export default class MockSSEPrivate {
   }
 
   close() {
-    console.log("Server finished connection");
+    console.info("Server finished connection");
   }
 }

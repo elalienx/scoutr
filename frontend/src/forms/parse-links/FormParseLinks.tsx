@@ -46,15 +46,20 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
       const uriSSE = `/sse/parse-links/${id}?${query}`;
       const eventSource = new FetchClass(uriSSE);
 
-      eventSource.onmessage = (event: MessageEvent) => updateEvent(event);
-      eventSource.onerror = () => endEvent(eventSource);
+      eventSource.onmessage = (event: MessageEvent) => onUpdate(event);
+      eventSource.onerror = () => onSuccess(eventSource); // note: onerror occurs when the connection is severed not neccesarily on error
     } catch (error: unknown) {
       onFailure(error);
     }
   }
 
-  // SSE behaviour
-  function updateEvent(event: MessageEvent) {
+  function onLoading(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatus("loading");
+    setMessage("Collecting LinkedIn links to scan");
+  }
+
+  function onUpdate(event: MessageEvent) {
     const { candidate, report } = JSON.parse(event.data);
     console.log("New profile scanned");
 
@@ -64,22 +69,12 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
     else console.warn("Broken profile", report);
   }
 
-  function endEvent(eventSource: EventSource) {
+  async function onSuccess(eventSource: EventSource) {
     eventSource.close();
-  }
-
-  // Form standard behaviour
-  function onLoading(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setStatus("loading");
-    setMessage("Collecting LinkedIn links to scan");
-  }
-
-  async function onSuccess() {
     setStatus("ready");
-    setMessage("LinkedIn links ready to be scanned");
+    setMessage("LinkedIn links scanned");
 
-    await waitForSeconds(0.1);
+    await waitForSeconds(0.5);
     closeDialog();
   }
 

@@ -48,8 +48,6 @@ export default class MockSSEEOneCandidate {
 
   // Methods
   async start() {
-    console.log("MockSSEEOneCandidate start()");
-
     await waitForSeconds(1);
     this.onmessage({ data: JSON.stringify(this.parsedLinks[0]) });
 
@@ -66,6 +64,6 @@ export default class MockSSEEOneCandidate {
   }
 
   close() {
-    console.log("Server finished connection");
+    console.info("Server finished connection");
   }
 }
