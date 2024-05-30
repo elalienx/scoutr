@@ -7,6 +7,7 @@ import FormParseLinks from "forms/parse-links/FormParseLinks";
 import useDialog from "state/DialogContextAPI";
 import type Candidate from "types/Candidate";
 import type CandidateActions from "types/CandidateActions";
+import fetchSSE from "scripts/fetch-sse/fetchSSE";
 import StateEmpty from "../state-empty/StateEmpty";
 import Table from "../table/Table";
 
@@ -25,7 +26,7 @@ export default function Content({ id, state }: Props) {
   const { showDialog } = useDialog();
 
   // Components
-  const Form = <FormParseLinks id={id} FetchClass={EventSource} dispatch={dispatch} />;
+  const Form = <FormParseLinks id={id} FetchClass={fetchSSE} dispatch={dispatch} />;
 
   // Safeguard
   if (!candidates.length) return <StateEmpty component={Form} />;
