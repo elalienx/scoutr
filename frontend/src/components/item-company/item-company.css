@@ -10,4 +10,8 @@
   small.label.red {
     color: var(--color-red);
   }
+
+  small.label.yellow {
+    color: var(--color-yellow);
+  }
 }

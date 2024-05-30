@@ -17,9 +17,13 @@ export default function ItemCompany({ item, onClick }: Props) {
   const { company_image_url, company_name, company_duration_in_months } = item;
 
   // Properties
+  const months = company_duration_in_months;
   const monthsInAYear = 12;
-  const durationInyears = monthsToYears(company_duration_in_months);
-  const markTextInRed = company_duration_in_months < monthsInAYear;
+  const durationInyears = monthsToYears(months);
+  let cssColorHighlight = "@";
+
+  if (months === 0) cssColorHighlight = "red";
+  if (months > 0 && months < monthsInAYear) cssColorHighlight = "yellow";
 
   return (
     <div className="item-company">
@@ -30,7 +34,7 @@ export default function ItemCompany({ item, onClick }: Props) {
         </span>
         <small
           onClick={() => onClick("company_duration_in_months")}
-          className={`label trim-text ${markTextInRed && "red"}`}
+          className={`label trim-text ${cssColorHighlight}`}
         >
           {durationInyears}
         </small>
