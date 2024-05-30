@@ -23,10 +23,13 @@ interface Props {
     status: Status;
     message: string;
   };
+
+  /** The script used for initializing the Server Side Event */
+  sseScript: any;
 }
 
 /** The page with the candidate table where you can add more LinkedIn profiles by pressing one button. */
-export default function Candidates({ fetchHook }: Props) {
+export default function Candidates({ fetchHook, sseScript }: Props) {
   // Global state
   const { assignment_id } = useParams();
   const { data, status } = fetchHook("/api/candidates/" + assignment_id);
@@ -52,7 +55,9 @@ export default function Candidates({ fetchHook }: Props) {
       <section className="section">
         {status === "loading" && <Loader />}
         {status === "error" && <StateError />}
-        {status === "ready" && <Content id={id} state={[candidates, dispatch]} />}
+        {status === "ready" && (
+          <Content id={id} state={[candidates, dispatch]} sseScript={sseScript} />
+        )}
       </section>
     </div>
   );

@@ -11,7 +11,7 @@ import useFetch from "scripts/fetch-hook/useFetch";
 export default function App() {
   // Pages
   const assigments = <Assignments fetchHook={useFetch} />;
-  const candidates = <Candidates fetchHook={useFetch} />;
+  const candidates = <Candidates fetchHook={useFetch} sseScript={EventSource} />;
   const pageNotFound = <Page404 />;
 
   return (

@@ -7,7 +7,6 @@ import FormParseLinks from "forms/parse-links/FormParseLinks";
 import useDialog from "state/DialogContextAPI";
 import type Candidate from "types/Candidate";
 import type CandidateActions from "types/CandidateActions";
-import fetchSSE from "scripts/fetch-sse/fetchSSE";
 import StateEmpty from "../state-empty/StateEmpty";
 import Table from "../table/Table";
 
@@ -17,19 +16,19 @@ interface Props {
 
   /** The candidates to dispaly on the table. */
   state: [Candidate[], Dispatch<CandidateActions>];
+
+  /** The script used for initializing the Server Side Event */
+  sseScript: any;
 }
 
-export default function Content({ id, state }: Props) {
+export default function Content({ id, state, sseScript }: Props) {
   const [candidates, dispatch] = state;
 
   // Global state
   const { showDialog } = useDialog();
 
-  // Properties
-  const eventSource = fetchSSE();
-
   // Components
-  const Form = <FormParseLinks id={id} FetchClass={eventSource} dispatch={dispatch} />;
+  const Form = <FormParseLinks id={id} FetchClass={sseScript} dispatch={dispatch} />;
 
   // Safeguard
   if (!candidates.length) return <StateEmpty component={Form} />;
