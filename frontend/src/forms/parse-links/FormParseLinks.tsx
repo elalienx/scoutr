@@ -17,6 +17,7 @@ import type CandidateActions from "types/CandidateActions";
 import fields from "./fields";
 import "styles/components/form.css";
 import "./form-parse-links.css";
+import stringArrayToURL from "scripts/forms/stringArrayToURL";
 
 interface Props {
   /** The ID of the assignment to parse. */
@@ -43,6 +44,7 @@ export default function FormParseLinks({ id, fetchScript, dispatch }: Props) {
     try {
       const formData = gatherFormData(event.currentTarget);
       const parsedLinks = textAreaToArray(formData.unparsed_links);
+      const query = stringArrayToURL(parsedLinks);
 
       setLinks(parsedLinks);
       onSuccess();
