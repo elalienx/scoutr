@@ -4,6 +4,7 @@ import type { Dispatch } from "react";
 // Project files
 import Button from "components/button/Button";
 import FormParseLinks from "forms/parse-links/FormParseLinks";
+import MockSSEManyCandidates from "scripts/fetch-sse/mocks/mockSSEManyCandidates";
 import useDialog from "state/DialogContextAPI";
 import type Candidate from "types/Candidate";
 import type CandidateActions from "types/CandidateActions";
@@ -18,14 +19,14 @@ interface Props {
   state: [Candidate[], Dispatch<CandidateActions>];
 }
 
-export default function Content({ state }: Props) {
-  const [candidates] = state;
+export default function Content({ id, state }: Props) {
+  const [candidates, dispatch] = state;
 
   // Global state
   const { showDialog } = useDialog();
 
   // Components
-  const Form = <FormParseLinks id={id} />;
+  const Form = <FormParseLinks id={id} FetchClass={MockSSEManyCandidates} dispatch={dispatch} />;
 
   // Safeguard
   if (!candidates.length) return <StateEmpty component={Form} />;

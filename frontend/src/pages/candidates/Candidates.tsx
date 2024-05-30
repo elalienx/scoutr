@@ -1,5 +1,5 @@
 // Node modules
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useReducer } from "react";
 import { useParams } from "react-router-dom";
 
 // Project files

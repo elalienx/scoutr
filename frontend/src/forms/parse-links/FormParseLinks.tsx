@@ -9,15 +9,13 @@ import FormStatus from "components/form-status/FormStatus";
 import gatherFormData from "scripts/forms/gatherFormData";
 import textAreaToArray from "scripts/forms/textAreaToArray";
 import waitForSeconds from "scripts/waitForSeconds";
+import stringArrayToURL from "scripts/forms/stringArrayToURL";
 import useDialog from "state/DialogContextAPI";
 import type Status from "types/Status";
-import type FetchOptions from "types/FetchOptions";
-import type ResultsAPI from "types/ResultAPI";
 import type CandidateActions from "types/CandidateActions";
 import fields from "./fields";
 import "styles/components/form.css";
 import "./form-parse-links.css";
-import stringArrayToURL from "scripts/forms/stringArrayToURL";
 
 interface Props {
   /** The ID of the assignment to parse. */
@@ -26,10 +24,10 @@ interface Props {
   /** A function that uses reducers to update the candidates state. */
   dispatch: Dispatch<CandidateActions>;
 
-  /** A script to submit data. The return complies with the ResultsAPI interface. */
-  fetchScript: (uri: string, init: FetchOptions) => Promise<ResultsAPI>;
+  /** The script used for initializing the Server Side Event */
+  FetchClass: any;
 }
-export default function FormParseLinks({ id, fetchScript, dispatch }: Props) {
+export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
   // Global state
   const { closeDialog } = useDialog();
 
@@ -45,12 +43,36 @@ export default function FormParseLinks({ id, fetchScript, dispatch }: Props) {
       const formData = gatherFormData(event.currentTarget);
       const parsedLinks = textAreaToArray(formData.unparsed_links);
       const query = stringArrayToURL(parsedLinks);
+      const uriSSE = `/sse/parse-links/${id}?${query}`;
+      const eventSource = new FetchClass(uriSSE);
 
-      setLinks(parsedLinks);
-      onSuccess();
+      eventSource.onmessage = (event: MessageEvent) => updateEvent(event);
+      eventSource.onerror = () => endEvent(eventSource);
     } catch (error: unknown) {
       onFailure(error);
     }
+  }
+
+  // SSE behaviour
+  function updateEvent(event: MessageEvent) {
+    const { candidate, report } = JSON.parse(event.data);
+    console.log("New profile scanned");
+
+    // Refactor: add if scanned === totalLinks go onSuccess()
+
+    if (report.severity < 2) dispatch({ type: "add-single", payload: candidate });
+    else console.warn("Broken profile", report);
+  }
+
+  function endEvent(eventSource: EventSource) {
+    eventSource.close();
+  }
+
+  // Form standard behaviour
+  function onLoading(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatus("loading");
+    setMessage("Collecting LinkedIn links to scan");
   }
 
   async function onSuccess() {
@@ -65,12 +87,6 @@ export default function FormParseLinks({ id, fetchScript, dispatch }: Props) {
     console.error(error);
     setStatus("error");
     setMessage("Could not collect LinkedIn links to scan");
-  }
-
-  function onLoading(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setStatus("loading");
-    setMessage("Collecting LinkedIn links to scan");
   }
 
   return (
