@@ -34,6 +34,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
   // Local state
   const [status, setStatus] = useState<Status>("form-stand-by");
   const [message, setMessage] = useState("");
+  const [errors, setErrors] = useState(0);
 
   // Methods
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -61,20 +62,21 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
 
   function onUpdate(event: MessageEvent) {
     const { candidate, report } = JSON.parse(event.data);
-    console.log("New profile scanned");
 
-    // Refactor: add if scanned === totalLinks go onSuccess()
-
-    if (report.severity < 2) dispatch({ type: "add-single", payload: candidate });
-    else console.warn("Broken profile", report);
+    if (report.severity < 2) {
+      dispatch({ type: "add-single", payload: candidate });
+    } else {
+      console.warn("Broken profile", report);
+      setErrors((previousState) => previousState + 1);
+    }
   }
 
   async function onSuccess(eventSource: EventSource) {
     eventSource.close();
     setStatus("ready");
-    setMessage("LinkedIn links scanned");
+    setMessage("Finished adding profiles");
 
-    await waitForSeconds(0.5);
+    await waitForSeconds(1);
     closeDialog();
   }
 
@@ -93,6 +95,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
       <h2>Add Candidates</h2>
       <InputFields fields={fields} />
       <FormStatus status={status} message={message} />
+      {errors > 0 && <FormStatus status="error" message={`${errors} profile failed to scan`} />}
       <div className="buttons">
         <Button disabled={status === "loading"} icon="circle-check" label="Create" primary />
         <Button disabled={status === "loading"} label="Dismiss" onClick={() => closeDialog()} />
