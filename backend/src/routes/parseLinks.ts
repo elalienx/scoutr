@@ -6,6 +6,7 @@ import type { Client } from "pg";
 import etlProcess from "../extract-profile/etlProcess";
 
 export default async function parseLinks(request: Request, response: Response, database: Client) {
+  console.log("Getting data from the frontend");
   /** Check on Spike if one or all can be deleted */
   // Headers
   response.setHeader("Content-Type", "text/event-stream");
@@ -19,6 +20,7 @@ export default async function parseLinks(request: Request, response: Response, d
 
   // Safeguard for single links
   if (!Array.isArray(links)) links = [links];
+  console.log(links);
 
   try {
     for (const link of links) {

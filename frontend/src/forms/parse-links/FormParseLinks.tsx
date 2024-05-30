@@ -46,6 +46,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
       const query = stringArrayToURL(parsedLinks);
       const uriSSE = `/sse/parse-links/${id}?${query}`;
       const eventSource = new FetchClass(uriSSE);
+      console.log("query", query);
 
       eventSource.onmessage = (event: MessageEvent) => onUpdate(event);
       eventSource.onerror = () => onSuccess(eventSource); // note: onerror occurs when the connection is severed not neccesarily on error

@@ -9,7 +9,6 @@ import getCandidates from "./routes/getCandidates";
 import parseLinks from "./routes/parseLinks";
 import postAssignment from "./routes/postAssignment";
 import patchCandidate from "./routes/patchCandidate";
-import debugParseLinks from "./routes/debugParseLinks";
 
 async function initializeServer(port: number) {
   // Properties
@@ -28,7 +27,6 @@ async function initializeServer(port: number) {
 
   // Server Side Events routes
   app.get("/sse/parse-links/:assignment_id", async (request, response) => parseLinks(request, response, client));
-  app.get("/sse/debug-parse-links/:assignment_id", async (request, response) => debugParseLinks(request, response));
 }
 
 initializeServer(8000);

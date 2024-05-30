@@ -25,8 +25,11 @@ export default function Content({ id, state }: Props) {
   // Global state
   const { showDialog } = useDialog();
 
+  // Properties
+  const eventSource = fetchSSE();
+
   // Components
-  const Form = <FormParseLinks id={id} FetchClass={fetchSSE} dispatch={dispatch} />;
+  const Form = <FormParseLinks id={id} FetchClass={eventSource} dispatch={dispatch} />;
 
   // Safeguard
   if (!candidates.length) return <StateEmpty component={Form} />;
