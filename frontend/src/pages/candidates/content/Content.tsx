@@ -16,25 +16,26 @@ interface Props {
 
   /** The candidates to dispaly on the table. */
   state: [Candidate[], Dispatch<CandidateActions>];
-
-  /** The script used for initializing the Server Side Event */
-  sseScript: any;
 }
 
-export default function Content({ id, state, sseScript }: Props) {
+export default function Content({ id, state }: Props) {
   const [candidates, dispatch] = state;
 
   // Global state
   const { showDialog } = useDialog();
 
+  // Properties
+  const fetchScript = EventSource;
+
   // Components
-  const Form = <FormParseLinks id={id} FetchClass={sseScript} dispatch={dispatch} />;
+  const Form = <FormParseLinks id={id} FetchClass={fetchScript} dispatch={dispatch} />;
 
   // Safeguard
   if (!candidates.length) return <StateEmpty component={Form} />;
 
   return (
     <div className="candidates">
+      <h2>Candidates</h2>
       <Table state={state} />
       <Button
         big
