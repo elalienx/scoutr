@@ -15,9 +15,13 @@ import Dialog from "components/dialog/Dialog";
  * doesn't support it natively.
  */
 beforeAll(() => {
+  // Add HTML native dialog tag
   HTMLDialogElement.prototype.show = vi.fn();
   HTMLDialogElement.prototype.showModal = vi.fn();
   HTMLDialogElement.prototype.close = vi.fn();
+
+  // Add JavaScript native Event Source class
+  window.EventSource = vi.fn();
 });
 
 // Properties
