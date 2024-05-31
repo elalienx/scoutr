@@ -10,8 +10,14 @@ import "styles/style.css";
 import Dialog from "components/dialog/Dialog";
 
 /**
- * Adds support the new HTML Dialog element as JSDom,
+ * Adds support HTML dialog and JavaScript EventSource.
+ *
+ * HTML Dialog is added as JSDom,
  * Testing Library's rendering engine,
+ * doesn't support it natively.
+ *
+ * EventSource is added as Node,
+ * the JavaScript engine behind everything,
  * doesn't support it natively.
  */
 beforeAll(() => {
@@ -21,6 +27,7 @@ beforeAll(() => {
   HTMLDialogElement.prototype.close = vi.fn();
 
   // Add JavaScript native Event Source class
+  // @ts-ignore
   window.EventSource = vi.fn();
 });
 
