@@ -3,11 +3,10 @@ import type { Client } from "pg";
 
 // Project files
 import candidateQuery from "../queries/insertCandidate";
-import errorQuery from "../queries/insertErrorLog";
+import reportQuery from "../queries/insertErrorLog";
 import extractPage from "./extract/extractPage";
 import pageToProfile from "./transform/pageToProfile";
 import reportEmptyFields from "./transform/reportEmptyFields";
-
 
 export default async function etlProcess(url: string, assignment_id: number, database: Client) {
   // Extract
@@ -23,7 +22,7 @@ export default async function etlProcess(url: string, assignment_id: number, dat
   let candidate = {};
 
   if (report.severity < 2) candidate = (await database.query(candidateQuery, profileAsArray)).rows[0];
-  if (report.severity) await database.query(errorQuery, reportAsArray);
+  if (report.severity) await database.query(reportQuery, reportAsArray);
 
   return { candidate, report };
 }
