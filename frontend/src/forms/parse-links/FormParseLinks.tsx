@@ -6,6 +6,7 @@ import type { Dispatch, FormEvent } from "react";
 import Button from "components/button/Button";
 import InputFields from "components/input-fields/InputFields";
 import FormStatus from "components/form-status/FormStatus";
+import MiniProgressWorker from "components/mini-progress-worker/MiniProgressWorker";
 import gatherFormData from "scripts/forms/gatherFormData";
 import textAreaToArray from "scripts/forms/textAreaToArray";
 import waitForSeconds from "scripts/waitForSeconds";
@@ -13,6 +14,7 @@ import stringArrayToURL from "scripts/forms/stringArrayToURL";
 import useDialog from "state/DialogContextAPI";
 import type Status from "types/Status";
 import type CandidateActions from "types/CandidateActions";
+import type ReportLog from "types/ReportLog";
 import fields from "./fields";
 import "styles/components/form.css";
 import "./form-parse-links.css";
@@ -34,7 +36,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
   // Local state
   const [status, setStatus] = useState<Status>("form-stand-by");
   const [message, setMessage] = useState("");
-  const [errors, setErrors] = useState(0);
+  const [report, setReport] = useState<ReportLog>();
 
   // Methods
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -48,7 +50,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
       const eventSource = new FetchClass(uriSSE);
 
       eventSource.onmessage = (event: MessageEvent) => onUpdate(event);
-      eventSource.onerror = () => onSuccess(eventSource); // note: onerror occurs when the connection is severed not neccesarily on error
+      eventSource.onerror = () => onSuccess(eventSource); // note: onerror occurs when the connection is finished not neccesarily on error
     } catch (error: unknown) {
       onFailure(error);
     }
@@ -67,7 +69,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
       dispatch({ type: "add-single", payload: candidate });
     } else {
       console.warn("Broken profile", report);
-      setErrors((previousState) => previousState + 1);
+      setReport(report);
     }
   }
 
@@ -95,7 +97,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
       <h2>Add Candidates</h2>
       <InputFields fields={fields} />
       <FormStatus status={status} message={message} />
-      {errors > 0 && <FormStatus status="error" message={`${errors} profile failed to scan`} />}
+      <MiniProgressWorker {...report} />
       <div className="buttons">
         <Button disabled={status === "loading"} icon="circle-check" label="Create" primary />
         <Button disabled={status === "loading"} label="Dismiss" onClick={() => closeDialog()} />
