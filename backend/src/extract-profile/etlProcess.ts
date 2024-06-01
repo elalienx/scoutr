@@ -13,10 +13,8 @@ export default async function etlProcess(url: string, assignment_id: number, dat
   const page = await extractPage(url);
 
   // Transform
-  const profile = pageToProfile(page); // searches for these keys in the page: candidate_name, candidate_job_title, etc.
-  const report = reportEmptyFields(url, profile); // rename to reportEmptyFields to denote that it only takes care of checking for missing keys
-  // const reportPrivateProfile = reportPrivate(page) // searches for this text in the page: "The LinkedIn profile you’re looking for isn’t public or doesn’t exist."
-  // const reportTemporalBan = reportBan(page) // searches for either of these text in the page: "Welcome to your professional community" | "Join LinkedIn"
+  const profile = pageToProfile(page);
+  const report = reportEmptyFields(url, profile);
   const profileAsArray = [assignment_id, url, ...Object.values(profile)];
   const reportAsArray = Object.values(report);
 
