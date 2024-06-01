@@ -9,9 +9,6 @@ import decodeLinks from "../scripts/decodeLinks";
 export default async function parseLinks(request: Request, response: Response, database: Client) {
   // Headers
   response.setHeader("Content-Type", "text/event-stream");
-  response.setHeader("Cache-Control", "no-cache");
-  response.setHeader("Access-Control-Allow-Origin", "*");
-  response.setHeader("Connection", "keep-alive");
 
   // Properties
   const assignment_id = Number(request.params.assignment_id);
