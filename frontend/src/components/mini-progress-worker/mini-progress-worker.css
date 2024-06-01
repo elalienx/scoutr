@@ -1,0 +1,8 @@
+.mini-progress-worker {
+  .statuses {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: var(--space-small);
+  }
+}

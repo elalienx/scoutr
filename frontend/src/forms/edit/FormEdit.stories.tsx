@@ -5,11 +5,10 @@ import { BrowserRouter } from "react-router-dom";
 // Project files
 import FormEdit from "./FormEdit";
 import mockFetchError from "scripts/fetch-service/mocks/mockFetchError";
-import CandidatesReducer from "state/CandidatesReducer";
 import mockFetchEditCandidat from "scripts/fetch-service/mocks/mockFetchEditCandidate";
 
 const meta = {
-  title: "Components/Formulary (Edit)",
+  title: "Formularies/Edit",
   component: FormEdit,
   parameters: { layout: "centered" },
   decorators: [
