@@ -6,7 +6,7 @@ import candidateQuery from "../queries/insertCandidate";
 import reportQuery from "../queries/insertErrorLog";
 import extractPage from "./extract/extractPage";
 import pageToProfile from "./transform/pageToProfile";
-import reportEmptyFields from "./transform/reportEmptyFields";
+import generateReport from "./transform/generateReport";
 
 export default async function etlProcess(url: string, assignment_id: number, database: Client) {
   // Extract
