@@ -1,7 +1,7 @@
 // Project files
 import Loader from "components/loader/Loader";
 import type Assignment from "types/Assignment";
-import type Status from "types/Status";
+import type StatusPage from "types/Status";
 import Content from "./content/Content";
 import Footer from "./footer/Footer";
 import Hero from "./hero/Hero";
@@ -12,7 +12,7 @@ interface Props {
   /** A React custom hook to fetch data. The return complies with the ResultsAPI interface. */
   fetchHook: (url: string) => {
     data: Assignment[];
-    status: Status;
+    status: StatusPage;
     message: string;
   };
 }

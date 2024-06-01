@@ -1,7 +1,7 @@
 // Project files
 import FetchOptions from "types/FetchOptions";
 import ResultsAPI from "types/ResultAPI";
-import Status from "types/Status";
+import StatusPage from "types/Status";
 
 async function mockFetchEditCandidat(uri: string, init: FetchOptions): Promise<ResultsAPI> {
   const body = JSON.parse(init.body);
@@ -20,7 +20,7 @@ async function mockFetchEditCandidat(uri: string, init: FetchOptions): Promise<R
     candidate_job_title: "Graphic Designer",
   };
   const message: string = "Edited candidate";
-  const status: Status = "ready";
+  const status: StatusPage = "ready";
 
   return { data, message, status };
 }

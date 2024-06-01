@@ -1,5 +1,5 @@
 // Project files
-import Status from "./Status";
+import StatusPage from "./StatusPage";
 
 export default interface ResultsAPI {
   /** Data fetched from the server can be anything from an array, object to a string. */
@@ -9,5 +9,5 @@ export default interface ResultsAPI {
   message: string;
 
   /** Returns the frontend current fetching status. */
-  status: Status;
+  status: StatusPage;
 }

@@ -12,7 +12,7 @@ import textAreaToArray from "scripts/forms/textAreaToArray";
 import waitForSeconds from "scripts/waitForSeconds";
 import stringArrayToURL from "scripts/forms/stringArrayToURL";
 import useDialog from "state/DialogContextAPI";
-import type Status from "types/Status";
+import type StatusForm from "types/StatusForm";
 import type CandidateActions from "types/CandidateActions";
 import type ReportLog from "types/ReportLog";
 import fields from "./fields";
@@ -34,7 +34,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
   const { closeDialog } = useDialog();
 
   // Local state
-  const [status, setStatus] = useState<Status>("form-stand-by");
+  const [status, setStatus] = useState<StatusForm>("stand-by");
   const [message, setMessage] = useState("");
   const [report, setReport] = useState<ReportLog>();
 
@@ -75,7 +75,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
 
   async function onSuccess(eventSource: EventSource) {
     eventSource.close();
-    setStatus("ready");
+    setStatus("complete");
     setMessage("Finished adding profiles");
 
     await waitForSeconds(1);

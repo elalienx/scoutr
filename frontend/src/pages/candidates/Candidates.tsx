@@ -11,7 +11,7 @@ import contactedCandidates from "scripts/response-rate/contactedCandidates";
 import repliedCandidates from "scripts/response-rate/repliedCandidates";
 import CandidatesReducer from "state/CandidatesReducer";
 import type Candidate from "types/Candidate";
-import type Status from "types/Status";
+import type StatusPage from "types/Status";
 import Content from "./content/Content";
 import StateError from "./state-error/StateError";
 import "./candidates.css";
@@ -20,7 +20,7 @@ interface Props {
   /** A React custom hook to fetch data. The return complies with the ResultsAPI interface. */
   fetchHook: (url: string) => {
     data: Candidate[];
-    status: Status;
+    status: StatusPage;
     message: string;
   };
 }

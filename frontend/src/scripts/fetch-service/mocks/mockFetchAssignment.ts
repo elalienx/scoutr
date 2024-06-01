@@ -2,7 +2,7 @@
 import Assignment from "types/Assignment";
 import FetchOptions from "types/FetchOptions";
 import ResultsAPI from "types/ResultAPI";
-import Status from "types/Status";
+import StatusPage from "types/Status";
 
 async function mockFetchAssignment(uri: string, init: FetchOptions): Promise<ResultsAPI> {
   const body = JSON.parse(init.body);
@@ -24,7 +24,7 @@ async function mockFetchAssignment(uri: string, init: FetchOptions): Promise<Res
     company_image_url: "",
   };
   const message: string = "Created assignment #9999";
-  const status: Status = "ready";
+  const status: StatusPage = "ready";
 
   return { data, message, status };
 }

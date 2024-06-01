@@ -3,12 +3,12 @@ import { expect, test } from "vitest";
 
 // Project files
 import mockUseEmpty from "./mockUseEmpty";
-import Status from "types/Status";
+import StatusPage from "types/Status";
 
 test("Expect return ready state but with a warning message if passed a correct URI", () => {
   // Arrange
   const uri = "api/example/";
-  const resultStatus: Status = "ready";
+  const resultStatus: StatusPage = "ready";
   const resultMessage = "Endpoint api/example/ works but does not have data";
 
   // Act
