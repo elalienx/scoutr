@@ -14,7 +14,7 @@ import useDialog from "state/DialogContextAPI";
 import type Assignment from "types/Assignment";
 import type FetchOptions from "types/FetchOptions";
 import type ResultsAPI from "types/ResultAPI";
-import type Status from "types/Status";
+import type StatusForm from "types/StatusForm";
 import fields from "./fields";
 import "styles/components/form.css";
 
@@ -29,7 +29,7 @@ export default function FormNewAssignment({ fetchScript }: Props) {
   const { closeDialog } = useDialog();
 
   // Local state
-  const [status, setStatus] = useState<Status>("form-stand-by");
+  const [status, setStatus] = useState<StatusForm>("stand-by");
   const [message, setMessage] = useState("");
 
   // Properties
@@ -64,7 +64,7 @@ export default function FormNewAssignment({ fetchScript }: Props) {
   }
 
   async function onSuccess(newAssignment: Assignment) {
-    setStatus("ready");
+    setStatus("complete");
     setMessage("Assignment created");
 
     await waitForSeconds(0.5);

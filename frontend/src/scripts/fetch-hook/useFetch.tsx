@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import type ResultsAPI from "types/ResultAPI";
 
 // Project files
-import type Status from "types/Status";
+import type StatusPage from "types/Status";
 
 export default function useFetch(uri: string): ResultsAPI {
   // Safeguard
@@ -24,7 +24,7 @@ export default function useFetch(uri: string): ResultsAPI {
     try {
       const response = await fetch(uri);
       const { data, message } = await response.json();
-      const status: Status = "ready";
+      const status: StatusPage = "ready";
 
       setResult({ data, status, message });
     } catch (error: unknown) {

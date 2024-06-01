@@ -40,7 +40,7 @@ export default class MockSSEBan {
     {
       candidate: null,
       report: {
-        severity: 3, // banned! 😱
+        severity: 2, // failure scan
         url: "https://www.linkedin.com/in/susanna-vaara-0b33b03a/",
         message: "Error scaning profile, we are probably banned.",
       },
@@ -48,7 +48,7 @@ export default class MockSSEBan {
     {
       candidate: null,
       report: {
-        severity: 3, // banned! 😱
+        severity: 2, // failure scan
         url: "https://www.linkedin.com/in/lanahaddad87/",
         message: "Error scaning profile, we are probably banned.",
       },

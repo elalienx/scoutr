@@ -3,12 +3,12 @@ import { expect, test } from "vitest";
 
 // Project files
 import mockUseError from "./mockUseError";
-import Status from "types/Status";
+import StatusPage from "types/Status";
 
 test("Expect return error state if passed a uri that fails to fetch", () => {
   // Arrange
   const uri = "api/example/";
-  const resultStatus: Status = "error";
+  const resultStatus: StatusPage = "error";
   const resultMessage = "Can't load api/example/";
 
   // Act
@@ -22,7 +22,7 @@ test("Expect return error state if passed a uri that fails to fetch", () => {
 test("Expect a message explaining you passed a empty uri", () => {
   // Arrange
   const uri = "";
-  const resultStatus: Status = "error";
+  const resultStatus: StatusPage = "error";
   const resultMessage = "URI is empty";
 
   // Act

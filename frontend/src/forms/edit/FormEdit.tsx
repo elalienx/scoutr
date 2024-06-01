@@ -13,7 +13,7 @@ import waitForSeconds from "scripts/waitForSeconds";
 import type FetchOptions from "types/FetchOptions";
 import type InputField from "types/InputField";
 import type ResultsAPI from "types/ResultAPI";
-import type Status from "types/Status";
+import type StatusForm from "types/StatusForm";
 import type CandidateActions from "types/CandidateActions";
 import "styles/components/form.css";
 
@@ -39,7 +39,7 @@ export default function FormEdit({ id, uri, fields, fetchScript, dispatcher }: P
   const { closeDialog } = useDialog();
 
   // Local state
-  const [status, setStatus] = useState<Status>("form-stand-by");
+  const [status, setStatus] = useState<StatusForm>("stand-by");
   const [message, setMessage] = useState("");
 
   // Properties
@@ -74,7 +74,7 @@ export default function FormEdit({ id, uri, fields, fetchScript, dispatcher }: P
   }
 
   async function onSuccess(data: object) {
-    setStatus("ready");
+    setStatus("complete");
     setMessage("Edited candidate");
     dispatcher({ type: "edit-single", payload: { id: id, updates: data } });
 

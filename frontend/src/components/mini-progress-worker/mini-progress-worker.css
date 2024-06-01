@@ -1,0 +1,8 @@
+.mini-progress-worker {
+  .statuses {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-small);
+    width: 100%; /* to make children take the whole width */
+  }
+}

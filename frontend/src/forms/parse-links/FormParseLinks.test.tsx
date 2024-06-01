@@ -86,7 +86,7 @@ test("Expect error message mentioning 2 failed scans", async () => {
   // values separated with a comma and a empty space on purpose. Note that is not an array, FormCandidate should convert it to the appropiate data format.
   const value =
     "https://www.linkedin.com/in/eduardo-alvarez-nowak/, https://www.linkedin.com/in/susanna-vaara-0b33b03a/ https://www.linkedin.com/in/lanahaddad87/";
-  const result = "2 profile failed to scan";
+  const result = "Failed to scan: 2";
 
   render(<FormParseLinks dispatch={dispatch} id={id} FetchClass={FetchClass} />);
 

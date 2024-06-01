@@ -7,7 +7,7 @@
     margin-right: var(--space-small);
   }
 
-  &.background-invisible {
+  &.invisible {
     visibility: hidden;
   }
 }

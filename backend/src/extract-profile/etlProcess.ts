@@ -6,7 +6,7 @@ import candidateQuery from "../queries/insertCandidate";
 import reportQuery from "../queries/insertErrorLog";
 import extractPage from "./extract/extractPage";
 import pageToProfile from "./transform/pageToProfile";
-import reportEmptyFields from "./transform/reportEmptyFields";
+import generateReport from "./transform/generateReport";
 
 export default async function etlProcess(url: string, assignment_id: number, database: Client) {
   // Extract
@@ -14,7 +14,7 @@ export default async function etlProcess(url: string, assignment_id: number, dat
 
   // Transform
   const profile = pageToProfile(page);
-  const report = reportEmptyFields(url, profile);
+  const report = generateReport(url, page, profile);
   const profileAsArray = [assignment_id, url, ...Object.values(profile)];
   const reportAsArray = Object.values(report);
 

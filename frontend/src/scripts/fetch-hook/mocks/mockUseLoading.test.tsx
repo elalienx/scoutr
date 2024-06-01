@@ -3,12 +3,12 @@ import { expect, test } from "vitest";
 
 // Project files
 import mockUseLoading from "./mockUseLoading";
-import Status from "types/Status";
+import StatusPage from "types/Status";
 
 test("Expect return loading status if passed an url", () => {
   // Arrange
   const uri = "api/example/";
-  const result: Status = "loading";
+  const result: StatusPage = "loading";
 
   // Act
   const test = mockUseLoading(uri);
