@@ -36,7 +36,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
   // Local state
   const [status, setStatus] = useState<StatusForm>("stand-by");
   const [message, setMessage] = useState("");
-  const [report, setReport] = useState<ReportLog>();
+  const [report, setReport] = useState<ReportLog | null>(null);
 
   // Methods
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -97,7 +97,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
       <h2>Add Candidates</h2>
       <InputFields fields={fields} />
       <FormStatus status={status} message={message} />
-      <MiniProgressWorker {...report} />
+      <MiniProgressWorker report={report} />
       <div className="buttons">
         <Button disabled={status === "loading"} icon="circle-check" label="Create" primary />
         <Button disabled={status === "loading"} label="Dismiss" onClick={() => closeDialog()} />
