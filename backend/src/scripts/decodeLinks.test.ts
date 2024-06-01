@@ -18,8 +18,8 @@ test("Getting an empty string throws an error", () => {
 
 test("Passing one link returns an array with it", () => {
   // Arrange
-  const query = "https://www.linkedin.com/in/eduardo-alvarez-nowak/";
-  const result: string[] = ["https://www.linkedin.com/in/eduardo-alvarez-nowak/"];
+  const query = ["https://www.linkedin.com/in/eduardo-alvarez-nowak/"];
+  const result = ["https://www.linkedin.com/in/eduardo-alvarez-nowak/"];
 
   // Act
   const test = decodeLinks(query);
@@ -30,8 +30,11 @@ test("Passing one link returns an array with it", () => {
 
 test("Passing multiple links return an array with them", () => {
   // Arrange
-  const query =
-    "https://www.linkedin.com/in/eduardo-alvarez-nowak/,https://www.linkedin.com/in/eduardo-alvarez-nowak/,https://www.linkedin.com/in/eduardo-alvarez-nowak/";
+  const query = [
+    "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
+    "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
+    "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
+  ];
   const result: string[] = [
     "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
     "https://www.linkedin.com/in/eduardo-alvarez-nowak/",

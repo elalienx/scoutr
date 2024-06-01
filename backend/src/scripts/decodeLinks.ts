@@ -1,8 +1,11 @@
-export default function decodeLinks(query: string): string[] {
+export default function decodeLinks(query: string | string[]): string[] {
   // Safeguard
-  if (!query) throw new Error("The query received was empty");
+  if (query === "") throw new Error("The query received was empty");
 
-  const result = query.split(",");
+  let result = [];
+
+  if (!Array.isArray(query)) result = [query];
+  else result = query;
 
   return result;
 }

@@ -15,8 +15,7 @@ export default async function parseLinks(request: Request, response: Response, d
 
   // Properties
   const assignment_id = Number(request.params.assignment_id);
-  const links = decodeLinks(request.query.links as string);
-  console.log("backend links:", links);
+  const links = decodeLinks(request.query.links as string[]);
 
   try {
     for (const link of links) {
