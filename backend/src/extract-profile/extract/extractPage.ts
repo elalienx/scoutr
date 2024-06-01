@@ -8,7 +8,7 @@ export default async function extractPage(url: string): Promise<string> {
 
   try {
     await page.goto(url);
-    await page.waitForSelector("h1");
+    await page.waitForSelector("body");
 
     result = await page.content();
   } catch (error) {
