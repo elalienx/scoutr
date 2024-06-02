@@ -20,30 +20,24 @@ const { PRIVATE_PROFILE, TEMPORAL_BAN, MISSING_ALL_FIELDS } = ReportSeverity;
 
 export const PrivateProfile: Story = {
   args: {
-    report: {
-      url: "http://www.capcom.com",
-      severity: PRIVATE_PROFILE,
-      message: "Private profile",
-    },
+    url: "http://www.capcom.com",
+    severity: PRIVATE_PROFILE,
+    message: "Private profile",
   },
 };
 
 export const TemporallySuspended: Story = {
   args: {
-    report: {
-      url: "http://www.konami.com",
-      severity: TEMPORAL_BAN,
-      message: "Temporally suspendeda",
-    },
+    url: "http://www.konami.com",
+    severity: TEMPORAL_BAN,
+    message: "Temporally suspendeda",
   },
 };
 
 export const UnknownError: Story = {
   args: {
-    report: {
-      url: "http://www.namco.com",
-      severity: MISSING_ALL_FIELDS,
-      message: "Missing all fields",
-    },
+    url: "http://www.namco.com",
+    severity: MISSING_ALL_FIELDS,
+    message: "Missing all fields",
   },
 };

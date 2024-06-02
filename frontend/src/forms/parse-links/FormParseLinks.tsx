@@ -97,7 +97,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
       <h2>Add Candidates</h2>
       <InputFields fields={fields} />
       <FormStatus status={status} message={message} />
-      <MiniProgressWorker report={report} />
+      {report && <MiniProgressWorker {...report} />}
       <div className="buttons">
         <Button disabled={status === "loading"} icon="circle-check" label="Create" primary />
         <Button disabled={status === "loading"} label="Dismiss" onClick={() => closeDialog()} />

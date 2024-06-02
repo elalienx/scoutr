@@ -1,18 +1,13 @@
-// Project files
-import type ReportLog from "types/ReportLog";
-import "./mini-progress-worker.css";
+// Node modules
 import { useEffect, useState } from "react";
+
+// Project files
 import FormStatus from "components/form-status/FormStatus";
+import type ReportLog from "types/ReportLog";
 import ReportSeverity from "types/ReportSeverity";
+import "./mini-progress-worker.css";
 
-interface Props {
-  report: ReportLog | null;
-}
-
-export default function MiniProgressWorker({ report }: Props) {
-  // Safeguard
-  if (report === null) return;
-
+export default function MiniProgressWorker(report: ReportLog) {
   const { NO_ERROR, TEMPORAL_BAN, MISSING_ALL_FIELDS, PRIVATE_PROFILE } = ReportSeverity;
   const { severity } = report;
 
