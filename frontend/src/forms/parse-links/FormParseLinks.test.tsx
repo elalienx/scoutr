@@ -18,7 +18,7 @@ test("Expect 1 profile to scan susscesfully", async () => {
   const id = 1;
 
   const value = "https://www.linkedin.com/in/eduardo-alvarez-nowak/";
-  const goodMessage = "Finished adding profiles";
+  const goodMessage = "Finished scanning";
   const badMessage = "profile failed to scan";
 
   render(<FormParseLinks dispatch={dispatch} id={id} FetchClass={FetchClass} />);
@@ -52,7 +52,7 @@ test("Expect multiple profiles to scan susscesfully", async () => {
   // values separated with a comma and a empty space on purpose. Note that is not an array, FormCandidate should convert it to the appropiate data format.
   const value =
     "https://www.linkedin.com/in/eduardo-alvarez-nowak/, https://www.linkedin.com/in/susanna-vaara-0b33b03a/ https://www.linkedin.com/in/lanahaddad87/";
-  const goodMessage = "Finished adding profiles";
+  const goodMessage = "Finished scanning";
   const badMessage = "profile failed to scan";
 
   render(<FormParseLinks dispatch={dispatch} id={id} FetchClass={FetchClass} />);
