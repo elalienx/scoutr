@@ -9,7 +9,7 @@ type ParsedLinks = {
   report: ReportLog;
 };
 
-export default class MockSSEUnknownError {
+export default class MockSSEAllReports {
   // Properties
   parsedLinks: ParsedLinks[] = [
     {
@@ -41,9 +41,17 @@ export default class MockSSEUnknownError {
     {
       candidate: null,
       report: {
-        severity: ReportSeverity.MISSING_ALL_FIELDS,
+        severity: ReportSeverity.PRIVATE_PROFILE,
         url: "https://www.linkedin.com/in/susanna-vaara-0b33b03a/",
-        message: "Missing all fields",
+        message: "Private profile",
+      },
+    },
+    {
+      candidate: null,
+      report: {
+        severity: ReportSeverity.TEMPORAL_BAN,
+        url: "https://www.linkedin.com/in/lanahaddad87/",
+        message: "Temporally suspended",
       },
     },
     {
@@ -73,6 +81,9 @@ export default class MockSSEUnknownError {
 
     await waitForSeconds(1);
     this.onmessage({ data: JSON.stringify(this.parsedLinks[2]) });
+
+    await waitForSeconds(1);
+    this.onmessage({ data: JSON.stringify(this.parsedLinks[3]) });
 
     await waitForSeconds(1);
     this.onerror("this should call onerror() to close connection");

@@ -53,7 +53,7 @@ export default class MockSSEEOneCandidate {
     this.onmessage({ data: JSON.stringify(this.parsedLinks[0]) });
 
     await waitForSeconds(1);
-    this.onerror("this should call onerror()");
+    this.onerror("this should call onerror() to close connection");
   }
 
   onmessage(data: any) {
