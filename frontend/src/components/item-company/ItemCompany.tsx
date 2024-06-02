@@ -17,13 +17,12 @@ export default function ItemCompany({ item, onClick }: Props) {
   const { company_image_url, company_name, company_duration_in_months } = item;
 
   // Properties
+  const MONTHS_IN_A_YEAR = 12;
   const months = company_duration_in_months;
-  const monthsInAYear = 12;
-  const durationInyears = monthsToYears(months);
-  let cssColorHighlight = "@";
-
-  if (months === 0) cssColorHighlight = "red";
-  if (months > 0 && months < monthsInAYear) cssColorHighlight = "yellow";
+  const durationInYears = monthsToYears(months);
+  const durationToShow = months === 0 ? "---" : durationInYears;
+  const durationLessThanAYear = months > 0 && months < MONTHS_IN_A_YEAR;
+  const durationHighlight = durationLessThanAYear && "yellow";
 
   return (
     <div className="item-company">
@@ -34,9 +33,9 @@ export default function ItemCompany({ item, onClick }: Props) {
         </span>
         <small
           onClick={() => onClick("company_duration_in_months")}
-          className={`label trim-text ${cssColorHighlight}`}
+          className={`label trim-text ${durationHighlight}`}
         >
-          {durationInyears}
+          {durationToShow}
         </small>
       </div>
     </div>
