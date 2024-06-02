@@ -2,6 +2,7 @@
 import waitForSeconds from "scripts/waitForSeconds";
 import type Candidate from "types/Candidate";
 import type ReportLog from "types/ReportLog";
+import ReportSeverity from "types/ReportSeverity";
 
 type ParsedLinks = {
   candidate: Candidate | null;
@@ -32,7 +33,7 @@ export default class MockSSEPrivate {
         linked_in_url: "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
       },
       report: {
-        severity: 0, // means good!
+        severity: ReportSeverity.NO_ERROR,
         url: "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
         message: "No problems found!",
       },
@@ -66,7 +67,7 @@ export default class MockSSEPrivate {
         linked_in_url: "https://www.linkedin.com/in/lanahaddad87/",
       },
       report: {
-        severity: 0, // means good!
+        severity: ReportSeverity.NO_ERROR,
         url: "https://www.linkedin.com/in/lanahaddad87/",
         message: "No problems found!",
       },

@@ -1,5 +1,5 @@
 // Project files
-import ReportSeverity from "./ReportSeverity";
+import type ReportSeverity from "./ReportSeverity";
 
 export default interface ReportLog {
   url: string;

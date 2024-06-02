@@ -9,7 +9,7 @@ type ParsedLinks = {
   report: ReportLog;
 };
 
-export default class MockSSEEOneCandidate {
+export default class MockSSEUnknownError {
   // Properties
   parsedLinks: ParsedLinks[] = [
     {
@@ -38,6 +38,22 @@ export default class MockSSEEOneCandidate {
         message: "No problems found!",
       },
     },
+    {
+      candidate: null,
+      report: {
+        severity: ReportSeverity.MISSING_ALL_FIELDS,
+        url: "https://www.linkedin.com/in/susanna-vaara-0b33b03a/",
+        message: "Missing all fields",
+      },
+    },
+    {
+      candidate: null,
+      report: {
+        severity: ReportSeverity.MISSING_ALL_FIELDS,
+        url: "https://www.linkedin.com/in/lanahaddad87/",
+        message: "Missing all fields",
+      },
+    },
   ];
   uri: string;
 
@@ -51,6 +67,12 @@ export default class MockSSEEOneCandidate {
   async start() {
     await waitForSeconds(1);
     this.onmessage({ data: JSON.stringify(this.parsedLinks[0]) });
+
+    await waitForSeconds(1);
+    this.onmessage({ data: JSON.stringify(this.parsedLinks[1]) });
+
+    await waitForSeconds(1);
+    this.onmessage({ data: JSON.stringify(this.parsedLinks[2]) });
 
     await waitForSeconds(1);
     this.onerror("this should call onerror()");
