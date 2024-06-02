@@ -36,7 +36,7 @@ test("Expect 1 profile to scan susscesfully", async () => {
 
       expect(good).toBeInTheDocument();
     },
-    { timeout: 3000 },
+    { timeout: 500 },
   );
 });
 
@@ -67,7 +67,7 @@ test("Expect multiple profiles to scan susscesfully", async () => {
 
       expect(good).toBeInTheDocument();
     },
-    { timeout: 5000 },
+    { timeout: 500 },
   );
 });
 
@@ -98,6 +98,6 @@ test("Expect error message mentioning 2 failed scans", async () => {
 
       expect(element).toBeInTheDocument();
     },
-    { timeout: 5000 },
+    { timeout: 500 },
   );
 });

@@ -65,16 +65,16 @@ export default class MockSSEBan {
 
   // Methods
   async start() {
-    await waitForSeconds(1);
+    await waitForSeconds(0.1);
     this.onmessage({ data: JSON.stringify(this.parsedLinks[0]) });
 
-    await waitForSeconds(1);
+    await waitForSeconds(0.1);
     this.onmessage({ data: JSON.stringify(this.parsedLinks[1]) });
 
-    await waitForSeconds(1);
+    await waitForSeconds(0.1);
     this.onmessage({ data: JSON.stringify(this.parsedLinks[2]) });
 
-    await waitForSeconds(1);
+    await waitForSeconds(0.1);
     this.onerror("this should call onerror() to close connection");
   }
 
@@ -86,7 +86,12 @@ export default class MockSSEBan {
     return message;
   }
 
+  /**
+   * About close:
+   * This is empty on purpose as the mock does not need to close a backend server.
+   * However this needs to exist to make the mock compatible with the original EventSource
+   */
   close() {
-    console.info("Server finished connection");
+    // on the real EventSource this closes the Server Side Event
   }
 }
