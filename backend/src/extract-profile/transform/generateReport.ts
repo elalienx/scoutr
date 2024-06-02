@@ -11,7 +11,8 @@ export default function generateReport(url: string, page: string, profile: Linke
 
   let report = checkEmptyFields(url, profile);
 
-  if (report.severity === MISSING_ALL_FIELDS) report = checkPrivateProfile(report, page); // checkPrivateProfile can be a boolean
+  // these checkSomething can be booleans
+  if (report.severity === MISSING_ALL_FIELDS) report = checkPrivateProfile(report, page);
   if (report.severity === MISSING_ALL_FIELDS) report = checkBan(report, page);
 
   return report;

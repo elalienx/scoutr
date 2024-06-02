@@ -11,11 +11,11 @@ export default function checkBan(report: ReportLog, page: string): ReportLog {
   const { TEMPORAL_BAN } = ReportSeverity;
 
   const document: CheerioAPI = load(page);
-  const cssClass = ".page-not-found__subheadline";
-  const text = getText(document, cssClass);
+  const htmlHeadTag = `meta[http-equiv="refresh"][content="1;url=https://www.linkedin.com"]`;
+  const hasHTMLHeadTag = document(htmlHeadTag);
   let result = report;
 
-  if (text) result = { url: report.url, severity: TEMPORAL_BAN, message: "Temporally suspended" };
+  if (hasHTMLHeadTag.length) result = { url: report.url, severity: TEMPORAL_BAN, message: "Temporally suspended" };
 
   return result;
 }

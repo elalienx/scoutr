@@ -76,7 +76,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
   async function onSuccess(eventSource: EventSource) {
     eventSource.close();
     setStatus("complete");
-    setMessage("Finished adding profiles");
+    setMessage("Finished scanning");
 
     await waitForSeconds(1);
     closeDialog();

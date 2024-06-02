@@ -2,34 +2,34 @@
 import { expect, test } from "vitest";
 
 // Project files
-import checkPrivateProfile from "./checkPrivateProfile";
-import ReportLog from "../../types/ReportLog";
+import type ReportLog from "../../types/ReportLog";
 import ReportSeverity from "../../types/ReportSeverity";
-import { privateProfile } from "./test-data/profilePrivate";
+import { bannedPage } from "./test-data/bannedPage";
 import { profile1 } from "./test-data/profile1";
+import checkBan from "./checkBan";
 
-test("Returns the correct type of report when sent a private LinkedIn page", () => {
+test("Returns the correct type of report when sent a banned LinkedIn page", () => {
   // Arrange
   const report: ReportLog = {
-    url: "https://www.linkedin.com/in/ivanahmadfatoni/",
+    url: "https://www.linkedin.com/in/eduardo-alvarez-nowak/", // hypothetical example, my profile actually has all keys
     severity: ReportSeverity.MISSING_ALL_FIELDS,
-    message: "",
+    message: "Missing all fields",
   };
-  const page = privateProfile;
+  const page = bannedPage;
   const result: ReportLog = {
-    url: "https://www.linkedin.com/in/ivanahmadfatoni/",
-    severity: ReportSeverity.PRIVATE_PROFILE,
-    message: "Private profile",
+    url: "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
+    severity: ReportSeverity.TEMPORAL_BAN,
+    message: "Temporally suspended",
   };
 
   // Act
-  const test = checkPrivateProfile(report, page);
+  const test = checkBan(report, page);
 
   // Assert
   expect(test).toEqual(result);
 });
 
-test("Returns the standard type of report (missing all fields) when is not a private LinkedIn page", () => {
+test("Returns the standard type of report (missing all fields) when is not a bannedPage LinkedIn page", () => {
   // Arrange
   const report: ReportLog = {
     url: "https://www.linkedin.com/in/eduardo-alvarez-nowak/", // hypothetical example, my profile actually has all keys
@@ -44,7 +44,7 @@ test("Returns the standard type of report (missing all fields) when is not a pri
   };
 
   // Act
-  const test = checkPrivateProfile(report, page);
+  const test = checkBan(report, page);
 
   // Assert
   expect(test).toEqual(result);
