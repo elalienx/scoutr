@@ -2,6 +2,7 @@
 import waitForSeconds from "scripts/waitForSeconds";
 import type Candidate from "types/Candidate";
 import type ReportLog from "types/ReportLog";
+import ReportSeverity from "types/ReportSeverity";
 
 type ParsedLinks = {
   candidate: Candidate | null;
@@ -32,7 +33,7 @@ export default class MockSSEManyCandidates {
         linked_in_url: "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
       },
       report: {
-        severity: 0, // means good!
+        severity: ReportSeverity.NO_ERROR,
         url: "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
         message: "No problems found!",
       },
@@ -57,7 +58,7 @@ export default class MockSSEManyCandidates {
         linked_in_url: "https://www.linkedin.com/in/susanna-vaara-0b33b03a/",
       },
       report: {
-        severity: 0, // means good!
+        severity: ReportSeverity.NO_ERROR,
         url: "https://www.linkedin.com/in/susanna-vaara-0b33b03a/",
         message: "No problems found!",
       },
@@ -83,7 +84,7 @@ export default class MockSSEManyCandidates {
         linked_in_url: "https://www.linkedin.com/in/lanahaddad87/",
       },
       report: {
-        severity: 0, // means good!
+        severity: ReportSeverity.NO_ERROR,
         url: "https://www.linkedin.com/in/lanahaddad87/",
         message: "No problems found!",
       },
@@ -109,7 +110,7 @@ export default class MockSSEManyCandidates {
     this.onmessage({ data: JSON.stringify(this.parsedLinks[2]) });
 
     await waitForSeconds(1);
-    this.onerror("this should call onerror()");
+    this.onerror("this should call onerror() to close connection");
   }
 
   onmessage(data: any) {

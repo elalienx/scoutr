@@ -9,14 +9,14 @@ type ParsedLinks = {
   report: ReportLog;
 };
 
-export default class MockSSEPrivate {
+export default class MockSSEAllReports {
   // Properties
   parsedLinks: ParsedLinks[] = [
     {
       candidate: {
         id: 1,
         assignment_id: 1,
-        candidate_name: "Xavier Alvarez Nowak",
+        candidate_name: "Eduardo Alvarez Nowak",
         candidate_job_title: "Tech Lead",
         candidate_image_url:
           "https://media.licdn.com/dms/image/C4E03AQHwKgpnjrXkZA/profile-displayphoto-shrink_400_400/0/1643017689481?e=1718841600&v=beta&t=oXzvwBCY0QRE9ZnWl5CCqyBmDZFS2c_Jk9fDpndKzf8",
@@ -41,35 +41,25 @@ export default class MockSSEPrivate {
     {
       candidate: null,
       report: {
-        url: "https://www.linkedin.com/in/ivanahmadfatoni/",
-        severity: 2,
-        message: "This profile is private",
+        severity: ReportSeverity.PRIVATE_PROFILE,
+        url: "https://www.linkedin.com/in/susanna-vaara-0b33b03a/",
+        message: "Private profile",
       },
     },
     {
-      candidate: {
-        id: 3,
-        assignment_id: 1,
-        candidate_name: "Lana Haddad",
-        candidate_job_title: "Senior Talent Acquisition Specialist",
-        candidate_image_url:
-          "https://media.licdn.com/dms/image/C5603AQEhqKQ3aIFArw/profile-displayphoto-shrink_400_400/0/1580204916994?e=1719446400&v=beta&t=kZxSDBsc0G7Lx1HuQwemHuM7CHCvzi22VmLkd7XDvgI",
-        company_name: "Novare Potential",
-        company_duration_in_months: 85,
-        company_image_url:
-          "https://media.licdn.com/dms/image/C4E0BAQHElmOdWZ-xZA/company-logo_100_100/0/1631374829245/novare_potential_logo?e=1721260800&v=beta&t=ZRqH0M228v3G2tsbV5UsqqbmXstjR5_GQ69QLuw0eR8",
-        notes:
-          "More than 8 years of HR recruitment experience in multiples industries like tech, restaurants, health sector, education, white collar, blue collar, executive search, and more. Great salary negotiation skills.",
-        relevance: 5,
-        contact_status: 0,
-        contact_date: "2024-04-02 21:00:30.610279",
-        date_created: "2024-01-31 21:00:30.610279",
-        linked_in_url: "https://www.linkedin.com/in/lanahaddad87/",
-      },
+      candidate: null,
       report: {
-        severity: ReportSeverity.NO_ERROR,
+        severity: ReportSeverity.TEMPORAL_BAN,
         url: "https://www.linkedin.com/in/lanahaddad87/",
-        message: "No problems found!",
+        message: "Temporally suspended",
+      },
+    },
+    {
+      candidate: null,
+      report: {
+        severity: ReportSeverity.MISSING_ALL_FIELDS,
+        url: "https://www.linkedin.com/in/lanahaddad87/",
+        message: "Missing all fields",
       },
     },
   ];
@@ -91,6 +81,9 @@ export default class MockSSEPrivate {
 
     await waitForSeconds(1);
     this.onmessage({ data: JSON.stringify(this.parsedLinks[2]) });
+
+    await waitForSeconds(1);
+    this.onmessage({ data: JSON.stringify(this.parsedLinks[3]) });
 
     await waitForSeconds(1);
     this.onerror("this should call onerror() to close connection");

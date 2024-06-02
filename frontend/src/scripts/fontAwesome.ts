@@ -7,6 +7,7 @@ import {
   faCircleCheck,
   faCircleExclamation,
   faFolderOpen,
+  faHourglassHalf,
   faHouseChimney,
   faPlus,
   faSpinner,
@@ -32,7 +33,7 @@ library.add(
   faCircleExclamation,
   faCheck,
   faXmark,
-  faBan,
+  faHourglassHalf,
   faUserSecret,
 );
 

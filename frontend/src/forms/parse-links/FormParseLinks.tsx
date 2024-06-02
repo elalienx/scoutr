@@ -18,6 +18,7 @@ import type ReportLog from "types/ReportLog";
 import fields from "./fields";
 import "styles/components/form.css";
 import "./form-parse-links.css";
+import ReportSeverity from "types/ReportSeverity";
 
 interface Props {
   /** The ID of the assignment to parse. */
@@ -50,7 +51,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
       const eventSource = new FetchClass(uriSSE);
 
       eventSource.onmessage = (event: MessageEvent) => onUpdate(event);
-      eventSource.onerror = () => onSuccess(eventSource); // note: onerror occurs when the connection is finished not neccesarily on error
+      eventSource.onerror = () => onComplete(eventSource); // note: onerror occurs when the connection is finished not neccesarily on error
     } catch (error: unknown) {
       onFailure(error);
     }
@@ -64,19 +65,18 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
 
   function onUpdate(event: MessageEvent) {
     const { candidate, report } = JSON.parse(event.data);
+    const { severity } = report;
+    const { MISSING_SOME_FIELDS } = ReportSeverity;
 
-    if (report.severity < 2) {
-      dispatch({ type: "add-single", payload: candidate });
-    } else {
-      console.warn("Broken profile", report);
-      setReport(report);
-    }
+    setReport(report);
+
+    if (severity <= MISSING_SOME_FIELDS) dispatch({ type: "add-single", payload: candidate });
   }
 
-  async function onSuccess(eventSource: EventSource) {
+  async function onComplete(eventSource: EventSource) {
     eventSource.close();
     setStatus("complete");
-    setMessage("Finished scanning");
+    setMessage("Finished searching");
 
     await waitForSeconds(1);
     closeDialog();

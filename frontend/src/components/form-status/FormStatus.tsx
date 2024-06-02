@@ -23,6 +23,8 @@ export default function FormStatus(item: Props) {
   let color: Color = "gray";
   let icon: IconName = "plus";
 
+  // Color combinations
+  // -- Normal forms
   if (status === "loading") {
     color = "blue";
     icon = "spinner";
@@ -32,6 +34,12 @@ export default function FormStatus(item: Props) {
     icon = "circle-exclamation";
   }
   if (status === "complete") {
+    color = "blue";
+    icon = "check";
+  }
+
+  // -- Parse links
+  if (status === "added") {
     color = "green";
     icon = "check";
   }
@@ -41,7 +49,7 @@ export default function FormStatus(item: Props) {
   }
   if (status === "ban") {
     color = "orange";
-    icon = "ban";
+    icon = "hourglass-half";
   }
 
   // safeguard

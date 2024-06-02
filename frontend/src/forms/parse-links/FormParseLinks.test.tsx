@@ -18,8 +18,7 @@ test("Expect 1 profile to scan susscesfully", async () => {
   const id = 1;
 
   const value = "https://www.linkedin.com/in/eduardo-alvarez-nowak/";
-  const goodMessage = "Finished scanning";
-  const badMessage = "profile failed to scan";
+  const goodMessage = "Finished searching";
 
   render(<FormParseLinks dispatch={dispatch} id={id} FetchClass={FetchClass} />);
 
@@ -34,10 +33,8 @@ test("Expect 1 profile to scan susscesfully", async () => {
   await waitFor(
     () => {
       const good = screen.queryByText(goodMessage);
-      const bad = screen.queryByText(badMessage);
 
       expect(good).toBeInTheDocument();
-      expect(bad).not.toBeInTheDocument();
     },
     { timeout: 3000 },
   );
@@ -52,8 +49,7 @@ test("Expect multiple profiles to scan susscesfully", async () => {
   // values separated with a comma and a empty space on purpose. Note that is not an array, FormCandidate should convert it to the appropiate data format.
   const value =
     "https://www.linkedin.com/in/eduardo-alvarez-nowak/, https://www.linkedin.com/in/susanna-vaara-0b33b03a/ https://www.linkedin.com/in/lanahaddad87/";
-  const goodMessage = "Finished scanning";
-  const badMessage = "profile failed to scan";
+  const goodMessage = "Finished searching";
 
   render(<FormParseLinks dispatch={dispatch} id={id} FetchClass={FetchClass} />);
 
@@ -68,10 +64,8 @@ test("Expect multiple profiles to scan susscesfully", async () => {
   await waitFor(
     () => {
       const good = screen.queryByText(goodMessage);
-      const bad = screen.queryByText(badMessage);
 
       expect(good).toBeInTheDocument();
-      expect(bad).not.toBeInTheDocument();
     },
     { timeout: 5000 },
   );
@@ -86,7 +80,7 @@ test("Expect error message mentioning 2 failed scans", async () => {
   // values separated with a comma and a empty space on purpose. Note that is not an array, FormCandidate should convert it to the appropiate data format.
   const value =
     "https://www.linkedin.com/in/eduardo-alvarez-nowak/, https://www.linkedin.com/in/susanna-vaara-0b33b03a/ https://www.linkedin.com/in/lanahaddad87/";
-  const result = "Failed to scan: 2";
+  const result = "Temporally unavailable × 2";
 
   render(<FormParseLinks dispatch={dispatch} id={id} FetchClass={FetchClass} />);
 
