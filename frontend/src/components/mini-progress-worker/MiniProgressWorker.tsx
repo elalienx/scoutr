@@ -3,12 +3,19 @@ import type ReportLog from "types/ReportLog";
 import "./mini-progress-worker.css";
 import { useEffect, useState } from "react";
 import FormStatus from "components/form-status/FormStatus";
+import ReportSeverity from "types/ReportSeverity";
 
 interface Props {
   report: ReportLog | null;
 }
 
 export default function MiniProgressWorker({ report }: Props) {
+  // Safeguard
+  if (report === null) return;
+
+  const { TEMPORAL_BAN, MISSING_ALL_FIELDS, PRIVATE_PROFILE } = ReportSeverity;
+  const { severity } = report;
+
   // Local state
   const [ban, setBan] = useState(0);
   const [hidden, setHidden] = useState(0);
@@ -16,11 +23,9 @@ export default function MiniProgressWorker({ report }: Props) {
 
   // Methods
   useEffect(() => {
-    if (report === null) return;
-
-    if (report.severity === 2) setOther(other + 1);
-    if (report.severity === 3) setHidden(hidden + 1);
-    if (report.severity === 4) setBan(ban + 1);
+    if (severity === MISSING_ALL_FIELDS) setOther(other + 1);
+    if (severity === PRIVATE_PROFILE) setHidden(hidden + 1);
+    if (severity === TEMPORAL_BAN) setBan(ban + 1);
   }, [report]);
 
   return (
