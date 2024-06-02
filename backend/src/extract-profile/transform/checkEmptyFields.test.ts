@@ -2,9 +2,9 @@
 import { expect, test } from "vitest";
 
 // Project files
-import type ErrorReport from "../../types/ErrorReport";
+import type ReportLog from "../../types/ReportLog";
 import type LinkedInProfile from "../../types/LinkedInProfile";
-import reportEmptyFields from "./reportEmptyFields";
+import checkEmptyFields from "./checkEmptyFields";
 
 test("Create an error severity #0 (no errors) when everything is complete", () => {
   // Arrange
@@ -17,14 +17,14 @@ test("Create an error severity #0 (no errors) when everything is complete", () =
     company_duration_in_months: 42,
     company_image_url: "http://sample-image.com/company.jpg",
   };
-  const result: ErrorReport = {
+  const result: ReportLog = {
     url: "linked.com/eduardo-alvarez-nowak",
     severity: 0,
     message: "No problems found",
   };
 
   // Act
-  const test = reportEmptyFields(url, profile);
+  const test = checkEmptyFields(url, profile);
 
   // Assert
   expect(test).toEqual(result);
@@ -41,14 +41,14 @@ test("Create an error severity #1 report one field is missing", () => {
     company_duration_in_months: 42,
     company_image_url: "http://sample-image.com/company.jpg",
   };
-  const result: ErrorReport = {
+  const result: ReportLog = {
     url: "linked.com/eduardo-alvarez-nowak",
     severity: 1,
     message: "Missing candidate_job_title",
   };
 
   // Act
-  const test = reportEmptyFields(url, profile);
+  const test = checkEmptyFields(url, profile);
 
   // Assert
   expect(test).toEqual(result);
@@ -65,14 +65,14 @@ test("Create an error severity #1 report more than one field are missing", () =>
     company_duration_in_months: 42,
     company_image_url: "http://sample-image.com/company.jpg",
   };
-  const result: ErrorReport = {
+  const result: ReportLog = {
     url: "linked.com/eduardo-alvarez-nowak",
     severity: 1,
     message: "Missing candidate_job_title, candidate_image_url",
   };
 
   // Act
-  const test = reportEmptyFields(url, profile);
+  const test = checkEmptyFields(url, profile);
 
   // Assert
   expect(test).toEqual(result);
@@ -89,14 +89,14 @@ test("Create an error severity #2 report when all fields are missing", () => {
     company_duration_in_months: 0,
     company_image_url: "",
   };
-  const result: ErrorReport = {
+  const result: ReportLog = {
     url: "linked.com/eduardo-alvarez-nowak",
     severity: 2,
     message: "Missing all fields",
   };
 
   // Act
-  const test = reportEmptyFields(url, profile);
+  const test = checkEmptyFields(url, profile);
 
   // Assert
   expect(test).toEqual(result);

@@ -3,16 +3,15 @@ import { load } from "cheerio";
 import type { CheerioAPI } from "cheerio";
 
 // Project files
-import type ErrorReport from "../../types/ErrorReport";
+import type ReportLog from "../../types/ReportLog";
 import getText from "./helpers/getText";
 
-export default function checkPrivateProfile(report: ErrorReport, page: string): ErrorReport {
+export default function checkPrivateProfile(report: ReportLog, page: string): ReportLog {
   let result = report;
   const document: CheerioAPI = load(page);
   const privateMessage = getText(document, ".page-not-found__subheadline");
 
   if (privateMessage) result = { url: report.url, severity: 3, message: "Private profile" };
-  console.log("result", result);
 
   return result;
 }
