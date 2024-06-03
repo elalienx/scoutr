@@ -11,7 +11,7 @@ import contactedCandidates from "scripts/response-rate/contactedCandidates";
 import repliedCandidates from "scripts/response-rate/repliedCandidates";
 import CandidatesReducer from "state/CandidatesReducer";
 import type Candidate from "types/Candidate";
-import type StatusPage from "types/Status";
+import type StatusPage from "types/StatusPage";
 import Content from "./content/Content";
 import StateError from "./state-error/StateError";
 import "./candidates.css";
