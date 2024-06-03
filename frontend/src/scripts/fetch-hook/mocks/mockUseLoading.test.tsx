@@ -3,7 +3,7 @@ import { expect, test } from "vitest";
 
 // Project files
 import mockUseLoading from "./mockUseLoading";
-import StatusPage from "types/Status";
+import StatusPage from "types/StatusPage";
 
 test("Expect return loading status if passed an url", () => {
   // Arrange

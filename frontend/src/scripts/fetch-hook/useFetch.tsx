@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import type ResultsAPI from "types/ResultAPI";
 
 // Project files
-import type StatusPage from "types/Status";
+import type StatusPage from "types/StatusPage";
 
 export default function useFetch(uri: string): ResultsAPI {
   // Safeguard

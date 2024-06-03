@@ -2,9 +2,9 @@
 import { expect, test } from "vitest";
 
 // Project files
-import mockFetchError from "./mockFetchError";
-import StatusPage from "types/Status";
+import type StatusPage from "types/StatusPage";
 import packageData from "scripts/forms/packageData";
+import mockFetchError from "./mockFetchError";
 
 test("Returns status error when called", async () => {
   // Arrange

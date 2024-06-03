@@ -1,7 +1,7 @@
 // Project files
 import Loader from "components/loader/Loader";
 import type Assignment from "types/Assignment";
-import type StatusPage from "types/Status";
+import type StatusPage from "types/StatusPage";
 import Content from "./content/Content";
 import Footer from "./footer/Footer";
 import Hero from "./hero/Hero";

@@ -3,7 +3,7 @@ import { expect, test } from "vitest";
 
 // Project files
 import mockUseEmpty from "./mockUseEmpty";
-import StatusPage from "types/Status";
+import StatusPage from "types/StatusPage";
 
 test("Expect return ready state but with a warning message if passed a correct URI", () => {
   // Arrange

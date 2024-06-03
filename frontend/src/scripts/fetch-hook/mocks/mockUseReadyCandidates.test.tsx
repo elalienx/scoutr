@@ -3,8 +3,8 @@ import { expect, test } from "vitest";
 
 // Project files
 import mockUseReadyCandidates from "./mockUseReadyCandidates";
-import StatusPage from "types/Status";
-import Candidate from "types/Candidate";
+import type StatusPage from "types/StatusPage";
+import type Candidate from "types/Candidate";
 
 test("Expect return content if passed a valid url", () => {
   // Arrange
@@ -26,7 +26,7 @@ test("Expect return content if passed a valid url", () => {
       relevance: 3,
       contact_status: 4,
       contact_date: "2024-04-02 21:00:30.610279",
-      projectId: 1,
+      assignment_id: 1,
       date_created: "2024-01-31 21:00:30.610279",
       linked_in_url: "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
     },
@@ -44,7 +44,7 @@ test("Expect return content if passed a valid url", () => {
       relevance: 4,
       contact_status: 1,
       contact_date: "2024-04-02 21:00:30.610279",
-      projectId: 1,
+      assignment_id: 1,
       date_created: "2024-01-31 21:00:30.610279",
       linked_in_url: "https://www.linkedin.com/in/susanna-vaara-0b33b03a/",
     },
@@ -63,7 +63,7 @@ test("Expect return content if passed a valid url", () => {
       relevance: 5,
       contact_status: 0,
       contact_date: "2024-04-02 21:00:30.610279",
-      projectId: 1,
+      assignment_id: 1,
       date_created: "2024-01-31 21:00:30.610279",
       linked_in_url: "https://www.linkedin.com/in/lanahaddad87/",
     },

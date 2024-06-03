@@ -2,9 +2,9 @@
 import { expect, test } from "vitest";
 
 // Project files
+import type StatusPage from "types/StatusPage";
+import type Assignment from "types/Assignment";
 import mockUseReadyAssignments from "./mockUseReadyAssignments";
-import StatusPage from "types/Status";
-import Assignment from "types/Assignment";
 
 test("Expect return content if passed a valid url", () => {
   // Arrange

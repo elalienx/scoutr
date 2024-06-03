@@ -3,7 +3,7 @@ import { expect, test } from "vitest";
 
 // Project files
 import mockUseError from "./mockUseError";
-import StatusPage from "types/Status";
+import StatusPage from "types/StatusPage";
 
 test("Expect return error state if passed a uri that fails to fetch", () => {
   // Arrange

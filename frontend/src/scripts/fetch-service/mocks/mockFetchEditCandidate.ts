@@ -1,7 +1,7 @@
 // Project files
 import FetchOptions from "types/FetchOptions";
 import ResultsAPI from "types/ResultAPI";
-import StatusPage from "types/Status";
+import StatusPage from "types/StatusPage";
 
 async function mockFetchEditCandidat(uri: string, init: FetchOptions): Promise<ResultsAPI> {
   const body = JSON.parse(init.body);
