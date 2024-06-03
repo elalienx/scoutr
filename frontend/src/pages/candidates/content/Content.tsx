@@ -35,7 +35,6 @@ export default function Content({ id, state }: Props) {
 
   return (
     <div className="candidates">
-      <h2>Candidates</h2>
       <Table state={state} />
       <Button
         big
