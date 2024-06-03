@@ -8,8 +8,7 @@ import ReportSeverity from "types/ReportSeverity";
 import "./mini-progress-worker.css";
 
 export default function MiniProgressWorker(report: ReportLog) {
-  const { NO_ERROR, TEMPORAL_BAN, MISSING_ALL_FIELDS, PRIVATE_PROFILE } = ReportSeverity;
-  const { severity } = report;
+  const { MISSING_SOME_FIELDS, TEMPORAL_BAN, MISSING_ALL_FIELDS, PRIVATE_PROFILE } = ReportSeverity;
 
   // Local state
   const [normal, setNormal] = useState(0);
@@ -19,10 +18,11 @@ export default function MiniProgressWorker(report: ReportLog) {
 
   // Methods
   useEffect(() => {
-    if (severity === NO_ERROR) setNormal(normal + 1);
-    if (severity === MISSING_ALL_FIELDS) setOther(other + 1);
-    if (severity === PRIVATE_PROFILE) setHidden(hidden + 1);
-    if (severity === TEMPORAL_BAN) setBan(ban + 1);
+    console.log(report);
+    if (report.severity <= MISSING_SOME_FIELDS) setNormal((prev) => prev + 1);
+    if (report.severity === TEMPORAL_BAN) setBan((prev) => prev + 1);
+    if (report.severity === PRIVATE_PROFILE) setHidden((prev) => prev + 1);
+    if (report.severity === MISSING_ALL_FIELDS) setOther((prev) => prev + 1);
   }, [report]);
 
   return (

@@ -42,7 +42,7 @@ export default class MockSSEPrivate {
       candidate: null,
       report: {
         url: "https://www.linkedin.com/in/ivanahmadfatoni/",
-        severity: 2,
+        severity: ReportSeverity.PRIVATE_PROFILE,
         message: "This profile is private",
       },
     },
@@ -83,16 +83,16 @@ export default class MockSSEPrivate {
 
   // Methods
   async start() {
-    await waitForSeconds(.1);
+    await waitForSeconds(0.5);
     this.onmessage({ data: JSON.stringify(this.parsedLinks[0]) });
 
-    await waitForSeconds(.1);
+    await waitForSeconds(0.5);
     this.onmessage({ data: JSON.stringify(this.parsedLinks[1]) });
 
-    await waitForSeconds(.1);
+    await waitForSeconds(0.5);
     this.onmessage({ data: JSON.stringify(this.parsedLinks[2]) });
 
-    await waitForSeconds(.1);
+    await waitForSeconds(0.5);
     this.onerror("this should call onerror() to close connection");
   }
 

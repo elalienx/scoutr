@@ -42,7 +42,7 @@ export default class MockSSEAllReports {
       candidate: null,
       report: {
         severity: ReportSeverity.PRIVATE_PROFILE,
-        url: "https://www.linkedin.com/in/susanna-vaara-0b33b03a/",
+        url: "https://www.linkedin.com/in/ivan-fatoni/",
         message: "Private profile",
       },
     },
@@ -58,7 +58,7 @@ export default class MockSSEAllReports {
       candidate: null,
       report: {
         severity: ReportSeverity.MISSING_ALL_FIELDS,
-        url: "https://www.linkedin.com/in/lanahaddad87/",
+        url: "https://www.linkedin.com/in/susanna-vaara-0b33b03a/",
         message: "Missing all fields",
       },
     },

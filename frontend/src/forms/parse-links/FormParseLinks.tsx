@@ -68,6 +68,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
     const { severity } = report;
     const { MISSING_SOME_FIELDS } = ReportSeverity;
 
+    console.log("event source");
     setReport(report);
 
     if (severity <= MISSING_SOME_FIELDS) dispatch({ type: "add-single", payload: candidate });
@@ -77,6 +78,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
     eventSource.close();
     setStatus("complete");
     setMessage("Finished searching");
+    console.log("over");
 
     await waitForSeconds(1);
     closeDialog();
