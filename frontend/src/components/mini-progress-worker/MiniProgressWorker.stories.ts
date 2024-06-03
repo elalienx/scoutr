@@ -16,28 +16,99 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // Stories
-const { PRIVATE_PROFILE, TEMPORAL_BAN, MISSING_ALL_FIELDS } = ReportSeverity;
+export const Default: Story = {
+  args: {
+    reports: [
+      {
+        url: "http://www.nintendo.com",
+        severity: ReportSeverity.NO_ERROR,
+        message: "Private profile",
+      },
+    ],
+  },
+};
+
+export const ManyCandidates: Story = {
+  args: {
+    reports: [
+      {
+        url: "http://www.nintendo.com",
+        severity: ReportSeverity.NO_ERROR,
+        message: "No errors",
+      },
+      {
+        url: "http://www.sega.com",
+        severity: ReportSeverity.NO_ERROR,
+        message: "Missing: common sense to skip the 32x",
+      },
+      {
+        url: "http://www.sony.com",
+        severity: ReportSeverity.NO_ERROR,
+        message: "No errors",
+      },
+    ],
+  },
+};
 
 export const PrivateProfile: Story = {
   args: {
-    url: "http://www.capcom.com",
-    severity: PRIVATE_PROFILE,
-    message: "Private profile",
+    reports: [
+      {
+        url: "http://www.capcom.com",
+        severity: ReportSeverity.PRIVATE_PROFILE,
+        message: "Private profile",
+      },
+    ],
   },
 };
 
 export const TemporallySuspended: Story = {
   args: {
-    url: "http://www.konami.com",
-    severity: TEMPORAL_BAN,
-    message: "Temporally suspendeda",
+    reports: [
+      {
+        url: "http://www.konami.com",
+        severity: ReportSeverity.TEMPORAL_BAN,
+        message: "Temporally suspendeda",
+      },
+    ],
   },
 };
 
 export const UnknownError: Story = {
   args: {
-    url: "http://www.namco.com",
-    severity: MISSING_ALL_FIELDS,
-    message: "Missing all fields",
+    reports: [
+      {
+        url: "http://www.namco.com",
+        severity: ReportSeverity.MISSING_ALL_FIELDS,
+        message: "Missing all fields",
+      },
+    ],
+  },
+};
+
+export const OnErrorOfEachKind: Story = {
+  args: {
+    reports: [
+      {
+        url: "http://www.nintendo.com",
+        severity: ReportSeverity.NO_ERROR,
+        message: "No errors",
+      },
+      {
+        url: "http://www.capcom.com",
+        severity: ReportSeverity.PRIVATE_PROFILE,
+        message: "Private profile",
+      },
+      {
+        url: "http://www.konami.com",
+        severity: ReportSeverity.TEMPORAL_BAN,
+        message: "Temporally suspendeda",
+      },
+      {
+        url: "http://www.namco.com",
+        severity: ReportSeverity.MISSING_ALL_FIELDS,
+        message: "Missing all fields",
+      },
+    ],
   },
 };

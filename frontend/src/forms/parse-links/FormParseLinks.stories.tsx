@@ -9,6 +9,7 @@ import MockSSEBan from "scripts/fetch-sse/mocks/mockSSEBan";
 import MockSSEUnknownError from "scripts/fetch-sse/mocks/mockSSEUnknownError";
 import FormParseLinks from "./FormParseLinks";
 import MockSSEAllReports from "scripts/fetch-sse/mocks/mockSSEAllReports";
+import MockSSEManyCandidates from "scripts/fetch-sse/mocks/mockSSEManyCandidates";
 
 const meta = {
   title: "Formularies/Form Parse Links",
@@ -47,7 +48,7 @@ export const Default: Story = {
 export const MultipleCandidates: Story = {
   args: {
     id: 1,
-    FetchClass: MockSSEEOneCandidate,
+    FetchClass: MockSSEManyCandidates,
     dispatch: () => {},
   },
 };

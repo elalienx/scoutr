@@ -15,10 +15,10 @@ import useDialog from "state/DialogContextAPI";
 import type StatusForm from "types/StatusForm";
 import type CandidateActions from "types/CandidateActions";
 import type ReportLog from "types/ReportLog";
+import ReportSeverity from "types/ReportSeverity";
 import fields from "./fields";
 import "styles/components/form.css";
 import "./form-parse-links.css";
-import ReportSeverity from "types/ReportSeverity";
 
 interface Props {
   /** The ID of the assignment to parse. */
@@ -37,7 +37,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
   // Local state
   const [status, setStatus] = useState<StatusForm>("stand-by");
   const [message, setMessage] = useState("");
-  const [report, setReport] = useState<ReportLog | null>(null);
+  const [reports, setReports] = useState<ReportLog[]>([]);
 
   // Methods
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -68,8 +68,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
     const { severity } = report;
     const { MISSING_SOME_FIELDS } = ReportSeverity;
 
-    console.log("event source");
-    setReport(report);
+    setReports((prev) => [...prev, report]);
 
     if (severity <= MISSING_SOME_FIELDS) dispatch({ type: "add-single", payload: candidate });
   }
@@ -78,7 +77,6 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
     eventSource.close();
     setStatus("complete");
     setMessage("Finished searching");
-    console.log("over");
 
     await waitForSeconds(1);
     closeDialog();
@@ -99,7 +97,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
       <h2>Add Candidates</h2>
       <InputFields fields={fields} />
       <FormStatus status={status} message={message} />
-      {report && <MiniProgressWorker {...report} />}
+      <MiniProgressWorker reports={reports} />
       <div className="buttons">
         <Button disabled={status === "loading"} icon="circle-check" label="Create" primary />
         <Button disabled={status === "loading"} label="Dismiss" onClick={() => closeDialog()} />

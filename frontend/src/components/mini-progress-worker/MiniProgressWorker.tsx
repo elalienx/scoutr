@@ -1,29 +1,21 @@
-// Node modules
-import { useEffect, useState } from "react";
-
 // Project files
 import FormStatus from "components/form-status/FormStatus";
 import type ReportLog from "types/ReportLog";
 import ReportSeverity from "types/ReportSeverity";
 import "./mini-progress-worker.css";
 
-export default function MiniProgressWorker(report: ReportLog) {
+interface Props {
+  reports: ReportLog[];
+}
+
+export default function MiniProgressWorker({ reports }: Props) {
   const { MISSING_SOME_FIELDS, TEMPORAL_BAN, MISSING_ALL_FIELDS, PRIVATE_PROFILE } = ReportSeverity;
 
   // Local state
-  const [normal, setNormal] = useState(0);
-  const [ban, setBan] = useState(0);
-  const [hidden, setHidden] = useState(0);
-  const [other, setOther] = useState(0);
-
-  // Methods
-  useEffect(() => {
-    console.log(report);
-    if (report.severity <= MISSING_SOME_FIELDS) setNormal((prev) => prev + 1);
-    if (report.severity === TEMPORAL_BAN) setBan((prev) => prev + 1);
-    if (report.severity === PRIVATE_PROFILE) setHidden((prev) => prev + 1);
-    if (report.severity === MISSING_ALL_FIELDS) setOther((prev) => prev + 1);
-  }, [report]);
+  const normal: number = reports.filter((item) => item.severity <= MISSING_SOME_FIELDS).length;
+  const hidden: number = reports.filter((item) => item.severity === PRIVATE_PROFILE).length;
+  const ban: number = reports.filter((item) => item.severity === TEMPORAL_BAN).length;
+  const other: number = reports.filter((item) => item.severity === MISSING_ALL_FIELDS).length;
 
   return (
     <div className="mini-progress-worker">
