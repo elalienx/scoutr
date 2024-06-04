@@ -30,6 +30,7 @@
 
   footer .link {
     margin-right: var(--space-small);
+    font-weight: var(--font-weight-bold);
   }
 
   footer .icon {
