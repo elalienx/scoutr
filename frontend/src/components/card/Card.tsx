@@ -15,16 +15,16 @@ export default function Card(item: Assignment) {
   const link = `/candidates/${id}`;
 
   return (
-    <article className="card">
+    <Link to={link} className="card">
       <ImageThumbnail src={company_image_url} alt="The company logo" />
       <h2 lang="en" className="trim-text">
         {assignment_name}
       </h2>
       <small className="label trim-text">{company_name}</small>
-      <Link className="button small" to={link}>
-        <FontAwesomeIcon className="icon" icon={["fas", "folder-open"]} />
-        Open
-      </Link>
-    </article>
+      <footer>
+        <span className="link">View</span>
+        <FontAwesomeIcon className="icon" icon={["fas", "arrow-right"]} />
+      </footer>
+    </Link>
   );
 }

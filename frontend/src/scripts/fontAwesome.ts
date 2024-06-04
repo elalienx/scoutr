@@ -2,10 +2,10 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import {
+  faArrowRight,
   faCheck,
   faCircleCheck,
   faCircleExclamation,
-  faFolderOpen,
   faHourglassHalf,
   faHouseChimney,
   faPlus,
@@ -24,7 +24,6 @@ library.add(faLinkedin);
 // Solid
 library.add(
   faCircleCheck,
-  faFolderOpen,
   faLinkedin,
   faPlus,
   faSpinner,
@@ -34,6 +33,7 @@ library.add(
   faXmark,
   faHourglassHalf,
   faUserSecret,
+  faArrowRight,
 );
 
 export default library;

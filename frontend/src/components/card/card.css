@@ -1,4 +1,6 @@
 .card {
+  --color-main: var(--color-black);
+
   aspect-ratio: 10 / 5.5;
   display: flex;
   flex-direction: column;
@@ -6,6 +8,7 @@
   gap: var(--space-small);
   padding: var(--space-medium);
   background-color: white;
+  color: var(--color-main);
   border: solid 0.5px var(--color-gray);
   border-radius: var(--border-radius-small);
 
@@ -23,6 +26,26 @@
 
   .label {
     margin-bottom: auto; /* to push the button down */
+  }
+
+  footer .link {
+    margin-right: var(--space-small);
+  }
+
+  footer .icon {
+    transition: 0.25s;
+  }
+}
+
+.card:hover {
+  text-decoration: none;
+  color: var(--color-main);
+
+  /** Fake shadow hack because if I change the border width from 0.5 in the up state to 1.0 on hover, the contents inside the card flicker. */
+  box-shadow: 0 0 1px 0.5px black;
+
+  footer .icon {
+    margin-left: var(--space-small);
   }
 }
 

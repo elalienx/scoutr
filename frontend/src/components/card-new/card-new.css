@@ -2,3 +2,9 @@
   background-color: var(--color-gray-light);
   border: none;
 }
+
+.card.card-new:hover {
+  border: none;
+  /** Dissable the fake bodrder we added on .card, see it for more info **/
+  box-shadow: none;
+}
