@@ -23,3 +23,13 @@ image {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* Hover */
+.hover:hover {
+  background-color: var(--color-gray-light);
+}
+
+/* Cursor */
+.editable {
+  cursor: context-menu;
+}

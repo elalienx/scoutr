@@ -83,7 +83,7 @@ export default function RowCandidate({ candidate, index, dispatch }: Props) {
       {/* 📝 Notes */}
       <td
         onClick={() => onClick("notes")}
-        className="notes column-big hover"
+        className="notes column-big hover editable"
         data-label="Notes"
         title={notes}
       >
@@ -93,7 +93,7 @@ export default function RowCandidate({ candidate, index, dispatch }: Props) {
       {/* 📈 Relevance */}
       <td
         onClick={() => onClick("relevance")}
-        className="relevance column-medium hover"
+        className="relevance column-medium hover editable"
         data-label="Relevance"
       >
         {relevance > 0 && <ItemBadge {...parsedData.relevance} />}
@@ -102,7 +102,7 @@ export default function RowCandidate({ candidate, index, dispatch }: Props) {
       {/* 📲 Contact */}
       <td
         onClick={() => onClick("contact_status")}
-        className="contact column-medium hover"
+        className="contact column-medium hover editable"
         data-label="Contact"
         title=""
       >

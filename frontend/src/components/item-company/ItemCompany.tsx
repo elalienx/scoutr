@@ -28,12 +28,12 @@ export default function ItemCompany({ item, onClick }: Props) {
     <div className="item-company">
       <ImageThumbnail src={company_image_url} alt="The company logo" />
       <div className="content">
-        <span onClick={() => onClick("company_name")} className="title trim-text">
+        <span onClick={() => onClick("company_name")} className="title trim-text editable">
           {company_name || "---"}
         </span>
         <small
           onClick={() => onClick("company_duration_in_months")}
-          className={`label trim-text ${durationHighlight}`}
+          className={`label trim-text ${durationHighlight} editable`}
         >
           {durationToShow}
         </small>

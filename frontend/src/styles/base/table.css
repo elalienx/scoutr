@@ -31,11 +31,6 @@ td::before {
   font-weight: var(--font-weight-bold);
 }
 
-/* Hover */
-td.hover:hover {
-  background-color: var(--color-gray-light);
-}
-
 /* Laptop half screen */
 @media (min-width: 700px) {
   table {

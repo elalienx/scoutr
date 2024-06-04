@@ -24,7 +24,7 @@ export default function ItemCandidate({ item, onClick }: Props) {
         </a>
         <small
           onClick={() => onClick("candidate_job_title")}
-          className="label trim-text"
+          className="label trim-text editable"
           title={candidate_job_title}
         >
           {candidate_job_title || "---"}
