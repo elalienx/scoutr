@@ -2,7 +2,7 @@
 import { expect, test } from "vitest";
 
 // Project files
-import { example } from "./test-data/example";
+import { example } from "./test-data/example-dot-com-website";
 import extractPage from "./extractPage";
 
 test("Gets all the HTML from Example.com, just to know it can extract any page", async () => {
