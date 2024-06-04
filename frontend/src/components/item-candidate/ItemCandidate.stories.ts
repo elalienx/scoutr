@@ -21,28 +21,24 @@ type Story = StoryObj<typeof meta>;
 // Stories
 export const Default: Story = {
   args: {
-    candidate_image_url: ImageURLs.candidate_eduardo,
-    candidate_name: "Eduardo Alvarez",
-    candidate_job_title: "Frontend Developer",
-    linked_in_url: "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
-  },
-};
-
-export const JobTitleTrimmed: Story = {
-  args: {
-    candidate_image_url: ImageURLs.candidate_eduardo,
-    candidate_name: "Eduardo Alvarez",
-    candidate_job_title:
-      "Senior Frontend Developer with a touch of Graphic Design, UI, and UX",
-    linked_in_url: "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
+    item: {
+      candidate_image_url: ImageURLs.candidate_eduardo,
+      candidate_name: "Eduardo Alvarez",
+      candidate_job_title: "Frontend Developer",
+      linked_in_url: "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
+    },
+    onClick: () => {},
   },
 };
 
 export const Empty: Story = {
   args: {
-    candidate_image_url: "",
-    candidate_name: "Jorge Dominguez Perdomo",
-    candidate_job_title: "UX Generalist",
-    linked_in_url: "https://www.linkedin.com/in/jorgedp/",
+    item: {
+      candidate_image_url: "",
+      candidate_name: "Jorge Dominguez Perdomo",
+      candidate_job_title: "UX Generalist",
+      linked_in_url: "https://www.linkedin.com/in/jorgedp/",
+    },
+    onClick: () => {},
   },
 };

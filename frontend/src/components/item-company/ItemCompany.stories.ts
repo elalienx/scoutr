@@ -21,24 +21,33 @@ type Story = StoryObj<typeof meta>;
 // Stories
 export const Default: Story = {
   args: {
-    company_image_url: ImageURLs.company_novare,
-    company_name: "Novare Potential",
-    company_duration_in_months: 72,
+    item: {
+      company_image_url: ImageURLs.company_novare,
+      company_name: "Novare Potential",
+      company_duration_in_months: 72,
+    },
+    onClick: () => alert("Clicked"),
   },
 };
 
 export const ShortJobDuration: Story = {
   args: {
-    company_image_url: ImageURLs.company_novare,
-    company_name: "Novare Potential",
-    company_duration_in_months: 3,
+    item: {
+      company_image_url: ImageURLs.company_novare,
+      company_name: "Novare Potential",
+      company_duration_in_months: 3,
+    },
+    onClick: () => alert("Clicked"),
   },
 };
 
 export const Empty: Story = {
   args: {
-    company_image_url: "",
-    company_name: "Novare Potential",
-    company_duration_in_months: 12,
+    item: {
+      company_image_url: "",
+      company_name: "Novare Potential",
+      company_duration_in_months: 12,
+    },
+    onClick: () => alert("Clicked"),
   },
 };
