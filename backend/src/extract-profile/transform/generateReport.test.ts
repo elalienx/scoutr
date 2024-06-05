@@ -8,7 +8,7 @@ import ReportLog from "../../types/ReportLog";
 import ReportSeverity from "../../types/ReportSeverity";
 import { bannedPage } from "./test-data/bannedPage";
 import { privateProfile } from "./test-data/profilePrivate";
-import { example } from "../extract/test-data/example";
+import { example } from "../extract/test-data/example-dot-com-website";
 
 // Returns ban report when passing a banned page
 test("Returns ban report when passing a banned page", () => {
