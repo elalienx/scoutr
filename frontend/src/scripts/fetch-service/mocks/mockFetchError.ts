@@ -8,5 +8,8 @@ export default async function mockFetchError(uri: string, init: FetchOptions): P
   const status: StatusPage = "error";
   const message = `The server could not return data from ${uri}`;
 
+  // Safeguard
+  if (!init) throw new Error("No parameters passed");
+
   return { data, status, message };
 }
