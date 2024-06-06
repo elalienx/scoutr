@@ -1,5 +1,5 @@
 {
-  "name": "scoutr",
+  "name": "scoutr-backend",
   "version": "1.0.0",
   "description": "Your LinkedIn Headhunter Companion",
   "main": "src/index.ts",

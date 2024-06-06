@@ -10,7 +10,7 @@ test("Expects a correct filter of contacted candidates", () => {
   const value: Candidate[] = [
     {
       id: 1,
-      projectId: 1,
+      assignment_id: 1,
       date_created: "",
       linked_in_url: "",
       candidate_name: "Eduardo",
@@ -26,7 +26,7 @@ test("Expects a correct filter of contacted candidates", () => {
     },
     {
       id: 2,
-      projectId: 1,
+      assignment_id: 1,
       date_created: "",
       linked_in_url: "",
       candidate_name: "Sussana",
@@ -42,7 +42,7 @@ test("Expects a correct filter of contacted candidates", () => {
     },
     {
       id: 3,
-      projectId: 1,
+      assignment_id: 1,
       date_created: "",
       linked_in_url: "",
       candidate_name: "Lana",
@@ -71,7 +71,7 @@ test("No contacted candidates returns an empty array instead of an error", () =>
   const value: Candidate[] = [
     {
       id: 1,
-      projectId: 1,
+      assignment_id: 1,
       date_created: "",
       linked_in_url: "",
       candidate_name: "Eduardo",
@@ -87,7 +87,7 @@ test("No contacted candidates returns an empty array instead of an error", () =>
     },
     {
       id: 2,
-      projectId: 1,
+      assignment_id: 1,
       date_created: "",
       linked_in_url: "",
       candidate_name: "Sussana",
@@ -103,7 +103,7 @@ test("No contacted candidates returns an empty array instead of an error", () =>
     },
     {
       id: 3,
-      projectId: 1,
+      assignment_id: 1,
       date_created: "",
       linked_in_url: "",
       candidate_name: "Lana",

@@ -11,7 +11,7 @@ test("Shows error if you try to edit the candidate id, only the server can edit 
   const state: Candidate[] = [
     {
       id: 1,
-      projectId: 1,
+      assignment_id: 1,
       candidate_name: "Eduardo Alvarez Nowak",
       candidate_job_title: "Tech Lead",
       candidate_image_url:
@@ -30,7 +30,7 @@ test("Shows error if you try to edit the candidate id, only the server can edit 
     },
     {
       id: 2,
-      projectId: 1,
+      assignment_id: 1,
       candidate_name: "Sussana Vara",
       candidate_job_title: "Partner",
       candidate_image_url:
@@ -62,7 +62,7 @@ test("Shows error if you try to edit the candidate project_id, only the server c
   const state: Candidate[] = [
     {
       id: 1,
-      projectId: 1,
+      assignment_id: 1,
       candidate_name: "Eduardo Alvarez Nowak",
       candidate_job_title: "Tech Lead",
       candidate_image_url:
@@ -81,7 +81,7 @@ test("Shows error if you try to edit the candidate project_id, only the server c
     },
     {
       id: 2,
-      projectId: 1,
+      assignment_id: 1,
       candidate_name: "Sussana Vara",
       candidate_job_title: "Partner",
       candidate_image_url:
@@ -126,7 +126,7 @@ test("Correctly edits one modified field from a particular Candidate", () => {
       relevance: 3,
       contact_status: 4,
       contact_date: "2024-04-02 21:00:30.610279",
-      projectId: 1,
+      assignment_id: 1,
       date_created: "2024-01-31 21:00:30.610279",
       linked_in_url: "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
     },
@@ -144,7 +144,7 @@ test("Correctly edits one modified field from a particular Candidate", () => {
       relevance: 4,
       contact_status: 1,
       contact_date: "2024-04-02 21:00:30.610279",
-      projectId: 1,
+      assignment_id: 1,
       date_created: "2024-01-31 21:00:30.610279",
       linked_in_url: "https://www.linkedin.com/in/susanna-vaara-0b33b03a/",
     },
@@ -165,7 +165,7 @@ test("Correctly edits one modified field from a particular Candidate", () => {
       relevance: 3,
       contact_status: 4,
       contact_date: "2024-04-02 21:00:30.610279",
-      projectId: 1,
+      assignment_id: 1,
       date_created: "2024-01-31 21:00:30.610279",
       linked_in_url: "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
     },
@@ -183,7 +183,7 @@ test("Correctly edits one modified field from a particular Candidate", () => {
       relevance: 4,
       contact_status: 1,
       contact_date: "2024-04-02 21:00:30.610279",
-      projectId: 1,
+      assignment_id: 1,
       date_created: "2024-01-31 21:00:30.610279",
       linked_in_url: "https://www.linkedin.com/in/susanna-vaara-0b33b03a/",
     },
@@ -221,7 +221,7 @@ test("Correctly edits multiple modified fields from a particular Candidate", () 
       relevance: 3,
       contact_status: 4,
       contact_date: "2024-04-02 21:00:30.610279",
-      projectId: 1,
+      assignment_id: 1,
       date_created: "2024-01-31 21:00:30.610279",
       linked_in_url: "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
     },
@@ -239,7 +239,7 @@ test("Correctly edits multiple modified fields from a particular Candidate", () 
       relevance: 4,
       contact_status: 1,
       contact_date: "2024-04-02 21:00:30.610279",
-      projectId: 1,
+      assignment_id: 1,
       date_created: "2024-01-31 21:00:30.610279",
       linked_in_url: "https://www.linkedin.com/in/susanna-vaara-0b33b03a/",
     },
@@ -260,7 +260,7 @@ test("Correctly edits multiple modified fields from a particular Candidate", () 
       relevance: 3,
       contact_status: 4,
       contact_date: "2024-04-02 21:00:30.610279",
-      projectId: 1,
+      assignment_id: 1,
       date_created: "2024-01-31 21:00:30.610279",
       linked_in_url: "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
     },
@@ -278,7 +278,7 @@ test("Correctly edits multiple modified fields from a particular Candidate", () 
       relevance: 4,
       contact_status: 1,
       contact_date: "2024-04-02 21:00:30.610279",
-      projectId: 1,
+      assignment_id: 1,
       date_created: "2024-01-31 21:00:30.610279",
       linked_in_url: "https://www.linkedin.com/in/susanna-vaara-0b33b03a/",
     },

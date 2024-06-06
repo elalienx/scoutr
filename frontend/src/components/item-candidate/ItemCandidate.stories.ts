@@ -9,9 +9,6 @@ const meta = {
   title: "Components/Item Candidate",
   component: ItemCandidate,
   parameters: { layout: "centered" },
-  argTypes: {
-    candidate_image_url: { control: { type: "file", accept: ".jpg, .png" } },
-  },
   tags: ["autodocs"],
 } satisfies Meta<typeof ItemCandidate>;
 
@@ -21,11 +18,21 @@ type Story = StoryObj<typeof meta>;
 // Stories
 export const Default: Story = {
   args: {
-    item: {
+    candidate: {
       candidate_image_url: ImageURLs.candidate_eduardo,
       candidate_name: "Eduardo Alvarez",
       candidate_job_title: "Frontend Developer",
       linked_in_url: "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
+      id: 0,
+      assignment_id: 0,
+      date_created: "",
+      company_name: "",
+      company_duration_in_months: 0,
+      company_image_url: "",
+      notes: "",
+      relevance: 0,
+      contact_status: 0,
+      contact_date: "",
     },
     onClick: () => {},
   },
@@ -33,11 +40,21 @@ export const Default: Story = {
 
 export const Empty: Story = {
   args: {
-    item: {
+    candidate: {
       candidate_image_url: "",
       candidate_name: "Jorge Dominguez Perdomo",
       candidate_job_title: "UX Generalist",
       linked_in_url: "https://www.linkedin.com/in/jorgedp/",
+      id: 0,
+      assignment_id: 0,
+      date_created: "",
+      company_name: "",
+      company_duration_in_months: 0,
+      company_image_url: "",
+      notes: "",
+      relevance: 0,
+      contact_status: 0,
+      contact_date: "",
     },
     onClick: () => {},
   },
