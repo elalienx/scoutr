@@ -13,8 +13,8 @@ export default function Hero() {
         </h1>
         <span className="subtitle">Your LinkedIn Headhunter Companion</span>
         <p>
-          Scoutr revolutionizes your LinkedIn scouting experience, providing
-          concise summaries of professionals presented in a easy table format.
+          Scoutr revolutionizes your LinkedIn scouting experience, providing concise summaries of
+          professionals presented in a easy table format.
         </p>
       </div>
       <div className="media">
