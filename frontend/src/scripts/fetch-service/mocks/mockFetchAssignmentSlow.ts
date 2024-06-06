@@ -12,6 +12,7 @@ async function mockFetchAssignmentSlow(uri: string, init: FetchOptions): Promise
   const errorMessage = `${errorProblem} ${errorSolution}`;
 
   // Safeguards
+  if (uri === "") throw new Error("Empty uri");
   if (!body.hasOwnProperty("assignment_name")) throw new Error(errorMessage);
   if (!body.hasOwnProperty("company_name")) throw new Error(errorMessage);
 

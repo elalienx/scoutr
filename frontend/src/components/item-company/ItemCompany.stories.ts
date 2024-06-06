@@ -9,9 +9,6 @@ const meta = {
   title: "Components/Item Company",
   component: ItemCompany,
   parameters: { layout: "centered" },
-  argTypes: {
-    company_image_url: { control: { type: "file", accept: ".jpg, .png" } },
-  },
   tags: ["autodocs"],
 } satisfies Meta<typeof ItemCompany>;
 
@@ -21,10 +18,21 @@ type Story = StoryObj<typeof meta>;
 // Stories
 export const Default: Story = {
   args: {
-    item: {
+    candidate: {
       company_image_url: ImageURLs.company_novare,
       company_name: "Novare Potential",
       company_duration_in_months: 72,
+      id: 0,
+      assignment_id: 0,
+      date_created: "",
+      linked_in_url: "",
+      candidate_name: "",
+      candidate_job_title: "",
+      candidate_image_url: "",
+      notes: "",
+      relevance: 0,
+      contact_status: 0,
+      contact_date: "",
     },
     onClick: () => alert("Clicked"),
   },
@@ -32,10 +40,21 @@ export const Default: Story = {
 
 export const ShortJobDuration: Story = {
   args: {
-    item: {
+    candidate: {
       company_image_url: ImageURLs.company_novare,
       company_name: "Novare Potential",
       company_duration_in_months: 3,
+      id: 0,
+      assignment_id: 0,
+      date_created: "",
+      linked_in_url: "",
+      candidate_name: "",
+      candidate_job_title: "",
+      candidate_image_url: "",
+      notes: "",
+      relevance: 0,
+      contact_status: 0,
+      contact_date: "",
     },
     onClick: () => alert("Clicked"),
   },
@@ -43,10 +62,21 @@ export const ShortJobDuration: Story = {
 
 export const Empty: Story = {
   args: {
-    item: {
+    candidate: {
       company_image_url: "",
       company_name: "Novare Potential",
       company_duration_in_months: 12,
+      id: 0,
+      assignment_id: 0,
+      date_created: "",
+      linked_in_url: "",
+      candidate_name: "",
+      candidate_job_title: "",
+      candidate_image_url: "",
+      notes: "",
+      relevance: 0,
+      contact_status: 0,
+      contact_date: "",
     },
     onClick: () => alert("Clicked"),
   },

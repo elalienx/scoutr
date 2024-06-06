@@ -24,7 +24,7 @@ export const Loading: Story = {
 
 export const Success: Story = {
   args: {
-    status: "ready",
+    status: "complete",
     message: "New assignment created",
   },
 };
@@ -38,7 +38,7 @@ export const Error: Story = {
 
 export const Hidden: Story = {
   args: {
-    status: "form-stand-by",
+    status: "stand-by",
     message: "",
   },
 };

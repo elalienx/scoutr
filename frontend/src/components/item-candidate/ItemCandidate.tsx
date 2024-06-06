@@ -1,19 +1,19 @@
 // Project files
 import ImageThumbnail from "components/image-thumbnail/ImageThumbnail";
-import type Candidate from "types/Candidate";
 import "./item-candidate.css";
+import Candidate from "types/Candidate";
 
 interface Props {
   /** Candidare data focused on personal information */
-  item: Candidate;
+  candidate: Candidate;
 
   /** A click event to edit missing information. */
   onClick: Function;
 }
 
 /** Shows the personal details of a candidate. */
-export default function ItemCandidate({ item, onClick }: Props) {
-  const { candidate_image_url, candidate_name, candidate_job_title, linked_in_url } = item;
+export default function ItemCandidate({ candidate, onClick }: Props) {
+  const { candidate_image_url, candidate_name, candidate_job_title, linked_in_url } = candidate;
 
   return (
     <div className="item-candidate">

@@ -72,12 +72,12 @@ export default function RowCandidate({ candidate, index, dispatch }: Props) {
 
       {/* 👨🏻 Canddiate */}
       <td className="candidate column-big hover" data-label="Candidate">
-        <ItemCandidate item={candidate} onClick={onClick} />
+        <ItemCandidate candidate={candidate} onClick={onClick} />
       </td>
 
       {/* 🏢 Company */}
       <td className="company column-big hover" data-label="Company">
-        <ItemCompany item={candidate} onClick={onClick} />
+        <ItemCompany candidate={candidate} onClick={onClick} />
       </td>
 
       {/* 📝 Notes */}

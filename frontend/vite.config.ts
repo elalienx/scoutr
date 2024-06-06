@@ -9,7 +9,7 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
     css: true,
-    setupFiles: ["./vite-setup.ts"],
+    setupFiles: ["./vitest-setup.ts"],
     includeSource: ["src/**/*.{js,ts}"],
     exclude: [...configDefaults.exclude],
   },

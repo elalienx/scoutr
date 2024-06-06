@@ -21,6 +21,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "vite-setup.ts", ".storybook/manager.ts"],
+  "include": ["src", "vitest-setup.ts", ".storybook/manager.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
