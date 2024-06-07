@@ -28,10 +28,6 @@ services:
       context: ./nginx
     ports:
       - "80:80"
-    environment:
-      - VIRTUAL_HOST=meet-scoutr.com,www.meet-scoutr.com
-      - LETSENCRYPT_HOST=meet-scoutr.com,www.meet-scoutr.com
-      - LETSENCRYPT_EMAIL=your-eduardo.alvarez@novare.se
 
   backend:
     build:
