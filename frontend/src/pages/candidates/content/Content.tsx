@@ -14,7 +14,7 @@ interface Props {
   /** The id of the current assigment. */
   id: number;
 
-  /** The candidates to dispaly on the table. */
+  /** The candidate state to dispaly and add to the table. */
   state: [Candidate[], Dispatch<CandidateActions>];
 }
 
@@ -24,11 +24,8 @@ export default function Content({ id, state }: Props) {
   // Global state
   const { showDialog } = useDialog();
 
-  // Properties
-  const fetchScript = EventSource;
-
   // Components
-  const Form = <FormParseLinks id={id} FetchClass={fetchScript} dispatch={dispatch} />;
+  const Form = <FormParseLinks id={id} FetchClass={EventSource} dispatch={dispatch} />;
 
   // Safeguard
   if (!candidates.length) return <StateEmpty component={Form} />;
