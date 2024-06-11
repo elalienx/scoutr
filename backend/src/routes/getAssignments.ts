@@ -2,25 +2,19 @@
 import type { Response } from "express";
 import type { Client } from "pg";
 
-// Project files
-import type ResultsAPI from "../types/ResultsAPI";
-
 export default async function getAssignments(response: Response, database: Client): Promise<void> {
   const query = "SELECT * FROM assignments ORDER BY id";
-  const messageGood = "Assignments received";
-  const messageEmpty = "Warning: No assignments available";
-  const messageBad = "Error: Cannot get data";
-  const result: ResultsAPI = { data: [], message: messageBad, status: 500 };
+  const messageBad = "Error: Database can't get data";
+  const statusGood = 200;
+  const statusBad = 500;
 
   try {
     const { rows } = await database.query(query);
+    const data = rows;
 
-    result.data = rows;
-    result.message = rows.length > 0 ? messageGood : messageEmpty;
-    result.status = 200;
+    response.status(statusGood).send(data);
   } catch (error) {
     console.error(error);
-  } finally {
-    response.status(result.status).send(result);
+    response.status(statusBad).send(messageBad);
   }
 }

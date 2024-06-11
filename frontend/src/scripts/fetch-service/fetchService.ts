@@ -1,5 +1,6 @@
 // Project files
 import type ResultsAPI from "types/ResultAPI";
+import type StatusPage from "types/StatusPage";
 
 async function fetchService(uri: string, options: object): Promise<ResultsAPI> {
   let result: ResultsAPI = {
@@ -10,7 +11,9 @@ async function fetchService(uri: string, options: object): Promise<ResultsAPI> {
 
   try {
     const request = await fetch(uri, options);
-    const { data, status, message } = await request.json();
+    const data = await request.json();
+    const status: StatusPage = "ready";
+    const message = "All good";
 
     result = { data, status, message };
   } catch (error) {
