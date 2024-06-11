@@ -1,5 +1,5 @@
 // Project files
-import StatusPage from "./StatusPage";
+import type StatusPage from "./StatusPage";
 
 export default interface ResultsAPI {
   /** Data fetched from the server can be anything from an array, object to a string. */
