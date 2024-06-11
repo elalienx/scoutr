@@ -27,7 +27,7 @@
   --color-blue-dark: #1a4065; /* for button:hover */
 
   /* # Fonts */
-  --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family: "Helvetica Neue", Helvetica, Segoe UI, Arial, ui-sans-serif, sans-serif;
   --font-size-normal: 16px;
   --font-size-small: 12.5px;
   --font-weight-bold: 500;
