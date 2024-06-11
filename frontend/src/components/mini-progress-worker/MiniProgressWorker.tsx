@@ -14,7 +14,7 @@ export default function MiniProgressWorker({ reports }: Props) {
   // Local state
   const normal: number = reports.filter((item) => item.severity <= MISSING_SOME_FIELDS).length;
   const hidden: number = reports.filter((item) => item.severity === PRIVATE_PROFILE).length;
-  const ban: number = reports.filter((item) => item.severity === TEMPORAL_BAN).length;
+  const banned: number = reports.filter((item) => item.severity === TEMPORAL_BAN).length;
   const other: number = reports.filter((item) => item.severity === MISSING_ALL_FIELDS).length;
 
   return (
@@ -23,7 +23,7 @@ export default function MiniProgressWorker({ reports }: Props) {
       <div className="statuses">
         {normal > 0 && <FormStatus status={"added"} message={`Candidates added × ${normal}`} />}
         {hidden > 0 && <FormStatus status={"private"} message={`Private profiles × ${hidden}`} />}
-        {ban > 0 && <FormStatus status={"ban"} message={`Temporally unavailable × ${ban}`} />}
+        {banned > 0 && <FormStatus status={"ban"} message={`Temporally unavailable × ${banned}`} />}
         {other > 0 && <FormStatus status={"error"} message={`Failed to add × ${other}`} />}
       </div>
     </div>
