@@ -1,20 +1,20 @@
 // Node modules
-import { webkit } from "playwright-extra";
+import { chromium } from "playwright-extra";
 import StealthPlugin from "puppeteer-extra-plugin-stealth";
 
 export default async function extractPage(url: string): Promise<string> {
+  let result: string = "";
+
   // activate stealth
-  webkit.use(StealthPlugin());
+  chromium.use(StealthPlugin());
 
-  webkit.launch({ headless: true }).then(async (browser) => {
-    const page = await browser.newPage();
+  const browser = await chromium.launch({ headless: true });
+  const page = await browser.newPage();
 
-    console.log("Testing the stealth plugin..");
-    await page.goto(url, { waitUntil: "networkidle" });
-    await page.screenshot({ path: "stealth.png", fullPage: true });
-    console.log("All done, check the screenshot. ✨");
+  await page.goto(url, { waitUntil: "networkidle" });
 
-    await browser.close();
-    return;
-  });
+  result = await page.content();
+
+  await browser.close();
+  return result;
 }
