@@ -46,7 +46,11 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
     try {
       const formData = gatherFormData(event.currentTarget);
       const parsedLinks = textAreaToArray(formData.unparsed_links);
-      const query = stringArrayToURL(parsedLinks);
+      console.log("frontend parsedLinks", parsedLinks);
+      const encodedLinks = parsedLinks.map((item) => encodeURI(item));
+      console.log("frontend encodedLinks", encodedLinks);
+
+      const query = stringArrayToURL(encodedLinks);
       const uriSSE = `/sse/parse-links/${id}?${query}`;
       const eventSource = new FetchClass(uriSSE);
 

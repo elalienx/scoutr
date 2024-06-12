@@ -4,7 +4,7 @@ import type { Client } from "pg";
 
 // Project files
 import etlProcess from "../extract-profile/etlProcess";
-import decodeLinks from "../scripts/decodeLinks";
+import unZipLinks from "../scripts/unZipLinks";
 
 export default async function parseLinks(request: Request, response: Response, database: Client) {
   // Headers
@@ -12,7 +12,10 @@ export default async function parseLinks(request: Request, response: Response, d
 
   // Properties
   const assignment_id = Number(request.params.assignment_id);
-  const links = decodeLinks(request.query.links as string[]);
+  const unZippedLinks = unZipLinks(request.query.links as string[]);
+  console.log("backend unzippedLinks", unZippedLinks);
+  const links = unZippedLinks.map((item) => decodeURI(item));
+  console.log("backend decodedLinks", links);
 
   try {
     for (const link of links) {

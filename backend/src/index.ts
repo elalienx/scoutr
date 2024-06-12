@@ -17,7 +17,7 @@ async function initializeServer(port: number) {
 
   // Start server
   app.use(express.json());
-  app.listen(port, () => console.info(`Scoutr backend server v3 ready on port ${port}`));
+  app.listen(port, () => console.info(`Scoutr backend ready on port ${port}`));
 
   // API routes
   app.get("/api/assignments", (request, response) => getAssignments(response, client));
