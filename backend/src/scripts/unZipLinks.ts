@@ -1,4 +1,4 @@
-export default function decodeLinks(query: string | string[]): string[] {
+export default function unZipLinks(query: string | string[]): string[] {
   // Safeguard
   if (query === "") throw new Error("The query received was empty");
 

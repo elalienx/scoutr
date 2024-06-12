@@ -16,7 +16,6 @@ export default function App() {
 
   return (
     <div id="app">
-      <p>🥷</p>
       <Routes>
         <Route path="/" element={assigments} />
         <Route path="/candidates/:assignment_id" element={candidates} />
