@@ -9,7 +9,7 @@ import Page404 from "pages/page-404/Page404";
 import useFetch from "scripts/fetch-hook/useFetch";
 
 export default function App() {
-  // Pages (with fetch hook as prop for easy testing)
+  // Pages
   const assigments = <Assignments fetchHook={useFetch} />;
   const candidates = <Candidates fetchHook={useFetch} />;
   const pageNotFound = <Page404 />;

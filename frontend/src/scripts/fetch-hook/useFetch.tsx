@@ -1,8 +1,8 @@
 // Node modules
 import { useState, useEffect } from "react";
-import type ResultsAPI from "types/ResultAPI";
 
 // Project files
+import type ResultsAPI from "types/ResultAPI";
 import type StatusPage from "types/StatusPage";
 
 export default function useFetch(uri: string): ResultsAPI {
@@ -23,8 +23,9 @@ export default function useFetch(uri: string): ResultsAPI {
   async function fetchData() {
     try {
       const response = await fetch(uri);
-      const { data, message } = await response.json();
+      const data = await response.json();
       const status: StatusPage = "ready";
+      const message = "All good";
 
       setResult({ data, status, message });
     } catch (error: unknown) {
