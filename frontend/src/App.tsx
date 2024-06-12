@@ -16,6 +16,7 @@ export default function App() {
 
   return (
     <div id="app">
+      <h1>Stealth 🥷</h1>
       <Routes>
         <Route path="/" element={assigments} />
         <Route path="/candidates/:assignment_id" element={candidates} />
