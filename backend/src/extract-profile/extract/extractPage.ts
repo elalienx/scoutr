@@ -11,7 +11,7 @@ export default async function extractPage(url: string): Promise<string> {
   let result = "";
 
   try {
-    await page.goto(url, { waitUntil: "networkidle" });
+    await page.goto(url, { waitUntil: "domcontentloaded" });
 
     result = await page.content();
   } catch (error) {
