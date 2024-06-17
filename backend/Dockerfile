@@ -1,4 +1,4 @@
-FROM node:20-bookworm
+FROM ghcr.io/puppeteer/puppeteer:22.11.1
 WORKDIR /app
 COPY ./package.json ./
 RUN npm install
