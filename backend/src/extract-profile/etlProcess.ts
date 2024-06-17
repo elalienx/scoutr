@@ -7,10 +7,11 @@ import reportQuery from "../queries/insertErrorLog";
 import extractPage from "./extract/extractPage";
 import pageToProfile from "./transform/pageToProfile";
 import generateReport from "./transform/generateReport";
+import extractPagePuppetter from "./extract/extractPagePuppetter";
 
 export default async function etlProcess(url: string, assignment_id: number, database: Client) {
   // Extract
-  const page = await extractPage(url);
+  const page = await extractPagePuppetter(url);
 
   // Transform
   const profile = pageToProfile(page);
