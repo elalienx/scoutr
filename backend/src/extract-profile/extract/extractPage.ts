@@ -6,12 +6,13 @@ export default async function extractPage(url: string): Promise<string> {
   // activate stealth
   navigator.use(StealthPlugin());
 
-  const browser = await navigator.launch({ headless: true });
+  const browser = await navigator.launch();
   const page = await browser.newPage();
   let result = "";
 
   try {
-    await page.goto(url, { waitUntil: "domcontentloaded" });
+    await page.goto(url);
+    await page.waitForSelector("body");
 
     result = await page.content();
   } catch (error) {
