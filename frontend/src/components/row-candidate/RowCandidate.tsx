@@ -58,6 +58,7 @@ export default function RowCandidate({ candidate, index, dispatch }: Props) {
       />,
     );
   }
+
   return (
     <tr className="row-candidate">
       {/* 📱 Mobile only header */}
@@ -104,7 +105,6 @@ export default function RowCandidate({ candidate, index, dispatch }: Props) {
         onClick={() => onClick("contact_status")}
         className="contact column-medium hover editable"
         data-label="Contact"
-        title=""
       >
         {contact_status > 0 && <ItemBadge {...parsedData.contact} />}
       </td>
