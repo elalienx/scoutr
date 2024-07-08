@@ -1,0 +1,159 @@
+{
+  "cookies": [
+    {
+      "name": "li_alerts",
+      "value": "e30=",
+      "domain": "www.linkedin.com",
+      "path": "/",
+      "expires": 1751913751,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "li_rm",
+      "value": "AQF7sNqWg6T73AAAAZCOgTTpKaNYtngD5OfqhUEQdS4OLqdkNJbklwyIDvrLLfzzL31ETghlcZtGBMbksvCCEvjSp1LibNinZ5NtIyw1pG-5t1PbuqTC3n3r",
+      "domain": ".www.linkedin.com",
+      "path": "/",
+      "expires": 1751913753,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "JSESSIONID",
+      "value": "\"ajax:4639099605764486432\"",
+      "domain": ".www.linkedin.com",
+      "path": "/",
+      "expires": 1728153753,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "bscookie",
+      "value": "\"v=1&202407071842303e804c5a-be96-4bc4-83a4-0cf35d3d2d2fAQHJZ4-lKmJe0Juc4NbfZ_DXzYJXvFCf\"",
+      "domain": ".www.linkedin.com",
+      "path": "/",
+      "expires": 1751913753,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "li_at",
+      "value": "AQEDATxr9WMFnbRoAAABkI6BPbwAAAGQso3BvFYAs_M83bAU2lg5Y0hMqpqHOV5I7rAMo3ztwhH0HPwMVH0nxecaBX94C2xgfu47Uq8Akh07V30maFKKAx0RKQUhGUCafSO7wHO7WC_G4ePhs4X2zkrD",
+      "domain": ".www.linkedin.com",
+      "path": "/",
+      "expires": 1751913753,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "timezone",
+      "value": "Europe/Stockholm",
+      "domain": ".www.linkedin.com",
+      "path": "/",
+      "expires": 1721587355,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "li_theme",
+      "value": "light",
+      "domain": ".www.linkedin.com",
+      "path": "/",
+      "expires": 1735933355,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "li_theme_set",
+      "value": "app",
+      "domain": ".www.linkedin.com",
+      "path": "/",
+      "expires": 1735933355,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "lang",
+      "value": "v=2&lang=en-us",
+      "domain": ".linkedin.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "bcookie",
+      "value": "\"v=2&b3152aa5-877c-45d1-8816-5a4c5a002688\"",
+      "domain": ".linkedin.com",
+      "path": "/",
+      "expires": 1751913753,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "li_gc",
+      "value": "MTswOzE3MjAzNzc3NTA7MjswMjGSKV4vUrx92706rNsKHtSsoyjDGkI1SAbsquerLe9EIA==",
+      "domain": ".linkedin.com",
+      "path": "/",
+      "expires": 1735929750,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "lidc",
+      "value": "\"b=VB31:s=V:r=V:a=V:p=V:g=4300:u=35:x=1:i=1720377753:t=1720446970:v=2:sig=AQGIy6HwGPgyu5Q7JeolOVVrL527sMLU\"",
+      "domain": ".linkedin.com",
+      "path": "/",
+      "expires": 1720446970,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "liap",
+      "value": "true",
+      "domain": ".linkedin.com",
+      "path": "/",
+      "expires": 1728153753,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "li_mc",
+      "value": "MTsyMTsxNzIwMzc3NzUzOzI7MDIxd7MFIcAP+p4Fz265wdH5WU2qfqnwwQ5fKnFoX43wZs0=",
+      "domain": ".linkedin.com",
+      "path": "/",
+      "expires": 1735929753,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://www.linkedin.com",
+      "localStorage": [
+        {
+          "name": "test",
+          "value": "1"
+        },
+        {
+          "name": "voyager-web:new-tab-beacon",
+          "value": "[]"
+        }
+      ]
+    }
+  ]
+}
