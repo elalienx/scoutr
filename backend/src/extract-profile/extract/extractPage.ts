@@ -1,5 +1,5 @@
 // Node modules
-import { webkit as navigator } from "playwright";
+import { firefox as navigator } from "playwright";
 
 export default async function extractPage(url: string): Promise<string> {
   const browser = await navigator.launch();
