@@ -14,6 +14,7 @@ export default async function extractPage(url: string): Promise<string> {
 
     result = await page.content();
   } catch (error) {
+    await page.screenshot({ path: "screenshots/error.png", fullPage: true });
     console.error(`Playwright: Cant' navigate to URL "${url}"`);
   } finally {
     await browser.close();
