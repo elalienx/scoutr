@@ -16,10 +16,22 @@ test("Returns the correct number of months from LinkedIn job duration with years
   expect(test).toBe(result);
 });
 
+test("Returns the correct number of months from LinkedIn job duration with only years", () => {
+  // Arrange
+  const text = "2 years";
+  const result = 24;
+
+  // Act
+  const test = getDurationInMonths(text);
+
+  // Assert
+  expect(test).toBe(result);
+});
+
 test("Returns the correct number of months from LinkedIn job duration with only months", () => {
   // Arrange
-  const text = "3 months";
-  const result = 3;
+  const text = "9 months";
+  const result = 9;
 
   // Act
   const test = getDurationInMonths(text);
