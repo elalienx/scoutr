@@ -6,7 +6,7 @@ import getDurationInMonths from "./getDurationInMonths";
 
 test("Returns the correct number of months from LinkedIn job duration with years and months", () => {
   // Arrange
-  const text = "2 years 9 months";
+  const text = "2 yrs 9 mos";
   const result = 33; // 2 years are 24 months + 9 months = 33
 
   // Act
@@ -18,7 +18,7 @@ test("Returns the correct number of months from LinkedIn job duration with years
 
 test("Returns the correct number of months from LinkedIn job duration with only years", () => {
   // Arrange
-  const text = "2 years";
+  const text = "2 yrs";
   const result = 24;
 
   // Act
@@ -28,10 +28,22 @@ test("Returns the correct number of months from LinkedIn job duration with only 
   expect(test).toBe(result);
 });
 
-test("Returns the correct number of months from LinkedIn job duration with only months", () => {
+test("Returns the correct number of months from LinkedIn job duration with a single year", () => {
   // Arrange
-  const text = "9 months";
-  const result = 9;
+  const text = "1 yr";
+  const result = 12;
+
+  // Act
+  const test = getDurationInMonths(text);
+
+  // Assert
+  expect(test).toBe(result);
+});
+
+test("Returns the correct number of months from LinkedIn job durationwith a single month", () => {
+  // Arrange
+  const text = "1 mo";
+  const result = 1;
 
   // Act
   const test = getDurationInMonths(text);
