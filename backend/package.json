@@ -4,6 +4,7 @@
   "description": "Your LinkedIn Headhunter Companion",
   "main": "src/index.ts",
   "scripts": {
+    "start": "ts-node src/index.ts",
     "dev": "nodemon",
     "test": "vitest --coverage",
     "test_once": "vitest --watch=false"
