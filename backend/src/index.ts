@@ -17,8 +17,8 @@ async function initializeServer(port: number) {
   const client = await postgresClient(databaseCredentials);
   const app = express();
 
-  // Obtain LinkedIn auth
-  getAuth(authCredentials);
+  // Generate LinkedIn auth
+  await getAuth(authCredentials);
 
   // Start server
   app.use(express.json());
