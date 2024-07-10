@@ -2,18 +2,23 @@
 import express from "express";
 
 // Project files
-import credentials from "./database/credentials";
+import authCredentials from "./auth/credentials";
+import databaseCredentials from "./database/credentials";
 import postgresClient from "./database/postgresClient";
 import getAssignments from "./routes/getAssignments";
 import getCandidates from "./routes/getCandidates";
 import parseLinks from "./routes/parseLinks";
 import postAssignment from "./routes/postAssignment";
 import patchCandidate from "./routes/patchCandidate";
+import getAuth from "./auth/getAuth";
 
 async function initializeServer(port: number) {
   // Properties
-  const client = await postgresClient(credentials);
+  const client = await postgresClient(databaseCredentials);
   const app = express();
+
+  // Obtain LinkedIn auth
+  getAuth(authCredentials);
 
   // Start server
   app.use(express.json());
