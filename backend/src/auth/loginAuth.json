@@ -1,0 +1,95 @@
+{
+  "cookies": [
+    {
+      "name": "li_rm",
+      "value": "AQFGTZNd8zXdTQAAAZCev-yoxCqvfgzoIU1ZJfW4GP5q80B3TE4O8lQVuHrHwOlkfsElVZe4OupNwAoDfF2kEoHo4Yt35ynFX8ho8mq1ptKlJp3I3kSwaXUS",
+      "domain": ".www.linkedin.com",
+      "path": "/",
+      "expires": 1752186296,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "lang",
+      "value": "v=2&lang=en-us",
+      "domain": ".linkedin.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "JSESSIONID",
+      "value": "\"ajax:0857836145844620332\"",
+      "domain": ".www.linkedin.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "li_gc",
+      "value": "MTswOzE3MjA2NTAyOTY7MjswMjGRjlmo65F5MCF37XPj8tSwK+TDGYhpRhSqRiQuFbSxxw==",
+      "domain": ".linkedin.com",
+      "path": "/",
+      "expires": 1736202296,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "lidc",
+      "value": "\"b=VGST00:s=V:r=V:a=V:p=V:g=3396:u=1:x=1:i=1720650296:t=1720736696:v=2:sig=AQEFmrslLszg-_rdlxGvjv8ksIw7Q4dP\"",
+      "domain": ".linkedin.com",
+      "path": "/",
+      "expires": 1720736696,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "li_alerts",
+      "value": "e30=",
+      "domain": "www.linkedin.com",
+      "path": "/",
+      "expires": 1752186296,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "chp_token",
+      "value": "AgEpTFH9BgGd4wAAAZCev_Vrtxovg6mXPOUabmzTb61wcFn8gtFDxJWrrPF0wRzgKC80g9t7Z7AnxgnRshh6tvC2B7aS0rOY0VarAQ",
+      "domain": ".www.linkedin.com",
+      "path": "/",
+      "expires": 1720736698,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "bcookie",
+      "value": "\"v=2&dd079b74-9a2d-4a77-831a-9124c1edd9c0\"",
+      "domain": ".linkedin.com",
+      "path": "/",
+      "expires": 1752186298,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "bscookie",
+      "value": "\"v=1&20240710222456e71551d8-d14d-47e5-887d-c3c00fdfff3fAQHUi2mRm-sI4BxziPtek2AQEX5c0uy-\"",
+      "domain": ".www.linkedin.com",
+      "path": "/",
+      "expires": 1752186298,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    }
+  ],
+  "origins": []
+}
