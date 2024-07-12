@@ -1,18 +1,13 @@
 // Node modules
 import { firefox as navigator } from "playwright";
 
-// Project files
-import type AuthCredentials from "../types/AuthCredentials";
-
-export default async function getAuth(credentials: AuthCredentials) {
-  const { url, email, password } = credentials;
-
+export default async function getAuth(email: string, password: string) {
   const browser = await navigator.launch({ headless: true });
   const page = await browser.newPage();
 
   try {
     // load page
-    await page.goto(url);
+    await page.goto("https://www.linkedin.com/login/");
     await page.waitForSelector("body");
     await page.screenshot({ path: "screenshots/login-1.png" });
 
