@@ -4,6 +4,18 @@ import { expect, test } from "vitest";
 // Project files
 import verifyProfileImage from "./verifyProfileImage";
 
+test("Does not crash if recevies an undefined string", () => {
+  // Arrange
+  const value: string = undefined;
+  const result: string = "";
+
+  // Act
+  const test = verifyProfileImage(value);
+
+  // Assert
+  expect(test).toBe(result);
+});
+
 test("Does not crash if receives an empty string", () => {
   // Arrange
   const value = "";

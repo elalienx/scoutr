@@ -6,9 +6,9 @@ import generateReport from "./generateReport";
 import LinkedInProfile from "../../types/LinkedInProfile";
 import ReportLog from "../../types/ReportLog";
 import ReportSeverity from "../../types/ReportSeverity";
-import { bannedPage } from "./test-data/bannedPage";
-import { privateProfile } from "./test-data/profilePrivate";
-import { example } from "../extract/test-data/example-dot-com-website";
+import { bannedPage } from "../_test-websites/bannedPage";
+import { privateProfile } from "../_test-websites/profilePrivate";
+import { example } from "../_test-websites/example-dot-com-website";
 
 // Returns ban report when passing a banned page
 test("Returns ban report when passing a banned page", () => {

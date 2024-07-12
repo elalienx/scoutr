@@ -11,7 +11,8 @@ import verifyProfileImage from "./helpers/verifyProfileImage";
 export default function pageToProfile(page: string): LinkedInProfile {
   // HTML pages
   const document: CheerioAPI = load(page);
-  const experience: CheerioAPI = load(document("#experience").parent().find("li").html());
+  const experienceScope: string = document("#experience").parent().find("li").html() || "";
+  const experienceDocument: CheerioAPI = load(experienceScope);
 
   // CSS Tags
   const candidateImage = ".EntityPhoto-circle-9 > img";
@@ -22,16 +23,18 @@ export default function pageToProfile(page: string): LinkedInProfile {
   // Extra transformations
   const unverifiedCandidateImage = document(candidateImage).attr("src");
   const verifiedCandidateImage = verifyProfileImage(unverifiedCandidateImage);
-  const jobDurationFullText = experience(jobDuration).text();
+  const jobDurationFullText = experienceDocument(jobDuration).text();
   const jobDurationShortText = getJobDuration(jobDurationFullText);
   const jobDurationInMonths = jobDurationToMonths(jobDurationShortText);
+  const unverifiedCompanyImage = experienceDocument("img").attr("src");
+  const verifiedCompanyImage = verifyProfileImage(unverifiedCompanyImage);
 
   return {
     candidate_name: document("h1").text(),
-    candidate_job_title: experience(jobTitle).text(),
+    candidate_job_title: experienceDocument(jobTitle).text(),
     candidate_image_url: verifiedCandidateImage,
-    company_name: experience(companyName).text().replace(" · Full-time", ""),
+    company_name: experienceDocument(companyName).text().replace(" · Full-time", ""),
     company_duration_in_months: jobDurationInMonths,
-    company_image_url: experience("img").attr("src"),
+    company_image_url: verifiedCompanyImage,
   };
 }

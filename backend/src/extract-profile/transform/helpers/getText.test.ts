@@ -4,7 +4,7 @@ import { load as CheerioLoad } from "cheerio";
 
 // Project files
 import getText from "./getText";
-import { profile1 } from "../test-data/profile1";
+import { profile1 } from "../../_test-websites/profile1";
 
 test("Returns the text when a selector is found", () => {
   // Arrange
