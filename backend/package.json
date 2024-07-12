@@ -4,7 +4,6 @@
   "description": "Your LinkedIn Headhunter Companion",
   "main": "src/index.ts",
   "scripts": {
-    "generate_linkedin_auth": "ts-node src/auth/getAuth.ts",
     "start": "ts-node src/index.ts",
     "dev": "nodemon",
     "test": "vitest --coverage",

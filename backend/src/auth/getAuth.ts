@@ -3,7 +3,6 @@ import { firefox as navigator } from "playwright";
 
 // Project files
 import type AuthCredentials from "../types/AuthCredentials";
-import credentials from "./credentials";
 
 export default async function getAuth(credentials: AuthCredentials) {
   const { url, email, password } = credentials;
@@ -32,5 +31,3 @@ export default async function getAuth(credentials: AuthCredentials) {
     await browser.close();
   }
 }
-
-getAuth(credentials);
