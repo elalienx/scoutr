@@ -11,7 +11,7 @@ export default async function linkedInAuth(request: Request, response: Response)
   try {
     await getAuth(email, password);
 
-    response.status(statusGood).send("All good");
+    response.status(statusGood).send(`All good with email: ${email} and password: ${password}`);
   } catch (error) {
     console.error(error);
     response.status(statusGood).send(messageBad);
