@@ -4,7 +4,7 @@ import type { CheerioAPI } from "cheerio";
 
 // Project files
 import type LinkedInProfile from "../../types/LinkedInProfile";
-import getDurationInMonths from "./helpers/getDurationInMonths";
+import jobDurationToMonths from "./helpers/jobDurationToMonths";
 import getJobDuration from "./helpers/getJobDuration";
 import verifyProfileImage from "./helpers/verifyProfileImage";
 
@@ -24,7 +24,7 @@ export default function pageToProfile(page: string): LinkedInProfile {
   const verifiedCandidateImage = verifyProfileImage(unverifiedCandidateImage);
   const jobDurationFullText = experience(jobDuration).text();
   const jobDurationShortText = getJobDuration(jobDurationFullText);
-  const jobDurationInMonths = getDurationInMonths(jobDurationShortText);
+  const jobDurationInMonths = jobDurationToMonths(jobDurationShortText);
 
   return {
     candidate_name: document("h1").text(),

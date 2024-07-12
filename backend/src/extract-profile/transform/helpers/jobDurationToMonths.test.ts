@@ -2,7 +2,7 @@
 import { expect, test } from "vitest";
 
 // Project files
-import getDurationInMonths from "./getDurationInMonths";
+import jobDurationToMonths from "./jobDurationToMonths";
 
 test("Returns the correct number of months from LinkedIn job duration with years and months", () => {
   // Arrange
@@ -10,7 +10,7 @@ test("Returns the correct number of months from LinkedIn job duration with years
   const result = 33; // 2 years are 24 months + 9 months = 33
 
   // Act
-  const test = getDurationInMonths(text);
+  const test = jobDurationToMonths(text);
 
   // Assert
   expect(test).toBe(result);
@@ -22,7 +22,7 @@ test("Returns the correct number of months from LinkedIn job duration with only 
   const result = 24;
 
   // Act
-  const test = getDurationInMonths(text);
+  const test = jobDurationToMonths(text);
 
   // Assert
   expect(test).toBe(result);
@@ -34,7 +34,7 @@ test("Returns the correct number of months from LinkedIn job duration with a sin
   const result = 12;
 
   // Act
-  const test = getDurationInMonths(text);
+  const test = jobDurationToMonths(text);
 
   // Assert
   expect(test).toBe(result);
@@ -46,7 +46,7 @@ test("Returns the correct number of months from LinkedIn job durationwith a sing
   const result = 1;
 
   // Act
-  const test = getDurationInMonths(text);
+  const test = jobDurationToMonths(text);
 
   // Assert
   expect(test).toBe(result);
@@ -58,7 +58,7 @@ test("Does not crash if passed an empty string", () => {
   const result = 0;
 
   // Act
-  const test = getDurationInMonths(text);
+  const test = jobDurationToMonths(text);
 
   // Assert
   expect(test).toBe(result);
@@ -70,7 +70,7 @@ test("Does not crash if passed an invalid string", () => {
   const result = 0;
 
   // Act
-  const test = getDurationInMonths(text);
+  const test = jobDurationToMonths(text);
 
   // Assert
   expect(test).toBe(result);
