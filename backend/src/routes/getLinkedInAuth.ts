@@ -6,6 +6,7 @@ export default async function getLinkedInAuth(request: Request, response: Respon
   const { email, password } = request.params;
   const messageBad = "Error: Can't generate auth";
   const statusGood = 200;
+  console.log("getLinkedInAuth email and password", email, password);
 
   try {
     await getAuth(email, password);

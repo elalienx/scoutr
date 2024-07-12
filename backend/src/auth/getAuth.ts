@@ -4,6 +4,7 @@ import { firefox as navigator } from "playwright";
 export default async function getAuth(email: string, password: string) {
   const browser = await navigator.launch({ headless: true });
   const page = await browser.newPage();
+  console.log("getAuth email and password", email, password);
 
   try {
     // load page
