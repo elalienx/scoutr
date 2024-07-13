@@ -5,7 +5,7 @@ import { stdin as input, stdout as output } from "node:process";
 
 async function authAdvanced(): Promise<void> {
   // Launch browser
-  const browser = await navigator.launch({ headless: false }); // Use headless: false for debugging
+  const browser = await navigator.launch();
   const context = await browser.newContext();
   const page = await context.newPage();
 
