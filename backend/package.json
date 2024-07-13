@@ -5,6 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "start": "ts-node src/index.ts",
+    "get_auth_with_code": "ts-node src/auth/getAuthWithCode.ts",
     "dev": "nodemon",
     "test": "vitest --coverage",
     "test_once": "vitest --watch=false"
