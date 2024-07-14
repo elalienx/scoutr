@@ -1,21 +1,20 @@
 // Node modules
-import { chromium as navigator } from "playwright-extra";
-import StealthPlugin from "puppeteer-extra-plugin-stealth";
+import { firefox as navigator } from "playwright";
 
 export default async function extractPage(url: string): Promise<string> {
-  // activate stealth
-  navigator.use(StealthPlugin());
-
   const browser = await navigator.launch();
-  const page = await browser.newPage();
+  const context = await browser.newContext({ storageState: "src/auth/loginAuth.json" });
+  const page = await context.newPage();
   let result = "";
 
   try {
+    // load page
     await page.goto(url);
-    await page.waitForSelector("body");
+    await page.waitForSelector(".pvs-header__title");
 
     result = await page.content();
   } catch (error) {
+    await page.screenshot({ path: "screenshots/error.png", fullPage: true });
     console.error(`Playwright: Cant' navigate to URL "${url}"`);
   } finally {
     await browser.close();

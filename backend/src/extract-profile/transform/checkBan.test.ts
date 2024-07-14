@@ -4,8 +4,8 @@ import { expect, test } from "vitest";
 // Project files
 import type ReportLog from "../../types/ReportLog";
 import ReportSeverity from "../../types/ReportSeverity";
-import { bannedPage } from "./test-data/bannedPage";
-import { profile1 } from "./test-data/profile1";
+import { bannedPage } from "../_test-websites/bannedPage";
+import { profile1 } from "../_test-websites/profile1";
 import checkBan from "./checkBan";
 
 test("Returns the correct type of report when sent a banned LinkedIn page", () => {

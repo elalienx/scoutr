@@ -5,8 +5,8 @@ import { expect, test } from "vitest";
 import checkPrivateProfile from "./checkPrivateProfile";
 import ReportLog from "../../types/ReportLog";
 import ReportSeverity from "../../types/ReportSeverity";
-import { privateProfile } from "./test-data/profilePrivate";
-import { profile1 } from "./test-data/profile1";
+import { privateProfile } from "../_test-websites/profilePrivate";
+import { profile1 } from "../_test-websites/profile1";
 
 test("Returns the correct type of report when sent a private LinkedIn page", () => {
   // Arrange
