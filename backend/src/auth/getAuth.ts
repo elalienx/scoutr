@@ -1,5 +1,5 @@
 // Node modules
-import { firefox as navigator, Page } from "playwright";
+import { firefox as navigator } from "playwright";
 
 // Project files
 import onLogin from "./helpers/onLogin";
@@ -30,7 +30,7 @@ async function getAuth(): Promise<void> {
     }
   } catch (error) {
     await page.screenshot({ path: "screenshots/auth-error.png", fullPage: true });
-    console.error("Playwright: Could not login");
+    console.error("Playwright: Could not obtain auth");
   } finally {
     await browser.close();
   }
