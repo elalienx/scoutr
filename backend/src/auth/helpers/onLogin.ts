@@ -12,7 +12,6 @@ export default async function onLogin(page: Page) {
 
   await page.fill("#username", email);
   await page.fill("#password", password);
-  await page.screenshot({ path: "screenshots/auth-1.png" });
   await page.click("button[aria-label='Sign in']");
 
   return page;

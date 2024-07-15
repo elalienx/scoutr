@@ -9,7 +9,6 @@ export default async function onVerification(page: Page) {
   const code = await prompt("Enter the security code: ");
 
   await page.fill("#input__email_verification_pin", code);
-  await page.screenshot({ path: "screenshots/auth-2.png" });
   await page.click("#email-pin-submit-button");
 
   return page;

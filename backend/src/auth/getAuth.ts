@@ -4,7 +4,7 @@ import { firefox as navigator, Page } from "playwright";
 // Project files
 import onLogin from "./helpers/onLogin";
 import onVerification from "./helpers/onVerification";
-import saveAuth from "./helpers/saveAuth";
+import saveAuth from "./helpers/storeAuth";
 
 async function getAuth(): Promise<void> {
   // Extract
@@ -32,7 +32,6 @@ async function getAuth(): Promise<void> {
     await page.screenshot({ path: "screenshots/auth-error.png", fullPage: true });
     console.error("Playwright: Could not login");
   } finally {
-    await page.screenshot({ path: "screenshots/auth-foobar.png", fullPage: true });
     await browser.close();
   }
 }
