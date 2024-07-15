@@ -4,6 +4,7 @@ import { Page } from "playwright";
 // Project files
 import prompt from "./prompt";
 
+/** Refactor, Test: Ideally for testing page should be Page | string so the test can fill he */
 export default async function onLogin(page: Page) {
   // Properties
   const email = await prompt("Email: ");
@@ -11,7 +12,7 @@ export default async function onLogin(page: Page) {
 
   await page.fill("#username", email);
   await page.fill("#password", password);
-  await page.screenshot({ path: "screenshots/login-advanced-1.png" });
+  await page.screenshot({ path: "screenshots/auth-1.png" });
   await page.click("button[aria-label='Sign in']");
 
   return page;

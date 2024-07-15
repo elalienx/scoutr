@@ -4,7 +4,6 @@
   "description": "Your LinkedIn Headhunter Companion",
   "main": "src/index.ts",
   "scripts": {
-    "start": "ts-node src/index.ts",
     "get_auth": "ts-node src/auth/getAuth.ts",
     "dev": "nodemon",
     "test": "vitest --coverage",
@@ -19,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/elalienx/scoutr/issues"
   },
-  "homepage": "https://github.com/elalienx/scoutr#readme",
+  "homepage": "https://www.meet-scoutr.com",
   "devDependencies": {
     "@types/node": "^20.11.30",
     "@types/pg": "^8.11.4",

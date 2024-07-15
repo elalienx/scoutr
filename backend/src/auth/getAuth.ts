@@ -1,23 +1,38 @@
 // Node modules
-import { firefox as navigator } from "playwright";
+import { firefox as navigator, Page } from "playwright";
 
 // Project files
 import onLogin from "./helpers/onLogin";
-import getLoginPage from "./helpers/getLoginPage";
 import onVerification from "./helpers/onVerification";
+import saveAuth from "./helpers/saveAuth";
 
 async function getAuth(): Promise<void> {
   // Extract
-  const { browser, page } = await getLoginPage(navigator);
+  const browser = await navigator.launch();
+  const context = await browser.newContext();
+  const page = await context.newPage();
+  await page.goto("https://www.linkedin.com/login");
 
-  // Transform
-  const loginPage = await onLogin(page);
-  const verificationPage = await onVerification(loginPage);
+  try {
+    await onLogin(page);
 
-  // Load (save)
-  await verificationPage.context().storageState({ path: "src/auth/loginAuth.json" });
-  await verificationPage.screenshot({ path: "screenshots/login-advanced-3.png" });
-  await browser.close();
+    const profilePage = await page.$("p.identity-headline"); // must say "Novare Student for novare's account. Tech lead for Eduardo Alvarez"
+    const verificationPage = await page.$("#input__email_verification_pin");
+
+    if (profilePage) {
+      await saveAuth(page);
+    }
+
+    if (verificationPage) {
+      await onVerification(page);
+      await saveAuth(page);
+    }
+  } catch (error) {
+    await page.screenshot({ path: "screenshots/auth-error.png", fullPage: true });
+    console.error("Playwright: Could not login");
+  } finally {
+    await browser.close();
+  }
 }
 
 getAuth();
