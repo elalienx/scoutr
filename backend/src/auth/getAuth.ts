@@ -15,6 +15,7 @@ async function getAuth(): Promise<void> {
 
   try {
     await onLogin(page);
+    await page.waitForSelector("body");
 
     const profilePage = await page.$("p.identity-headline"); // must say "Novare Student for novare's account. Tech lead for Eduardo Alvarez"
     const verificationPage = await page.$("#input__email_verification_pin");
@@ -31,6 +32,7 @@ async function getAuth(): Promise<void> {
     await page.screenshot({ path: "screenshots/auth-error.png", fullPage: true });
     console.error("Playwright: Could not login");
   } finally {
+    await page.screenshot({ path: "screenshots/auth-foobar.png", fullPage: true });
     await browser.close();
   }
 }

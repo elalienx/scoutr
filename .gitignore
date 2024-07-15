@@ -1,6 +1,7 @@
-# Backend scan debug screenshots
+# Auth
 # Becuase they are unique per device
 backend/screenshots/
+backend/src/auth/loginAuth.json
 
 # Logs
 logs
