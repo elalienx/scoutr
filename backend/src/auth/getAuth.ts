@@ -11,7 +11,7 @@ async function getAuth(url: string): Promise<void> {
   const browser = await navigator.launch();
   const context = await browser.newContext();
   const page = await context.newPage();
-  const profilePageId = "identity-headline";
+  const profilePageId = "p.identity-headline";
   const verificationPageId = "#input__email_verification_pin";
 
   try {
