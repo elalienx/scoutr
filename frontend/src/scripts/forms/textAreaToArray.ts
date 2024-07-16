@@ -2,11 +2,11 @@
  * Example:
  * `
  *    www.eduardo.com
- * www.alexia.net,
+ * www.alexia.com,
  *
- * www.cecilia.ec
+ * www.cecilia.com
  * `
- * Result: ["www.eduardo.com", "www.alexia.com", "www.cecilia.ec"]
+ * Result: ["www.eduardo.com", "www.alexia.com", "www.cecilia.com"]
  */
 export default function textAreaToArray(value: FormDataEntryValue | null) {
   // Safeguard

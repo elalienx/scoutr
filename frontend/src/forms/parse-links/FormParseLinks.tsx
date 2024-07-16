@@ -19,6 +19,7 @@ import ReportSeverity from "types/ReportSeverity";
 import fields from "./fields";
 import "styles/components/form.css";
 import "./form-parse-links.css";
+import removeQueryFromURL from "scripts/forms/removeQueryFromURL";
 
 interface Props {
   /** The ID of the assignment to parse. */
@@ -46,7 +47,8 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
     try {
       const formData = gatherFormData(event.currentTarget);
       const parsedLinks = textAreaToArray(formData.unparsed_links);
-      const encodedLinks = parsedLinks.map((item) => encodeURI(item));
+      const removedLinkedInQueries = parsedLinks.map((item) => removeQueryFromURL(item));
+      const encodedLinks = removedLinkedInQueries.map((item) => encodeURI(item));
 
       const query = stringArrayToURL(encodedLinks);
       const uriSSE = `/sse/parse-links/${id}?${query}`;
