@@ -1,8 +1,10 @@
 // Node modules
 import { Page } from "playwright";
 
-export default async function saveAuth(page: Page) {
-  console.log("Preparing to save auth");
+export default async function saveAuth(page: Page, origin: string) {
+  const fileName = "loginAuth.json";
+
+  console.info(`Saving auth as ${fileName} from ${origin}`);
   await page.screenshot({ path: "screenshots/auth-finish.png", fullPage: true });
-  await page.context().storageState({ path: "src/auth/loginAuth.json" });
+  await page.context().storageState({ path: `src/auth/${fileName}` });
 }

@@ -7,7 +7,6 @@ import onVerification from "./helpers/onVerification";
 import saveAuth from "./helpers/storeAuth";
 
 async function getAuth(url: string): Promise<void> {
-  // Extract
   const browser = await navigator.launch();
   const context = await browser.newContext();
   const page = await context.newPage();
@@ -17,18 +16,16 @@ async function getAuth(url: string): Promise<void> {
     await onLogin(page);
     await page.waitForSelector("footer");
 
-    const isProfilePage = page.locator("p.identity-headline");
-    const isVerificationPage = page.locator("#input__email_verification_pin");
+    const isProfile = page.locator("p.identity-headline");
+    const isVerification = page.locator("#input__email_verification_pin");
 
-    if (isProfilePage) {
-      console.log("isProfilPate");
-      await saveAuth(page);
-    } else if (isVerificationPage) {
-      console.log("isVerificationPage");
+    if (isProfile) {
+      await saveAuth(page, "profile");
+    } else if (isVerification) {
       await onVerification(page);
-      await saveAuth(page);
+      await saveAuth(page, "verification");
     } else {
-      throw new Error("Another authentification page appeared");
+      throw new Error("Unexpected auth page appeared");
     }
   } catch (error) {
     await page.screenshot({ path: "screenshots/auth-error.png", fullPage: true });
