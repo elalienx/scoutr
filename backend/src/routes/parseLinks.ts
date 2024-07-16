@@ -14,8 +14,6 @@ export default async function parseLinks(request: Request, response: Response, d
   const assignment_id = Number(request.params.assignment_id);
   const unZippedLinks = unZipLinks(request.query.links as string[]);
   const links = unZippedLinks.map((item) => decodeURI(item));
-  console.log("backend links:");
-  console.log(links);
 
   try {
     for (const link of links) {
