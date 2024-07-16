@@ -11,28 +11,29 @@ async function getAuth(url: string): Promise<void> {
   const browser = await navigator.launch();
   const context = await browser.newContext();
   const page = await context.newPage();
-  const profilePageId = "p.identity-headline";
-  const verificationPageId = "#input__email_verification_pin";
 
   try {
     await page.goto(url);
     await onLogin(page);
     await page.waitForSelector("footer");
-    await page.screenshot({ path: "screenshots/auth-debug-1.png", fullPage: true });
 
-    if (await page.$(profilePageId)) {
-      console.log("Looks like is the profile page");
+    const isProfilePage = page.locator("p.identity-headline");
+    const isVerificationPage = page.locator("#input__email_verification_pin");
+
+    if (isProfilePage) {
+      console.log("isProfilPate");
       await saveAuth(page);
-    } else if (await page.$(verificationPageId)) {
-      console.log("Looks like is the verification page");
+    } else if (isVerificationPage) {
+      console.log("isVerificationPage");
       await onVerification(page);
       await saveAuth(page);
     } else {
-      console.log("Another screen appeared, auth not created");
+      throw new Error("Another authentification page appeared");
     }
   } catch (error) {
     await page.screenshot({ path: "screenshots/auth-error.png", fullPage: true });
     console.error(`Playwright: Couldn't obtain auth from ${url}`);
+    console.error(error);
   } finally {
     await context.close();
     await browser.close();
