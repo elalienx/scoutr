@@ -54,20 +54,24 @@ test("Passing a URL with multiple queries, removes them", () => {
 
 test("Passing a linkedin url taken from the news feed, returns the profile url", () => {
   // Arrange
-  const valueA =
-    "https://www.linkedin.com/in/marioromero/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BYpXwcGm5RBqQSkV5%2F3NZ1g%3D%3D";
+  const values = {
+    a: "https://www.linkedin.com/in/marioromero/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BYpXwcGm5RBqQSkV5%2F3NZ1g%3D%3D",
+    b: "https://www.linkedin.com/in/helenanovikova?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAC2z2N8B-i_ybJBhyGJoZz71O_VQ8g2Zb9o&lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BYpXwcGm5RBqQSkV5%2F3NZ1g%3D%3D",
+    c: "https://www.linkedin.com/in/fernandolopeze?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAASFmskBcRqvmrYe_ph6CnZn1z1qkBGLcoY&lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BIl0m9mPbRgqv6geKTb%2Bi%2Bw%3D%3D",
+  };
   const resultA = "https://www.linkedin.com/in/marioromero/";
-  const valueB =
-    "https://www.linkedin.com/in/helenanovikova?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAC2z2N8B-i_ybJBhyGJoZz71O_VQ8g2Zb9o&lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BYpXwcGm5RBqQSkV5%2F3NZ1g%3D%3D";
   const resultB = "https://www.linkedin.com/in/helenanovikova";
+  const resultC = "https://www.linkedin.com/in/fernandolopeze/";
 
   // Act
-  const testA = removeQueryFromURL(valueA);
-  const testB = removeQueryFromURL(valueB);
+  const testA = removeQueryFromURL(values.a);
+  const testB = removeQueryFromURL(values.b);
+  const testC = removeQueryFromURL(values.c);
 
   // Assert
   expect(testA).toBe(resultA);
   expect(testB).toBe(resultB);
+  expect(testC).toBe(resultC);
 });
 
 test("Passing a linkedin url taken from the search page, returns the profile url", () => {
