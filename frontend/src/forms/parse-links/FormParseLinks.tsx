@@ -96,7 +96,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
       className="form form-parse-links"
       onSubmit={(event) => onSubmit(event)}
     >
-      <h2>Add Candidates FOO</h2>
+      <h2>Add Candidates</h2>
       <InputFields fields={fields} />
       <FormStatus status={status} message={message} />
       <MiniProgressWorker reports={reports} />
