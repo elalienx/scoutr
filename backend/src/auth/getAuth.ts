@@ -19,10 +19,12 @@ async function getAuth(url: string): Promise<void> {
     await onLogin(page);
 
     if (page.$(profilePageId)) {
+      console.log("Looks like is the profile page");
       await saveAuth(page);
     }
 
     if (page.$(verificationPageId)) {
+      console.log("Looks like is the verification page");
       await onVerification(page);
       await saveAuth(page);
     }
