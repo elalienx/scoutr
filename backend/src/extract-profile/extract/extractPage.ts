@@ -8,7 +8,6 @@ export default async function extractPage(url: string): Promise<string> {
   let result = "";
 
   try {
-    // load page
     await page.goto(url);
     await page.waitForSelector(".pvs-header__title");
 
@@ -17,6 +16,7 @@ export default async function extractPage(url: string): Promise<string> {
     await page.screenshot({ path: "screenshots/error.png", fullPage: true });
     console.error(`Playwright: Cant' navigate to URL "${url}"`);
   } finally {
+    await context.close();
     await browser.close();
   }
 

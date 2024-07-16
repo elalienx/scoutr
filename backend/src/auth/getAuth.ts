@@ -6,7 +6,7 @@ import onLogin from "./helpers/onLogin";
 import onVerification from "./helpers/onVerification";
 import saveAuth from "./helpers/storeAuth";
 
-async function getAuth(): Promise<void> {
+async function getAuth(url: string): Promise<void> {
   // Extract
   const browser = await navigator.launch();
   const context = await browser.newContext();
@@ -14,9 +14,8 @@ async function getAuth(): Promise<void> {
   const profilePageId = "identity-headline";
   const verificationPageId = "#input__email_verification_pin";
 
-  await page.goto("https://www.linkedin.com/login");
-
   try {
+    await page.goto(url);
     await onLogin(page);
 
     if (page.$(profilePageId)) {
@@ -29,10 +28,11 @@ async function getAuth(): Promise<void> {
     }
   } catch (error) {
     await page.screenshot({ path: "screenshots/auth-error.png", fullPage: true });
-    console.error("Playwright: Could not obtain auth");
+    console.error(`Playwright: Couldn't obtain auth from ${url}`);
   } finally {
+    await context.close();
     await browser.close();
   }
 }
 
-getAuth();
+getAuth("https://www.linkedin.com/login");
