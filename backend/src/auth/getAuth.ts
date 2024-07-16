@@ -18,7 +18,6 @@ async function getAuth(): Promise<void> {
 
   try {
     await onLogin(page);
-    await page.waitForSelector("body");
 
     if (page.$(profilePageId)) {
       await saveAuth(page);

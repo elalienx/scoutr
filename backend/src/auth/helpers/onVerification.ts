@@ -6,7 +6,7 @@ import prompt from "./prompt";
 
 export default async function onVerification(page: Page) {
   // Properties
-  const code = await prompt("Enter the security code: ");
+  const code = await prompt("Enter the verification code: ");
 
   await page.fill("#input__email_verification_pin", code);
   await page.click("#email-pin-submit-button");
