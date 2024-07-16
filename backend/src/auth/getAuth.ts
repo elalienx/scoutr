@@ -17,16 +17,18 @@ async function getAuth(url: string): Promise<void> {
   try {
     await page.goto(url);
     await onLogin(page);
+    await page.waitForSelector("footer");
+    await page.screenshot({ path: "screenshots/auth-debug-1.png", fullPage: true });
 
-    if (page.$(profilePageId)) {
+    if (await page.$(profilePageId)) {
       console.log("Looks like is the profile page");
       await saveAuth(page);
-    }
-
-    if (page.$(verificationPageId)) {
+    } else if (await page.$(verificationPageId)) {
       console.log("Looks like is the verification page");
       await onVerification(page);
       await saveAuth(page);
+    } else {
+      console.log("Another screen appeared, auth not created");
     }
   } catch (error) {
     await page.screenshot({ path: "screenshots/auth-error.png", fullPage: true });
