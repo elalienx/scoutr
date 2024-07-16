@@ -11,20 +11,20 @@ async function getAuth(): Promise<void> {
   const browser = await navigator.launch();
   const context = await browser.newContext();
   const page = await context.newPage();
+  const profilePageId = "identity-headline";
+  const verificationPageId = "#input__email_verification_pin";
+
   await page.goto("https://www.linkedin.com/login");
 
   try {
     await onLogin(page);
     await page.waitForSelector("body");
 
-    const profilePage = await page.$("p.identity-headline"); // must say "Novare Student for novare's account. Tech lead for Eduardo Alvarez"
-    const verificationPage = await page.$("#input__email_verification_pin");
-
-    if (profilePage) {
+    if (page.$(profilePageId)) {
       await saveAuth(page);
     }
 
-    if (verificationPage) {
+    if (page.$(verificationPageId)) {
       await onVerification(page);
       await saveAuth(page);
     }
