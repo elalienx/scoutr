@@ -6,7 +6,7 @@
   "scripts": {
     "get_auth": "ts-node src/auth/getAuth.ts",
     "dev": "nodemon",
-    "test": "vitest --coverage",
+    "test": "vitest",
     "test_once": "vitest --watch=false"
   },
   "repository": {
@@ -22,7 +22,6 @@
   "devDependencies": {
     "@types/node": "^20.11.30",
     "@types/pg": "^8.11.4",
-    "@vitest/coverage-v8": "^1.4.0",
     "nodemon": "^3.1.0",
     "ts-node": "^10.9.2",
     "tslib": "^2.6.2",
