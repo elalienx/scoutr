@@ -1,12 +1,13 @@
 // Node modules
 import type { Request, Response } from "express";
 import type { Client } from "pg";
+import { Page } from "playwright";
 
 // Project files
 import etlProcess from "../extract-profile/etlProcess";
 import unZipLinks from "../scripts/unZipLinks";
 
-export default async function parseLinks(request: Request, response: Response, database: Client) {
+export default async function parseLinks(request: Request, response: Response, database: Client, browserPage: Page) {
   // Headers
   response.setHeader("Content-Type", "text/event-stream");
 
@@ -17,7 +18,7 @@ export default async function parseLinks(request: Request, response: Response, d
 
   try {
     for (const link of links) {
-      const { candidate, report } = await etlProcess(link, assignment_id, database);
+      const { candidate, report } = await etlProcess(link, assignment_id, database, browserPage);
       const data = { candidate, report };
 
       response.write(`data: ${JSON.stringify(data)}\n\n`);
