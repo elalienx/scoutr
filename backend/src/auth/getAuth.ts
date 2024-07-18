@@ -5,6 +5,7 @@ import { firefox as navigator } from "playwright";
 import onLogin from "./helpers/onLogin";
 import onVerification from "./helpers/onVerification";
 import saveAuth from "./helpers/storeAuth";
+import { assert } from "node:console";
 
 async function getAuth(url: string): Promise<void> {
   const browser = await navigator.launch();
@@ -15,20 +16,23 @@ async function getAuth(url: string): Promise<void> {
     await page.goto(url);
     await onLogin(page);
     await page.waitForSelector("footer");
+    await page.screenshot({ path: "screenshots/auth-debug.png", fullPage: true });
 
-    const isProfile = page.locator("p.identity-headline");
-    const isVerification = page.locator("#input__email_verification_pin");
+    const isVerification = await page.$("#input__email_verification_pin");
+    const isProfile = await page.$("p.identity-headline");
+    console.log("isVerification:", isVerification !== null ? "true" : "false");
+    console.log("isProfile:", isProfile !== null ? "true" : "false");
 
-    if (isProfile) {
-      await saveAuth(page, "profile");
-    } else if (isVerification) {
+    if (isVerification) {
       await onVerification(page);
       await saveAuth(page, "verification");
+    } else if (isProfile) {
+      await saveAuth(page, "profile");
     } else {
       throw new Error("Unexpected auth page appeared");
     }
   } catch (error) {
-    await page.screenshot({ path: "screenshots/auth-error.png", fullPage: true });
+    await page.screenshot({ path: "screenshots/auth.png", fullPage: true });
     console.error(`Playwright: Couldn't obtain auth from ${url}`);
     console.error(error);
   } finally {
