@@ -5,7 +5,6 @@ import { firefox as navigator } from "playwright";
 import onLogin from "./helpers/onLogin";
 import onVerification from "./helpers/onVerification";
 import saveAuth from "./helpers/storeAuth";
-import { assert } from "node:console";
 
 async function getAuth(url: string): Promise<void> {
   const browser = await navigator.launch();
