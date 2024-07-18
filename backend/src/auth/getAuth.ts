@@ -15,7 +15,6 @@ async function getAuth(url: string): Promise<void> {
     await page.goto(url);
     await onLogin(page);
     await page.waitForSelector("footer");
-    await page.screenshot({ path: "screenshots/auth-debug.png", fullPage: true });
 
     const isVerification = await page.$("#input__email_verification_pin");
     const isProfile = await page.$("p.identity-headline");
