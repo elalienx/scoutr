@@ -6,6 +6,7 @@ import removeQueryFromURL from "./removeQueryFromURL";
 
 test("Passing a linkedin url taken from the news feed, returns the profile url", () => {
   // Arrange
+  /** Important note: URL's with the query "?miniProfileUrn" return without "/" at the end. This is ok and works fine. */
   const values = {
     a: "https://www.linkedin.com/in/marioromero/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BYpXwcGm5RBqQSkV5%2F3NZ1g%3D%3D",
     b: "https://www.linkedin.com/in/helenanovikova?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAC2z2N8B-i_ybJBhyGJoZz71O_VQ8g2Zb9o&lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BYpXwcGm5RBqQSkV5%2F3NZ1g%3D%3D",
@@ -13,7 +14,7 @@ test("Passing a linkedin url taken from the news feed, returns the profile url",
   };
   const resultA = "https://www.linkedin.com/in/marioromero/";
   const resultB = "https://www.linkedin.com/in/helenanovikova";
-  const resultC = "https://www.linkedin.com/in/fernandolopeze/";
+  const resultC = "https://www.linkedin.com/in/fernandolopeze";
 
   // Act
   const testA = removeQueryFromURL(values.a);
@@ -28,16 +29,17 @@ test("Passing a linkedin url taken from the news feed, returns the profile url",
 
 test("Passing a linkedin url taken from the search page, returns the profile url", () => {
   // Arrange
-  const valueA =
-    "https://www.linkedin.com/in/amalia-berglof?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAABySbWkBUfJ6woWdZYdJDepdst8QaPfUIKE&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3Be3ZPsWpgQ9ijsiNaABU7lw%3D%3D";
+  /** Important note: URL's with the query "?miniProfileUrn" return without "/" at the end. This is ok and works fine. */
+  const values = {
+    a: "https://www.linkedin.com/in/amalia-berglof?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAABySbWkBUfJ6woWdZYdJDepdst8QaPfUIKE&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3Be3ZPsWpgQ9ijsiNaABU7lw%3D%3D",
+    b: "https://www.linkedin.com/in/amalia-thore-93365663?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAA1xurcBBpze_Si7udo4w6srek5FE2GYjAs&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3Be3ZPsWpgQ9ijsiNaABU7lw%3D%3D",
+  };
   const resultA = "https://www.linkedin.com/in/amalia-berglof";
-  const valueB =
-    "https://www.linkedin.com/in/amalia-thore-93365663?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAA1xurcBBpze_Si7udo4w6srek5FE2GYjAs&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3Be3ZPsWpgQ9ijsiNaABU7lw%3D%3D";
   const resultB = "https://www.linkedin.com/in/amalia-thore-93365663";
 
   // Act
-  const testA = removeQueryFromURL(valueA);
-  const testB = removeQueryFromURL(valueB);
+  const testA = removeQueryFromURL(values.a);
+  const testB = removeQueryFromURL(values.b);
 
   // Assert
   expect(testA).toBe(resultA);
