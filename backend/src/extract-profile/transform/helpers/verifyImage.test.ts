@@ -2,7 +2,7 @@
 import { expect, test } from "vitest";
 
 // Project files
-import verifyProfileImage from "./verifyProfileImage";
+import verifyImage from "./verifyImage";
 
 test("Does not crash if recevies an undefined string", () => {
   // Arrange
@@ -10,7 +10,7 @@ test("Does not crash if recevies an undefined string", () => {
   const result: string = "";
 
   // Act
-  const test = verifyProfileImage(value);
+  const test = verifyImage(value);
 
   // Assert
   expect(test).toBe(result);
@@ -22,7 +22,7 @@ test("Does not crash if receives an empty string", () => {
   const result = "";
 
   // Act
-  const test = verifyProfileImage(value);
+  const test = verifyImage(value);
 
   // Assert
   expect(test).toBe(result);
@@ -36,7 +36,7 @@ test("Returns the same string if is a valid LinkedIn profile image URL", () => {
     "https://media.licdn.com/dms/image/D4D03AQHVZ7Cwwlhi9Q/profile-displayphoto-shrink_400_400/0/1708943797507?e=1726099200&v=beta&t=rzm3LJC6zZ-M-zS2lGlp1hY25zGog-5VHJCu8yWyJvQ";
 
   // Act
-  const test = verifyProfileImage(value);
+  const test = verifyImage(value);
 
   // Assert
   expect(test).toBe(result);
@@ -48,7 +48,7 @@ test("Returns an empty string if the string has an private LinkedIn image profil
   const result = "";
 
   // Act
-  const test = verifyProfileImage(value);
+  const test = verifyImage(value);
 
   // Assert
   expect(test).toBe(result);

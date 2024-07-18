@@ -1,5 +1,6 @@
 // Node modules
 import type { Client } from "pg";
+import { Page } from "playwright";
 
 // Project files
 import candidateQuery from "../queries/insertCandidate";
@@ -8,9 +9,9 @@ import extractPage from "./extract/extractPage";
 import pageToProfile from "./transform/pageToProfile";
 import generateReport from "./transform/generateReport";
 
-export default async function etlProcess(url: string, assignment_id: number, database: Client) {
+export default async function etlProcess(url: string, assignment_id: number, database: Client, browserPage: Page) {
   // Extract
-  const page = await extractPage(url);
+  const page = await extractPage(browserPage, url);
 
   // Transform
   const profile = pageToProfile(page);

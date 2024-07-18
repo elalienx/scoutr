@@ -6,7 +6,7 @@ import type { CheerioAPI } from "cheerio";
 import type LinkedInProfile from "../../types/LinkedInProfile";
 import jobDurationToMonths from "./helpers/jobDurationToMonths";
 import getJobDuration from "./helpers/getJobDuration";
-import verifyProfileImage from "./helpers/verifyProfileImage";
+import verifyImage from "./helpers/verifyImage";
 
 export default function pageToProfile(page: string): LinkedInProfile {
   // HTML pages
@@ -21,13 +21,16 @@ export default function pageToProfile(page: string): LinkedInProfile {
   const jobDuration = "span.t-14.t-normal.t-black--light:first > span[aria-hidden='true']";
 
   // Extra transformations
+  // -- Candidate image
   const unverifiedCandidateImage = document(candidateImage).attr("src");
-  const verifiedCandidateImage = verifyProfileImage(unverifiedCandidateImage);
+  const verifiedCandidateImage = verifyImage(unverifiedCandidateImage);
+  // -- Job duration
   const jobDurationFullText = experienceDocument(jobDuration).text();
   const jobDurationShortText = getJobDuration(jobDurationFullText);
   const jobDurationInMonths = jobDurationToMonths(jobDurationShortText);
+  // -- Company image
   const unverifiedCompanyImage = experienceDocument("img").attr("src");
-  const verifiedCompanyImage = verifyProfileImage(unverifiedCompanyImage);
+  const verifiedCompanyImage = verifyImage(unverifiedCompanyImage);
 
   return {
     candidate_name: document("h1").text(),
