@@ -6,7 +6,7 @@ export default async function extractPage(page: Page, url: string): Promise<stri
   let result = "";
 
   try {
-    await page.goto(url);
+    await page.goto(url, { waitUntil: "domcontentloaded" });
     await page.waitForSelector(".pvs-header__title");
 
     result = await page.content();
