@@ -18,8 +18,6 @@ async function getAuth(url: string): Promise<void> {
 
     const isVerification = await page.$("#input__email_verification_pin");
     const isProfile = await page.$("p.identity-headline");
-    console.log("isVerification:", isVerification !== null ? "true" : "false");
-    console.log("isProfile:", isProfile !== null ? "true" : "false");
 
     if (isVerification) {
       await onVerification(page);

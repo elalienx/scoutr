@@ -39,7 +39,7 @@ services:
     depends_on:
       database:
         condition: service_healthy
-    command: ["npm", "run", "start"]
+    command: ["npm", "run", "dev"]
 
   frontend:
     build:
