@@ -5,4 +5,4 @@ COPY ./package.json ./
 RUN npm install
 COPY . .
 # CMD ["npm", "run", "dev"] 
-# Note: The CMD commands runs on the Docker Composer to handle all the project images and on the GitHub Actions CI pipeline.
+ # Note: The CMD command runs on the Docker Composer file to handle all the project images and on the GitHub Actions CI pipeline file.
