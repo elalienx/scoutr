@@ -51,4 +51,4 @@ services:
     depends_on:
       database:
         condition: service_healthy
-    command: ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
+    command: ["npm", "run", "dev"]
