@@ -16,7 +16,7 @@ jobs:
         run: docker build -f ./backend/Dockerfile.test -t docker-backend-test ./backend
 
       - name: Run Vitest inside Docker container
-        run: docker run docker-backend-test
+        run: docker run docker-backend-test npm run test_once
 
   frontend-test:
     name: Frontend unit testing
