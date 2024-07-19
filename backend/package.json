@@ -5,6 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "get_auth": "ts-node src/auth/getAuth.ts",
+    "start": "ts-node --transpileOnly src/index.ts",
     "dev": "nodemon",
     "test": "vitest",
     "test_once": "vitest --watch=false"
