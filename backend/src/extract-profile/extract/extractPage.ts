@@ -4,7 +4,6 @@ import { Page } from "playwright";
 export default async function extractPage(page: Page, url: string): Promise<string> {
   // Properties
   let result = "";
-  console.log("scanning url", url);
 
   try {
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 10000 });
@@ -16,6 +15,5 @@ export default async function extractPage(page: Page, url: string): Promise<stri
     console.error(`Playwright: Cant' navigate to URL "${url}"`);
   }
 
-  await page.screenshot({ path: "screenshots/debug.png", fullPage: true });
   return result;
 }
