@@ -22,8 +22,8 @@ async function initializeServer(port: number) {
   const context = await browser.newContext({ storageState: "src/auth/loginAuth.json" });
   await context.route("**/*", (route, request) => {
     const url = request.url();
-
-    if (!url.includes(".licdn.com")) route.abort();
+    if (url.includes("linkedin.com")) route.continue();
+    if (url.includes(".licdn.com")) route.continue();
   });
   const page = await context.newPage();
 
