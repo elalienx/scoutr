@@ -32,7 +32,6 @@ async function getAuth(url: string): Promise<void> {
     console.error(`Playwright: Couldn't obtain auth from ${url}`);
     console.error(error);
   } finally {
-    await context.close();
     await browser.close();
   }
 }
