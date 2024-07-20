@@ -20,11 +20,6 @@ async function initializeServer(port: number) {
   // Browser optimizations (refactor)
   const browser = await navigator.launch();
   const context = await browser.newContext({ storageState: "src/auth/loginAuth.json" });
-  await context.route("**/*", (route, request) => {
-    const url = request.url();
-    if (url.includes("linkedin.com")) route.continue();
-    if (url.includes(".licdn.com")) route.continue();
-  });
   const page = await context.newPage();
 
   // Start server
