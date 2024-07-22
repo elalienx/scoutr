@@ -13,7 +13,6 @@ import postAssignment from "./routes/postAssignment";
 import patchCandidate from "./routes/patchCandidate";
 
 async function initializeServer(port: number) {
-  console.log("chao");
   // Properties
   const client = await postgresClient(databaseCredentials);
   const app = express();

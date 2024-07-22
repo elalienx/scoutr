@@ -20,6 +20,7 @@
   },
   "homepage": "https://www.meet-scoutr.com",
   "devDependencies": {
+    "@types/express": "^4.17.21",
     "@types/node": "^20.11.30",
     "@types/pg": "^8.11.4",
     "nodemon": "^3.1.4",
