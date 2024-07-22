@@ -1,7 +1,6 @@
 # Auth
 # Becuase they are unique per device
 backend/screenshots/
-backend/src/auth/loginAuth.json
 
 # Mac files
 .DS_Store
