@@ -34,7 +34,7 @@ test("Returns an empty string for candidate image if profile has private picture
   const page = profile2;
   const result = {
     candidate_name: "Sri Lalitha Jeevanige",
-    candidate_job_title: "SwedbankScrum Master - Software EngineerSoftware Engineer",
+    candidate_job_title: "SwedbankScrum Master - Software EngineerSoftware E", // timmed "Software Engineer" to "Software E" because its longer than what database expects in this column
     candidate_image_url: "",
     company_name: "Full-time",
     company_duration_in_months: 33,

@@ -8,6 +8,7 @@ export default async function extractPage(page: Page, url: string): Promise<stri
   try {
     await page.goto(url, { waitUntil: "domcontentloaded" });
     await page.waitForSelector(".pvs-header__title");
+    await page.screenshot({ path: "screenshots/debug.png", fullPage: true });
 
     result = await page.content();
   } catch (error) {
