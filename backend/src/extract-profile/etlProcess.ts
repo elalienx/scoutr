@@ -15,6 +15,7 @@ export default async function etlProcess(url: string, assignment_id: number, dat
 
   // Transform
   const profile = pageToProfile(page);
+  console.log("etlProcess() profile", profile);
   const report = generateReport(url, page, profile);
   const profileAsArray = [assignment_id, url, ...Object.values(profile)];
   const reportAsArray = Object.values(report);

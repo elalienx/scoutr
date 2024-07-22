@@ -12,9 +12,9 @@ CREATE TABLE IF NOT EXISTS candidates(
     date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     linked_in_url VARCHAR(100),
     candidate_name VARCHAR(50),
-    candidate_job_title VARCHAR(255),
+    candidate_job_title VARCHAR(249), -- this should be trimmed
     candidate_image_url VARCHAR(255),
-    company_name VARCHAR(50),
+    company_name VARCHAR(49), -- this should be trimmed
     company_duration_in_months SMALLINT,
     company_image_url VARCHAR(255),
     notes TEXT DEFAULT '',

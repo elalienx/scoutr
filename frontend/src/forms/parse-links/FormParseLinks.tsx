@@ -54,9 +54,8 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
       const uriSSE = `/sse/parse-links/${id}?${query}`;
       const eventSource = new FetchClass(uriSSE);
 
-      console.log("submitting links", query);
-      eventSource.onmessage = (event: MessageEvent) => onUpdate(event);
-      eventSource.onerror = () => onComplete(eventSource); // note: onerror occurs when the connection is finished not neccesarily on error
+      eventSource.onmessage = (event: MessageEvent) => onMessage(event);
+      eventSource.onerror = () => onFinish(eventSource); // note: onerror occurs when the connection is finished not neccesarily on error
     } catch (error: unknown) {
       onFailure(error);
     }
@@ -68,7 +67,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
     setMessage("Collecting LinkedIn links to scan");
   }
 
-  function onUpdate(event: MessageEvent) {
+  function onMessage(event: MessageEvent) {
     console.log("onUpdate() event", event);
     const { candidate, report } = JSON.parse(event.data);
     const { severity } = report;
@@ -79,13 +78,22 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
     if (severity <= MISSING_SOME_FIELDS) dispatch({ type: "add-single", payload: candidate });
   }
 
-  async function onComplete(eventSource: EventSource) {
-    eventSource.close();
-    setStatus("complete");
-    setMessage("Finished searching");
+  async function onFinish(eventSource: EventSource) {
+    if (eventSource.readyState === EventSource.CLOSED) {
+      onSucess();
+    } else {
+      onFailure(eventSource);
+    }
 
+    eventSource.close();
     await waitForSeconds(1);
     closeDialog();
+  }
+
+  function onSucess() {
+    console.log("Connection closed by server.");
+    setMessage("Finished searching");
+    setStatus("complete");
   }
 
   function onFailure(error: Error | unknown) {
