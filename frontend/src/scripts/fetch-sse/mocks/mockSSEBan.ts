@@ -1,6 +1,7 @@
 // Project file
 import waitForSeconds from "scripts/waitForSeconds";
 import type Candidate from "types/Candidate";
+import { EventSourceStatus } from "types/EventSourceStatuses";
 import type ReportLog from "types/ReportLog";
 import ReportSeverity from "types/ReportSeverity";
 
@@ -64,15 +65,11 @@ export default class MockSSEBan {
   }
 
   // Properties
-  CONNECTING = 0;
-  OPEN = 1;
-  CLOSED = 2;
-  ERROR = 3;
-  readyState = 0;
+  readyState = EventSourceStatus.CONNECTING;
 
   // Methods
   async start() {
-    this.readyState = this.OPEN;
+    this.readyState = EventSourceStatus.OPEN;
 
     await waitForSeconds(0.1);
     this.onmessage({ data: JSON.stringify(this.parsedLinks[0]) });
@@ -84,6 +81,7 @@ export default class MockSSEBan {
     this.onmessage({ data: JSON.stringify(this.parsedLinks[2]) });
 
     await waitForSeconds(0.1);
+    this.readyState = EventSourceStatus.CLOSED;
     this.onerror("this should call onerror() to close connection");
   }
 

@@ -20,6 +20,7 @@ import fields from "./fields";
 import "styles/components/form.css";
 import "./form-parse-links.css";
 import removeQueryFromURL from "scripts/forms/removeQueryFromURL";
+import { EventSourceStatus } from "types/EventSourceStatuses";
 
 interface Props {
   /** The ID of the assignment to parse. */
@@ -78,10 +79,9 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
   }
 
   async function onFinish(eventSource: EventSource) {
-    const CLOSED = 0;
-    console.log("onFinish() eventSource");
-    console.log(eventSource);
-    if (eventSource.readyState === CLOSED) {
+    console.log("onFinish() eventSource.readyState");
+    console.log(eventSource.readyState);
+    if (eventSource.readyState === EventSourceStatus.CLOSED) {
       onSucess();
     } else {
       onFailure(eventSource);
@@ -100,7 +100,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
   function onFailure(error: Error | unknown) {
     console.error(error);
     setStatus("error");
-    setMessage("Could not collect LinkedIn links to scan XYZ");
+    setMessage("Could not collect LinkedIn links to scan");
   }
 
   return (
