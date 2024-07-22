@@ -3,9 +3,8 @@ import { load } from "cheerio";
 import type { CheerioAPI } from "cheerio";
 
 // Project file
-import type ReportLog from "../../types/ReportLog";
-import ReportSeverity from "../../types/ReportSeverity";
-import getText from "./helpers/getText";
+import type ReportLog from "../../../types/ReportLog";
+import ReportSeverity from "../../../types/ReportSeverity";
 
 export default function checkBan(report: ReportLog, page: string): ReportLog {
   const { TEMPORAL_BAN } = ReportSeverity;
