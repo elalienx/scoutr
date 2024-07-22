@@ -2,11 +2,11 @@
 import { expect, test } from "vitest";
 
 // Project files
-import pageToProfile from "./pageToProfile";
+import type LinkedInProfile from "../../types/LinkedInProfile";
 import { profile1 } from "../_test-websites/profile1";
 import { profile2 } from "../_test-websites/profile2";
 import { profile3 } from "../_test-websites/profile3";
-import type LinkedInProfile from "../../types/LinkedInProfile";
+import pageToProfile from "./pageToProfile";
 
 test("Returns all fields on a complete profile", () => {
   // Arrange
