@@ -4,9 +4,9 @@ import type { CheerioAPI } from "cheerio";
 
 // Project files
 import type LinkedInProfile from "../../types/LinkedInProfile";
-import jobDurationToMonths from "./helpers/jobDurationToMonths";
-import getJobDuration from "./helpers/getJobDuration";
-import verifyImage from "./helpers/verifyImage";
+import verifyImage from "./profile/verifyImage";
+import getJobDuration from "./profile/getJobDuration";
+import jobDurationToMonths from "./profile/jobDurationToMonths";
 
 export default function pageToProfile(page: string): LinkedInProfile {
   // HTML pages
@@ -24,6 +24,8 @@ export default function pageToProfile(page: string): LinkedInProfile {
   // -- Candidate image
   const unverifiedCandidateImage = document(candidateImage).attr("src");
   const verifiedCandidateImage = verifyImage(unverifiedCandidateImage);
+  // -- Company name
+  const removeTypeOfJob: RegExp = / · .*/; // Novare · Full time = Novare. ACdelco · Contract = ACdelco, etc.
   // -- Job duration
   const jobDurationFullText = experienceDocument(jobDuration).text();
   const jobDurationShortText = getJobDuration(jobDurationFullText);
@@ -36,7 +38,7 @@ export default function pageToProfile(page: string): LinkedInProfile {
     candidate_name: document("h1").text(),
     candidate_job_title: experienceDocument(jobTitle).text(),
     candidate_image_url: verifiedCandidateImage,
-    company_name: experienceDocument(companyName).text().replace(" · Full-time", ""),
+    company_name: experienceDocument(companyName).text().replace(removeTypeOfJob, ""),
     company_duration_in_months: jobDurationInMonths,
     company_image_url: verifiedCompanyImage,
   };

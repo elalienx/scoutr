@@ -1,6 +1,6 @@
 // Project files
-import type ReportLog from "../../types/ReportLog";
-import type LinkedInProfile from "../../types/LinkedInProfile";
+import LinkedInProfile from "../../../types/LinkedInProfile";
+import ReportLog from "../../../types/ReportLog";
 
 export default function checkEmptyFields(url: string, profile: LinkedInProfile): ReportLog {
   const fields = Object.entries(profile);

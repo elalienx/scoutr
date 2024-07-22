@@ -2,9 +2,9 @@
 import type ReportLog from "../../types/ReportLog";
 import type LinkedInProfile from "../../types/LinkedInProfile";
 import ReportSeverity from "../../types/ReportSeverity";
-import checkPrivateProfile from "./checkPrivateProfile";
-import checkEmptyFields from "./checkEmptyFields";
-import checkBan from "./checkBan";
+import checkBan from "./report/checkBan";
+import checkEmptyFields from "./report/checkEmptyFields";
+import checkPrivateProfile from "./report/checkPrivateProfile";
 
 export default function generateReport(url: string, page: string, profile: LinkedInProfile): ReportLog {
   const { MISSING_ALL_FIELDS } = ReportSeverity;

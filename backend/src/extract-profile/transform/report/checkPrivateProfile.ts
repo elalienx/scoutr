@@ -3,9 +3,9 @@ import { load } from "cheerio";
 import type { CheerioAPI } from "cheerio";
 
 // Project files
-import type ReportLog from "../../types/ReportLog";
-import ReportSeverity from "../../types/ReportSeverity";
-import getText from "./helpers/getText";
+import type ReportLog from "../../../types/ReportLog";
+import ReportSeverity from "../../../types/ReportSeverity";
+import getText from "../helpers/getText";
 
 export default function checkPrivateProfile(report: ReportLog, page: string): ReportLog {
   const { PRIVATE_PROFILE } = ReportSeverity;

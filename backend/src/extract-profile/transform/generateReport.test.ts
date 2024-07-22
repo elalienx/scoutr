@@ -2,13 +2,13 @@
 import { expect, test } from "vitest";
 
 // Project files
-import generateReport from "./generateReport";
-import LinkedInProfile from "../../types/LinkedInProfile";
-import ReportLog from "../../types/ReportLog";
+import type LinkedInProfile from "../../types/LinkedInProfile";
+import type ReportLog from "../../types/ReportLog";
 import ReportSeverity from "../../types/ReportSeverity";
 import { bannedPage } from "../_test-websites/bannedPage";
-import { privateProfile } from "../_test-websites/profilePrivate";
 import { example } from "../_test-websites/example-dot-com-website";
+import { privateProfile } from "../_test-websites/profilePrivate";
+import generateReport from "./generateReport";
 
 // Returns ban report when passing a banned page
 test("Returns ban report when passing a banned page", () => {

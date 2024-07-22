@@ -2,11 +2,11 @@
 import { expect, test } from "vitest";
 
 // Project files
-import pageToProfile from "./pageToProfile";
+import type LinkedInProfile from "../../types/LinkedInProfile";
 import { profile1 } from "../_test-websites/profile1";
 import { profile2 } from "../_test-websites/profile2";
 import { profile3 } from "../_test-websites/profile3";
-import type LinkedInProfile from "../../types/LinkedInProfile";
+import pageToProfile from "./pageToProfile";
 
 test("Returns all fields on a complete profile", () => {
   // Arrange
@@ -36,7 +36,7 @@ test("Returns an empty string for candidate image if profile has private picture
     candidate_name: "Sri Lalitha Jeevanige",
     candidate_job_title: "SwedbankScrum Master - Software EngineerSoftware Engineer",
     candidate_image_url: "",
-    company_name: "Full-time · 5 yrs 3 mos",
+    company_name: "Full-time",
     company_duration_in_months: 33,
     company_image_url:
       "https://media.licdn.com/dms/image/C4E0BAQGIwfzke6i5bQ/company-logo_100_100/0/1630648928740/swedbank_logo?e=1729123200&v=beta&t=8DGj5MZgzOMdbCoSnbhXsqd0T8929_FllplB-SuIhfk",
