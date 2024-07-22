@@ -79,8 +79,6 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
   }
 
   async function onFinish(eventSource: EventSource) {
-    console.log("onFinish() eventSource.readyState");
-    console.log(eventSource.readyState);
     if (eventSource.readyState === EventSourceStatus.CLOSED) {
       onSucess();
     } else {
