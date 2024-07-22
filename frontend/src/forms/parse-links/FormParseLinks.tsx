@@ -68,7 +68,6 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
   }
 
   function onMessage(event: MessageEvent) {
-    console.log("onUpdate() event", event);
     const { candidate, report } = JSON.parse(event.data);
     const { severity } = report;
     const { MISSING_SOME_FIELDS } = ReportSeverity;
@@ -79,7 +78,10 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
   }
 
   async function onFinish(eventSource: EventSource) {
-    if (eventSource.readyState === EventSource.CLOSED) {
+    const CLOSED = 0;
+    console.log("onFinish() eventSource");
+    console.log(eventSource);
+    if (eventSource.readyState === CLOSED) {
       onSucess();
     } else {
       onFailure(eventSource);
@@ -91,7 +93,6 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
   }
 
   function onSucess() {
-    console.log("Connection closed by server.");
     setMessage("Finished searching");
     setStatus("complete");
   }
@@ -99,7 +100,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
   function onFailure(error: Error | unknown) {
     console.error(error);
     setStatus("error");
-    setMessage("Could not collect LinkedIn links to scan");
+    setMessage("Could not collect LinkedIn links to scan XYZ");
   }
 
   return (

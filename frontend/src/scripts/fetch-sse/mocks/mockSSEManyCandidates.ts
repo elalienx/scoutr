@@ -98,18 +98,27 @@ export default class MockSSEManyCandidates {
     this.start();
   }
 
+  // Properties
+  CONNECTING = 0;
+  OPEN = 1;
+  CLOSED = 2;
+  ERROR = 3;
+  readyState = 0;
+
   // Methods
   async start() {
-    await waitForSeconds(.1);
+    this.readyState = this.OPEN;
+
+    await waitForSeconds(0.1);
     this.onmessage({ data: JSON.stringify(this.parsedLinks[0]) });
 
-    await waitForSeconds(.1);
+    await waitForSeconds(0.1);
     this.onmessage({ data: JSON.stringify(this.parsedLinks[1]) });
 
-    await waitForSeconds(.1);
+    await waitForSeconds(0.1);
     this.onmessage({ data: JSON.stringify(this.parsedLinks[2]) });
 
-    await waitForSeconds(.1);
+    await waitForSeconds(0.1);
     this.onerror("this should call onerror() to close connection");
   }
 

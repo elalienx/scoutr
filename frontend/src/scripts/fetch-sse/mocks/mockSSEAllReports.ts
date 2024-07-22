@@ -71,8 +71,17 @@ export default class MockSSEAllReports {
     this.start();
   }
 
+  // Properties
+  CONNECTING = 0;
+  OPEN = 1;
+  CLOSED = 2;
+  ERROR = 3;
+  readyState = 0;
+
   // Methods
   async start() {
+    this.readyState = this.OPEN;
+
     await waitForSeconds(0.1);
     this.onmessage({ data: JSON.stringify(this.parsedLinks[0]) });
 
