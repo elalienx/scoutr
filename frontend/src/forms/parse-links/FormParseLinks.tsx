@@ -54,6 +54,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
       const uriSSE = `/sse/parse-links/${id}?${query}`;
       const eventSource = new FetchClass(uriSSE);
 
+      console.log("submitting links", query);
       eventSource.onmessage = (event: MessageEvent) => onUpdate(event);
       eventSource.onerror = () => onComplete(eventSource); // note: onerror occurs when the connection is finished not neccesarily on error
     } catch (error: unknown) {
@@ -68,6 +69,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
   }
 
   function onUpdate(event: MessageEvent) {
+    console.log("onUpdate() event", event);
     const { candidate, report } = JSON.parse(event.data);
     const { severity } = report;
     const { MISSING_SOME_FIELDS } = ReportSeverity;
