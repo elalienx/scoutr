@@ -54,6 +54,8 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
       const uriSSE = `/sse/parse-links/${id}?${query}`;
       const eventSource = new FetchClass(uriSSE);
 
+      // @ts-ignore
+      eventSource.addEventListener("error", (event) => onFailure(event.data));
       eventSource.onmessage = (event: MessageEvent) => onMessage(event);
       eventSource.onerror = () => onConnectionOver(eventSource); // note: onerror occurs when the connection is finished not neccesarily on error
     } catch (error: unknown) {
