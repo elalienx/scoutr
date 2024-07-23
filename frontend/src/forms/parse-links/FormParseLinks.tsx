@@ -55,7 +55,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
       const eventSource = new FetchClass(uriSSE);
 
       // @ts-ignore
-      eventSource.addEventListener("error", (event) => onFailure(event.data));
+      eventSource.addEventListener("error", (event) => onFailure(event));
       eventSource.onmessage = (event: MessageEvent) => onMessage(event);
       eventSource.onerror = () => onConnectionOver(eventSource); // note: onerror occurs when the connection is finished not neccesarily on error
     } catch (error: unknown) {
@@ -89,6 +89,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
   }
 
   function onFailure(error: Error | unknown) {
+    console.log("onFailure()");
     console.error(error);
     setStatus("error");
     setMessage("Could not collect LinkedIn links to scan");
