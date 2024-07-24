@@ -41,22 +41,6 @@ export default class MockSSEAllReports {
     {
       candidate: null,
       report: {
-        severity: ReportSeverity.PRIVATE_PROFILE,
-        url: "https://www.linkedin.com/in/ivan-fatoni/",
-        message: "Private profile",
-      },
-    },
-    {
-      candidate: null,
-      report: {
-        severity: ReportSeverity.TEMPORAL_BAN,
-        url: "https://www.linkedin.com/in/lanahaddad87/",
-        message: "Temporally suspended",
-      },
-    },
-    {
-      candidate: null,
-      report: {
         severity: ReportSeverity.MISSING_ALL_FIELDS,
         url: "https://www.linkedin.com/in/susanna-vaara-0b33b03a/",
         message: "Missing all fields",
@@ -78,12 +62,6 @@ export default class MockSSEAllReports {
 
     await waitForSeconds(0.1);
     this.onmessage({ data: JSON.stringify(this.parsedLinks[1]) });
-
-    await waitForSeconds(0.1);
-    this.onmessage({ data: JSON.stringify(this.parsedLinks[2]) });
-
-    await waitForSeconds(0.1);
-    this.onmessage({ data: JSON.stringify(this.parsedLinks[3]) });
 
     await waitForSeconds(0.1);
     this.onerror("this should call onerror() to close connection");

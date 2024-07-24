@@ -18,11 +18,7 @@ import "./candidates.css";
 
 interface Props {
   /** A React custom hook to fetch data. The return complies with the ResultsAPI interface. */
-  fetchHook: (url: string) => {
-    data: Candidate[];
-    status: StatusPage;
-    message: string;
-  };
+  fetchHook: (url: string) => { data: Candidate[]; status: StatusPage; message: string };
 }
 
 /** The page with the candidate table where you can add more LinkedIn profiles by pressing one button. */
