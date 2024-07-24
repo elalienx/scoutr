@@ -6,6 +6,7 @@ import { Page } from "playwright";
 // Project files
 import etlProcess from "../extract-profile/etlProcess";
 import unZipLinks from "../scripts/unZipLinks";
+import ReportLog from "../types/ReportLog";
 
 export default async function parseLinks(request: Request, response: Response, database: Client, browserPage: Page) {
   // Headers

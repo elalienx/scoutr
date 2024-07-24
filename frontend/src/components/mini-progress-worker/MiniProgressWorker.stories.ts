@@ -79,7 +79,7 @@ export const UnknownError: Story = {
     reports: [
       {
         url: "http://www.namco.com",
-        severity: ReportSeverity.MISSING_ALL_FIELDS,
+        severity: ReportSeverity.ALL_FIELDS_MISSING,
         message: "Missing all fields",
       },
     ],
@@ -106,7 +106,7 @@ export const OnErrorOfEachKind: Story = {
       },
       {
         url: "http://www.namco.com",
-        severity: ReportSeverity.MISSING_ALL_FIELDS,
+        severity: ReportSeverity.ALL_FIELDS_MISSING,
         message: "Missing all fields",
       },
     ],

@@ -32,7 +32,7 @@ test("Adding 1 good enough report shows 1 good scan", () => {
   const reports: ReportLog[] = [
     {
       url: "linked.com/in/susanna",
-      severity: ReportSeverity.MISSING_SOME_FIELDS,
+      severity: ReportSeverity.SOME_FIELDS_MISSING,
       message: "Missing candidate_job_title",
     },
   ];
@@ -57,7 +57,7 @@ test("Adding 1 perfect report and 1 good enough shows 2 good scans", () => {
     },
     {
       url: "linked.com/in/susanna",
-      severity: ReportSeverity.MISSING_SOME_FIELDS,
+      severity: ReportSeverity.SOME_FIELDS_MISSING,
       message: "Missing candidate_job_title",
     },
   ];
@@ -83,7 +83,7 @@ test("Adding 1 perfect report and 1 bad shows 1 good scan", () => {
     },
     {
       url: "linked.com/in/lana",
-      severity: ReportSeverity.MISSING_ALL_FIELDS,
+      severity: ReportSeverity.ALL_FIELDS_MISSING,
       message: "Not available",
     },
   ];

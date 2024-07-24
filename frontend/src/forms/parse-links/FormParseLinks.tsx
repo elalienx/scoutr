@@ -77,7 +77,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
   function onCandidateReceived(event: MessageEvent) {
     const { candidate, report } = JSON.parse(event.data);
     const { severity } = report;
-    const { MISSING_SOME_FIELDS } = ReportSeverity;
+    const { SOME_FIELDS_MISSING: MISSING_SOME_FIELDS } = ReportSeverity;
 
     setReports((prev) => [...prev, report]);
 
@@ -85,20 +85,19 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
   }
 
   async function onErrorSSE(event: MessageEvent) {
-    console.log("onErrorSSE()");
     // Safeguard
     if (!event.data) return;
 
-    await waitForSeconds(3);
     console.error(event.data);
-    setStatus("error");
-    setMessage("Can't add candidate");
+    const url = "";
+    const severity = ReportSeverity.ALL_FIELDS_MISSING;
+    const message = event.data;
+    const report: ReportLog = { url, severity, message };
 
-    await waitForSeconds(3);
+    setReports((prev) => [...prev, report]);
   }
 
   async function onConnectionOver(eventSource: EventSource) {
-    console.log("onConnectionOver()");
     eventSource.close();
     setStatus("complete");
     setMessage("Finished searching");

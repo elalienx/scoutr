@@ -41,7 +41,7 @@ export default class MockSSEUnknownError {
     {
       candidate: null,
       report: {
-        severity: ReportSeverity.MISSING_ALL_FIELDS,
+        severity: ReportSeverity.ALL_FIELDS_MISSING,
         url: "https://www.linkedin.com/in/susanna-vaara-0b33b03a/",
         message: "Missing all fields",
       },
@@ -49,7 +49,7 @@ export default class MockSSEUnknownError {
     {
       candidate: null,
       report: {
-        severity: ReportSeverity.MISSING_ALL_FIELDS,
+        severity: ReportSeverity.ALL_FIELDS_MISSING,
         url: "https://www.linkedin.com/in/lanahaddad87/",
         message: "Missing all fields",
       },

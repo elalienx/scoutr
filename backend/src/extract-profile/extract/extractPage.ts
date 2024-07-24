@@ -3,7 +3,7 @@ import { Page } from "playwright";
 
 export default async function extractPage(page: Page, url: string): Promise<string> {
   // Properties
-  const timoutInMilliseconds = 9;
+  const timoutInMilliseconds = 10_000;
   let result = "";
 
   try {
