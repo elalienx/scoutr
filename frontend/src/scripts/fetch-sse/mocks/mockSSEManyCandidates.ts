@@ -100,17 +100,23 @@ export default class MockSSEManyCandidates {
 
   // Methods
   async start() {
-    await waitForSeconds(.1);
+    await waitForSeconds(0.1);
     this.onmessage({ data: JSON.stringify(this.parsedLinks[0]) });
 
-    await waitForSeconds(.1);
+    await waitForSeconds(0.1);
     this.onmessage({ data: JSON.stringify(this.parsedLinks[1]) });
 
-    await waitForSeconds(.1);
+    await waitForSeconds(0.1);
     this.onmessage({ data: JSON.stringify(this.parsedLinks[2]) });
 
-    await waitForSeconds(.1);
+    await waitForSeconds(0.1);
     this.onerror("this should call onerror() to close connection");
+  }
+
+  addEventListener(eventName: string, callback: Function) {
+    callback();
+
+    return eventName;
   }
 
   onmessage(data: any) {

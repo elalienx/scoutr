@@ -1,9 +1,7 @@
 enum ReportSeverity {
   NO_ERROR = 0,
-  MISSING_SOME_FIELDS = 1,
-  MISSING_ALL_FIELDS = 2,
-  PRIVATE_PROFILE = 3,
-  TEMPORAL_BAN = 4,
+  SOME_FIELDS_MISSING = 1,
+  ALL_FIELDS_MISSING = 2,
 }
 
 export default ReportSeverity;

@@ -6,6 +6,7 @@ import { Page } from "playwright";
 // Project files
 import etlProcess from "../extract-profile/etlProcess";
 import unZipLinks from "../scripts/unZipLinks";
+import ReportLog from "../types/ReportLog";
 
 export default async function parseLinks(request: Request, response: Response, database: Client, browserPage: Page) {
   // Headers
@@ -24,7 +25,9 @@ export default async function parseLinks(request: Request, response: Response, d
       response.write(`data: ${JSON.stringify(data)}\n\n`);
     }
   } catch (error) {
-    console.error("Error:", error);
+    console.error("Parse link:", error);
+    response.write(`event: error\n`);
+    response.write(`data: ${error}\n\n`);
   } finally {
     response.end();
   }

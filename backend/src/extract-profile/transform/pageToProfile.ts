@@ -4,10 +4,10 @@ import type { CheerioAPI } from "cheerio";
 
 // Project files
 import type LinkedInProfile from "../../types/LinkedInProfile";
-import verifyImage from "./profile/verifyImage";
-import getJobDuration from "./profile/getJobDuration";
-import jobDurationToMonths from "./profile/jobDurationToMonths";
 import trimText from "./helpers/trimText";
+import getJobDuration from "./helpers/getJobDuration";
+import jobDurationToMonths from "./helpers/jobDurationToMonths";
+import verifyImage from "./helpers/verifyImage";
 
 export default function pageToProfile(page: string): LinkedInProfile {
   // HTML pages

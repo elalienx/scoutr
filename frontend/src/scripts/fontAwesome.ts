@@ -10,7 +10,7 @@ import {
   faHouseChimney,
   faPlus,
   faSpinner,
-  faUserSecret,
+  faUser,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -23,17 +23,17 @@ library.add(faLinkedin);
  */
 // Solid
 library.add(
+  faArrowRight,
+  faCircleExclamation,
+  faCheck,
   faCircleCheck,
+  faHourglassHalf,
+  faHouseChimney,
   faLinkedin,
   faPlus,
   faSpinner,
-  faHouseChimney,
-  faCircleExclamation,
-  faCheck,
+  faUser,
   faXmark,
-  faHourglassHalf,
-  faUserSecret,
-  faArrowRight,
 );
 
 export default library;

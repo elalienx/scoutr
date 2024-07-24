@@ -41,15 +41,7 @@ export default function FormStatus(item: Props) {
   // -- Parse links
   if (status === "added") {
     color = "green";
-    icon = "check";
-  }
-  if (status === "private") {
-    color = "yellow";
-    icon = "user-secret";
-  }
-  if (status === "ban") {
-    color = "orange";
-    icon = "hourglass-half";
+    icon = "user";
   }
 
   // safeguard

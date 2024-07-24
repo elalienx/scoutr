@@ -4,10 +4,10 @@ import { beforeAll, vi } from "vitest";
 import { render, RenderOptions } from "@testing-library/react";
 
 // Project files
+import Dialog from "components/dialog/Dialog";
 import { DialogProvider } from "state/DialogContextAPI";
 import "scripts/fontAwesome";
 import "styles/style.css";
-import Dialog from "components/dialog/Dialog";
 
 /**
  * Adds support HTML dialog and JavaScript EventSource.

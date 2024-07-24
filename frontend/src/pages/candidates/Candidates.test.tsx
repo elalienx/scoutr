@@ -155,7 +155,7 @@ describe("Empty and Ready state open the parse linnks formulary", () => {
     // Arrange
     const mockHook = mockUseReadyCandidates;
     const page = <Candidates fetchHook={mockHook} />;
-    const result = "form-parse-links";
+    const result = { text: "Add Candidates", type: { selector: "h2" } };
 
     render(
       <MemoryRouter initialEntries={["/path/1"]}>
@@ -171,14 +171,14 @@ describe("Empty and Ready state open the parse linnks formulary", () => {
     fireEvent.click(button);
 
     // Assert
-    expect(screen.getByTestId(result)).toBeInTheDocument();
+    expect(screen.getByText(result.text, result.type)).toBeInTheDocument();
   });
 
   test("Show parse links formulary from empty state", async () => {
     // Arrange
     const mockHook = mockUseEmpty;
     const page = <Candidates fetchHook={mockHook} />;
-    const result = "form-parse-links";
+    const result = { text: "Add Candidates", type: { selector: "h2" } };
 
     render(
       <MemoryRouter initialEntries={["/path/1"]}>
@@ -194,6 +194,6 @@ describe("Empty and Ready state open the parse linnks formulary", () => {
     fireEvent.click(button);
 
     // Assert
-    expect(screen.getByTestId(result)).toBeInTheDocument();
+    expect(screen.getByText(result.text, result.type)).toBeInTheDocument();
   });
 });

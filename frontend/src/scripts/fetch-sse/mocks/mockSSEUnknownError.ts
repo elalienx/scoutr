@@ -41,7 +41,7 @@ export default class MockSSEUnknownError {
     {
       candidate: null,
       report: {
-        severity: ReportSeverity.MISSING_ALL_FIELDS,
+        severity: ReportSeverity.ALL_FIELDS_MISSING,
         url: "https://www.linkedin.com/in/susanna-vaara-0b33b03a/",
         message: "Missing all fields",
       },
@@ -49,7 +49,7 @@ export default class MockSSEUnknownError {
     {
       candidate: null,
       report: {
-        severity: ReportSeverity.MISSING_ALL_FIELDS,
+        severity: ReportSeverity.ALL_FIELDS_MISSING,
         url: "https://www.linkedin.com/in/lanahaddad87/",
         message: "Missing all fields",
       },
@@ -65,17 +65,23 @@ export default class MockSSEUnknownError {
 
   // Methods
   async start() {
-    await waitForSeconds(.1);
+    await waitForSeconds(0.1);
     this.onmessage({ data: JSON.stringify(this.parsedLinks[0]) });
 
-    await waitForSeconds(.1);
+    await waitForSeconds(0.1);
     this.onmessage({ data: JSON.stringify(this.parsedLinks[1]) });
 
-    await waitForSeconds(.1);
+    await waitForSeconds(0.1);
     this.onmessage({ data: JSON.stringify(this.parsedLinks[2]) });
 
-    await waitForSeconds(.1);
+    await waitForSeconds(0.1);
     this.onerror("this should call onerror() to close connection");
+  }
+
+  addEventListener(eventName: string, callback: Function) {
+    callback();
+
+    return eventName;
   }
 
   onmessage(data: any) {
