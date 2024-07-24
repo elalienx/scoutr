@@ -49,12 +49,11 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
       const parsedLinks = textAreaToArray(formData.unparsed_links);
       const removedLinkedInQueries = parsedLinks.map((item) => removeQueryFromURL(item));
       const encodedLinks = removedLinkedInQueries.map((item) => encodeURI(item));
-
       const query = stringArrayToURL(encodedLinks);
       const uriSSE = `/sse/parse-links/${id}?${query}`;
       const eventSource = new FetchClass(uriSSE);
 
-      eventSource.addEventListener("error", (event: MessageEvent) => onCandidateError(event)); // we need to decide if this takes to other method or what
+      eventSource.addEventListener("error", (event: MessageEvent) => onCandidateError(event));
       eventSource.onmessage = (event: MessageEvent) => onCandidateReceived(event);
       eventSource.onerror = () => onConnectionOver(eventSource); // note: onerror occurs when the connection is finished not neccesarily on error
     } catch (error: unknown) {
@@ -77,21 +76,19 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
   function onCandidateReceived(event: MessageEvent) {
     const { candidate, report } = JSON.parse(event.data);
     const { severity } = report;
-    const { SOME_FIELDS_MISSING: MISSING_SOME_FIELDS } = ReportSeverity;
+    const { SOME_FIELDS_MISSING } = ReportSeverity;
 
     setReports((prev) => [...prev, report]);
 
-    if (severity <= MISSING_SOME_FIELDS) dispatch({ type: "add-single", payload: candidate });
+    if (severity <= SOME_FIELDS_MISSING) dispatch({ type: "add-single", payload: candidate });
   }
 
   async function onCandidateError(event: MessageEvent) {
     // Safeguard
     if (!event?.data) return;
 
-    const url = "";
-    const severity = ReportSeverity.ALL_FIELDS_MISSING;
-    const message = event.data;
-    const report: ReportLog = { url, severity, message };
+    const { ALL_FIELDS_MISSING } = ReportSeverity;
+    const report: ReportLog = { url: "", severity: ALL_FIELDS_MISSING, message: "" };
 
     console.error(event.data);
     setReports((prev) => [...prev, report]);
