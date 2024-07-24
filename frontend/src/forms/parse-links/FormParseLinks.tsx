@@ -11,6 +11,7 @@ import gatherFormData from "scripts/forms/gatherFormData";
 import textAreaToArray from "scripts/forms/textAreaToArray";
 import waitForSeconds from "scripts/waitForSeconds";
 import stringArrayToURL from "scripts/forms/stringArrayToURL";
+import removeQueryFromURL from "scripts/forms/removeQueryFromURL";
 import useDialog from "state/DialogContextAPI";
 import type StatusForm from "types/StatusForm";
 import type CandidateActions from "types/CandidateActions";
@@ -19,7 +20,6 @@ import ReportSeverity from "types/ReportSeverity";
 import fields from "./fields";
 import "styles/components/form.css";
 import "./form-parse-links.css";
-import removeQueryFromURL from "scripts/forms/removeQueryFromURL";
 
 interface Props {
   /** The ID of the assignment to parse. */
@@ -28,7 +28,7 @@ interface Props {
   /** A function that uses reducers to update the candidates state. */
   dispatch: Dispatch<CandidateActions>;
 
-  /** The script used for initializing the Server Side Event */
+  /** The script used for initializing the Server Side Event. */
   FetchClass: any;
 }
 export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
@@ -54,9 +54,8 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
       const uriSSE = `/sse/parse-links/${id}?${query}`;
       const eventSource = new FetchClass(uriSSE);
 
-      // @ts-ignore
-      eventSource.addEventListener("error", (event) => onFailure(event));
-      eventSource.onmessage = (event: MessageEvent) => onMessage(event);
+      eventSource.addEventListener("error", (event: MessageEvent) => onFailure(event)); // we need to decide if this takes to other method or what
+      eventSource.onmessage = (event: MessageEvent) => onCandidateReceived(event);
       eventSource.onerror = () => onConnectionOver(eventSource); // note: onerror occurs when the connection is finished not neccesarily on error
     } catch (error: unknown) {
       onFailure(error);
@@ -69,7 +68,13 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
     setMessage("Collecting LinkedIn links to scan");
   }
 
-  function onMessage(event: MessageEvent) {
+  function onFailure(error: Error | unknown) {
+    console.error(error);
+    setStatus("error");
+    setMessage("Could not collect LinkedIn links to scan");
+  }
+
+  function onCandidateReceived(event: MessageEvent) {
     const { candidate, report } = JSON.parse(event.data);
     const { severity } = report;
     const { MISSING_SOME_FIELDS } = ReportSeverity;
@@ -88,19 +93,8 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
     closeDialog();
   }
 
-  function onFailure(error: Error | unknown) {
-    console.log("onFailure()");
-    console.error(error);
-    setStatus("error");
-    setMessage("Could not collect LinkedIn links to scan");
-  }
-
   return (
-    <form
-      data-testid="form-parse-links"
-      className="form form-parse-links"
-      onSubmit={(event) => onSubmit(event)}
-    >
+    <form className="form form-parse-links" onSubmit={(event) => onSubmit(event)}>
       <h2>Add Candidates</h2>
       <InputFields fields={fields} />
       <FormStatus status={status} message={message} />

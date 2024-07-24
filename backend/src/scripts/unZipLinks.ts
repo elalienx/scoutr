@@ -1,11 +1,9 @@
-export default function unZipLinks(query: string | string[]): string[] {
+export default function unZipLinks(links: string | string[]): string[] {
   // Safeguard
-  if (query === "") throw new Error("The query received was empty");
+  if (links === "") throw new Error("The query received was empty");
 
-  let result = [];
-
-  if (!Array.isArray(query)) result = [query];
-  else result = query;
+  // Properties
+  const result = Array.isArray(links) ? links : [links];
 
   return result;
 }

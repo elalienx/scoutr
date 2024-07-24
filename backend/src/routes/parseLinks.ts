@@ -24,9 +24,8 @@ export default async function parseLinks(request: Request, response: Response, d
       response.write(`data: ${JSON.stringify(data)}\n\n`);
     }
   } catch (error) {
-    response.write(`event: error\n`);
-    response.write(`data: ${error}\n\n`);
-    console.error("Error:", error);
+    console.error("Parse link:", error);
+    response.write(`event: error, data:  ${error}\n\n`);
   } finally {
     response.end();
   }
