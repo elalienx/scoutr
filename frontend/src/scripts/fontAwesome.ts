@@ -5,6 +5,7 @@ import {
   faArrowRight,
   faCheck,
   faCircleCheck,
+  faCircleExclamation,
   faHourglassHalf,
   faHouseChimney,
   faPlus,
@@ -23,6 +24,7 @@ library.add(faLinkedin);
 // Solid
 library.add(
   faArrowRight,
+  faCircleExclamation,
   faCheck,
   faCircleCheck,
   faHourglassHalf,

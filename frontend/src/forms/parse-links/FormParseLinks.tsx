@@ -54,7 +54,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
       const uriSSE = `/sse/parse-links/${id}?${query}`;
       const eventSource = new FetchClass(uriSSE);
 
-      eventSource.addEventListener("error", (event: MessageEvent) => onErrorSSE(event)); // we need to decide if this takes to other method or what
+      eventSource.addEventListener("error", (event: MessageEvent) => onCandidateError(event)); // we need to decide if this takes to other method or what
       eventSource.onmessage = (event: MessageEvent) => onCandidateReceived(event);
       eventSource.onerror = () => onConnectionOver(eventSource); // note: onerror occurs when the connection is finished not neccesarily on error
     } catch (error: unknown) {
@@ -84,9 +84,9 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
     if (severity <= MISSING_SOME_FIELDS) dispatch({ type: "add-single", payload: candidate });
   }
 
-  async function onErrorSSE(event: MessageEvent) {
+  async function onCandidateError(event: MessageEvent) {
     // Safeguard
-    if (!event.data) return;
+    if (!event?.data) return;
 
     console.error(event.data);
     const url = "";
