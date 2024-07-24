@@ -9,7 +9,6 @@ import FormParseLinks from "./FormParseLinks";
 // Mocks
 import MockSSEEOneCandidate from "scripts/fetch-sse/mocks/mockSSEOneCandidate";
 import MockSSEManyCandidates from "scripts/fetch-sse/mocks/mockSSEManyCandidates";
-import MockSSEUnknownError from "scripts/fetch-sse/mocks/mockSSEUnknownError";
 
 test("Expect 1 profile to scan susscesfully", async () => {
   // Arrange
@@ -46,9 +45,8 @@ test("Expect multiple profiles to scan susscesfully", async () => {
   const FetchClass = MockSSEManyCandidates;
   const id = 1;
 
-  // values separated with a comma and a empty space on purpose. Note that is not an array, FormCandidate should convert it to the appropiate data format.
-  const value =
-    "https://www.linkedin.com/in/eduardo-alvarez-nowak/, https://www.linkedin.com/in/susanna-vaara-0b33b03a/ https://www.linkedin.com/in/lanahaddad87/";
+  // A long string with links separated by a comma and a empty space on purpose. FormCandidate should convert it from string to an array of strings
+  const value = `https://www.linkedin.com/in/eduardo-alvarez-nowak/, https://www.linkedin.com/in/susanna-vaara-0b33b03a/ https://www.linkedin.com/in/lanahaddad87/`;
   const goodMessage = "Finished searching";
 
   render(<FormParseLinks dispatch={dispatch} id={id} FetchClass={FetchClass} />);
