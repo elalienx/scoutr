@@ -10,6 +10,7 @@ import {
   faHouseChimney,
   faPlus,
   faSpinner,
+  faTriangleExclamation,
   faUser,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
@@ -34,6 +35,7 @@ library.add(
   faSpinner,
   faUser,
   faXmark,
+  faTriangleExclamation,
 );
 
 export default library;

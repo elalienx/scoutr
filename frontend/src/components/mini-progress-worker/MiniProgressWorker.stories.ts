@@ -71,11 +71,6 @@ export const OneMessageOfEachKind: Story = {
         message: "No errors",
       },
       {
-        url: "http://www.nintendo.com",
-        severity: ReportSeverity.SOME_FIELDS_MISSING,
-        message: "Missing: Profile picture",
-      },
-      {
         url: "http://www.namco.com",
         severity: ReportSeverity.ALL_FIELDS_MISSING,
         message: "Missing all fields",
