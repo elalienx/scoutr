@@ -50,30 +50,6 @@ export const ManyCandidates: Story = {
   },
 };
 
-export const PrivateProfile: Story = {
-  args: {
-    reports: [
-      {
-        url: "http://www.capcom.com",
-        severity: ReportSeverity.PRIVATE_PROFILE,
-        message: "Private profile",
-      },
-    ],
-  },
-};
-
-export const TemporallySuspended: Story = {
-  args: {
-    reports: [
-      {
-        url: "http://www.konami.com",
-        severity: ReportSeverity.TEMPORAL_BAN,
-        message: "Temporally suspendeda",
-      },
-    ],
-  },
-};
-
 export const UnknownError: Story = {
   args: {
     reports: [
@@ -86,7 +62,7 @@ export const UnknownError: Story = {
   },
 };
 
-export const OnErrorOfEachKind: Story = {
+export const OneMessageOfEachKind: Story = {
   args: {
     reports: [
       {
@@ -95,14 +71,9 @@ export const OnErrorOfEachKind: Story = {
         message: "No errors",
       },
       {
-        url: "http://www.capcom.com",
-        severity: ReportSeverity.PRIVATE_PROFILE,
-        message: "Private profile",
-      },
-      {
-        url: "http://www.konami.com",
-        severity: ReportSeverity.TEMPORAL_BAN,
-        message: "Temporally suspendeda",
+        url: "http://www.nintendo.com",
+        severity: ReportSeverity.SOME_FIELDS_MISSING,
+        message: "Missing: Profile picture",
       },
       {
         url: "http://www.namco.com",

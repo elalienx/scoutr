@@ -29,19 +29,26 @@ export default function FormStatus(item: Props) {
     color = "blue";
     icon = "spinner";
   }
+
   if (status === "error") {
     color = "red";
     icon = "circle-exclamation";
   }
+
   if (status === "complete") {
     color = "blue";
     icon = "check";
   }
 
   // -- Parse links
-  if (status === "added") {
+  if (status === "sse-ok") {
     color = "green";
     icon = "user";
+  }
+
+  if (status === "sse-error") {
+    color = "yellow";
+    icon = "triangle-exclamation";
   }
 
   // safeguard

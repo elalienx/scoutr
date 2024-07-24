@@ -4,11 +4,8 @@ import { BrowserRouter } from "react-router-dom";
 
 // Project files
 import MockSSEEOneCandidate from "scripts/fetch-sse/mocks/mockSSEOneCandidate";
-import MockSSEPrivate from "scripts/fetch-sse/mocks/mockSSEPrivate";
-import MockSSEBan from "scripts/fetch-sse/mocks/mockSSEBan";
 import MockSSEUnknownError from "scripts/fetch-sse/mocks/mockSSEUnknownError";
 import FormParseLinks from "./FormParseLinks";
-import MockSSEAllReports from "scripts/fetch-sse/mocks/mockSSEAllReports";
 import MockSSEManyCandidates from "scripts/fetch-sse/mocks/mockSSEManyCandidates";
 
 const meta = {
@@ -29,14 +26,6 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // Stories
-export const OneReportOfEachKind: Story = {
-  args: {
-    id: 1,
-    FetchClass: MockSSEAllReports,
-    dispatch: () => {},
-  },
-};
-
 export const Default: Story = {
   args: {
     id: 1,
@@ -49,22 +38,6 @@ export const MultipleCandidates: Story = {
   args: {
     id: 1,
     FetchClass: MockSSEManyCandidates,
-    dispatch: () => {},
-  },
-};
-
-export const PrivateProfile: Story = {
-  args: {
-    id: 1,
-    FetchClass: MockSSEPrivate,
-    dispatch: () => {},
-  },
-};
-
-export const TemporalBan: Story = {
-  args: {
-    id: 1,
-    FetchClass: MockSSEBan,
     dispatch: () => {},
   },
 };

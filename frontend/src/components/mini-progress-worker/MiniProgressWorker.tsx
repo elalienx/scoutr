@@ -20,8 +20,8 @@ export default function MiniProgressWorker({ reports }: Props) {
     <div className="mini-progress-worker">
       <h3>Scanning report</h3>
       <div className="statuses">
-        {normal > 0 && <FormStatus status={"added"} message={`Candidates added × ${normal}`} />}
-        {error > 0 && <FormStatus status={"error"} message={`Failed to add × ${error}`} />}
+        {normal > 0 && <FormStatus status={"sse-ok"} message={`Candidates added × ${normal}`} />}
+        {error > 0 && <FormStatus status={"sse-error"} message={`Failed to add × ${error}`} />}
       </div>
     </div>
   );

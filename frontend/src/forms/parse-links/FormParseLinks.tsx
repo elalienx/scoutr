@@ -88,12 +88,12 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
     // Safeguard
     if (!event?.data) return;
 
-    console.error(event.data);
     const url = "";
     const severity = ReportSeverity.ALL_FIELDS_MISSING;
     const message = event.data;
     const report: ReportLog = { url, severity, message };
 
+    console.error(event.data);
     setReports((prev) => [...prev, report]);
   }
 
