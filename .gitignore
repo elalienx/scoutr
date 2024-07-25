@@ -1,5 +1,6 @@
 # Debug screenshots
 backend/screenshots/
+backend/src/auth/loginAuth.js
 
 # Mac files
 .DS_Store
