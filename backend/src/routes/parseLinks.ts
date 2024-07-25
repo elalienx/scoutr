@@ -6,7 +6,6 @@ import { Page } from "playwright";
 // Project files
 import etlProcess from "../scan-profile/etlProcess";
 import unZipLinks from "../scripts/unZipLinks";
-import ReportLog from "../types/ReportLog";
 
 export default async function parseLinks(request: Request, response: Response, database: Client, browserPage: Page) {
   console.time("Parse links");
