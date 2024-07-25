@@ -14,11 +14,9 @@ export default async function parseLinks(request: Request, response: Response, d
   response.setHeader("Content-Type", "text/event-stream");
 
   // Properties
-  console.time("Unzip and decode");
   const assignment_id = Number(request.params.assignment_id);
   const unZippedLinks = unZipLinks(request.query.links as string[]);
   const links = unZippedLinks.map((item) => decodeURI(item));
-  console.timeEnd("Unzip and decode");
 
   try {
     for (const link of links) {
