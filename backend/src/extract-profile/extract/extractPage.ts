@@ -11,6 +11,9 @@ export default async function extractPage(page: Page, url: string): Promise<stri
     await page.waitForSelector(".pvs-header__title", { timeout: timoutInMilliseconds });
 
     result = await page.content();
+    console.log("%c---", "color: magenta;");
+    console.log("%cPlaywright: Finished scrapping page.", "color: magenta;");
+    console.log("%c---", "color: magenta;");
   } catch (error) {
     await page.screenshot({ path: "screenshots/error.png", fullPage: true });
     throw new Error(`Playwright: Cant' navigate to URL "${url}"`);
