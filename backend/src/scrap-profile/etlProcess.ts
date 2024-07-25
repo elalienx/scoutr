@@ -3,11 +3,11 @@ import type { Client } from "pg";
 import { Page } from "playwright";
 
 // Project files
-import candidateQuery from "../queries/insertCandidate";
-import reportQuery from "../queries/insertErrorLog";
 import extractPage from "./extract/extractPage";
 import pageToProfile from "./transform/pageToProfile";
 import checkEmptyFields from "./transform/checkEmptyFields";
+import saveAndReturnCandidate from "./load/saveCandidate";
+import saveReport from "./load/saveReport";
 
 export default async function etlProcess(url: string, assignment_id: number, database: Client, browserPage: Page) {
   // Extract
@@ -22,8 +22,8 @@ export default async function etlProcess(url: string, assignment_id: number, dat
   // Load
   let candidate = {};
 
-  if (report.severity < 2) candidate = (await database.query(candidateQuery, profileAsArray)).rows[0];
-  if (report.severity) await database.query(reportQuery, reportAsArray);
+  if (report.severity < 2) candidate = saveAndReturnCandidate(database, profileAsArray);
+  if (report.severity) saveReport(database, reportAsArray);
 
   return { candidate, report };
 }
