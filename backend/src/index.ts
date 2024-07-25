@@ -1,7 +1,6 @@
 // Node modules
 import express from "express";
 import path from "path";
-import { firefox as navigator } from "playwright";
 
 // Project files
 import databaseCredentials from "./database/credentials";
@@ -11,16 +10,13 @@ import getCandidates from "./routes/getCandidates";
 import parseLinks from "./routes/parseLinks";
 import postAssignment from "./routes/postAssignment";
 import patchCandidate from "./routes/patchCandidate";
+import getPageWithContext from "./browser/getPageWithContext";
 
 async function initializeServer(port: number) {
   // Properties
   const client = await postgresClient(databaseCredentials);
   const app = express();
-
-  // Browser optimizations (refactor)
-  const browser = await navigator.launch();
-  const context = await browser.newContext({ storageState: "src/auth/loginAuth.json" });
-  const page = await context.newPage();
+  const page = await getPageWithContext("src/auth/loginAuth.json");
 
   // Start server
   app.use(express.json());
