@@ -4,7 +4,7 @@
 
 - The profiles provided here were extracted using the logged version of LinkedIn, as the unlogged version has different CSS class names.
 - If you need additional testing profiles, open a browser, login into LinkedIn to acquire profiles that align with what the logged virtual browser sees.
-- Dissable Prettier formatting on these profiles to prevent interference with the HTML layout observed by the virtual browser.
+- To reduce the file size of the profiles you can safely delete the all the content in the <head> tag. As Cheerio only parses the content on the <body> tag.
 
 ## Differences between profiles
 
