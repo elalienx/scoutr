@@ -4,7 +4,7 @@ import type { Client } from "pg";
 import { Page } from "playwright";
 
 // Project files
-import etlProcess from "../scrap-profile/etlProcess";
+import etlProcess from "../scan-profile/etlProcess";
 import unZipLinks from "../scripts/unZipLinks";
 import ReportLog from "../types/ReportLog";
 
