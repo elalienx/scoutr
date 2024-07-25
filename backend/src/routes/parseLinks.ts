@@ -8,7 +8,6 @@ import etlProcess from "../scan-profile/etlProcess";
 import unZipLinks from "../scripts/unZipLinks";
 
 export default async function parseLinks(request: Request, response: Response, database: Client, browserPage: Page) {
-  console.time("Parse links");
   // Headers
   response.setHeader("Content-Type", "text/event-stream");
 
@@ -31,5 +30,4 @@ export default async function parseLinks(request: Request, response: Response, d
   } finally {
     response.end();
   }
-  console.timeEnd("Parse links");
 }
