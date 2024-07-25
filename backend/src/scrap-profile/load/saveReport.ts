@@ -8,7 +8,6 @@ export default async function saveReport(database: Client, data: any[]): Promise
   try {
     await database.query(query, data);
   } catch (error) {
-    console.error(error);
-    throw error("Postgress: Can't save report as one of the fields exceeds its designated column limit.");
+    throw new Error("Postgress: Can't save report as one of the fields exceeds its designated column limit.");
   }
 }

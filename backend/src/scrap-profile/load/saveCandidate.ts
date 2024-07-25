@@ -13,8 +13,7 @@ export default async function saveAndReturnCandidate(database: Client, data: any
 
     result = databaseRecords.rows[0];
   } catch (error) {
-    console.error(error);
-    throw error("Postgress: Can't save candidate as one of the fields exceeds its designated column limit.");
+    throw new Error("Postgress: Can't save candidate as one of the fields exceeds its designated column limit.");
   }
 
   return result;
