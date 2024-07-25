@@ -11,6 +11,11 @@ export default async function getPageWithContext(filePath: string) {
 
     page = await context.newPage();
     console.info("Scoutr browser with LinkedIn creadentials is ready");
+
+    // Setup debug listener
+    page.on("request", (request) => {
+      console.log("Playwright: Browser activity detected", request.url);
+    });
   } catch (error) {
     throw new Error(
       `
