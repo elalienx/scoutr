@@ -14,7 +14,7 @@ export default async function getPageWithContext(filePath: string) {
 
     // Setup debug listener
     page.on("request", (request) => {
-      console.log("Playwright: Browser activity detected", request.url);
+      console.log(`Browser activity: ${request.url()}`);
     });
   } catch (error) {
     throw new Error(
@@ -30,7 +30,3 @@ export default async function getPageWithContext(filePath: string) {
 
   return page;
 }
-
-/**
- * await page.close({ runBeforeUnload: false }); // it may be the fastest way to close the page
- */
