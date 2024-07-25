@@ -22,8 +22,8 @@ export default async function etlProcess(url: string, assignment_id: number, dat
   // Load
   let candidate = {};
 
-  if (report.severity < 2) candidate = saveAndReturnCandidate(database, profileAsArray);
-  if (report.severity) saveReport(database, reportAsArray);
+  if (report.severity < 2) candidate = await saveAndReturnCandidate(database, profileAsArray);
+  if (report.severity) await saveReport(database, reportAsArray);
 
   return { candidate, report };
 }
