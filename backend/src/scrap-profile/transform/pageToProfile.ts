@@ -23,7 +23,7 @@ export default function pageToProfile(page: string): LinkedInProfile {
 
   // Helpers
   const removeTypeOfJob: RegExp = / · .*/; // Novare · Full time = Novare. ACdelco · Contract = ACdelco, etc.
-  const maximumDatabaseSize = 999999;
+  const maximumDatabaseSize = 50;
 
   // Extra transformations
   // -- 1. Candidate name
