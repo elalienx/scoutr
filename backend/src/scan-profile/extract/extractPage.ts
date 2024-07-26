@@ -14,8 +14,6 @@ export default async function extractPage(page: Page, url: string): Promise<stri
   } catch (error) {
     await page.screenshot({ path: "screenshots/error.png", fullPage: true });
     throw new Error(`Playwright: Cant' navigate to URL "${url}". The auth is probably expired.`);
-  } finally {
-    page.goto("about:blank"); // Important: To stop linkedin ad scripts eating resources
   }
 
   return result;
