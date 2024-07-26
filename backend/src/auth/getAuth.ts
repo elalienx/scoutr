@@ -28,7 +28,7 @@ async function getAuth(url: string): Promise<void> {
       throw new Error("Unexpected auth page appeared");
     }
   } catch (error) {
-    await page.screenshot({ path: "screenshots/auth.png", fullPage: true });
+    await page.screenshot({ path: "screenshots/auth.png" });
     console.error(`Playwright: Couldn't obtain auth from ${url}`);
     console.error(error);
   } finally {
