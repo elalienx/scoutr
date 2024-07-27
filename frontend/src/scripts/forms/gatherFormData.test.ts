@@ -4,7 +4,7 @@ import { expect, test } from "vitest";
 // Project files
 import gatherFormData from "./gatherFormData";
 
-test("Fields with repeated names throw error as must be unique", () => {
+test("Fields with repeated names throw errors as they must be unique", () => {
   // Arrange
   // Mock the form HTML Form
   document.body.innerHTML = `
