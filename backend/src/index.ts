@@ -16,7 +16,7 @@ async function initializeServer(port: number) {
   // Properties
   const client = await postgresClient(databaseCredentials);
   const app = express();
-  const page = await getPageWithContext("src/auth/loginAuth.json");
+  const page = await getPageWithContext("LoginAuth.json");
 
   // Start server
   app.use(express.json());
