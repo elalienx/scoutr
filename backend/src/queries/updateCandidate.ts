@@ -13,7 +13,7 @@
  */
 export default function updateCandidate(id: number, keys: string[]): string {
   // Safeguard
-  if (keys.length === 0) throw Error("Error: keys passed in empty");
+  if (keys.length === 0) throw new Error("Error: keys passed in empty");
 
   const parameters = keys.map((key, index) => `${key} = $${index + 1}`);
   const SET = parameters.join(", ");
