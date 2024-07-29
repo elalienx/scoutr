@@ -72,13 +72,13 @@ export default function RowCandidate({ candidate, index, dispatch }: Props) {
       </td>
 
       {/* 👨🏻 Canddiate */}
-      <td className="candidate column-big hover" data-label="Candidate">
-        <ItemCandidate candidate={candidate} onClick={onClick} />
+      <td className="candidate column-big" data-label="Candidate">
+        <ItemCandidate candidate={candidate} />
       </td>
 
       {/* 🏢 Company */}
-      <td className="company column-big hover" data-label="Company">
-        <ItemCompany candidate={candidate} onClick={onClick} />
+      <td className="company column-big" data-label="Company">
+        <ItemCompany candidate={candidate} />
       </td>
 
       {/* 📝 Notes */}
@@ -94,7 +94,7 @@ export default function RowCandidate({ candidate, index, dispatch }: Props) {
       {/* 📈 Relevance */}
       <td
         onClick={() => onClick("relevance")}
-        className="relevance column-medium hover editable"
+        className="relevance column-medium editable"
         data-label="Relevance"
       >
         {relevance > 0 && <ItemBadge {...parsedData.relevance} />}
@@ -103,7 +103,7 @@ export default function RowCandidate({ candidate, index, dispatch }: Props) {
       {/* 📲 Contact */}
       <td
         onClick={() => onClick("contact_status")}
-        className="contact column-medium hover editable"
+        className="contact column-medium editable"
         data-label="Contact"
       >
         {contact_status > 0 && <ItemBadge {...parsedData.contact} />}

@@ -24,12 +24,8 @@ image {
   overflow: hidden;
 }
 
-/* Hover */
-.hover:hover {
+/* UI Interaction */
+.editable:hover {
   background-color: var(--color-gray-light);
-}
-
-/* Cursor */
-.editable {
-  cursor: context-menu;
+  cursor: pointer;
 }
