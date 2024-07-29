@@ -34,7 +34,6 @@ export const Default: Story = {
       contact_status: 0,
       contact_date: "",
     },
-    onClick: () => {},
   },
 };
 
@@ -56,6 +55,5 @@ export const Empty: Story = {
       contact_status: 0,
       contact_date: "",
     },
-    onClick: () => {},
   },
 };

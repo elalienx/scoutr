@@ -34,7 +34,6 @@ export const Default: Story = {
       contact_status: 0,
       contact_date: "",
     },
-    onClick: () => alert("Clicked"),
   },
 };
 
@@ -56,7 +55,6 @@ export const ShortJobDuration: Story = {
       contact_status: 0,
       contact_date: "",
     },
-    onClick: () => alert("Clicked"),
   },
 };
 
@@ -78,6 +76,5 @@ export const Empty: Story = {
       contact_status: 0,
       contact_date: "",
     },
-    onClick: () => alert("Clicked"),
   },
 };
