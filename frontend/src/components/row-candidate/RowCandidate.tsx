@@ -94,7 +94,7 @@ export default function RowCandidate({ candidate, index, dispatch }: Props) {
       {/* 📈 Relevance */}
       <td
         onClick={() => onClick("relevance")}
-        className="relevance column-medium hover editable"
+        className="relevance column-medium editable"
         data-label="Relevance"
       >
         {relevance > 0 && <ItemBadge {...parsedData.relevance} />}
@@ -103,7 +103,7 @@ export default function RowCandidate({ candidate, index, dispatch }: Props) {
       {/* 📲 Contact */}
       <td
         onClick={() => onClick("contact_status")}
-        className="contact column-medium hover editable"
+        className="contact column-medium editable"
         data-label="Contact"
       >
         {contact_status > 0 && <ItemBadge {...parsedData.contact} />}
