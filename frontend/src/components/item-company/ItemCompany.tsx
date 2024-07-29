@@ -7,13 +7,10 @@ import "./item-company.css";
 interface Props {
   /** Candidare data focused on business information */
   candidate: Candidate;
-
-  /** A click event to edit missing information. */
-  onClick: Function;
 }
 
 /** Shows the company details of the candidate. */
-export default function ItemCompany({ candidate, onClick }: Props) {
+export default function ItemCompany({ candidate }: Props) {
   const { company_image_url, company_name, company_duration_in_months } = candidate;
 
   // Properties
@@ -28,15 +25,8 @@ export default function ItemCompany({ candidate, onClick }: Props) {
     <div className="item-company">
       <ImageThumbnail src={company_image_url} alt="The company logo" />
       <div className="content">
-        <span onClick={() => onClick("company_name")} className="title trim-text editable">
-          {company_name || "---"}
-        </span>
-        <small
-          onClick={() => onClick("company_duration_in_months")}
-          className={`label trim-text ${durationHighlight} editable`}
-        >
-          {durationToShow}
-        </small>
+        <span className="title trim-text">{company_name || "---"}</span>
+        <small className={`label trim-text ${durationHighlight}`}>{durationToShow}</small>
       </div>
     </div>
   );

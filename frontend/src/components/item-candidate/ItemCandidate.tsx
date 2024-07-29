@@ -6,13 +6,10 @@ import Candidate from "types/Candidate";
 interface Props {
   /** Candidare data focused on personal information */
   candidate: Candidate;
-
-  /** A click event to edit missing information. */
-  onClick: Function;
 }
 
 /** Shows the personal details of a candidate. */
-export default function ItemCandidate({ candidate, onClick }: Props) {
+export default function ItemCandidate({ candidate }: Props) {
   const { candidate_image_url, candidate_name, candidate_job_title, linked_in_url } = candidate;
 
   return (
@@ -22,11 +19,7 @@ export default function ItemCandidate({ candidate, onClick }: Props) {
         <a href={linked_in_url} className="title trim-text" target="_blank" rel="noreferrer">
           {candidate_name}
         </a>
-        <small
-          onClick={() => onClick("candidate_job_title")}
-          className="label trim-text editable"
-          title={candidate_job_title}
-        >
+        <small className="label trim-text" title={candidate_job_title}>
           {candidate_job_title || "---"}
         </small>
       </div>
