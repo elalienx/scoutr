@@ -32,9 +32,9 @@ test("Returns an empty string for candidate image if profile has private picture
   const page = profile2;
   const result = {
     candidate_name: "Sri Lalitha Jeevanige",
-    candidate_job_title: "SwedbankScrum Master - Software EngineerSoftware E", // timmed "Software Engineer" to "Software E" because its longer than what database expects in this column
+    candidate_job_title: "Scrum Master - Software Engineer",
     candidate_image_url: "",
-    company_name: "Full-time",
+    company_name: "Swedbank",
     company_duration_in_months: 33,
     company_image_url: `https://media.licdn.com/dms/image/C4E0BAQGIwfzke6i5bQ/company-logo_100_100/0/1630648928740/swedbank_logo?e=1729123200&v=beta&t=8DGj5MZgzOMdbCoSnbhXsqd0T8929_FllplB-SuIhfk`,
   };
