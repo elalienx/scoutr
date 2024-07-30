@@ -23,7 +23,9 @@ export default function Hero() {
           className="image"
           src={ImageHero}
           alt="A woman and a man sitting on a table looking at a laptop"
-          fetchPriority="high"
+          // @ts-ignore
+          // fetchpriority in lowercase is the correct way to write this atribute (https://github.com/facebook/react/issues/25682)
+          fetchpriority="high"
         />
       </div>
     </header>
