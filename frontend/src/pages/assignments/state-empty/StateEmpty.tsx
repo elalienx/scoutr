@@ -2,7 +2,7 @@
 import type { ReactNode } from "react";
 // Project files
 
-import Illustration from "assets/state-empty-assignments.png";
+import Illustration from "assets/state-empty-assignments.avif";
 import Button from "components/button/Button";
 import useDialog from "state/DialogContextAPI";
 import "styles/components/state-assignments.css";

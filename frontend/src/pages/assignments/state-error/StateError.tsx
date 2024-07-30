@@ -1,5 +1,5 @@
 // Project files
-import Illustration from "assets/state-error.png";
+import Illustration from "assets/state-error.avif";
 import "styles/components/state-assignments.css";
 
 export default function StateError() {

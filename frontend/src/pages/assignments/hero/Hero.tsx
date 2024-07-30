@@ -1,5 +1,5 @@
 // Project files
-import ImageHero from "assets/assignments-hero.png";
+import ImageHero from "assets/assignments-hero.avif";
 import "./hero.css";
 
 export default function Hero() {
@@ -18,10 +18,14 @@ export default function Hero() {
         </p>
       </div>
       <div className="media">
+        {/* fetchPriority so the hero image gets downloaded before the company logos in the assigment cards */}
         <img
           className="image"
           src={ImageHero}
           alt="A woman and a man sitting on a table looking at a laptop"
+          // @ts-ignore
+          // fetchpriority in lowercase is the correct way to write this atribute (https://github.com/facebook/react/issues/25682)
+          fetchpriority="high"
         />
       </div>
     </header>
