@@ -9,6 +9,7 @@
   background-color: white;
 
   .scoutr-logo {
+    aspect-ratio: 4/1; /* adding aspect ratio to */
     height: var(--scoutr-logo-size);
   }
 }
