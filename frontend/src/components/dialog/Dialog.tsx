@@ -8,11 +8,11 @@ import "./dialog.css";
  */
 export default function Dialog() {
   // Global state
-  const { dialogRef, dialog } = useDialog();
+  const { dialogRef, reactComponent } = useDialog();
 
   return (
     <dialog className="dialog" ref={dialogRef}>
-      {dialog}
+      {reactComponent}
     </dialog>
   );
 }
