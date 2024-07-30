@@ -25,7 +25,5 @@ export default function ImageThumbnail(item: Props) {
   const Placeholder = profile === "company" ? Company : Candidate;
   const Source = src || Placeholder;
 
-  return (
-    <img src={Source} className={`image-thumbnail ${className}`} alt={alt} />
-  );
+  return <img alt={alt} className={`image-thumbnail ${className}`} loading="lazy" src={Source} />;
 }

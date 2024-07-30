@@ -18,10 +18,12 @@ export default function Hero() {
         </p>
       </div>
       <div className="media">
+        {/* fetchPriority so the hero image gets downloaded before the company logos in the assigment cards */}
         <img
           className="image"
           src={ImageHero}
           alt="A woman and a man sitting on a table looking at a laptop"
+          fetchPriority="high"
         />
       </div>
     </header>
