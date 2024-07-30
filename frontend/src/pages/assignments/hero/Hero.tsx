@@ -1,5 +1,5 @@
 // Project files
-import ImageHero from "assets/assignments-hero.png";
+import ImageHero from "assets/assignments-hero.avif";
 import "./hero.css";
 
 export default function Hero() {

@@ -18,6 +18,7 @@
   }
 
   img {
+    aspect-ratio: 7/6; /* to avoid layout-shift during loading */
     height: 135px;
   }
 }
