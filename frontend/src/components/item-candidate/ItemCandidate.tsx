@@ -14,7 +14,7 @@ export default function ItemCandidate({ candidate }: Props) {
 
   return (
     <div className="item-candidate">
-      <ImageThumbnail src={candidate_image_url} profile="candidate" />
+      <ImageThumbnail src={candidate_image_url} alt="The candidate picture" profile="candidate" />
       <div className="content">
         <a href={linked_in_url} className="title trim-text" target="_blank" rel="noreferrer">
           {candidate_name}
