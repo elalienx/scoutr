@@ -25,5 +25,15 @@ export default function ImageThumbnail(item: Props) {
   const Placeholder = profile === "company" ? Company : Candidate;
   const Source = src || Placeholder;
 
-  return <img alt={alt} className={`image-thumbnail ${className}`} loading="lazy" src={Source} />;
+  return (
+    <img
+      alt={alt}
+      className={`image-thumbnail ${className}`}
+      loading="lazy"
+      src={Source}
+      // @ts-ignore
+      // fetchpriority in lowercase is the correct way to write this atribute (https://github.com/facebook/react/issues/25682)
+      fetchpriority="low"
+    />
+  );
 }
