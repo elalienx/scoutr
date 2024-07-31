@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 
 // Project files
 import Dialog from "components/dialog/Dialog";
+import LoaderSuspense from "components/loader-suspense/LoaderSuspense";
 import useFetch from "scripts/fetch-hook/useFetch";
 
 // Dynamic imports to improve loading speed
@@ -17,12 +18,9 @@ export default function App() {
   const candidates = <Candidates fetchHook={useFetch} />;
   const pageNotFound = <Page404 />;
 
-  // Components
-  const Loading = <small>⏰ Loading...</small>;
-
   return (
     <div id="app">
-      <Suspense fallback={Loading}>
+      <Suspense fallback={<LoaderSuspense />}>
         <Routes>
           <Route path="/" element={assigments} />
           <Route path="/candidates/:assignment_id" element={candidates} />

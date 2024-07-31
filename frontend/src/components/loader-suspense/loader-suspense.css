@@ -1,0 +1,13 @@
+.loader-suspense {
+  display: block; /* to allow me to play with the horizontal positioning using text-align */
+  position: absolute;
+  bottom: var(--space-medium);
+  text-align: center;
+}
+
+@media (min-width: 700px) {
+  .loader-suspense {
+    bottom: var(--space-big);
+    text-align: right;
+  }
+}
