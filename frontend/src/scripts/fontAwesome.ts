@@ -25,17 +25,16 @@ library.add(faLinkedin);
 // Solid
 library.add(
   faArrowRight,
-  faCircleExclamation,
   faCheck,
   faCircleCheck,
+  faCircleExclamation,
   faHourglassHalf,
   faHouseChimney,
-  faLinkedin,
   faPlus,
   faSpinner,
+  faTriangleExclamation,
   faUser,
   faXmark,
-  faTriangleExclamation,
 );
 
 export default library;
