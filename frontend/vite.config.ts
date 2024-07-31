@@ -9,7 +9,6 @@ export default defineConfig({
   test: {
     globals: true,
     environment: "happy-dom",
-    css: true,
     setupFiles: ["./vitest-setup.ts"],
     includeSource: ["src/**/*.{js,ts}"],
     exclude: [...configDefaults.exclude],
