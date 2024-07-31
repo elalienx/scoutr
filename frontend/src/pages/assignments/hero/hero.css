@@ -6,20 +6,15 @@
   .content {
     display: grid;
     gap: var(--space-small);
-  }
 
-  h1 {
-    line-height: 0.7; /* to force the 2 lines to touch each other. This is a stylistic decision! */
-    letter-spacing: -1.5px;
-  }
+    h1 {
+      line-height: 0.7; /* to force the 2 lines to touch each other. This is a stylistic decision! */
+      letter-spacing: -1.5px;
+    }
 
-  .subtitle {
-    color: var(--color-gray);
-  }
-
-  img {
-    aspect-ratio: 7/6; /* to avoid layout-shift during loading */
-    height: 135px;
+    .subtitle {
+      color: var(--color-gray);
+    }
   }
 }
 
@@ -31,23 +26,19 @@
 
     .content {
       gap: var(--space-medium);
+
+      h1 {
+        font-size: 72px;
+        letter-spacing: -3.5px;
+      }
+
+      .subtitle {
+        font-size: 28px;
+      }
     }
 
     .media {
       text-align: center;
-    }
-
-    h1 {
-      font-size: 72px;
-      letter-spacing: -3.5px;
-    }
-
-    .subtitle {
-      font-size: 28px;
-    }
-
-    img {
-      height: 240px;
     }
   }
 }
