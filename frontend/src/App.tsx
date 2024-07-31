@@ -1,15 +1,15 @@
 // Node modules
-import React, { Suspense } from "react";
+import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 
 // Project files
 import Dialog from "components/dialog/Dialog";
 import useFetch from "scripts/fetch-hook/useFetch";
 
-// Dynamically load routes on demmand
-const Assignments = React.lazy(() => import("./pages/assignments/Assignments"));
-const Candidates = React.lazy(() => import("./pages/candidates/Candidates"));
-const Page404 = React.lazy(() => import("./pages/page-404/Page404"));
+// Dynamic imports to improve loading speed
+const Assignments = lazy(() => import("pages/assignments/Assignments"));
+const Candidates = lazy(() => import("pages/candidates/Candidates"));
+const Page404 = lazy(() => import("pages/page-404/Page404"));
 
 export default function App() {
   // Pages
