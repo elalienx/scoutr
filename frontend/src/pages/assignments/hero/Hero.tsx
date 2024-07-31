@@ -23,7 +23,7 @@ export default function Hero() {
         <picture>
           <source srcSet={ImageDesktop} width="280" height="240" media="(min-width: 700px)" />
           <source srcSet={ImageMobile} width="154" height="132" />
-          {/* shared atrributes like className, alt, and fetchpriority, and fallback in case browser does not support AVIF */}
+          {/* shared atrributes like className, alt, and fetchpriority, and fallback in case the browser don't support AVIF */}
           <img
             alt="A woman and a man sitting on a table looking at a laptop"
             className="image"
@@ -31,7 +31,7 @@ export default function Hero() {
             width="371"
             height="318"
             // @ts-ignore
-            // fetchpriority in lowercase is the correct way to write this atribute (https://github.com/facebook/react/issues/25682)
+            // fetchpriority spelled in lowercase is the correct way to write this atribute. Source: https://github.com/facebook/react/issues/25682
             fetchpriority="high"
           />
         </picture>
