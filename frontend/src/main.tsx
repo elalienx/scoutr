@@ -7,7 +7,6 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App.tsx";
 import { DialogProvider } from "state/DialogContextAPI.tsx";
 import "styles/style.css";
-import "scripts/fontAwesome.ts";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

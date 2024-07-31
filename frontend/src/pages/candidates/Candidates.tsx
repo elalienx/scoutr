@@ -14,6 +14,7 @@ import type Candidate from "types/Candidate";
 import type StatusPage from "types/StatusPage";
 import Content from "./content/Content";
 import StateError from "./state-error/StateError";
+import "scripts/fontAwesome.ts";
 import "./candidates.css";
 
 interface Props {
