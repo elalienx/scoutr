@@ -1,12 +1,16 @@
 // Node modules
+import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 
 // Project files
 import Dialog from "components/dialog/Dialog";
-import Assignments from "pages/assignments/Assignments";
-import Candidates from "pages/candidates/Candidates";
-import Page404 from "pages/page-404/Page404";
+import LoaderSuspense from "components/loader-suspense/LoaderSuspense";
 import useFetch from "scripts/fetch-hook/useFetch";
+
+// Dynamic imports to improve loading speed
+const Assignments = lazy(() => import("pages/assignments/Assignments"));
+const Candidates = lazy(() => import("pages/candidates/Candidates"));
+const Page404 = lazy(() => import("pages/page-404/Page404"));
 
 export default function App() {
   // Pages
@@ -16,11 +20,13 @@ export default function App() {
 
   return (
     <div id="app">
-      <Routes>
-        <Route path="/" element={assigments} />
-        <Route path="/candidates/:assignment_id" element={candidates} />
-        <Route path="*" element={pageNotFound} />
-      </Routes>
+      <Suspense fallback={<LoaderSuspense />}>
+        <Routes>
+          <Route path="/" element={assigments} />
+          <Route path="/candidates/:assignment_id" element={candidates} />
+          <Route path="*" element={pageNotFound} />
+        </Routes>
+      </Suspense>
       <Dialog />
     </div>
   );
