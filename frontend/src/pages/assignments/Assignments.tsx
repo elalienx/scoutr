@@ -6,6 +6,7 @@ import Content from "./content/Content";
 import Footer from "./footer/Footer";
 import Hero from "./hero/Hero";
 import StateError from "./state-error/StateError";
+import "scripts/fontAwesome.ts";
 import "./assignments.css";
 
 interface Props {
