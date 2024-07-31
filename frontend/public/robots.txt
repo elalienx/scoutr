@@ -1,5 +1,5 @@
 User-agent: *
 Disallow: 
-Crawl-delay: 8600
+Crawl-delay: 86400
 Disallow: /api/
 Disallow: /assets/
