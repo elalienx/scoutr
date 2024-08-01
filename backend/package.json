@@ -2,10 +2,10 @@
   "name": "scoutr-backend",
   "version": "1.0.0",
   "description": "Your LinkedIn Headhunter Companion",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
     "get_auth": "tsx src/auth/getAuth.ts",
-    "dev": "tsx watch src",
+    "dev": "tsx watch .",
     "test": "vitest",
     "test_once": "vitest --watch=false"
   },
