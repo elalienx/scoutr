@@ -4,7 +4,7 @@
   "description": "Your LinkedIn Headhunter Companion",
   "main": "src/index.ts",
   "scripts": {
-    "get_auth": "tss src/auth/getAuth.ts",
+    "get_auth": "tsx src/auth/getAuth.ts",
     "dev": "tsx watch .",
     "test": "vitest run --coverage",
     "test_once": "vitest --watch=false"
