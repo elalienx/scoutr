@@ -4,8 +4,8 @@
   "description": "Your LinkedIn Headhunter Companion",
   "main": "src/index.ts",
   "scripts": {
-    "get_auth": "tss src/auth/getAuth.ts",
-    "dev": "tsx .",
+    "get_auth": "tsx src/auth/getAuth.ts",
+    "dev": "tsx watch .",
     "test": "vitest run --coverage",
     "test_once": "vitest --watch=false"
   },
@@ -25,14 +25,13 @@
     "@types/pg": "^8.11.4",
     "@vitest/coverage-v8": "^2.0.5",
     "tslib": "^2.6.2",
-    "typescript": "^5.4.3",
+    "tsx": "^4.16.5",
     "vitest": "^2.0.5"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
     "express": "^4.19.2",
     "pg": "^8.11.3",
-    "playwright": "1.43.0",
-    "tsx": "^4.16.5"
+    "playwright": "1.43.0"
   }
 }
