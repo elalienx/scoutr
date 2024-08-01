@@ -5,7 +5,7 @@
   --color-orange: #e18433;
   --color-black: #212529;
   --color-green: #88ad3d;
-  --color-gray: #a9a9a9;
+  --color-gray: #767676;
   --color-yellow: #d0a63d;
   --color-blue: #2a639b;
   --color-purple: #6d358d;
@@ -47,4 +47,11 @@
   --media-query-tablet: 700px; /* 700 instead of 750 so the tables work on half screen laptop */
   --media-query-laptop: 1000px;
   --media-query-desktop: 1500px;
+}
+
+/* Display-P3 color, when supported. */
+@supports (color: color(display-p3 1 1 1)) {
+  :root {
+    --color-gray: #a9a9a9;
+  }
 }
