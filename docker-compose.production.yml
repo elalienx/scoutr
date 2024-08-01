@@ -32,7 +32,7 @@ services:
   backend:
     build:
       context: ./backend
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.production
     volumes:
       - ./backend:/app
       - /app/node_modules
