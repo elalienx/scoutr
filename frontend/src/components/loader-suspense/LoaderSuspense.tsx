@@ -2,5 +2,9 @@
 import "./loader-suspense.css";
 
 export default function LoaderSuspense() {
-  return <small className="loader-supense label">Loading...</small>;
+  return (
+    <div className="loader-suspense">
+      <small className="label">Loading...</small>
+    </div>
+  );
 }
