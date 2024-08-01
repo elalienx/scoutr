@@ -7,7 +7,7 @@ on:
 jobs:
   backend-test:
     name: Backend unit testing
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
