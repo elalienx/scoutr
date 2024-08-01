@@ -2,10 +2,10 @@
   "name": "scoutr-backend",
   "version": "1.0.0",
   "description": "Your LinkedIn Headhunter Companion",
-  "main": "src/index.ts",
+  "main": "index.ts",
   "scripts": {
-    "get_auth": "ts-node src/auth/getAuth.ts",
-    "dev": "nodemon",
+    "get_auth": "tsx src/auth/getAuth.ts",
+    "dev": "tsx watch src",
     "test": "vitest",
     "test_once": "vitest --watch=false"
   },
@@ -23,9 +23,8 @@
     "@types/express": "^4.17.21",
     "@types/node": "^20.11.30",
     "@types/pg": "^8.11.4",
-    "nodemon": "^3.1.4",
-    "ts-node": "^10.9.2",
     "tslib": "^2.6.2",
+    "tsx": "^4.16.4",
     "typescript": "^5.4.3",
     "vitest": "^1.4.0"
   },
