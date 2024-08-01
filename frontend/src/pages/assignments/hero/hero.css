@@ -6,6 +6,7 @@
   .content {
     display: grid;
     gap: var(--space-small);
+    margin-trim: block; /** to remove the margin bottom of any child, so they don't mess up the meassurments of the flex-box */
 
     h1 {
       line-height: 0.7; /* to force the 2 lines to touch each other. This is a stylistic decision! */
