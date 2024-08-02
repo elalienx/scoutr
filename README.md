@@ -39,7 +39,7 @@ sudo docker compose up --build
 sudo docker ps
 ```
 
-2. This command will display a table with columns for container ID, container name, etc. Copy the ID of the container named `scoutr_backend`
+2. This command will display a table with columns for CONTAINER ID, IMAGE, etc. Copy the ID of the IMAGE named `scoutr-backend`
 3. Run the following command, replacing CONTAINER_ID with the copied container ID:
 
 ```
