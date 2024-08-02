@@ -1,3 +1,7 @@
+networks:
+  scoutr_network:
+    driver: bridge
+
 services:
   database:
     build:
@@ -12,6 +16,8 @@ services:
       - ${HOME}/database/scoutr:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+    networks:
+      - scoutr_network
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U scoutr_user -d scoutr_database"]
       interval: 1s
@@ -28,6 +34,8 @@ services:
       context: ./nginx
     ports:
       - "80:80"
+    networks:
+      - scoutr_network
 
   backend:
     build:
@@ -40,6 +48,8 @@ services:
       database:
         condition: service_healthy
     command: ["npm", "run", "dev"]
+    networks:
+      - scoutr_network
 
   frontend:
     build:
@@ -51,3 +61,5 @@ services:
     depends_on:
       database:
         condition: service_healthy
+    networks:
+      - scoutr_network
