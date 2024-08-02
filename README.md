@@ -33,7 +33,7 @@ sudo docker compose up --build
 
 ### Obtain the LinkedIn credential
 
-1. Once the project is up and running, open another terminal window in the same directory as before and execute:
+1. Once the project is up and running, open a second terminal window in the same directory as before and execute:
 
 ```
 sudo docker ps
@@ -53,6 +53,13 @@ npm run get_auth
 ```
 
 5. You will be prompted for a LinkedIn email, password, and a verification code sent to your email.
+6. Wait until the message `Saved auth as LoginAuth.json from (some login page)`
+7. The first terminal window should repeat this message to confirm the new credentials.
+
+```
+🔵 backend-1   | Scoutr browser with the LinkedIn creadential is ready
+🔵 backend-1   | Scoutr backend server ready on port 8000
+```
 
 ## Improvements
 

@@ -10,7 +10,7 @@ export default async function getPageWithContext(filePath: string) {
     const context = await browser.newContext({ storageState: filePath });
 
     page = await context.newPage();
-    console.info("Scoutr browser with LinkedIn creadentials is ready");
+    console.info("Scoutr browser with the LinkedIn creadential is ready");
   } catch (error) {
     throw new Error(
       `
