@@ -1,6 +1,5 @@
 // Node modules
 import express from "express";
-import path from "path";
 
 // Project files
 import databaseCredentials from "./database/credentials";
@@ -30,9 +29,6 @@ async function initializeServer(port: number) {
 
   // Server Side Events routes
   app.get("/sse/parse-links/:assignment_id", async (request, response) => parseLinks(request, response, client, page));
-
-  // Allow to access debug screenshots
-  app.use("/api/screenshots", express.static(path.join(__dirname, "../screenshots")));
 }
 
 initializeServer(8000);

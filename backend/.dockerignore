@@ -5,7 +5,3 @@ coverage
 <!-- Dependency directories -->
 
 node_modules/
-
-<!-- Debuging screenshoots from the web scrapper -->
-
-screenshoots/
