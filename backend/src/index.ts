@@ -32,7 +32,7 @@ async function initializeServer(port: number) {
   app.get("/sse/parse-links/:assignment_id", async (request, response) => parseLinks(request, response, client, page));
 
   // Allow to access debug screenshots
-  app.get("/api/screenshots", express.static(path.join(__dirname, "screenshots")));
+  app.use("/api/screenshots", express.static(path.join(__dirname, "../screenshots")));
 }
 
 initializeServer(8000);
