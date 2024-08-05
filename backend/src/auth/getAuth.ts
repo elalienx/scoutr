@@ -29,7 +29,7 @@ async function getAuth(url: string): Promise<void> {
     }
   } catch (error) {
     await page.screenshot({ path: "screenshots/auth.png" });
-    console.error(`Playwright: Couldn't obtain auth from ${url}`);
+    console.error(`Playwright: Couldn't obtain auth from ${url} it redicted to ${page.url()}`);
     console.error(error);
   } finally {
     await browser.close();
