@@ -1,5 +1,5 @@
 // Node modules
-import { createContext, useContext, useRef, useState } from "react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
 import type { ReactNode, RefObject } from "react";
 
 // Project files
@@ -25,6 +25,12 @@ export function DialogProvider({ children }: ContextProvider) {
   // Local state
   const [reactComponent, setReactComponent] = useState<ReactNode>();
   const dialogRef = useRef<HTMLDialogElement>(null);
+
+  // This make sure to listen any automatic close event like the ESC key.
+  // Otherwise the next time you open a new dialog, you still see old one.
+  useEffect(() => {
+    dialogRef.current?.addEventListener("close", () => setReactComponent(null));
+  }, []);
 
   // Methods
   function showDialog(reactNode: ReactNode) {
