@@ -8,6 +8,7 @@ import etlProcess from "../scan-profile/etlProcess";
 import unZipLinks from "../scripts/unZipLinks";
 
 export default async function parseLinks(request: Request, response: Response, database: Client, browserPage: Page) {
+  console.time("parse-links");
   // Headers
   response.setHeader("Content-Type", "text/event-stream");
 
@@ -31,4 +32,5 @@ export default async function parseLinks(request: Request, response: Response, d
     response.end();
     browserPage.goto("about:blank"); // Important: To stop linkedin ad scripts eating resources
   }
+  console.timeEnd("parse-links");
 }
