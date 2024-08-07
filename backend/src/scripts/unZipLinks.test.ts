@@ -7,7 +7,7 @@ import unZipLinks from "./unZipLinks";
 test("Getting an empty string throws an error", () => {
   // Arrange
   const query = "";
-  const result = "The query received was empty";
+  const result = "The query is empty";
 
   // Act
   const test = () => unZipLinks(query);
