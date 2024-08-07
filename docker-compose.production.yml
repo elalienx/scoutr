@@ -56,7 +56,7 @@ services:
       dockerfile: Dockerfile.production
       context: ./frontend
     volumes:
-      - ./backend:/app
+      - ./frontend:/app
       - /app/node_modules
     depends_on:
       database:
