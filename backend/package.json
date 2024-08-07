@@ -7,7 +7,7 @@
   "scripts": {
     "get_auth": "tsx src/auth/getAuth.ts",
     "dev": "tsx watch .",
-    "test": "vitest run --coverage",
+    "test": "vitest --coverage",
     "test_once": "vitest --watch=false"
   },
   "repository": {
