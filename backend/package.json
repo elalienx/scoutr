@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Your LinkedIn Headhunter Companion",
   "main": "src/index.ts",
+  "type": "module",
   "scripts": {
     "get_auth": "tsx src/auth/getAuth.ts",
     "dev": "tsx watch .",
