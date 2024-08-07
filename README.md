@@ -1,4 +1,4 @@
-# Meet Scoutr
+# Scoutr
 
 Your LinkedIn Headhunter Companion
 
