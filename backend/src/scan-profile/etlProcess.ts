@@ -11,7 +11,9 @@ import saveReport from "./load/saveReport";
 
 export default async function etlProcess(url: string, assignment_id: number, database: Client, browserPage: Page) {
   // Extract
+  console.time("Extract");
   const page = await extractPage(browserPage, url);
+  console.timeEnd("Extract");
 
   // Transform
   const profile = pageToProfile(page);

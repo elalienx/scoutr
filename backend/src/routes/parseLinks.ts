@@ -31,6 +31,7 @@ export default async function parseLinks(request: Request, response: Response, d
     response.end();
     // Important: To stop linkedin ad scripts eating resources
     // The await is so we cannot parse more links until this process is done
+    // And the await goes after response.end(), to not block the frontend until this is done
     await browserPage.goto("about:blank");
   }
 }
