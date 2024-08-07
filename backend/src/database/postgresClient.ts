@@ -6,7 +6,6 @@ import type Credentials from "../types/DatabaseCredentials";
 
 export default async function postgresClient(credentials: Credentials): Promise<pg.Client> {
   const client: pg.Client = new pg.Client(credentials);
-  console.log("creating DB class does not crash");
   const success = `Scoutr database ready on port ${credentials.port}`;
   const hostError = `Postgres: Ensure your environment has a Postgres server. If using Docker, verify that the host called ${credentials.host} matches the Docker container name of the database`;
   const portError = `Postgres: Check if the port ${credentials.port} matches the exposed port in Docker`;
