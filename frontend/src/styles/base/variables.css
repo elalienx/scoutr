@@ -5,7 +5,7 @@
   --color-orange: #e18433;
   --color-black: #212529;
   --color-green: #88ad3d;
-  --color-gray: #ff00ff; /* #777677*/
+  --color-gray: #777677; /* #777677*/
   --color-yellow: #d0a63d;
   --color-blue: #2a639b;
   --color-purple: #6d358d;
@@ -23,7 +23,7 @@
   --color-cyan-light: #ecf6f8;
 
   /* ## Special colors */
-  --color-gray-ui: #00ff00; /* #A9A9A9 For borders, lines, placeholders, and other low-priority details that don't need high contrast. */
+  --color-gray-ui: #cdcdcd; /* #A9A9A9 For borders, lines, placeholders, and other low-priority details that don't need high contrast. */
   --color-blue-medium: #789dc1; /* for button:active */
   --color-blue-dark: #1a4065; /* for button:hover */
 

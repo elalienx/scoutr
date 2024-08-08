@@ -13,6 +13,10 @@
     font-family: var(--font-family);
     font-size: var(--font-size-normal);
     font-weight: var(--font-weight-normal);
+
+    &::placeholder {
+      color: var(--color-gray);
+    }
   }
 
   .label {
