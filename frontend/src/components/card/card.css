@@ -9,7 +9,7 @@
   padding: var(--space-medium);
   background-color: white;
   color: var(--color-main);
-  border: solid 0.5px var(--color-gray);
+  border: solid 0.5px var(--color-gray-ui);
   border-radius: var(--border-radius-small);
 
   img {

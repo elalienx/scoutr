@@ -1,4 +1,6 @@
 table {
+  --color-bottom-border: var(--color-gray-ui);
+
   width: 100%;
   text-align: left;
   font-weight: var(--font-weight-normal);
@@ -19,7 +21,7 @@ td {
   flex-direction: row;
   gap: var(--space-small);
   padding: var(--space-small) var(--space-medium);
-  border-bottom: solid 0.5px var(--color-gray);
+  border-bottom: solid 0.5px var(--color-bottom-border);
 }
 
 td::before {
@@ -48,7 +50,7 @@ td::before {
 
   tr {
     display: table-row;
-    border-bottom: solid 0.5px var(--color-gray);
+    border-bottom: solid 0.5px var(--color-bottom-border);
   }
 
   td {
