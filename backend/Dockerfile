@@ -1,4 +1,4 @@
-FROM node:20-bookworm-slim
+FROM node:22.6-bookworm-slim
 RUN npx -y playwright@1.43.0 install firefox --with-deps
 WORKDIR /app
 COPY ./package.json ./package-lock.json ./

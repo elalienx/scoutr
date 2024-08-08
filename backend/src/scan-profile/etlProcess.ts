@@ -3,11 +3,11 @@ import type { Client } from "pg";
 import { Page } from "playwright";
 
 // Project files
-import extractPage from "./extract/extractPage";
-import pageToProfile from "./transform/pageToProfile";
-import checkEmptyFields from "./transform/checkEmptyFields";
-import saveAndReturnCandidate from "./load/saveCandidate";
-import saveReport from "./load/saveReport";
+import extractPage from "./extract/extractPage.ts";
+import pageToProfile from "./transform/pageToProfile.ts";
+import checkEmptyFields from "./transform/checkEmptyFields.ts";
+import saveAndReturnCandidate from "./load/saveCandidate.ts";
+import saveReport from "./load/saveReport.ts"; 
 
 export default async function etlProcess(url: string, assignment_id: number, database: Client, browserPage: Page) {
   // Extract

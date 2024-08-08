@@ -1,6 +1,6 @@
 // Project files
-import LinkedInProfile from "../../types/LinkedInProfile";
-import ReportLog from "../../types/ReportLog";
+import LinkedInProfile from "../../types/LinkedInProfile.ts";
+import ReportLog from "../../types/ReportLog.ts";
 
 export default function checkEmptyFields(url: string, profile: LinkedInProfile): ReportLog {
   const fields = Object.entries(profile);

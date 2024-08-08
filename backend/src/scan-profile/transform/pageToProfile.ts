@@ -2,13 +2,13 @@
 import { load, CheerioAPI } from "cheerio";
 
 // Project files
-import candidateImageURL from "./helpers/candidateImageURL";
-import companyDurationInMonths from "./helpers/companyDurationInMonths";
-import companyName from "./helpers/companyName";
-import getCandidateJobTitle from "./helpers/candidateJobTitle";
-import getCandidateName from "./helpers/candidateName";
-import getCompanyImageURL from "./helpers/companyImageURL";
-import getProfileType from "./helpers/getProfileType";
+import candidateImageURL from "./helpers/candidateImageURL.ts";
+import companyDurationInMonths from "./helpers/companyDurationInMonths.ts";
+import companyName from "./helpers/companyName.ts";
+import getCandidateJobTitle from "./helpers/candidateJobTitle.ts";
+import getCandidateName from "./helpers/candidateName.ts";
+import getCompanyImageURL from "./helpers/companyImageURL.ts";
+import getProfileType from "./helpers/getProfileType.ts";
 
 export default function pageToProfile(page: string) {
   const document: CheerioAPI = load(page);

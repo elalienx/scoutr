@@ -2,8 +2,8 @@
 import { CheerioAPI } from "cheerio";
 
 // Project files
-import extractJobDuration from "./extractJobDuration";
-import convertJobDurationToMonths from "./converJobDurationToMonths";
+import extractJobDuration from "./extractJobDuration.ts";
+import convertJobDurationToMonths from "./converJobDurationToMonths.ts";
 
 export default function companyDurationInMonths(document: CheerioAPI, profileType: number): number {
   const parentTag1 = "span.t-14.t-normal.t-black--light";

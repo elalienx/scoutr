@@ -1,4 +1,4 @@
-export default interface LinkedInProfile {
+interface LinkedInProfile {
   candidate_name: string;
   candidate_job_title: string;
   candidate_image_url: string;
@@ -6,3 +6,5 @@ export default interface LinkedInProfile {
   company_duration_in_months: number;
   company_image_url: string;
 }
+
+export default LinkedInProfile;

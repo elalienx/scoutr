@@ -2,14 +2,14 @@
 import express from "express";
 
 // Project files
-import databaseCredentials from "./database/credentials";
-import postgresClient from "./database/postgresClient";
-import getAssignments from "./routes/getAssignments";
-import getCandidates from "./routes/getCandidates";
-import parseLinks from "./routes/parseLinks";
-import postAssignment from "./routes/postAssignment";
-import patchCandidate from "./routes/patchCandidate";
-import getPageWithContext from "./browser/getPageWithContext";
+import databaseCredentials from "./database/credentials.ts";
+import postgresClient from "./database/postgresClient.ts";
+import getAssignments from "./routes/getAssignments.ts";
+import getCandidates from "./routes/getCandidates.ts";
+import parseLinks from "./routes/parseLinks.ts";
+import postAssignment from "./routes/postAssignment.ts";
+import patchCandidate from "./routes/patchCandidate.ts";
+import getPageWithContext from "./browser/getPageWithContext.ts";
 
 async function initializeServer(port: number) {
   // Properties

@@ -5,8 +5,8 @@
   "main": "src/index.ts",
   "type": "module",
   "scripts": {
-    "get_auth": "tsx src/auth/getAuth.ts",
-    "dev": "tsx watch .",
+    "get_auth": "node src/auth/getAuth.ts",
+    "dev": "node --experimental-strip-types --watch .",
     "test": "vitest --coverage",
     "test_once": "vitest --watch=false"
   },
@@ -25,7 +25,6 @@
     "@types/node": "^20.11.30",
     "@types/pg": "^8.11.4",
     "@vitest/coverage-v8": "^2.0.5",
-    "tsx": "^4.16.5",
     "vitest": "^2.0.5"
   },
   "dependencies": {

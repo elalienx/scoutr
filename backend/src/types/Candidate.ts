@@ -1,4 +1,4 @@
-export default interface Candidate {
+interface Candidate {
   /** Unique identifier for each candidate. */
   id: number;
 
@@ -41,3 +41,5 @@ export default interface Candidate {
   /** Date of the most recent contact with the candidate. */
   contact_date: string;
 }
+
+export default Candidate;
