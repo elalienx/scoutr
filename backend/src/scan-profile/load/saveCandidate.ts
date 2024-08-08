@@ -1,15 +1,15 @@
 // Node modules
-import { Client, QueryResult } from "pg";
+import pg from "pg";
 
 // Project files
 import query from "../../queries/insertCandidate.ts";
 
-export default async function saveAndReturnCandidate(database: Client, data: any[]): Promise<object> {
+export default async function saveAndReturnCandidate(database: pg.Client, data: any[]): Promise<object> {
   // Properties
   let result = {};
 
   try {
-    const databaseRecords: QueryResult = await database.query(query, data);
+    const databaseRecords: pg.QueryResult = await database.query(query, data);
 
     result = databaseRecords.rows[0];
   } catch (error) {

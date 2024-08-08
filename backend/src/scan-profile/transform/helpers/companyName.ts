@@ -1,10 +1,7 @@
-// Node modules
-import { CheerioAPI } from "cheerio";
-
 // Project files
 import trimText from "../helpers/trimText.ts";
 
-export default function companyName(document: CheerioAPI, profileType: number, trimSize: number): string {
+export default function companyName(document: any, profileType: number, trimSize: number): string {
   const removeTypeOfJob: RegExp = / · .*/; // Novare · Full time = Novare. ACdelco · Contract = ACdelco, etc.
   const parentTag1 = "span.t-14.t-normal";
   const parentTag2 = "div.display-flex.align-items-center.mr1.t-bold";

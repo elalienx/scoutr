@@ -1,5 +1,5 @@
 // Node modules
-import { load, CheerioAPI } from "cheerio";
+import { load } from "cheerio";
 
 // Project files
 import candidateImageURL from "./helpers/candidateImageURL.ts";
@@ -11,9 +11,9 @@ import getCompanyImageURL from "./helpers/companyImageURL.ts";
 import getProfileType from "./helpers/getProfileType.ts";
 
 export default function pageToProfile(page: string) {
-  const document: CheerioAPI = load(page);
+  const document = load(page);
   const experienceScope = document("#experience").parent().find("li").html() || "";
-  const experienceDocument: CheerioAPI = load(experienceScope);
+  const experienceDocument = load(experienceScope);
   const profileType = getProfileType(experienceDocument);
   const databaseColumnSize = 50;
 

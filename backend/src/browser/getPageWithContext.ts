@@ -1,9 +1,9 @@
 // Node modules
-import { firefox as navigator, Page } from "playwright";
+import { firefox as navigator } from "playwright";
 
 export default async function getPageWithContext(filePath: string) {
   // Properties
-  let page: Page;
+  let page: any;
 
   try {
     const browser = await navigator.launch();

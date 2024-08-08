@@ -1,13 +1,12 @@
 // Node modules
 import type { Request, Response } from "express";
-import type { Client } from "pg";
-import { Page } from "playwright";
+import type pg from "pg";
 
 // Project files
 import etlProcess from "../scan-profile/etlProcess.ts";
 import unZipLinks from "../scripts/unZipLinks.ts";
 
-export default async function parseLinks(request: Request, response: Response, database: Client, browserPage: Page) {
+export default async function parseLinks(request: Request, response: Response, database: pg.Client, browserPage: any) {
   // Headers
   response.setHeader("Content-Type", "text/event-stream");
 

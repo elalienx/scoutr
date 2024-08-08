@@ -1,7 +1,4 @@
-// Node modules
-import { Page } from "playwright";
-
-export default async function extractPage(page: Page, url: string): Promise<string> {
+export default async function extractPage(page: any, url: string): Promise<string> {
   // Properties
   const timoutInMilliseconds = 10_000;
   let result = "";

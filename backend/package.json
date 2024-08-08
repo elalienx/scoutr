@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "get_auth": "node src/auth/getAuth.ts",
-    "dev": "node --experimental-strip-types --watch .",
+    "dev": "node --experimental-strip-types --trace-warnings --watch .",
     "test": "vitest --coverage",
     "test_once": "vitest --watch=false"
   },
