@@ -55,9 +55,6 @@ services:
     build:
       dockerfile: Dockerfile
       context: ./frontend
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
     depends_on:
       database:
         condition: service_healthy
