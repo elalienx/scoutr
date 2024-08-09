@@ -1,5 +1,5 @@
 // Project files
-import ImageURLs from "stories/image_urls.json";
+import SampleImages from "cosmos/sample-images.json";
 import Card from "./Card";
 
 // Properties
@@ -15,7 +15,7 @@ export default {
       date_created={date}
       assignment_name={assignment}
       company_name={company}
-      company_image_url={ImageURLs.company_folksam}
+      company_image_url={SampleImages.company_foklsam}
     />
   ),
   Empty: (
