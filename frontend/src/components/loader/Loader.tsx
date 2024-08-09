@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // Project files
 import "./loader.css";
 
-/** Shows that we are awaiting data from the server. */
+/** Shows that we are waiting for server data. */
 export default function Loader() {
   return (
     <div className="loader">
