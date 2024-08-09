@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 import Logo from "assets/logo-scoutr.svg";
 import Assignment from "./helpers/Assignment";
 import ResponseRate from "./helpers/ResponseRate";
-import "./helpers/assignment.css";
-import "./helpers/response-rate.css";
 import "./navigation-bar.css";
 
 interface Props {
@@ -21,18 +19,21 @@ interface Props {
 export default function NavigationBar(item: Props) {
   const { assignment_name, response_rate } = item;
 
+  // Properties
+  const cssReponseRate = response_rate < 0 ? "invisible" : "";
+
   return (
     <nav className="navigation-bar">
       {/* Left */}
       <Assignment assignment_name={assignment_name} />
 
-      {/* Midle */}
+      {/* Middle */}
       <Link to="/">
         <img className="scoutr-logo" src={Logo} alt="The word scouter withouth the letter R" />
       </Link>
 
       {/* Right */}
-      {response_rate >= 0 && <ResponseRate response_rate={response_rate} />}
+      <ResponseRate response_rate={response_rate} cssClass={cssReponseRate} />
     </nav>
   );
 }
