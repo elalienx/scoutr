@@ -12,9 +12,5 @@ interface Props {
 }
 
 export default function decorator({ children }: Props) {
-  return (
-    <div id="cosmos">
-      <BrowserRouter>{children}</BrowserRouter>
-    </div>
-  );
+  return <div id="cosmos">{children}</div>;
 }

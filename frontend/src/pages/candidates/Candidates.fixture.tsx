@@ -1,13 +1,34 @@
+// Node modules
+import { MemoryRouter, Routes, Route } from "react-router-dom";
+
 // Project files
 import mockUseEmpty from "scripts/fetch-hook/mocks/mockUseEmpty";
 import mockUseError from "scripts/fetch-hook/mocks/mockUseError";
 import mockUseLoading from "scripts/fetch-hook/mocks/mockUseLoading";
 import mockUseReadyCandidates from "scripts/fetch-hook/mocks/mockUseReadyCandidates";
 import Candidates from "./Candidates";
+import { ReactNode } from "react";
+
+// Components
+interface Props {
+  element: ReactNode;
+}
+
+// Refactor as cosmos/MemoryRouterCandidates
+// Explain i need this so the fake page can read the variable from the URL
+function Wrapper({ element }: Props) {
+  return (
+    <MemoryRouter initialEntries={["/path/1"]}>
+      <Routes>
+        <Route path="/path/:assignment_id" element={element} />
+      </Routes>
+    </MemoryRouter>
+  );
+}
 
 export default {
-  Default: <Candidates fetchHook={mockUseReadyCandidates} />,
-  Loading: <Candidates fetchHook={mockUseLoading} />,
-  Error: <Candidates fetchHook={mockUseError} />,
-  Empty: <Candidates fetchHook={mockUseEmpty} />,
+  Default: <Wrapper element={<Candidates fetchHook={mockUseReadyCandidates} />} />,
+  Loading: <Wrapper element={<Candidates fetchHook={mockUseLoading} />} />,
+  Error: <Wrapper element={<Candidates fetchHook={mockUseError} />} />,
+  Empty: <Wrapper element={<Candidates fetchHook={mockUseEmpty} />} />,
 };
