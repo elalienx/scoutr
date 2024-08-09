@@ -2,7 +2,7 @@
 import type { Dispatch } from "react";
 
 // Project files
-import HeaderCandidate from "components/header_candidate/HeaderCandidate";
+import HeaderCandidate from "components/header-candidate/HeaderCandidate";
 import ItemBadge from "components/item-badge/ItemBadge";
 import ItemCandidate from "components/item-candidate/ItemCandidate";
 import ItemCompany from "components/item-company/ItemCompany";
@@ -55,7 +55,7 @@ export default function RowCandidate({ candidate, index, dispatch }: Props) {
         uri={uri}
         fetchScript={fetchService}
         dispatcher={dispatch}
-      />,
+      />
     );
   }
 
