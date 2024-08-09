@@ -18,7 +18,7 @@ export default {
       company_image_url={SampleImages.company_foklsam}
     />
   ),
-  Empty: (
+  "No image": (
     <Card
       id={id}
       date_created={date}
