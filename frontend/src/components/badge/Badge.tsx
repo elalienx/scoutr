@@ -11,7 +11,7 @@ interface Props {
   value: number;
 }
 
-/** Indicates progress or status in a sequence. */
+/** Indicates progress or status in a recruitment process. */
 export default function Badge({ color, value }: Props) {
   return <div className={`badge background-${color}`}>{value}</div>;
 }

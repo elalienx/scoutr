@@ -55,7 +55,7 @@ export default function RowCandidate({ candidate, index, dispatch }: Props) {
         uri={uri}
         fetchScript={fetchService}
         dispatcher={dispatch}
-      />,
+      />
     );
   }
 
