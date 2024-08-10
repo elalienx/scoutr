@@ -1,3 +1,6 @@
+@import url("./helpers/assignment.css");
+@import url("./helpers/response-rate.css");
+
 .navigation-bar {
   --scoutr-logo-size: 15px;
 
@@ -11,6 +14,10 @@
   .scoutr-logo {
     aspect-ratio: 4/1; /* to avoid layout-shift during loading */
     height: var(--scoutr-logo-size);
+  }
+
+  .response-rate.invisible {
+    visibility: hidden;
   }
 }
 

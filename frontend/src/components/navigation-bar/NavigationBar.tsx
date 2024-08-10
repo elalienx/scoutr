@@ -5,13 +5,11 @@ import { Link } from "react-router-dom";
 import Logo from "assets/logo-scoutr.svg";
 import Assignment from "./helpers/Assignment";
 import ResponseRate from "./helpers/ResponseRate";
-import "./helpers/assignment.css";
-import "./helpers/response-rate.css";
 import "./navigation-bar.css";
 
 interface Props {
-  /** The name of the current assignment. */
-  assignment_name: string;
+  /** The name of the current assignment. If left empty, it will say "Candidates". */
+  assignment_name?: string;
 
   /** How many candidates have responded to us after initial contact? A value of -1 indicates we haven't started to contact anyone yet. */
   response_rate: number;
@@ -19,20 +17,23 @@ interface Props {
 
 /** The menu bar for the Candidate page. */
 export default function NavigationBar(item: Props) {
-  const { assignment_name, response_rate } = item;
+  const { assignment_name = "Candidates", response_rate } = item;
+
+  // Properties
+  const cssReponseRate = response_rate < 0 ? "invisible" : "";
 
   return (
     <nav className="navigation-bar">
       {/* Left */}
       <Assignment assignment_name={assignment_name} />
 
-      {/* Midle */}
+      {/* Middle */}
       <Link to="/">
         <img className="scoutr-logo" src={Logo} alt="The word scouter withouth the letter R" />
       </Link>
 
       {/* Right */}
-      {response_rate >= 0 && <ResponseRate response_rate={response_rate} />}
+      <ResponseRate response_rate={response_rate} cssClass={cssReponseRate} />
     </nav>
   );
 }
