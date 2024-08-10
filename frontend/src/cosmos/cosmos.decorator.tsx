@@ -2,7 +2,6 @@
 import { ReactNode } from "react";
 
 // Project files
-import "scripts/fontAwesome"; // make icons globally available
 import "styles/style.css"; // Scoutr global CSS including font styles, colors, spacing, etc.
 import "./cosmos-style.css"; // To center tested components on screen
 

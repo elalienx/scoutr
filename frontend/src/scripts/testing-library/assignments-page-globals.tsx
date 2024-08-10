@@ -6,7 +6,6 @@ import { render, RenderOptions } from "@testing-library/react";
 
 // Project files
 import { DialogProvider } from "state/DialogContextAPI";
-import "scripts/fontAwesome";
 import "styles/style.css";
 
 /**
