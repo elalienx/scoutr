@@ -8,6 +8,11 @@ import mockUseError from "scripts/fetch-hook/mocks/mockUseError";
 import mockUseLoading from "scripts/fetch-hook/mocks/mockUseLoading";
 import mockUseReadyAssignments from "scripts/fetch-hook/mocks/mockUseReadyAssignments";
 
+/**
+ * This page is wrapped in BrowserRouter to support routing
+ * as it includes a Link component, which requires a Router context
+ * to function correctly.
+ */
 export default {
   Default: (
     <BrowserRouter>

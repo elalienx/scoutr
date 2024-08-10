@@ -1,10 +1,10 @@
 // Project files
 import FormEdit from "forms/edit/FormEdit";
-import type InputField from "types/InputField";
 import mockFetchEditCandidate from "scripts/fetch-service/mocks/mockFetchEditCandidate";
 import mockFetchError from "scripts/fetch-service/mocks/mockFetchError";
+import type InputField from "types/InputField";
 
-const defaultFields: InputField[] = [
+const normal: InputField[] = [
   {
     id: "candidate_name",
     type: "input-text",
@@ -21,7 +21,7 @@ const defaultFields: InputField[] = [
   },
 ];
 
-const errorFields: InputField[] = [
+const error: InputField[] = [
   {
     id: "candidate_name",
     type: "input-text",
@@ -45,7 +45,7 @@ export default {
       uri="/api/candidates/"
       fetchScript={mockFetchEditCandidate}
       dispatcher={() => {}}
-      fields={defaultFields}
+      fields={normal}
     />
   ),
   Error: (
@@ -54,7 +54,7 @@ export default {
       uri="/api/candidates/"
       fetchScript={mockFetchError}
       dispatcher={() => {}}
-      fields={errorFields}
+      fields={error}
     />
   ),
 };

@@ -9,8 +9,13 @@ import MockSSEManyCandidates from "scripts/fetch-sse/mocks/mockSSEManyCandidates
 
 // Properties
 const id = 1;
-const mockDispatch = () => {};
+const mockDispatch = () => {}; // empty on purpose just to render the component
 
+/**
+ * This component is wrapped in BrowserRouter to support routing
+ * as it includes a Link component, which requires a Router context
+ * to function correctly.
+ */
 export default {
   Default: (
     <BrowserRouter>
