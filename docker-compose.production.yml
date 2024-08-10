@@ -41,9 +41,6 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    volumes:
-      - ./backend:/app
-      - /app/node_modules
     depends_on:
       database:
         condition: service_healthy
