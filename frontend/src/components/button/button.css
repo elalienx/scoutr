@@ -1,11 +1,13 @@
+@import url("./variants.css");
+
 .button {
-  min-width: 145px;
-  padding: 12px 36px;
+  min-width: 95px;
+  padding: 6px 18px;
   background-color: white;
   color: var(--color-black);
   border: solid 1.5px currentColor;
   border-radius: 100px;
-  font-size: var(--font-size-normal);
+  font-size: var(--font-size-small);
   font-weight: var(--font-weight-bold);
   cursor: pointer;
 

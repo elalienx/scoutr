@@ -2,7 +2,6 @@
 import FontAwesomeIcon from "components/font-awesome/FontAwesomeIcon";
 import type IconPrefix from "types/IconPrefix";
 import "./button.css";
-import "./variants.css";
 
 interface Props {
   // Main elements
@@ -36,10 +35,10 @@ export default function Button(item: Props) {
 
   // Properties
   const cssPrimary = primary && "primary";
-  const cssSize = !big && "small";
+  const cssBig = big && "big";
 
   return (
-    <button className={`button ${cssSize} ${cssPrimary}`} disabled={disabled} onClick={onClick}>
+    <button className={`button ${cssPrimary} ${cssBig}`} disabled={disabled} onClick={onClick}>
       {icon && <FontAwesomeIcon icon={[icon_prefix, icon]} />}
       {label}
     </button>
