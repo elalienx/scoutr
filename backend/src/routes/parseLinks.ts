@@ -25,8 +25,7 @@ export default async function parseLinks(request: Request, response: Response, d
     }
   } catch (error) {
     console.error(error);
-    response.write(`event: error\n`);
-    response.write(`data: ${error}\n\n`);
+    response.write(`event: error\ndata: ${error}\n\n`);
   } finally {
     response.end();
     // Important: To stop linkedin ad scripts eating resources
