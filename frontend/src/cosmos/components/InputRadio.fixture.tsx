@@ -1,5 +1,5 @@
 // Project files
-import InputRadio from "./InputRadio";
+import InputRadio from "components/input-radio/InputRadio";
 
 // Properties
 const options = [

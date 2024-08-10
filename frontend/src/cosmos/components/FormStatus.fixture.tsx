@@ -1,5 +1,5 @@
 // Project files
-import FormStatus from "./FormStatus";
+import FormStatus from "components/form-status/FormStatus";
 
 export default {
   Loading: <FormStatus status={"loading"} message={"Creating new assignment"} />,

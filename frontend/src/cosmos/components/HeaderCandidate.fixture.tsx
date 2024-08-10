@@ -1,6 +1,6 @@
 // Project files
+import HeaderCandidate from "components/header-candidate/HeaderCandidate";
 import SampleImages from "cosmos/sample-images.json";
-import HeaderCandidate from "./HeaderCandidate";
 
 // Properties
 const index = 1;

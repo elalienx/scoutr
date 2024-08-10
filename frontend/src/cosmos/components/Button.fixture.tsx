@@ -1,5 +1,5 @@
 // Project files
-import Button from "./Button";
+import Button from "components/button/Button";
 import { IconName } from "@fortawesome/fontawesome-svg-core";
 
 // Properties

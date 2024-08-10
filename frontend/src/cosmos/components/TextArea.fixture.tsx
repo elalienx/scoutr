@@ -1,5 +1,5 @@
 // Project files
-import TextArea from "./TextArea";
+import TextArea from "components/input-textarea/TextArea";
 
 // Properties
 const id = "unparsed-links";

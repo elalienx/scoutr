@@ -2,11 +2,11 @@
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 
 // Project files
+import Candidates from "pages/candidates/Candidates";
 import mockUseEmpty from "scripts/fetch-hook/mocks/mockUseEmpty";
 import mockUseError from "scripts/fetch-hook/mocks/mockUseError";
 import mockUseLoading from "scripts/fetch-hook/mocks/mockUseLoading";
 import mockUseReadyCandidates from "scripts/fetch-hook/mocks/mockUseReadyCandidates";
-import Candidates from "./Candidates";
 import { ReactNode } from "react";
 
 // Components

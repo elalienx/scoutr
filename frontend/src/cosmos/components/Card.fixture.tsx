@@ -2,8 +2,8 @@
 import { BrowserRouter } from "react-router-dom";
 
 // Project files
+import Card from "components/card/Card";
 import SampleImages from "cosmos/sample-images.json";
-import Card from "./Card";
 
 // Properties
 const id = 1;

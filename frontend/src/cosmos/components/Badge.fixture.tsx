@@ -1,5 +1,5 @@
 // Project files
-import Badge from "./Badge";
+import Badge from "components/badge/Badge";
 
 export default {
   Red: <Badge color={"red"} value={1} />,

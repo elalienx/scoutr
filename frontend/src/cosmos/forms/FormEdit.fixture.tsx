@@ -1,6 +1,6 @@
 // Project files
+import FormEdit from "forms/edit/FormEdit";
 import type InputField from "types/InputField";
-import FormEdit from "./FormEdit";
 import mockFetchEditCandidate from "scripts/fetch-service/mocks/mockFetchEditCandidate";
 import mockFetchError from "scripts/fetch-service/mocks/mockFetchError";
 

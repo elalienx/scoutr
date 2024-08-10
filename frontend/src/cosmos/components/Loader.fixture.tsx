@@ -1,5 +1,5 @@
 // Project files
-import Loader from "./Loader";
+import Loader from "components/loader/Loader";
 
 export default {
   Default: <Loader />,

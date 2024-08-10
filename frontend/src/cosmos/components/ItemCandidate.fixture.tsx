@@ -1,6 +1,6 @@
 // Project files
+import ItemCandidate from "components/item-candidate/ItemCandidate";
 import SampleImages from "cosmos/sample-images.json";
-import ItemCandidate from "./ItemCandidate";
 import Candidate from "types/Candidate";
 
 // Properties

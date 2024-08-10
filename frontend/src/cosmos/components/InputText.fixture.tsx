@@ -1,5 +1,5 @@
 // Project files
-import InputText from "./InputText";
+import InputText from "components/input-text/InputText";
 
 // Properties
 const id = "candidate-name";
