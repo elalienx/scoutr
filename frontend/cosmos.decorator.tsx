@@ -1,6 +1,5 @@
 // Node modules
 import { ReactNode } from "react";
-import { BrowserRouter } from "react-router-dom";
 
 // Project files
 import "./src/scripts/fontAwesome";

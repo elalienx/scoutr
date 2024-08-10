@@ -15,7 +15,6 @@ interface Props {
 }
 
 // Refactor as cosmos/MemoryRouterCandidates
-// Explain i need this so the fake page can read the variable from the URL
 function Wrapper({ element }: Props) {
   return (
     <MemoryRouter initialEntries={["/path/1"]}>
