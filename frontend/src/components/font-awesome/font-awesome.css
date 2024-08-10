@@ -3,7 +3,8 @@
 
   height: var(--size);
   fill: currentColor; /** to utilize the parent text color */
-  vertical-align: text-bottom;
+  vertical-align: text-bottom; /** to align icons to the text */
+  margin-bottom: 1px; /** hack to make the alignment identical to the original FontAwesome icons */
 }
 
 .icon.spin {
