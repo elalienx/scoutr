@@ -9,7 +9,7 @@ import type Candidate from "types/Candidate";
 // Properties
 const normal: Candidate = {
   id: 1,
-  candidate_name: "Eduardo Alvarez Nowak",
+  candidate_name: "Eduardo Alvarez",
   candidate_job_title: "Tech Lead",
   candidate_image_url: SampleImages.candidate_eduardo,
   company_name: "Novare Potential",
@@ -41,11 +41,11 @@ const longText: Candidate = {
 };
 const empty: Candidate = {
   id: 3,
-  candidate_name: "Eduardo Alvarez Nowak",
-  candidate_job_title: "",
+  candidate_name: "Eduardo Alvarez",
+  candidate_job_title: "Tech Lead",
   candidate_image_url: "",
-  company_name: "",
-  company_duration_in_months: 0,
+  company_name: "Novare Potential",
+  company_duration_in_months: 34,
   company_image_url: "",
   notes: "",
   relevance: 0,
