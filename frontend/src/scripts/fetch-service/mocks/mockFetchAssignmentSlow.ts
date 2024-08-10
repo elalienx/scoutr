@@ -27,7 +27,7 @@ async function mockFetchAssignmentSlow(uri: string, init: FetchOptions): Promise
   const message: string = "Created assignment #9999";
   const status: StatusPage = "ready";
 
-  await waitForSeconds(0.5);
+  await waitForSeconds(1);
 
   return { data, message, status };
 }
