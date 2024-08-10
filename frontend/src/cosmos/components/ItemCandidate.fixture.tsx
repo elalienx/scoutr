@@ -1,10 +1,10 @@
 // Project files
 import ItemCandidate from "components/item-candidate/ItemCandidate";
 import SampleImages from "cosmos/sample-images.json";
-import Candidate from "types/Candidate";
+import type Candidate from "types/Candidate";
 
 // Properties
-const defaultCandidate: Candidate = {
+const normal: Candidate = {
   id: 1,
   assignment_id: 1,
   candidate_image_url: SampleImages.candidate_eduardo,
@@ -20,7 +20,7 @@ const defaultCandidate: Candidate = {
   notes: "",
   relevance: 0,
 };
-const emptyCandidate: Candidate = {
+const empty: Candidate = {
   id: 2,
   assignment_id: 1,
   candidate_image_url: "",
@@ -38,6 +38,6 @@ const emptyCandidate: Candidate = {
 };
 
 export default {
-  Default: <ItemCandidate candidate={defaultCandidate} />,
-  Empty: <ItemCandidate candidate={emptyCandidate} />,
+  Default: <ItemCandidate candidate={normal} />,
+  Empty: <ItemCandidate candidate={empty} />,
 };

@@ -1,6 +1,8 @@
+// Node modules
+import { IconName } from "@fortawesome/fontawesome-svg-core";
+
 // Project files
 import Button from "components/button/Button";
-import { IconName } from "@fortawesome/fontawesome-svg-core";
 
 // Properties
 const label: string = "Click me";

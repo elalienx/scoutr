@@ -12,8 +12,9 @@ const assignment = "Data Engineer";
 const company = "Folksam";
 
 /**
- * About BrowserRouter
- * We wrap Card in BrowserRouter because it has a Link component that requires it.
+ * This component is wrapped in BrowserRouter to support routing
+ * as it includes a Link component, which requires a Router context
+ * to function correctly.
  */
 export default {
   Default: (

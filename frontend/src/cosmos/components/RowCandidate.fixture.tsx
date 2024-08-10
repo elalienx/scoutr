@@ -1,8 +1,10 @@
+// Node modules
+import { ReactNode } from "react";
+
 // Project files
 import RowCandidate from "components/row-candidate/RowCandidate";
 import SampleImages from "cosmos/sample-images.json";
-import { ReactNode } from "react";
-import Candidate from "types/Candidate";
+import type Candidate from "types/Candidate";
 
 // Properties
 const normal: Candidate = {
@@ -53,7 +55,6 @@ const empty: Candidate = {
   date_created: "2024-01-31 21:00:30.610279",
   linked_in_url: "",
 };
-
 const mockDispatch = () => {}; // empty on purpose just to render the component
 
 // Decorator

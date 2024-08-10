@@ -1,17 +1,17 @@
 // Project files
 import MiniProgressWorker from "components/mini-progress-worker/MiniProgressWorker";
-import ReportLog from "types/ReportLog";
+import type ReportLog from "types/ReportLog";
 import ReportSeverity from "types/ReportSeverity";
 
 // Properties
-const defaultReport: ReportLog[] = [
+const normal: ReportLog[] = [
   {
     url: "http://www.nintendo.com",
     severity: ReportSeverity.NO_ERROR,
     message: "Private profile",
   },
 ];
-const manyCandidatesReport: ReportLog[] = [
+const manyCandidates: ReportLog[] = [
   {
     url: "http://www.nintendo.com",
     severity: ReportSeverity.NO_ERROR,
@@ -28,14 +28,14 @@ const manyCandidatesReport: ReportLog[] = [
     message: "No errors",
   },
 ];
-const unknownErrorReport: ReportLog[] = [
+const unknownError: ReportLog[] = [
   {
     url: "http://www.namco.com",
     severity: ReportSeverity.ALL_FIELDS_MISSING,
     message: "Missing all fields",
   },
 ];
-const oneMessageOfEachKindReport: ReportLog[] = [
+const oneMessageOfEachKind: ReportLog[] = [
   {
     url: "http://www.nintendo.com",
     severity: ReportSeverity.NO_ERROR,
@@ -49,8 +49,8 @@ const oneMessageOfEachKindReport: ReportLog[] = [
 ];
 
 export default {
-  Default: <MiniProgressWorker reports={defaultReport} />,
-  "Many candidates": <MiniProgressWorker reports={manyCandidatesReport} />,
-  "Unknown error": <MiniProgressWorker reports={unknownErrorReport} />,
-  "One message of each kind": <MiniProgressWorker reports={oneMessageOfEachKindReport} />,
+  Default: <MiniProgressWorker reports={normal} />,
+  "Many candidates": <MiniProgressWorker reports={manyCandidates} />,
+  "Unknown error": <MiniProgressWorker reports={unknownError} />,
+  "One message of each kind": <MiniProgressWorker reports={oneMessageOfEachKind} />,
 };

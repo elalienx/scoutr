@@ -5,13 +5,14 @@ import { BrowserRouter } from "react-router-dom";
 import NavigationBar from "components/navigation-bar/NavigationBar";
 
 /**
- * About BrowserRouter
- * We wrap Card in BrowserRouter because it has a Link component that requires it.
+ * This component is wrapped in BrowserRouter to support routing
+ * as it includes a Link component, which requires a Router context
+ * to function correctly.
  */
 export default {
   Default: (
     <BrowserRouter>
-      <NavigationBar response_rate={37} />
+      <NavigationBar response_rate={42} />
     </BrowserRouter>
   ),
   "No responses": (

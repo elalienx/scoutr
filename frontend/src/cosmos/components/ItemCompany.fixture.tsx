@@ -1,10 +1,10 @@
 // Project files
 import ItemCompany from "components/item-company/ItemCompany";
 import SampleImages from "cosmos/sample-images.json";
-import Candidate from "types/Candidate";
+import type Candidate from "types/Candidate";
 
 // Properties
-const defaultCandidate: Candidate = {
+const normal: Candidate = {
   id: 1,
   assignment_id: 1,
   candidate_image_url: "",
@@ -20,7 +20,7 @@ const defaultCandidate: Candidate = {
   notes: "",
   relevance: 0,
 };
-const shortJobCandidate: Candidate = {
+const shortJobDuration: Candidate = {
   id: 2,
   assignment_id: 1,
   candidate_image_url: "",
@@ -36,7 +36,7 @@ const shortJobCandidate: Candidate = {
   notes: "",
   relevance: 0,
 };
-const emptyCandidate: Candidate = {
+const empty: Candidate = {
   id: 2,
   assignment_id: 1,
   candidate_image_url: "",
@@ -54,7 +54,7 @@ const emptyCandidate: Candidate = {
 };
 
 export default {
-  Default: <ItemCompany candidate={defaultCandidate} />,
-  "Short job duration": <ItemCompany candidate={shortJobCandidate} />,
-  Empty: <ItemCompany candidate={emptyCandidate} />,
+  Default: <ItemCompany candidate={normal} />,
+  "Short job duration": <ItemCompany candidate={shortJobDuration} />,
+  Empty: <ItemCompany candidate={empty} />,
 };
