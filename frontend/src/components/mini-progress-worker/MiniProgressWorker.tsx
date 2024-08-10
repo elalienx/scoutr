@@ -9,12 +9,11 @@ interface Props {
 }
 
 export default function MiniProgressWorker({ reports }: Props) {
-  const { SOME_FIELDS_MISSING: MISSING_SOME_FIELDS, ALL_FIELDS_MISSING: MISSING_ALL_FIELDS } =
-    ReportSeverity;
+  const { SOME_FIELDS_MISSING, ALL_FIELDS_MISSING } = ReportSeverity;
 
   // Local state
-  const normal: number = reports.filter((item) => item.severity <= MISSING_SOME_FIELDS).length;
-  const error: number = reports.filter((item) => item.severity === MISSING_ALL_FIELDS).length;
+  const normal: number = reports.filter((item) => item.severity <= SOME_FIELDS_MISSING).length;
+  const error: number = reports.filter((item) => item.severity === ALL_FIELDS_MISSING).length;
 
   return (
     <div className="mini-progress-worker">
