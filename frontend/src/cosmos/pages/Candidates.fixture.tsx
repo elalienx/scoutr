@@ -10,7 +10,7 @@ import mockUseLoading from "scripts/fetch-hook/mocks/mockUseLoading";
 import mockUseReadyCandidates from "scripts/fetch-hook/mocks/mockUseReadyCandidates";
 
 // Decorators
-function Wrapper({ element }: { element: ReactNode }) {
+function DecoratorRouter({ element }: { element: ReactNode }) {
   return (
     <MemoryRouter initialEntries={["/path/1"]}>
       <Routes>
@@ -26,8 +26,8 @@ function Wrapper({ element }: { element: ReactNode }) {
  * to function correctly.
  */
 export default {
-  Default: <Wrapper element={<Candidates fetchHook={mockUseReadyCandidates} />} />,
-  Loading: <Wrapper element={<Candidates fetchHook={mockUseLoading} />} />,
-  Error: <Wrapper element={<Candidates fetchHook={mockUseError} />} />,
-  Empty: <Wrapper element={<Candidates fetchHook={mockUseEmpty} />} />,
+  Default: <DecoratorRouter element={<Candidates fetchHook={mockUseReadyCandidates} />} />,
+  Loading: <DecoratorRouter element={<Candidates fetchHook={mockUseLoading} />} />,
+  Error: <DecoratorRouter element={<Candidates fetchHook={mockUseError} />} />,
+  Empty: <DecoratorRouter element={<Candidates fetchHook={mockUseEmpty} />} />,
 };

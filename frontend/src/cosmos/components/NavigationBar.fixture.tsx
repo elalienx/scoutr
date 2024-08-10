@@ -1,8 +1,20 @@
 // Node modules
+import { ReactNode } from "react";
 import { BrowserRouter } from "react-router-dom";
 
 // Project files
 import NavigationBar from "components/navigation-bar/NavigationBar";
+
+// Decorators
+function DecoratorRouter({ children }: { children: ReactNode }) {
+  return (
+    <BrowserRouter>
+      <div className="page" style={{ maxWidth: "960px", width: "100%" }}>
+        {children}
+      </div>
+    </BrowserRouter>
+  );
+}
 
 /**
  * This component is wrapped in BrowserRouter to support routing
@@ -11,24 +23,18 @@ import NavigationBar from "components/navigation-bar/NavigationBar";
  */
 export default {
   Default: (
-    <BrowserRouter>
-      <div className="page" style={{ maxWidth: "960px", width: "100%" }}>
-        <NavigationBar response_rate={42} />
-      </div>
-    </BrowserRouter>
+    <DecoratorRouter>
+      <NavigationBar response_rate={42} />
+    </DecoratorRouter>
   ),
   "No responses": (
-    <BrowserRouter>
-      <div className="page" style={{ maxWidth: "960px", width: "100%" }}>
-        <NavigationBar response_rate={0} />
-      </div>
-    </BrowserRouter>
+    <DecoratorRouter>
+      <NavigationBar response_rate={0} />
+    </DecoratorRouter>
   ),
   Empty: (
-    <BrowserRouter>
-      <div className="page" style={{ maxWidth: "960px", width: "100%" }}>
-        <NavigationBar response_rate={-1} />
-      </div>
-    </BrowserRouter>
+    <DecoratorRouter>
+      <NavigationBar response_rate={-1} />
+    </DecoratorRouter>
   ),
 };
