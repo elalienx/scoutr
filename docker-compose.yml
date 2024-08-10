@@ -24,8 +24,8 @@ services:
       - frontend
     restart: always
     build:
-      dockerfile: Dockerfile
       context: ./nginx
+      dockerfile: Dockerfile
     ports:
       - "80:80"
 
@@ -43,8 +43,8 @@ services:
 
   frontend:
     build:
-      dockerfile: Dockerfile
       context: ./frontend
+      dockerfile: Dockerfile
     volumes:
       - ./frontend:/app
       - /app/node_modules
