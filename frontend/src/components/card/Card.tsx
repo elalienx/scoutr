@@ -1,8 +1,8 @@
 // Node modules
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Project files
+import FontAwesomeIcon from "components/font-awesome/FontAwesomeIcon";
 import ImageThumbnail from "components/image-thumbnail/ImageThumbnail";
 import type Assignment from "types/Assignment";
 import "./card.css";
@@ -23,7 +23,7 @@ export default function Card(item: Assignment) {
       <small className="label trim-text">{company_name}</small>
       <footer>
         <span className="link">View</span>
-        <FontAwesomeIcon className="icon" icon={["fas", "arrow-right"]} />
+        <FontAwesomeIcon icon={["fas", "arrow-right"]} />
       </footer>
     </Link>
   );

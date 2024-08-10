@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 // Project files
 import Button from "components/button/Button";
 import Illustration from "assets/page-404.avif";
-import "scripts/fontAwesome.ts";
 import "./page-404.css";
 
 export default function page404() {

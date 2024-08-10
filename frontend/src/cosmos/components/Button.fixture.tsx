@@ -1,12 +1,9 @@
-// Node modules
-import { IconName } from "@fortawesome/fontawesome-svg-core";
-
 // Project files
 import Button from "components/button/Button";
 
 // Properties
-const label: string = "Click me";
-const icon: IconName = "plus";
+const label = "Click me";
+const icon = "plus";
 
 export default {
   Primary: <Button label={label} icon={icon} primary />,

@@ -1,8 +1,5 @@
-// Node modules
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import type { IconName } from "@fortawesome/fontawesome-svg-core";
-
 // Project files
+import FontAwesomeIcon from "components/font-awesome/FontAwesomeIcon";
 import type StatusForm from "types/StatusForm";
 import type Color from "types/Color";
 import "styles/components/background-colors.css";
@@ -21,7 +18,7 @@ export default function FormStatus(item: Props) {
 
   // Properties
   let color: Color = "gray";
-  let icon: IconName = "plus";
+  let icon: string = "plus";
 
   // Color combinations
   // -- Normal forms
@@ -56,7 +53,7 @@ export default function FormStatus(item: Props) {
 
   return (
     <small data-testid="status" className={`form-status background-${color} ${isVisible}`}>
-      <FontAwesomeIcon className="icon" icon={["fas", icon]} spin={status === "loading"} />
+      <FontAwesomeIcon icon={["fas", icon]} spin={status === "loading"} />
       {message}
     </small>
   );

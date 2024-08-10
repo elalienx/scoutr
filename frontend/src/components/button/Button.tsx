@@ -1,8 +1,6 @@
-// Node modules
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconPrefix, IconName } from "@fortawesome/fontawesome-svg-core";
-
 // Project  files
+import FontAwesomeIcon from "components/font-awesome/FontAwesomeIcon";
+import type IconPrefix from "types/IconPrefix";
 import "./button.css";
 import "./variants.css";
 
@@ -27,7 +25,7 @@ interface Props {
   icon_prefix?: IconPrefix;
 
   /** The icon name from the FontAwesome library. */
-  icon?: IconName;
+  icon?: string;
 }
 
 /** Primary UI component for user interaction. */
@@ -42,7 +40,7 @@ export default function Button(item: Props) {
 
   return (
     <button className={`button ${cssSize} ${cssPrimary}`} disabled={disabled} onClick={onClick}>
-      {icon && <FontAwesomeIcon className="icon" icon={[icon_prefix, icon]} />}
+      {icon && <FontAwesomeIcon icon={[icon_prefix, icon]} />}
       {label}
     </button>
   );
