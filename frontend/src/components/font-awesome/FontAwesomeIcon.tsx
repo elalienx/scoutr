@@ -1,5 +1,5 @@
 // Project files
-import type IconPrefix from "../../types/IconPrefix";
+import type IconPrefix from "types/IconPrefix";
 import icons from "./font-awesome.json";
 import "./font-awesome.css";
 

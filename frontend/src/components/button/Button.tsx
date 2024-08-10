@@ -2,6 +2,7 @@
 import FontAwesomeIcon from "components/font-awesome/FontAwesomeIcon";
 import type IconPrefix from "types/IconPrefix";
 import "./button.css";
+import "./variants.css";
 
 interface Props {
   // Main elements

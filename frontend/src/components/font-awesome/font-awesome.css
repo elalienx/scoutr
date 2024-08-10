@@ -1,3 +1,10 @@
+.fontawesome {
+  display: inline-block; /* so this parent component correclty wraps up the .icon inside. */
+  line-height: 0; /* to remove the bottom space of inline elements. */
+  vertical-align: text-bottom; /** to align the icon with the text. Requires line-heigh 0. */
+  background-color: red;
+}
+
 .icon {
   --size: 16px;
 
