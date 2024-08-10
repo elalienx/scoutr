@@ -30,8 +30,8 @@ services:
       - frontend
     restart: always
     build:
-      dockerfile: Dockerfile
       context: ./nginx
+      dockerfile: Dockerfile
     ports:
       - "80:80"
     networks:
@@ -53,8 +53,11 @@ services:
 
   frontend:
     build:
-      dockerfile: Dockerfile
       context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
     depends_on:
       database:
         condition: service_healthy
