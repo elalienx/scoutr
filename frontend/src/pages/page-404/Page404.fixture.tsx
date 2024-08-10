@@ -1,6 +1,13 @@
+// Node modules
+import { BrowserRouter } from "react-router-dom";
+
 // Project files
 import Page404 from "./Page404";
 
 export default {
-  Default: <Page404 />,
+  Default: (
+    <BrowserRouter>
+      <Page404 />
+    </BrowserRouter>
+  ),
 };

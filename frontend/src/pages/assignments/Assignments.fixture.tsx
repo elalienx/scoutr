@@ -1,3 +1,6 @@
+// Node modules
+import { BrowserRouter } from "react-router-dom";
+
 // Project files
 import mockUseEmpty from "scripts/fetch-hook/mocks/mockUseEmpty";
 import mockUseError from "scripts/fetch-hook/mocks/mockUseError";
@@ -6,8 +9,24 @@ import mockUseReadyAssignments from "scripts/fetch-hook/mocks/mockUseReadyAssign
 import Assignments from "./Assignments";
 
 export default {
-  Default: <Assignments fetchHook={mockUseReadyAssignments} />,
-  Loading: <Assignments fetchHook={mockUseLoading} />,
-  Error: <Assignments fetchHook={mockUseError} />,
-  Empty: <Assignments fetchHook={mockUseEmpty} />,
+  Default: (
+    <BrowserRouter>
+      <Assignments fetchHook={mockUseReadyAssignments} />
+    </BrowserRouter>
+  ),
+  Loading: (
+    <BrowserRouter>
+      <Assignments fetchHook={mockUseLoading} />
+    </BrowserRouter>
+  ),
+  Error: (
+    <BrowserRouter>
+      <Assignments fetchHook={mockUseError} />
+    </BrowserRouter>
+  ),
+  Empty: (
+    <BrowserRouter>
+      <Assignments fetchHook={mockUseEmpty} />
+    </BrowserRouter>
+  ),
 };
