@@ -9,7 +9,7 @@ import NavigationBar from "components/navigation-bar/NavigationBar";
 function DecoratorRouter({ children }: { children: ReactNode }) {
   return (
     <BrowserRouter>
-      <div className="page" style={{ maxWidth: "960px", width: "100%" }}>
+      <div className="page" style={{ maxWidth: "1200px", width: "100%" }}>
         {children}
       </div>
     </BrowserRouter>
