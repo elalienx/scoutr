@@ -5,8 +5,8 @@
     "build": "tsc && vite build",
     "cosmos": "cosmos",
     "dev": "vite --host 0.0.0.0",
-    "test": "vitest",
-    "test_once": "vitest --watch=false"
+    "test_once": "vitest --watch=false",
+    "test": "vitest"
   },
   "author": "Eduardo Alvarez",
   "license": "Unlicense",

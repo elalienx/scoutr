@@ -3,10 +3,10 @@
   "main": "src/index.ts",
   "type": "module",
   "scripts": {
-    "get_auth": "tsx src/auth/getAuth.ts",
     "dev": "tsx watch .",
-    "test": "vitest --coverage",
-    "test_once": "vitest --watch=false"
+    "get_auth": "tsx src/auth/getAuth.ts",
+    "test_once": "vitest --watch=false",
+    "test": "vitest --coverage"
   },
   "author": "Eduardo Alvarez",
   "license": "Unlicense",
