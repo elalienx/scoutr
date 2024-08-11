@@ -1,23 +1,27 @@
 // Node modules
-import { useState } from "react";
+import { Dispatch, useState } from "react";
 
 // Project files
 import superSorter from "scripts/super-sorter/superSorter";
 import type TableHeader from "types/TableHeader";
 import type Candidate from "types/Candidate";
+import type CandidateActions from "types/CandidateActions";
 import ButtonHead from "./ButtonHead";
+import "./table-head.css";
 
 interface Props {
   /** The names of the header columns. */
   headers: TableHeader[];
 
-  /** The rows of the table, used to be sorted when a header button is pressed. */
-  dataState: [Candidate[], Function];
+  /** The candidates to sort by clicking in each header button. */
+  candidates: Candidate[];
+
+  /** A function that uses reducers to update the candidates state. */
+  dispatch: Dispatch<CandidateActions>;
 }
 
-export default function TableHead({ headers, dataState }: Props) {
-  const [data, setData] = dataState;
-
+// 🔔 Refactor: we use dispatch so modify that on TableHead
+export default function TableHead({ headers, candidates, dispatch }: Props) {
   // Local state
   const [activeId, setActiveId] = useState<keyof Candidate>("id");
 
@@ -27,14 +31,14 @@ export default function TableHead({ headers, dataState }: Props) {
   ));
 
   function sorter(key: keyof Candidate, isAscending: boolean) {
-    const result = superSorter(data, key, isAscending);
+    const result = superSorter(candidates, key, isAscending);
 
     setActiveId(key);
-    setData(result);
+    dispatch({ type: "set-candidates", payload: result });
   }
 
   return (
-    <thead>
+    <thead className="table-header">
       <tr>{TableHeads}</tr>
     </thead>
   );

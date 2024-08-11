@@ -7,7 +7,6 @@ import TableHead from "components/table-head/TableHead";
 import type Candidate from "types/Candidate";
 import type CandidateActions from "types/CandidateActions";
 import headers from "./headers.json";
-import "./table.css";
 
 interface Props {
   /** The candidates to display on the table. */
@@ -22,10 +21,9 @@ export default function Table({ state }: Props) {
     <RowCandidate key={item.id} candidate={item} index={index + 1} dispatch={dispatch} />
   ));
 
-  // 🔔 Refactor: we use dispatch so modify that on TableHead
   return (
     <table>
-      <TableHead headers={headers} dataState={state} />
+      <TableHead headers={headers} candidates={candidates} dispatch={dispatch} />
       <tbody>{Rows}</tbody>
     </table>
   );

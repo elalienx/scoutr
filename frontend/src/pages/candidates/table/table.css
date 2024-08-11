@@ -1,6 +1,0 @@
-#candidates table {
-  /* Design */
-  th:first-child {
-    visibility: hidden; /* We hide the word "id" from the table header as an stylistic choice */
-  }
-}
