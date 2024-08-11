@@ -1,6 +1,5 @@
 {
   "name": "scoutr-frontend",
-  "private": true,
   "type": "module",
   "scripts": {
     "build": "tsc && vite build",
@@ -9,6 +8,8 @@
     "test": "vitest",
     "test_once": "vitest --watch=false"
   },
+  "author": "Eduardo Alvarez",
+  "license": "Unlicense",
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

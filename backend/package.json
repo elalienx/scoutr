@@ -1,7 +1,5 @@
 {
   "name": "scoutr-backend",
-  "version": "1.0.0",
-  "description": "Your LinkedIn Headhunter Companion",
   "main": "src/index.ts",
   "type": "module",
   "scripts": {
@@ -10,16 +8,14 @@
     "test": "vitest --coverage",
     "test_once": "vitest --watch=false"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/elalienx/scoutr.git"
-  },
   "author": "Eduardo Alvarez",
   "license": "Unlicense",
-  "bugs": {
-    "url": "https://github.com/elalienx/scoutr/issues"
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "express": "^4.19.2",
+    "pg": "^8.11.3",
+    "playwright": "1.43.0"
   },
-  "homepage": "https://www.meet-scoutr.com",
   "devDependencies": {
     "@types/express": "^4.17.21",
     "@types/node": "^20.11.30",
@@ -27,11 +23,5 @@
     "@vitest/coverage-v8": "^2.0.5",
     "tsx": "^4.16.5",
     "vitest": "^2.0.5"
-  },
-  "dependencies": {
-    "cheerio": "^1.0.0-rc.12",
-    "express": "^4.19.2",
-    "pg": "^8.11.3",
-    "playwright": "1.43.0"
   }
 }
