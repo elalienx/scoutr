@@ -16,10 +16,16 @@ interface Props {
 export default function Table({ state }: Props) {
   const [candidates, dispatch] = state;
 
+  // Properties
+  const tableIndexes = generateIndexById(candidates);
+
   // Components
-  const Rows = candidates.map((item, index) => (
-    <RowCandidate key={item.id} candidate={item} index={index + 1} dispatch={dispatch} />
-  ));
+  const Rows = candidates.map((item) => {
+    const indexItem = tableIndexes.find((tableIndexItem) => tableIndexItem.myId === item.id);
+    const index = indexItem?.myIndex || item.id;
+
+    return <RowCandidate key={item.id} candidate={item} index={index} dispatch={dispatch} />;
+  });
 
   return (
     <table>
@@ -27,4 +33,17 @@ export default function Table({ state }: Props) {
       <tbody>{Rows}</tbody>
     </table>
   );
+}
+
+function generateIndexById(candidates: Candidate[]) {
+  const clonnedArray = [...candidates];
+  const orderedCandidates = clonnedArray.sort((a, b) => a.id - b.id);
+  const result = orderedCandidates.map((item, index) => {
+    const myId = item.id;
+    const myIndex = index + 1;
+
+    return { myIndex, myId };
+  });
+
+  return result;
 }
