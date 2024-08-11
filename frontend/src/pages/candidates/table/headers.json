@@ -1,0 +1,8 @@
+[
+  { "id": "id", "label": "Id" },
+  { "id": "candidate_name", "label": "Candidate" },
+  { "id": "company_name", "label": "Company" },
+  { "id": "notes", "label": "Notes" },
+  { "id": "relevance", "label": "Relevance" },
+  { "id": "contact_status", "label": "Contact" }
+]
