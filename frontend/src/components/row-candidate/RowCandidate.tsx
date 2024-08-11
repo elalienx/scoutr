@@ -16,10 +16,10 @@ import fields from "../../forms/edit/fields-candidate";
 import "./row-candidate.css";
 
 interface Props {
-  /** The candidate to present */
+  /** The candidate to present. */
   candidate: Candidate;
 
-  /** The row number. Note, we don't use the candidate.id because all assignments save the candidates a single table so the ID do not have a sequence for each assignment */
+  /** The row number. Note, we don't use the candidate.id because all assignments save the candidates a single table so the ID do not have a sequence for each assignment. */
   index: number;
 
   /** A function that uses reducers to update the candidates state. */
