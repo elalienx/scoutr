@@ -26,7 +26,7 @@ describe("Wrong assigment_id passed on the URL", () => {
           <Route path="*" element={page404} />
           <Route path="/path/:assignment_id" element={page} />
         </Routes>
-      </MemoryRouter>,
+      </MemoryRouter>
     );
 
     // Act
@@ -50,7 +50,7 @@ describe("Wrong assigment_id passed on the URL", () => {
           <Route path="*" element={page404} />
           <Route path="/path/:assignment_id" element={page} />
         </Routes>
-      </MemoryRouter>,
+      </MemoryRouter>
     );
 
     // Act
@@ -73,7 +73,7 @@ describe("Data fetching states", () => {
         <Routes>
           <Route path="/path/:assignment_id" element={page} />
         </Routes>
-      </MemoryRouter>,
+      </MemoryRouter>
     );
 
     // Act
@@ -94,7 +94,7 @@ describe("Data fetching states", () => {
         <Routes>
           <Route path="/path/:assignment_id" element={page} />
         </Routes>
-      </MemoryRouter>,
+      </MemoryRouter>
     );
 
     // Act
@@ -115,7 +115,7 @@ describe("Data fetching states", () => {
         <Routes>
           <Route path="/path/:assignment_id" element={page} />
         </Routes>
-      </MemoryRouter>,
+      </MemoryRouter>
     );
 
     // Act
@@ -135,7 +135,7 @@ describe("Data fetching states", () => {
         <Routes>
           <Route path="/path/:assignment_id" element={page} />
         </Routes>
-      </MemoryRouter>,
+      </MemoryRouter>
     );
 
     // Act
@@ -162,7 +162,7 @@ describe("Empty and Ready state open the parse linnks formulary", () => {
         <Routes>
           <Route path="/path/:assignment_id" element={page} />
         </Routes>
-      </MemoryRouter>,
+      </MemoryRouter>
     );
 
     // Act
@@ -185,7 +185,7 @@ describe("Empty and Ready state open the parse linnks formulary", () => {
         <Routes>
           <Route path="/path/:assignment_id" element={page} />
         </Routes>
-      </MemoryRouter>,
+      </MemoryRouter>
     );
 
     // Act

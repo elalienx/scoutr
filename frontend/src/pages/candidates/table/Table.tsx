@@ -6,8 +6,8 @@ import RowCandidate from "components/row-candidate/RowCandidate";
 import TableHead from "components/table-head/TableHead";
 import type Candidate from "types/Candidate";
 import type CandidateActions from "types/CandidateActions";
-import findIndexById from "scripts/super-sorter/findIndexById";
-import memorizeIndexes from "scripts/super-sorter/memorizeIndexes";
+import findIndexById from "scripts/table-sorting/findIndexById";
+import memorizeIndexes from "scripts/table-sorting/memorizeIndexes";
 import headers from "./headers.json";
 
 interface Props {

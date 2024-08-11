@@ -2,7 +2,7 @@
 import { Dispatch, useState } from "react";
 
 // Project files
-import superSorter from "scripts/super-sorter/superSorter";
+import superSorter from "scripts/table-sorting/superSorter";
 import type TableHeader from "types/TableHeader";
 import type Candidate from "types/Candidate";
 import type CandidateActions from "types/CandidateActions";
