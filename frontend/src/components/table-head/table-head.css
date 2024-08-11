@@ -1,0 +1,6 @@
+.table-header {
+  /* to keep the design style aligned to row-candidate, the column id must be centered. */
+  .button-head.id {
+    text-align: center;
+  }
+}

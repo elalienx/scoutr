@@ -60,7 +60,7 @@ const mockDispatch = () => {}; // empty on purpose just to render the component
 // Decorator
 function DecoratorTable({ children }: { children: ReactNode }) {
   return (
-    <table style={{ maxWidth: "960px", width: "100%" }}>
+    <table style={{ maxWidth: "1200px", width: "100%" }}>
       <tbody>{children}</tbody>
     </table>
   );
