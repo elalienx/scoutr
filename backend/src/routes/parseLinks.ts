@@ -4,8 +4,8 @@ import type { Client } from "pg";
 import { Page } from "playwright";
 
 // Project files
-import etlProcess from "../scan-profile/etlProcess";
-import unZipLinks from "../scripts/unZipLinks";
+import etlProcess from "scan-profile/etlProcess";
+import unZipLinks from "scripts/unZipLinks";
 
 export default async function parseLinks(request: Request, response: Response, database: Client, browserPage: Page) {
   // Headers

@@ -3,7 +3,7 @@ import type { Request, Response } from "express";
 import type { Client } from "pg";
 
 // Project files
-import updateCandidate from "../queries/updateCandidate";
+import updateCandidate from "queries/updateCandidate";
 
 export default async function patchCandidate(request: Request, response: Response, database: Client) {
   const id = Number(request.params.id);

@@ -3,7 +3,7 @@ import { expect, test } from "vitest";
 
 // Project files
 import postgresClient from "./postgresClient";
-import type DatabaseCredentials from "../types/DatabaseCredentials";
+import type DatabaseCredentials from "types/DatabaseCredentials";
 
 test("Not having a Postgress server running shows a descriptive error", async () => {
   // Arrange
