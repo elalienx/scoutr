@@ -1,7 +1,3 @@
-/**
- * Refactor:
- * Integrate into ETL Load
- */
 const ReportSeverity = {
   NO_ERROR: 0,
   SOME_FIELDS_MISSING: 1,

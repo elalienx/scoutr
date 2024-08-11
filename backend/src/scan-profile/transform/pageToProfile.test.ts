@@ -2,7 +2,7 @@
 import { expect, test } from "vitest";
 
 // Project files
-import type LinkedInProfile from "../../types/LinkedInProfile";
+import type LinkedInProfile from "types/LinkedInProfile";
 import { profile1 } from "./test-websites/profile1";
 import { profile2 } from "./test-websites/profile2";
 import { profile3 } from "./test-websites/profile3";

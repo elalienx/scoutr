@@ -2,7 +2,7 @@
 import { Client } from "pg";
 
 // Project files
-import query from "../../queries/insertErrorLog";
+import query from "queries/insertErrorLog";
 
 export default async function saveReport(database: Client, data: any[]): Promise<void> {
   try {

@@ -2,7 +2,7 @@
 import { CheerioAPI } from "cheerio";
 
 // Project files
-import trimText from "../helpers/trimText";
+import trimText from "./trimText";
 
 export default function candidateJobTitle(document: CheerioAPI, profileType: number, trimSize: number): string {
   const parentTag1 = "div.display-flex.align-items-center.mr1.t-bold";

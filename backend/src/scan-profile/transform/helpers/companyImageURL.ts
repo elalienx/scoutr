@@ -2,7 +2,7 @@
 import { CheerioAPI } from "cheerio";
 
 // Project files
-import verifyImage from "../helpers/verifyImage";
+import verifyImage from "./verifyImage";
 
 export default function candidateImageURL(document: CheerioAPI): string {
   const cssSelector = "img"; // yes, is literally the first image from the HTML passed on document

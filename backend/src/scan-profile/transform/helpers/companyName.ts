@@ -2,7 +2,7 @@
 import { CheerioAPI } from "cheerio";
 
 // Project files
-import trimText from "../helpers/trimText";
+import trimText from "./trimText";
 
 export default function companyName(document: CheerioAPI, profileType: number, trimSize: number): string {
   const removeTypeOfJob: RegExp = / · .*/; // Novare · Full time = Novare. ACdelco · Contract = ACdelco, etc.
