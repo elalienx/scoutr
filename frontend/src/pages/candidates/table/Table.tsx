@@ -1,5 +1,5 @@
 // Node modules
-import type { Dispatch } from "react";
+import { useMemo, type Dispatch } from "react";
 
 // Project files
 import RowCandidate from "components/row-candidate/RowCandidate";
@@ -17,15 +17,17 @@ export default function Table({ state }: Props) {
   const [candidates, dispatch] = state;
 
   // Properties
-  const tableIndexes = generateIndexById(candidates);
+  const memoIndexes = useMemo(() => generateIndexById(candidates), [candidates.length]);
 
   // Components
-  const Rows = candidates.map((item) => {
-    const indexItem = tableIndexes.find((tableIndexItem) => tableIndexItem.myId === item.id);
-    const index = indexItem?.myIndex || item.id;
-
-    return <RowCandidate key={item.id} candidate={item} index={index} dispatch={dispatch} />;
-  });
+  const Rows = candidates.map((item) => (
+    <RowCandidate
+      key={item.id}
+      candidate={item}
+      index={findTableIndex(memoIndexes, item)}
+      dispatch={dispatch}
+    />
+  ));
 
   return (
     <table>
@@ -35,14 +37,27 @@ export default function Table({ state }: Props) {
   );
 }
 
-function generateIndexById(candidates: Candidate[]) {
+interface TableIndex {
+  candidate_id: number;
+  table_index: number;
+}
+
+function findTableIndex(tableIndexes: TableIndex[], candidate: Candidate): number {
+  const item = tableIndexes.find((item) => item.candidate_id === candidate.id);
+  const index = item?.table_index || candidate.id;
+
+  return index;
+}
+
+function generateIndexById(candidates: Candidate[]): TableIndex[] {
+  console.log("Regenerating...");
   const clonnedArray = [...candidates];
   const orderedCandidates = clonnedArray.sort((a, b) => a.id - b.id);
   const result = orderedCandidates.map((item, index) => {
-    const myId = item.id;
-    const myIndex = index + 1;
+    const candidate_id = item.id;
+    const table_index = index + 1;
 
-    return { myIndex, myId };
+    return { candidate_id, table_index };
   });
 
   return result;
