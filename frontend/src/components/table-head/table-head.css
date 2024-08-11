@@ -1,16 +1,6 @@
 .table-header {
-  th {
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
-
-    &:hover {
-      background-color: var(--color-gray-light);
-      cursor: pointer;
-    }
-  }
-
-  th .label {
-    margin-right: 4px; /* to align the active icon */
+  /* to keep the design style aligned to row-candidate, the column id must be centered. */
+  .button-head.id {
+    text-align: center;
   }
 }

@@ -1,8 +1,10 @@
 // Noe modules
+import FontAwesomeIcon from "components/font-awesome/FontAwesomeIcon";
 import { useState } from "react";
 
 // Project files
 import type TableHeader from "types/TableHeader";
+import "./button-head.css";
 
 interface Props {
   /**  The label and id of the header button. */
@@ -22,7 +24,7 @@ export default function ButtonHead({ item, activeId, sorter }: Props) {
   const [order, setOrder] = useState(id === activeId);
 
   // Properties
-  const icon = order ? "🔼" : "🔽";
+  const icon = order ? "chevron-up" : "chevron-down";
 
   // Methods
   function onClick() {
@@ -33,9 +35,9 @@ export default function ButtonHead({ item, activeId, sorter }: Props) {
   }
 
   return (
-    <th onClick={onClick}>
+    <th onClick={onClick} className={`button-head ${id}`}>
       <span className="label">{label}</span>
-      {id === activeId && <span className="icon">{icon}</span>}
+      {id === activeId && <FontAwesomeIcon icon={["fas", icon]} />}
     </th>
   );
 }
