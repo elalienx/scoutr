@@ -9,7 +9,7 @@ import TableIndex from "types/TableIndex";
 test("Does not crash if passed an empty candidate array", () => {
   // Arrange
   const candidates: Candidate[] = [];
-  const result: TableIndex[] = [];
+  const result: TableIndex = {};
 
   // Act
   const test = memorizeIndexes(candidates);
@@ -70,20 +70,11 @@ test("Correctly stores the candidate id's and table indexes", () => {
       linked_in_url: "https://www.linkedin.com/in/lanahaddad87/",
     },
   ];
-  const result: TableIndex[] = [
-    {
-      candidate_id: 1,
-      table_index: 1,
-    },
-    {
-      candidate_id: 22,
-      table_index: 2,
-    },
-    {
-      candidate_id: 4444,
-      table_index: 3,
-    },
-  ];
+  const result: TableIndex = {
+    1: 1, // Eduardos's candidate.id is 1 and the position is #1
+    22: 2, // Sanas's candidate.id is 22 and the position is #2
+    4444: 3, // Lana's candidate.id is 4444 and the position is #3
+  };
 
   // Act
   const test = memorizeIndexes(candidates);

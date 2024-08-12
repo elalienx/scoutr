@@ -6,7 +6,6 @@ import RowCandidate from "components/row-candidate/RowCandidate";
 import TableHead from "components/table-head/TableHead";
 import type Candidate from "types/Candidate";
 import type CandidateActions from "types/CandidateActions";
-import findIndexById from "scripts/table-sorting/findIndexById";
 import memorizeIndexes from "scripts/table-sorting/memorizeIndexes";
 import headers from "./headers.json";
 
@@ -25,8 +24,8 @@ export default function Table({ state }: Props) {
   const Rows = candidates.map((item) => (
     <RowCandidate
       key={item.id}
+      index={tableIndexes[item.id]}
       candidate={item}
-      index={findIndexById(tableIndexes, item)}
       dispatch={dispatch}
     />
   ));
