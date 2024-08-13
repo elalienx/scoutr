@@ -57,7 +57,7 @@
   }
 }
 
-/* Table */
+/* Tablet */
 @media (min-width: 700px) {
   .card {
     aspect-ratio: 10 / 11;
