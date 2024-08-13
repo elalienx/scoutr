@@ -1,27 +1,29 @@
-.button-head {
-  width: 100%;
-  margin-top: var(--space-medium);
-  padding-top: var(--space-medium);
-  padding-bottom: var(--space-small);
-  border: none;
-  background-color: transparent;
-  font-family: var(--font-family);
-  font-size: var(--font-size);
-  font-weight: var(--font-weight-bold);
-  text-align: left;
+th {
+  .button-head {
+    width: 100%; /* to fill the whole table head column. */
+    margin-top: var(--space-medium); /* for extra space on top when the table header is sticky. */
+    padding: var(--space-medium) 0 var(--space-small);
+    border: none;
+    background-color: transparent;
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight-bold);
+    text-align: left;
+    -webkit-appearance: none; /* to remove the "link" style in iOS when the phone is landscape. */
 
-  &:hover {
-    background-color: var(--color-gray-light);
-    cursor: pointer;
+    &:hover {
+      background-color: var(--color-gray-light);
+      cursor: pointer;
+    }
   }
-}
 
-.button-head .label {
-  margin-right: 4px; /* to align the active icon */
-}
+  .button-head .label {
+    margin-right: 4px; /* to align the active icon */
+  }
 
-.button-head .icon {
-  --size: 12px;
-  vertical-align: middle;
-  margin-bottom: 1px; /* to complement the alignment */
+  .button-head .icon {
+    --size: 12px;
+    vertical-align: middle;
+    margin-bottom: 1px; /* to complement the alignment */
+  }
 }
