@@ -3,12 +3,12 @@ import type { Dispatch } from "react";
 
 // Project files
 import Button from "components/button/Button";
+import Table from "components/table/Table";
 import FormParseLinks from "forms/parse-links/FormParseLinks";
 import useDialog from "state/DialogContextAPI";
 import type Candidate from "types/Candidate";
 import type CandidateActions from "types/CandidateActions";
 import StateEmpty from "../state-empty/StateEmpty";
-import Table from "../table/Table";
 
 interface Props {
   /** The id of the current assigment. */

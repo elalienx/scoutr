@@ -1,4 +1,7 @@
-.table-header {
+.table-head {
+  position: sticky;
+  top: 0px; /* to tell the sticky to "stick" when reaches the top of the screen. */
+
   /* to keep the design style aligned to row-candidate, the column id must be centered. */
   .button-head.id {
     text-align: center;
