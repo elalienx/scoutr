@@ -2,6 +2,7 @@
 import Table from "components/table/Table";
 import Candidate from "types/Candidate";
 import SampleImages from "scripts/fetch-hook/mocks/sample-images.json";
+import { ReactNode } from "react";
 
 // Properties
 const fewCandidates: Candidate[] = [
@@ -375,10 +376,189 @@ const manyCandidates: Candidate[] = [
     date_created: "2024-01-31 21:00:30.610279",
     linked_in_url: "https://www.linkedin.com/in/lanahaddad87/",
   },
+  {
+    id: 21,
+    candidate_name: "Eduardo Alvarez Nowak",
+    candidate_job_title: "Tech Lead",
+    candidate_image_url: SampleImages.candidate_eduardo,
+    company_name: "Novare Potential",
+    company_duration_in_months: 34,
+    company_image_url: SampleImages.company_novare,
+    notes: `Highly qualified, likes to help people and stays up to date with the latest frontend development tools.`,
+    relevance: 3,
+    contact_status: 4,
+    contact_date: "2024-04-02 21:00:30.610279",
+    assignment_id: 1,
+    date_created: "2024-01-31 21:00:30.610279",
+    linked_in_url: "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
+  },
+  {
+    id: 22,
+    candidate_name: "Sussana Vara",
+    candidate_job_title: "Partner",
+    candidate_image_url: SampleImages.candidate_susanna,
+    company_name: "Novare Potential",
+    company_duration_in_months: 80,
+    company_image_url: SampleImages.company_novare,
+    notes: "A servant type of leader.",
+    relevance: 4,
+    contact_status: 1,
+    contact_date: "2024-04-02 21:00:30.610279",
+    assignment_id: 1,
+    date_created: "2024-01-31 21:00:30.610279",
+    linked_in_url: "https://www.linkedin.com/in/susanna-vaara-0b33b03a/",
+  },
+  {
+    id: 23,
+    candidate_name: "Lana Haddad",
+    candidate_job_title: "Senior Talent Acquisition Specialist",
+    candidate_image_url: "",
+    company_name: "Novare Potential",
+    company_duration_in_months: 85,
+    company_image_url: SampleImages.company_novare,
+    notes: `More than 8 years of HR recruitment experience in multiples industries like tech, restaurants, health sector, education, white collar, blue collar, executive search, and more. Great salary negotiation skills.`,
+    relevance: 5,
+    contact_status: 0,
+    contact_date: "2024-04-02 21:00:30.610279",
+    assignment_id: 1,
+    date_created: "2024-01-31 21:00:30.610279",
+    linked_in_url: "https://www.linkedin.com/in/lanahaddad87/",
+  },
+  {
+    id: 24,
+    candidate_name: "Eduardo Alvarez Nowak",
+    candidate_job_title: "Tech Lead",
+    candidate_image_url: SampleImages.candidate_eduardo,
+    company_name: "Novare Potential",
+    company_duration_in_months: 34,
+    company_image_url: SampleImages.company_novare,
+    notes: `Highly qualified, likes to help people and stays up to date with the latest frontend development tools.`,
+    relevance: 3,
+    contact_status: 4,
+    contact_date: "2024-04-02 21:00:30.610279",
+    assignment_id: 1,
+    date_created: "2024-01-31 21:00:30.610279",
+    linked_in_url: "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
+  },
+  {
+    id: 25,
+    candidate_name: "Sussana Vara",
+    candidate_job_title: "Partner",
+    candidate_image_url: SampleImages.candidate_susanna,
+    company_name: "Novare Potential",
+    company_duration_in_months: 80,
+    company_image_url: SampleImages.company_novare,
+    notes: "A servant type of leader.",
+    relevance: 4,
+    contact_status: 1,
+    contact_date: "2024-04-02 21:00:30.610279",
+    assignment_id: 1,
+    date_created: "2024-01-31 21:00:30.610279",
+    linked_in_url: "https://www.linkedin.com/in/susanna-vaara-0b33b03a/",
+  },
+  {
+    id: 26,
+    candidate_name: "Lana Haddad",
+    candidate_job_title: "Senior Talent Acquisition Specialist",
+    candidate_image_url: "",
+    company_name: "Novare Potential",
+    company_duration_in_months: 85,
+    company_image_url: SampleImages.company_novare,
+    notes: `More than 8 years of HR recruitment experience in multiples industries like tech, restaurants, health sector, education, white collar, blue collar, executive search, and more. Great salary negotiation skills.`,
+    relevance: 5,
+    contact_status: 0,
+    contact_date: "2024-04-02 21:00:30.610279",
+    assignment_id: 1,
+    date_created: "2024-01-31 21:00:30.610279",
+    linked_in_url: "https://www.linkedin.com/in/lanahaddad87/",
+  },
+  {
+    id: 27,
+    candidate_name: "Eduardo Alvarez Nowak",
+    candidate_job_title: "Tech Lead",
+    candidate_image_url: SampleImages.candidate_eduardo,
+    company_name: "Novare Potential",
+    company_duration_in_months: 34,
+    company_image_url: SampleImages.company_novare,
+    notes: `Highly qualified, likes to help people and stays up to date with the latest frontend development tools.`,
+    relevance: 3,
+    contact_status: 4,
+    contact_date: "2024-04-02 21:00:30.610279",
+    assignment_id: 1,
+    date_created: "2024-01-31 21:00:30.610279",
+    linked_in_url: "https://www.linkedin.com/in/eduardo-alvarez-nowak/",
+  },
+  {
+    id: 28,
+    candidate_name: "Sussana Vara",
+    candidate_job_title: "Partner",
+    candidate_image_url: SampleImages.candidate_susanna,
+    company_name: "Novare Potential",
+    company_duration_in_months: 80,
+    company_image_url: SampleImages.company_novare,
+    notes: "A servant type of leader.",
+    relevance: 4,
+    contact_status: 1,
+    contact_date: "2024-04-02 21:00:30.610279",
+    assignment_id: 1,
+    date_created: "2024-01-31 21:00:30.610279",
+    linked_in_url: "https://www.linkedin.com/in/susanna-vaara-0b33b03a/",
+  },
+  {
+    id: 29,
+    candidate_name: "Lana Haddad",
+    candidate_job_title: "Senior Talent Acquisition Specialist",
+    candidate_image_url: "",
+    company_name: "Novare Potential",
+    company_duration_in_months: 85,
+    company_image_url: SampleImages.company_novare,
+    notes: `More than 8 years of HR recruitment experience in multiples industries like tech, restaurants, health sector, education, white collar, blue collar, executive search, and more. Great salary negotiation skills.`,
+    relevance: 5,
+    contact_status: 0,
+    contact_date: "2024-04-02 21:00:30.610279",
+    assignment_id: 1,
+    date_created: "2024-01-31 21:00:30.610279",
+    linked_in_url: "https://www.linkedin.com/in/lanahaddad87/",
+  },
+  {
+    id: 30,
+    candidate_name: "Lana Haddad",
+    candidate_job_title: "Senior Talent Acquisition Specialist",
+    candidate_image_url: "",
+    company_name: "Novare Potential",
+    company_duration_in_months: 85,
+    company_image_url: SampleImages.company_novare,
+    notes: `More than 8 years of HR recruitment experience in multiples industries like tech, restaurants, health sector, education, white collar, blue collar, executive search, and more. Great salary negotiation skills.`,
+    relevance: 5,
+    contact_status: 0,
+    contact_date: "2024-04-02 21:00:30.610279",
+    assignment_id: 1,
+    date_created: "2024-01-31 21:00:30.610279",
+    linked_in_url: "https://www.linkedin.com/in/lanahaddad87/",
+  },
 ];
 const mockDispatch = () => {}; // empty on purpose just to render the component
 
+// Decorators
+function DecoratorPage({ children }: { children: ReactNode }) {
+  return (
+    <div className="page" style={{ maxHeight: "100vh" }}>
+      <div className="container" style={{ maxWidth: "1200px", margin: "0 auto" }}>
+        {children}
+      </div>
+    </div>
+  );
+}
+
 export default {
-  Default: <Table state={[fewCandidates, mockDispatch]} />,
-  "Long scrollable table": <Table state={[manyCandidates, mockDispatch]} />,
+  Default: (
+    <DecoratorPage>
+      <Table state={[fewCandidates, mockDispatch]} />
+    </DecoratorPage>
+  ),
+  "Long scrollable table": (
+    <DecoratorPage>
+      <Table state={[manyCandidates, mockDispatch]} />
+    </DecoratorPage>
+  ),
 };
