@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 // Project files
 import TableHead from "components/table-head/TableHead";
 import SampleImages from "cosmos/sample-images.json";
-import headers from "pages/candidates/table/headers.json";
+import headers from "components/table/headers.json";
 import type Candidate from "types/Candidate";
 import RowCandidate from "components/row-candidate/RowCandidate";
 
