@@ -4,12 +4,12 @@ th {
     margin-top: var(--space-medium); /* for extra space on top when the table header is sticky. */
     padding: var(--space-medium) 0 var(--space-small);
     border: none;
+    color: var(--color-black);
     background-color: transparent;
     font-family: var(--font-family);
     font-size: var(--font-size);
     font-weight: var(--font-weight-bold);
     text-align: left;
-    -webkit-appearance: none; /* to remove the "link" style in iOS when the phone is landscape. */
 
     &:hover {
       background-color: var(--color-gray-light);
