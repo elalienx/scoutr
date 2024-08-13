@@ -8,6 +8,7 @@ import type Candidate from "types/Candidate";
 import type CandidateActions from "types/CandidateActions";
 import memorizeIndexes from "scripts/table-sorting/memorizeIndexes";
 import headers from "./headers.json";
+import "./table.css";
 
 interface Props {
   /** The candidates to display on the table. */
