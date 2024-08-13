@@ -42,7 +42,7 @@
 /* Tablet */
 @media (min-width: 700px) {
   #candidates {
-    gap: 64px; /* big space between header and table*/
+    gap: var(--space-big);
 
     .section .candidates table {
       margin-bottom: var(--space-big);
