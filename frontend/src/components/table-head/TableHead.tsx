@@ -38,7 +38,7 @@ export default function TableHead({ headers, candidates, dispatch }: Props) {
   }
 
   return (
-    <thead className="table-header">
+    <thead className="table-head">
       <tr>{TableHeads}</tr>
     </thead>
   );
