@@ -1,8 +1,14 @@
 .button-head {
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+  width: 100%;
+  margin-top: var(--space-medium);
   padding-top: var(--space-medium);
+  padding-bottom: var(--space-small);
+  border: none;
+  background-color: transparent;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-bold);
+  text-align: left;
 
   &:hover {
     background-color: var(--color-gray-light);

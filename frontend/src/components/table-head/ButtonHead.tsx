@@ -35,9 +35,11 @@ export default function ButtonHead({ item, activeId, sorter }: Props) {
   }
 
   return (
-    <th onClick={onClick} className={`button-head ${id}`}>
-      <span className="label">{label}</span>
-      {id === activeId && <FontAwesomeIcon icon={["fas", icon]} />}
+    <th>
+      <button onClick={onClick} className={`button-head ${id}`}>
+        <span className="label">{label}</span>
+        {id === activeId && <FontAwesomeIcon icon={["fas", icon]} />}
+      </button>
     </th>
   );
 }
