@@ -7,6 +7,13 @@ import onVerification from "./helpers/onVerification";
 import saveAuth from "./helpers/storeAuth";
 
 async function getAuth(url: string): Promise<void> {
+  console.info(`
+    Welcome to the LinkedIn Authentificator.
+
+    To access all profile data, please log in with your LinkedIn account. 
+    Follow the instructions that will appear shortly.
+  `);
+
   const browser = await navigator.launch();
   const context = await browser.newContext();
   const page = await context.newPage();

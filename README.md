@@ -49,7 +49,7 @@ sudo docker exec -t CONTAINER_ID /bin/bash
 4. Inside the container, run:
 
 ```
-npm run get_auth
+npm run auth
 ```
 
 5. You will be prompted for a LinkedIn email, password, and a verification code sent to your email.
@@ -65,5 +65,5 @@ npm run get_auth
 
 The project is fully functional but has room for improvement:
 
-1. **Better Developer Experience (DX):** Obtaining LinkedIn auth is cumbersome, requiring Node to run `npm run get_auth` from `package.json` in the backend folder or running it from the backend container. I'm exploring a more streamlined solution.
+1. **Better Developer Experience (DX):** Obtaining LinkedIn auth is cumbersome, requiring Node to run `npm run auth` from `package.json` in the backend folder or running it from the backend container. I'm exploring a more streamlined solution.
 1. **Multi-threading:** The scraping process is single-threaded, scanning each profile one by one. This can be accelerated by making the ETL process run in parallel using a Browser Page Pool ([object pool pattern](https://en.wikipedia.org/wiki/Object_pool_pattern)) to scan multiple pages simultaneously. Pages can be returned to the pool after each scan, and additional pages can be created and deleted as needed.
