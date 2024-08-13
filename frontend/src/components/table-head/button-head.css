@@ -1,8 +1,8 @@
 th {
   .button-head {
     width: 100%; /* to fill the whole table head column. */
-    margin-top: var(--space-medium); /* for extra space on top when the table header is sticky. */
-    padding: var(--space-medium) 0 var(--space-small);
+    margin-top: var(--space-big); /* for extra space on top when the table header is sticky. */
+    padding: var(--space-small) var(--space-small);
     border: none;
     color: var(--color-black);
     background-color: transparent;
