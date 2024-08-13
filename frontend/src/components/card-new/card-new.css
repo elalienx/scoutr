@@ -1,10 +1,16 @@
 .card.card-new {
-  background-color: var(--color-gray-light);
-  border: none;
+  --color: var(--color-gray-light);
+
+  background-color: var(--color);
+  border-color: var(--color);
+  /** We need the border otherwise <Card/> and <CardNew/> will not be properly aligned. **/
+
+  h2 {
+    width: 50%; /** to force the stylistic 2 line titles **/
+  }
 }
 
 .card.card-new:hover {
-  border: none;
   /** Dissable the fake bodrder we added on .card, see it for more info **/
   box-shadow: none;
 }
