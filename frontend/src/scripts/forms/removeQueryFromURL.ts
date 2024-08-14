@@ -1,7 +1,4 @@
 export default function removeQueryFromURL(url: string): string {
-  // Safeguard
-  if (url === "") return "";
-
   // Properties
   let result = "";
 
