@@ -1,23 +1,12 @@
 // Project files
 import TextArea from "components/input-textarea/TextArea";
-import removeQueryFromURL from "scripts/forms/removeQueryFromURL";
+import onPaste from "scripts/forms/onPaste";
 
 // Properties
 const id = "unparsed-links";
 const label = "Links";
 const placeholder = `https://www.linkedin.com/in/susanna-vaara-0b33b03a/\nhttps://www.linkedin.com/in/farzad-golchin-1926461b/`;
 const description = "Only paste links and delete any other type of text.";
-
-function onPaste(event: React.ClipboardEvent<HTMLTextAreaElement>) {
-  const pastedText = event.clipboardData.getData("text");
-  const parsedURL = removeQueryFromURL(pastedText);
-  const textarea = event.target as HTMLTextAreaElement;
-  const start = textarea.selectionStart;
-  const end = textarea.selectionEnd;
-
-  event.preventDefault();
-  textarea.setRangeText(parsedURL, start, end, "end");
-}
 
 export default {
   Default: (

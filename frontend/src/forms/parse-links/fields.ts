@@ -1,4 +1,5 @@
 // Project fields
+import onPaste from "scripts/forms/onPaste";
 import type InputField from "types/InputField";
 
 const fields: InputField[] = [
@@ -11,6 +12,9 @@ const fields: InputField[] = [
     defaultValue: "",
     required: true,
     description: "Only paste links and delete any other type of text.",
+    options: {
+      onPaste: onPaste,
+    },
   },
 ];
 
