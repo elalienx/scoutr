@@ -1,12 +1,16 @@
 // Project files
 import TextArea from "components/input-textarea/TextArea";
-import onPaste from "scripts/forms/onPaste";
 
 // Properties
 const id = "unparsed-links";
 const label = "Links";
 const placeholder = `https://www.linkedin.com/in/susanna-vaara-0b33b03a/\nhttps://www.linkedin.com/in/farzad-golchin-1926461b/`;
 const description = "Only paste links and delete any other type of text.";
+
+// Methods
+function makeUppercase(text: string): string {
+  return String(text).toUpperCase();
+}
 
 export default {
   Default: (
@@ -38,17 +42,17 @@ export default {
       description={description}
     />
   ),
-  "Text area with paste": (
+  "Modifies text on paste": (
     <TextArea
       id={id}
       type={"text-area"}
       label={label}
       placeholder={""}
-      defaultValue={
-        "https://www.linkedin.com/in/hlinero/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BE%2FGq1NRFS2G5TZ%2FlmrpNQw%3D%3D"
+      defaultValue={""}
+      description={
+        "Pasting any text here will become upperscase. Typing manually will not affect this."
       }
-      description={description}
-      options={{ onPaste: onPaste }}
+      options={{ onPaste: makeUppercase }}
     />
   ),
 };
