@@ -11,7 +11,6 @@ import gatherFormData from "scripts/forms/gatherFormData";
 import textAreaToArray from "scripts/forms/textAreaToArray";
 import waitForSeconds from "scripts/waitForSeconds";
 import stringArrayToURL from "scripts/forms/stringArrayToURL";
-import removeQueryFromURL from "scripts/forms/removeQueryFromURL";
 import useDialog from "state/DialogContextAPI";
 import type StatusForm from "types/StatusForm";
 import type CandidateActions from "types/CandidateActions";
@@ -47,8 +46,7 @@ export default function FormParseLinks({ id, FetchClass, dispatch }: Props) {
     try {
       const formData = gatherFormData(event.currentTarget);
       const parsedLinks = textAreaToArray(formData.unparsed_links);
-      const removedLinkedInQueries = parsedLinks.map((item) => removeQueryFromURL(item));
-      const encodedLinks = removedLinkedInQueries.map((item) => encodeURI(item));
+      const encodedLinks = parsedLinks.map((item) => encodeURI(item));
       const query = stringArrayToURL(encodedLinks);
       const uriSSE = `/sse/parse-links/${id}?${query}`;
       const eventSource = new FetchClass(uriSSE);

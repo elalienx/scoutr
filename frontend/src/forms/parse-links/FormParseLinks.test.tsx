@@ -35,7 +35,7 @@ test("Expect 1 profile to scan susscesfully", async () => {
 
       expect(good).toBeInTheDocument();
     },
-    { timeout: 500 },
+    { timeout: 500 }
   );
 });
 
@@ -65,6 +65,6 @@ test("Expect multiple profiles to scan susscesfully", async () => {
 
       expect(good).toBeInTheDocument();
     },
-    { timeout: 500 },
+    { timeout: 500 }
   );
 });

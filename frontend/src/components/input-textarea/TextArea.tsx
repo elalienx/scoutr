@@ -1,6 +1,7 @@
 // Project files
 import type InputField from "types/InputField";
 import type TextAreaOptions from "types/TextAreaOptions";
+import onPaste from "./onPaste";
 import "styles/components/input-field.css";
 
 /** Input control to allow multiple lines of text. */
@@ -8,7 +9,13 @@ export default function TextArea(item: InputField) {
   const { id, label, placeholder, required = true, defaultValue, description, options } = item;
 
   // Properties
-  const myOptions = options as TextAreaOptions;
+  const textAreaOptions = options as TextAreaOptions;
+  const pasteAction = textAreaOptions?.onPaste;
+
+  // Methods
+  function onPasteHandler(event: React.ClipboardEvent<HTMLTextAreaElement>) {
+    onPaste(event, pasteAction, textAreaOptions.addNewLineAfterPaste);
+  }
 
   return (
     <label className="input-field" data-testid="text-area">
@@ -22,7 +29,8 @@ export default function TextArea(item: InputField) {
         placeholder={placeholder}
         required={required}
         rows={8}
-        maxLength={myOptions?.maxLength}
+        maxLength={textAreaOptions?.maxLength}
+        onPaste={pasteAction && onPasteHandler}
       />
     </label>
   );
