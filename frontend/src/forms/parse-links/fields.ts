@@ -1,5 +1,5 @@
 // Project fields
-import onPaste from "components/input-textarea/helpers/onPasteLinks";
+import removeQueryFromURL from "scripts/forms/removeQueryFromURL";
 import type InputField from "types/InputField";
 
 const fields: InputField[] = [
@@ -13,7 +13,8 @@ const fields: InputField[] = [
     required: true,
     description: "Only paste links and delete any other type of text.",
     options: {
-      onPaste: onPaste,
+      onPaste: removeQueryFromURL,
+      addNewLineAfterPaste: true,
     },
   },
 ];

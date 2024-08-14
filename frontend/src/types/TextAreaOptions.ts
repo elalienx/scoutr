@@ -2,5 +2,6 @@ export default interface TextAreaOptions {
   rows?: number;
   columns?: number;
   maxLength?: number;
-  onPaste: any;
+  onPaste: Function;
+  addNewLineAfterPaste?: boolean;
 }

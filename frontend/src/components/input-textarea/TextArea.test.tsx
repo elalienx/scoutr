@@ -1,15 +1,18 @@
 // Node modules
 import { expect, test } from "vitest";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 
 // Project files
 import TextArea from "./TextArea"; // Assuming this is your TextArea component
-import onPasteLinks from "./helpers/onPasteLinks";
 
-test("Correctly modifies the link passed", async () => {
+test("Correctly modifies the text passed", () => {
   // Arrange
-  const pastedText = `https://www.linkedin.com/in/qinyu-jia-843733180?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAACrSn_MBinjTWSDksu-XEfhr8C0ZP48pAts&lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BznRS%2Bf%2FyRgS3GWBxPDi9vA%3D%3D`;
-  const result = `https://www.linkedin.com/in/qinyu-jia-843733180\n`; // because onPasteLinks always add a new line at the end
+  const pastedText = "hello";
+  const result = "HELLO"; // will be converted to uppercase
+
+  function makeUppercase(text: string): string {
+    return String(text).toUpperCase();
+  }
 
   render(
     <TextArea
@@ -19,12 +22,12 @@ test("Correctly modifies the link passed", async () => {
       placeholder="Paste simple text"
       defaultValue=""
       description="Enter text"
-      options={{ onPaste: onPasteLinks }}
+      options={{ onPaste: makeUppercase }}
     />
   );
 
   // Act
-  const textArea = screen.getByLabelText("simple-text"); // Target by aria-label, which is set to the 'id' prop
+  const textArea = screen.getByLabelText("simple-text");
   const clipboardData = { getData: () => pastedText };
 
   fireEvent.paste(textArea, {
@@ -32,15 +35,17 @@ test("Correctly modifies the link passed", async () => {
   });
 
   // Assert
-  await waitFor(() => {
-    expect(textArea.value).toBe(result);
-  });
+  expect(textArea.value).toBe(result);
 });
 
-test("Does not break if the link is invalid, it just pasted it as it is", async () => {
+test("Correctly modifies the text passed and adds a new line after ir", () => {
   // Arrange
-  const pastedText = `.com/in/qinyu-jia-843733180?miniProfileUrn=urn%3Ali%3Afsd_%3D%3D`; // bad text on purpose
-  const result = `.com/in/qinyu-jia-843733180?miniProfileUrn=urn%3Ali%3Afsd_%3D%3D\n`; // because onPasteLinks always add a new line at the end
+  const pastedText = "with_new_line";
+  const result = `WITH_NEW_LINE\n`;
+
+  function makeUppercase(text: string): string {
+    return String(text).toUpperCase();
+  }
 
   render(
     <TextArea
@@ -50,12 +55,12 @@ test("Does not break if the link is invalid, it just pasted it as it is", async 
       placeholder="Paste simple text"
       defaultValue=""
       description="Enter text"
-      options={{ onPaste: onPasteLinks }}
+      options={{ onPaste: makeUppercase, addNewLineAfterPaste: true }}
     />
   );
 
   // Act
-  const textArea = screen.getByLabelText("simple-text"); // Target by aria-label, which is set to the 'id' prop
+  const textArea = screen.getByLabelText("simple-text");
   const clipboardData = { getData: () => pastedText };
 
   fireEvent.paste(textArea, {
@@ -63,7 +68,5 @@ test("Does not break if the link is invalid, it just pasted it as it is", async 
   });
 
   // Assert
-  await waitFor(() => {
-    expect(textArea.value).toBe(result);
-  });
+  expect(textArea.value).toBe(result);
 });
