@@ -3,9 +3,16 @@ export default function removeQueryFromURL(url: string): string {
   if (url === "") return "";
 
   // Properties
-  const parsedURL = new URL(url);
+  let result = "";
 
-  parsedURL.search = "";
+  try {
+    const parsedURL = new URL(url);
 
-  return parsedURL.toString();
+    parsedURL.search = "";
+    result = parsedURL.toString();
+  } catch (error) {
+    result = url;
+  }
+
+  return result;
 }

@@ -1,5 +1,5 @@
 // Project fields
-import onPaste from "scripts/forms/onPaste";
+import onPaste from "components/input-textarea/helpers/onPasteLinks";
 import type InputField from "types/InputField";
 
 const fields: InputField[] = [
