@@ -23,6 +23,7 @@ export default function TextArea(item: InputField) {
         required={required}
         rows={8}
         maxLength={myOptions?.maxLength}
+        onPaste={myOptions?.onPaste}
       />
     </label>
   );
