@@ -22,7 +22,7 @@ export default function pageToProfile(page: string) {
     candidate_job_title: getCandidateJobTitle(experienceDocument, profileType, databaseColumnSize),
     candidate_image_url: candidateImageURL(document),
     company_name: companyName(experienceDocument, profileType, databaseColumnSize),
-    company_duration_in_months: companyDurationInMonths(experienceDocument, profileType),
+    company_duration_in_months: companyDurationInMonths(experienceDocument),
     company_image_url: getCompanyImageURL(experienceDocument),
   };
 }
