@@ -1,8 +1,11 @@
+// Node modules
+import { ReactNode, useReducer } from "react";
+
 // Project files
 import Table from "components/table/Table";
-import Candidate from "types/Candidate";
 import SampleImages from "scripts/fetch-hook/mocks/sample-images.json";
-import { ReactNode } from "react";
+import CandidatesReducer from "state/CandidatesReducer";
+import type Candidate from "types/Candidate";
 
 // Properties
 const fewCandidates: Candidate[] = [
@@ -537,7 +540,6 @@ const manyCandidates: Candidate[] = [
     linked_in_url: "https://www.linkedin.com/in/lanahaddad87/",
   },
 ];
-const mockDispatch = () => {}; // empty on purpose just to render the component
 
 // Decorators
 function DecoratorPage({ children }: { children: ReactNode }) {
@@ -550,15 +552,31 @@ function DecoratorPage({ children }: { children: ReactNode }) {
   );
 }
 
+/**
+ * About:
+ * In addition to the decorator, this component is wrapped around a React function,
+ * to access the React state as <Table/> uses React Memo to memorize the mutations
+ * done using the dispatch.
+ */
 export default {
-  Default: (
-    <DecoratorPage>
-      <Table state={[fewCandidates, mockDispatch]} />
-    </DecoratorPage>
-  ),
-  "Long scrollable table": (
-    <DecoratorPage>
-      <Table state={[manyCandidates, mockDispatch]} />
-    </DecoratorPage>
-  ),
+  Default: () => {
+    // Global state
+    const [candidates, dispatch] = useReducer(CandidatesReducer, fewCandidates);
+
+    return (
+      <DecoratorPage>
+        <Table state={[candidates, dispatch]} />
+      </DecoratorPage>
+    );
+  },
+  "Long scrollable table": () => {
+    // Global state
+    const [candidates, dispatch] = useReducer(CandidatesReducer, manyCandidates);
+
+    return (
+      <DecoratorPage>
+        <Table state={[candidates, dispatch]} />
+      </DecoratorPage>
+    );
+  },
 };
