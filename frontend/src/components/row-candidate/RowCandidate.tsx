@@ -41,6 +41,7 @@ export default function RowCandidate({ candidate, index, dispatch }: Props) {
   function onClick(key: keyof Candidate) {
     const field = fields.find((item) => item.id === key);
 
+    // Safeguard
     if (field === undefined) {
       alert(`Error: Cannot find an input field for ${key}`);
       return;
