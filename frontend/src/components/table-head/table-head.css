@@ -3,7 +3,7 @@
   top: 0px; /* to tell the sticky to "stick" when reaches the top of the screen. */
 
   th {
-    padding: 0;
+    padding: var(--space-big) 0 0; /* for extra space on top when the table header is sticky. */
   }
 
   /* to keep the design style aligned to row-candidate, the column id must be centered. */
