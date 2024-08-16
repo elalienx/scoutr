@@ -19,7 +19,7 @@ interface Props {
   /** The candidate to present. */
   candidate: Candidate;
 
-  /** The row number. Note, we don't use the candidate.id because all assignments save the candidates a single table so the ID do not have a sequence for each assignment. */
+  /** The row number, not the candidate ID, is used since all assignments store candidates in a single table, making their IDs non-sequential. */
   index: number;
 
   /** A function that uses reducers to update the candidates state. */
