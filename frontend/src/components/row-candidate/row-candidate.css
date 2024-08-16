@@ -15,7 +15,7 @@
 
   /* Design */
   .notes small.trim-text {
-    -webkit-line-clamp: 3; /** Overides the default 1 line trim */
+    -webkit-line-clamp: 3; /* Overides the default 1 line trim */
   }
 }
 
@@ -37,16 +37,16 @@
       display: unset;
     }
 
-    /* Column widths */
-    .column-small {
+    /* Column sizes */
+    /* -- Narrow */
+    .id {
       width: 6.25%;
     }
 
-    .column-medium {
-      width: 11.25%;
-    }
-
-    .column-big {
+    /* -- Wide */
+    .candidate,
+    .company,
+    .notes {
       width: 23.75%;
     }
   }

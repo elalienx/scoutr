@@ -7,12 +7,12 @@ import ItemBadge from "components/item-badge/ItemBadge";
 import ItemCandidate from "components/item-candidate/ItemCandidate";
 import ItemCompany from "components/item-company/ItemCompany";
 import FormEdit from "forms/edit/FormEdit";
+import fields from "forms/edit/fields-candidate";
 import fetchService from "scripts/fetch-service/fetchService";
 import useDialog from "state/DialogContextAPI";
 import type Candidate from "types/Candidate";
 import type CandidateActions from "types/CandidateActions";
 import parseData from "./helpers/parseData";
-import fields from "../../forms/edit/fields-candidate";
 import "./row-candidate.css";
 
 interface Props {
@@ -68,45 +68,32 @@ export default function RowCandidate({ candidate, index, dispatch }: Props) {
       </td>
 
       {/* 🪪 Id */}
-      <td className="id column-small" data-label="Id">
+      <td className="id" data-label="Id">
         {index}
       </td>
 
       {/* 👨🏻 Canddiate */}
-      <td className="candidate column-big" data-label="Candidate">
+      <td className="candidate" data-label="Candidate">
         <ItemCandidate candidate={candidate} />
       </td>
 
       {/* 🏢 Company */}
-      <td className="company column-big" data-label="Company">
+      <td className="company" data-label="Company">
         <ItemCompany candidate={candidate} />
       </td>
 
       {/* 📝 Notes */}
-      <td
-        onClick={() => onClick("notes")}
-        className="notes column-big hover editable"
-        data-label="Notes"
-        title={notes}
-      >
+      <td data-label="Notes" className="notes" onClick={() => onClick("notes")} title={notes}>
         <small className="trim-text">{notes}</small>
       </td>
 
       {/* 📈 Relevance */}
-      <td
-        onClick={() => onClick("relevance")}
-        className="relevance column-medium editable"
-        data-label="Relevance"
-      >
+      <td className="relevance" data-label="Relevance" onClick={() => onClick("relevance")}>
         {relevance > 0 && <ItemBadge {...parsedData.relevance} />}
       </td>
 
       {/* 📲 Contact */}
-      <td
-        onClick={() => onClick("contact_status")}
-        className="contact column-medium editable"
-        data-label="Contact"
-      >
+      <td className="contact" data-label="Contact" onClick={() => onClick("contact_status")}>
         {contact_status > 0 && <ItemBadge {...parsedData.contact} />}
       </td>
     </tr>
