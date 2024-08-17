@@ -5,7 +5,7 @@ import { Page } from "playwright";
 
 // Project files
 import etlProcess from "scan-profile/etlProcess";
-import unZipLinks from "scripts/unZipLinks";
+import enforceArray from "scripts/enforceArray";
 
 export default async function parseLinks(request: Request, response: Response, database: Client, browserPage: Page) {
   // Headers
@@ -13,8 +13,8 @@ export default async function parseLinks(request: Request, response: Response, d
 
   // Properties
   const assignment_id = Number(request.params.assignment_id);
-  const unZippedLinks = unZipLinks(request.query.links as string[]);
-  const links = unZippedLinks.map((item) => decodeURI(item));
+  const enforcedArray = enforceArray(request.query.links as string[]);
+  const links = enforcedArray.map((item) => decodeURI(item));
 
   try {
     for (const link of links) {
