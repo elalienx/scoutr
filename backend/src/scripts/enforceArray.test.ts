@@ -2,7 +2,7 @@
 import { expect, test } from "vitest";
 
 // Project files
-import unZipLinks from "./unZipLinks";
+import enforceArray from "./enforceArray";
 
 test("Getting an empty string throws an error", () => {
   // Arrange
@@ -10,7 +10,7 @@ test("Getting an empty string throws an error", () => {
   const result = "The query is empty";
 
   // Act
-  const test = () => unZipLinks(query);
+  const test = () => enforceArray(query);
 
   // Assert
   expect(test).toThrowError(result);
@@ -22,7 +22,7 @@ test("Passing one link returns an array with it", () => {
   const result = ["https://www.linkedin.com/in/eduardo-alvarez-nowak/"];
 
   // Act
-  const test = unZipLinks(query);
+  const test = enforceArray(query);
 
   // Assert
   expect(test).toEqual(result);
@@ -42,7 +42,7 @@ test("Passing multiple links return an array with them", () => {
   ];
 
   // Act
-  const test = unZipLinks(query);
+  const test = enforceArray(query);
 
   // Assert
   expect(test).toEqual(result);
