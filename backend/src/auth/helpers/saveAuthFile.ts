@@ -1,7 +1,7 @@
 // Node modules
 import { Page } from "playwright";
 
-export default async function saveAuth(page: Page, origin: string) {
+export default async function saveAuthFile(page: Page, origin: string) {
   const fileName = "LoginAuth.json";
 
   console.info(`Saved auth as ${fileName} from ${origin}`);

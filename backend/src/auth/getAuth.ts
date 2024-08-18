@@ -4,7 +4,7 @@ import { firefox as navigator } from "playwright";
 // Project files
 import onLogin from "./helpers/onLogin";
 import onVerification from "./helpers/onVerification";
-import saveAuth from "./helpers/storeAuth";
+import saveAuthFile from "./helpers/saveAuthFile";
 
 async function getAuth(url: string): Promise<void> {
   console.info(`
@@ -28,9 +28,9 @@ async function getAuth(url: string): Promise<void> {
 
     if (isVerification) {
       await onVerification(page);
-      await saveAuth(page, "verification");
+      await saveAuthFile(page, "verification");
     } else if (isProfile) {
-      await saveAuth(page, "profile");
+      await saveAuthFile(page, "profile");
     } else {
       throw new Error("Unexpected auth page appeared");
     }
