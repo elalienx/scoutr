@@ -4,7 +4,7 @@ import { expect, test } from "vitest";
 // Project files
 import type ReportLog from "types/ReportLog";
 import type LinkedInProfile from "types/LinkedInProfile";
-import checkEmptyFields from "./checkEmptyFields";
+import reportEmptyFields from "./reportEmptyFields";
 
 test("Create an error severity #0 (no errors) when everything is complete", () => {
   // Arrange
@@ -24,7 +24,7 @@ test("Create an error severity #0 (no errors) when everything is complete", () =
   };
 
   // Act
-  const test = checkEmptyFields(url, profile);
+  const test = reportEmptyFields(url, profile);
 
   // Assert
   expect(test).toEqual(result);
@@ -48,7 +48,7 @@ test("Create an error severity #1 report one field is missing", () => {
   };
 
   // Act
-  const test = checkEmptyFields(url, profile);
+  const test = reportEmptyFields(url, profile);
 
   // Assert
   expect(test).toEqual(result);
@@ -72,7 +72,7 @@ test("Create an error severity #1 report more than one field are missing", () =>
   };
 
   // Act
-  const test = checkEmptyFields(url, profile);
+  const test = reportEmptyFields(url, profile);
 
   // Assert
   expect(test).toEqual(result);
@@ -96,7 +96,7 @@ test("Create an error severity #2 report when all fields are missing", () => {
   };
 
   // Act
-  const test = checkEmptyFields(url, profile);
+  const test = reportEmptyFields(url, profile);
 
   // Assert
   expect(test).toEqual(result);

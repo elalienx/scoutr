@@ -3,7 +3,7 @@
   "main": "src/index.ts",
   "type": "module",
   "scripts": {
-    "auth": "tsx src/auth/getAuth.ts",
+    "auth": "tsx src/browser/getAuth.ts",
     "dev": "tsx watch .",
     "test_once": "vitest --watch=false",
     "test": "vitest --coverage"

@@ -5,11 +5,11 @@ import pg from "pg";
 import type DatabaseCredentials from "types/DatabaseCredentials";
 
 export default async function postgresClient(credentials: DatabaseCredentials): Promise<pg.Client> {
-  const client: pg.Client = new pg.Client(credentials);
+  const client = new pg.Client(credentials);
   const success = `Scoutr database ready on port ${credentials.port}`;
   const hostError = `Postgres: Ensure your environment has a Postgres server. If using Docker, verify that the host called ${credentials.host} matches the Docker container name of the database`;
   const portError = `Postgres: Check if the port ${credentials.port} matches the exposed port in Docker`;
-  const databaseError = `Postgres: The database called ${credentials.database} does not exist on the current Postgress server`;
+  const databaseError = `Postgres: The database called ${credentials.database} does not exist on the current Postgres server`;
   const authError = `Postgres: The user ${credentials.user} or its password do not match the records in the database called ${credentials.database}`;
 
   try {

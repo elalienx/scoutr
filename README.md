@@ -61,6 +61,17 @@ npm run auth
 🔵 backend-1   | Scoutr backend server ready on port 8000
 ```
 
+## View React Components
+
+If you'd like to view the React components without needing to install Docker or manage databases, you can use our component gallery built with [React Cosmos](https://reactcosmos.org):
+
+1. Navigate to the frontend folder with `cd frontend`
+1. Install dependencies by running `npm clean-install`
+1. Start the component gallery with `npm run cosmos`
+1. Open your browser and go to `localhost:5001` (or the port specified in the terminal).
+
+⚠️ **Note:** This setup is for viewing the frontend only and does not support profile scraping or data storage.
+
 ## Improvements
 
 The project is fully functional but has room for improvement:

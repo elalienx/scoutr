@@ -1,7 +1,7 @@
 // Node modules
 import { firefox as navigator, Page } from "playwright";
 
-export default async function getPageWithContext(filePath: string) {
+export default async function getPageWithContext(filePath: string): Promise<Page> {
   // Properties
   let page: Page;
 
@@ -10,7 +10,7 @@ export default async function getPageWithContext(filePath: string) {
     const context = await browser.newContext({ storageState: filePath });
 
     page = await context.newPage();
-    console.info("Scoutr browser with the LinkedIn creadential is ready");
+    console.info("Scoutr browser with the LinkedIn credential is ready");
   } catch (error) {
     throw new Error(
       `
