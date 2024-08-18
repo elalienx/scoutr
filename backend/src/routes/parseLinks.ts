@@ -28,8 +28,6 @@ export default async function parseLinks(request: Request, response: Response, d
     response.write(`event: error\ndata: ${error}\n\n`);
   } finally {
     response.end();
-    // Important: To stop linkedin ad scripts eating resources
-    // The await is to stop new network requests until this process is done
-    await browserPage.goto("about:blank");
+    await browserPage.goto("about:blank"); // Stops network requests until the browser is closed to prevent LinkedIn ads from consuming resources.
   }
 }
