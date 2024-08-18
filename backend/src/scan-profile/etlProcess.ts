@@ -5,7 +5,7 @@ import { Page } from "playwright";
 // Project files
 import extractPage from "./extract/extractPage";
 import pageToProfile from "./transform/pageToProfile";
-import checkEmptyFields from "./transform/checkEmptyFields";
+import reportEmptyFields from "./transform/reportEmptyFields";
 import saveAndReturnCandidate from "./load/saveCandidate";
 import saveReport from "./load/saveReport";
 
@@ -15,7 +15,7 @@ export default async function etlProcess(url: string, assignment_id: number, dat
 
   // Transform
   const profile = pageToProfile(page);
-  const report = checkEmptyFields(url, profile);
+  const report = reportEmptyFields(url, profile);
   const profileAsArray = [assignment_id, url, ...Object.values(profile)];
   const reportAsArray = Object.values(report);
 

@@ -2,7 +2,7 @@
 import LinkedInProfile from "types/LinkedInProfile";
 import ReportLog from "types/ReportLog";
 
-export default function checkEmptyFields(url: string, profile: LinkedInProfile): ReportLog {
+export default function reportEmptyFields(url: string, profile: LinkedInProfile): ReportLog {
   const fields = Object.entries(profile);
   const missingFields = fields.filter(([_, value]) => !value);
   const labels = missingFields.map(([key]) => " " + key); // check if we keep it as an array and then stringify...
