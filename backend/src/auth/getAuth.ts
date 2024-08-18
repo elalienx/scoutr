@@ -8,7 +8,7 @@ import saveAuth from "./helpers/storeAuth";
 
 async function getAuth(url: string): Promise<void> {
   console.info(`
-    Welcome to the LinkedIn Authentificator.
+    Welcome to the LinkedIn Authenticator.
 
     To access all profile data, please log in with your LinkedIn account. 
     Follow the instructions that will appear shortly.
