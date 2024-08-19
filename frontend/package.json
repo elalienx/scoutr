@@ -4,7 +4,7 @@
   "scripts": {
     "build": "tsc && vite build",
     "cosmos": "cosmos",
-    "dev": "vite --host 0.0.0.0",
+    "dev": "vite --host",
     "test_once": "vitest --watch=false",
     "test": "vitest"
   },
