@@ -8,10 +8,10 @@ recruiters to create summaries of candidates they scout on LinkedIn by simply co
 [![Watch demo](https://img.youtube.com/vi/PvDabjmfyJc/maxresdefault.jpg)](https://youtu.be/PvDabjmfyJc)
 
 ## Table of contents
-1. [Installation](#-installation)
-1. [Project documentation)[#-project-documentation]
-1. [View React Components](#-view-react-components)
-1. [Improvements](#-improvements)
+1. [Installation](#installation)
+1. [Project documentation)[#project-documentation]
+1. [View React Components](#view-react-components)
+1. [Improvements](#improvements)
 
 ## Installation
 
