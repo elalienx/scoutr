@@ -1,5 +1,5 @@
 // Project files
-import type DatabaseCredentials from "../types/DatabaseCredentials";
+import type DatabaseCredentials from "types/DatabaseCredentials"
 
 const credentials: DatabaseCredentials = {
   host: "database",
