@@ -8,6 +8,7 @@
 
 ## Differences between profiles
 
-- Profile 1: Its the default profile. It has every single field required.
+- Profile 1: Its the default profile type. It has every single field required.
 - Profile 2: This profile has a private profile picture, and has a very long job title that needs to be trimmed, otherwise the database would crash.
 - Profile 3: This profile does not have a company logo.
+- Profile 4: Has a very long job duration.

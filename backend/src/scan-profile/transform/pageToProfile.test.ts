@@ -7,8 +7,9 @@ import { profile1 } from "./test-websites/profile1";
 import { profile2 } from "./test-websites/profile2";
 import { profile3 } from "./test-websites/profile3";
 import pageToProfile from "./pageToProfile";
+import { profile4 } from "./test-websites/profile4";
 
-test("Returns all fields on a complete profile", () => {
+test("Returns all fields on a complete profile type 1", () => {
   // Arrange
   const page = profile1;
   const result: LinkedInProfile = {
@@ -27,26 +28,7 @@ test("Returns all fields on a complete profile", () => {
   expect(test).toEqual(result);
 });
 
-test("Returns an empty string for candidate image if profile has private picture", () => {
-  // Arrange
-  const page = profile2;
-  const result = {
-    candidate_name: "Sri Lalitha Jeevanige",
-    candidate_job_title: "Scrum Master - Software Engineer",
-    candidate_image_url: "",
-    company_name: "Swedbank",
-    company_duration_in_months: 63,
-    company_image_url: `https://media.licdn.com/dms/image/C4E0BAQGIwfzke6i5bQ/company-logo_100_100/0/1630648928740/swedbank_logo?e=1729123200&v=beta&t=8DGj5MZgzOMdbCoSnbhXsqd0T8929_FllplB-SuIhfk`,
-  };
-
-  // Act
-  const test = pageToProfile(page);
-
-  // Assert
-  expect(test).toEqual(result);
-});
-
-test("Returns an empty string for company image if candidate has a job in a company without a logo", () => {
+test("Returns an empty string if a field is missing", () => {
   // Arrange
   const page = profile3;
   const result: LinkedInProfile = {
@@ -63,6 +45,36 @@ test("Returns an empty string for company image if candidate has a job in a comp
 
   // Assert
   expect(test).toEqual(result);
+});
+
+test("Returns all fields on a complete profile type 2", () => {
+  // Arrange
+  const page1 = profile2;
+  const page2 = profile4;
+  const result1 = {
+    candidate_name: "Sri Lalitha Jeevanige",
+    candidate_job_title: "Scrum Master - Software Engineer",
+    candidate_image_url: "",
+    company_name: "Swedbank",
+    company_duration_in_months: 63,
+    company_image_url: `https://media.licdn.com/dms/image/C4E0BAQGIwfzke6i5bQ/company-logo_100_100/0/1630648928740/swedbank_logo?e=1729123200&v=beta&t=8DGj5MZgzOMdbCoSnbhXsqd0T8929_FllplB-SuIhfk`,
+  };
+  const result2 = {
+    candidate_name: "Surendra Thota",
+    candidate_job_title: "Technical Architect",
+    candidate_image_url: `https://media.licdn.com/dms/image/v2/D4D03AQGl90ruU6jY8w/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1719497241494?e=1729728000&v=beta&t=1HuaQXE24mu_ghwcCBMDZgSNI7uKY3mJLMVkMXvwWJs`,
+    company_name: "Tata Consultancy Services",
+    company_duration_in_months: 170,
+    company_image_url: `https://media.licdn.com/dms/image/v2/D4D0BAQGsGR9p4ikS5w/company-logo_100_100/company-logo_100_100/0/1708946550425/tata_consultancy_services_logo?e=1732147200&v=beta&t=po1kBN1gGMniyVL1KrOdKHY0Zwdw8QYaOQu_IkUmvSo`,
+  };
+
+  // Act
+  const test1 = pageToProfile(page1);
+  const test2 = pageToProfile(page2);
+
+  // Assert
+  expect(test1).toEqual(result1);
+  expect(test2).toEqual(result2);
 });
 
 test("Returns empty strings for missing fields", () => {
