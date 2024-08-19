@@ -2,17 +2,16 @@
 
 Your LinkedIn Headhunter Companion
 
-## Table of contents
-1. [About](##-about)
-1. [Installation](##-installation)
-1. [Project documentation)[##-project-documentation]
-1. [View React Components](##-view-react-components)
-1. [Improvements](improvements)
-
 ## About
 
 recruiters to create summaries of candidates they scout on LinkedIn by simply copying and pasting profile links. For a product tour, check out this YouTube video: [https://youtu.be/PvDabjmfyJc](https://youtu.be/PvDabjmfyJc)
 [![Watch demo](https://img.youtube.com/vi/PvDabjmfyJc/maxresdefault.jpg)](https://youtu.be/PvDabjmfyJc)
+
+## Table of contents
+1. [Installation](#-installation)
+1. [Project documentation)[#-project-documentation]
+1. [View React Components](#-view-react-components)
+1. [Improvements](#-improvements)
 
 ## Installation
 
