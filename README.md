@@ -66,6 +66,8 @@ npm run auth
 🔵 backend-1   | Scoutr browser with the LinkedIn creadential is ready
 🔵 backend-1   | Scoutr backend server ready on port 8000
 ```
+## Project documentation
+If you are into reading and seeing pretty diagrams, I have the project documentation in this [PDF file]().
 
 ## View React Components
 
