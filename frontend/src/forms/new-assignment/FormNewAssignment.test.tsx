@@ -9,8 +9,8 @@ import {
   waitFor,
 } from "scripts/testing-library/assignments-page-globals";
 import FormNewAssignment from "./FormNewAssignment";
-import mockFetchAssignment from "scripts/fetch-service/mocks/mockFetchAssignment";
-import mockFetchError from "scripts/fetch-service/mocks/mockFetchError";
+import mockFetchAssignment from "scripts/mocks/mockFetchAssignment";
+import mockFetchError from "scripts/mocks/mockFetchError";
 
 test("Filling the formulary correctly submits the assignment", async () => {
   // Arrange

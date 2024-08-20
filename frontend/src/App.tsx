@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router-dom";
 // Project files
 import Dialog from "components/dialog/Dialog";
 import LoaderSuspense from "components/loader-suspense/LoaderSuspense";
-import useFetch from "scripts/fetch-hook/useFetch";
+import useFetch from "scripts/fetch/useFetch";
 
 // Dynamic imports to improve loading speed
 const Assignments = lazy(() => import("pages/assignments/Assignments"));

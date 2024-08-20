@@ -8,7 +8,7 @@ import ItemCandidate from "components/item-candidate/ItemCandidate";
 import ItemCompany from "components/item-company/ItemCompany";
 import FormEdit from "forms/edit/FormEdit";
 import fields from "forms/edit/fields-candidate";
-import fetchService from "scripts/fetch-service/fetchService";
+import fetchService from "scripts/fetch/fetchService";
 import useDialog from "state/DialogContextAPI";
 import type Candidate from "types/Candidate";
 import type CandidateActions from "types/CandidateActions";
