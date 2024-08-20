@@ -11,13 +11,8 @@ export default function companyDurationInMonths(document: CheerioAPI, profileTyp
   const htmlText1 = document(`${parentTag} > ${childTag}`).text(); // if we put first() on the profile type 1 it breaks
   const htmlText2 = document(`${parentTag} > ${childTag}`).first().text(); // to only bring the first job duration found otherwise it will return the other job durations in the same string messing up the math in the next step.
   const htmlText = profileType === 1 ? htmlText1 : htmlText2;
-  console.log("htmlText:", htmlText);
-
   const jobDurationTrimmedText = extractJobDuration(htmlText);
-  console.log("jobDurationTrimmedText:", jobDurationTrimmedText);
-
   const result = convertJobDurationToMonths(jobDurationTrimmedText);
-  console.log("result:", result);
 
   return result;
 }

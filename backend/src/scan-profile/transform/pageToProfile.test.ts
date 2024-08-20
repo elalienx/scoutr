@@ -6,8 +6,9 @@ import type LinkedInProfile from "types/LinkedInProfile";
 import { profile1 } from "./test-websites/profile1";
 import { profile2 } from "./test-websites/profile2";
 import { profile3 } from "./test-websites/profile3";
-import pageToProfile from "./pageToProfile";
 import { profile4 } from "./test-websites/profile4";
+import { profile5 } from "./test-websites/profile5";
+import pageToProfile from "./pageToProfile";
 
 test("Returns all fields on a complete profile type 1", () => {
   // Arrange
@@ -79,9 +80,9 @@ test("Returns all fields on a complete profile type 2", () => {
 
 test("Returns empty strings for missing fields", () => {
   // Arrange
-  const page = "<html><body><p>Empty Profile</p></body></html>";
+  const page = profile5;
   const result: LinkedInProfile = {
-    candidate_name: "",
+    candidate_name: "Vasileios Alevizos",
     candidate_job_title: "",
     candidate_image_url: "",
     company_name: "",

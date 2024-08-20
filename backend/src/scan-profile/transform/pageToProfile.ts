@@ -17,8 +17,6 @@ export default function pageToProfile(page: string) {
   const profileType = getProfileType(experienceDocument);
   const databaseColumnSize = 50;
 
-  console.log("type", profileType, "name:", getCandidateName(document, databaseColumnSize));
-
   return {
     candidate_name: getCandidateName(document, databaseColumnSize),
     candidate_job_title: getCandidateJobTitle(experienceDocument, profileType, databaseColumnSize),
