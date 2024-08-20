@@ -7,8 +7,8 @@ import { fireEvent } from "scripts/testing-library/assignments-page-globals";
 import FormParseLinks from "./FormParseLinks";
 
 // Mocks
-import MockSSEEOneCandidate from "scripts/fetch-sse/mocks/mockSSEOneCandidate";
-import MockSSEManyCandidates from "scripts/fetch-sse/mocks/mockSSEManyCandidates";
+import MockSSEEOneCandidate from "scripts/mocks/mockSSEOneCandidate";
+import MockSSEManyCandidates from "scripts/mocks/mockSSEManyCandidates";
 
 test("Expect 1 profile to scan susscesfully", async () => {
   // Arrange
@@ -35,7 +35,7 @@ test("Expect 1 profile to scan susscesfully", async () => {
 
       expect(good).toBeInTheDocument();
     },
-    { timeout: 500 }
+    { timeout: 500 },
   );
 });
 
@@ -65,6 +65,6 @@ test("Expect multiple profiles to scan susscesfully", async () => {
 
       expect(good).toBeInTheDocument();
     },
-    { timeout: 500 }
+    { timeout: 500 },
   );
 });

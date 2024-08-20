@@ -3,13 +3,12 @@ import { describe, expect, test } from "vitest";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 
 // Project files
-import { render, screen } from "scripts/testing-library/candidates-page-globals";
-import { fireEvent } from "scripts/testing-library/candidates-page-globals";
-import mockUseLoading from "scripts/fetch-hook/mocks/mockUseLoading";
-import mockUseError from "scripts/fetch-hook/mocks/mockUseError";
+import mockUseEmpty from "scripts/mocks/mockUseEmpty";
+import mockUseError from "scripts/mocks/mockUseError";
+import mockUseLoading from "scripts/mocks/mockUseLoading";
+import mockUseReadyCandidates from "scripts/mocks/mockUseReadyCandidates";
+import { render, screen, fireEvent } from "scripts/testing-library/candidates-page-globals";
 import Candidates from "./Candidates";
-import mockUseEmpty from "scripts/fetch-hook/mocks/mockUseEmpty";
-import mockUseReadyCandidates from "scripts/fetch-hook/mocks/mockUseReadyCandidates";
 
 describe("Wrong assigment_id passed on the URL", () => {
   test("Not passing an assignment_id in the URL goes to the 404 page", () => {
@@ -26,7 +25,7 @@ describe("Wrong assigment_id passed on the URL", () => {
           <Route path="*" element={page404} />
           <Route path="/path/:assignment_id" element={page} />
         </Routes>
-      </MemoryRouter>
+      </MemoryRouter>,
     );
 
     // Act
@@ -50,7 +49,7 @@ describe("Wrong assigment_id passed on the URL", () => {
           <Route path="*" element={page404} />
           <Route path="/path/:assignment_id" element={page} />
         </Routes>
-      </MemoryRouter>
+      </MemoryRouter>,
     );
 
     // Act
@@ -73,7 +72,7 @@ describe("Data fetching states", () => {
         <Routes>
           <Route path="/path/:assignment_id" element={page} />
         </Routes>
-      </MemoryRouter>
+      </MemoryRouter>,
     );
 
     // Act
@@ -94,7 +93,7 @@ describe("Data fetching states", () => {
         <Routes>
           <Route path="/path/:assignment_id" element={page} />
         </Routes>
-      </MemoryRouter>
+      </MemoryRouter>,
     );
 
     // Act
@@ -115,7 +114,7 @@ describe("Data fetching states", () => {
         <Routes>
           <Route path="/path/:assignment_id" element={page} />
         </Routes>
-      </MemoryRouter>
+      </MemoryRouter>,
     );
 
     // Act
@@ -135,7 +134,7 @@ describe("Data fetching states", () => {
         <Routes>
           <Route path="/path/:assignment_id" element={page} />
         </Routes>
-      </MemoryRouter>
+      </MemoryRouter>,
     );
 
     // Act
@@ -162,7 +161,7 @@ describe("Empty and Ready state open the parse linnks formulary", () => {
         <Routes>
           <Route path="/path/:assignment_id" element={page} />
         </Routes>
-      </MemoryRouter>
+      </MemoryRouter>,
     );
 
     // Act
@@ -185,7 +184,7 @@ describe("Empty and Ready state open the parse linnks formulary", () => {
         <Routes>
           <Route path="/path/:assignment_id" element={page} />
         </Routes>
-      </MemoryRouter>
+      </MemoryRouter>,
     );
 
     // Act
