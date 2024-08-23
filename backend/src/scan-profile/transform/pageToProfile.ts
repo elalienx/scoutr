@@ -9,11 +9,11 @@ import getCandidateJobTitle from "./profile-fields/candidateJobTitle";
 import getCandidateName from "./profile-fields/candidateName";
 import getCompanyImageURL from "./profile-fields/companyImageURL";
 import getProfileType from "./helpers/getProfileType";
+import extractExperienceSection from "./helpers/extractExperienceSection";
 
 export default function pageToProfile(page: string) {
   const document: CheerioAPI = load(page);
-  const experienceScope = document("#experience").parent().find("li").html() || "";
-  const experienceDocument: CheerioAPI = load(experienceScope);
+  const experienceDocument: CheerioAPI = extractExperienceSection(document);
   const profileType = getProfileType(experienceDocument);
   const databaseColumnSize = 50;
 
