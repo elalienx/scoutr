@@ -8,6 +8,7 @@ export default function getProfileType(document: CheerioAPI): number {
   const cssSelector = ".full-width";
   const uniqueProfile2Tag = document(htmlTag + dataAttribute + cssSelector).html();
   const result = !uniqueProfile2Tag ? 1 : 2;
+  console.log("profile type", result);
 
   return result;
 }

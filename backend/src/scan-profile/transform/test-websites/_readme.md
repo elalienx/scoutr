@@ -8,8 +8,10 @@
 
 ## Differences between profiles
 
-- Profile 1: Its the default profile type. It has every single field required.
-- Profile 2: This profile has a private profile picture, and has a very long job title that needs to be trimmed, otherwise the database would crash.
-- Profile 3: This profile does not have a company logo.
-- Profile 4: Has a very long job duration.
-- Profile 5: Is super private and only have a name. Note, the profile does say "Researcher" but because is on the bio and not on the work experience, the system don't catch it.
+| #   | File name | User name             | Profile type | Description                                                                                                                                                         |
+| --- | --------- | --------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | profile1  | Eduardo Alvarez       | 1            | It has every single field required.                                                                                                                                 |
+| 2   | profile2  | Sri Lalitha Jeevanige | 2            | Has a private profile picture and has a very long job title that needs to be trimmed, otherwise the database would crash.                                           |
+| 3   | profile3  | Abgar Gulo            | 1            | This profile does not have a company logo.                                                                                                                          |
+| 4   | profile4  | Surendra Thota        | 2            | Has a very long job duration.                                                                                                                                       |
+| 5   | profile5  | Vasileios Alevizos    | 1            | Is super private and only have a name. Note, the profile does say "Researcher" but because is on the bio and not on the work experience, the system don't catch it. |
