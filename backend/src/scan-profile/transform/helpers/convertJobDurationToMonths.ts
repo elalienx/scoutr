@@ -1,7 +1,7 @@
 /**
  *
- * @param durationInWords: "1 yrs 2 mos", "1 mo"
- * @returns // 14 (12 months + 2 months), 1 (1 month)
+ * @param durationInWords: "1 yrs 2 mos"
+ * @returns // 14 (12 months + 2 months)
  */
 export default function convertJobDurationToMonths(durationInWords: string): number {
   const yearsRegex: RegExp = /(\d+)\s*(yrs?|yr)/i;
