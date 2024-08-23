@@ -1,7 +1,7 @@
 /**
  *
- * @param text 1: "January 2015 to January 2020 • 5 years", text 2: "January 2023 to Present • 1 year 2 months"
- * @returns result 1: "5 years", result 2: "1 year 2 months"
+ * @param text: "January 2015 to February 2020 • 5 years 1 month"
+ * @returns result: "5 years 1 month"
  */
 export default function extractJobDuration(text: string): string {
   // Properties

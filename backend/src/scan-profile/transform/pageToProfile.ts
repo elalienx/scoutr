@@ -2,20 +2,18 @@
 import { load, CheerioAPI } from "cheerio";
 
 // Project files
-import candidateImageURL from "./helpers/candidateImageURL";
-import companyDurationInMonths from "./helpers/companyDurationInMonths";
-import companyName from "./helpers/companyName";
-import getCandidateJobTitle from "./helpers/candidateJobTitle";
-import getCandidateName from "./helpers/candidateName";
-import getCompanyImageURL from "./helpers/companyImageURL";
+import candidateImageURL from "./profile-fields/candidateImageURL";
+import companyDurationInMonths from "./profile-fields/companyDurationInMonths";
+import companyName from "./profile-fields/companyName";
+import getCandidateJobTitle from "./profile-fields/candidateJobTitle";
+import getCandidateName from "./profile-fields/candidateName";
+import getCompanyImageURL from "./profile-fields/companyImageURL";
 import getProfileType from "./helpers/getProfileType";
+import extractExperienceSection from "./helpers/extractExperienceSection";
 
 export default function pageToProfile(page: string) {
   const document: CheerioAPI = load(page);
-  console.log("testing");
-  console.log(getCandidateName(document, 0));
-  const experienceScope = document("#experience").parent().find("li").html() || "";
-  const experienceDocument: CheerioAPI = load(experienceScope);
+  const experienceDocument: CheerioAPI = extractExperienceSection(document);
   const profileType = getProfileType(experienceDocument);
   const databaseColumnSize = 50;
 

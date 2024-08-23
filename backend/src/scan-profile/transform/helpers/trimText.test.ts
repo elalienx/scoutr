@@ -29,6 +29,19 @@ test("Should return the same string if size is not selected", () => {
   expect(test).toBe(result);
 });
 
+test("Should return the same string if size is 0", () => {
+  // Arrange
+  const text = "Hello";
+  const size = 0; // 0 on purpose to return the same value "Hello"
+  const result = "Hello";
+
+  // Act
+  const test = trimText(text, size);
+
+  // Assert
+  expect(test).toBe(result);
+});
+
 test("Shoud not crash if text is empty", () => {
   // Arrange
   const text = "";
