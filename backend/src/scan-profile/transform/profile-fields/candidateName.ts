@@ -2,7 +2,7 @@
 import { CheerioAPI } from "cheerio";
 
 // Project files
-import trimText from "./trimText";
+import trimText from "../helpers/trimText";
 
 export default function candidateName(document: CheerioAPI, trimSize: number): string {
   const htmlText = document("h1").text();
