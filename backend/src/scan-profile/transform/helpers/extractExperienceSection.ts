@@ -14,8 +14,8 @@ import { CheerioAPI, load } from "cheerio";
  *    If we dont extract the #experience section beforehand.
  */
 export default function extractExperienceSection(document: CheerioAPI): CheerioAPI {
-  const htmlText: string = document("#experience").parent().find("li").html() || "";
-  const result = load(htmlText);
+  const htmlText: string = document("#experience").parent().find("li").first().html() || "";
+  const result: CheerioAPI = load(htmlText);
 
   return result;
 }
