@@ -12,8 +12,6 @@ import getProfileType from "./helpers/getProfileType";
 
 export default function pageToProfile(page: string) {
   const document: CheerioAPI = load(page);
-  console.log("testing");
-  console.log(getCandidateName(document, 0));
   const experienceScope = document("#experience").parent().find("li").html() || "";
   const experienceDocument: CheerioAPI = load(experienceScope);
   const profileType = getProfileType(experienceDocument);

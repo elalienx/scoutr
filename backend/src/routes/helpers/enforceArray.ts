@@ -11,7 +11,7 @@
  * - Backend  = "www.eduardo.com" // Express.js wrongfully converts it to string
  *
  */
-export default function unZipLinks(links: string | string[]): string[] {
+export default function enforceArray(links: string | string[]): string[] {
   // Safeguard
   if (links === "") throw new Error("The query is empty");
 
