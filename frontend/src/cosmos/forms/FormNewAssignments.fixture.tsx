@@ -3,9 +3,9 @@ import { BrowserRouter } from "react-router-dom";
 
 // Project files
 import FormNewAssignment from "forms/new-assignment/FormNewAssignment";
-import mockFetchAssignment from "scripts/fetch-service/mocks/mockFetchAssignment";
-import mockFetchError from "scripts/fetch-service/mocks/mockFetchError";
-import mockFetchAssignmentSlow from "scripts/fetch-service/mocks/mockFetchAssignmentSlow";
+import mockFetchAssignment from "scripts/mocks/mockFetchAssignment";
+import mockFetchError from "scripts/mocks/mockFetchError";
+import mockFetchAssignmentSlow from "scripts/mocks/mockFetchAssignmentSlow";
 
 /**
  * This component is wrapped in BrowserRouter to support routing

@@ -3,7 +3,7 @@ import { ReactNode, useReducer } from "react";
 
 // Project files
 import Table from "components/table/Table";
-import SampleImages from "scripts/fetch-hook/mocks/sample-images.json";
+import SampleImages from "scripts/mocks/sample-images.json";
 import CandidatesReducer from "state/CandidatesReducer";
 import type Candidate from "types/Candidate";
 

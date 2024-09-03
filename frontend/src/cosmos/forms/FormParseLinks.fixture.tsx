@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import FormParseLinks from "forms/parse-links/FormParseLinks";
 import MockSSEEOneCandidate from "scripts/mocks/mockSSEOneCandidate";
 import MockSSEUnknownError from "scripts/mocks/mockSSEUnknownError";
-import MockSSEManyCandidates from "scripts/fetch-sse/mocks/mockSSEManyCandidates";
+import MockSSEManyCandidates from "scripts/mocks/mockSSEManyCandidates";
 
 // Properties
 const id = 1;
