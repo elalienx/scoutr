@@ -1,6 +1,11 @@
+// Node modules
+import { SyntheticEvent } from "react";
+
 // Project files
-import Company from "assets/placeholder-company.png";
-import Candidate from "assets/placeholder-candidate.png";
+import CandidatePlaceholder from "assets/placeholder-candidate.png";
+import CandidateFallback from "assets/broken-linked-candidate.png";
+import CompanyPlaceholder from "assets/placeholder-company.png";
+import CompanyFallback from "assets/broken-linked-company.png";
 import "./image-thumbnail.css";
 
 interface Props {
@@ -22,8 +27,14 @@ export default function ImageThumbnail(item: Props) {
   const { src, className, alt, profile = "company" } = item;
 
   // Properties
-  const Placeholder = profile === "company" ? Company : Candidate;
+  const Placeholder = profile === "company" ? CompanyPlaceholder : CandidatePlaceholder;
+  const Fallback = profile === "company" ? CompanyFallback : CandidateFallback;
   const Source = src || Placeholder;
+
+  // Methods
+  function onError(event: SyntheticEvent<HTMLImageElement, Event>) {
+    event.currentTarget.src = Fallback;
+  }
 
   return (
     <img
@@ -31,6 +42,7 @@ export default function ImageThumbnail(item: Props) {
       className={`image-thumbnail ${className}`}
       loading="lazy"
       src={Source}
+      onError={(event) => onError(event)}
       // @ts-ignore
       // fetchpriority in lowercase is the correct way to write this atribute (https://github.com/facebook/react/issues/25682)
       fetchpriority="low"
