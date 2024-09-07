@@ -24,7 +24,7 @@ interface Props {
 
 /** Provides an image with a placeholder. */
 export default function ImageThumbnail(item: Props) {
-  const { src, className, alt, profile = "company" } = item;
+  const { src, className = "", alt, profile = "company" } = item;
 
   // Properties
   const Placeholder = profile === "company" ? CompanyPlaceholder : CandidatePlaceholder;
@@ -32,8 +32,11 @@ export default function ImageThumbnail(item: Props) {
   const Source = src || Placeholder;
 
   // Methods
-  function onError(event: SyntheticEvent<HTMLImageElement, Event>) {
-    event.currentTarget.src = Fallback;
+  function onError(event: SyntheticEvent<HTMLImageElement>, fallback: string) {
+    const image = event.currentTarget;
+
+    image.onerror = null; // to avoid an infinite loop if the fallback is also broken hehe
+    image.src = fallback;
   }
 
   return (
@@ -42,7 +45,7 @@ export default function ImageThumbnail(item: Props) {
       className={`image-thumbnail ${className}`}
       loading="lazy"
       src={Source}
-      onError={(event) => onError(event)}
+      onError={(event) => onError(event, Fallback)}
       // @ts-ignore
       // fetchpriority in lowercase is the correct way to write this atribute (https://github.com/facebook/react/issues/25682)
       fetchpriority="low"
