@@ -17,10 +17,22 @@ export default function Logoout() {
   }
 
   return (
-    <div id="logout">
-      <h1>Logout</h1>
-      <p>Click here to logout of Scoutr</p>
-      <Button label={"Logout"} primary big icon="user" onClick={() => onLogout()} />
+    <div id="login">
+      <div className="container">
+        <header className="hero">
+          <h1>
+            Meet
+            <br />
+            Scoutr
+          </h1>
+          <span className="subtitle">Your LinkedIn Headhunter Companion</span>
+          <form className="form">
+            <div className="buttons">
+              <Button label={"Logout"} big primary icon="x-mark" onClick={() => onLogout()} />
+            </div>
+          </form>
+        </header>
+      </div>
     </div>
   );
 }
