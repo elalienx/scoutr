@@ -10,19 +10,30 @@ export default {
   Default: (
     <InputText
       id={id}
-      type={"input-text"}
+      defaultValue={""}
       label={label}
       placeholder={placeholder}
-      defaultValue={""}
+      type={"input-text"}
     />
   ),
   Filled: (
     <InputText
       id={id}
-      type={"input-text"}
+      defaultValue={"Eduardo Alvarez"}
       label={label}
       placeholder={placeholder}
-      defaultValue={"Eduardo Alvarez"}
+      type={"input-text"}
+    />
+  ),
+  Password: (
+    <InputText
+      id={id}
+      defaultValue={""}
+      description="Should show asterisks"
+      label={"Password"}
+      options={{ type: "password" }}
+      placeholder={"********"}
+      type={"input-text"}
     />
   ),
 };
