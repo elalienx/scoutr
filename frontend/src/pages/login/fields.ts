@@ -7,7 +7,7 @@ const fields: InputField[] = [
     type: "input-text",
     label: "Novare Email",
     placeholder: "employee@novare.se",
-    defaultValue: "",
+    defaultValue: "eduardo.alvarez@novare.se",
     required: true,
   },
   {
@@ -15,7 +15,7 @@ const fields: InputField[] = [
     type: "input-text",
     label: "password",
     placeholder: "********",
-    defaultValue: "",
+    defaultValue: "1234567",
     required: true,
   },
 ];

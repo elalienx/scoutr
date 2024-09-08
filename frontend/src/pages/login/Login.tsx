@@ -1,6 +1,6 @@
 // Node modules
 import InputFields from "components/input-fields/InputFields";
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 
 // Project files
 import useAuth from "state/AuthContextAPI";
@@ -8,20 +8,61 @@ import fields from "./fields";
 import gatherFormData from "scripts/forms/gatherFormData";
 import Button from "components/button/Button";
 import FormStatus from "components/form-status/FormStatus";
+import waitForSeconds from "scripts/waitForSeconds";
+import StatusForm from "types/StatusForm";
 import "styles/components/form.css";
 import "./login.css";
+import ResultsAPI from "types/ResultAPI";
+import { signIn } from "scripts/firebase/auth";
 
 export default function Login() {
   // Global state
-  const { login, status, message } = useAuth();
+  const { login } = useAuth();
+
+  // Local state
+  const [status, setStatus] = useState<StatusForm>("stand-by");
+  const [message, setMessage] = useState("");
 
   // Methods
-  async function onLogin(event: FormEvent<HTMLFormElement>) {
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
+    onLoading(event);
+
+    try {
+      const formData = gatherFormData(event.currentTarget);
+      const { email, password } = formData;
+      const result = await signIn(email, password);
+
+      onResult(result);
+    } catch (error: unknown) {
+      onFailure(error);
+    }
+  }
+
+  function onLoading(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setStatus("loading");
+    setMessage("Login you in");
+  }
 
-    const { email, password } = gatherFormData(event.currentTarget);
+  function onResult(result: ResultsAPI) {
+    const { data, message, status } = result;
 
-    login(email, password);
+    if (status === "error") onFailure(message);
+    else onSuccess(data);
+  }
+
+  async function onSuccess(uid: string) {
+    setStatus("complete");
+    setMessage("Logged!");
+
+    await waitForSeconds(0.5);
+    login(uid);
+  }
+
+  function onFailure(error: Error | unknown) {
+    console.error(error);
+    setStatus("error");
+    setMessage("Could not log you in");
   }
 
   return (
@@ -38,7 +79,7 @@ export default function Login() {
         </header>
 
         {/* Form */}
-        <form className="form" onSubmit={(event) => onLogin(event)}>
+        <form className="form" onSubmit={(event) => onSubmit(event)}>
           <h2>Login</h2>
           <InputFields fields={fields} />
           <FormStatus status={status} message={message} />

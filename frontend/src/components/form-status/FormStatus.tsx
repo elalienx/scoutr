@@ -1,14 +1,13 @@
 // Project files
 import FontAwesomeIcon from "components/font-awesome/FontAwesomeIcon";
 import type StatusForm from "types/StatusForm";
-import StatusAuth from "types/StatusAuth";
 import type Color from "types/Color";
 import "styles/components/background-colors.css";
 import "./form-status.css";
 
 interface Props {
   /** The status of the form submision. */
-  status: StatusForm | StatusAuth;
+  status: StatusForm;
 
   /** The message to display */
   message: string;

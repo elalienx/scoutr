@@ -8,12 +8,12 @@ import UnloggedRoutes from "routes/UnloggedRoutes";
 
 export default function App() {
   // Global state
-  const { status } = useAuth();
+  const { isLogged } = useAuth();
 
   return (
     <div id="app">
-      {status === "logged" && <LoggedRoutes />}
-      {status === "unlogged" && <UnloggedRoutes />}
+      {isLogged && <LoggedRoutes />}
+      {!isLogged && <UnloggedRoutes />}
       <Dialog />
     </div>
   );

@@ -2,25 +2,17 @@
 import { createContext, useContext } from "react";
 import { ReactNode, useEffect, useState } from "react";
 
-// Project files
-import StatusAuth from "types/StatusAuth";
-import { signIn } from "scripts/firebase/auth";
-import ResultsAPI from "types/ResultAPI";
-import waitForSeconds from "scripts/waitForSeconds";
-
 // Properties
 interface Props {
   children: ReactNode;
 }
 interface ContextValue {
-  status: StatusAuth;
-  message: string;
+  isLogged: boolean;
   login: Function;
   logout: Function;
 }
 const initialValue: ContextValue = {
-  status: "stand-by",
-  message: "",
+  isLogged: false,
   login: () => {},
   logout: () => {},
 };
@@ -32,11 +24,10 @@ const Context = createContext(initialValue);
  */
 export function AuthProvider({ children }: Props) {
   // Local state
-  const [status, setStatus] = useState<StatusAuth>("stand-by");
-  const [message, setMessage] = useState("");
+  const [isLogged, setIsLogged] = useState(false); // check if starting as "unlogged" causes problem, then fallback to "stand-by"
 
   // Properties
-  const sessionKey = "scoutr-auth-token";
+  const storageKey = "scoutr-auth-token";
 
   // Methods
   useEffect(() => {
@@ -44,38 +35,22 @@ export function AuthProvider({ children }: Props) {
   }, []);
 
   async function checkLogin() {
-    const storageLogin = localStorage.getItem(sessionKey) as StatusAuth;
-    const status: StatusAuth = storageLogin || "unlogged";
+    const storageLogin = Boolean(localStorage.getItem(storageKey));
 
-    setStatus(status);
+    setIsLogged(storageLogin);
+  }
+
+  function login(uid: string) {
+    localStorage.setItem(storageKey, uid);
+    setIsLogged(true);
   }
 
   async function logout() {
-    localStorage.setItem(sessionKey, "unlogged");
-    setStatus("unlogged");
+    localStorage.removeItem(storageKey);
+    setIsLogged(false);
   }
 
-  async function login(email: string, password: string) {
-    const { data, status, message }: ResultsAPI = await signIn(email, password);
-
-    if (status === "ready") onSuccess(data);
-    else onFailure(message);
-  }
-
-  async function onSuccess(uid: string) {
-    localStorage.setItem(sessionKey, uid);
-    setMessage("Success");
-
-    await waitForSeconds(0.5);
-    setStatus("logged");
-  }
-
-  function onFailure(message: string) {
-    alert(message);
-    setMessage(message);
-  }
-
-  return <Context.Provider value={{ status, message, login, logout }}>{children}</Context.Provider>;
+  return <Context.Provider value={{ isLogged, login, logout }}>{children}</Context.Provider>;
 }
 
 // For the children
