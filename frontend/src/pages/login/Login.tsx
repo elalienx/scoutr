@@ -82,11 +82,15 @@ export default function Login() {
         <form className="form" onSubmit={(event) => onSubmit(event)}>
           <h2>Login</h2>
           <InputFields fields={fields} />
+          <small>This login is meant only for Novare employees with official Novare emails.</small>
+          <small>If you are a Novare client, we will expand this app for you, quite soon.</small>
           <FormStatus status={status} message={message} />
           <div className="buttons">
             <Button label={"Login"} big primary />
           </div>
         </form>
+
+        {/* Warning */}
       </div>
     </div>
   );
