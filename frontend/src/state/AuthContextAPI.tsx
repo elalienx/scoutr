@@ -6,6 +6,7 @@ import { ReactNode, useEffect, useState } from "react";
 import StatusAuth from "types/StatusAuth";
 import { signIn } from "scripts/firebase/auth";
 import ResultsAPI from "types/ResultAPI";
+import waitForSeconds from "scripts/waitForSeconds";
 
 // Properties
 interface Props {
@@ -13,11 +14,13 @@ interface Props {
 }
 interface ContextValue {
   status: StatusAuth;
+  message: string;
   login: Function;
   logout: Function;
 }
 const initialValue: ContextValue = {
-  status: "checking",
+  status: "stand-by",
+  message: "",
   login: () => {},
   logout: () => {},
 };
@@ -29,7 +32,8 @@ const Context = createContext(initialValue);
  */
 export function AuthProvider({ children }: Props) {
   // Local state
-  const [status, setStatus] = useState<StatusAuth>("checking");
+  const [status, setStatus] = useState<StatusAuth>("stand-by");
+  const [message, setMessage] = useState("");
 
   // Properties
   const sessionKey = "scoutr-auth-token";
@@ -58,16 +62,20 @@ export function AuthProvider({ children }: Props) {
     else onFailure(message);
   }
 
-  function onSuccess(uid: string) {
+  async function onSuccess(uid: string) {
     localStorage.setItem(sessionKey, uid);
+    setMessage("Success");
+
+    await waitForSeconds(0.5);
     setStatus("logged");
   }
 
   function onFailure(message: string) {
     alert(message);
+    setMessage(message);
   }
 
-  return <Context.Provider value={{ status, login, logout }}>{children}</Context.Provider>;
+  return <Context.Provider value={{ status, message, login, logout }}>{children}</Context.Provider>;
 }
 
 // For the children

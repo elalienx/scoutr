@@ -1,0 +1,43 @@
+#login {
+  height: 100svh;
+  display: grid;
+  place-items: center;
+
+  .container {
+    display: grid;
+    row-gap: var(--space-big);
+    width: 240px;
+  }
+
+  .hero {
+    display: grid;
+    gap: var(--space-small);
+    margin-trim: block; /** to remove the margin bottom of any child, so they don't mess up the meassurments of the flex-box */
+
+    h1 {
+      font-size: 64px;
+      line-height: 0.7; /* to force the 2 lines to touch each other. This is a stylistic decision! */
+      letter-spacing: -1.5px;
+    }
+
+    .subtitle {
+      color: var(--color-gray);
+      font-size: 18px;
+    }
+  }
+
+  .form {
+    padding: 0;
+    border: none;
+  }
+}
+
+/* Bigger than table */
+@media (min-width: 700px) {
+  #login {
+    .container {
+      width: 288px;
+      row-gap: var(--space-medium); /* reduce vertical gap as monitors are narrower than phones. */
+    }
+  }
+}
