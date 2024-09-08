@@ -12,7 +12,6 @@ export default function App() {
 
   return (
     <div id="app">
-      <p>🛎️ {status}</p>
       {status === "logged" && <LoggedRoutes />}
       {status === "unlogged" && <UnloggedRoutes />}
       <Dialog />

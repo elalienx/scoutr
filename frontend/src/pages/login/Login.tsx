@@ -9,7 +9,7 @@ export default function Login() {
   const { login } = useAuth();
 
   // Local state
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("eduardo.alvarez@novare.se");
 
   // Methods
   async function onLogin(event: FormEvent<HTMLFormElement>) {

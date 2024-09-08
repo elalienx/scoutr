@@ -38,15 +38,17 @@ export function AuthProvider({ children }: Props) {
   }, []);
 
   async function checkLogin() {
-    const status: AuthStatus = (sessionStorage.getItem(sessionKey) as AuthStatus) || "unlogged";
+    const status: AuthStatus = (localStorage.getItem(sessionKey) as AuthStatus) || "unlogged";
 
     setStatus(status);
   }
 
   async function login(email: string) {
     try {
+      console.log("preparing to use magic key");
       await magic.auth.loginWithMagicLink({ email: email });
-      sessionStorage.setItem("magic-link-auth", "logged");
+      console.log("storing localStorage key");
+      localStorage.setItem(sessionKey, "logged");
       setStatus("logged");
     } catch (error) {
       console.error(error);
@@ -56,7 +58,7 @@ export function AuthProvider({ children }: Props) {
   async function logout() {
     try {
       await magic.user.logout();
-      sessionStorage.setItem("magic-link-auth", "unlogged");
+      localStorage.setItem(sessionKey, "unlogged");
       setStatus("unlogged");
     } catch (error) {
       console.error(error);
