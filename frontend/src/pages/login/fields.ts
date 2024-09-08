@@ -9,6 +9,7 @@ const fields: InputField[] = [
     placeholder: "employee@novare.se",
     defaultValue: "",
     required: true,
+    options: { type: "email" },
   },
   {
     id: "password",
@@ -17,6 +18,7 @@ const fields: InputField[] = [
     placeholder: "********",
     defaultValue: "",
     required: true,
+    options: { type: "password" },
   },
 ];
 

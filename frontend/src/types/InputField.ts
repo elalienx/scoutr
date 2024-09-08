@@ -1,6 +1,7 @@
 // Project files
 import type InputRadioOptions from "./InputRadioOptions";
 import type TextAreaOptions from "./TextAreaOptions";
+import type TextOptions from "./TextOptions";
 
 export default interface InputField {
   /** The unique indentified the input element so we can get the values using the FormData API.  */
@@ -25,5 +26,5 @@ export default interface InputField {
   description?: string;
 
   /** Additional options unique for each type of input */
-  options?: TextAreaOptions | InputRadioOptions[];
+  options?: TextOptions | TextAreaOptions | InputRadioOptions[];
 }
