@@ -11,6 +11,7 @@
   "author": "Eduardo Alvarez",
   "license": "Unlicense",
   "dependencies": {
+    "firebase": "^10.13.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.23.0"
@@ -23,7 +24,7 @@
     "@vitejs/plugin-react-swc": "^3.5.0",
     "globals": "^15.9.0",
     "happy-dom": "^14.12.3",
-    "react-cosmos": "^6.1.1",
+    "react-cosmos": "^6.2.0",
     "react-cosmos-plugin-vite": "^6.1.1",
     "typescript": "^5.5.3",
     "vite": "^5.4.0",

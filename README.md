@@ -8,6 +8,7 @@ recruiters to create summaries of candidates they scout on LinkedIn by simply co
 [![Watch demo](https://img.youtube.com/vi/PvDabjmfyJc/maxresdefault.jpg)](https://youtu.be/PvDabjmfyJc)
 
 ## Table of contents
+
 1. [Installation](#installation)
 1. [Project documentation](#project-documentation)
 1. [View React Components](#view-react-components)
@@ -66,7 +67,9 @@ npm run auth
 🔵 backend-1   | Scoutr browser with the LinkedIn creadential is ready
 🔵 backend-1   | Scoutr backend server ready on port 8000
 ```
+
 ## Project documentation
+
 If you are into reading and seeing pretty diagrams, I have the project documentation in this [PDF file](https://github.com/elalienx/scoutr/blob/main/documentation.pdf).
 
 ## View React Components

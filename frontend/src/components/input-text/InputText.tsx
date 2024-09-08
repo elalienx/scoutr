@@ -1,10 +1,15 @@
 // Project files
 import type InputField from "types/InputField";
+import type TextOptions from "types/TextOptions";
 import "styles/components/input-field.css";
 
 /** Input control to allow a single line of text. */
 export default function InputText(item: InputField) {
-  const { id, label, placeholder, required = true, defaultValue, description } = item;
+  const { id, label, placeholder, required = true, defaultValue, description, options } = item;
+
+  // Properties
+  const textAreaOptions = options as TextOptions;
+  const type = textAreaOptions?.type || "text";
 
   return (
     <label className="input-field" data-testid="input-text">
@@ -17,7 +22,7 @@ export default function InputText(item: InputField) {
         name={id}
         placeholder={placeholder}
         required={required}
-        type="text"
+        type={type}
       />
     </label>
   );

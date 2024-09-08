@@ -6,14 +6,17 @@ import { BrowserRouter } from "react-router-dom";
 // Project files
 import App from "./App.tsx";
 import { DialogProvider } from "state/DialogContextAPI.tsx";
+import { AuthProvider } from "state/AuthContextAPI.tsx";
 import "styles/style.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
-      <DialogProvider>
-        <App />
-      </DialogProvider>
+      <AuthProvider>
+        <DialogProvider>
+          <App />
+        </DialogProvider>
+      </AuthProvider>
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
 );
