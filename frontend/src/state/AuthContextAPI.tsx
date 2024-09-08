@@ -5,6 +5,7 @@ import { ReactNode, useEffect, useState } from "react";
 // Project files
 import StatusAuth from "types/StatusAuth";
 import { signIn } from "scripts/firebase/auth";
+import ResultsAPI from "types/ResultAPI";
 
 // Properties
 interface Props {
@@ -13,18 +14,19 @@ interface Props {
 interface ContextValue {
   status: StatusAuth;
   login: Function;
-  saveLogin: Function;
   logout: Function;
 }
 const initialValue: ContextValue = {
   status: "checking",
   login: () => {},
-  saveLogin: () => {},
   logout: () => {},
 };
 const Context = createContext(initialValue);
 
 // For the parent
+/**
+ * Refactor with reducer to have each method on a separable, testable file
+ */
 export function AuthProvider({ children }: Props) {
   // Local state
   const [status, setStatus] = useState<StatusAuth>("checking");
@@ -44,32 +46,28 @@ export function AuthProvider({ children }: Props) {
     setStatus(status);
   }
 
-  async function login(email: string, password: string) {
-    try {
-      console.log("preparing to authenticate user");
-      await signIn(email, password);
-    } catch (error) {
-      console.error(error);
-    }
+  async function logout() {
+    localStorage.setItem(sessionKey, "unlogged");
+    setStatus("unlogged");
   }
 
-  async function saveLogin() {
-    localStorage.setItem(sessionKey, "logged");
+  async function login(email: string, password: string) {
+    const { data, status, message }: ResultsAPI = await signIn(email, password);
+
+    if (status === "ready") onSuccess(data);
+    else onFailure(message);
+  }
+
+  function onSuccess(uid: string) {
+    localStorage.setItem(sessionKey, uid);
     setStatus("logged");
   }
 
-  async function logout() {
-    try {
-      localStorage.setItem(sessionKey, "unlogged");
-      setStatus("unlogged");
-    } catch (error) {
-      console.error(error);
-    }
+  function onFailure(message: string) {
+    alert(message);
   }
 
-  return (
-    <Context.Provider value={{ status, login, saveLogin, logout }}>{children}</Context.Provider>
-  );
+  return <Context.Provider value={{ status, login, logout }}>{children}</Context.Provider>;
 }
 
 // For the children
