@@ -1,23 +1,25 @@
 // Node modules
 import { createContext, useContext } from "react";
 import { ReactNode, useEffect, useState } from "react";
-import { Magic } from "magic-sdk";
 
 // Project files
-import AuthStatus from "../types/StatusAuth";
+import StatusAuth from "types/StatusAuth";
+import { signIn } from "scripts/firebase/auth";
 
 // Properties
 interface Props {
   children: ReactNode;
 }
 interface ContextValue {
-  status: AuthStatus;
+  status: StatusAuth;
   login: Function;
+  saveLogin: Function;
   logout: Function;
 }
 const initialValue: ContextValue = {
   status: "checking",
   login: () => {},
+  saveLogin: () => {},
   logout: () => {},
 };
 const Context = createContext(initialValue);
@@ -25,12 +27,10 @@ const Context = createContext(initialValue);
 // For the parent
 export function AuthProvider({ children }: Props) {
   // Local state
-  const [status, setStatus] = useState<AuthStatus>("checking");
+  const [status, setStatus] = useState<StatusAuth>("checking");
 
   // Properties
-  const PUBLIC_KEY = "pk_live_A93E0C24CA99F141";
-  const magic = new Magic(PUBLIC_KEY);
-  const sessionKey = "magic-link-auth";
+  const sessionKey = "scoutr-auth-token";
 
   // Methods
   useEffect(() => {
@@ -38,26 +38,28 @@ export function AuthProvider({ children }: Props) {
   }, []);
 
   async function checkLogin() {
-    const status: AuthStatus = (localStorage.getItem(sessionKey) as AuthStatus) || "unlogged";
+    const storageLogin = localStorage.getItem(sessionKey) as StatusAuth;
+    const status: StatusAuth = storageLogin || "unlogged";
 
     setStatus(status);
   }
 
-  async function login(email: string) {
+  async function login(email: string, password: string) {
     try {
-      console.log("preparing to use magic key");
-      await magic.auth.loginWithMagicLink({ email: email });
-      console.log("storing localStorage key");
-      localStorage.setItem(sessionKey, "logged");
-      setStatus("logged");
+      console.log("preparing to authenticate user");
+      await signIn(email, password);
     } catch (error) {
       console.error(error);
     }
   }
 
+  async function saveLogin() {
+    localStorage.setItem(sessionKey, "logged");
+    setStatus("logged");
+  }
+
   async function logout() {
     try {
-      await magic.user.logout();
       localStorage.setItem(sessionKey, "unlogged");
       setStatus("unlogged");
     } catch (error) {
@@ -65,7 +67,9 @@ export function AuthProvider({ children }: Props) {
     }
   }
 
-  return <Context.Provider value={{ status, login, logout }}>{children}</Context.Provider>;
+  return (
+    <Context.Provider value={{ status, login, saveLogin, logout }}>{children}</Context.Provider>
+  );
 }
 
 // For the children

@@ -1,36 +1,30 @@
 // Node modules
-import { FormEvent, useState } from "react";
+import InputFields from "components/input-fields/InputFields";
+import { FormEvent } from "react";
 
 // Project files
 import useAuth from "state/AuthContextAPI";
+import fields from "./fields";
+import gatherFormData from "scripts/forms/gatherFormData";
 
 export default function Login() {
   // Global state
   const { login } = useAuth();
 
-  // Local state
-  const [email, setEmail] = useState("eduardo.alvarez@novare.se");
-
   // Methods
   async function onLogin(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    await login(email);
+    const { email, password } = gatherFormData(event.currentTarget);
+
+    login(email, password);
   }
 
   return (
     <div id="login">
       <h2>📧 Login</h2>
       <form onSubmit={(event) => onLogin(event)}>
-        <label>
-          Email:
-          <input
-            type="email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-            placeholder="name@novare.se"
-          />
-        </label>
+        <InputFields fields={fields} />
         <button type="submit" className="button">
           Log in
         </button>
