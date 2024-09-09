@@ -83,17 +83,30 @@ export default function RowCandidate({ candidate, index, dispatch }: Props) {
       </td>
 
       {/* 📝 Notes */}
-      <td data-label="Notes" className="notes" onClick={() => onClick("notes")} title={notes}>
+      <td
+        data-label="Notes"
+        className="notes editable"
+        onClick={() => onClick("notes")}
+        title={notes}
+      >
         <small className="trim-text">{notes}</small>
       </td>
 
       {/* 📈 Relevance */}
-      <td className="relevance" data-label="Relevance" onClick={() => onClick("relevance")}>
+      <td
+        className="relevance editable"
+        data-label="Relevance"
+        onClick={() => onClick("relevance")}
+      >
         {relevance > 0 && <ItemBadge {...parsedData.relevance} />}
       </td>
 
       {/* 📲 Contact */}
-      <td className="contact" data-label="Contact" onClick={() => onClick("contact_status")}>
+      <td
+        className="contact editable"
+        data-label="Contact"
+        onClick={() => onClick("contact_status")}
+      >
         {contact_status > 0 && <ItemBadge {...parsedData.contact} />}
       </td>
     </tr>
