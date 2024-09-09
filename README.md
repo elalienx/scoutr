@@ -4,8 +4,8 @@ Your LinkedIn Headhunter Companion
 
 ## About
 
-recruiters to create summaries of candidates they scout on LinkedIn by simply copying and pasting profile links. For a product tour, check out this YouTube video: [https://youtu.be/PvDabjmfyJc](https://youtu.be/PvDabjmfyJc)
-[![Watch demo](https://img.youtube.com/vi/PvDabjmfyJc/maxresdefault.jpg)](https://youtu.be/PvDabjmfyJc)
+recruiters to create summaries of candidates they scout on LinkedIn by simply copying and pasting profile links. For a product tour, check out this YouTube video: [https://youtu.be/3I8B2ezOm5k](https://youtu.be/3I8B2ezOm5k)
+[![Watch demo](https://img.youtube.com/vi/PvDabjmfyJc/maxresdefault.jpg)](https://youtu.be/3I8B2ezOm5k)
 
 ## Table of contents
 
