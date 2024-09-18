@@ -18,7 +18,7 @@ recruiters to create summaries of candidates they scout on LinkedIn by simply co
 
 To run the project, you need to do two things: compile the project and obtain LinkedIn credentials. The first step creates the project files, and the second step grants permission to scan profiles.
 
-### Compile the project
+### 1. Compile the project
 
 1. Clone this Git repository to your computer.
 2. Install Docker. I recommend using [Docker Desktop](https://www.docker.com/products/docker-desktop/) for an easy setup.
@@ -38,7 +38,7 @@ sudo docker compose up --build
 🔵 backend-1   | Scoutr backend server ready on port 8000
 ```
 
-### Obtain the LinkedIn credential
+### 2. Obtain the LinkedIn credential
 
 1. Once the project is up and running, open a second terminal window in the same directory as before and execute:
 
