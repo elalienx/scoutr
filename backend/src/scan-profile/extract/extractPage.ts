@@ -12,7 +12,7 @@ export default async function extractPage(page: Page, url: string): Promise<stri
 
     result = await page.content();
   } catch (error) {
-    await page.screenshot({ path: "screenshots/error.png", fullPage: true });
+    await page.screenshot({ path: "screenshots/extract-error.png", fullPage: true });
     throw new Error(`Playwright: Cant' navigate to URL "${url}". The auth is probably expired.`);
   }
 
