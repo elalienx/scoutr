@@ -25,7 +25,7 @@ To run the project, you need to do two things: compile the project and obtain Li
 3. Open a terminal in the directory containing this README file and execute:
 
 ```
-sudo docker compose up --build
+sudo docker compose -f docker-compose.production.yml up --build
 ```
 
 4. Open this address in your web browser: [http://localhost](http://localhost)
