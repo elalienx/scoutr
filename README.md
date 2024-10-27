@@ -22,7 +22,7 @@ To run the project, you need to do 3 things:
 1. Obtain LinkedIn credentials.
 1. Run the project.
 
-The first step creates the project files, the second step grants permission to scan profiles as LinkedIn is a closed social media platment, and the third runs the project once everything is setup.
+The first step creates the project files, the second step grants permission to scan profiles as LinkedIn is a closed social media platform, and the third runs the project once everything is setup.
 
 ### 1. Compile the project
 
@@ -36,7 +36,7 @@ sudo docker compose -f docker-compose.production.yml build
 
 ### 2. Obtain the LinkedIn credential
 
-1. Once the project is compiled, open a second terminal window in the same directory as before and execute:
+1. Once the project is compiled, execute:
 
 ```
 sudo docker ps
@@ -57,11 +57,6 @@ npm run auth
 
 5. You will be prompted for a LinkedIn email, password, and a verification code sent to your email.
 6. Wait until the message `Saved auth as LoginAuth.json from (some login page)`
-7. The first terminal window should repeat this message to confirm the new credentials.
-
-```
-Scoutr browser with the LinkedIn creadential is ready
-```
 
 ### 3. Run the project
 
