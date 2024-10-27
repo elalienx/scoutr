@@ -5,7 +5,7 @@ Your LinkedIn Headhunter Companion
 ## About
 
 recruiters to create summaries of candidates they scout on LinkedIn by simply copying and pasting profile links. For a product tour, check out this YouTube video: [https://youtu.be/3I8B2ezOm5k](https://youtu.be/3I8B2ezOm5k)
-[![Watch demo](https://img.youtube.com/vi/PvDabjmfyJc/maxresdefault.jpg)](https://youtu.be/3I8B2ezOm5k)
+[![Watch demo](https://img.youtube.com/vi/3I8B2ezOm5k/maxresdefault.jpg)](https://youtu.be/3I8B2ezOm5k)
 
 ## Table of contents
 
@@ -16,7 +16,13 @@ recruiters to create summaries of candidates they scout on LinkedIn by simply co
 
 ## Installation
 
-To run the project, you need to do two things: compile the project and obtain LinkedIn credentials. The first step creates the project files, and the second step grants permission to scan profiles.
+To run the project, you need to do 3 things:
+
+1. Compile the project
+1. Obtain LinkedIn credentials.
+1. Run the project.
+
+The first step creates the project files, the second step grants permission to scan profiles as LinkedIn is a closed social media platment, and the third runs the project once everything is setup.
 
 ### 1. Compile the project
 
@@ -25,22 +31,12 @@ To run the project, you need to do two things: compile the project and obtain Li
 3. Open a terminal in the directory containing this README file and execute:
 
 ```
-sudo docker compose -f docker-compose.production.yml up --build
-```
-
-4. Open this address in your web browser: [http://localhost](http://localhost)
-
-**⚠️ Note:** The Docker build process takes time. Do not open the web browser until you see the following messages in the terminal:
-
-```
-🟡 database-1  | (YOUR_CURRENT_DATE) LOG:  database system is ready to accept connections
-🟢 frontend-1  | VITE v5.X.XX  ready in (SOME_MILLISECONDS) ms
-🔵 backend-1   | Scoutr backend server ready on port 8000
+sudo docker compose -f docker-compose.production.yml build
 ```
 
 ### 2. Obtain the LinkedIn credential
 
-1. Once the project is up and running, open a second terminal window in the same directory as before and execute:
+1. Once the project is compiled, open a second terminal window in the same directory as before and execute:
 
 ```
 sudo docker ps
@@ -64,7 +60,24 @@ npm run auth
 7. The first terminal window should repeat this message to confirm the new credentials.
 
 ```
-🔵 backend-1   | Scoutr browser with the LinkedIn creadential is ready
+Scoutr browser with the LinkedIn creadential is ready
+```
+
+### 3. Run the project
+
+1. Run this command to run the project:
+
+```
+sudo docker compose -f docker-compose.production.yml up
+```
+
+2. Open this address in your web browser: [http://localhost](http://localhost)
+
+**⚠️ Note:** The Docker build process takes time. Do not open the web browser until you see the following messages in the terminal:
+
+```
+🟡 database-1  | (YOUR_CURRENT_DATE) LOG:  database system is ready to accept connections
+🟢 frontend-1  | VITE v5.X.XX  ready in (SOME_MILLISECONDS) ms
 🔵 backend-1   | Scoutr backend server ready on port 8000
 ```
 
