@@ -22,7 +22,7 @@ To run the project, you need to do 3 things:
 1. Obtain LinkedIn credentials.
 1. Run the project.
 
-The first step creates the project files, the second step grants permission to scan profiles as LinkedIn is a closed social media platform, and the third runs the project once everything is setup.
+The first step creates the project files, the second step grants permission to scan profiles as LinkedIn is a closed social media platform that do not allow to view profiles unless logged in, and the third runs the project once everything is setup.
 
 ### 1. Compile the project
 
